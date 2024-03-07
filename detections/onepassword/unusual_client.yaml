@@ -1,3 +1,6 @@
+# Remove disabled property to start using the detection
+disabled: true
+
 name: onepassword-unusual-client
 displayName: OnePassword Unusual Client
 file: unusual_client.sql
