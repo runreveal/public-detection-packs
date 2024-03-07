@@ -1,0 +1,18 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: user-access-new-country
+displayName: User access from new country
+description: >-
+    Monitors for user activity from a country that the user has not previously
+    access okta from
+file: new_country.sql
+categories:
+  - okta
+  - signal
+mitreAttacks:
+  - initial-access
+severity: Medium
+schedule: '*/15 * * * *'
+sourceTypes:
+  - okta

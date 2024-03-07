@@ -1,0 +1,18 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-rate-limit-violation
+displayName: Rate limit violation
+description: User received a ratelimit violation within okta
+categories:
+  - okta
+  - signal
+mitreAttacks:
+  - execution
+severity: Medium
+schedule: '*/15 * * * *'
+parameters:
+  ignoreIPs: '[]'
+  ignoreEmails: '[]'
+sourceTypes:
+  - okta

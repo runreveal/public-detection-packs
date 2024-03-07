@@ -8,7 +8,7 @@ description: This detects OnePassword access from a client app that is not in th
 categories:
   - onepassword
   - signal
-severity: low
+severity: Low
 mitreAttacks:
   - credential-access
 sourceTypes:

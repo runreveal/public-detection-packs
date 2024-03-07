@@ -1,0 +1,19 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: aws_key_new_network
+displayName: AWS Key Used from New Network
+description: This AWS key was used from a network it previously had not been used from.
+categories:
+  - cloudtrail
+  - signal
+mitreAttacks:
+  - initial-access
+severity: Medium
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+  ignoreNetworksByAS: '[]'
+  ignoreIPs: '[]'
+sourceTypes:
+  - cloudtrail
