@@ -1,0 +1,15 @@
+name: onepassword-unusual-client
+displayName: OnePassword Unusual Client
+file: unusual_client.sql
+description: This detects OnePassword access from a client app that is not in the provided whitelist.
+categories:
+  - onepassword
+  - signal
+severity: low
+mitreAttacks:
+  - credential-access
+sourceTypes:
+  - onepassword
+schedule: '*/15 * * * *'
+parameters:
+  clients: "['1Password CLI', '1Password for Web', '1Password for Mac', '1Password SCIM Bridge', '1Password for Windows', '1Password for iOS', '1Password Browser Extension', '1Password for Android', '1Password for Linux']"
