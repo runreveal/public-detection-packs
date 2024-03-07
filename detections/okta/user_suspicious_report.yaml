@@ -4,6 +4,7 @@ disabled: true
 name: okta-user-suspicious-report
 displayName: Okta User Reported Suspicious Activity
 description: Suspicious activity reported by end user
+file: user_suspicious_report.sql
 categories:
   - signal
   - okta

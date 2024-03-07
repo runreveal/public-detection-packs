@@ -5,6 +5,7 @@ name: new_aws_key_behavior
 displayName: New AWS key behavior
 description: >-
   The behavior of this AWS key changed and we've seen new eventNames in a short period of time.
+file: new_aws_key_behavior.sql
 categories:
   - cloudtrail
   - signal

@@ -4,6 +4,7 @@ disabled: true
 name: okta-new-network-access
 displayName: User Access from New Network
 description: User accessed Okta from a network that they previously have not used.
+file: new_network_access.sql
 categories:
   - okta
   - signal

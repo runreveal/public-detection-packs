@@ -4,6 +4,7 @@ disabled: true
 name: initial_access_attack_pattern
 displayName: Potential initial access attack pattern
 description: Suspicious initial access was followed by another attack technique
+file: initial_access_attack_pattern.sql
 categories:
   - alert
 notificationNames:

@@ -4,6 +4,7 @@ disabled: true
 name: okta-rate-limit-violation
 displayName: Rate limit violation
 description: User received a ratelimit violation within okta
+file: rate_limit_violation.sql
 categories:
   - okta
   - signal
