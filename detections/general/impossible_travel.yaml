@@ -1,0 +1,16 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: impossible_travel
+displayName: Impossible Travel
+description: >-
+  Impossible travel events are measured by looking for source IP addresses on
+  logs, determining the latitude and longitude of those logs, and doing point
+  arithmatic to determine their speed
+schedule: '*/15 * * * *'
+file: impossible_travel.sql
+categories:
+  - signal
+mitreAttacks:
+  - initial-access
+severity: High
