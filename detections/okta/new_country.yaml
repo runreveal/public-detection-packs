@@ -5,7 +5,7 @@ name: user-access-new-country
 displayName: User access from new country
 description: >-
     Monitors for user activity from a country that the user has not previously
-    access okta from
+    accessed okta from
 file: new_country.sql
 categories:
   - okta
