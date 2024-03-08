@@ -2,15 +2,15 @@
 disabled: true
 
 name: onepassword-unusual-client
-displayName: OnePassword Unusual Client
+displayName: 1Password Unusual Client
 file: unusual_client.sql
-description: This detects OnePassword access from a client app that the user has not previously accessed OnePassword from.
+description: This detects 1Password access from a client app that the user has not previously accessed 1Password from.
 categories:
-  - onepassword
+  - 1password
   - signal
 severity: Low
 mitreAttacks:
   - credential-access
 sourceTypes:
-  - onepassword
+  - 1password
 schedule: '*/15 * * * *'
