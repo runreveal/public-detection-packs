@@ -1,7 +1,7 @@
 # Remove disabled property to start using the detection
 disabled: true
 
-name: aws_key_new_network
+name: aws-key-new-network
 displayName: AWS Key Used from New Network
 description: This AWS key was used from a network it previously had not been used from.
 file: aws_key_new_network.sql

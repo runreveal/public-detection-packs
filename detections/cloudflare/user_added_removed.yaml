@@ -1,0 +1,14 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: user-added-removed-cloudflare
+displayName: User added or removed from Cloudflare account
+description: A user was either added to or removed from your Cloudflare account.
+file: user_added_removed.sql
+categories:
+  - cloudflare
+schedule: '*/15 * * * *'
+sourceTypes:
+  - cf-audit
+mitreAttacks:
+  - initial-access

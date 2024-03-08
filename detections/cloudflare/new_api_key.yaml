@@ -1,0 +1,14 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: new-cloudflare-api-key
+displayName: New Cloudflare API key
+description: A Cloudflare API key was created or rotated.
+file: new_api_key.sql
+categories: 
+  - cloudflare
+schedule: '*/15 * * * *'
+sourceTypes:
+  - cf-audit
+mitreAttacks:
+  - credential-access

@@ -1,0 +1,14 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: critical-policy-changes
+displayName: Critical Policy Changes
+description: Monitor for critical policy changes of your AWS assets.
+file: critical_policy_change.sql
+categories:
+  - cloudtrail
+schedule: '*/15 * * * *'
+sourceTypes:
+  - cloudtrail
+mitreAttacks:
+  - evasion

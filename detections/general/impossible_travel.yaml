@@ -1,7 +1,7 @@
 # Remove disabled property to start using the detection
 disabled: true
 
-name: impossible_travel
+name: impossible-travel
 displayName: Impossible Travel
 description: >-
   Impossible travel events are measured by looking for source IP addresses on

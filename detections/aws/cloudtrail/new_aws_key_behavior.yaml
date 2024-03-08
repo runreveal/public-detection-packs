@@ -1,7 +1,7 @@
 # Remove disabled property to start using the detection
 disabled: true
 
-name: new_aws_key_behavior
+name: new-aws-key-behavior
 displayName: New AWS key behavior
 description: >-
   The behavior of this AWS key changed and we've seen new eventNames in a short period of time.

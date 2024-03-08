@@ -1,0 +1,18 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: branch-protection-override
+displayName: Branch Protection Override
+description: >-
+  Alert when a pull request is merged without an approval using only webhooks.
+  This is helpful if you're using the Github Free Tier, and don't have Github
+  Enterprise.
+file: branch_protection_override.sql
+categories:
+  - github
+  - runreveal
+schedule: '*/15 * * * *'
+sourceTypes:
+  - github-webhook
+mitreAttacks:
+  - evasion

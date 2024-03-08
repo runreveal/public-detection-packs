@@ -1,0 +1,14 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-api-key-created
+displayName: Okta API Key Created
+description: Alert on the creation of a new okta API key.
+file: okta_api_key_created.sql
+categories:
+  - okta
+schedule: '*/15 * * * *'
+sourceTypes:
+  - okta
+mitreAttacks:
+  - credential-access

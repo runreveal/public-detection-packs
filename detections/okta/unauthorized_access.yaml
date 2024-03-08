@@ -1,0 +1,18 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-unauthorized-access
+displayName: Okta Unauthorized Access
+description: >-
+  On October 20 2023, Okta published a list of IP addresses that they found
+  had accessed their systems using stolen credentials
+  (https://sec.okta.com/harfiles). This query will check your logs for any
+  authenticated user that accessed your system from these IPs.
+file: unauthorized_access.sql
+categories:
+  - okta
+schedule: '*/15 * * * *'
+sourceTypes:
+  - okta
+mitreAttacks:
+  - credential-access

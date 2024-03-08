@@ -1,0 +1,18 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: gsuite-user-list-download
+displayName: GSuite User List Download
+description: >
+  This detection will alert you when a user has downloaded the GSuite user
+  list. This detection may require additional setup in GSuite to receive these
+  alerts.
+file: user_list_download.sql
+categories:
+  - gsuite
+  - runreveal
+schedule: '*/15 * * * *'
+sourceTypes:
+  - gsuite
+mitreAttacks:
+  - collection

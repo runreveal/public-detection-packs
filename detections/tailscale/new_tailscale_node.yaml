@@ -1,0 +1,19 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: new-tailscale-node
+displayName: New Tailscale Node
+description: >
+  This detection will check if a new Tailscale node was created, you can also
+  set it to include nodes that are tagged as ephemeral.
+file: new_tailscale_node.sql
+categories:
+  - tailscale
+  - runreveal
+schedule: '*/15 * * * *'
+parameters:
+  includeEphemeral: 'false'
+sourceTypes:
+  - tailscale-audit
+mitreAttacks:
+  - initial-access

@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: known-crypto-domains
+displayName: Known Crypto Domains
+description: >
+  This detection will check if there are any DNS requests against a known
+  crypto domain.
+file: known_crypto_domains.sql
+categories:
+  - awsdns
+  - runreveal
+schedule: '*/15 * * * *'
+sourceTypes:
+  - awsdns
+mitreAttacks:
+  - collection

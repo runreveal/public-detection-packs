@@ -1,0 +1,14 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: root-account-usage
+displayName: Root Account Usage
+description: Monitor for usage of the AWS root account.
+file: root_account_usage.sql
+categories:
+  - cloudtrail
+schedule: '*/15 * * * *'
+sourceTypes:
+  - cloudtrail
+mitreAttacks:
+  - credential-access

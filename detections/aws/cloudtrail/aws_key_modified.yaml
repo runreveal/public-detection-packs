@@ -1,0 +1,14 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: aws-key-modified
+displayName: AWS Key Created, Modified, or Deleted
+description: Monitor for critical lifecycle events of AWS keys
+file: aws_key_modified.sql
+categories:
+  - cloudtrail
+schedule: '*/15 * * * *'
+mitreAttacks:
+  - credential-access
+sourceTypes:
+  - cloudtrail

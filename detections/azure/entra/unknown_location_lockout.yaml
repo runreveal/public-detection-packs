@@ -1,0 +1,18 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: entra-unknown-location-lockout
+displayName: Unknown Location Lockout
+description: >
+  This detection will check if any of your users have triggered a lockout on
+  their account from an unknown IP address.
+file: unknown_location_lockout.sql
+categories:
+  - entra
+  - azure
+  - runreveal
+schedule: '*/15 * * * *'
+sourceTypes:
+  - aad
+mitreAttacks:
+  - evasion
