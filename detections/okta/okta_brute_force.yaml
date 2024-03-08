@@ -1,0 +1,16 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-brute-force
+displayName: Okta Brute Force Attack
+file: okta_brute_force.sql
+description: Brute force attack on a specific Okta user account
+categories:
+  - okta
+  - signal
+mitreAttacks:
+  - initial-access
+severity: Medium
+schedule: '*/15 * * * *'
+sourceTypes:
+  - okta

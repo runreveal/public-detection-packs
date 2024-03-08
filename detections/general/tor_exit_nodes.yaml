@@ -1,0 +1,13 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: tor-exit-nodes
+displayName: Tor Exit Node Enrichment
+file: tor_exit_nodes.sql
+description: >-
+  This IP enrichment looks for events where the IP address was associated with
+  a known TOR exit node.
+categories:
+  - enrichment
+  - signal
+schedule: '*/15 * * * *'
