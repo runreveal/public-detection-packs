@@ -1,7 +1,7 @@
 # Remove disabled property to start using the detection
 disabled: true
 
-name: initial_access_attack_pattern
+name: initial-access-attack-pattern
 displayName: Potential initial access attack pattern
 description: Suspicious initial access was followed by another attack technique
 file: initial_access_attack_pattern.sql
