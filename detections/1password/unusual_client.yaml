@@ -1,7 +1,7 @@
 # Remove disabled property to start using the detection
 disabled: true
 
-name: onepassword-unusual-client
+name: 1password-unusual-client
 displayName: 1Password Unusual Client
 file: unusual_client.sql
 description: This detects 1Password access from a client app and platform combination that the user has not previously accessed 1Password from.
