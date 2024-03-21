@@ -1,11 +1,11 @@
-SELECT actor['email'] actor, srcIP, srcASCountryCode, count(*) downloadCnt
-  FROM runreveal_logs 
+SELECT max(eventTime) eventTime, max(receivedAt) receivedAt, actor, srcIP, srcASCountryCode, count(*) downloadCnt
+  FROM logs 
 
   WHERE sourceType = 'gsuite'
 
-  AND eventName = 'download' AND actor <> ''
+  AND eventName = 'download' AND actor['email'] <> ''
 
-  AND receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
+  AND logs.receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
 
   GROUP BY actor, srcIP, srcASCountryCode
 
