@@ -12,8 +12,8 @@ AND actor['email'] != ''
 GROUP BY actor['email']
 )
 SELECT * from (
-SELECT actor,
-groupUniqArray(detectionName) detections,
+SELECT actor['email'] as actor,
+arrayStringConcat(groupUniqArray(detectionName),', ') signals,
 windowFunnel({window:UInt64})(
 eventTime,
 mitreAttack = 'initial-access',
