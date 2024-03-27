@@ -10,6 +10,7 @@ file: new_global_admin.sql
 categories:
   - entra
   - azure
+  - aad
   - runreveal
 schedule: '*/15 * * * *'
 parameters:

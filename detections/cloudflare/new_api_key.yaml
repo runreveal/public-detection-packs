@@ -7,6 +7,7 @@ description: A Cloudflare API key was created or rotated.
 file: new_api_key.sql
 categories: 
   - cloudflare
+  - cf-audit
 schedule: '*/15 * * * *'
 sourceTypes:
   - cf-audit

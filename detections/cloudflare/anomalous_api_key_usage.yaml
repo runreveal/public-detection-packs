@@ -6,7 +6,7 @@ displayName: Anomalous Cloudflare API Key Usage
 description: 'A Cloudflare API key was first seen, or used from a new network.'
 file: anomalous_api_key_usage.sql
 categories:
-  - cloudflare
+  - cf-audit
 schedule: '*/25 * * * *'
 sourceTypes:
   - cf-audit
