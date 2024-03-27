@@ -10,6 +10,7 @@ file: unknown_location_lockout.sql
 categories:
   - entra
   - azure
+  - aad
   - runreveal
 schedule: '*/15 * * * *'
 sourceTypes:

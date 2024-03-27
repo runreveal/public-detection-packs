@@ -9,6 +9,7 @@ description: >
 file: auth_fail_during_mfa.sql
 categories:
   - entra
+  - aad
   - azure
   - runreveal
 schedule: '*/15 * * * *'
