@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: notion-audit-log-exported
+displayName: Audit log exported
+description: Enter a description here.
+file: notion-audit-log-exported.sql
+categories:
+  - signal
+mitreAttacks:
+  - exfiltration
+severity: Medium
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - notion

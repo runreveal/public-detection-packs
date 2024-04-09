@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: notion-export-of-workspace
+displayName: Export of Workspace
+description: The entire content of the workspace has been exported
+file: notion-export-of-workspace.sql
+categories:
+  - signal
+mitreAttacks:
+  - collection
+severity: Medium
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - notion

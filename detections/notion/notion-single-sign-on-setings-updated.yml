@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: notion-single-sign-on-setings-updated
+displayName: Single Sign-On setings updated
+description: Detects when the Single Sign-On settings are updated in Notion
+file: notion-single-sign-on-setings-updated.sql
+categories:
+  - signal
+mitreAttacks:
+  - persistence
+severity: High
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - notion
