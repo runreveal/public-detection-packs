@@ -7,6 +7,7 @@ description: Workspace audit log exported
 file: notion-audit-log-exported.sql
 categories:
   - signal
+  - notion
 mitreAttacks:
   - exfiltration
 severity: Medium

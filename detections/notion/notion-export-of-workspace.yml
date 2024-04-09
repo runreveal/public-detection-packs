@@ -7,6 +7,7 @@ description: The entire content of the workspace has been exported
 file: notion-export-of-workspace.sql
 categories:
   - signal
+  - notion
 mitreAttacks:
   - collection
 severity: Medium
