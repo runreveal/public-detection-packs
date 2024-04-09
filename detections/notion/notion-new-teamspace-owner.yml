@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: notion-new-teamspace-owner
+displayName: New teamspace owner
+description: A new teamspace owner has been added to your Notion account
+file: notion-new-teamspace-owner.sql
+categories:
+  - signal
+mitreAttacks:
+  - privilege-escalation
+severity: High
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - notion

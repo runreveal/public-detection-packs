@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: notion-scim-token-generated
+displayName: SCIM token generated
+description: A new SCIM token was generated
+file: notion-scim-token-generated.sql
+categories:
+  - signal
+mitreAttacks:
+  - credential-access
+severity: High
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - notion

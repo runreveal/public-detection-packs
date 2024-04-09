@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: notion-new-publicly-accessible-page
+displayName: New publicly accessible page
+description: Detects when a new page is made publicly accessible in Notion
+file: notion-new-publicly-accessible-page.sql
+categories:
+  - signal
+mitreAttacks:
+  - execution
+severity: Medium
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - notion

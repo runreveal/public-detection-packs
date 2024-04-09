@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: notion-sharing-and-visibility-settings-updated
+displayName: Sharing and visibility settings updated
+description: Detects when a Notion page's sharing and visibility settings are updated
+file: notion-sharing-and-visibility-settings-updated.sql
+categories:
+  - signal
+mitreAttacks:
+  - persistence
+severity: Medium
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - notion
