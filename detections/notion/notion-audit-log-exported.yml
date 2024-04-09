@@ -3,7 +3,7 @@ disabled: true
 
 name: notion-audit-log-exported
 displayName: Audit log exported
-description: Enter a description here.
+description: Workspace audit log exported
 file: notion-audit-log-exported.sql
 categories:
   - signal
