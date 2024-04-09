@@ -7,6 +7,7 @@ description: A new teamspace owner has been added to your Notion account
 file: notion-new-teamspace-owner.sql
 categories:
   - signal
+  - notion
 mitreAttacks:
   - privilege-escalation
 severity: High

@@ -7,6 +7,7 @@ description: New notion public homepage created
 file: notion-potential-defacement-new-public-homepage.sql
 categories:
   - signal
+  - notion
 mitreAttacks:
   - execution
 severity: Medium

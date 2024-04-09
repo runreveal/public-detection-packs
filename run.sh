@@ -22,6 +22,7 @@ description: Enter a description here.
 file: ${slug}.sql
 categories:
   - signal
+  - ${SOURCE}
 mitreAttacks:
   - execution
 severity: Medium
