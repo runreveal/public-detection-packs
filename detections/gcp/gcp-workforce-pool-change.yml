@@ -1,0 +1,19 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: gcp-workforce-pool-change
+displayName: workforce-pool-change
+description: Detects changes to the workforce pool in GCP
+file: gcp-workforce-pool-change.sql
+categories:
+  - signal
+  - gcp
+mitreAttacks:
+  - execution
+severity: Medium
+riskScore: 40
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - gcp
