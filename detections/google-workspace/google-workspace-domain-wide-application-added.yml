@@ -1,0 +1,22 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: google-workspace-domain-wide-application-added
+displayName: Domain wide application added
+description: Detects when a domain wide application is added to a Google Workspace account
+file: google-workspace-domain-wide-application-added.sql
+categories:
+  - signal
+  - google-workspace
+mitreAttacks:
+  - execution
+  - lateral-movement
+  - persistence
+  - collection
+severity: High
+riskScore: 75
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - google-workspace

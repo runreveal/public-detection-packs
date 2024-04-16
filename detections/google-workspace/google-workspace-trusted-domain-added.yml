@@ -1,0 +1,20 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: google-workspace-trusted-domain-added
+displayName: Trusted domain added
+description: Detects when a trusted domain is added to Google Workspace
+file: google-workspace-trusted-domain-added.sql
+categories:
+  - signal
+  - google-workspace
+mitreAttacks:
+  - persistence
+  - lateral-movement
+severity: High
+riskScore: 85
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - google-workspace

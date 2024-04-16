@@ -1,0 +1,19 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: google-workspace-workspace-export-activity
+displayName: Workspace export activity
+description: Detects when a user exports data from Google Workspace.
+file: google-workspace-workspace-export-activity.sql
+categories:
+  - signal
+  - google-workspace
+mitreAttacks:
+  - exfiltration
+severity: High
+riskScore: 80
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - google-workspace
