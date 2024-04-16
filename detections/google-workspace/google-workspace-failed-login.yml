@@ -1,7 +1,7 @@
 # Remove disabled property to start using the detection
 disabled: true
 
-name: Google Workspace Failed Login
+name: google-workspace-failed-login
 displayName: failed-login
 description: A user failed to log in to Google Workspace.
 file: google-workspace-failed-login.sql
