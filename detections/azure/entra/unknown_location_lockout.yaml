@@ -13,6 +13,8 @@ categories:
   - aad
   - runreveal
 schedule: '*/15 * * * *'
+riskScore: 80
+severity: High
 sourceTypes:
   - aad
 mitreAttacks:

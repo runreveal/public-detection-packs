@@ -8,6 +8,8 @@ file: aws_key_modified.sql
 categories:
   - cloudtrail
 schedule: '*/15 * * * *'
+severity: Medium
+riskScore: 50
 mitreAttacks:
   - credential-access
 sourceTypes:

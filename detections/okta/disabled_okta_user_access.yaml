@@ -10,6 +10,8 @@ file: disabled_okta_user_access.sql
 categories:
   - okta
   - runreveal
+riskScore: 50
+severity: Medium
 schedule: '*/15 * * * *'
 sourceTypes:
   - okta

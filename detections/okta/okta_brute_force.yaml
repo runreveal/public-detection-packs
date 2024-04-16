@@ -11,6 +11,7 @@ categories:
 mitreAttacks:
   - initial-access
 severity: Medium
+riskScore: 50
 schedule: '*/15 * * * *'
 sourceTypes:
   - okta

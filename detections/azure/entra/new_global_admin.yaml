@@ -13,6 +13,8 @@ categories:
   - aad
   - runreveal
 schedule: '*/15 * * * *'
+severity: High
+riskScore: 90
 parameters:
   roles: "['Global Administrator']"
 sourceTypes:

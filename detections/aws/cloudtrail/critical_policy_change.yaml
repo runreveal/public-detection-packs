@@ -8,6 +8,8 @@ file: critical_policy_change.sql
 categories:
   - cloudtrail
 schedule: '*/15 * * * *'
+severity: Medium
+riskScore: 60
 sourceTypes:
   - cloudtrail
 mitreAttacks:

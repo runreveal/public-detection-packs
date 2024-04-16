@@ -11,6 +11,7 @@ categories:
 mitreAttacks:
   - initial-access
 severity: Low
+riskScore: 25
 schedule: '*/15 * * * *'
 parameters:
   window: '30'

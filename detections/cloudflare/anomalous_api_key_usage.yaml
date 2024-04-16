@@ -7,6 +7,8 @@ description: 'A Cloudflare API key was first seen, or used from a new network.'
 file: anomalous_api_key_usage.sql
 categories:
   - cf-audit
+riskScore: 85
+severity: High
 schedule: '*/25 * * * *'
 sourceTypes:
   - cf-audit

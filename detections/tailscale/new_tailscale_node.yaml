@@ -10,6 +10,8 @@ file: new_tailscale_node.sql
 categories:
   - tailscale
   - runreveal
+riskScore: 50
+severity: Medium
 schedule: '*/15 * * * *'
 parameters:
   includeEphemeral: 'false'

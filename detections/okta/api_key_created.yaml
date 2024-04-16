@@ -8,6 +8,8 @@ file: api_key_created.sql
 categories:
   - okta
 schedule: '*/15 * * * *'
+riskScore: 90
+severity: Critical
 sourceTypes:
   - okta
 mitreAttacks:

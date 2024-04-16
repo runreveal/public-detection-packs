@@ -11,6 +11,8 @@ description: >-
 file: unauthorized_access.sql
 categories:
   - okta
+riskScore: 90
+severity: Critical
 schedule: '*/15 * * * *'
 sourceTypes:
   - okta

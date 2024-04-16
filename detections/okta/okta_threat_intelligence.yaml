@@ -10,6 +10,8 @@ categories:
 schedule: '*/15 * * * *'
 sourceTypes:
   - okta
+riskScore: 80
+severity: High
 mitreAttacks:
   - initial-access
   - execution

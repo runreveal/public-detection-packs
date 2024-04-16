@@ -9,6 +9,8 @@ categories:
   - cloudflare
   - cf-audit
 schedule: '*/15 * * * *'
+riskScore: 80
+severity: High
 sourceTypes:
   - cf-audit
 mitreAttacks:

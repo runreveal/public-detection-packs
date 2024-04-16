@@ -8,6 +8,8 @@ file: root_account_usage.sql
 categories:
   - cloudtrail
 schedule: '*/15 * * * *'
+riskScore: 50
+severity: Medium
 sourceTypes:
   - cloudtrail
 mitreAttacks:
