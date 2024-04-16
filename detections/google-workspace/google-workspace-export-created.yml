@@ -8,6 +8,7 @@ file: google-workspace-workspace-export-activity.sql
 categories:
   - signal
   - google-workspace
+  - gsuite
 mitreAttacks:
   - exfiltration
 severity: High
@@ -17,3 +18,4 @@ parameters:
   window: '30'
 sourceTypes:
   - google-workspace
+  - gsuite

@@ -8,6 +8,7 @@ file: google-workspace-document-made-public.sql
 categories:
   - signal
   - google-workspace
+  - gsuite
 mitreAttacks:
   - persistence
 severity: Low
@@ -17,3 +18,4 @@ parameters:
   window: '30'
 sourceTypes:
   - google-workspace
+  - gsuite

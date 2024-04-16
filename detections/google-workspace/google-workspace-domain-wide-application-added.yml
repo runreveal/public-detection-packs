@@ -8,6 +8,7 @@ file: google-workspace-domain-wide-application-added.sql
 categories:
   - signal
   - google-workspace
+  - gsuite
 mitreAttacks:
   - execution
   - lateral-movement
@@ -20,3 +21,4 @@ parameters:
   window: '30'
 sourceTypes:
   - google-workspace
+  - gsuite

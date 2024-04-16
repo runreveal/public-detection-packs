@@ -8,6 +8,7 @@ file: google-workspace-trusted-domain-added.sql
 categories:
   - signal
   - google-workspace
+  - gsuite
 mitreAttacks:
   - persistence
   - lateral-movement
@@ -18,3 +19,4 @@ parameters:
   window: '30'
 sourceTypes:
   - google-workspace
+  - gsuite
