@@ -3,13 +3,13 @@ disabled: true
 
 name: google-workspace-calendar-made-public
 displayName: Calendar made public
-description: Enter a description here.
+description: Detects when a Google Workspace calendar is made public
 file: google-workspace-calendar-made-public.sql
 categories:
   - signal
   - google-workspace
 mitreAttacks:
-  - execution
+  - persistence
 severity: Medium
 riskScore: 50
 schedule: '*/15 * * * *'

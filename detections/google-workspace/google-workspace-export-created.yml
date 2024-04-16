@@ -9,9 +9,9 @@ categories:
   - signal
   - google-workspace
 mitreAttacks:
-  - execution
-severity: Medium
-riskScore: 50
+  - exfiltration
+severity: High
+riskScore: 80
 schedule: '*/15 * * * *'
 parameters:
   window: '30'

@@ -3,13 +3,14 @@ disabled: true
 
 name: google-workspace-delegated-admin-to-role
 displayName: Delegated admin to role
-description: Enter a description here.
+description: Detects when a delegated admin is assigned to a role in Google Workspace
 file: google-workspace-delegated-admin-to-role.sql
 categories:
   - signal
   - google-workspace
 mitreAttacks:
   - execution
+  - lateral-movement
 severity: High
 riskScore: 85
 schedule: '*/15 * * * *'

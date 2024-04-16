@@ -9,7 +9,7 @@ categories:
   - signal
   - google-workspace
 mitreAttacks:
-  - execution
+  - initial-access
 severity: Critical
 riskScore: 95
 schedule: '*/15 * * * *'

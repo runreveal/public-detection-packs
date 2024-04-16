@@ -10,6 +10,9 @@ categories:
   - google-workspace
 mitreAttacks:
   - execution
+  - lateral-movement
+  - persistence
+  - collection
 severity: High
 riskScore: 75
 schedule: '*/15 * * * *'

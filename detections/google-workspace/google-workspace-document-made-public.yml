@@ -9,7 +9,7 @@ categories:
   - signal
   - google-workspace
 mitreAttacks:
-  - execution
+  - persistence
 severity: Low
 riskScore: 20
 schedule: '*/15 * * * *'
