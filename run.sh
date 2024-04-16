@@ -26,6 +26,7 @@ categories:
 mitreAttacks:
   - execution
 severity: Medium
+riskScore: 50
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
