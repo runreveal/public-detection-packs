@@ -8,8 +8,8 @@ file: user_suspicious_report.sql
 categories:
   - signal
   - okta
-riskScore: Medium
-severity: 50
+riskScore: 50
+severity: Medium
 mitreAttacks:
   - initial-access
 schedule: '*/15 * * * *'
