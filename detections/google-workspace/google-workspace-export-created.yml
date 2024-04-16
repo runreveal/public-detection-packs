@@ -1,10 +1,10 @@
 # Remove disabled property to start using the detection
 disabled: true
 
-name: google-workspace-workspace-export-activity
+name: google-workspace-export-created
 displayName: Workspace export activity
 description: Detects when a user exports data from Google Workspace.
-file: google-workspace-workspace-export-activity.sql
+file: google-workspace-export-created.sql
 categories:
   - signal
   - google-workspace
