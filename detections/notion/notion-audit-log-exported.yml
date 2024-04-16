@@ -10,7 +10,9 @@ categories:
   - notion
 mitreAttacks:
   - exfiltration
-severity: Medium
+  - collection
+riskScore: 80
+severity: High
 schedule: '*/15 * * * *'
 parameters:
   window: '30'

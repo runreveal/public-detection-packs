@@ -10,6 +10,7 @@ categories:
   - notion
 mitreAttacks:
   - persistence
+riskScore: 40
 severity: Medium
 schedule: '*/15 * * * *'
 parameters:
