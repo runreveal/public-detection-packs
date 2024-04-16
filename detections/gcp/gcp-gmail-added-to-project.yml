@@ -8,6 +8,7 @@ file: gcp-gmail-added-to-project.sql
 categories:
   - signal
   - gcp
+  - gcplogs
 mitreAttacks:
   - initial-access
   - persistence
@@ -18,3 +19,4 @@ parameters:
   window: '30'
 sourceTypes:
   - gcp
+  - gcplogs

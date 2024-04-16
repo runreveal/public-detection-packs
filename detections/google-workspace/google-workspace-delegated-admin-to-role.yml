@@ -8,6 +8,7 @@ file: google-workspace-delegated-admin-to-role.sql
 categories:
   - signal
   - google-workspace
+  - gsuite
 mitreAttacks:
   - execution
   - lateral-movement
@@ -18,3 +19,4 @@ parameters:
   window: '30'
 sourceTypes:
   - google-workspace
+  - gsuite

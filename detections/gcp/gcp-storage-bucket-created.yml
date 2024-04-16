@@ -8,6 +8,7 @@ file: gcp-storage-bucket-created.sql
 categories:
   - signal
   - gcp
+  - gcplogs
 mitreAttacks:
   - execution
 severity: Medium
@@ -17,3 +18,4 @@ parameters:
   window: '30'
 sourceTypes:
   - gcp
+  - gcplogs

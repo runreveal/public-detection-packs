@@ -8,6 +8,7 @@ file: google-workspace-login-from-tor.sql
 categories:
   - signal
   - google-workspace
+  - gsuite
 mitreAttacks:
   - initial-access
 severity: Critical
@@ -17,3 +18,4 @@ parameters:
   window: '30'
 sourceTypes:
   - google-workspace
+  - gsuite
