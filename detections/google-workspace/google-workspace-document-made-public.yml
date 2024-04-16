@@ -1,0 +1,19 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: google-workspace-document-made-public
+displayName: Document made public
+description: A google document was made public
+file: google-workspace-document-made-public.sql
+categories:
+  - signal
+  - google-workspace
+mitreAttacks:
+  - execution
+severity: Low
+riskScore: 20
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - google-workspace
