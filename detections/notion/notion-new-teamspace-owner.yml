@@ -10,6 +10,8 @@ categories:
   - notion
 mitreAttacks:
   - privilege-escalation
+  - lateral-movement
+riskScore: 75
 severity: High
 schedule: '*/15 * * * *'
 parameters:

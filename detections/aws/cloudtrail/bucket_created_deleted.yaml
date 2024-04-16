@@ -8,6 +8,8 @@ file: bucket_created_deleted.sql
 categories:
   - cloudtrail
 schedule: '*/15 * * * *'
+riskScore: 60
+severity: Medium
 mitreAttacks:
   - initial-access
 sourceTypes:

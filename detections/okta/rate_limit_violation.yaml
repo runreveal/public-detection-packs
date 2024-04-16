@@ -10,7 +10,8 @@ categories:
   - signal
 mitreAttacks:
   - execution
-severity: Medium
+severity: Low
+riskScore: 20
 schedule: '*/15 * * * *'
 parameters:
   ignoreIPs: '[]'

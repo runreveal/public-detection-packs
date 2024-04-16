@@ -10,6 +10,7 @@ categories:
 notificationNames:
   - email
 severity: Critical
+riskScore: 90
 schedule: '*/15 * * * *'
 parameters:
   window: '14400'

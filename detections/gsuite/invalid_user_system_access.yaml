@@ -11,6 +11,8 @@ file: invalid_user_system_access.sql
 categories:
   - gsuite
   - runreveal
+severity: High
+riskScore: 80
 schedule: '*/15 * * * *'
 sourceTypes:
   - gsuite

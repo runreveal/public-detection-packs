@@ -10,7 +10,8 @@ categories:
   - notion
 mitreAttacks:
   - collection
-severity: Medium
+riskScore: 90
+severity: Critical
 schedule: '*/15 * * * *'
 parameters:
   window: '30'

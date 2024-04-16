@@ -11,6 +11,8 @@ categories:
   - awsdns
   - runreveal
 schedule: '*/15 * * * *'
+riskScore: 80
+severity: High
 sourceTypes:
   - awsdns
 mitreAttacks:

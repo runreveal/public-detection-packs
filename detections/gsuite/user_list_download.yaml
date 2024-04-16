@@ -11,6 +11,8 @@ file: user_list_download.sql
 categories:
   - gsuite
   - runreveal
+severity: Medium
+riskScore: 50
 schedule: '*/15 * * * *'
 sourceTypes:
   - gsuite

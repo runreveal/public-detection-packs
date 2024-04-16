@@ -10,7 +10,8 @@ categories:
   - signal
 mitreAttacks:
   - initial-access
-severity: Medium
+severity: High
+riskScore: 80
 schedule: '*/15 * * * *'
 parameters:
   window: '30'

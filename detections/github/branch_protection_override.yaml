@@ -8,6 +8,8 @@ description: >-
   This is helpful if you're using the Github Free Tier, and don't have Github
   Enterprise.
 file: branch_protection_override.sql
+riskScore: 10
+severity: Low
 categories:
   - github
   - runreveal

@@ -11,6 +11,8 @@ schedule: '*/15 * * * *'
 file: impossible_travel.sql
 categories:
   - signal
+riskScore: 40
+severity: Medium
 mitreAttacks:
   - initial-access
 severity: High

@@ -10,6 +10,8 @@ file: new_tailscale_user.sql
 categories:
   - tailscale
   - runreveal
+severity: Medium
+riskScore: 50
 schedule: '*/15 * * * *'
 sourceTypes:
   - tailscale-audit

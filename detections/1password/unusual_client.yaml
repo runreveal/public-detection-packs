@@ -9,6 +9,7 @@ categories:
   - 1password
   - signal
 severity: Low
+riskScore: 20
 mitreAttacks:
   - credential-access
 sourceTypes:

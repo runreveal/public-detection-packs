@@ -3,14 +3,15 @@ disabled: true
 
 name: okta-anomalous-third-party
 displayName: Anomalous Third Party Activity
-description: Third party in Okta has changed it's pattern of activity
+description: Third party in Okta has changed its pattern of activity
 file: anomalous_third_party.sql
 categories:
   - okta
   - signal
 mitreAttacks:
   - execution
-severity: Medium
+severity: High
+riskScore: 80
 schedule: '*/15 * * * *'
 parameters:
   window: '30'

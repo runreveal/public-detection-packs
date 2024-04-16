@@ -9,6 +9,8 @@ categories:
   - signal
   - okta
 schedule: '*/15 * * * *'
+severity: High
+riskScore: 80
 sourceTypes:
   - okta
 mitreAttacks:
