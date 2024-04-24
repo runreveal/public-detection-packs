@@ -1,3 +1,5 @@
-SELECT * from notion_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and eventName='workspace.settings.publc_homepage_added'
+SELECT *
+FROM notion_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (eventName = 'workspace.settings.publc_homepage_added')
+;
+

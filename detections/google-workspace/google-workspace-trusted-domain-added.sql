@@ -1,8 +1,8 @@
 SELECT
-  JSONExtractArrayRaw(arrayElement(JSONExtractArrayRaw(rawLog, 'events'), 1), 'parameters') as parameters,
-  JSONExtractString(arrayElement(arrayFilter(x->JSONExtractString(x, 'name') = 'DOMAIN_NAME', parameters), 1), 'value') as trusted_domain,
-  *
-from google_workspace_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and eventName='ADD_TRUSTED_DOMAINS'
+    JSONExtractArrayRaw(JSONExtractArrayRaw(rawLog, 'events')[1], 'parameters') AS parameters,
+    JSONExtractString(arrayFilter(x -> (JSONExtractString(x, 'name') = 'DOMAIN_NAME'), parameters)[1], 'value') AS trusted_domain,
+    *
+FROM google_workspace_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (eventName = 'ADD_TRUSTED_DOMAINS')
+;
 

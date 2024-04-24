@@ -1,3 +1,5 @@
-SELECT * from google_workspace_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-AND eventName='CREATE_ROLE' AND rawLog like '%DELEGATED_ADMIN_SETTINGS%'
+SELECT *
+FROM google_workspace_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (eventName = 'CREATE_ROLE') AND (rawLog LIKE '%DELEGATED_ADMIN_SETTINGS%')
+;
+

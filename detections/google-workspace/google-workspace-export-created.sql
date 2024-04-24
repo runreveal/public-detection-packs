@@ -1,6 +1,8 @@
-SELECT 
-  distinct on (eventName, `actor.email`)
-  *
-from google_workspace_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and eventName='CUSTOMER_TAKEOUT_CREATED'
+SELECT *
+FROM google_workspace_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (eventName = 'CUSTOMER_TAKEOUT_CREATED')
+LIMIT 1 BY
+    eventName,
+    `actor.email`
+;
+

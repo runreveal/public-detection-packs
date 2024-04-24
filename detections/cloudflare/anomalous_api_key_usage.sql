@@ -1,40 +1,25 @@
-WITH OLD AS (
-        select 
-        actorEmail oldactor,
-        arrayDistinct(
-            groupArray(srcASOrganization)
-        ) asOrg 
-        from 
-        cf_audit_logs
-        where 
-        eventTime BETWEEN now() - INTERVAL 1 MONTH 
-        AND now() - INTERVAL 30 MINUTE
-        AND lower(interface) LIKE '%api%' 
-        AND srcIP!=''
-        group by 
-        actorEmail
-    ) 
-SELECT 
-    DISTINCT actor, 
-    srcASOrganization, 
-    if(
-    isNull(oldactor) = 0, 
-    'true', 
-    'false'
-    ) newActor
-FROM 
+WITH OLD AS
     (
-    SELECT 
-        DISTINCT actorEmail actor, 
-        srcASOrganization 
-    from 
-        cf_audit_logs
-    where 
-        eventTime >= now() - INTERVAL 30 MINUTE
-        AND lower(interface) like '%api%'
-        AND srcIP!=''
-        AND srcASOrganization IS NOT NULL
-    ) lastThirty
-    LEFT OUTER JOIN OLD ON lastThirty.actor = OLD.oldactor
-WHERE 
-    has(asOrg, srcASOrganization) = 0;
+        SELECT
+            actorEmail AS oldactor,
+            arrayDistinct(groupArray(srcASOrganization)) AS asOrg
+        FROM cf_audit_logs
+        WHERE ((eventTime >= (now() - toIntervalMonth(1))) AND (eventTime <= (now() - toIntervalMinute(30)))) AND (lower(interface) LIKE '%api%') AND (srcIP != '')
+        GROUP BY actorEmail
+    )
+SELECT DISTINCT
+    actor,
+    srcASOrganization,
+    if((oldactor IS NULL) = 0, 'true', 'false') AS newActor
+FROM
+(
+    SELECT DISTINCT
+        actorEmail AS actor,
+        srcASOrganization
+    FROM cf_audit_logs
+    WHERE (eventTime >= (now() - toIntervalMinute(30))) AND (lower(interface) LIKE '%api%') AND (srcIP != '') AND (srcASOrganization IS NOT NULL)
+) AS lastThirty
+LEFT JOIN OLD ON lastThirty.actor = OLD.oldactor
+WHERE has(asOrg, srcASOrganization) = 0
+;
+

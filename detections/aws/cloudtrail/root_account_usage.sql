@@ -1,2 +1,5 @@
-select * from cloudtrail_logs where (userIdentity.type='Root' and
-  userAgent!='AWS Internal') and receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
+SELECT *
+FROM cloudtrail_logs
+WHERE ((userIdentity.type = 'Root') AND (userAgent != 'AWS Internal')) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime}))
+;
+

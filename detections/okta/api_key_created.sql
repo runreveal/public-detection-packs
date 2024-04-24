@@ -1,2 +1,5 @@
-select * from okta_logs where eventType IN ('system.api_token.create') and
-  receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
+SELECT *
+FROM okta_logs
+WHERE (eventType IN ('system.api_token.create')) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime}))
+;
+

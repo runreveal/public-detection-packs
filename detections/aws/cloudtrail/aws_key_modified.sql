@@ -1,2 +1,5 @@
-select * from cloudtrail_logs where eventName in ('UpdateAccessKey',
-  'CreateAccessKey', 'DeleteAccessKey') and receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
+SELECT *
+FROM cloudtrail_logs
+WHERE (eventName IN ('UpdateAccessKey', 'CreateAccessKey', 'DeleteAccessKey')) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime}))
+;
+
