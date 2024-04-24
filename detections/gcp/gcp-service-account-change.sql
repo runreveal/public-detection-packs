@@ -1,8 +1,15 @@
-SELECT * from gcp_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and arrayExists(
-    x -> JSONExtractString(x, 'permission') != 'iam.serviceAccountKeys.create' and
-         JSONExtractString(x, 'permission') like 'iam.serviceAccountKeys.%',
-    authorizationInfo
-);
+SELECT
+    *
+FROM
+    gcp_logs
+WHERE
+    receivedAt > {from :DateTime }
+    AND receivedAt < {to :DateTime }
+    AND arrayExists(x ->(JSONExtractString(x, 'permission') != 'iam.serviceAccountKeys.create'
+            AND JSONExtractString(x, 'permission')
+            LIKE 'iam.serviceAccountKeys.%')
+        OR (JSONExtractString(x, 'permission') != 'iam.serviceAccounts.create'
+            AND JSONExtractString(x, 'permission')
+            LIKE 'iam.serviceAccounts.%'), authorizationInfo)
+    AND arrayExists(x -> JSONExtractString(x, 'granted') = 'true', authorizationInfo);
 
