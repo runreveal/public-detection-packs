@@ -16,3 +16,5 @@ severity: Medium
 mitreAttacks:
   - initial-access
 severity: High
+parameters:
+  excludeCIDRs: '[]'
