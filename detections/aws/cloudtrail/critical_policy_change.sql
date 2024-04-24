@@ -1,3 +1,5 @@
-select * from cloudtrail_logs where eventName in
-  ('AuthorizeSecurityGroupIngress','PutKeyPolicy','PutBucketPolicy','UpdateAssumeRolePolicy','AttachUserPolicy','PutRolePolicy','PutGroupPolicy')
-  and receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
+SELECT *
+FROM cloudtrail_logs
+WHERE (eventName IN ('AuthorizeSecurityGroupIngress', 'PutKeyPolicy', 'PutBucketPolicy', 'UpdateAssumeRolePolicy', 'AttachUserPolicy', 'PutRolePolicy', 'PutGroupPolicy')) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime}))
+;
+

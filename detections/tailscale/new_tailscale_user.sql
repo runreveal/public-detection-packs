@@ -1,28 +1,51 @@
-SELECT acceptTime, acceptUser, inviteAt, invitedBy, 'INVITE LINK' inviteFrom
-    FROM
-
-    (SELECT eventTime acceptTime, `actor.loginName` acceptUser, `target.id`
-    inviteID
-
+SELECT
+    acceptTime,
+    acceptUser,
+    inviteAt,
+    invitedBy,
+    'INVITE LINK' AS inviteFrom
+FROM
+(
+    SELECT
+        eventTime AS acceptTime,
+        `actor.loginName` AS acceptUser,
+        `target.id` AS inviteID
     FROM tailscale_audit_logs
-
-    WHERE eventName = 'ACCEPT_INVITE' AND acceptTime BETWEEN {from:DateTime} AND
-    {to:DateTime}) accept INNER JOIN
-        (SELECT eventTime inviteAt, `actor.loginName` invitedBy, `target.id` inviteID
-        FROM tailscale_audit_logs
-        WHERE eventName = 'CREATE_INVITE') create ON accept.inviteID = create.inviteID
-    UNION ALL
-
-    SELECT acceptTime, acceptUser, createTime, createUser, 'EMAIL INVITE'
-    inviteFrom FROM
-
-    (SELECT eventTime acceptTime, `actor.loginName` acceptUser, `target.name`
-    inviteName
-
+    WHERE (eventName = 'ACCEPT_INVITE') AND ((acceptTime >= {from:DateTime}) AND (acceptTime <= {to:DateTime}))
+) AS accept
+INNER JOIN
+(
+    SELECT
+        eventTime AS inviteAt,
+        `actor.loginName` AS invitedBy,
+        `target.id` AS inviteID
     FROM tailscale_audit_logs
+    WHERE eventName = 'CREATE_INVITE'
+) AS create ON accept.inviteID = create.inviteID
+UNION ALL
+SELECT
+    acceptTime,
+    acceptUser,
+    createTime,
+    createUser,
+    'EMAIL INVITE' AS inviteFrom
+FROM
+(
+    SELECT
+        eventTime AS acceptTime,
+        `actor.loginName` AS acceptUser,
+        `target.name` AS inviteName
+    FROM tailscale_audit_logs
+    WHERE (eventName = 'CREATE_USER') AND ((acceptTime >= {from:DateTime}) AND (acceptTime <= {to:DateTime}))
+) AS accept
+INNER JOIN
+(
+    SELECT
+        eventTime AS createTime,
+        `actor.loginName` AS createUser,
+        `target.name` AS inviteName
+    FROM tailscale_audit_logs
+    WHERE eventName = 'INVITE_USER'
+) AS create ON accept.inviteName = create.inviteName
+;
 
-    WHERE eventName = 'CREATE_USER' AND acceptTime BETWEEN {from:DateTime} AND
-    {to:DateTime}) accept INNER JOIN
-        (SELECT eventTime createTime, `actor.loginName` createUser, `target.name` inviteName
-        FROM tailscale_audit_logs
-        WHERE eventName = 'INVITE_USER') create ON accept.inviteName = create.inviteName

@@ -1,3 +1,5 @@
-SELECT * from gcp_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and methodName != 'storage.buckets.create' and methodName like 'storage.buckets.%'
+SELECT *
+FROM gcp_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (methodName != 'storage.buckets.create') AND (methodName LIKE 'storage.buckets.%')
+;
+

@@ -1,4 +1,5 @@
-SELECT * from notion_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and eventName='teamspace.permissions.member_added'
-and JSONExtractString(detail, 'role') = 'owner'
+SELECT *
+FROM notion_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (eventName = 'teamspace.permissions.member_added') AND (JSONExtractString(detail, 'role') = 'owner')
+;
+

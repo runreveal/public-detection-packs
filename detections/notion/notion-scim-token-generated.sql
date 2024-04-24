@@ -1,3 +1,5 @@
-SELECT * from notion_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and eventName='workspace.scim_token_generated'
+SELECT *
+FROM notion_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (eventName = 'workspace.scim_token_generated')
+;
+

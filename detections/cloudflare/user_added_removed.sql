@@ -1,2 +1,5 @@
-select * from cf_audit_logs where eventName in ('add_member',
-  'accept_member', 'account_member_delete') and receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
+SELECT *
+FROM cf_audit_logs
+WHERE (eventName IN ('add_member', 'accept_member', 'account_member_delete')) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime}))
+;
+

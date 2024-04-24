@@ -1,3 +1,5 @@
-SELECT * from google_workspace_logs
-where receivedAt > {from:DateTime} and receivedAt < {to:DateTime}
-and id.applicationName = 'admin' and eventName='CHANGE_PASSWORD'
+SELECT *
+FROM google_workspace_logs
+WHERE (receivedAt > {from:DateTime}) AND (receivedAt < {to:DateTime}) AND (id.applicationName = 'admin') AND (eventName = 'CHANGE_PASSWORD')
+;
+

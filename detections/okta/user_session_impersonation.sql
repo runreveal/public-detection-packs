@@ -1,3 +1,5 @@
-select *  from okta_logs where eventType in
-  ('user.session.impersonation.grant', 'user.session.impersonation.initiate')
-  and receivedAt BETWEEN {from:DateTime} AND {to:DateTime}
+SELECT *
+FROM okta_logs
+WHERE (eventType IN ('user.session.impersonation.grant', 'user.session.impersonation.initiate')) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime}))
+;
+
