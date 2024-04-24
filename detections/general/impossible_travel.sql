@@ -30,12 +30,13 @@ FROM
         ) AND (
             receivedAt >= ({from:DateTime} - toIntervalHour(24))
         ) AND (
-            sourceType != 'gsuite'
+            sourceType NOT IN ['gsuite', 'flow']
         ) AND (
-            sourceType != 'flow'
-        ) AND (
-            empty(arrayFilter(x -> isIPAddressInRange(srcIP, x), {excludeCIDRs:Array(String)}))
-            AND empty(arrayFilter(x -> isIPAddressInRange(dstIP, x), {excludeCIDRs:Array(String)}))
+            NOT (
+              (isIPv4String(srcIP) AND notEmpty(arrayFilter(x -> isIPAddressInRange(srcIP, x), {excludeV4CIDRs:Array(String)})))
+              OR
+              (isIPv6String(srcIP) AND notEmpty(arrayFilter(x -> isIPAddressInRange(srcIP, x), {excludeV6CIDRs:Array(String)})))
+            )
         )
     )
 )
