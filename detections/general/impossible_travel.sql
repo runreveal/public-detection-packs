@@ -33,9 +33,9 @@ FROM
             sourceType NOT IN ['gsuite', 'flow']
         ) AND (
             NOT (
-              (isIPv4String(srcIP) AND notEmpty(arrayFilter(x -> isIPAddressInRange(srcIP, x), {excludeV4CIDRs:Array(String)})))
+              (isIPv4String(srcIP) AND notEmpty(arrayFilter(x -> isIPAddressInRange(srcIP, x), {excludeIPv4CIDRs:Array(String)})))
               OR
-              (isIPv6String(srcIP) AND notEmpty(arrayFilter(x -> isIPAddressInRange(srcIP, x), {excludeV6CIDRs:Array(String)})))
+              (isIPv6String(srcIP) AND notEmpty(arrayFilter(x -> isIPAddressInRange(srcIP, x), {excludeIPv6CIDRs:Array(String)})))
             )
         )
     )
