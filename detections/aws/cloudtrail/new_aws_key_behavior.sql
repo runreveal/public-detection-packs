@@ -8,7 +8,7 @@ FROM
             SELECT DISTINCT
                 `userIdentity.accessKeyId` AS accessKeyId,
                 groupUniqArray(eventName) AS eventNames
-            FROM cloudtrail_logs
+            FROM aws_cloudtrail_logs
             WHERE ((eventTime >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (eventTime <= {from:DateTime})) AND (accessKeyId LIKE 'AKIA%')
             GROUP BY accessKeyId
         )
@@ -18,7 +18,7 @@ FROM
         srcIP,
         groupUniqArray(eventName) AS eventNames,
         groupUniqArrayArray(resources)
-    FROM cloudtrail_logs
+    FROM aws_cloudtrail_logs
     LEFT JOIN arns_and_events ON arns_and_events.accessKeyId = accessKeyId
     WHERE ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime})) AND (eventName != '') AND (accessKeyId LIKE 'AKIA%') AND (NOT has(arns_and_events.eventNames, eventName))
     GROUP BY
