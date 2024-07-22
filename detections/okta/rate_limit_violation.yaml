@@ -6,6 +6,7 @@ displayName: Rate limit violation
 file: rate_limit_violation.sql
 description: User received a ratelimit violation within okta
 categories:
+  - runreveal-detection
   - okta
   - signal
 mitreAttacks:

@@ -6,6 +6,7 @@ displayName: 1Password Unusual Client
 file: unusual_client.sql
 description: This detects 1Password access from a client app and platform combination that the user has not previously accessed 1Password from.
 categories:
+  - runreveal-detection
   - 1password
   - signal
 severity: Low

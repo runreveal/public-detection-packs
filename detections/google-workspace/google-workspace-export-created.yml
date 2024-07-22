@@ -6,6 +6,7 @@ displayName: Workspace export activity
 description: Detects when a user exports data from Google Workspace.
 file: google-workspace-export-created.sql
 categories:
+  - runreveal-detection
   - signal
   - google-workspace
   - gsuite

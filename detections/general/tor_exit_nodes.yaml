@@ -8,6 +8,7 @@ description: >-
   This IP enrichment looks for events where the IP address was associated with
   a known TOR exit node.
 categories:
+  - runreveal-detection
   - enrichment
   - signal
 riskScore: 90

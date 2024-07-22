@@ -6,6 +6,7 @@ displayName: Bucket Created or Deleted
 description: Monitor for bucket creation or deletion
 file: bucket_created_deleted.sql
 categories:
+  - runreveal-detection
   - cloudtrail
 schedule: '*/15 * * * *'
 riskScore: 60

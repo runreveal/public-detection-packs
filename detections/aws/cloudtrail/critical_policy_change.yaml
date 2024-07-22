@@ -6,6 +6,7 @@ displayName: Critical Policy Changes
 description: Monitor for critical policy changes of your AWS assets.
 file: critical_policy_change.sql
 categories:
+  - runreveal-detection
   - cloudtrail
 schedule: '*/15 * * * *'
 severity: Medium

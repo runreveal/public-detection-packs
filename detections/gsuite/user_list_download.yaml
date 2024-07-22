@@ -9,6 +9,7 @@ description: >
   alerts.
 file: user_list_download.sql
 categories:
+  - runreveal-detection
   - gsuite
   - runreveal
 severity: Medium

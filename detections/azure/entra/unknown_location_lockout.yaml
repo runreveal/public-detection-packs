@@ -8,6 +8,7 @@ description: >
   their account from an unknown IP address.
 file: unknown_location_lockout.sql
 categories:
+  - runreveal-detection
   - entra
   - azure
   - aad

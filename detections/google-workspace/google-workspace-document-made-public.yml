@@ -6,6 +6,7 @@ displayName: Document made public
 description: A google document was made public
 file: google-workspace-document-made-public.sql
 categories:
+  - runreveal-detection
   - signal
   - google-workspace
   - gsuite

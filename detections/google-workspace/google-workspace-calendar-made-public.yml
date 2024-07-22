@@ -6,6 +6,7 @@ displayName: Calendar made public
 description: Detects when a Google Workspace calendar is made public
 file: google-workspace-calendar-made-public.sql
 categories:
+  - runreveal-detection
   - signal
   - google-workspace
   - gsuite

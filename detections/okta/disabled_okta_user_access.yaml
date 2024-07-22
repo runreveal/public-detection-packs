@@ -8,6 +8,7 @@ description: >-
   past 90 days, appears in any other log.
 file: disabled_okta_user_access.sql
 categories:
+  - runreveal-detection
   - okta
   - runreveal
 riskScore: 50

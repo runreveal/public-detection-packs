@@ -10,6 +10,7 @@ description: >-
 schedule: '*/15 * * * *'
 file: impossible_travel.sql
 categories:
+  - runreveal-detection
   - signal
 riskScore: 40
 severity: Medium

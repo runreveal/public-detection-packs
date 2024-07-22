@@ -8,6 +8,7 @@ description: >-
   who invited them, and how the user was invited.
 file: new_tailscale_user.sql
 categories:
+  - runreveal-detection
   - tailscale
   - runreveal
 severity: Medium

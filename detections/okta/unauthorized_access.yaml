@@ -10,6 +10,7 @@ description: >-
   authenticated user that accessed your system from these IPs.
 file: unauthorized_access.sql
 categories:
+  - runreveal-detection
   - okta
 riskScore: 90
 severity: Critical

@@ -6,6 +6,7 @@ displayName: Okta User Reported Suspicious Activity
 description: Suspicious activity reported by end user
 file: user_suspicious_report.sql
 categories:
+  - runreveal-detection
   - signal
   - okta
 riskScore: 50

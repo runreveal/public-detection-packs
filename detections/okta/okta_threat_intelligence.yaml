@@ -6,6 +6,7 @@ displayName: Okta's Threat Intelligence
 description: Alert on suspicious activity detected by Okta's threat intelligence team.
 file: okta_threat_intelligence.sql
 categories:
+  - runreveal-detection
   - okta
 schedule: '*/15 * * * *'
 sourceTypes:

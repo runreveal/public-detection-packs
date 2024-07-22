@@ -6,6 +6,7 @@ displayName: Domain wide application added
 description: Detects when a domain wide application is added to a Google Workspace account
 file: google-workspace-domain-wide-application-added.sql
 categories:
+  - runreveal-detection
   - signal
   - google-workspace
   - gsuite
