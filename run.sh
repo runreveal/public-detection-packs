@@ -21,6 +21,7 @@ displayName: ${NAME}
 description: Enter a description here.
 file: ${slug}.sql
 categories:
+  - runreveal-detection
   - signal
   - ${SOURCE}
 mitreAttacks:

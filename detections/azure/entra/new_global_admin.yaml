@@ -8,6 +8,7 @@ description: >
   in Entra. Other roles can be added to the parameter to alert on.
 file: new_global_admin.sql
 categories:
+  - runreveal-detection
   - entra
   - azure
   - aad

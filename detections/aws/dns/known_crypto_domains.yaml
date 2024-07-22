@@ -8,6 +8,7 @@ description: >
   crypto domain.
 file: known_crypto_domains.sql
 categories:
+  - runreveal-detection
   - awsdns
   - runreveal
 schedule: '*/15 * * * *'

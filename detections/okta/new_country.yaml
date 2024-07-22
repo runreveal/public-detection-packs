@@ -8,6 +8,7 @@ description: >-
     accessed okta from
 file: new_country.sql
 categories:
+  - runreveal-detection
   - okta
   - signal
 mitreAttacks:

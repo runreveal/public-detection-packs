@@ -6,6 +6,7 @@ displayName: User added or removed from Cloudflare account
 description: A user was either added to or removed from your Cloudflare account.
 file: user_added_removed.sql
 categories:
+  - runreveal-detection
   - cloudflare
   - cf-audit
 schedule: '*/15 * * * *'

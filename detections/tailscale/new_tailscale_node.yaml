@@ -8,6 +8,7 @@ description: >
   set it to include nodes that are tagged as ephemeral.
 file: new_tailscale_node.sql
 categories:
+  - runreveal-detection
   - tailscale
   - runreveal
 riskScore: 50

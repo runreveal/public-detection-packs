@@ -6,6 +6,7 @@ displayName: AWS Key Created, Modified, or Deleted
 description: Monitor for critical lifecycle events of AWS keys
 file: aws_key_modified.sql
 categories:
+  - runreveal-detection
   - cloudtrail
 schedule: '*/15 * * * *'
 severity: Medium

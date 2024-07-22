@@ -6,6 +6,7 @@ displayName: Okta User Session Impersonation
 description: Someone has impersonated a user session
 file: user_session_impersonation.sql
 categories:
+  - runreveal-detection
   - signal
   - okta
 schedule: '*/15 * * * *'

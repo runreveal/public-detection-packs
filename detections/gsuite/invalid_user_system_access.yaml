@@ -9,6 +9,7 @@ description: >
   log.
 file: invalid_user_system_access.sql
 categories:
+  - runreveal-detection
   - gsuite
   - runreveal
 severity: High

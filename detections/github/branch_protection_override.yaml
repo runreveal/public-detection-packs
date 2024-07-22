@@ -11,6 +11,7 @@ file: branch_protection_override.sql
 riskScore: 10
 severity: Low
 categories:
+  - runreveal-detection
   - github
   - runreveal
 schedule: '*/15 * * * *'

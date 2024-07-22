@@ -6,6 +6,7 @@ displayName: Okta API Key Created
 description: Alert on the creation of a new okta API key.
 file: api_key_created.sql
 categories:
+  - runreveal-detection
   - okta
 schedule: '*/15 * * * *'
 riskScore: 90

@@ -6,6 +6,7 @@ displayName: Single Sign-On setings updated
 description: Detects when the Single Sign-On settings are updated in Notion
 file: notion-single-sign-on-setings-updated.sql
 categories:
+  - runreveal-detection
   - signal
   - notion
 mitreAttacks:

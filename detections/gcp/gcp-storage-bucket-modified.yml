@@ -6,6 +6,7 @@ displayName: storage-bucket-modified
 description: GCS bucket modified or deleted
 file: gcp-storage-bucket-modified.sql
 categories:
+  - runreveal-detection
   - signal
   - gcp
   - gcplogs
