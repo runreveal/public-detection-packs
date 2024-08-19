@@ -1,0 +1,14 @@
+name: okta_login_new_ipyml
+displayName: okta_login_new_ip.yml
+description: Detection for when an Okta Login has successfully occured from an IP that has not been recently seen from CrowdStrike
+file: okta_login_new_ipyml.sql
+categories:
+- okta
+- crowdstrike
+- signal
+schedule: "*/15 * * * *"
+notificationNames: []
+mitreAttacks:
+- initial-access
+severity: Medium
+riskScore: 50
