@@ -1,0 +1,28 @@
+name: okta-multiple-devices-added-from-one-location
+displayName: Okta Multiple Devices Added From One Location
+type: sql
+description: >-
+  This detection shows multiple users added a new device from the same IP
+  address with a whitelist to exclude an office IP address space, indicating
+  likelyhood that multiple users could have been compromised by one threat
+  actor.
+file: okta-multiple-devices-added-from-one-location.sql
+categories:
+  - okta
+sourceTypes: []
+schedule: '*/15 * * * *'
+notes: ''
+parameters:
+  deviceThreshold: '3'
+  from: '2024-08-28 00:28:53'
+  interval: '7'
+  officeCIDR: 127.0.0.1/32
+  to: '2024-08-28 00:28:53'
+disabled: true
+notificationNames: []
+mitreAttacks:
+  - initial-access
+  - privilege-escalation
+  - lateral-movement
+severity: Medium
+riskScore: 0

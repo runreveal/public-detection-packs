@@ -1,0 +1,22 @@
+name: okta-policy-changes
+displayName: Okta Policy Changes
+type: sql
+description: >-
+  This signal represents any changes made to Okta policies, including lifecycle,
+  rule and application sign on policies.
+file: okta-policy-changes.sql
+categories:
+  - okta
+sourceTypes: []
+schedule: '*/15 * * * *'
+notes: ''
+parameters:
+  from: '2024-08-30 03:05:01'
+  to: '2024-08-30 03:05:01'
+disabled: true
+notificationNames: []
+mitreAttacks:
+  - privilege-escalation
+  - persistence
+severity: medium
+riskScore: 0
