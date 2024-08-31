@@ -6,12 +6,8 @@ displayName: Okta API Key Created
 description: Alert on the creation of a new okta API key.
 file: okta-api-token-creation.sql
 categories: []
-sourceTypes: []
 schedule: '*/15 * * * *'
 notes: ''
-parameters:
-  from: '2024-08-27 19:21:21'
-  to: '2024-08-27 19:21:21'
 notificationNames: []
 mitreAttacks:
   - persistence
@@ -19,3 +15,5 @@ mitreAttacks:
   - credential-access
 severity: medium
 riskScore: 90
+sourceTypes:
+  - okta

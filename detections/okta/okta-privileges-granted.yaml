@@ -4,14 +4,12 @@ type: sql
 description: This signals whenever a new okta privilege was granted to a user or group.
 file: okta-privileges-granted.sql
 categories: []
-sourceTypes: []
 schedule: '*/15 * * * *'
 notes: ''
-parameters:
-  from: '2024-08-30 03:16:14'
-  to: '2024-08-30 03:16:14'
 disabled: true
 notificationNames: []
 mitreAttacks: []
 severity: Medium
 riskScore: 0
+sourceTypes:
+  - okta

@@ -7,12 +7,8 @@ description: >-
   proceeding the time the detection is run.
 file: okta-auth-change-then-multi-app-access.sql
 categories: []
-sourceTypes: []
 schedule: '*/15 * * * *'
 notes: ''
-parameters:
-  from: '2024-08-28 18:21:15'
-  to: '2024-08-28 18:21:15'
 disabled: true
 notificationNames: []
 mitreAttacks:
@@ -22,3 +18,5 @@ mitreAttacks:
   - credential-access
 severity: medium
 riskScore: 0
+sourceTypes:
+  - okta
