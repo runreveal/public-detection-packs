@@ -9,15 +9,12 @@ description: >-
 file: okta-multiple-devices-added-from-one-location.sql
 categories:
   - okta
-sourceTypes: []
 schedule: '*/15 * * * *'
 notes: ''
 parameters:
   deviceThreshold: '3'
-  from: '2024-08-28 00:28:53'
   interval: '7'
   officeCIDR: 127.0.0.1/32
-  to: '2024-08-28 00:28:53'
 disabled: true
 notificationNames: []
 mitreAttacks:
@@ -26,3 +23,5 @@ mitreAttacks:
   - lateral-movement
 severity: Medium
 riskScore: 0
+sourceTypes:
+  - okta

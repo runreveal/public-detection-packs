@@ -9,15 +9,12 @@ description: >-
   threshold for number of devices added.
 file: multiple-devices-added-to-okta.sql
 categories: []
-sourceTypes: []
 schedule: 0 * * * *
 notes: ''
 parameters:
   deviceThreshold: '3'
-  from: '2024-08-27 21:15:36'
   interval: '7'
   table: logs
-  to: '2024-08-27 21:15:36'
 disabled: false
 notificationNames: []
 mitreAttacks:
@@ -28,3 +25,5 @@ mitreAttacks:
   - privilege-escalation
 severity: medium
 riskScore: 0
+sourceTypes:
+  - okta
