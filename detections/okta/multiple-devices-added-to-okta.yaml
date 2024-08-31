@@ -1,0 +1,30 @@
+name: multiple-devices-added-to-okta
+displayName: Multiple Devices Added to Okta
+description: >-
+  This signal shows users who have added more than one device in the time frame
+  given by parameter `interval` days.
+
+
+  It only shows the most recent events, i.e. the events that crossed the
+  threshold for number of devices added.
+file: multiple-devices-added-to-okta.sql
+categories: []
+sourceTypes: []
+schedule: 0 * * * *
+notes: ''
+parameters:
+  deviceThreshold: '3'
+  from: '2024-08-27 21:15:36'
+  interval: '7'
+  table: logs
+  to: '2024-08-27 21:15:36'
+disabled: false
+notificationNames: []
+mitreAttacks:
+  - initial-access
+  - credential-access
+  - discovery
+  - lateral-movement
+  - privilege-escalation
+severity: medium
+riskScore: 0
