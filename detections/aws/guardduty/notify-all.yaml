@@ -1,0 +1,12 @@
+title: Notify on all Guardduty events
+description: Send a notification when receiving any event from a Guardduty source
+logsource:
+    product: aws
+    service: guardduty
+detection:
+    selection:
+        keywords: '*'
+    condition: selection
+level: medium
+notificationnames:
+  - email
