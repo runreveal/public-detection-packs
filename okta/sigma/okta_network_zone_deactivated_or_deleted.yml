@@ -1,0 +1,27 @@
+title: Okta Network Zone Deactivated or Deleted
+id: 9f308120-69ed-4506-abde-ac6da81f4310
+description: Detects when an Network Zone is Deactivated or Deleted.
+references:
+    - https://developer.okta.com/docs/reference/api/system-log/
+    - https://developer.okta.com/docs/reference/api/event-types/
+author: Austin Songer @austinsonger
+date: 2021-09-12
+modified: 2022-10-09
+tags:
+    - attack.impact
+sourcetypes:
+    - okta
+categories:
+    - okta
+mitreattacks:
+    - persistence
+detection:
+    selection:
+        eventtype:
+            - zone.deactivate
+            - zone.delete
+    condition: selection
+falsepositives:
+    - Unknown
+level: medium
+riskscore: 50
