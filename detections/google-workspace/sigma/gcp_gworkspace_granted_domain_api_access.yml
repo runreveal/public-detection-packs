@@ -20,7 +20,7 @@ detection:
 falsepositives:
     - Unknown
 level: medium
-risk_score: 75
+riskscore: 75
 mitreattacks:
     - persistence
     - privilege-escalation

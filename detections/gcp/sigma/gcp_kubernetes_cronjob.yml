@@ -27,7 +27,7 @@ falsepositives:
     - Google Cloud Kubernetes CronJob/Job may be done by a system administrator.
     - If known behavior is causing false positives, it can be exempted from the rule.
 level: medium
-risk_score: 50
+riskscore: 50
 mitreattacks:
     - persistence
     - privilege-escalation
