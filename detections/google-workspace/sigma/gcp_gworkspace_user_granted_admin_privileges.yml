@@ -22,7 +22,7 @@ detection:
 falsepositives:
     - Google Workspace admin role privileges, may be modified by system administrators.
 level: medium
-risk_score: 50
+riskscore: 50
 mitreattacks:
     - persistence
     - privilege-escalation

@@ -22,6 +22,6 @@ detection:
 falsepositives:
     - Application being removed may be performed by a System Administrator.
 level: medium
-risk_score: 50
+riskscore: 50
 mitreattacks:
     - impact

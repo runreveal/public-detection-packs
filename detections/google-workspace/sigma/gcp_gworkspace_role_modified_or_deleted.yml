@@ -22,6 +22,6 @@ detection:
 falsepositives:
     - Unknown
 level: medium
-risk_score: 50
+riskscore: 50
 mitreattacks:
     - persistence
