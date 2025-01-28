@@ -1,0 +1,17 @@
+title: Tor Network Traffic
+description: Detect threats from Tor network traffic using RunReveal managed enrichment data.
+sourcetypes:
+  - cf-gateway-dns
+  - cf-gateway-http
+  - flow
+  - nsg-flow
+detection:
+    selection1:
+        enrichments.ip_threat_intel.tor-node: true
+    selection2:
+        enrichments.ip_threat_intel.tor-exit: true
+    condition: selection1 or selection2
+level: high
+riskscore: 80
+
+  
