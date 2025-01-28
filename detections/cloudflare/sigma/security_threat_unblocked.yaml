@@ -14,8 +14,8 @@ detection:
       QueryCategoryNames|contains:
         - "Security threats"
     filter:
-      ResolverDecision: blocked
-    condition: selection
+      ResolverDecision: blockedRule
+    condition: selection and not filter
 falsepositives:
     - False positives are possible if the security threat is detected by Cloudflare but not blocked.
 level: medium
