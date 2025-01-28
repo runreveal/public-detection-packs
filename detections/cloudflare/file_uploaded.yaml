@@ -1,0 +1,15 @@
+disabled: false
+name: file-uploaded
+displayName: File Uploaded
+description: A file was uploaded through Cloudflare gateway.
+file: file_uploaded.sql
+categories: 
+  - cloudflare
+  - cf-gateway-http
+schedule: '*/15 * * * *'
+riskScore: 30
+severity: Low
+sourceTypes:
+  - cf-gateway-http
+mitreAttacks:
+  - execution
