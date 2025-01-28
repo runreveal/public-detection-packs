@@ -8,7 +8,7 @@ author: Evan Johnson @ejcx_
 date: 2025-01-27
 modified: 2025-01-27
 sourcetypes:
-    - cf-gateway-dns
+    - cf-gateway-http
 detection:
     selection:
       DestinationPort:
