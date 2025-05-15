@@ -1,0 +1,27 @@
+title: Protected branch settings changes
+id: 9adf620b-4d70-4f22-b2ed-208945944793
+status: experimental
+description: Detects changes in settings related to a protected branch. It is useful when sensitive branches are made unprotected 
+references:
+    - https://docs.gitlab.com/ee/user/project/protected_branches.html
+author: Harjeet Sharma
+date: 2024/06/26
+tags:
+    - attack.impact
+    - gitlab.saas
+    - gitlab.selfmanaged
+logsource:
+    category: application
+    product: gitlab
+    service: audit_json.log
+detection:
+    selection:
+        target_type: 'ProtectedBranch'
+        custom_message|contains : 'Added protected branch'
+    selection2:
+        target_type: 'ProtectedBranch'
+        custom_message|contains : 'Changed allowed to push from'
+    condition: selection or selection2
+falsepositives:
+    - Whenever intentional changes were made by maintainer/owner of the project to protected branches
+level: medium

@@ -1,0 +1,31 @@
+title: Deploy key created
+id: f8092817-3c2e-4c4e-b3e7-299936b2098f
+status: experimental
+description: Detects an event when deploy key is created for self-managed GitLab instances
+references:
+    - https://docs.gitlab.com/17.0/ee/user/project/deploy_keys/index.html
+author: Harjeet Sharma, Laurens Van Dijk
+date: 2024/06/20
+tags:
+    - attack.persistence
+    - attack.exfiltration
+    - gitlab.selfmanaged
+logsource:
+    category: application
+    product: gitlab
+    service: production_json.log
+detection:
+    selection:
+        method:
+            - POST
+        path|contains:
+            - 'deploy_keys'
+        action:
+            - create
+        status:
+            - 302
+    condition: selection
+falsepositives:
+    - Unknown
+    - applicable to GitLab self managed instance only.
+level: high

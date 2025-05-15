@@ -1,0 +1,30 @@
+title: Project visiblity changed to public
+id: f1ef222d-3c21-4963-b7a9-c143ac1e2759
+status: experimental
+description: Detects when a project under a namespace is set to public
+references:
+    - https://docs.gitlab.com/ee/user/public_access.html
+author: Harjeet Sharma
+date: 2024/06/26
+tags:
+    - attack.impact
+    - gitlab.selfmanaged
+logsource:
+    category: application
+    product: gitlab
+    service: production_json.log
+detection:
+    selection:
+        method:
+            - PATCH
+        controller:
+            - ProjectsController
+        action:
+            - update
+        status:
+            - 302
+    condition: selection
+
+falsepositives:
+    - Whenever project is set to public by a maintaine or owner of a group/project due to a business requirement.
+level: medium

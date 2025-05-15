@@ -1,0 +1,30 @@
+title: Project access token created
+id: 6e385f51-0e62-408d-bf65-4badd67626e1
+status: experimental
+description: Detects when a project-level access token is created
+references:
+    - https://docs.gitlab.com/ee/user/project/settings/project_access_tokens.html
+author: Harjeet Sharma
+date: 2024/06/26
+tags:
+    - attack.persistence
+    - gitlab.selfmanaged
+logsource:
+    category: application
+    product: gitlab
+    service: production_json.log
+detection:
+    selection:
+        method:
+            - POST
+        action:
+            - create
+        controller:
+            - 'Projects::Settings::AccessTokensController'
+        status:
+            - 200
+    condition: selection
+
+falsepositives:
+    - Whenever project access token is created by admin/maintainer of a group/project.
+level: high

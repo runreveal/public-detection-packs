@@ -1,0 +1,77 @@
+title: Maintainer or owner permission added to a project
+id: 4dbe7a98-c839-4642-ac1e-4c63a18c3d6d
+status: experimental
+description: Detects an event when a high-privileged role is added to a project
+references:
+    - https://docs.gitlab.com/ee/user/permissions.html
+    - https://docs.gitlab.com/ee/user/project/working_with_projects.html#access-a-project-by-using-the-project-id
+author: Harjeet Sharma, Laurens van Dijk
+date: 2024/06/25
+tags:
+    - attack.privilege_escalation
+    - gitlab.saas
+logsource:
+    category: application
+    product: gitlab
+    service: api_json.log
+detection:
+    maintainer_projects:
+        method:
+            - POST
+        route:
+            - '/api/:version/projects/:id/invitations'
+            - '/api/:version/projects/:id/members'
+        params|contains|all:
+            - 'access_level'
+            - '30'
+        status:
+            - 201
+        # enter project or group id if you want to narrow down the search
+        # path|contains:
+        #     - '123456' 
+    maintainer_groups:
+        method:
+            - POST
+        route:
+            - '/api/:version/groups/:id/invitations'
+            - '/api/:version/groups/:id/members'
+        params|contains:
+            - 'access_level'
+            - '30'
+        #enter project or group id if you want to narrow down the search
+        # path|contains:
+        #     - '123456'
+        status:
+            - 201
+    owner_projects:
+        method:
+            - POST
+        route:
+            - '/api/:version/projects/:id/invitations'
+            - '/api/:version/projects/:id/members'
+        params|contains|all:
+            - 'access_level'
+            - '30'
+        # enter project or group id if you want to narrow down the search
+        # path|contains:
+        #     - '123456'
+        status:
+            - 201
+    owner_groups:
+        method:
+         - POST
+        route:
+            - '/api/:version/groups/:id/invitations'
+            - '/api/:version/groups/:id/members'
+        params|contains:
+            - 'access_level'
+            - '30'
+        status:
+            - 201
+        # enter project or group id if you want to narrow down the search
+        # path|contains:
+        #     - '123456'
+    condition: maintainer_projects or maintainer_groups or owner_projects or owner_groups
+falsepositives:
+    - Unknown
+level: high

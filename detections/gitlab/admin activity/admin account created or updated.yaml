@@ -1,0 +1,52 @@
+title: Admin account created or updated
+id: b4ce3877-8909-493f-9330-1808e271fbf6
+status: experimental
+description: Detects an event when an admin account is created or updated on a GitLab instance.
+references:
+    - https://docs.gitlab.com/ee/user/profile/account/create_accounts.html#create-users-on-sign-in-page
+author: Harjeet Sharma, Laurens van Dijk
+date: 2024/06/17
+tags:
+    - attack.persistence
+    - attack.lateral_movement
+    - gitlab.selfmanaged
+logsource:
+    category: application
+    product: GitLab
+    service: production_json
+detection:
+    create_elevated:
+        method:
+            - POST
+            - PATCH
+        controller:
+            - Admin::UsersController
+        params|contains|all:
+            - access_level
+            - admin
+        status:
+            - 302
+        action:
+            - create
+            - update
+    password_update:
+        method:
+            - PATCH
+        controller:
+            - Admin::UsersController
+        action:
+            - update
+        status:
+            - 302
+    condition: create_elevated or password_update
+fields:
+    - status
+    - method
+    - controller
+    - username
+    - user_id
+    - ua
+    - remote_ip
+falsepositives:
+    - Any BAU activity of creating an admin user on the GitLab instance.
+level: critical

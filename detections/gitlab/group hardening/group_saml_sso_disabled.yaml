@@ -1,0 +1,22 @@
+title: Group SAML SSO Disabled
+id: 260b923f-cf98-4709-b3eb-be3237688e03
+status: experimental
+description: Detects an event when SAML SSO for a group is disabled
+references:
+    - https://docs.gitlab.com/ee/user/group/saml_sso/index.html
+author: Harjeet Sharma
+date: 2024/07/26
+tags:
+    - attack.defense_evasion
+    - gitlab.saas
+logsource:
+    category: application
+    product: gitlab
+    service: audit_log
+detection:
+    selection:
+      custom_message: "Group SAML SSO configuration changed: enforced_sso changed from true to false"
+    condition: selection
+falsepositives:
+    - Unknown
+level: critical

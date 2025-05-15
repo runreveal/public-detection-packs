@@ -1,0 +1,27 @@
+title: MR approval rule created or modified
+id: 5f44c285-fb3f-4c95-b420-1de05ee83445
+status: experimental
+description: Detects when a MR approval rule added or existing rule modified
+references:
+    - https://docs.gitlab.com/ee/user/project/merge_requests/approvals/rules.html
+    - https://docs.gitlab.com/ee/user/project/merge_requests/approvals/settings.html
+author: Harjeet Sharma
+date: 2024/06/26
+tags:
+    - attack.persistence
+    - gitlab.saas
+logsource:
+    category: application
+    product: gitlab
+    service: audit_json.log
+detection:
+    selection:
+        target_type: 'ApprovalProjectRule'
+        custom_message|contains : "approval rule"
+    selection2:
+        target_type: 'ApprovalProjectRule'
+        change: 'number of required approvals'
+    condition: 1 of them
+falsepositives:
+    - Unknown
+level: high

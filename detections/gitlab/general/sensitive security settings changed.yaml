@@ -1,0 +1,80 @@
+title: Sensitive instance security settings changed
+id: 1cf3b767-efea-4cab-987d-c5d760998dca
+status: experimental
+description: Detects changes made to sensitive security settings of the GitLab instance
+references:
+    - https://docs.gitlab.com/ee/administration/silent_mode/#gitlab-silent-mode
+    - https://docs.gitlab.com/ee/administration/settings/visibility_and_access_controls.html#configure-project-visibility-defaults
+    - https://docs.gitlab.com/ee/security/two_factor_authentication.html
+    - https://docs.gitlab.com/ee/administration/settings/sign_up_restrictions.html
+author: Harjeet Sharma
+date: 2024/06/19
+tags:
+    - attack.defense_evasion
+    - attack.t1562
+    - gitlab.selfmanaged
+logsource:
+    category: application
+    product: gitlab
+    # service can be configured with 2 options:
+    # - api_json.log -> silent_mode
+    # - production_json _> #2Fa,#project_visiblity, external_signups
+    service: production_json
+detection:
+    silent_mode:
+        method:
+            - PUT
+        path:
+            - '/api/v4/application/settings'
+        params|contains:
+            - silent_mode_enabled
+        status:
+            - 200
+    project_visiblity:
+        method:
+            - PATCH
+        path:
+            - '/admin/application_settings/general'
+        controller:
+            - 'Admin::ApplicationSettingsController'
+        action:
+            - general
+        status:
+            - 200
+        params|contains:
+            - default_project_creation.*2.*
+            - default_project_visibility.*20*
+            - default_snippet_visibility.*20*
+            - default_group_visibility.*20*
+    two_factor:
+        method:
+            - PATCH
+        path:
+            - '/admin/application_settings/general'
+        controller:
+            - 'Admin::ApplicationSettingsController'
+        action:
+            - general
+        status:
+            - 302
+        params|contains|all:
+            - application_setting
+            - require_two_factor_authentication.*0*
+    external_signups:
+        method:
+            - PATCH
+        path:
+            - '/admin/application_settings/general'
+        controller:
+            - 'Admin::ApplicationSettingsController'
+        action:
+            - general
+        status:
+            - 302
+        params|contains|all:
+            - application_setting
+            - signup_enabled.*1*
+    condition: silent_mode or project_visiblity or two_factor or external_signups  
+falsepositives:
+    - Unknown
+level: critical

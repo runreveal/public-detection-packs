@@ -1,0 +1,22 @@
+title: Account lockout due to untrusted IP login
+id: 24023b58-f2bb-495e-9f3b-807340863418
+status: experimental
+description: Detects multiple login requests from IPs outside the allowlist
+references:
+    - https://docs.gitlab.com/ee/user/group/access_and_permissions.html#restrict-group-access-by-ip-address
+author: Harjeet Sharma
+date: 2024/06/26
+tags:
+    - attack.reconnaissance
+    - gitlab.saas
+logsource:
+    category: application
+    product: gitlab
+    service: audit_json.log
+detection:
+    selection:
+        custom_message: "User access locked - sign in from untrusted IP address"
+    condition: selection
+falsepositives:
+    - Unknown
+level: low

@@ -1,0 +1,23 @@
+title: Account lockout due to bruteforce attempts
+id: 2ada6eed-596d-4263-81f7-79f47a29ab9e
+status: experimental
+description: Detects account lockout due to brute force attempts
+references:
+    - https://docs.gitlab.com/ee/user/group/access_and_permissions.html#restrict-group-access-by-ip-address
+author: Harjeet Sharma
+date: 2024/06/26
+tags:
+    - attack.impact
+    - gitlab.saas
+
+logsource:
+    category: application
+    product: gitlab
+    service: audit_json.log
+detection:
+    selection:
+        custom_message: "User access locked - excessive failed login attempts"
+    condition: selection
+falsepositives:
+    - Unknown
+level: medium

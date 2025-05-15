@@ -1,0 +1,27 @@
+title: MR approval settings changed
+id: 70c09110-1b39-4540-a9f4-0ce0d960263d
+status: experimental
+description: Detects changes in settings related to MR approvals
+references:
+    - https://docs.gitlab.com/ee/user/project/merge_requests/approvals/settings.html
+author: Harjeet Sharma
+date: 2024/06/26
+tags:
+    - attack.defense_evasion
+    - gitlab.saas
+    - gitlab.selfmanaged
+logsource:
+    category: application
+    product: gitlab
+    service: audit_json.log
+detection:
+    selection:
+        change:
+            - prevent merge request approval from authors
+            - prevent merge request approval from committers
+            - prevent users from modifying MR approval rules in merge requests
+            - require new approvals when new commits are added to an MR
+    condition: selection
+falsepositives:
+    - Unknown
+level: critical
