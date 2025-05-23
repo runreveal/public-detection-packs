@@ -1,0 +1,16 @@
+name: jumpcloud-admin-login-after-unsuspension
+displayName: JumpCloud Admin Authentication After Unsuspension
+file: admin_login_after_unsuspension.sql
+description: Detects admin authentication events in JumpCloud that are preceded by admin unsuspension within 1 hour
+categories:
+  - runreveal-detection
+  - jumpcloud
+  - signal
+mitreAttacks:
+  - initial-access
+  - privilege-escalation
+severity: Medium
+riskScore: 50
+schedule: '*/15 * * * *'
+sourceTypes:
+  - jumpcloud

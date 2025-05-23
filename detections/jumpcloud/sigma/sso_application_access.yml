@@ -1,0 +1,25 @@
+title: JumpCloud SSO Application Access
+id: 6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a
+description: Detects user authentication to SSO applications via JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.initial-access
+    - attack.t1078 # Valid Accounts
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - initial-access
+detection:
+    selection:
+        eventtype:
+            - sso_auth
+    condition: selection
+falsepositives:
+    - Legitimate SSO application access by authorized users
+level: informational
+riskscore: 5

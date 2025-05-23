@@ -1,0 +1,23 @@
+title: JumpCloud Group Created
+id: 7e8f9a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b
+description: Detects when a new group is created in JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.persistence
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - persistence
+detection:
+    selection:
+        eventtype: 'group_create'
+    condition: selection
+falsepositives:
+    - Legitimate group creation by authorized administrators
+level: informational
+riskscore: 5

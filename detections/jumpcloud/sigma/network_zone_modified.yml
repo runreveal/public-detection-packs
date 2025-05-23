@@ -1,0 +1,28 @@
+title: JumpCloud Network Zone Modified or Deleted
+id: 9f308120-69ed-4506-abde-ac6da81f4311
+description: Detects when a network zone is modified or deleted in JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.defense-evasion
+    - attack.persistence
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - defense-evasion
+detection:
+    selection:
+        eventtype:
+            - network_zone_deactivate
+            - network_zone_delete
+            - zone_deactivate
+            - zone_delete
+    condition: selection
+falsepositives:
+    - Legitimate network zone changes by authorized administrators
+level: low
+riskscore: 10

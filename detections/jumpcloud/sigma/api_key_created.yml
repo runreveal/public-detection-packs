@@ -1,0 +1,26 @@
+title: JumpCloud API Key Created
+id: 19951c21-229d-4ccb-8774-b993c3ff3c5d
+description: Detects when an API key is created in JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.persistence
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - persistence
+detection:
+    selection:
+        eventtype:
+            - api_key_create
+            - admin_apikey_created
+            - api_token_create
+    condition: selection
+falsepositives:
+    - Legitimate creation of API keys by authorized administrators
+level: low
+riskscore: 10 
