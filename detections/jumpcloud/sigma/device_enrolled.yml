@@ -16,7 +16,7 @@ mitreattacks:
     - persistence
 detection:
     selection:
-        eventtype:
+        eventName:
             - device_enrollment
     condition: selection
 falsepositives:

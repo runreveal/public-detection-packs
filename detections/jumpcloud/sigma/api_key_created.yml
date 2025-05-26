@@ -15,7 +15,7 @@ mitreattacks:
     - persistence
 detection:
     selection:
-        eventtype:
+        eventName:
             - api_key_create
             - admin_apikey_created
             - api_token_create

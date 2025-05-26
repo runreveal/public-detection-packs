@@ -16,7 +16,7 @@ mitreattacks:
     - defense-evasion
 detection:
     selection:
-        eventtype:
+        eventName:
             - network_zone_deactivate
             - network_zone_delete
             - zone_deactivate

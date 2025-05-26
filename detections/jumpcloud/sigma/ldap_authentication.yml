@@ -16,7 +16,7 @@ mitreattacks:
     - initial-access
 detection:
     selection:
-        eventtype:
+        eventName:
             - ldap_bind
             - ldap_search
     condition: selection

@@ -1,40 +1,38 @@
 WITH unsuspension_events AS (
     SELECT
-        timestamp,
-        initiated_by.id as user_id,
-        initiated_by.username,
-        initiated_by.email
-    FROM jumpcloud_events
-    WHERE eventtype = 'user_unsuspended'
-      AND timestamp >= (receivedAt >= {to:DateTime} - INTERVAL {interval:Int64} DAY)
+        eventTime,
+        rawLog.initiated_by.username,
+        sourceType
+    FROM logs
+    WHERE sourceType = 'jumpcloud' AND
+          eventName = 'user_unsuspended' AND
+          eventTime >= {to:DateTime} - INTERVAL {interval:Int64} DAY)
 ),
 login_events AS (
     SELECT
-        timestamp,
-        initiated_by.id as user_id,
-        initiated_by.username,
-        initiated_by.email,
-        eventtype
-    FROM jumpcloud_events
-    WHERE eventtype IN (
+        eventTime,
+        rawLog.initiated_by.username,
+        eventName
+        sourceType
+    FROM logs
+    WHERE sourceType = 'jumpcloud' AND
+          eventName IN (
         'user_password_change',
         'user_password_reset_request',
         'user_lockout',
         'user_suspended'
-    )
-    AND timestamp >= (receivedAt >= {to:DateTime} - INTERVAL {interval:Int64} DAY)
+    ) AND
+          eventTime >= (eventTime >= {to:DateTime} - INTERVAL {interval:Int64} DAY)
 )
 SELECT
-    le.timestamp as login_time,
-    ue.timestamp as unsuspension_time,
-    le.user_id,
+    le.eventTime as login_time,
+    ue.eventTime as unsuspension_time,
     le.username,
-    le.email,
-    le.eventtype as login_event_type,
-    dateDiff('minute', ue.timestamp, le.timestamp) as minutes_after_unsuspension
+    le.eventName as login_event_type,
+    dateDiff('minute', ue.eventTime, le.eventTime) as minutes_after_unsuspension
 FROM login_events le
 INNER JOIN unsuspension_events ue
-    ON le.user_id = ue.user_id
-WHERE le.timestamp > ue.timestamp
-  AND le.timestamp <= ue.timestamp + INTERVAL 1 HOUR
-ORDER BY le.timestamp DESC
+    ON le.username = ue.username
+WHERE le.eventTime > ue.eventTime
+  AND le.eventTime <= ue.eventTime + INTERVAL 1 HOUR
+ORDER BY le.eventTime DESC

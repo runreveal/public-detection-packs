@@ -16,7 +16,7 @@ mitreattacks:
     - persistence
 detection:
     selection:
-        eventtype:
+        eventName:
             - user_admin_granted
     condition: selection
 falsepositives:
