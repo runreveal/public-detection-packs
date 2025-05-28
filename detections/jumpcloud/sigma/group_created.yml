@@ -19,5 +19,5 @@ detection:
     condition: selection
 falsepositives:
     - Legitimate group creation by authorized administrators
-level: informational
+level: low
 riskscore: 5

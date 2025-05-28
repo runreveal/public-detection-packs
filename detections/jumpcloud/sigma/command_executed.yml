@@ -23,5 +23,5 @@ detection:
     condition: selection
 falsepositives:
     - Legitimate command execution by authorized administrators
-level: medium
-riskscore: 40 
+level: high
+riskscore: 75 

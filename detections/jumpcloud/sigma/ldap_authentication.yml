@@ -22,5 +22,5 @@ detection:
     condition: selection
 falsepositives:
     - Legitimate LDAP authentication for on-premise resources
-level: informational
+level: low
 riskscore: 5

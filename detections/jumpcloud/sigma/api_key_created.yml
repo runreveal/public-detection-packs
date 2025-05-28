@@ -22,5 +22,5 @@ detection:
     condition: selection
 falsepositives:
     - Legitimate creation of API keys by authorized administrators
-level: medium
-riskscore: 50
+level: high
+riskscore: 75
