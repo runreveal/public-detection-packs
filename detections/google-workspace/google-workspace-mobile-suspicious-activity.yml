@@ -1,0 +1,26 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: google-workspace-mobile-suspicious-activity
+displayName: Mobile Suspicious Activity Event
+description: Detects suspicious activity events from mobile applications in Google Workspace.
+file: google-workspace-mobile-suspicious-activity.sql
+categories:
+  - runreveal-detection
+  - signal
+  - google-workspace
+  - gsuite
+  - mobile-security
+  - suspicious-activity
+mitreAttacks:
+  - initial-access
+  - persistence
+  - defense-evasion
+severity: High
+riskScore: 80
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - google-workspace
+  - gsuite 
