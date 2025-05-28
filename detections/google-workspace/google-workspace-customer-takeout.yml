@@ -1,0 +1,28 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: google-workspace-customer-takeout
+displayName: Google Workspace Customer Takeout Activity
+description: Detects Google Workspace customer takeout events including creation and completion of data export requests. Customer takeout allows users to export their data from Google services, which could indicate potential data exfiltration or legitimate backup activities that should be monitored.
+file: google-workspace-customer-takeout.sql
+categories:
+  - runreveal-detection
+  - signal
+  - google-workspace
+  - gsuite
+  - admin
+  - data-export
+  - data-exfiltration
+  - takeout
+mitreAttacks:
+  - collection
+  - exfiltration
+  - defense-evasion
+severity: Medium
+riskScore: 70
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - google-workspace
+  - gsuite 

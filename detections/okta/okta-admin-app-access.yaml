@@ -1,0 +1,24 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-admin-app-access
+displayName: Okta Admin App Access
+description: Detects when a user successfully accesses the Okta admin application. This event indicates administrative access to Okta's management interface, which should be monitored for unauthorized access or privilege escalation attempts. Regular monitoring of admin app access helps ensure only authorized personnel are accessing administrative functions.
+file: okta-admin-app-access.sql
+categories:
+  - runreveal-detection
+  - okta
+  - signal
+  - admin-access
+  - privilege-escalation
+mitreAttacks:
+  - privilege-escalation
+  - persistence
+  - credential-access
+severity: Medium
+riskScore: 70
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+sourceTypes:
+  - okta 

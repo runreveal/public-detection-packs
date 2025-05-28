@@ -1,0 +1,27 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-auth-via-idp
+displayName: Okta Authentication via Identity Provider
+description: Detects when users authenticate to Okta via an external Identity Provider (IDP). This event indicates federated authentication where users are authenticating through external systems like SAML or OIDC providers. Monitoring these events helps track federated authentication usage and can help identify potential security issues with external identity providers or unusual authentication patterns.
+file: okta-auth-via-idp.sql
+categories:
+  - runreveal-detection
+  - okta
+  - signal
+  - authentication
+  - identity-provider
+  - federation
+  - saml
+  - oidc
+mitreAttacks:
+  - initial-access
+  - credential-access
+severity: Low
+riskScore: 30
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+notes: 'This detection monitors federated authentication events where users authenticate via external identity providers. These are typically legitimate events but should be monitored for unusual patterns or unauthorized IDP usage.'
+sourceTypes:
+  - okta 

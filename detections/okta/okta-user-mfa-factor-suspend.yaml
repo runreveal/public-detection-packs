@@ -1,0 +1,29 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-user-mfa-factor-suspend
+displayName: Okta User MFA Factor Suspend
+description: Detects when MFA factors are successfully suspended for users in Okta. MFA factor suspension can be a legitimate administrative action but may also indicate an attacker attempting to weaken security controls after gaining initial access. This event should be monitored to ensure it aligns with approved administrative procedures and is not part of an attack chain to bypass multi-factor authentication requirements.
+file: okta-user-mfa-factor-suspend.sql
+categories:
+  - runreveal-detection
+  - okta
+  - signal
+  - mfa-management
+  - security-control-bypass
+  - administrative-action
+  - authentication-weakening
+  - privilege-escalation
+mitreAttacks:
+  - defense-evasion
+  - persistence
+  - credential-access
+  - privilege-escalation
+severity: High
+riskScore: 80
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+notes: 'This detection identifies successful MFA factor suspensions which could indicate legitimate administrative actions or potential security control bypass attempts. Correlate with approved change requests and verify the actor has appropriate permissions for MFA management.'
+sourceTypes:
+  - okta 
