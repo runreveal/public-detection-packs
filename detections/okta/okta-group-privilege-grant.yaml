@@ -1,0 +1,26 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-group-privilege-grant
+displayName: Okta Group Privilege Grant
+description: Detects when privileges are granted to a group in Okta. Group privilege grants can significantly expand access permissions for multiple users at once and should be monitored for unauthorized privilege escalation attempts. This event indicates administrative changes to group permissions that could affect security posture and access controls.
+file: okta-group-privilege-grant.sql
+categories:
+  - runreveal-detection
+  - okta
+  - signal
+  - privilege-escalation
+  - group-management
+  - admin-access
+mitreAttacks:
+  - privilege-escalation
+  - persistence
+  - credential-access
+severity: High
+riskScore: 80
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+notes: 'This detection monitors for group privilege grants which can affect multiple users simultaneously. All group privilege grant events are captured regardless of outcome.'
+sourceTypes:
+  - okta 

@@ -1,0 +1,30 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-system-support-reset
+displayName: Okta System Support Reset Events
+description: Detects automated support reset events performed by the Okta system account (system@okta.com) with specific characteristics indicating backend support operations. These events include password resets, MFA factor updates, MFA deactivations, and MFA bypass attempts that are performed automatically by Okta's support systems without user agent or geographic context. While typically legitimate support operations, these should be monitored to ensure they align with approved support cases.
+file: okta-system-support-reset.sql
+categories:
+  - runreveal-detection
+  - okta
+  - signal
+  - system-account
+  - support-reset
+  - automated-action
+  - password-reset
+  - mfa-management
+  - backend-operation
+mitreAttacks:
+  - persistence
+  - credential-access
+  - defense-evasion
+  - privilege-escalation
+severity: Medium
+riskScore: 75
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+notes: 'This detection identifies automated support operations performed by system@okta.com with unknown transaction IDs and no user agent or geographic context. These should be correlated with approved support tickets and verified as legitimate backend operations.'
+sourceTypes:
+  - okta 

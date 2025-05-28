@@ -1,0 +1,29 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: okta-policy-rule-changes
+displayName: Okta Policy Rule Changes
+description: Detects changes to policy rules in Okta including deletions, updates, deactivations, and invalidations. Policy rules control access, authentication requirements, and security behaviors across the organization. Changes to these rules can significantly impact security posture and should be monitored to ensure they align with approved security policies and don't introduce vulnerabilities or weaken security controls.
+file: okta-policy-rule-changes.sql
+categories:
+  - runreveal-detection
+  - okta
+  - signal
+  - policy-management
+  - rule-changes
+  - security-policy
+  - configuration-change
+  - governance
+mitreAttacks:
+  - defense-evasion
+  - persistence
+  - privilege-escalation
+  - impact
+severity: Medium
+riskScore: 70
+schedule: '*/15 * * * *'
+parameters:
+  window: '30'
+notes: 'This detection monitors all policy rule lifecycle changes that could affect security controls. Rule deletions and deactivations should be particularly scrutinized as they may weaken security posture.'
+sourceTypes:
+  - okta 
