@@ -1,6 +1,3 @@
-# Remove disabled property to start using the detection
-disabled: true
-
 name: google-workspace-mobile-suspicious-activity
 displayName: Mobile Suspicious Activity Event
 description: Detects suspicious activity events from mobile applications in Google Workspace.
