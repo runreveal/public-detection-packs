@@ -28,7 +28,7 @@ SELECT
     le.receivedAt as login_time,
     ue.receivedAt as unsuspension_time,
     le.username,
-    le.eventName as login_event_type,
+    le.eventName as eventName,
     dateDiff('minute', ue.receivedAt, le.receivedAt) as minutes_after_unsuspension
 FROM login_events le
 INNER JOIN unsuspension_events ue

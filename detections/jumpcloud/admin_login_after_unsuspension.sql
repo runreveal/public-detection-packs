@@ -5,12 +5,12 @@ WITH admin_unsuspension_events AS (
     FROM logs
     WHERE sourceType = 'jumpcloud' AND
           eventName = 'admin_unsuspended'
-          receivedAt >= (receivedAt >= {to:DateTime} - INTERVAL {interval:Int64} DAY)
+          receivedAt >= ({to:DateTime} - INTERVAL {interval:Int64} DAY)
 ),
 admin_auth_events AS (
     SELECT
         receivedAt,
-        rawinitiated_by.username,
+        rawLog.initiated_by.username,
         eventName
     FROM logs
     WHERE sourceType = 'jumpcloud' AND
@@ -34,5 +34,5 @@ FROM admin_auth_events ae
 INNER JOIN admin_unsuspension_events ue
     ON ae.username = ue.username
 WHERE ae.receivedAt > ue.receivedAt
-  AND ae.receivedAt <= ue.receivedAt + INTERVAL 1 HOUR
+  AND ae.receivedAt <= (ue.receivedAt + INTERVAL 1 HOUR)
 ORDER BY ae.receivedAt DESC
