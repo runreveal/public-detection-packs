@@ -16,7 +16,7 @@ mitreattacks:
     - defense-evasion
 detection:
     selection:
-        eventName:
+        normalized.eventName:
             - policy_update
             - policy_delete
             - authpolicy_update

@@ -16,7 +16,7 @@ mitreattacks:
     - initial-access
 detection:
     selection:
-        eventName:
+        normalized.eventName:
             - sso_auth
     condition: selection
 falsepositives:

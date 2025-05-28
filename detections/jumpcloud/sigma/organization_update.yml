@@ -16,7 +16,7 @@ mitreattacks:
     - persistence
 detection:
     selection:
-        eventName: 'organization_update'
+        normalized.eventName: organization_update
     condition: selection
 falsepositives:
     - Legitimate organization configuration changes by authorized administrators

@@ -15,7 +15,7 @@ mitreattacks:
     - persistence
 detection:
     selection:
-        eventName: 'user_create'
+        normalized.eventName: user_create
     condition: selection
 falsepositives:
     - Legitimate and authorized user creation

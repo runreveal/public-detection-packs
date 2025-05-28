@@ -15,7 +15,7 @@ mitreattacks:
     - persistence
 detection:
     selection:
-        eventName: 'group_create'
+        normalized.eventName: 'group_create'
     condition: selection
 falsepositives:
     - Legitimate group creation by authorized administrators
