@@ -1,4 +1,7 @@
-name: google-workspace-access-transparency-gsuite-resource
+# Remove disabled property to start using the detection
+disabled: true
+
+name: google-workspace-access-transparency-resource
 displayName: Access Transparency GSuite Resource Events
 description: Detects Google Workspace events where the application is not access_transparency and the event type is GSUITE_RESOURCE.
 file: google-workspace-access-transparency-gsuite-resource.sql
@@ -17,4 +20,4 @@ parameters:
   window: '30'
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite
