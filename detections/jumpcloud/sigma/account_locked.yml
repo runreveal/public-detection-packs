@@ -1,0 +1,28 @@
+title: JumpCloud User/Admin Account Locked Out
+id: 4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f
+description: Detects when a user or admin account is locked out in JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.credential-access
+    - attack.t1110
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - credential-access
+detection:
+    selection1:
+      eventName:
+          - user_lockout
+          - user_suspended
+    selection2:
+      admin_login_attempt: failure
+    condition: selection1 or selection2
+falsepositives:
+    - Legitimate account lockouts due to forgotten passwords
+level: medium
+riskscore: 30

@@ -1,0 +1,25 @@
+title: JumpCloud Admin Privilege Granted
+id: 413d4a81-6c98-4479-9863-014785fd579d
+description: Detects when admin privileges are granted to a user in JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.persistence
+    - attack.t1098.003 # account manipulation
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - persistence
+detection:
+    selection:
+        eventName:
+            - user_admin_granted
+    condition: selection
+falsepositives:
+    - Administrator privileges granted by authorized admin users
+level: low
+riskscore: 20

@@ -1,0 +1,24 @@
+title: JumpCloud Organization Settings Modified
+id: 9a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d
+description: Detects modifications to JumpCloud organization settings
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.persistence
+    - attack.defense-evasion
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - persistence
+detection:
+    selection:
+        eventName: 'organization_update'
+    condition: selection
+falsepositives:
+    - Legitimate organization configuration changes by authorized administrators
+level: medium
+riskscore: 30 

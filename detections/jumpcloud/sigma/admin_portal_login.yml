@@ -1,0 +1,27 @@
+title: JumpCloud Admin Changes
+id: 4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f
+description: Detects admin auth settings changes
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.initial-access
+    - attack.t1078.004 # Valid Accounts: Cloud Accounts
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - initial-access
+detection:
+    selection:
+        eventName:
+            - admin_password_change
+            - admin_password_reset_request
+            - admin_totp_disable
+    condition: selection
+falsepositives:
+    - Legitimate admin portal access
+level: low
+riskscore: 20 

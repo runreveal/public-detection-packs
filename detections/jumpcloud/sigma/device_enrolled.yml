@@ -1,0 +1,25 @@
+title: JumpCloud Device Enrolled
+id: 6e7f8a9b-0c1d-2e3f-4a5b-6c7d8e9f0a1b
+description: Detects when a new mobile device is enrolled in JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.persistence
+    - attack.t1078 # Valid Accounts
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - persistence
+detection:
+    selection:
+        eventName:
+            - device_enrollment
+    condition: selection
+falsepositives:
+    - Legitimate device enrollment by authorized users
+level: low
+riskscore: 5

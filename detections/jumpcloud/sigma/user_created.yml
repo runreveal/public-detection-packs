@@ -1,0 +1,23 @@
+title: New JumpCloud User Created
+id: b6c718dd-8f53-4b9f-98d8-93fdca966970
+description: Detects new user account creation in JumpCloud
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.credential-access
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - persistence
+detection:
+    selection:
+        eventName: 'user_create'
+    condition: selection
+falsepositives:
+    - Legitimate and authorized user creation
+level: low
+riskscore: 5

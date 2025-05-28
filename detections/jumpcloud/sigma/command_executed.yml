@@ -1,0 +1,27 @@
+title: JumpCloud Command Executed
+id: 8a9b0c1d-2e3f-4a5b-6c7d-8e9f0a1b2c3d
+description: Detects when commands are executed via JumpCloud on managed systems
+author: RunReveal
+date: 2025-05-26
+references:
+    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+tags:
+    - attack.execution
+    - attack.t1059 # Command and Scripting Interpreter: Command Line Interface
+sourcetypes:
+    - jumpcloud
+categories:
+    - jumpcloud
+mitreattacks:
+    - execution
+detection:
+    selection:
+        eventName:
+            - commandresult_delete
+            - command_run
+            - mdm_command_result 
+    condition: selection
+falsepositives:
+    - Legitimate command execution by authorized administrators
+level: high
+riskscore: 75 
