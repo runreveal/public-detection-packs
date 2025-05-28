@@ -20,7 +20,7 @@ detection:
           - user_lockout
           - user_suspended
     selection2:
-      admihn_login_attempt: failure
+      admin_login_attempt: failure
     condition: selection1 or selection2
 falsepositives:
     - Legitimate account lockouts due to forgotten passwords
