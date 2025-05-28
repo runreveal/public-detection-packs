@@ -16,7 +16,7 @@ mitreattacks:
     - impact
 detection:
     selection:
-        eventName:
+        normalized.eventName:
             - user_deactivated
             - user_suspended
             - account_deactivated

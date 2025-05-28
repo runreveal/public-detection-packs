@@ -16,7 +16,7 @@ mitreattacks:
     - credential-access
 detection:
     selection1:
-      eventName:
+      normalized.eventName:
           - user_lockout
           - user_suspended
     selection2:

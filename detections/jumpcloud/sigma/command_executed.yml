@@ -16,7 +16,7 @@ mitreattacks:
     - execution
 detection:
     selection:
-        eventName:
+        normalized.eventName:
             - commandresult_delete
             - command_run
             - mdm_command_result 
