@@ -20,7 +20,7 @@ WITH invalidUsers AS
             (
                 SELECT
                     eventTime,
-                    if(eventName = 'CREATE_USER', 'D', 'S') AS eventType,
+                    if(eventName = 'CREATE_USER', 'DELETED', 'SUSPENDED') AS eventType,
                     workspaceID,
                     JSONExtractString(arrayFirst(x -> (JSONExtractString(x, 'name') = 'USER_EMAIL'), JSONExtractArrayRaw(arrayFirst(x -> (JSONExtractString(x, 'type') = 'USER_SETTINGS'), JSONExtractArrayRaw(rawLog, 'events')), 'parameters')), 'value') AS userEmail
                 FROM runreveal_logs
