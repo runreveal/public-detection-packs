@@ -1,0 +1,29 @@
+name: github-branch-protection-policy-override
+displayName: GitHub Branch Protection Policy Override
+description: >-
+  Detects when GitHub branch protection policies are overridden, allowing commits
+  to protected branches without meeting the required review or status check requirements.
+  Branch protection overrides can indicate legitimate administrative actions but may also
+  represent attempts to bypass security controls, introduce unauthorized code changes,
+  or circumvent code review processes. This detection helps monitor critical security
+  policy violations that could compromise code integrity and repository security.
+file: github-branch-protection-policy-override.sql
+categories:
+  - runreveal-detection
+  - github
+  - security-configuration
+  - code-integrity
+  - policy-violation
+mitreAttacks:
+  - defense-evasion
+  - persistence
+  - privilege-escalation
+  - impact
+severity: Low
+riskScore: 30 
+schedule: '*/15 * * * *'
+parameters:
+  from: '{from:DateTime}'
+  to: '{to:DateTime}'
+sourceTypes:
+  - github 

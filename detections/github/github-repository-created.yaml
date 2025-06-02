@@ -1,0 +1,21 @@
+name: github-repository-created
+displayName: GitHub Repository Created
+description: >-
+  Detects creation of new GitHub repositories within the organization. Repository
+  creation can indicate legitimate development activities but may also represent
+  unauthorized resource usage, data exfiltration attempts, or shadow IT practices.
+  New repositories should be monitored to ensure they comply with organizational
+  policies and security standards.
+file: github-repository-created.sql
+categories:
+  - runreveal-detection
+  - github
+  - repository-management
+  - resource-creation
+mitreAttacks:
+  - persistence
+  - exfiltration
+  - defense-evasion
+severity: Low
+riskScore: 30
+schedule: '*/15 * * * *' 

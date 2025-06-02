@@ -1,0 +1,21 @@
+name: github-web-hook-modified
+displayName: GitHub Web Hook Modified
+description: >-
+  Detects modifications to GitHub webhooks including creation, updates, and deletion
+  of webhook configurations in private repositories. Webhook modifications can
+  impact CI/CD pipelines, security monitoring, and integration workflows.
+  Unauthorized webhook changes could enable data exfiltration, bypass security
+  controls, or disrupt automated processes.
+file: github-web-hook-modified.sql
+categories:
+  - runreveal-detection
+  - github
+  - webhook-management
+  - integration-security
+mitreAttacks:
+  - persistence
+  - defense-evasion
+  - exfiltration
+severity: Medium
+riskScore: 70
+schedule: '*/15 * * * *' 
