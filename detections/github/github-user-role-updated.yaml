@@ -1,0 +1,23 @@
+name: github-user-role-updated
+displayName: GitHub User Role Updated
+description: >-
+  Detects when user roles are updated within GitHub organizations, including
+  privilege escalations and role modifications. Role updates can significantly
+  impact user permissions and access to organizational resources. Unauthorized
+  role changes could indicate privilege escalation attempts, account compromise,
+  or administrative errors that could lead to unauthorized access or loss of
+  appropriate access controls.
+file: github-user-role-updated.sql
+categories:
+  - runreveal-detection
+  - github
+  - access-control
+  - user-management
+  - privilege-escalation
+mitreAttacks:
+  - privilege-escalation
+  - persistence
+  - credential-access
+severity: High
+riskScore: 75
+schedule: '*/15 * * * *' 

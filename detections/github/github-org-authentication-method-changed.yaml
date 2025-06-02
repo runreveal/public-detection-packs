@@ -1,0 +1,24 @@
+name: github-org-authentication-method-changed
+displayName: GitHub Org Authentication Method Changed
+description: >-
+  Detects changes to GitHub organization authentication and security settings including
+  SAML configuration, two-factor authentication requirements, and OAuth app restrictions.
+  These changes can significantly impact organization security posture and access controls.
+  Unauthorized modifications to authentication methods could weaken security, enable
+  unauthorized access, or bypass established security policies. This detection helps
+  monitor critical organizational security configuration changes.
+file: github-org-authentication-method-changed.sql
+categories:
+  - runreveal-detection
+  - github
+  - security-configuration
+  - authentication
+  - access-control
+mitreAttacks:
+  - defense-evasion
+  - persistence
+  - credential-access
+  - privilege-escalation
+severity: High
+riskScore: 80
+schedule: '*/15 * * * *' 

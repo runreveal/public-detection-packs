@@ -1,0 +1,22 @@
+name: github-team-modified
+displayName: GitHub Team Modified
+description: >-
+  Detects modifications to GitHub teams including member additions/removals, repository
+  assignments, team creation/destruction, and parent team changes. Team modifications
+  can impact access controls and permissions across repositories. Unauthorized team
+  changes could lead to privilege escalation, unauthorized repository access, or
+  disruption of collaborative workflows.
+file: github-team-modified.sql
+categories:
+  - runreveal-detection
+  - github
+  - access-control
+  - team-management
+  - organization-management
+mitreAttacks:
+  - privilege-escalation
+  - persistence
+  - lateral-movement
+severity: Medium
+riskScore: 60
+schedule: '*/15 * * * *' 
