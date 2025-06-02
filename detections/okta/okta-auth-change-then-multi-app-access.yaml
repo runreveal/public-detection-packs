@@ -16,7 +16,5 @@ mitreAttacks:
   - privilege-escalation
   - lateral-movement
   - credential-access
-severity: medium
-riskScore: 0
-sourceTypes:
-  - okta
+severity: Medium
+riskScore: 50 

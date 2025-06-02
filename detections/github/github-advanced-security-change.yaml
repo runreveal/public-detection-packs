@@ -1,5 +1,5 @@
-name: github-security-change-includes-github-advanced-security
-displayName: GitHub Security Change, includes GitHub Advanced Security
+name: github-advanced-security-change
+displayName: GitHub Advanced Security Change
 description: >-
   Detects critical security configuration changes in GitHub including disabling
   of advanced security features, secret scanning, Dependabot alerts, and other
@@ -7,7 +7,7 @@ description: >-
   significantly impact organizational security posture. Unauthorized security
   feature disabling could weaken defenses, hide vulnerabilities, or enable
   malicious activities.
-file: github-security-change-includes-github-advanced-security.sql
+file: github-advanced-security-change.sql
 categories:
   - runreveal-detection
   - github

@@ -17,5 +17,3 @@ mitreAttacks:
   - credential-access
 severity: medium
 riskScore: 0
-sourceTypes:
-  - okta
