@@ -22,8 +22,3 @@ mitreAttacks:
 severity: Low
 riskScore: 30 
 schedule: '*/15 * * * *'
-parameters:
-  from: '{from:DateTime}'
-  to: '{to:DateTime}'
-sourceTypes:
-  - github 
