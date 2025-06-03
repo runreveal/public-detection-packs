@@ -1,0 +1,24 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: 1password-failed-signin-attempts
+displayName: 1Password Multiple Failed Sign-in Attempts
+file: failed_signin_attempts.sql
+description: Detects multiple failed sign-in attempts to 1Password accounts indicating potential brute force attacks
+categories:
+  - runreveal-detection
+  - 1password
+  - signal
+severity: Medium
+riskScore: 70
+mitreAttacks:
+  - credential-access
+  - t1110
+sourceTypes:
+  - 1password
+schedule: '*/15 * * * *'
+author: RunReveal
+references:
+  - https://developer.1password.com/docs/events-api/audit-events/
+falsepositives:
+  - Users forgetting passwords or having difficulty with MFA 

@@ -1,0 +1,28 @@
+title: 1Password Privilege Escalation
+id: 5e6f7g8h-9i0j-1234-5678-901234efghij
+description: Detects when users are granted administrative privileges or join privileged groups
+author: RunReveal
+date: 2025-01-06
+references:
+    - https://developer.1password.com/docs/events-api/audit-events/
+tags:
+    - attack.privilege-escalation
+    - attack.t1078
+sourcetypes:
+    - 1password
+categories:
+    - 1password
+mitreattacks:
+    - privilege-escalation
+detection:
+    selection:
+        normalized.eventName:
+            - grant      # Grant privileges
+            - join       # Join group
+    condition: selection
+falsepositives:
+    - Legitimate privilege assignments
+    - New employee onboarding
+    - Role changes due to promotions
+level: medium
+riskscore: 55
