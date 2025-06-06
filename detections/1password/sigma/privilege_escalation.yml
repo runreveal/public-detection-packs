@@ -1,6 +1,6 @@
 title: 1Password Privilege Escalation
 id: 5e6f7g8h-9i0j-1234-5678-901234efghij
-description: Detects when users are granted administrative privileges or join privileged groups
+description: Detects when users are granted privileges or join privileged groups
 author: RunReveal
 date: 2025-01-06
 references:
@@ -15,11 +15,18 @@ categories:
 mitreattacks:
     - privilege-escalation
 detection:
-    selection:
+    privilege_selection:
         normalized.eventName:
             - grant      # Grant privileges
+        normalized.tags["object_type"]:
+            - uva        # user vault access
+            - gva        # group vault access
+    group_selection:
+        normalized.eventName:
             - join       # Join group
-    condition: selection
+        normalized.tags["object_type"]:
+            - gm         # Group membership
+    condition: privilege_selection OR group_selection
 falsepositives:
     - Legitimate privilege assignments
     - New employee onboarding
