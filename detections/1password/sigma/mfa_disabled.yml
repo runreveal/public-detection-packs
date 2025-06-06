@@ -17,9 +17,7 @@ mitreattacks:
 detection:
     selection:
         normalized.eventName:
-            - enblmfa
             - disblmfa
-            - authentication_factor_removed
     condition: selection
 falsepositives:
     - Legitimate MFA configuration changes by administrators
