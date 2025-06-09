@@ -36,7 +36,7 @@ SELECT
     eventTime,
     eventName,
     sourceType,
-    actor['email'] AS user,
+    actor,
     srcIP,
     srcASOrganization,
     srcASCountryCode,
