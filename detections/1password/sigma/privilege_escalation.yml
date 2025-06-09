@@ -26,7 +26,7 @@ detection:
             - join       # Join group
         normalized.tags["object_type"]:
             - gm         # Group membership
-    condition: privilege_selection OR group_selection
+    condition: privilege_selection or group_selection
 falsepositives:
     - Legitimate privilege assignments
     - New employee onboarding
