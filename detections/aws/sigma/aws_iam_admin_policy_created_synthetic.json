@@ -1,0 +1,40 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDA5EXAMPLE123456789",
+    "arn": "arn:aws:iam::123456789012:user/developer",
+    "accountId": "123456789012",
+    "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+    "userName": "developer"
+  },
+  "eventTime": "2024-06-21T04:28:31Z",
+  "eventSource": "iam.amazonaws.com",
+  "eventName": "CreatePolicy",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.23",
+  "userAgent": "console.amazonaws.com",
+  "requestParameters": {
+    "policyName": "DevTeamAdminAccess",
+    "description": "Administrative access for the development team",
+    "path": "/",
+    "policyDocument": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"*\",\"Resource\":\"*\"}]}"
+  },
+  "responseElements": {
+    "policy": {
+      "policyName": "DevTeamAdminAccess",
+      "policyId": "ANPA5EXAMPLE12345678",
+      "arn": "arn:aws:iam::123456789012:policy/DevTeamAdminAccess",
+      "path": "/",
+      "defaultVersionId": "v1",
+      "attachmentCount": 0,
+      "createDate": "2024-06-21T04:28:31Z",
+      "updateDate": "2024-06-21T04:28:31Z"
+    }
+  },
+  "requestID": "3456789a-5678-9abc-def0-123456789abc",
+  "eventID": "n4o5p6q7-r8s9-t0u1-v2w3-x4y5z6a7b8c9",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2010-05-08",
+  "recipientAccountId": "123456789012"
+}

@@ -1,0 +1,30 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAJDPLRKLG7UEXAMPLE",
+    "arn": "arn:aws:iam::123456789012:user/network-admin",
+    "accountId": "123456789012",
+    "userName": "network-admin"
+  },
+  "eventTime": "2023-07-17T10:17:36Z",
+  "eventSource": "ec2.amazonaws.com",
+  "eventName": "DeleteFlowLogs",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "198.51.100.24",
+  "userAgent": "aws-cli/2.9.15 Python/3.9.16 Linux/5.15.0-1031-aws exe/x86_64.ubuntu.22",
+  "requestParameters": {
+    "flowLogIds": [
+      "fl-01234567890abcdef"
+    ]
+  },
+  "responseElements": {
+    "unsuccessful": []
+  },
+  "requestID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE77777",
+  "eventID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE77777",
+  "eventType": "AwsApiCall",
+  "managementEvent": true,
+  "recipientAccountId": "123456789012",
+  "eventCategory": "Management"
+}

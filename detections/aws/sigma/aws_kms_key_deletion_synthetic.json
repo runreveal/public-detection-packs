@@ -1,0 +1,30 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAJDPLRKLG7UEXAMPLE",
+    "arn": "arn:aws:iam::123456789012:user/security-officer",
+    "accountId": "123456789012",
+    "userName": "security-officer"
+  },
+  "eventTime": "2023-07-17T15:23:48Z",
+  "eventSource": "kms.amazonaws.com",
+  "eventName": "ScheduleKeyDeletion",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.42",
+  "userAgent": "console.amazonaws.com",
+  "requestParameters": {
+    "keyId": "arn:aws:kms:us-east-1:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+    "pendingWindowInDays": 7
+  },
+  "responseElements": {
+    "keyId": "arn:aws:kms:us-east-1:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+    "deletionDate": "Jul 24, 2023, 3:23:48 PM"
+  },
+  "requestID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE99999",
+  "eventID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE99999",
+  "eventType": "AwsApiCall",
+  "managementEvent": true,
+  "recipientAccountId": "123456789012",
+  "eventCategory": "Management"
+}

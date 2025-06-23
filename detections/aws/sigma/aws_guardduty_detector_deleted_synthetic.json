@@ -1,0 +1,26 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAJDPLRKLG7UEXAMPLE",
+    "arn": "arn:aws:iam::123456789012:user/compromised-admin",
+    "accountId": "123456789012",
+    "userName": "compromised-admin"
+  },
+  "eventTime": "2023-07-16T19:41:52Z",
+  "eventSource": "guardduty.amazonaws.com",
+  "eventName": "DeleteDetector",
+  "awsRegion": "us-west-2",
+  "sourceIPAddress": "198.51.100.24",
+  "userAgent": "aws-cli/2.9.15 Python/3.9.16 Linux/5.15.0-1031-aws exe/x86_64.ubuntu.22",
+  "requestParameters": {
+    "detectorId": "12abc34d567e8fa901bc2d34e56789f0"
+  },
+  "responseElements": null,
+  "requestID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE55555",
+  "eventID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE55555",
+  "eventType": "AwsApiCall",
+  "managementEvent": true,
+  "recipientAccountId": "123456789012",
+  "eventCategory": "Management"
+}

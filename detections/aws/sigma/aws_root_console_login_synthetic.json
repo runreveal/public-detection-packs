@@ -1,0 +1,42 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "Root",
+    "principalId": "123456789012",
+    "arn": "arn:aws:iam::123456789012:root",
+    "accountId": "123456789012",
+    "accessKeyId": "",
+    "sessionContext": {
+      "attributes": {
+        "creationDate": "2025-06-20T15:32:14Z",
+        "mfaAuthenticated": "true"
+      }
+    }
+  },
+  "eventTime": "2025-06-20T15:32:14Z",
+  "eventSource": "signin.amazonaws.com",
+  "eventName": "ConsoleLogin",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "192.168.1.100",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+  "requestParameters": null,
+  "responseElements": {
+    "ConsoleLogin": "Success"
+  },
+  "additionalEventData": {
+    "LoginTo": "https://console.aws.amazon.com/console/home",
+    "MobileVersion": "No",
+    "MFAUsed": "Yes"
+  },
+  "eventID": "f5d8c8b1-abcd-1234-efgh-123456789012",
+  "eventType": "AwsConsoleSignIn",
+  "recipientAccountId": "123456789012",
+  "managementEvent": true,
+  "readOnly": false,
+  "vpcEndpointId": "",
+  "tlsDetails": {
+    "tlsVersion": "TLSv1.2",
+    "cipherSuite": "ECDHE-RSA-AES128-GCM-SHA256",
+    "clientProvidedHostHeader": "signin.aws.amazon.com"
+  }
+}

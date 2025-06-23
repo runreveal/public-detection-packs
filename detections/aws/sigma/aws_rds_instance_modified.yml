@@ -1,0 +1,33 @@
+title: AWS RDS Database Instance Modified
+id: g3h4i5j6-k7l8-m9n0-p1q2-r3s4t5u6v7w8
+description: Detects modifications to RDS database instances that could affect security posture, such as disabling encryption or modifying security groups.
+references:
+    - https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html
+    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.defense_evasion
+    - attack.persistence
+    - attack.t1562
+sourcetypes:
+    - cloudtrail
+detection:
+    selection:
+        eventSource: rds.amazonaws.com
+        eventName: 
+            - ModifyDBInstance
+            - StopDBInstance
+            - RebootDBInstance
+    security_changes:
+        requestParameters.StorageEncrypted: 'false'
+    condition: selection
+falsepositives:
+    - Legitimate database maintenance
+    - Performance tuning
+    - Infrastructure as code deployments
+level: medium
+riskscore: 60
+mitreattacks:
+    - defense-evasion
+    - persistence

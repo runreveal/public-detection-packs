@@ -1,0 +1,35 @@
+title: AWS IAM Policy Created with Admin Privileges
+id: 5f4c71d2-8025-48c9-a98e-f5f9d7b24701
+description: Detects the creation of IAM policies that grant administrator privileges, which could indicate privilege escalation attempts.
+references:
+    - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html
+    - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.privilege_escalation
+    - attack.persistence
+    - attack.t1098
+sourcetypes:
+    - cloudtrail
+detection:
+    selection:
+        eventSource: iam.amazonaws.com
+        eventName:
+            - CreatePolicy
+            - CreatePolicyVersion
+            - PutUserPolicy
+            - PutRolePolicy
+            - PutGroupPolicy
+    filter_condition:
+        requestParameters.policyDocument|contains: 
+            - '"Effect":"Allow","Action":"*","Resource":"*"'
+            - '"Effect": "Allow", "Action": "*", "Resource": "*"'
+    condition: selection and filter_condition
+falsepositives:
+    - Legitimate creation of administrative policies by authorized administrators
+level: high
+riskscore: 75
+mitreattacks:
+    - privilege-escalation
+    - persistence

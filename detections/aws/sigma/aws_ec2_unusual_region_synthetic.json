@@ -1,0 +1,50 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAJDPLRKLG7UEXAMPLE",
+    "arn": "arn:aws:iam::123456789012:user/dev-user",
+    "accountId": "123456789012",
+    "userName": "dev-user"
+  },
+  "eventTime": "2023-07-18T14:56:22Z",
+  "eventSource": "ec2.amazonaws.com",
+  "eventName": "RunInstances",
+  "awsRegion": "ap-east-1",
+  "sourceIPAddress": "198.51.100.24",
+  "userAgent": "aws-cli/2.9.15 Python/3.9.16 Linux/5.15.0-1031-aws exe/x86_64.ubuntu.22",
+  "requestParameters": {
+    "instancesSet": {
+      "items": [
+        {
+          "imageId": "ami-0123456789abcdef0",
+          "minCount": 1,
+          "maxCount": 1
+        }
+      ]
+    },
+    "instanceType": "t3.micro",
+    "blockDeviceMapping": {}
+  },
+  "responseElements": {
+    "instancesSet": {
+      "items": [
+        {
+          "instanceId": "i-0123456789abcdef0",
+          "imageId": "ami-0123456789abcdef0",
+          "instanceState": {
+            "code": 0,
+            "name": "pending"
+          },
+          "privateIpAddress": "10.0.0.123"
+        }
+      ]
+    }
+  },
+  "requestID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE14141",
+  "eventID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE14141",
+  "eventType": "AwsApiCall",
+  "managementEvent": true,
+  "recipientAccountId": "123456789012",
+  "eventCategory": "Management"
+}

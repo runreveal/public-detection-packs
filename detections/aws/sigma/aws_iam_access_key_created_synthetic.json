@@ -1,0 +1,33 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAJDPLRKLG7UEXAMPLE",
+    "arn": "arn:aws:iam::123456789012:user/admin-user",
+    "accountId": "123456789012",
+    "userName": "admin-user"
+  },
+  "eventTime": "2023-07-18T11:28:54Z",
+  "eventSource": "iam.amazonaws.com",
+  "eventName": "CreateAccessKey",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.42",
+  "userAgent": "aws-cli/2.9.15 Python/3.9.16 Linux/5.15.0-1031-aws exe/x86_64.ubuntu.22",
+  "requestParameters": {
+    "userName": "service-account"
+  },
+  "responseElements": {
+    "accessKey": {
+      "userName": "service-account",
+      "status": "Active",
+      "createDate": "Jul 18, 2023, 11:28:54 AM",
+      "accessKeyId": "AKIAIOSFODNN7EXAMPLE"
+    }
+  },
+  "requestID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE13131",
+  "eventID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE13131",
+  "eventType": "AwsApiCall",
+  "managementEvent": true,
+  "recipientAccountId": "123456789012",
+  "eventCategory": "Management"
+}

@@ -1,0 +1,31 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAJDPLRKLG7UEXAMPLE",
+    "arn": "arn:aws:iam::123456789012:user/network-admin",
+    "accountId": "123456789012",
+    "userName": "network-admin"
+  },
+  "eventTime": "2023-07-19T09:12:45Z",
+  "eventSource": "ec2.amazonaws.com",
+  "eventName": "CreateRoute",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.42",
+  "userAgent": "console.ec2.amazonaws.com",
+  "requestParameters": {
+    "routeTableId": "rtb-0123456789abcdef0",
+    "destinationCidrBlock": "0.0.0.0/0",
+    "gatewayId": "igw-0123456789abcdef0"
+  },
+  "responseElements": {
+    "requestId": "a1b2c3d4-5678-90ab-cdef-EXAMPLE16161",
+    "_return": true
+  },
+  "requestID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE16161",
+  "eventID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE16161",
+  "eventType": "AwsApiCall",
+  "managementEvent": true,
+  "recipientAccountId": "123456789012",
+  "eventCategory": "Management"
+}

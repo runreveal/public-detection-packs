@@ -1,0 +1,42 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDA5EXAMPLE123456789",
+    "arn": "arn:aws:iam::123456789012:user/database-admin",
+    "accountId": "123456789012",
+    "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+    "userName": "database-admin"
+  },
+  "eventTime": "2024-06-20T17:43:12Z",
+  "eventSource": "rds.amazonaws.com",
+  "eventName": "ModifyDBInstance",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.12",
+  "userAgent": "aws-cli/2.9.19 Python/3.9.16 Linux/5.15.0-1035 botocore/2.4.5",
+  "requestParameters": {
+    "dBInstanceIdentifier": "production-database",
+    "vpcSecurityGroupIds": ["sg-0abcdef1234567890"],
+    "applyImmediately": true,
+    "StorageEncrypted": "false",
+    "backupRetentionPeriod": 0,
+    "masterUserPassword": "****"
+  },
+  "responseElements": {
+    "dBInstanceIdentifier": "production-database",
+    "dBInstanceStatus": "modifying",
+    "engine": "mysql",
+    "masterUsername": "dbadmin",
+    "allocatedStorage": 100,
+    "instanceCreateTime": "2023-01-15T12:00:00Z",
+    "preferredBackupWindow": "03:00-04:00",
+    "backupRetentionPeriod": 0,
+    "readReplicaDBInstanceIdentifiers": [],
+    "pendingModifiedValues": {}
+  },
+  "requestID": "23456789-abcd-ef01-2345-6789abcdef01",
+  "eventID": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2014-10-31",
+  "recipientAccountId": "123456789012"
+}

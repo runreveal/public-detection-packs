@@ -1,0 +1,39 @@
+title: AWS S3 Bucket Public Access Granted
+id: 8d76c5e3-3bf1-4c7d-9a2a-9b7c4b6e70d9
+description: Detects when S3 bucket policies or ACLs are modified to grant public access, which could lead to data exposure.
+references:
+    - https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
+    - https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.exfiltration
+    - attack.t1530
+sourcetypes:
+    - cloudtrail
+detection:
+    selection:
+        eventSource: s3.amazonaws.com
+        eventName:
+            - PutBucketPolicy
+            - PutBucketAcl
+            - PutObjectAcl
+    public_policy:
+        requestParameters.bucketPolicy|contains:
+            - '"Principal":"*"'
+            - '"Principal":{"AWS":"*"}'
+    public_acl:
+        requestParameters.accessControlPolicy.accessControlList.grant.grantee.uri|contains: 'http://acs.amazonaws.com/groups/global/AllUsers'
+    public_header:
+        requestParameters.AccessControlPolicy|contains: 'AllUsers'
+    public_canned_acl:
+        requestParameters.x-amz-acl: 
+            - 'public-read'
+            - 'public-read-write'
+    condition: selection and (public_policy or public_acl or public_header or public_canned_acl)
+falsepositives:
+    - Legitimate configurations for public-facing content (websites, documentation, downloads)
+level: high
+riskscore: 80
+mitreattacks:
+    - exfiltration

@@ -1,0 +1,37 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDA5EXAMPLE123456789",
+    "arn": "arn:aws:iam::123456789012:user/security-admin",
+    "accountId": "123456789012",
+    "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+    "userName": "security-admin"
+  },
+  "eventTime": "2024-06-20T15:14:22Z",
+  "eventSource": "ec2.amazonaws.com",
+  "eventName": "CreateNetworkAclEntry",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.10",
+  "userAgent": "aws-cli/2.9.19 Python/3.9.16 Linux/5.15.0-1035 botocore/2.4.5",
+  "requestParameters": {
+    "networkAclId": "acl-01234567890abcdef",
+    "ruleNumber": 100,
+    "protocol": "6",
+    "ruleAction": "allow",
+    "egress": false,
+    "cidrBlock": "0.0.0.0/0",
+    "portRange": {
+      "from": 22,
+      "to": 22
+    }
+  },
+  "responseElements": {
+    "requestId": "01234567-89ab-cdef-0123-456789abcdef"
+  },
+  "requestID": "01234567-89ab-cdef-0123-456789abcdef",
+  "eventID": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2016-11-15",
+  "recipientAccountId": "123456789012"
+}

@@ -1,0 +1,28 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDA5EXAMPLE123456789",
+    "arn": "arn:aws:iam::123456789012:user/developer",
+    "accountId": "123456789012",
+    "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+    "userName": "developer"
+  },
+  "eventTime": "2024-06-21T03:14:47Z",
+  "eventSource": "sns.amazonaws.com",
+  "eventName": "SetTopicAttributes",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.22",
+  "userAgent": "aws-sdk-java/2.20.109 Linux/5.15.0-1036 OpenJDK_64-Bit_Server_VM/17.0.7+7 Java/17.0.7 vendor/Amazon.com_Inc.",
+  "requestParameters": {
+    "topicArn": "arn:aws:sns:us-east-1:123456789012:notification-topic",
+    "attributeName": "Policy",
+    "attributeValue": "{\"Version\":\"2012-10-17\",\"Id\":\"notification-topic-policy\",\"Statement\":[{\"Sid\":\"AllowPublicPublish\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"*\"},\"Action\":\"sns:Publish\",\"Resource\":\"arn:aws:sns:us-east-1:123456789012:notification-topic\"}]}"
+  },
+  "responseElements": null,
+  "requestID": "23456789-4567-89ab-cdef-0123456789ab",
+  "eventID": "m3n4o5p6-q7r8-s9t0-u1v2-w3x4y5z6a7b8",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2010-03-31",
+  "recipientAccountId": "123456789012"
+}

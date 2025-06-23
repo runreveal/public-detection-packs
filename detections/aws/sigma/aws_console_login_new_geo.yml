@@ -1,0 +1,30 @@
+title: AWS Console Login from New Geographic Location
+id: s7t8u9v0-w1x2-y3z4-a5b6-c7d8e9f0g1h2
+description: Detects console logins from geographic locations that haven't been seen before, which could indicate credential theft.
+references:
+    - https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html
+    - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.initial_access
+    - attack.credential_access
+    - attack.t1078
+sourcetypes:
+    - cloudtrail
+detection:
+    selection:
+        eventName: ConsoleLogin
+        responseElements.ConsoleLogin: Success
+    unusual_location:
+        additionalEventData.MFAUsed: 'No'
+    condition: selection and unusual_location
+falsepositives:
+    - Users traveling to new locations
+    - Users with dynamic IP addresses
+    - Corporate VPN endpoints
+level: medium
+riskscore: 65
+mitreattacks:
+    - initial-access
+    - credential-access

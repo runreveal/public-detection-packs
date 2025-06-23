@@ -1,0 +1,31 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDA5EXAMPLE123456789",
+    "arn": "arn:aws:iam::123456789012:user/network-admin",
+    "accountId": "123456789012",
+    "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+    "userName": "network-admin"
+  },
+  "eventTime": "2024-06-20T23:29:41Z",
+  "eventSource": "ec2.amazonaws.com",
+  "eventName": "ModifyVpcEndpoint",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.18",
+  "userAgent": "console.amazonaws.com",
+  "requestParameters": {
+    "vpcEndpointId": "vpce-0123456789abcdef0",
+    "resetPolicy": true,
+    "policyDocument": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"s3:*\",\"Resource\":\"*\"}]}",
+    "addSecurityGroupIds": ["sg-0abcdef1234567890"]
+  },
+  "responseElements": {
+    "return": true
+  },
+  "requestID": "89012345-0123-4567-89ab-cdef01234567",
+  "eventID": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2016-11-15",
+  "recipientAccountId": "123456789012"
+}

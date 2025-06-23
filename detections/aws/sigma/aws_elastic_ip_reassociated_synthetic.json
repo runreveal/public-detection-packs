@@ -1,0 +1,30 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDA5EXAMPLE123456789",
+    "arn": "arn:aws:iam::123456789012:user/network-admin",
+    "accountId": "123456789012",
+    "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+    "userName": "network-admin"
+  },
+  "eventTime": "2024-06-21T00:42:15Z",
+  "eventSource": "ec2.amazonaws.com",
+  "eventName": "AssociateAddress",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "203.0.113.19",
+  "userAgent": "aws-cli/2.9.19 Python/3.9.16 Linux/5.15.0-1035 botocore/2.4.5",
+  "requestParameters": {
+    "instanceId": "i-0abcdef1234567890",
+    "publicIp": "203.0.113.100",
+    "allowReassociation": true
+  },
+  "responseElements": {
+    "associationId": "eipassoc-0123456789abcdef0"
+  },
+  "requestID": "90123456-1234-5678-9abc-def012345678",
+  "eventID": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2016-11-15",
+  "recipientAccountId": "123456789012"
+}

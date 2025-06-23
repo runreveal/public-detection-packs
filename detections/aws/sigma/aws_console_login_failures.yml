@@ -1,0 +1,26 @@
+title: AWS Console Login Failures from Multiple IPs
+id: i3j4k5l6-m7n8-o9p0-q1r2-s3t4u5v6w7x8
+description: Detects multiple failed login attempts to the AWS Management Console from different IP addresses, which could indicate brute force attempts.
+references:
+    - https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html
+    - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.credential_access
+    - attack.t1110
+sourcetypes:
+    - cloudtrail
+detection:
+    selection:
+        eventName: ConsoleLogin
+        responseElements.ConsoleLogin: Failure
+    condition: selection
+falsepositives:
+    - Users mistyping their passwords
+    - Service accounts with automated login attempts
+    - Password changes that haven't propagated to all systems
+level: medium
+riskscore: 60
+mitreattacks:
+    - credential-access

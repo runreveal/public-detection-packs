@@ -1,0 +1,30 @@
+{
+  "eventVersion": "1.08",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAJDPLRKLG7UEXAMPLE",
+    "arn": "arn:aws:iam::123456789012:user/developer",
+    "accountId": "123456789012",
+    "userName": "developer"
+  },
+  "eventTime": "2023-07-18T08:32:47Z",
+  "eventSource": "signin.amazonaws.com",
+  "eventName": "ConsoleLogin",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "198.51.100.24",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36",
+  "errorMessage": "Failed authentication",
+  "requestParameters": null,
+  "responseElements": {
+    "ConsoleLogin": "Failure"
+  },
+  "additionalEventData": {
+    "LoginTo": "https://console.aws.amazon.com/console/home",
+    "MFAUsed": "No"
+  },
+  "eventID": "a1b2c3d4-5678-90ab-cdef-EXAMPLE12121",
+  "eventType": "AwsConsoleSignIn",
+  "recipientAccountId": "123456789012",
+  "managementEvent": true,
+  "eventCategory": "Management"
+}
