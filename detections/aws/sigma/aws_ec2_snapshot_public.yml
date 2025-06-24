@@ -16,8 +16,8 @@ detection:
         eventSource: ec2.amazonaws.com
         eventName: ModifySnapshotAttribute
     public_attribute:
-        requestParameters.attributeType: 'CREATE_VOLUME_PERMISSION'
-        requestParameters.createVolumePermission.add.items.group: 'all'
+        requestParameters|re: '.*"attributeType"\s*:\s*"CREATE_VOLUME_PERMISSION".*'
+        requestParameters|re: '.*"group"\s*:\s*"all".*'
     condition: selection and public_attribute
 falsepositives:
     - Legitimate sharing of non-sensitive EC2 snapshots for migration or recovery

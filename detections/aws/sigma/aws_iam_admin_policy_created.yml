@@ -22,9 +22,7 @@ detection:
             - PutRolePolicy
             - PutGroupPolicy
     filter_condition:
-        requestParameters.policyDocument|contains: 
-            - '"Effect":"Allow","Action":"*","Resource":"*"'
-            - '"Effect": "Allow", "Action": "*", "Resource": "*"'
+        requestParameters|re: '.*Action.*\\*.*Resource.*\\*.*'
     condition: selection and filter_condition
 falsepositives:
     - Legitimate creation of administrative policies by authorized administrators

@@ -22,9 +22,9 @@ detection:
             - RevokeSecurityGroupEgress
             - ModifySecurityGroupRules
     suspicious_cidr:
-        requestParameters.cidrIp: 0.0.0.0/0
+        requestParameters|re: '.*"cidrIp"\s*:\s*"0\.0\.0\.0/0".*'
     suspicious_ipv6:
-        requestParameters.ipv6CidrIp: ::/0
+        requestParameters|re: '.*"cidrIpv6"\s*:\s*"::/0".*'
     condition: selection and (suspicious_cidr or suspicious_ipv6)
 falsepositives:
     - Legitimate security group changes for public-facing services
