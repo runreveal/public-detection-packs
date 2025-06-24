@@ -1,0 +1,27 @@
+title: AWS EC2 Snapshot Made Public
+id: h9i0j1k2-l3m4-n5o6-p7q8-r9s0t1u2v3w4
+description: Detects when an EC2 snapshot is made publicly accessible, which could lead to data exposure.
+references:
+    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html
+    - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.exfiltration
+    - attack.t1530
+sourcetypes:
+    - cloudtrail
+detection:
+    selection:
+        eventSource: ec2.amazonaws.com
+        eventName: ModifySnapshotAttribute
+    public_attribute:
+        requestParameters|re: '.*"attributeType"\s*:\s*"CREATE_VOLUME_PERMISSION".*'
+        requestParameters|re: '.*"group"\s*:\s*"all".*'
+    condition: selection and public_attribute
+falsepositives:
+    - Legitimate sharing of non-sensitive EC2 snapshots for migration or recovery
+level: high
+riskscore: 85
+mitreattacks:
+    - exfiltration

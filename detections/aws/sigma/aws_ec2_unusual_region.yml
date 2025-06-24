@@ -1,0 +1,26 @@
+title: AWS EC2 Instance Started in Unusual Region
+id: o9p0q1r2-s3t4-u5v6-w7x8-y9z0a1b2c3d4
+description: Detects when EC2 instances are launched in unusual or unused AWS regions, which could indicate cryptomining or data exfiltration.
+references:
+    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.execution
+    - attack.t1496
+sourcetypes:
+    - cloudtrail
+detection:
+    selection:
+        eventSource: ec2.amazonaws.com
+        eventName: RunInstances
+    condition: selection
+falsepositives:
+    - Legitimate expansion of infrastructure to new regions
+    - Disaster recovery testing
+    - Development/testing in different regions
+level: medium
+riskscore: 55
+mitreattacks:
+    - execution
+    - resource-development

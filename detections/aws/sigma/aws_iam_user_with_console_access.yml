@@ -1,0 +1,27 @@
+title: AWS IAM User Created with Console Access
+id: c1d2e3f4-g5h6-i7j8-k9l0-m1n2o3p4q5r6
+description: Detects when a new IAM user is created with console access, which could indicate persistence or backdoor creation.
+references:
+    - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
+    - https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html
+author: Claude
+date: 2024-06-20
+tags:
+    - attack.persistence
+    - attack.t1136.003
+sourcetypes:
+    - cloudtrail
+detection:
+    creation:
+        eventSource: iam.amazonaws.com
+        eventName: CreateUser
+    console_access:
+        eventSource: iam.amazonaws.com
+        eventName: CreateLoginProfile
+    condition: creation and console_access
+falsepositives:
+    - Legitimate user creation during onboarding or automation setup
+level: medium
+riskscore: 60
+mitreattacks:
+    - persistence

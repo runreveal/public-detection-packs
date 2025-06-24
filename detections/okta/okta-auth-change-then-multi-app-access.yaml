@@ -6,7 +6,7 @@ description: >-
   in the past week and then accessed many services in the given time interval
   proceeding the time the detection is run.
 file: okta-auth-change-then-multi-app-access.sql
-categories: []
+categories: [okta, signal]
 schedule: '*/15 * * * *'
 notes: ''
 disabled: true
