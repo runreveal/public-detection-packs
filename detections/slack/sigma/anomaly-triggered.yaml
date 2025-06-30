@@ -1,0 +1,22 @@
+title: Slack Anomaly Detection Triggered
+id: slack-anomaly-detected
+status: experimental
+description: Detects when Slack's built-in anomaly detection flags suspicious user or app behavior
+author: RunReveal
+date: 2025/06/30
+references:
+    - https://slack.engineering/slack-audit-logs-and-anomalies/
+logsource:
+    product: slack
+    service: audit_logs
+detection:
+    selection:
+        action: 'anomaly'
+    condition: selection
+falsepositives:
+    - False positives from Slack's ML algorithms
+    - Legitimate but unusual business activities
+level: high
+tags:
+    - attack.discovery
+    - attack.collection
