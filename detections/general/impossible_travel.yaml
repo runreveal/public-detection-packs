@@ -18,5 +18,5 @@ mitreAttacks:
   - initial-access
 severity: High
 parameters:
-  excludeIPv4CIDRs: '[]'
-  excludeIPv6CIDRs: '[]'
+  excludeIPv4CIDRs: '[10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16]'
+  excludeIPv6CIDRs: '[fc00::/7, fc80::/10]'
