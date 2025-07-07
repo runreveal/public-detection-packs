@@ -3,7 +3,7 @@ id: slack-anomaly-detected
 status: experimental
 description: Detects when Slack's built-in anomaly detection flags suspicious user or app behavior
 author: RunReveal
-date: 2025/06/30
+date: 2025/07/07
 references:
     - https://slack.engineering/slack-audit-logs-and-anomalies/
 tags:
@@ -17,13 +17,11 @@ sourcetypes:
   - slack
 categories:
   - slack
-- mitreattacks:
+mitreattacks:
   - collection
   - exfiltration
   - initial-access
-logsource:
-    product: slack
-    service: audit_logs
+
 detection:
     selection:
         action: 'anomaly'
