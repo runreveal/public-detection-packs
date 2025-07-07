@@ -6,6 +6,21 @@ author: RunReveal
 date: 2025/06/30
 references:
     - https://slack.engineering/slack-audit-logs-and-anomalies/
+tags:
+  - attack.collection
+  - attack.TA0009
+  - attack.exfiltration
+  - attack.TA0010
+  - attack.initial_access
+  - attack.TA0001
+sourcetypes:
+  - slack
+categories:
+  - slack
+- mitreattacks:
+  - collection
+  - exfiltration
+  - initial-access
 logsource:
     product: slack
     service: audit_logs
