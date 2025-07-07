@@ -23,7 +23,7 @@ mitreattacks:
   - initial-access
 detection:
   selection:
-    normalized.eventName: anomaly
+    eventName: anomaly
   condition: selection
 falsepositives:
   - False positives from Slack's ML algorithms
