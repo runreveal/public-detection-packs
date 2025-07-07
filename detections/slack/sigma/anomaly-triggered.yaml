@@ -5,7 +5,7 @@ description: Detects when Slack's built-in anomaly detection flags suspicious us
 author: RunReveal
 date: 2025/07/07
 references:
-    - https://slack.engineering/slack-audit-logs-and-anomalies/
+  - https://slack.engineering/slack-audit-logs-and-anomalies/
 tags:
   - attack.collection
   - attack.TA0009
@@ -21,15 +21,13 @@ mitreattacks:
   - collection
   - exfiltration
   - initial-access
-
 detection:
-    selection:
-        action: 'anomaly'
+  selection:
+    eventtype:
+      - 'anomaly'
     condition: selection
 falsepositives:
-    - False positives from Slack's ML algorithms
-    - Legitimate but unusual business activities
+  - False positives from Slack's ML algorithms
+  - Legitimate but unusual business activities
 level: high
-tags:
-    - attack.discovery
-    - attack.collection
+riskscore: 70
