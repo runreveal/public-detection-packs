@@ -1,0 +1,32 @@
+title: Slack Anomaly Detection Triggered
+id: slack-anomaly-detected
+status: experimental
+description: Detects when Slack's built-in anomaly detection flags suspicious user or app behavior
+author: RunReveal
+date: 2025/07/07
+references:
+  - https://slack.engineering/slack-audit-logs-and-anomalies/
+tags:
+  - attack.collection
+  - attack.TA0009
+  - attack.exfiltration
+  - attack.TA0010
+  - attack.initial_access
+  - attack.TA0001
+sourcetypes:
+  - slack
+categories:
+  - slack
+mitreattacks:
+  - collection
+  - exfiltration
+  - initial-access
+detection:
+  selection:
+    eventName: anomaly
+  condition: selection
+falsepositives:
+  - False positives from Slack's ML algorithms
+  - Legitimate but unusual business activities
+level: high
+riskscore: 70
