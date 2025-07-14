@@ -8,11 +8,9 @@ description: >-
   to unauthorized access or loss of legitimate access.
 file: github-user-added-or-removed-from-org.sql
 categories:
-  - runreveal-detection
   - github
-  - access-control
-  - organization-management
-  - user-management
+  - organization
+  - iam
 mitreAttacks:
   - privilege-escalation
   - persistence

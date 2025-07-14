@@ -8,11 +8,9 @@ description: >
   and fails during the Multi Factor Authentication challenge.
 file: auth_fail_during_mfa.sql
 categories:
-  - runreveal-detection
   - entra
-  - aad
   - azure
-  - runreveal
+  - iam
 schedule: '*/15 * * * *'
 severity: Low
 riskScore: 15

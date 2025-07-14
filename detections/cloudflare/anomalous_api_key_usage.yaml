@@ -6,8 +6,11 @@ displayName: Anomalous Cloudflare API Key Usage
 description: 'A Cloudflare API key was first seen, or used from a new network.'
 file: anomalous_api_key_usage.sql
 categories:
-  - runreveal-detection
+  - cloudflare
   - cf-audit
+  - iam
+  - anomaly-detection
+  - signal
 riskScore: 85
 severity: High
 schedule: '*/25 * * * *'

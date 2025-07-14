@@ -6,6 +6,11 @@ references:
     - https://docs.aws.amazon.com/lambda/latest/api/API_AddPermission.html
 author: Claude
 date: 2024-06-20
+categories:
+  - aws
+  - lambda
+  - iam
+  - monitoring
 tags:
     - attack.persistence
     - attack.privilege_escalation

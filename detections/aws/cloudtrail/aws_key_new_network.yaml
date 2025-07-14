@@ -6,9 +6,11 @@ displayName: AWS Key Used from New Network
 description: This AWS key was used from a network it previously had not been used from.
 file: aws_key_new_network.sql
 categories:
-  - runreveal-detection
   - cloudtrail
   - signal
+  - aws
+  - iam
+  - anomaly-detection
 mitreAttacks:
   - initial-access
 severity: High

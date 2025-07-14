@@ -8,6 +8,8 @@ file: new_api_key.sql
 categories: 
   - cloudflare
   - cf-audit
+  - iam
+  - api
 schedule: '*/15 * * * *'
 riskScore: 80
 severity: High

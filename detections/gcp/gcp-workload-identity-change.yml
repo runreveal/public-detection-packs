@@ -6,10 +6,10 @@ displayName: workload-identity-change
 description: Detects changes to the Workload Identity configuration in GCP
 file: gcp-workload-identity-change.sql
 categories:
-  - runreveal-detection
-  - signal
   - gcp
-  - gcplogs
+  - wprkload
+  - iam
+  - signal
 mitreAttacks:
   - execution
 severity: Medium

@@ -2,6 +2,10 @@ title: Non-standard Web Destination Port
 id: 2sEoh9NwefTdUD5BOZBkvLZlraD
 description: |
     Identifies unusual
+categories:
+  - cloudflare
+  - cf-gateway-http
+  - network-anomaly
 references:
     - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_

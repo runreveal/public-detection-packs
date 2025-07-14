@@ -8,9 +8,8 @@ description: >-
   policies and security standards.
 file: github-repository-created.sql
 categories:
-  - runreveal-detection
   - github
-  - repository-management
+  - repository
   - resource-creation
 mitreAttacks:
   - persistence

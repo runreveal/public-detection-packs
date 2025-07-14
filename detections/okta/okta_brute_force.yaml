@@ -6,9 +6,10 @@ displayName: Okta Brute Force Attack
 file: okta_brute_force.sql
 description: Brute force attack on a specific Okta user account
 categories:
-  - runreveal-detection
   - okta
   - signal
+  - iam
+  - brute-force
 mitreAttacks:
   - initial-access
 severity: Medium
