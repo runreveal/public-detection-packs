@@ -6,10 +6,13 @@ displayName: AWS Key Created, Modified, or Deleted
 description: Monitor for critical lifecycle events of AWS keys
 file: aws_key_modified.sql
 categories:
-  - cloudtrail
   - aws
-  - iam
+  - cloudtrail
+  - identity-access-management
+  - entity-management
+  - signal
   - credential-access
+  - iam-key-management
 schedule: '*/15 * * * *'
 severity: Medium
 riskScore: 50

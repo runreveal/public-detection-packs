@@ -6,9 +6,13 @@ displayName: Export of Workspace
 description: The entire content of the workspace has been exported
 file: notion-export-of-workspace.sql
 categories:
-  - runreveal-detection
-  - signal
   - notion
+  - workspace
+  - system-activity
+  - audit-activity
+  - signal
+  - workspace-export
+  - data-export
 mitreAttacks:
   - collection
 riskScore: 90

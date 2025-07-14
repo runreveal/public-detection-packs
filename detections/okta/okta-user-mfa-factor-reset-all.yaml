@@ -3,14 +3,15 @@ displayName: Okta User MFA Factor Reset All
 description: Detects when all MFA factors are reset for a user in Okta. This is a high-impact security event that completely removes all multi-factor authentication protections for the target user. While this can be a legitimate administrative action for users who have lost access to all their MFA devices, it significantly weakens security and should be closely monitored. This action could also indicate an attacker attempting to remove security controls after gaining administrative access.
 file: okta-user-mfa-factor-reset-all.sql
 categories:
-  - runreveal-detection
   - okta
+  - mfa
+  - identity-access-management
+  - entity-management
   - signal
   - mfa-management
   - security-control-removal
   - administrative-action
   - authentication-bypass
-  - high-impact
 mitreAttacks:
   - defense-evasion
   - persistence

@@ -8,7 +8,13 @@ description: >-
   It only shows the most recent events, i.e. the events that crossed the
   threshold for number of devices added.
 file: multiple-devices-added-to-okta.sql
-categories: []
+categories:
+  - okta
+  - okta
+  - identity-access-management
+  - entity-management
+  - multiple-devices
+  - suspicious-activity
 schedule: 0 * * * *
 notes: ''
 parameters:

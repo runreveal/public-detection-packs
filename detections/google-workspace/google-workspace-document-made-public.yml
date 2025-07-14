@@ -3,10 +3,14 @@ displayName: Document made public
 description: A google document was made public
 file: google-workspace-document-made-public.sql
 categories:
-  - signal
   - google-workspace
-  - gsuite
+  - drive
+  - identity-access-management
+  - authorization
+  - signal
+  - document-security
   - data-exposure
+  - public-access
 mitreAttacks:
   - persistence
 severity: Low

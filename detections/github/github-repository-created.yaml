@@ -10,6 +10,9 @@ file: github-repository-created.sql
 categories:
   - github
   - repository
+  - system-activity
+  - resource-lifecycle
+  - signal
   - resource-creation
 mitreAttacks:
   - persistence

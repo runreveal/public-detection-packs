@@ -12,6 +12,11 @@ sourcetypes:
     - jumpcloud
 categories:
     - jumpcloud
+    - jumpcloud
+    - system-activity
+    - configuration-access
+    - signal
+    - network-zone
 mitreattacks:
     - defense-evasion
 detection:

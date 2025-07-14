@@ -7,6 +7,13 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+    - aws
+    - cloudtrail
+    - identity-access-management
+    - authentication
+    - signal
+    - root-account
+    - privileged-access
     - attack.initial_access
     - attack.privilege_escalation
     - attack.t1078

@@ -3,12 +3,13 @@ displayName: Okta MFA Signed Nonce from Unexpected Geography
 description: Detects successful MFA authentication using SIGNED_NONCE factor from computer devices in unexpected geographical locations. SIGNED_NONCE is typically used by hardware security keys or advanced authentication methods. Authentication from unexpected countries could indicate account compromise, credential theft, or unauthorized access attempts. This detection helps identify potential security incidents involving compromised accounts or stolen authentication devices. Expected countries are hardcoded as full country names - modify the SQL query to adjust the allowlist.
 file: okta-mfa-signed-nonce-unexpected-geo.sql
 categories:
-  - runreveal-detection
   - okta
+  - mfa
+  - identity-access-management
+  - authentication
   - signal
   - mfa
   - geographical-anomaly
-  - authentication
   - security-key
 mitreAttacks:
   - initial-access

@@ -7,10 +7,12 @@ description: 'A Cloudflare API key was first seen, or used from a new network.'
 file: anomalous_api_key_usage.sql
 categories:
   - cloudflare
-  - cf-audit
-  - iam
-  - anomaly-detection
+  - audit
+  - identity-access-management
+  - authentication
   - signal
+  - api-key
+  - anomaly-detection
 riskScore: 85
 severity: High
 schedule: '*/25 * * * *'

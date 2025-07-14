@@ -4,10 +4,12 @@ description: Detects attempts to bypass multi-factor authentication (MFA) in Okt
 file: okta-mfa-bypass-attempt.sql
 categories:
   - okta
-  - signal
   - mfa
+  - identity-access-management
+  - authentication
+  - signal
+  - mfa-bypass
   - bypass-attempt
-  - iam
 mitreAttacks:
   - defense-evasion
   - credential-access

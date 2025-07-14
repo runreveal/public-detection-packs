@@ -3,8 +3,10 @@ displayName: Okta Admin MFA Disabled
 description: Detects when multi-factor authentication (MFA) is disabled for admin users or when MFA-related policies are modified. This includes MFA factor deactivation, MFA resets, and policy changes that could weaken MFA requirements for administrative accounts. Disabling admin MFA significantly reduces security posture and could indicate account compromise or insider threats.
 file: okta-admin-mfa-disabled.sql
 categories:
-  - runreveal-detection
   - okta
+  - admin
+  - identity-access-management
+  - entity-management
   - signal
   - mfa
   - admin-security

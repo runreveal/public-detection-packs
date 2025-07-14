@@ -12,6 +12,14 @@ tags:
     - attack.t1098
 sourcetypes:
     - gsuite
+categories:
+    - google-workspace
+    - admin
+    - identity-access-management
+    - entity-management
+    - signal
+    - api-access
+    - domain-authority
 detection:
     selection:
         eventService: admin.googleapis.com

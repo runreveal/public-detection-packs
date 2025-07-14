@@ -12,6 +12,11 @@ sourcetypes:
     - jumpcloud
 categories:
     - jumpcloud
+    - jumpcloud
+    - system-activity
+    - entity-management
+    - signal
+    - device-enrollment
 mitreattacks:
     - persistence
 detection:

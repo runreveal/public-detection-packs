@@ -3,15 +3,15 @@ displayName: Google Workspace Mobile Device Compromised
 description: Detects when a mobile device is marked as compromised in Google Workspace. This event indicates that Google has detected suspicious or malicious activity on a mobile device that accesses organizational resources. A compromised device poses significant security risks including data theft, unauthorized access, and potential lateral movement within the organization.
 file: google-workspace-mobile-device-compromised.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
-  - mobile
+  - admin
+  - findings
+  - security-finding
+  - signal
+  - mobile-security
   - device-security
   - compromise
   - endpoint-security
-  - threat-detection
 mitreAttacks:
   - initial-access
   - persistence

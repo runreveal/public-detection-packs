@@ -9,10 +9,14 @@ description: >-
   validated.
 file: github-repository-visibility-change.sql
 categories:
-  - runreveal-detection
   - github
+  - repository
+  - system-activity
+  - configuration-audit
+  - signal
   - repository-security
   - data-exposure
+  - visibility-change
 mitreAttacks:
   - exfiltration
   - defense-evasion

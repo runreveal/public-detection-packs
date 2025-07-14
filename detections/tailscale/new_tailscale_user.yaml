@@ -8,9 +8,12 @@ description: >-
   who invited them, and how the user was invited.
 file: new_tailscale_user.sql
 categories:
-  - runreveal-detection
   - tailscale
-  - runreveal
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-management
+  - account-creation
 severity: Medium
 riskScore: 50
 schedule: '*/15 * * * *'

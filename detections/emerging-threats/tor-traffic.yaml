@@ -2,9 +2,11 @@ title: Tor Network Traffic
 description: Detect threats from Tor network traffic using RunReveal managed enrichment data.
 categories:
   - emerging-threats
-  - tor-network
-  - threat-intelligence
+  - network-activity
+  - network-activity
   - signal
+  - threat-intelligence
+  - tor-network
 sourcetypes:
   - cf-gateway-dns
   - cf-gateway-http

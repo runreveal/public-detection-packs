@@ -7,8 +7,13 @@ description: >-
   authenticated user that accessed your system from these IPs.
 file: unauthorized_access.sql
 categories:
-  - runreveal-detection
   - okta
+  - okta
+  - identity-access-management
+  - authentication
+  - signal
+  - unauthorized-access
+  - credential-compromise
 riskScore: 90
 severity: Critical
 schedule: '*/15 * * * *'

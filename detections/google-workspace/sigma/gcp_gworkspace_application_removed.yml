@@ -12,6 +12,14 @@ tags:
     - attack.impact
 sourcetypes:
     - gsuite
+categories:
+    - google-workspace
+    - admin
+    - identity-access-management
+    - entity-management
+    - signal
+    - application-security
+    - application-removal
 detection:
     selection:
         eventService: admin.googleapis.com

@@ -3,6 +3,8 @@ description: Send a notification when receiving any event from a Guardduty sourc
 categories:
   - aws
   - guardduty
+  - findings
+  - security-finding
   - monitoring
 logsource:
     product: aws

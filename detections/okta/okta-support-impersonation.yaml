@@ -3,14 +3,15 @@ displayName: Okta Support User Session Impersonation
 description: Detects when Okta support staff grant or initiate user session impersonation for troubleshooting purposes. These events indicate that Okta support personnel are accessing user accounts to provide technical assistance or resolve issues. While typically legitimate, these events should be monitored to ensure they align with approved support tickets and follow proper authorization procedures for accessing user accounts.
 file: okta-support-impersonation.sql
 categories:
-  - runreveal-detection
   - okta
+  - admin
+  - identity-access-management
+  - entity-management
   - signal
   - impersonation
   - support-access
   - privileged-access
   - session-management
-  - administrative-action
 mitreAttacks:
   - privilege-escalation
   - lateral-movement

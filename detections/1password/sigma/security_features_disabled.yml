@@ -12,6 +12,10 @@ sourcetypes:
     - 1password
 categories:
     - 1password
+    - identity-access-management
+    - authentication
+    - signal
+    - security-controls
 mitreattacks:
     - defense-evasion
 detection:

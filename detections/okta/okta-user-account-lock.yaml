@@ -3,14 +3,15 @@ displayName: Okta User Account Lock Events
 description: Detects when user accounts are locked in Okta due to security policies or failed authentication attempts. Account locks can indicate brute force attacks, credential stuffing attempts, or users with forgotten passwords repeatedly failing authentication. These events help identify potential security incidents and users who may need assistance with account access.
 file: okta-user-account-lock.sql
 categories:
-  - runreveal-detection
   - okta
+  - auth
+  - identity-access-management
+  - authentication
   - signal
   - account-lock
   - authentication-failure
   - brute-force
   - security-policy
-  - user-management
 mitreAttacks:
   - credential-access
   - initial-access

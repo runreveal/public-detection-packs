@@ -3,10 +3,14 @@ displayName: Trusted domain added
 description: Detects when a trusted domain is added to Google Workspace
 file: google-workspace-trusted-domain-added.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - trusted-domains
+  - domain-settings
+  - configuration-change
 mitreAttacks:
   - persistence
   - lateral-movement

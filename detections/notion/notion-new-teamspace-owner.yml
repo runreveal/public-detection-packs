@@ -6,9 +6,13 @@ displayName: New teamspace owner
 description: A new teamspace owner has been added to your Notion account
 file: notion-new-teamspace-owner.sql
 categories:
-  - runreveal-detection
-  - signal
   - notion
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - teamspace-owner
+  - privilege-escalation
 mitreAttacks:
   - privilege-escalation
   - lateral-movement

@@ -14,6 +14,12 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - auth
+    - identity-access-management
+    - authentication
+    - signal
+    - account-lockout
+    - authentication-failure
 mitreattacks:
     - persistence
 detection:

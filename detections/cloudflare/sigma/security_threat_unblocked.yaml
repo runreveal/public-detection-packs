@@ -4,10 +4,12 @@ description: |
     Identifies when a security threat is unblocked by the Cloudflare Zero Trust forward proxy.
 categories:
   - cloudflare
-  - cf-gateway-dns
-  - zerotrust
-  - dns
+  - gateway
+  - network-activity
+  - dns-activity
   - signal
+  - security-finding
+  - zerotrust
 references:
     - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_

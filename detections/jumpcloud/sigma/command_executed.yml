@@ -12,6 +12,11 @@ sourcetypes:
     - jumpcloud
 categories:
     - jumpcloud
+    - jumpcloud
+    - system-activity
+    - process-activity
+    - signal
+    - command-execution
 mitreattacks:
     - execution
 detection:

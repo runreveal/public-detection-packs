@@ -6,10 +6,13 @@ displayName: Bucket Created or Deleted
 description: Monitor for bucket creation or deletion
 file: bucket_created_deleted.sql
 categories:
-  - cloudtrail
   - aws
+  - cloudtrail
+  - system-activity
+  - file-activity
+  - signal
   - s3
-  - storage
+  - storage-management
 schedule: '*/15 * * * *'
 riskScore: 60
 severity: Medium

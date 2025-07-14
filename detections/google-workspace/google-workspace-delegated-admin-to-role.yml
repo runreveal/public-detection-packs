@@ -3,10 +3,13 @@ displayName: Delegated admin to role
 description: Detects when a delegated admin is assigned to a role in Google Workspace
 file: google-workspace-delegated-admin-to-role.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - admin-privilege
+  - role-assignment
 mitreAttacks:
   - execution
   - lateral-movement

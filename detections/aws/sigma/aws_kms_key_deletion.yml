@@ -7,6 +7,13 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+    - aws
+    - cloudtrail
+    - system-activity
+    - resource-activity
+    - signal
+    - kms
+    - key-deletion
     - attack.impact
     - attack.t1485
 sourcetypes:

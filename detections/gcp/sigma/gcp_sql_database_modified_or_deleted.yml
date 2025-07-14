@@ -24,6 +24,13 @@ falsepositives:
     - SQL Database modified or deleted from unfamiliar users should be investigated. If known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 riskscore: 50
+categories:
+    - gcp
+    - database
+    - system-activity
+    - entity-management
+    - signal
+    - sql-database
 mitreattacks:
     - impact
     - persistence

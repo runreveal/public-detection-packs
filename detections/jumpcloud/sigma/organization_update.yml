@@ -12,6 +12,11 @@ sourcetypes:
     - jumpcloud
 categories:
     - jumpcloud
+    - admin
+    - system-activity
+    - configuration-access
+    - signal
+    - organization-config
 mitreattacks:
     - persistence
 detection:

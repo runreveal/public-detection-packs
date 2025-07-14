@@ -3,11 +3,11 @@ displayName: Google Workspace User Account Suspended or Deleted
 description: Detects when user accounts are suspended or deleted in Google Workspace through admin actions. Captures administrative user management events including user suspension and deletion with affected user details for investigation.
 file: google-workspace-user-suspended.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
   - admin
+  - identity-access-management
+  - entity-management
+  - signal
   - user-management
   - security-incident
 mitreAttacks:

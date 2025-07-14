@@ -3,10 +3,11 @@ displayName: Mobile Suspicious Activity Event
 description: Detects suspicious activity events from mobile applications in Google Workspace.
 file: google-workspace-mobile-suspicious-activity.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
+  - admin
+  - findings
+  - security-finding
+  - signal
   - mobile-security
   - suspicious-activity
 mitreAttacks:

@@ -14,6 +14,13 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - mfa
+    - identity-access-management
+    - authentication
+    - signal
+    - fastpass
+    - phishing
+    - threat-detection
 mitreattacks:
     - initial-access
 detection:

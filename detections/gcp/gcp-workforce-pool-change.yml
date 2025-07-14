@@ -6,10 +6,12 @@ displayName: workforce-pool-change
 description: Detects changes to the workforce pool in GCP
 file: gcp-workforce-pool-change.sql
 categories:
-  - signal
   - gcp
-  - gcplogs
   - iam
+  - identity-access-management
+  - entity-management
+  - signal
+  - workforce-pool
 mitreAttacks:
   - execution
 severity: Medium

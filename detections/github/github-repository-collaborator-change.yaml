@@ -8,10 +8,13 @@ description: >-
   privilege escalation within private repositories.
 file: github-repository-collaborator-change.sql
 categories:
-  - runreveal-detection
   - github
+  - repository
+  - identity-access-management
+  - entity-management
+  - signal
   - access-control
-  - repository-management
+  - collaborator-management
   - user-management
 mitreAttacks:
   - privilege-escalation

@@ -27,5 +27,12 @@ falsepositives:
     - If known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 risk_score: 50
+categories:
+    - gcp
+    - network
+    - network-activity
+    - security-finding
+    - signal
+    - packet-capture
 mitreattacks:
     - impact

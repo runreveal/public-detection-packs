@@ -2,7 +2,13 @@ name: okta-api-key-created
 displayName: Okta API Key Created
 description: Alert on the creation of a new okta API key.
 file: okta-api-token-creation.sql
-categories: []
+categories:
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - api-token
+  - token-creation
 schedule: '*/15 * * * *'
 notes: ''
 notificationNames: []

@@ -7,6 +7,13 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+    - aws
+    - cloudtrail
+    - network-activity
+    - network-configuration
+    - signal
+    - network-acl
+    - defense-evasion
     - attack.defense_evasion
     - attack.t1562.007
 sourcetypes:

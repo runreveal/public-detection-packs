@@ -12,6 +12,11 @@ sourcetypes:
     - jumpcloud
 categories:
     - jumpcloud
+    - admin
+    - identity-access-management
+    - authentication
+    - signal
+    - admin-access
 mitreattacks:
     - initial-access
 detection:

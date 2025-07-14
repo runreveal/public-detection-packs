@@ -8,9 +8,13 @@ description: >
   set it to include nodes that are tagged as ephemeral.
 file: new_tailscale_node.sql
 categories:
-  - runreveal-detection
   - tailscale
-  - runreveal
+  - network
+  - system-activity
+  - entity-management
+  - signal
+  - node-management
+  - device-registration
 riskScore: 50
 severity: Medium
 schedule: '*/15 * * * *'

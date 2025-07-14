@@ -11,6 +11,14 @@ tags:
     - attack.impact
 sourcetypes:
     - okta
+categories:
+    - okta
+    - admin
+    - identity-access-management
+    - entity-management
+    - signal
+    - policy-rule
+    - rule-modification
 detection:
     selection:
         eventtype:

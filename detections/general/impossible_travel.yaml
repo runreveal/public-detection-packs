@@ -10,7 +10,9 @@ description: >-
 schedule: '*/15 * * * *'
 file: impossible_travel.sql
 categories:
-  - monitoring
+  - general
+  - network-activity
+  - authentication
   - signal
   - impossible-travel
 riskScore: 40

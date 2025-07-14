@@ -6,9 +6,13 @@ displayName: SCIM token generated
 description: A new SCIM token was generated
 file: notion-scim-token-generated.sql
 categories:
-  - runreveal-detection
-  - signal
   - notion
+  - admin
+  - identity-access-management
+  - authentication
+  - signal
+  - scim-token
+  - credential-access
 mitreAttacks:
   - credential-access
 severity: High

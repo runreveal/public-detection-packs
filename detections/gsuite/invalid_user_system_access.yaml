@@ -9,9 +9,13 @@ description: >
   log.
 file: invalid_user_system_access.sql
 categories:
-  - runreveal-detection
   - gsuite
-  - runreveal
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-access
+  - suspended-user
+  - deleted-user
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

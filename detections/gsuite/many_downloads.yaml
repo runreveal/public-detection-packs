@@ -12,9 +12,13 @@ description: >-
   The number of download events to alert on is configurable.
 file: many_downloads.sql
 categories:
-  - runreveal-detection
   - gsuite
-  - runreveal
+  - system-activity
+  - file-activity
+  - signal
+  - file-activity
+  - data-download
+  - bulk-download
 riskScore: 50
 severity: Medium
 schedule: '*/15 * * * *'

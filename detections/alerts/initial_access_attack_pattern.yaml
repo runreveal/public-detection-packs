@@ -6,7 +6,9 @@ displayName: Potential initial access attack pattern
 description: Suspicious initial access was followed by another attack technique
 file: initial_access_attack_pattern.sql
 categories:
-  - alert
+  - general
+  - findings
+  - security-finding
   - initial-access
   - attack-pattern
 notificationNames:

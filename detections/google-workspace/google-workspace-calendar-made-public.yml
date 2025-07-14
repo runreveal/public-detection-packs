@@ -3,10 +3,13 @@ displayName: Calendar made public
 description: Detects when a Google Workspace calendar is made public
 file: google-workspace-calendar-made-public.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
+  - calendar
+  - identity-access-management
+  - authorization
+  - signal
+  - calendar-sharing
+  - public-access
 mitreAttacks:
   - persistence
 severity: Medium

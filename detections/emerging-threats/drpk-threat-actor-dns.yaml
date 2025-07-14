@@ -8,6 +8,14 @@ date: 2024-02-20
 tags:
     - attack.command-and-control
     - detection.emerging-threats
+categories:
+    - emerging-threats
+    - dns
+    - network-activity
+    - dns-activity
+    - signal
+    - c2-communication
+    - dprk-threat-actor
 sourcetypes:
     - 'crowdstrike-fdr'
     - 'cf-gateway-dns'

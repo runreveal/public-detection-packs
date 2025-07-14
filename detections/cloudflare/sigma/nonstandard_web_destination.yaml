@@ -4,8 +4,11 @@ description: |
     Identifies unusual
 categories:
   - cloudflare
-  - cf-gateway-http
-  - network-anomaly
+  - gateway
+  - network-activity
+  - http-activity
+  - signal
+  - anomaly-detection
 references:
     - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_

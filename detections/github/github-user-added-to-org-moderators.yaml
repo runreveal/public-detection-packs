@@ -8,8 +8,11 @@ description: >-
   or administrative errors that could lead to unauthorized administrative access.
 file: github-user-added-to-org-moderators.sql
 categories:
-  - runreveal-detection
   - github
+  - organization
+  - identity-access-management
+  - entity-management
+  - signal
   - access-control
   - organization-management
   - privilege-escalation

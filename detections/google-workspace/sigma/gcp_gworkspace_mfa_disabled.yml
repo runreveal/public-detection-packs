@@ -12,6 +12,14 @@ tags:
     - attack.impact
 sourcetypes:
     - gsuite
+categories:
+    - google-workspace
+    - admin
+    - identity-access-management
+    - authentication
+    - signal
+    - mfa
+    - security-bypass
 detection:
     selection_base:
         eventService: admin.googleapis.com

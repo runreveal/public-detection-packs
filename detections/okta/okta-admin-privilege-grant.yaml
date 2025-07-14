@@ -4,9 +4,12 @@ description: Detects when administrator privileges are successfully granted to a
 file: okta-admin-privilege-grant.sql
 categories:
   - okta
+  - admin
+  - identity-access-management
+  - entity-management
   - signal
-  - iam
   - admin-access
+  - privilege-escalation
 mitreAttacks:
   - privilege-escalation
   - persistence

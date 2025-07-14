@@ -21,5 +21,12 @@ falsepositives:
     - Storage Buckets enumerated from unfamiliar users should be investigated. If known behavior is causing false positives, it can be exempted from the rule.
 level: low
 riskscore: 50
+categories:
+    - gcp
+    - storage
+    - system-activity
+    - file-activity
+    - signal
+    - storage-bucket
 mitreattacks:
     - discovery

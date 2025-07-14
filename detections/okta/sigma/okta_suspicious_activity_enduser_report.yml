@@ -13,6 +13,13 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - okta
+    - identity-access-management
+    - authentication
+    - signal
+    - user-reported
+    - suspicious-activity
+    - enduser-report
 mitreattacks:
     - initial-access
 detection:

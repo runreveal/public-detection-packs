@@ -19,5 +19,12 @@ falsepositives:
     - Unknown
 level: medium
 riskscore: 50
+categories:
+    - gcp
+    - security
+    - findings
+    - security-finding
+    - signal
+    - dlp
 mitreattacks:
     - impact

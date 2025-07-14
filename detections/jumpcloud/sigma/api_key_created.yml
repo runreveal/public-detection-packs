@@ -11,6 +11,11 @@ sourcetypes:
     - jumpcloud
 categories:
     - jumpcloud
+    - admin
+    - identity-access-management
+    - entity-management
+    - signal
+    - api-key
 mitreattacks:
     - persistence
 detection:

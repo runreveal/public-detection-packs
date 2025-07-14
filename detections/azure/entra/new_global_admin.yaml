@@ -8,9 +8,12 @@ description: >
   in Entra. Other roles can be added to the parameter to alert on.
 file: new_global_admin.sql
 categories:
-  - entra
   - azure
-  - iam
+  - entra
+  - identity-access-management
+  - entity-management
+  - signal
+  - admin-privilege
 schedule: '*/15 * * * *'
 severity: High
 riskScore: 90

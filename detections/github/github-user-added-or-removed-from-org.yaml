@@ -10,7 +10,10 @@ file: github-user-added-or-removed-from-org.sql
 categories:
   - github
   - organization
-  - iam
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-management
 mitreAttacks:
   - privilege-escalation
   - persistence

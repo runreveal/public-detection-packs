@@ -28,6 +28,13 @@ falsepositives:
     - If known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 riskscore: 50
+categories:
+    - gcp
+    - compute
+    - system-activity
+    - process-activity
+    - signal
+    - kubernetes
 mitreattacks:
     - persistence
     - privilege-escalation

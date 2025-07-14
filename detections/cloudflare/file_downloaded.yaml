@@ -6,8 +6,11 @@ description: A file was downloaded through Cloudflare gateway.
 file: file_downloaded.sql
 categories: 
   - cloudflare
-  - cf-gateway-http
-  - file-transfer
+  - gateway
+  - network-activity
+  - http-activity
+  - signal
+  - file-activity
   - data-exposure
 schedule: '*/15 * * * *'
 riskScore: 30

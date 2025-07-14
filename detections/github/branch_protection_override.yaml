@@ -12,6 +12,10 @@ riskScore: 10
 severity: Low
 categories:
   - github
+  - repository
+  - system-activity
+  - resource-activity
+  - signal
   - branch-protection
   - security-bypass
 schedule: '*/15 * * * *'

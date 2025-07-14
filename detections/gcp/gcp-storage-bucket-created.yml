@@ -6,10 +6,12 @@ displayName: storage-bucket-created
 description: GCS bucket created
 file: gcp-storage-bucket-created.sql
 categories:
-  - signal
   - gcp
-  - gcplogs
   - storage
+  - system-activity
+  - file-activity
+  - signal
+  - storage-bucket
 mitreAttacks:
   - execution
 severity: Medium

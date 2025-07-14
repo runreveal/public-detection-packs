@@ -12,6 +12,10 @@ sourcetypes:
     - 1password
 categories:
     - 1password
+    - identity-access-management
+    - user-access-management
+    - signal
+    - privilege-escalation
 mitreattacks:
     - privilege-escalation
 detection:

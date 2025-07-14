@@ -9,8 +9,11 @@ description: >-
   appropriate access controls.
 file: github-user-role-updated.sql
 categories:
-  - runreveal-detection
   - github
+  - organization
+  - identity-access-management
+  - entity-management
+  - signal
   - access-control
   - user-management
   - privilege-escalation

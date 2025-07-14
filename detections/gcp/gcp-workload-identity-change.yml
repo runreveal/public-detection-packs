@@ -7,9 +7,11 @@ description: Detects changes to the Workload Identity configuration in GCP
 file: gcp-workload-identity-change.sql
 categories:
   - gcp
-  - wprkload
   - iam
+  - identity-access-management
+  - entity-management
   - signal
+  - workload-identity
 mitreAttacks:
   - execution
 severity: Medium

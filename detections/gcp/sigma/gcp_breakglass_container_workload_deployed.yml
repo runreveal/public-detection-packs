@@ -25,5 +25,12 @@ falsepositives:
     - Unknown
 level: medium
 riskscore: 50
+categories:
+    - gcp
+    - compute
+    - system-activity
+    - security-finding
+    - signal
+    - breakglass
 mitreattacks:
     - defense-evasion

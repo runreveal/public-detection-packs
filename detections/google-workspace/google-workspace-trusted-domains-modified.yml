@@ -3,13 +3,13 @@ displayName: Google Workspace Trusted Domains Modified
 description: Detects when trusted domains are modified in Google Workspace domain settings. This includes adding, removing, or changing trusted domains which can affect cross-domain authentication, data sharing, and security policies. Changes to trusted domains should be monitored as they can impact organizational security boundaries.
 file: google-workspace-trusted-domains-modified.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
   - admin
-  - domain-settings
+  - identity-access-management
+  - entity-management
+  - signal
   - trusted-domains
+  - domain-settings
   - configuration-change
 mitreAttacks:
   - defense-evasion

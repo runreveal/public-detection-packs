@@ -3,8 +3,10 @@ displayName: Okta Unauthorized App Access Attempt
 description: Detects when a user attempts unauthorized access to an application in Okta. This event indicates potential security violations where users are trying to access applications they don't have permission to use. These attempts could indicate compromised accounts, privilege escalation attempts, or users testing system boundaries.
 file: okta-unauth-app-access-attempt.sql
 categories:
-  - runreveal-detection
   - okta
+  - okta
+  - identity-access-management
+  - authentication
   - signal
   - unauthorized-access
   - security-violation
