@@ -17,7 +17,7 @@ riskScore: 75
 fields:
   - url
   - doc_title
-  - doc_title
+  - doc_type
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
