@@ -14,6 +14,10 @@ mitreAttacks:
   - exfiltration
 severity: High
 riskScore: 75
+fields:
+  - url
+  - doc_title
+  - doc_title
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
