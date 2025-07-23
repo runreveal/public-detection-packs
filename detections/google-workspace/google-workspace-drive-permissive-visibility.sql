@@ -1,21 +1,24 @@
-SELECT 
-arrayJoin(events) as event,
-arrayJoin(JSONExtractArrayRaw(event, 'parameters')) as param,
-JSONExtractString(param, 'name') as paramName,
-JSONExtractString(param, 'value') as paramValue,
-JSONExtractString(event, 'type') as event_type,
-JSONExtractString(event, 'name') as event_name,
--- Extract specific parameters of interest
-JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_title', JSONExtractArrayRaw(event, 'parameters')), 'value') as doc_title,
-JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_id', JSONExtractArrayRaw(event, 'parameters')), 'value') as doc_id,
-JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_type', JSONExtractArrayRaw(event, 'parameters')), 'value') as doc_type,
-*
+SELECT *,
+    -- Extract document information
+    JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_id', JSONExtractArrayRaw(event, 'parameters')), 'value') as doc_id,
+    JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_type', JSONExtractArrayRaw(event, 'parameters')), 'value') as doc_type,
+    JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_title', JSONExtractArrayRaw(event, 'parameters')), 'value') as doc_title,
+    -- Assemble Google Docs URL
+    CASE 
+        WHEN JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_type', JSONExtractArrayRaw(event, 'parameters')), 'value') = 'document' 
+            THEN concat('https://docs.google.com/document/d/', JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_id', JSONExtractArrayRaw(event, 'parameters')), 'value'))
+        WHEN JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_type', JSONExtractArrayRaw(event, 'parameters')), 'value') = 'spreadsheet' 
+            THEN concat('https://docs.google.com/spreadsheets/d/', JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_id', JSONExtractArrayRaw(event, 'parameters')), 'value'))
+        WHEN JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_type', JSONExtractArrayRaw(event, 'parameters')), 'value') = 'presentation' 
+            THEN concat('https://docs.google.com/presentation/d/', JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_id', JSONExtractArrayRaw(event, 'parameters')), 'value'))
+        ELSE concat('https://drive.google.com/file/d/', JSONExtractString(arrayFirst(x -> JSONExtractString(x, 'name') = 'doc_id', JSONExtractArrayRaw(event, 'parameters')), 'value'))
+    END as url
 FROM google_workspace_logs
+    ARRAY JOIN events as event
 WHERE (receivedAt > {from:DateTime})
-  AND (receivedAt < {to:DateTime}) 
+  AND (receivedAt < {to:DateTime})
   AND (`id.applicationName` = 'drive')
-  AND (JSONExtractString(event, 'type') = 'access')
-  AND (JSONExtractString(event, 'name') IN ('create', 'move', 'upload', 'edit'))
-  AND (paramName = 'visibility')
-  AND (paramValue IN ('people_with_link', 'public_on_the_web'))
-; 
+  AND (JSONExtractString(event, 'type') = 'acl_change')
+  AND (JSONExtractString(event, 'name') = 'change_document_visibility')
+  AND arrayExists(param -> (JSONExtractString(param, 'name') = 'new_value' AND param LIKE '%people_with_link%'), JSONExtractArrayRaw(event, 'parameters'))
+ORDER BY receivedAt DESC;
