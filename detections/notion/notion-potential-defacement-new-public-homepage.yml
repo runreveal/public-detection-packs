@@ -6,9 +6,13 @@ displayName: Potential defacement new public homepage
 description: New notion public homepage created
 file: notion-potential-defacement-new-public-homepage.sql
 categories:
-  - runreveal-detection
-  - signal
   - notion
+  - sharing
+  - system-activity
+  - audit-activity
+  - signal
+  - public-homepage
+  - defacement
 mitreAttacks:
   - execution
 riskScore: 40

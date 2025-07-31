@@ -6,9 +6,13 @@ displayName: Anomalous Third Party Activity
 description: Third party in Okta has changed its pattern of activity
 file: anomalous_third_party.sql
 categories:
-  - runreveal-detection
   - okta
+  - okta
+  - system-activity
+  - authentication
   - signal
+  - third-party
+  - anomalous-behavior
 mitreAttacks:
   - execution
 severity: High

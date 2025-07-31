@@ -6,10 +6,12 @@ displayName: gmail-added-to-project
 description: Detect when a gmail, or easily modified to your corporate email domain, is added to a project
 file: gcp-gmail-added-to-project.sql
 categories:
-  - runreveal-detection
-  - signal
   - gcp
-  - gcplogs
+  - iam
+  - identity-access-management
+  - entity-management
+  - signal
+  - gmail
 mitreAttacks:
   - initial-access
   - persistence

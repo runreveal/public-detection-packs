@@ -2,6 +2,14 @@ title: Security Threat Unblocked
 id: 2sEoh9NwefTdUD5BOZBkvLZlraD
 description: |
     Identifies when a security threat is unblocked by the Cloudflare Zero Trust forward proxy.
+categories:
+  - cloudflare
+  - gateway
+  - network-activity
+  - dns-activity
+  - signal
+  - security-finding
+  - zerotrust
 references:
     - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_

@@ -8,9 +8,13 @@ description: >
   crypto domain.
 file: known_crypto_domains.sql
 categories:
-  - runreveal-detection
-  - awsdns
-  - runreveal
+  - aws
+  - dns
+  - network-activity
+  - dns-activity
+  - signal
+  - threat-intelligence
+  - cryptocurrency
 schedule: '*/15 * * * *'
 riskScore: 80
 severity: High

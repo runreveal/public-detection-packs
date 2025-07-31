@@ -10,8 +10,11 @@ description: >-
 schedule: '*/15 * * * *'
 file: impossible_travel.sql
 categories:
-  - runreveal-detection
+  - general
+  - network-activity
+  - authentication
   - signal
+  - impossible-travel
 riskScore: 40
 severity: Medium
 mitreAttacks:

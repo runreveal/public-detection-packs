@@ -3,10 +3,11 @@ displayName: Mobile Application Added to Whitelist
 description: Detects when a mobile application is added to the whitelist in Google Workspace and extracts the mobile app package ID and other parameters for detailed analysis.
 file: google-workspace-add-mobile-app-whitelist.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
   - mobile-security
 mitreAttacks:
   - persistence

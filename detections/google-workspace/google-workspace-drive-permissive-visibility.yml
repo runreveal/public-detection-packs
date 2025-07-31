@@ -3,12 +3,14 @@ displayName: Google Drive Document with Permissive Visibility
 description: Detects when Google Drive documents are created, moved, uploaded, or edited with permissive visibility settings (people_with_link or public_on_the_web) that could expose sensitive information. Extracts document title, ID, and type for detailed analysis.
 file: google-workspace-drive-permissive-visibility.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
   - drive
+  - identity-access-management
+  - authorization
+  - signal
+  - document-security
   - data-exposure
+  - permissive-visibility
 mitreAttacks:
   - collection
   - exfiltration

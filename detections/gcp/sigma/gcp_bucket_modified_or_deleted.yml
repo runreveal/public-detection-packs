@@ -23,5 +23,12 @@ falsepositives:
     - Storage Buckets modified or deleted from unfamiliar users should be investigated. If known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 risk_score: 50
+categories:
+    - gcp
+    - storage
+    - system-activity
+    - file-activity
+    - signal
+    - storage-bucket
 mitreattacks:
     - impact

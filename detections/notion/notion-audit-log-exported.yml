@@ -6,9 +6,13 @@ displayName: Audit log exported
 description: Workspace audit log exported
 file: notion-audit-log-exported.sql
 categories:
-  - runreveal-detection
-  - signal
   - notion
+  - notion
+  - system-activity
+  - audit-activity
+  - signal
+  - audit-log
+  - export
 mitreAttacks:
   - exfiltration
   - collection

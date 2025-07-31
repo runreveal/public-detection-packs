@@ -3,14 +3,15 @@ displayName: Okta Policy Rule Changes
 description: Detects changes to policy rules in Okta including deletions, updates, deactivations, and invalidations. Policy rules control access, authentication requirements, and security behaviors across the organization. Changes to these rules can significantly impact security posture and should be monitored to ensure they align with approved security policies and don't introduce vulnerabilities or weaken security controls.
 file: okta-policy-rule-changes.sql
 categories:
-  - runreveal-detection
   - okta
+  - admin
+  - identity-access-management
+  - entity-management
   - signal
   - policy-management
   - rule-changes
   - security-policy
   - configuration-change
-  - governance
 mitreAttacks:
   - defense-evasion
   - persistence

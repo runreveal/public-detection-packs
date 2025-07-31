@@ -6,6 +6,13 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+    - aws
+    - cloudtrail
+    - system-activity
+    - process-activity
+    - signal
+    - ec2
+    - unusual-region
     - attack.execution
     - attack.t1496
 sourcetypes:

@@ -3,7 +3,13 @@ displayName: Okta Privileges Granted
 type: sql
 description: This signals whenever a new okta privilege was granted to a user or group.
 file: okta-privileges-granted.sql
-categories: []
+categories:
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - privileges-granted
+  - privilege-escalation
 schedule: '*/15 * * * *'
 notes: ''
 disabled: true

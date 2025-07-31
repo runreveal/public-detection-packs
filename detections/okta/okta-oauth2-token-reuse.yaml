@@ -3,15 +3,16 @@ displayName: Okta OAuth2 Token Reuse Detection
 description: Detects when Okta identifies OAuth2 token reuse, which indicates potential token theft, replay attacks, or credential compromise. Token reuse detection is a critical security feature that identifies when the same OAuth2 token is being used from multiple sources or in suspicious patterns. These events represent high-confidence indicators of security incidents involving stolen or compromised authentication tokens.
 file: okta-oauth2-token-reuse.sql
 categories:
-  - runreveal-detection
   - okta
+  - auth
+  - identity-access-management
+  - authentication
   - signal
   - oauth2
   - token-reuse
   - credential-theft
   - replay-attack
   - token-compromise
-  - authentication-abuse
 mitreAttacks:
   - credential-access
   - lateral-movement

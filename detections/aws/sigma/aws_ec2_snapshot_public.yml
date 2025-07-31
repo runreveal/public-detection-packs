@@ -7,6 +7,14 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+    - aws
+    - cloudtrail
+    - system-activity
+    - file-activity
+    - signal
+    - ec2
+    - snapshot
+    - public-access
     - attack.exfiltration
     - attack.t1530
 sourcetypes:

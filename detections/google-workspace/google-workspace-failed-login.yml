@@ -3,10 +3,11 @@ displayName: failed-login
 description: A user failed to log in to Google Workspace.
 file: google-workspace-failed-login.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
+  - identity-access-management
+  - authentication
+  - signal
+  - failed-login
 mitreAttacks:
   - execution
 severity: Low

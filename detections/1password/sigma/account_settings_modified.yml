@@ -12,6 +12,10 @@ sourcetypes:
     - 1password
 categories:
     - 1password
+    - identity-access-management
+    - entity-management
+    - signal
+    - account-settings
 mitreattacks:
     - persistence
 detection:

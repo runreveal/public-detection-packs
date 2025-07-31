@@ -6,8 +6,13 @@ displayName: Root Account Usage
 description: Monitor for usage of the AWS root account.
 file: root_account_usage.sql
 categories:
-  - runreveal-detection
+  - aws
   - cloudtrail
+  - identity-access-management
+  - authentication
+  - signal
+  - privileged-access
+  - root-account
 schedule: '*/15 * * * *'
 riskScore: 50
 severity: Medium

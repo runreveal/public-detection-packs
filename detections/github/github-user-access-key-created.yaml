@@ -8,11 +8,14 @@ description: >-
   and properly managed according to security policies.
 file: github-user-access-key-created.sql
 categories:
-  - runreveal-detection
   - github
+  - github
+  - identity-access-management
   - authentication
+  - signal
   - key-management
   - user-management
+  - ssh-keys
 mitreAttacks:
   - persistence
   - credential-access

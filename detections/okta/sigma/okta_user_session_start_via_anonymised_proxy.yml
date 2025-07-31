@@ -13,6 +13,13 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - auth
+    - identity-access-management
+    - authentication
+    - signal
+    - proxy-access
+    - anonymised-proxy
+    - session-start
 mitreattacks:
     - initial-access
 detection:

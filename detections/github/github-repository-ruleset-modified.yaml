@@ -9,10 +9,14 @@ description: >-
   unauthorized code deployment.
 file: github-repository-ruleset-modified.sql
 categories:
-  - runreveal-detection
   - github
-  - security-configuration
+  - repository
+  - system-activity
+  - configuration-audit
+  - signal
   - policy-management
+  - ruleset-management
+  - branch-protection
 mitreAttacks:
   - defense-evasion
   - persistence

@@ -3,15 +3,16 @@ displayName: Okta AWS IAM Identity Center SSO Authentication
 description: Detects successful SSO authentication to AWS IAM Identity Center through Okta. This event indicates federated access to AWS resources where users are authenticating to AWS through Okta's identity federation. Monitoring these events helps track AWS resource access patterns, identify unusual access times or locations, and maintain visibility into cloud infrastructure access through identity federation.
 file: okta-aws-iam-identity-center-sso.sql
 categories:
-  - runreveal-detection
   - okta
+  - auth
+  - identity-access-management
+  - authentication
   - signal
   - sso
   - aws
   - iam-identity-center
   - federation
   - cloud-access
-  - authentication
 mitreAttacks:
   - initial-access
   - lateral-movement

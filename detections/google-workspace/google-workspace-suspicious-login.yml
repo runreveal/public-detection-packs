@@ -3,12 +3,12 @@ displayName: Google Workspace Suspicious Login Activity
 description: Detects suspicious login activities in Google Workspace including suspicious logins, less secure app logins, and suspicious programmatic logins. Extracts login parameters for detailed analysis.
 file: google-workspace-suspicious-login.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
-  - login
+  - identity-access-management
+  - authentication
+  - signal
   - suspicious-activity
+  - suspicious-login
 mitreAttacks:
   - initial-access
   - credential-access

@@ -15,6 +15,14 @@ tags:
     - attack.t1098.003
 sourcetypes:
     - gsuite
+categories:
+    - google-workspace
+    - admin
+    - identity-access-management
+    - entity-management
+    - signal
+    - application-security
+    - access-control
 detection:
     selection:
         eventService: 'admin.googleapis.com'

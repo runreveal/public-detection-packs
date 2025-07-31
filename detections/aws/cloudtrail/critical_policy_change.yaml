@@ -6,8 +6,13 @@ displayName: Critical Policy Changes
 description: Monitor for critical policy changes of your AWS assets.
 file: critical_policy_change.sql
 categories:
-  - runreveal-detection
+  - aws
   - cloudtrail
+  - identity-access-management
+  - entity-management
+  - signal
+  - policy-change
+  - iam
 schedule: '*/15 * * * *'
 severity: Medium
 riskScore: 60

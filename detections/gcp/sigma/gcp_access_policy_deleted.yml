@@ -29,6 +29,13 @@ falsepositives:
     - Legitimate administrative activities
 level: medium
 risk_score: 50
+categories:
+    - gcp
+    - iam
+    - identity-access-management
+    - entity-management
+    - signal
+    - access-policy
 mitreattacks:
     - persistence
     - privilege-escalation

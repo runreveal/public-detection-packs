@@ -6,9 +6,13 @@ description: >-
     accessed okta from
 file: new_country.sql
 categories:
-  - runreveal-detection
   - okta
+  - okta
+  - identity-access-management
+  - authentication
   - signal
+  - geographical-anomaly
+  - new-country
 mitreAttacks:
   - initial-access
 severity: Medium

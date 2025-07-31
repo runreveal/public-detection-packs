@@ -9,6 +9,11 @@ date: 2024-06-20
 tags:
     - aws
     - cloudtrail
+    - system-activity
+    - audit-activity
+    - signal
+    - log-tampering
+    - defense-evasion
 sourcetypes:
     - cloudtrail
 detection:

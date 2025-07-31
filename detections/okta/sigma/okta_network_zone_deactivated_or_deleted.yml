@@ -13,6 +13,12 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - admin
+    - identity-access-management
+    - entity-management
+    - signal
+    - network-zone
+    - zone-deactivation
 mitreattacks:
     - persistence
 detection:

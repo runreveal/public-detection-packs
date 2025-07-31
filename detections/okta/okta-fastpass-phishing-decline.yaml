@@ -3,14 +3,15 @@ displayName: Okta FastPass Declined Phishing Attempt
 description: Detects when Okta's FastPass feature declines an MFA authentication attempt due to a detected phishing attack. This is a critical security event indicating that FastPass has identified and blocked a potential phishing attempt targeting the user. These events represent active phishing campaigns and should trigger immediate investigation and user notification to prevent successful attacks.
 file: okta-fastpass-phishing-decline.sql
 categories:
-  - runreveal-detection
   - okta
+  - mfa
+  - identity-access-management
+  - authentication
   - signal
   - phishing
   - fastpass
   - mfa
   - authentication-failure
-  - security-protection
   - threat-detection
 mitreAttacks:
   - initial-access

@@ -3,8 +3,10 @@ displayName: Okta Identity Provider Lifecycle Events
 description: Detects lifecycle events for identity providers (IDPs) in Okta. These events include creation, modification, activation, deactivation, and deletion of external identity providers. IDP lifecycle changes can significantly impact authentication flows and security posture, potentially affecting how users authenticate and which external systems are trusted for identity verification.
 file: okta-idp-lifecycle.sql
 categories:
-  - runreveal-detection
   - okta
+  - admin
+  - identity-access-management
+  - entity-management
   - signal
   - identity-provider
   - lifecycle-management

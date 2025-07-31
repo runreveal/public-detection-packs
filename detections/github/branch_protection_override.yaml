@@ -11,9 +11,13 @@ file: branch_protection_override.sql
 riskScore: 10
 severity: Low
 categories:
-  - runreveal-detection
   - github
-  - runreveal
+  - repository
+  - system-activity
+  - resource-activity
+  - signal
+  - branch-protection
+  - security-bypass
 schedule: '*/15 * * * *'
 sourceTypes:
   - github-webhook

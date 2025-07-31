@@ -1,5 +1,11 @@
 title: Notify on all Guardduty events
 description: Send a notification when receiving any event from a Guardduty source
+categories:
+  - aws
+  - guardduty
+  - findings
+  - security-finding
+  - monitoring
 logsource:
     product: aws
     service: guardduty

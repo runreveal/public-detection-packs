@@ -9,9 +9,12 @@ description: >-
   malicious activities.
 file: github-advanced-security-change.sql
 categories:
-  - runreveal-detection
   - github
-  - security-configuration
+  - security
+  - system-activity
+  - configuration-audit
+  - signal
+  - advanced-security
   - vulnerability-management
   - policy-management
 mitreAttacks:

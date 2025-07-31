@@ -7,9 +7,13 @@ description: >-
   The behavior of this AWS key changed and we've seen new eventNames in a short period of time.
 file: new_aws_key_behavior.sql
 categories:
-  - runreveal-detection
+  - aws
   - cloudtrail
+  - identity-access-management
+  - authentication
   - signal
+  - behavioral-analysis
+  - iam
 mitreAttacks:
   - execution
 severity: High

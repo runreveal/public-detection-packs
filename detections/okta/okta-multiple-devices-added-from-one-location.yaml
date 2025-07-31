@@ -9,6 +9,12 @@ description: >-
 file: okta-multiple-devices-added-from-one-location.sql
 categories:
   - okta
+  - okta
+  - identity-access-management
+  - entity-management
+  - multiple-devices
+  - same-location
+  - suspicious-activity
 schedule: '*/15 * * * *'
 notes: ''
 parameters:

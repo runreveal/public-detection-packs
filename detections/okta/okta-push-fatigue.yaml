@@ -6,7 +6,13 @@ description: >-
   followed by a Successful one, indicating possible MFA push fatigue attack
   against a given user in a 10 minute window.
 file: okta-push-fatigue.sql
-categories: []
+categories:
+  - okta
+  - mfa
+  - identity-access-management
+  - authentication
+  - push-fatigue
+  - mfa-bypass
 schedule: '*/30 * * * *'
 notes: ''
 disabled: false

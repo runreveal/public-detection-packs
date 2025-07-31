@@ -3,11 +3,13 @@ displayName: Okta Admin Privilege Grant
 description: Detects when administrator privileges are successfully granted to a user in Okta. This event indicates privilege escalation and should be closely monitored as it grants significant administrative access to Okta resources. Admin privilege grants can be legitimate but should be verified to ensure they are authorized and follow proper approval processes.
 file: okta-admin-privilege-grant.sql
 categories:
-  - runreveal-detection
   - okta
+  - admin
+  - identity-access-management
+  - entity-management
   - signal
-  - privilege-escalation
   - admin-access
+  - privilege-escalation
 mitreAttacks:
   - privilege-escalation
   - persistence

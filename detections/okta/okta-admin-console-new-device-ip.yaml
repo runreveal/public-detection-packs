@@ -3,14 +3,15 @@ displayName: Okta Admin Console Access from New Device and IP
 description: Detects when someone accesses the Okta Admin Console from both a new device and a new IP address simultaneously. This combination of risk factors indicates potential unauthorized access to administrative functions, possibly from a compromised account or credential theft. Admin console access from new devices and IPs should be carefully scrutinized as it represents high-privilege access from unfamiliar sources.
 file: okta-admin-console-new-device-ip.sql
 categories:
-  - runreveal-detection
   - okta
+  - admin
+  - identity-access-management
+  - authentication
   - signal
   - admin-access
   - new-device
   - new-ip
   - risk-behavior
-  - policy-evaluation
 mitreAttacks:
   - initial-access
   - privilege-escalation

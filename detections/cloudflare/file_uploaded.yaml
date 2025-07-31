@@ -5,7 +5,12 @@ description: A file was uploaded through Cloudflare gateway.
 file: file_uploaded.sql
 categories: 
   - cloudflare
-  - cf-gateway-http
+  - gateway
+  - network-activity
+  - http-activity
+  - signal
+  - file-activity
+  - data-exposure
 schedule: '*/15 * * * *'
 riskScore: 30
 severity: Low

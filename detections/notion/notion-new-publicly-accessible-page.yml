@@ -6,9 +6,13 @@ displayName: New publicly accessible page
 description: Detects when a new page is made publicly accessible in Notion
 file: notion-new-publicly-accessible-page.sql
 categories:
-  - runreveal-detection
-  - signal
   - notion
+  - sharing
+  - system-activity
+  - audit-activity
+  - signal
+  - public-access
+  - data-exposure
 mitreAttacks:
   - execution
 severity: Medium

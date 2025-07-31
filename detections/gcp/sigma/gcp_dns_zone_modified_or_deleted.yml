@@ -21,5 +21,12 @@ falsepositives:
     - Unknown
 level: medium
 riskscore: 50
+categories:
+    - gcp
+    - network
+    - network-activity
+    - security-finding
+    - signal
+    - dns
 mitreattacks:
     - impact

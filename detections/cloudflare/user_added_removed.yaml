@@ -6,9 +6,12 @@ displayName: User added or removed from Cloudflare account
 description: A user was either added to or removed from your Cloudflare account.
 file: user_added_removed.sql
 categories:
-  - runreveal-detection
   - cloudflare
-  - cf-audit
+  - audit
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-management
 schedule: '*/15 * * * *'
 riskScore: 50
 severity: Medium

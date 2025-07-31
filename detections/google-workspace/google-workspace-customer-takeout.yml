@@ -3,11 +3,11 @@ displayName: Google Workspace Customer Takeout Activity
 description: Detects Google Workspace customer takeout events including creation and completion of data export requests. Customer takeout allows users to export their data from Google services, which could indicate potential data exfiltration or legitimate backup activities that should be monitored.
 file: google-workspace-customer-takeout.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
-  - gsuite
   - admin
+  - system-activity
+  - resource-activity
+  - signal
   - data-export
   - data-exfiltration
   - takeout

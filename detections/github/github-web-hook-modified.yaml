@@ -8,8 +8,11 @@ description: >-
   controls, or disrupt automated processes.
 file: github-web-hook-modified.sql
 categories:
-  - runreveal-detection
   - github
+  - repository
+  - system-activity
+  - configuration-audit
+  - signal
   - webhook-management
   - integration-security
 mitreAttacks:

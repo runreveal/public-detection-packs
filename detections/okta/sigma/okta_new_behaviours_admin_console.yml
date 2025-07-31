@@ -14,6 +14,13 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - admin
+    - identity-access-management
+    - authentication
+    - signal
+    - admin-console
+    - new-behavior
+    - anomalous-behavior
 mitreattacks:
     - execution
 detection:

@@ -13,6 +13,12 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - admin
+    - identity-access-management
+    - authentication
+    - signal
+    - proxy-access
+    - admin-activity
 mitreattacks:
     - credential-access
     - initial-access

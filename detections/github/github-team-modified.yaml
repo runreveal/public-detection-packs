@@ -8,8 +8,11 @@ description: >-
   disruption of collaborative workflows.
 file: github-team-modified.sql
 categories:
-  - runreveal-detection
   - github
+  - organization
+  - identity-access-management
+  - entity-management
+  - signal
   - access-control
   - team-management
   - organization-management

@@ -12,6 +12,12 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - admin
+    - identity-access-management
+    - entity-management
+    - signal
+    - admin-role
+    - role-assignment
 mitreattacks:
     - persistence
 detection:

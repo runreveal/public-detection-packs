@@ -14,6 +14,12 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - okta
+    - findings
+    - security-finding
+    - signal
+    - threat-detection
+    - security-threat
 mitreattacks:
     - command-and-control
 detection:

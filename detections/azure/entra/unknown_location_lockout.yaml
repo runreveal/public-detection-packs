@@ -8,11 +8,12 @@ description: >
   their account from an unknown IP address.
 file: unknown_location_lockout.sql
 categories:
-  - runreveal-detection
-  - entra
   - azure
-  - aad
-  - runreveal
+  - entra
+  - identity-access-management
+  - authentication
+  - signal
+  - location-lockout
 schedule: '*/15 * * * *'
 riskScore: 80
 severity: High

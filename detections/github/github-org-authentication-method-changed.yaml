@@ -9,11 +9,14 @@ description: >-
   monitor critical organizational security configuration changes.
 file: github-org-authentication-method-changed.sql
 categories:
-  - runreveal-detection
   - github
-  - security-configuration
+  - organization
+  - identity-access-management
   - authentication
+  - signal
   - access-control
+  - saml-configuration
+  - two-factor-authentication
 mitreAttacks:
   - defense-evasion
   - persistence

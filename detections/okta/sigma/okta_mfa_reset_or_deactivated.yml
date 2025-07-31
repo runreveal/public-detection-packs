@@ -16,6 +16,12 @@ sourcetypes:
     - okta
 categories:
     - okta
+    - mfa
+    - identity-access-management
+    - entity-management
+    - signal
+    - mfa-reset
+    - mfa-deactivated
 mitreattacks:
     - persistence
 detection:

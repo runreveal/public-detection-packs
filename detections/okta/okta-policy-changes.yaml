@@ -7,6 +7,11 @@ description: >-
 file: okta-policy-changes.sql
 categories:
   - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - policy-changes
+  - configuration-change
 schedule: '*/15 * * * *'
 notes: ''
 disabled: true

@@ -3,13 +3,13 @@ displayName: Okta MFA Bypass Attempt
 description: Detects attempts to bypass multi-factor authentication (MFA) in Okta. MFA bypass attempts are serious security events that could indicate account compromise, social engineering attacks, or malicious insider activity. These events should be investigated immediately as they represent direct attempts to circumvent critical security controls.
 file: okta-mfa-bypass-attempt.sql
 categories:
-  - runreveal-detection
   - okta
-  - signal
   - mfa
-  - bypass-attempt
-  - security-violation
+  - identity-access-management
   - authentication
+  - signal
+  - mfa-bypass
+  - bypass-attempt
 mitreAttacks:
   - defense-evasion
   - credential-access

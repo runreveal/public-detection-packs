@@ -6,10 +6,11 @@ displayName: Access Transparency GSuite Resource Events
 description: Detects Google Workspace events where the application is not access_transparency and the event type is GSUITE_RESOURCE.
 file: google-workspace-access-transparency-gsuite-resource.sql
 categories:
-  - runreveal-detection
-  - signal
   - google-workspace
   - gsuite
+  - system-activity
+  - resource-activity
+  - signal
   - access-transparency
 mitreAttacks:
   - discovery
