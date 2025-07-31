@@ -13,6 +13,10 @@ detection:
         enrichments.ip_threat_intel.tor-exit: true
     condition: selection1 or selection2
 level: high
+fields:
+  - action # nsg/flow logs
+  - elbStatusCode # elb logs
+  - result # cf-audit logs
 riskscore: 80
 
   
