@@ -1,10 +1,10 @@
 # Public Detection Development Guide
 
-There are two types of detections in this file.
+There are two types of detections in this repository.
  - Detections that are ClickHouse queries.
  - Detections that are Sigma rules.
 
- Detection queries have two files, a yaml and a sql file.
+Detection queries have two files, a yaml and a sql file. Sigma detections only have one yaml file and they are stored within a `sigma` folder.
 
  The yaml file contains metadata about the detection such as
  description, severity, and schedule.
@@ -74,3 +74,50 @@ riskscore: 50
 mitreattacks:
     - impact
 ```
+
+## Categories
+
+When adding categories to the rules, make sure they follow this convention:
+
+Category Structure
+Categories must follow this hierarchical order:
+
+1. Service Name (Required)
+1. Security Category (Required)
+1. Signal Classification (Required)
+1. Additional Tags (Optional)
+
+
+### Category Definitions
+**1. Service Name**
+The primary service or platform generating the alert.
+Examples:
+* `cloudflare`, `cf-audit`
+* `aws`, `s3`, `ec2`, `dns`
+* `azure`, `gcp`
+
+**2. Security Category**
+Security domain classification based on OCSF (Open Cybersecurity Schema Framework) schema - https://schema.ocsf.io/
+
+Standard Categories (OCSF Framework):
+* system-activity - System and endpoint events (file system, processes, kernel activities)
+* findings - Security findings and detections (vulnerabilities, compliance, incidents)
+* identity-access-management - Authentication, authorization, and user management events
+* network-activity - Network connections, traffic, and communication events
+* discovery - Asset inventory and configuration discovery activities
+* application-activity - Application-specific events and behaviors
+* audit-activity - Administrative and compliance-related events
+* unmanned-systems - Drone and aviation security data (OCSF 1.4.0+)
+
+**3. Signal Classification**
+Distinguishes between different alert types. Detections without notificationNames are considered signals by default.
+
+* signal - Actionable detection requiring investigation
+* non-signal - The default and when signal is absent from the list of categories.
+
+**4. Additional Tags**
+Supplementary metadata for enhanced categorization.
+
+Examples:
+Attack techniques: persistence, privilege-escalation, lateral-movement
+Asset types: production, staging, development
