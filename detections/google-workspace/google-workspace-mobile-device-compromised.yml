@@ -24,6 +24,9 @@ riskScore: 95
 schedule: '*/5 * * * *'
 parameters:
   window: '30'
+fields:
+  - actor.email
+  - ownerDomain
 sourceTypes:
   - google-workspace
   - gsuite 

@@ -26,5 +26,15 @@ schedule: '*/15 * * * *'
 parameters:
   window: '30'
 notes: 'This detection monitors all policy rule lifecycle changes that could affect security controls. Rule deletions and deactivations should be particularly scrutinized as they may weaken security posture.'
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - client.userAgent
+  - client.zone
 sourceTypes:
   - okta 

@@ -20,6 +20,12 @@ riskScore: 85
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
+fields:
+  - login_type
+  - login_challenge_method
+  - is_suspicious
+  - event_type
+  - event_name
 sourceTypes:
   - google-workspace
   - gsuite 

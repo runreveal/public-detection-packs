@@ -25,5 +25,16 @@ schedule: '*/15 * * * *'
 parameters:
   window: '30'
 notes: 'This detection identifies admin console access from both new devices and new IPs simultaneously. It checks both the behaviors field and logOnlySecurityData for risk indicators. These events warrant immediate investigation due to the administrative privileges involved.'
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - client.userAgent
+  - client.device
+  - client.zone
+  - debugContext
 sourceTypes:
   - okta 

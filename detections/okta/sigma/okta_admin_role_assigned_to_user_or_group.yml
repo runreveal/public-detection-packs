@@ -34,3 +34,13 @@ falsepositives:
     - Administrator roles could be assigned to users or group by other admin users.
 level: medium
 riskscore: 75
+fields:
+    - actor.alternateID
+    - actor.displayName
+    - actor.type
+    - eventType
+    - outcome
+    - displayMessage
+    - target
+    - client.userAgent
+    - client.zone

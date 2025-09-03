@@ -37,3 +37,7 @@ mitreattacks:
     - defense-evasion
 mitretechniques:
     - T1556.006
+    - persistence
+fields:
+    - actor.email
+    - ownerDomain

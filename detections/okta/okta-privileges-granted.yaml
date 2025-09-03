@@ -21,5 +21,14 @@ mitreTechniques:
   - T1098.003
 severity: Medium
 riskScore: 0
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - tgt
 sourceTypes:
   - okta

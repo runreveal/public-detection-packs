@@ -26,5 +26,15 @@ schedule: '*/15 * * * *'
 parameters:
   window: '30'
 notes: 'This detection looks for MFA being disabled for admin users through factor deactivation, resets, or policy changes. It uses pattern matching to identify admin accounts and MFA-related policy modifications.'
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - client.userAgent
+  - client.zone
 sourceTypes:
   - okta 

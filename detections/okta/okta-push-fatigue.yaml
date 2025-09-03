@@ -26,3 +26,11 @@ mitreTechniques:
   - T1556.006
 severity: medium
 riskScore: 0
+fields:
+  - email
+  - interval
+  - level
+  - factor
+  - result
+sourceTypes:
+  - okta

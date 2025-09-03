@@ -37,3 +37,13 @@ falsepositives:
     - If a MFA reset or deactivated was performed by a system administrator.
 level: medium
 riskscore: 50
+fields:
+    - actor.alternateID
+    - actor.displayName
+    - actor.type
+    - eventType
+    - outcome
+    - displayMessage
+    - target
+    - client.userAgent
+    - client.zone

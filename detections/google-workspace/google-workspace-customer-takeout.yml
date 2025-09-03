@@ -22,6 +22,11 @@ riskScore: 70
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
+fields:
+  - takeout_request_id
+  - event_type
+  - event_name
+  - actor.email
 sourceTypes:
   - google-workspace
   - gsuite 

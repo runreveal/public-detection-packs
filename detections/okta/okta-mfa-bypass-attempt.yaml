@@ -23,5 +23,16 @@ schedule: '*/15 * * * *'
 parameters:
   window: '30'
 notes: 'This detection identifies attempts to bypass MFA requirements. All MFA bypass attempts should be treated as high-priority security incidents and investigated immediately.'
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - client.userAgent
+  - client.zone
+  - debugContext
 sourceTypes:
   - okta 

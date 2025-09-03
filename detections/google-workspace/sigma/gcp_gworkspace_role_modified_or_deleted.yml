@@ -35,3 +35,6 @@ mitreattacks:
     - persistence
 mitretechniques:
     - T1098.003
+fields:
+    - actor.email
+    - ownerDomain

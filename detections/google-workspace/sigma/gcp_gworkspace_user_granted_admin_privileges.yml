@@ -36,3 +36,6 @@ mitreattacks:
     - privilege-escalation
 mitretechniques:
     - T1098.003
+fields:
+    - actor.email
+    - ownerDomain

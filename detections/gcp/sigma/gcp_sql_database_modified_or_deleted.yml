@@ -33,6 +33,11 @@ categories:
     - sql-database
 mitreattacks:
     - impact
+fields:
+    - methodName
+    - resourceName
+    - principalEmail
+    - projectID
     - persistence
 mitretechniques:
     - T1565.001  # Data Manipulation: Stored Data Manipulation

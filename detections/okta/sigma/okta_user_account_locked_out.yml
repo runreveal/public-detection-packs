@@ -34,3 +34,12 @@ falsepositives:
     - Unknown
 level: high
 riskscore: 80
+fields:
+    - actor.alternateID
+    - actor.displayName
+    - actor.type
+    - eventType
+    - outcome
+    - displayMessage
+    - client.userAgent
+    - client.zone

@@ -38,3 +38,8 @@ mitreattacks:
 mitretechniques:
     - T1562.001  # Disable or Modify Tools
     - T1562.004  # Disable or Modify System Firewall
+fields:
+    - methodName
+    - resourceName
+    - principalEmail
+    - projectID

@@ -33,3 +33,13 @@ falsepositives:
     - If a user requires an anonymising proxy due to valid justifications.
 level: high
 riskscore: 80
+fields:
+    - actor.alternateID
+    - actor.displayName
+    - actor.type
+    - eventType
+    - outcome
+    - displayMessage
+    - client.userAgent
+    - client.zone
+    - securityContext

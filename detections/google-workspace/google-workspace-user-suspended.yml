@@ -19,6 +19,13 @@ riskScore: 80
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
+fields:
+  - user_email
+  - user_name
+  - org_unit_name
+  - event_type
+  - event_name
+  - actor.email
 sourceTypes:
   - google-workspace
   - gsuite 

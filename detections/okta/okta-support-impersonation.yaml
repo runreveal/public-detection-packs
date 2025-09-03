@@ -26,5 +26,15 @@ schedule: '*/15 * * * *'
 parameters:
   window: '30'
 notes: 'This detection monitors Okta support impersonation events. These should be correlated with approved support tickets and verified as legitimate troubleshooting activities. Unexpected impersonation events should be investigated immediately.'
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - client.userAgent
+  - client.zone
 sourceTypes:
   - okta 

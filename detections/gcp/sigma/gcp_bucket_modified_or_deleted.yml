@@ -35,3 +35,8 @@ mitreattacks:
 mitretechniques:
     - T1485      # Data Destruction
     - T1565.001  # Data Manipulation: Stored Data Manipulation
+fields:
+    - methodName
+    - resourceName
+    - principalEmail
+    - projectID

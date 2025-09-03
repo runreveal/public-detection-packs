@@ -20,5 +20,15 @@ mitreTechniques:
   - T1098.001
 severity: medium
 riskScore: 90
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - client.userAgent
+  - client.zone
 sourceTypes:
   - okta

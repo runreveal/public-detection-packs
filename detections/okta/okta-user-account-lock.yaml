@@ -26,5 +26,15 @@ schedule: '*/15 * * * *'
 parameters:
   window: '30'
 notes: 'This detection identifies user account lock events which can indicate attack attempts or legitimate users having authentication difficulties. High frequency locks from the same IP or targeting multiple users may indicate coordinated attacks.'
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - client.userAgent
+  - client.zone
 sourceTypes:
   - okta 

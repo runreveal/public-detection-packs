@@ -23,6 +23,12 @@ riskScore: 85
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
+fields:
+  - methodName
+  - resourceName
+  - principalEmail
+  - projectID
+  - bindingDeltas
 sourceTypes:
   - gcp
   - gcplogs

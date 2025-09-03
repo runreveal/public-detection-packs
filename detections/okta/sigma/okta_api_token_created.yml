@@ -32,3 +32,13 @@ falsepositives:
     - Legitimate creation of an API token by authorized users
 level: medium
 riskscore: 100
+fields:
+    - actor.alternateID
+    - actor.displayName
+    - actor.type
+    - eventType
+    - outcome
+    - displayMessage
+    - target
+    - client.userAgent
+    - client.zone

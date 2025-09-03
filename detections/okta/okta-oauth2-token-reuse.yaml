@@ -28,5 +28,16 @@ schedule: '*/15 * * * *'
 parameters:
   window: '30'
 notes: 'This detection identifies OAuth2 token reuse events which are high-confidence indicators of token theft or compromise. These events should trigger immediate investigation and potential token revocation.'
+fields:
+  - actor.alternateID
+  - actor.displayName
+  - actor.type
+  - eventType
+  - outcome
+  - displayMessage
+  - target
+  - client.userAgent
+  - client.zone
+  - debugContext
 sourceTypes:
   - okta 
