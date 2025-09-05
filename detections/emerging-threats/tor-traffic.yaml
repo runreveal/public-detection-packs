@@ -25,5 +25,8 @@ fields:
   - elbStatusCode # elb logs
   - result # cf-audit logs
 riskscore: 80
-
-  
+mitreattacks:
+  - command-control
+  - defense-evasion
+mitretechniques:
+  - T1090

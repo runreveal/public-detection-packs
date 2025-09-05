@@ -18,6 +18,9 @@ categories:
     - account-lifecycle
 mitreattacks:
     - impact
+mitretechniques:
+    - T1531      # Account Access Removal
+    - T1098      # Account Manipulation
 detection:
     selection:
         normalized.eventName:

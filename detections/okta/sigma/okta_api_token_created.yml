@@ -21,6 +21,9 @@ categories:
     - token-creation
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1606.002  # Forge Web Credentials: SAML Tokens
+    - T1552.001  # Unsecured Credentials: Credentials In Files
 detection:
     selection:
         eventtype: system.api_token.create

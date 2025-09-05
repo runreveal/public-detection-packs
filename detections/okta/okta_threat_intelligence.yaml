@@ -21,3 +21,6 @@ mitreAttacks:
   - initial-access
   - execution
   - evasion
+mitreTechniques:
+  - T1078
+  - T1566

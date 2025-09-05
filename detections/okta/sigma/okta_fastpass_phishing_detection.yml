@@ -23,6 +23,8 @@ categories:
     - threat-detection
 mitreattacks:
     - initial-access
+mitretechniques:
+    - T1566
 detection:
     selection:
         outcome.reason: 'FastPass declined phishing attempt'

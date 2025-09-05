@@ -18,5 +18,7 @@ severity: Medium
 riskScore: 50
 mitreAttacks:
   - credential-access
+mitreTechniques:
+  - T1098.001
 sourceTypes:
   - cloudtrail

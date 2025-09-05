@@ -18,6 +18,9 @@ mitreAttacks:
   - lateral-movement
   - privilege-escalation
   - persistence
+mitreTechniques:
+  - T1078.004
+  - T1484.002
 severity: Low
 riskScore: 25
 schedule: '*/15 * * * *'

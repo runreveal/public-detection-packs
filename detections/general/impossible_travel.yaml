@@ -19,6 +19,8 @@ riskScore: 40
 severity: Medium
 mitreAttacks:
   - initial-access
+mitreTechniques:
+  - T1078
 severity: High
 parameters:
   excludeIPv4CIDRs: '[]'

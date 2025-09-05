@@ -14,6 +14,8 @@ categories:
   - access-transparency
 mitreAttacks:
   - discovery
+mitreTechniques:
+  - T1083
 severity: Medium
 riskScore: 50
 schedule: '*/15 * * * *'

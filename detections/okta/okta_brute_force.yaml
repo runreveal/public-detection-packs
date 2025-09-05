@@ -14,6 +14,9 @@ categories:
   - brute-force
 mitreAttacks:
   - initial-access
+  - credential-access
+mitreTechniques:
+  - T1110
 severity: Medium
 riskScore: 50
 schedule: '*/15 * * * *'

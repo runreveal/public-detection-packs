@@ -29,6 +29,9 @@ mitreAttacks:
   - discovery
   - lateral-movement
   - privilege-escalation
+mitreTechniques:
+  - T1078
+  - T1110
 severity: medium
 riskScore: 0
 sourceTypes:

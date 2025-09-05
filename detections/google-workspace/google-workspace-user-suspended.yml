@@ -12,8 +12,8 @@ categories:
   - security-incident
 mitreAttacks:
   - impact
-  - defense-evasion
-  - persistence
+mitreTechniques:
+  - T1531
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

@@ -22,6 +22,8 @@ categories:
     - privilege-escalation
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1098.003  # Account Manipulation: Add Office 365 Global Administrator Role
 detection:
     selection:
         eventtype:

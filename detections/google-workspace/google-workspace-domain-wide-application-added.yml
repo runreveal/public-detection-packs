@@ -15,6 +15,9 @@ mitreAttacks:
   - lateral-movement
   - persistence
   - collection
+mitreTechniques:
+  - T1078.004  # Valid Accounts: Cloud Accounts
+  - T1484.002  # Trust Modification
 severity: High
 riskScore: 75
 schedule: '*/15 * * * *'

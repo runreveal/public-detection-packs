@@ -40,3 +40,5 @@ riskscore: 60
 mitreattacks:
     - defense-evasion
     - persistence
+mitretechniques:
+    - T1562.007

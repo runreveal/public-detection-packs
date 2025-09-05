@@ -22,6 +22,9 @@ mitreAttacks:
   - persistence
   - privilege-escalation
   - impact
+mitreTechniques:
+  - T1562.001
+  - T1484.002
 severity: Low
 riskScore: 30 
 schedule: '*/15 * * * *'

@@ -15,6 +15,9 @@ mitreAttacks:
   - initial-access
   - credential-access
   - defense-evasion
+mitreTechniques:
+  - T1078
+  - T1556.006
 severity: High
 riskScore: 85
 schedule: '*/15 * * * *'

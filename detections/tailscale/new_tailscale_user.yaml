@@ -21,3 +21,5 @@ sourceTypes:
   - tailscale-audit
 mitreAttacks:
   - initial-access
+mitreTechniques:
+  - T1078

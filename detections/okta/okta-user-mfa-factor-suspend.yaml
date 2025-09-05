@@ -17,6 +17,9 @@ mitreAttacks:
   - persistence
   - credential-access
   - privilege-escalation
+mitreTechniques:
+  - T1556.006
+  - T1098
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

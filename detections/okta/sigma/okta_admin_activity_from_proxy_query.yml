@@ -22,7 +22,10 @@ categories:
 mitreattacks:
     - credential-access
     - initial-access
-    - evasion
+    - defense-evasion
+mitretechniques:
+    - T1078.004  # Valid Accounts: Cloud Accounts
+    - T1090.003  # Proxy: Multi-hop Proxy
 detection:
     selection:
         debugContext.debugData.requestUri|contains: 'admin'

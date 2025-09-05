@@ -18,6 +18,8 @@ categories:
     - privilege-escalation
 mitreattacks:
     - privilege-escalation
+mitretechniques:
+    - T1078
 detection:
     privilege_selection:
         normalized.eventName:

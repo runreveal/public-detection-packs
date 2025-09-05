@@ -12,8 +12,8 @@ categories:
   - suspicious-activity
 mitreAttacks:
   - initial-access
-  - persistence
-  - defense-evasion
+mitreTechniques:
+  - T1078
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

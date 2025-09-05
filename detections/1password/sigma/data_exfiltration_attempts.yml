@@ -18,6 +18,8 @@ categories:
     - data-exfiltration
 mitreattacks:
     - exfiltration
+mitretechniques:
+    - T1041
 detection:
     selection:
         normalized.eventName:

@@ -14,6 +14,8 @@ categories:
 mitreAttacks:
   - collection
   - exfiltration
+mitreTechniques:
+  - T1537
 severity: High
 riskScore: 75
 fields:

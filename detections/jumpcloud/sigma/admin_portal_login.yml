@@ -19,6 +19,8 @@ categories:
     - admin-access
 mitreattacks:
     - initial-access
+mitretechniques:
+    - T1078.004
 detection:
     selection:
         normalized.eventName:

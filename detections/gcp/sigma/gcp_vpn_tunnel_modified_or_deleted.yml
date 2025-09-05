@@ -32,3 +32,6 @@ categories:
 mitreattacks:
     - impact
     - persistence
+mitretechniques:
+    - T1562.001  # Disable or Modify Tools
+    - T1571      # Non-Standard Port

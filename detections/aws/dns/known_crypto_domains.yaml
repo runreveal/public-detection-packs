@@ -22,3 +22,5 @@ sourceTypes:
   - awsdns
 mitreAttacks:
   - collection
+mitreTechniques:
+  - T1071.004

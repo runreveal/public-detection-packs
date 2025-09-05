@@ -21,6 +21,9 @@ categories:
     - app-access
 mitreattacks:
     - initial-access
+mitretechniques:
+    - T1078      # Valid Accounts
+    - T1190      # Exploit Public-Facing Application
 detection:
     selection:
         displaymessage: User attempted unauthorized access to app

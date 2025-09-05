@@ -32,3 +32,5 @@ level: high
 riskscore: 100
 mitreattacks:
   - evasion
+mitretechniques:
+  - T1071.004

@@ -20,5 +20,7 @@ riskScore: 15
 sourceTypes:
   - aad
 mitreAttacks:
-  - initial-access
   - credential-access
+mitreTechniques:
+  - T1110
+  - T1556.006

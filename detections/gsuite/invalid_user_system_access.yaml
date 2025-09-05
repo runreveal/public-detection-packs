@@ -23,3 +23,8 @@ sourceTypes:
   - gsuite
 mitreAttacks:
   - discovery
+  - persistence
+  - initial-access
+mitreTechniques:
+  - T1078
+  - T1087

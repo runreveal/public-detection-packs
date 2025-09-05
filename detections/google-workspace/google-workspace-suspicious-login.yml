@@ -12,7 +12,9 @@ categories:
 mitreAttacks:
   - initial-access
   - credential-access
-  - persistence
+mitreTechniques:
+  - T1078
+  - T1110
 severity: High
 riskScore: 85
 schedule: '*/15 * * * *'

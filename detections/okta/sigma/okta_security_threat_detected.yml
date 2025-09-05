@@ -22,6 +22,9 @@ categories:
     - security-threat
 mitreattacks:
     - command-and-control
+mitretechniques:
+    - T1071.001  # Application Layer Protocol: Web Protocols
+    - T1104      # Multi-Stage Channels
 detection:
     selection:
         eventtype: security.threat.detected

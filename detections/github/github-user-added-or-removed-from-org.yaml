@@ -18,6 +18,8 @@ mitreAttacks:
   - privilege-escalation
   - persistence
   - initial-access
+mitreTechniques:
+  - T1098
 severity: Medium
 riskScore: 70
 schedule: '*/15 * * * *' 

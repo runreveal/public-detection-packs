@@ -35,3 +35,5 @@ riskscore: 65
 mitreattacks:
     - initial-access
     - credential-access
+mitretechniques:
+    - T1078

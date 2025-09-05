@@ -21,7 +21,11 @@ categories:
     - account-lockout
     - authentication-failure
 mitreattacks:
+    - impact
     - persistence
+mitretechniques:
+    - T1531      # Account Access Removal
+    - T1110      # Brute Force
 detection:
     selection:
         displaymessage: Max sign in attempts exceeded

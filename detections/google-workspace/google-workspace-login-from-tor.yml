@@ -11,6 +11,9 @@ categories:
   - suspicious-login
 mitreAttacks:
   - initial-access
+  - defense-evasion
+mitreTechniques:
+  - T1090.003
 severity: Critical
 riskScore: 95
 schedule: '*/15 * * * *'

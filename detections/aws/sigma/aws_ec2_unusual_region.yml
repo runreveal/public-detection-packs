@@ -31,3 +31,5 @@ riskscore: 55
 mitreattacks:
     - execution
     - resource-development
+mitretechniques:
+    - T1496

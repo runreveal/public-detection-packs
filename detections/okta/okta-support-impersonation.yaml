@@ -17,6 +17,9 @@ mitreAttacks:
   - lateral-movement
   - persistence
   - defense-evasion
+mitreTechniques:
+  - T1078.004
+  - T1550.001
 severity: Medium
 riskScore: 70
 schedule: '*/15 * * * *'

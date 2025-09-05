@@ -34,3 +34,6 @@ categories:
 mitreattacks:
     - impact
     - persistence
+mitretechniques:
+    - T1565.001  # Data Manipulation: Stored Data Manipulation
+    - T1485      # Data Destruction

@@ -19,6 +19,9 @@ mitreAttacks:
   - persistence
   - discovery
   - collection
+mitreTechniques:
+  - T1078
+  - T1087
 severity: High
 riskScore: 85
 schedule: '*/5 * * * *'

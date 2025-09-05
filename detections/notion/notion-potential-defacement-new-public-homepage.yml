@@ -15,6 +15,10 @@ categories:
   - defacement
 mitreAttacks:
   - execution
+  - impact
+mitreTechniques:
+  - T1491.002  # Defacement: External Defacement
+  - T1496      # Resource Hijacking
 riskScore: 40
 severity: Medium
 schedule: '*/15 * * * *'

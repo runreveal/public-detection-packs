@@ -18,6 +18,8 @@ categories:
     - user-management
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1136.003
 detection:
     selection:
         normalized.eventName: user_create

@@ -19,6 +19,8 @@ categories:
     - network-zone
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1562.001
 detection:
     selection:
         normalized.eventName:

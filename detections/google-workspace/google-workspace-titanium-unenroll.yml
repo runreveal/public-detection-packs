@@ -14,8 +14,8 @@ categories:
   - authentication
 mitreAttacks:
   - defense-evasion
-  - persistence
-  - credential-access
+mitreTechniques:
+  - T1562.001
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

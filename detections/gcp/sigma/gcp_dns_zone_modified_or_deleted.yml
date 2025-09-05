@@ -30,3 +30,6 @@ categories:
     - dns
 mitreattacks:
     - impact
+mitretechniques:
+    - T1071.004  # Application Layer Protocol: DNS
+    - T1565.001  # Data Manipulation: Stored Data Manipulation

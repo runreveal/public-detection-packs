@@ -18,6 +18,9 @@ mitreAttacks:
   - credential-access
   - privilege-escalation
   - impact
+mitreTechniques:
+  - T1556.006
+  - T1098
 severity: Critical
 riskScore: 90
 schedule: '*/5 * * * *'

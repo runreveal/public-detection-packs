@@ -19,6 +19,8 @@ categories:
     - policy-management
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1484.002
 detection:
     selection:
         normalized.eventName:
