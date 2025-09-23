@@ -1,0 +1,24 @@
+name: zendesk-account-security-changes
+displayName: Zendesk Account Security Changes
+description: Detects user account suspensions, permission changes, and other security-relevant modifications
+file: zendesk-account-security-changes.sql
+schedule: '*/10 * * * *'
+categories:
+  - zendesk
+  - identity-access-management
+  - signal
+  - account-management
+severity: medium
+riskScore: 60
+mitreAttacks:
+  - impact
+  - defense-evasion
+mitreTechniques:
+  - T1562
+  - T1531
+sourceTypes:
+  - zendesk
+notes: |
+  Monitor for account suspensions and permission changes that could indicate security incidents.
+  Validate that all account security changes are authorized and documented.
+disabled: false
