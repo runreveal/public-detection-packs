@@ -17,6 +17,10 @@ schedule: '*/15 * * * *'
 riskScore: 60
 severity: Medium
 mitreAttacks:
-  - initial-access
+  - collection
+  - impact
+mitreTechniques:
+  - T1530
+  - T1485
 sourceTypes:
   - cloudtrail

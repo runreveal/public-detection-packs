@@ -14,5 +14,7 @@ schedule: "*/15 * * * *"
 notificationNames: []
 mitreAttacks:
 - initial-access
+mitreTechniques:
+- T1078
 severity: Medium
 riskScore: 50

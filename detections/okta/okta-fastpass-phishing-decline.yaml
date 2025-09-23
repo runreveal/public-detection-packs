@@ -18,6 +18,9 @@ mitreAttacks:
   - credential-access
   - defense-evasion
   - collection
+mitreTechniques:
+  - T1566
+  - T1556.006
 severity: Critical
 riskScore: 95
 schedule: '*/15 * * * *'

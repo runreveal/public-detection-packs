@@ -20,6 +20,8 @@ categories:
     - role-assignment
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1098.003
 detection:
     selection:
         eventtype: 'iam.resourceset.bindings.add'

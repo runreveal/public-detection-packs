@@ -21,6 +21,9 @@ mitreattacks:
   - collection
   - exfiltration
   - initial-access
+mitretechniques:
+  - T1078
+  - T1537
 detection:
   selection:
     eventName: anomaly

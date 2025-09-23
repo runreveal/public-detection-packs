@@ -20,8 +20,9 @@ categories:
     - api-token
     - token-revocation
 mitreattacks:
-    - impact
-    - evasion
+    - defense-evasion
+mitretechniques:
+    - T1098.001
 detection:
     selection:
         eventtype: system.api_token.revoke

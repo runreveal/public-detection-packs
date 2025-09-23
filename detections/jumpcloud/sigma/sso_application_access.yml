@@ -19,6 +19,8 @@ categories:
     - sso-access
 mitreattacks:
     - initial-access
+mitretechniques:
+    - T1078
 detection:
     selection:
         normalized.eventName:

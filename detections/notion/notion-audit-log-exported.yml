@@ -16,6 +16,9 @@ categories:
 mitreAttacks:
   - exfiltration
   - collection
+mitreTechniques:
+  - T1005      # Data from Local System
+  - T1039      # Data from Network Shared Drive
 riskScore: 80
 severity: High
 schedule: '*/15 * * * *'

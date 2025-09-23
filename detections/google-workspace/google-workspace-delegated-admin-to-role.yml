@@ -11,8 +11,10 @@ categories:
   - admin-privilege
   - role-assignment
 mitreAttacks:
-  - execution
-  - lateral-movement
+  - privilege-escalation
+  - persistence
+mitreTechniques:
+  - T1098.003
 severity: High
 riskScore: 85
 schedule: '*/15 * * * *'

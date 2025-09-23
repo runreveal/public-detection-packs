@@ -22,6 +22,9 @@ categories:
     - enduser-report
 mitreattacks:
     - initial-access
+mitretechniques:
+    - T1586.003  # Compromise Accounts: Cloud Accounts
+    - T1078.004  # Valid Accounts: Cloud Accounts
 detection:
     selection:
         eventtype: 'user.account.report_suspicious_activity_by_enduser'

@@ -15,6 +15,9 @@ categories:
   - credential-access
 mitreAttacks:
   - credential-access
+mitreTechniques:
+  - T1552.001  # Unsecured Credentials: Credentials In Files
+  - T1606.002  # Forge Web Credentials: SAML Tokens
 severity: High
 riskScore: 85
 schedule: '*/15 * * * *'

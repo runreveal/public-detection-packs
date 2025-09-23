@@ -18,6 +18,8 @@ categories:
     - device-management
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1562
 detection:
     selection:
         normalized.eventName:

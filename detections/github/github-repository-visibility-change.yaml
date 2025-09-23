@@ -21,6 +21,8 @@ mitreAttacks:
   - exfiltration
   - defense-evasion
   - impact
+mitreTechniques:
+  - T1530
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *' 

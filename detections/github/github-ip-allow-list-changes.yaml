@@ -19,6 +19,9 @@ mitreAttacks:
   - defense-evasion
   - persistence
   - initial-access
+mitreTechniques:
+  - T1562.001
+  - T1484.002
 severity: Medium
 riskScore: 70
 schedule: '*/15 * * * *'

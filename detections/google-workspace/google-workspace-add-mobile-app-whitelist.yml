@@ -12,6 +12,9 @@ categories:
 mitreAttacks:
   - persistence
   - defense-evasion
+mitreTechniques:
+  - T1562.001  # Disable or Modify Tools
+  - T1484.002  # Trust Modification
 severity: Medium
 riskScore: 60
 schedule: '*/15 * * * *'

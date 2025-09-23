@@ -19,4 +19,6 @@ riskScore: 60
 sourceTypes:
   - cloudtrail
 mitreAttacks:
-  - evasion
+  - defense-evasion
+mitreTechniques:
+  - T1484.002

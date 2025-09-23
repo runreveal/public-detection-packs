@@ -32,3 +32,5 @@ riskscore: 80
 mitreattacks:
     - initial-access
     - privilege-escalation
+mitretechniques:
+    - T1078

@@ -21,6 +21,9 @@ mitreAttacks:
   - defense-evasion
   - persistence
   - privilege-escalation
+mitreTechniques:
+  - T1562.001
+  - T1484.002
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *' 

@@ -21,7 +21,9 @@ categories:
     - anonymised-proxy
     - session-start
 mitreattacks:
-    - initial-access
+    - defense-evasion
+mitretechniques:
+    - T1090
 detection:
     selection:
         eventtype: 'user.session.start'

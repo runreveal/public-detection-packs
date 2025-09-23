@@ -28,3 +28,7 @@ sourceTypes:
   - gsuite
 mitreAttacks:
   - collection
+  - exfiltration
+mitreTechniques:
+  - T1005
+  - T1114

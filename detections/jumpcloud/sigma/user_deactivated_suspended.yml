@@ -19,6 +19,8 @@ categories:
     - user-management
 mitreattacks:
     - impact
+mitretechniques:
+    - T1531
 detection:
     selection:
         normalized.eventName:

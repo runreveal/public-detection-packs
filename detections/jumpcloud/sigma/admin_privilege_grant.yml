@@ -19,6 +19,8 @@ categories:
     - admin-privilege
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1098.003
 detection:
     selection:
         normalized.eventName:

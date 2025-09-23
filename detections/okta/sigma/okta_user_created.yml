@@ -19,6 +19,8 @@ categories:
     - user-lifecycle
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1136.003
 detection:
     selection:
         eventtype: 'user.lifecycle.create'

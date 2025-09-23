@@ -15,6 +15,9 @@ categories:
 mitreAttacks:
   - initial-access
   - persistence
+mitreTechniques:
+  - T1078.004  # Valid Accounts: Cloud Accounts
+  - T1136.003  # Create Account: Cloud Account
 severity: High
 riskScore: 85
 schedule: '*/15 * * * *'

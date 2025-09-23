@@ -11,6 +11,9 @@ categories:
   - rate-limiting
 mitreAttacks:
   - execution
+mitreTechniques:
+  - T1110
+  - T1499
 severity: Low
 riskScore: 20
 schedule: '*/15 * * * *'

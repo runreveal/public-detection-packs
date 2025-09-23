@@ -15,6 +15,9 @@ mitreAttacks:
   - collection
   - exfiltration
   - initial-access
+mitreTechniques:
+  - T1114      # Email Collection
+  - T1213      # Data from Information Repositories
 severity: Medium
 riskScore: 65
 schedule: '*/15 * * * *'

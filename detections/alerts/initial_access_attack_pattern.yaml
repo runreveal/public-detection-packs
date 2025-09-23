@@ -21,3 +21,12 @@ parameters:
   signalCount: '2'
   ignoreIPs: '[]'
   ignoreEmails: '[]'
+mitreAttacks:
+  - initial-access
+  - execution
+  - persistence
+  - privilege-escalation
+mitreTechniques:
+  - T1078
+  - T1190
+  - T1566

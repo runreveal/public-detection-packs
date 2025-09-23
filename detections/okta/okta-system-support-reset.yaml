@@ -18,6 +18,9 @@ mitreAttacks:
   - credential-access
   - defense-evasion
   - privilege-escalation
+mitreTechniques:
+  - T1098
+  - T1556.006
 severity: Medium
 riskScore: 75
 schedule: '*/15 * * * *'

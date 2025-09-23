@@ -17,6 +17,9 @@ mitreAttacks:
   - discovery
   - credential-access
   - defense-evasion
+mitreTechniques:
+  - T1499
+  - T1110
 severity: Low
 riskScore: 15
 schedule: '*/15 * * * *'

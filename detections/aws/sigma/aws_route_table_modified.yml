@@ -39,3 +39,5 @@ riskscore: 55
 mitreattacks:
     - defense-evasion
     - collection
+mitretechniques:
+    - T1048

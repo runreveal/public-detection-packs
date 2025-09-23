@@ -18,6 +18,8 @@ categories:
     - security-controls
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1562
 detection:
     selection:
         normalized.eventName:

@@ -15,7 +15,12 @@ categories:
   - behavioral-analysis
   - iam
 mitreAttacks:
-  - execution
+  - credential-access
+  - discovery
+  - lateral-movement
+mitreTechniques:
+  - T1078.004
+  - T1087.004
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

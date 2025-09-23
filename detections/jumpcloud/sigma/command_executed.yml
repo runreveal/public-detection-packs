@@ -19,6 +19,8 @@ categories:
     - command-execution
 mitreattacks:
     - execution
+mitretechniques:
+    - T1059
 detection:
     selection:
         normalized.eventName:

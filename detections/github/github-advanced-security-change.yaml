@@ -21,6 +21,8 @@ mitreAttacks:
   - defense-evasion
   - persistence
   - impact
+mitreTechniques:
+  - T1562.001
 severity: Critical
 riskScore: 95
 schedule: '*/15 * * * *' 

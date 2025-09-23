@@ -35,4 +35,8 @@ categories:
     - signal
     - packet-capture
 mitreattacks:
+    - collection
     - impact
+mitretechniques:
+    - T1074.001  # Data Staged: Local Data Staging
+    - T1040      # Network Sniffing

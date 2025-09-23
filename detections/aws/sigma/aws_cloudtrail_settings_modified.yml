@@ -33,3 +33,5 @@ level: high
 riskscore: 80
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1562.008

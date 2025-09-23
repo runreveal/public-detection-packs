@@ -16,8 +16,11 @@ categories:
   - resource-creation
 mitreAttacks:
   - persistence
-  - exfiltration
+  - collection
   - defense-evasion
+mitreTechniques:
+  - T1074.001
+  - T1550.001
 severity: Low
 riskScore: 30
 schedule: '*/15 * * * *' 

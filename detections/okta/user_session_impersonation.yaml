@@ -20,3 +20,5 @@ sourceTypes:
   - okta
 mitreAttacks:
   - evasion
+mitreTechniques:
+  - T1078.004

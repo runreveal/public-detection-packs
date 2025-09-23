@@ -17,7 +17,9 @@ categories:
     - signal
     - mfa
 mitreattacks:
-    - credential-access
+    - defense-evasion
+mitretechniques:
+    - T1556.006
 detection:
     selection:
         normalized.eventName:

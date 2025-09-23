@@ -16,6 +16,9 @@ categories:
 mitreAttacks:
   - privilege-escalation
   - lateral-movement
+mitreTechniques:
+  - T1078.004  # Valid Accounts: Cloud Accounts
+  - T1098.003  # Account Manipulation: Add Office 365 Global Administrator Role
 riskScore: 75
 severity: High
 schedule: '*/15 * * * *'

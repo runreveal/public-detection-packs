@@ -11,7 +11,10 @@ categories:
   - calendar-sharing
   - public-access
 mitreAttacks:
-  - persistence
+  - collection
+  - exfiltration
+mitreTechniques:
+  - T1537
 severity: Medium
 riskScore: 50
 schedule: '*/15 * * * *'

@@ -34,3 +34,6 @@ categories:
     - breakglass
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1548.001  # Abuse Elevation Control Mechanism: Setuid and Setgid
+    - T1610      # Deploy Container

@@ -14,7 +14,11 @@ schedule: '*/15 * * * *'
 notes: ''
 disabled: true
 notificationNames: []
-mitreAttacks: []
+mitreAttacks:
+  - privilege-escalation
+  - persistence
+mitreTechniques:
+  - T1098.003
 severity: Medium
 riskScore: 0
 sourceTypes:

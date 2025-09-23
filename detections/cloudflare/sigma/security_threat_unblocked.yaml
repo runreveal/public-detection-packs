@@ -31,3 +31,6 @@ risk_score: 75
 mitreattacks:
     - initial-access
     - execution
+mitretechniques:
+    - T1071.001
+    - T1568

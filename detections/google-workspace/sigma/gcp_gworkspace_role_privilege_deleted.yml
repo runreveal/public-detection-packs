@@ -32,3 +32,6 @@ falsepositives:
     - Unknown
 
 level: medium
+riskscore: 50
+mitretechniques:
+    - T1098.003

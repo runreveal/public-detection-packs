@@ -30,3 +30,6 @@ categories:
     - storage-bucket
 mitreattacks:
     - discovery
+mitretechniques:
+    - T1083      # File and Directory Discovery
+    - T1526      # Cloud Service Discovery

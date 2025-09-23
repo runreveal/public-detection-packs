@@ -21,6 +21,9 @@ categories:
     - idp-creation
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1098.001  # Account Manipulation: Additional Cloud Credentials
+    - T1484.002  # Trust Modification
 detection:
     selection:
         eventtype: 'system.idp.lifecycle.create'

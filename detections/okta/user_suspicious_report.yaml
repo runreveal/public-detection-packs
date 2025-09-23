@@ -14,6 +14,8 @@ riskScore: 50
 severity: Medium
 mitreAttacks:
   - initial-access
+mitreTechniques:
+  - T1078
 schedule: '*/15 * * * *'
 sourceTypes:
   - okta

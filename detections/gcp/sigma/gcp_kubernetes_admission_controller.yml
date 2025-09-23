@@ -46,3 +46,7 @@ categories:
 mitreattacks:
     - persistence
     - credential-access
+mitretechniques:
+    - T1078.004  # Valid Accounts: Cloud Accounts
+    - T1552.007  # Unsecured Credentials: Container API
+    - T1574.007  # Hijack Execution Flow: Path Interception by PATH Environment Variable

@@ -12,7 +12,10 @@ categories:
   - data-exposure
   - public-access
 mitreAttacks:
-  - persistence
+  - collection
+  - exfiltration
+mitreTechniques:
+  - T1537
 severity: Low
 riskScore: 20
 schedule: '*/15 * * * *'

@@ -39,3 +39,6 @@ mitreattacks:
     - persistence
     - privilege-escalation
     - execution
+mitretechniques:
+    - T1053.003  # Scheduled Task/Job: Cron
+    - T1610      # Deploy Container

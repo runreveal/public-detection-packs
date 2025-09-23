@@ -14,6 +14,10 @@ categories:
   - workload-identity
 mitreAttacks:
   - execution
+  - defense-evasion
+mitreTechniques:
+  - T1578.004  # Modify Cloud Compute Infrastructure
+  - T1484.002  # Trust Modification
 severity: Medium
 riskScore: 40
 schedule: '*/15 * * * *'
