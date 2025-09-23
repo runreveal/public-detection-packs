@@ -33,3 +33,5 @@ level: medium
 riskscore: 70
 mitreattacks:
     - impact
+mitretechniques:
+    - T1485

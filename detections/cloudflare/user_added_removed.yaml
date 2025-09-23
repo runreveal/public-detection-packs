@@ -19,3 +19,5 @@ sourceTypes:
   - cf-audit
 mitreAttacks:
   - initial-access
+mitreTechniques:
+  - T1098

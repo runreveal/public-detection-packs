@@ -15,6 +15,10 @@ categories:
   - visibility-settings
 mitreAttacks:
   - persistence
+  - defense-evasion
+mitreTechniques:
+  - T1070.005  # Indicator Removal on Host: Network Share Connection Removal
+  - T1484.002  # Trust Modification
 riskScore: 40
 severity: Medium
 schedule: '*/15 * * * *'

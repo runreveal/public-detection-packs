@@ -22,5 +22,7 @@ parameters:
 sourceTypes:
   - aad
 mitreAttacks:
-  - initial-access
   - privilege-escalation
+  - persistence
+mitreTechniques:
+  - T1098.003

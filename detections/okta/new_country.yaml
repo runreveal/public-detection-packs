@@ -15,6 +15,8 @@ categories:
   - new-country
 mitreAttacks:
   - initial-access
+mitreTechniques:
+  - T1078
 severity: Medium
 riskScore: 50
 schedule: '*/15 * * * *'

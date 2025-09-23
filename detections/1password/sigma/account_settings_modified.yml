@@ -18,6 +18,8 @@ categories:
     - account-settings
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1098
 detection:
     selection:
         normalized.eventName:

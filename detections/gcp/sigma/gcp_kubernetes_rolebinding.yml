@@ -41,3 +41,6 @@ categories:
 mitreattacks:
     - credential-access
     - persistence
+mitretechniques:
+    - T1078.004  # Valid Accounts: Cloud Accounts
+    - T1484.001  # Domain Policy Modification

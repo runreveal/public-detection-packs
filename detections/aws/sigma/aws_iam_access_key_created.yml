@@ -29,3 +29,5 @@ level: low
 riskscore: 40
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1098.001

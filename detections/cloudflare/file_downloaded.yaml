@@ -18,4 +18,8 @@ severity: Low
 sourceTypes:
   - cf-gateway-http
 mitreAttacks:
-  - execution
+  - collection
+  - exfiltration
+mitreTechniques:
+  - T1005
+  - T1041

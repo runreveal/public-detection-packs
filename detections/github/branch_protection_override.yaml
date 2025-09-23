@@ -22,4 +22,6 @@ schedule: '*/15 * * * *'
 sourceTypes:
   - github-webhook
 mitreAttacks:
-  - evasion
+  - defense-evasion
+mitreTechniques:
+  - T1562.001

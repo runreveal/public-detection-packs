@@ -34,3 +34,5 @@ riskscore: 60
 mitreattacks:
     - execution
     - persistence
+mitretechniques:
+    - T1078

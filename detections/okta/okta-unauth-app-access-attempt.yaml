@@ -14,6 +14,9 @@ mitreAttacks:
   - initial-access
   - privilege-escalation
   - discovery
+mitreTechniques:
+  - T1078
+  - T1087
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

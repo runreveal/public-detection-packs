@@ -18,6 +18,8 @@ categories:
     - group-management
 mitreattacks:
     - persistence
+mitretechniques:
+    - T1136
 detection:
     selection:
         normalized.eventName: 'group_create'

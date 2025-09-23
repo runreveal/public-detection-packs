@@ -31,3 +31,5 @@ level: medium
 riskscore: 60
 mitreattacks:
     - credential-access
+mitretechniques:
+    - T1110

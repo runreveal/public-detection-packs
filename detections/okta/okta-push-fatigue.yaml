@@ -21,5 +21,8 @@ mitreAttacks:
   - initial-access
   - privilege-escalation
   - credential-access
+mitreTechniques:
+  - T1110
+  - T1556.006
 severity: medium
 riskScore: 0

@@ -14,6 +14,8 @@ categories:
   - storage-bucket
 mitreAttacks:
   - execution
+mitreTechniques:
+  - T1578.004  # Modify Cloud Compute Infrastructure
 severity: Medium
 riskScore: 40
 schedule: '*/15 * * * *'

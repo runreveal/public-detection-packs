@@ -16,3 +16,9 @@ categories:
 riskScore: 90
 severity: High
 schedule: '*/15 * * * *'
+mitreAttacks:
+  - command-and-control
+  - defense-evasion
+mitreTechniques:
+  - T1090.003
+  - T1562.006

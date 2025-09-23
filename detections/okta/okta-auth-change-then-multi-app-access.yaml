@@ -23,5 +23,9 @@ mitreAttacks:
   - privilege-escalation
   - lateral-movement
   - credential-access
+mitreTechniques:
+  - T1078
+  - T1484.002
+  - T1534
 severity: Medium
 riskScore: 50 

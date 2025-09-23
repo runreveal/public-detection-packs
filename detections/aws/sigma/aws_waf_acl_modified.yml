@@ -39,3 +39,5 @@ level: medium
 riskscore: 65
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1562.001

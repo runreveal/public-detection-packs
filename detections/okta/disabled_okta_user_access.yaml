@@ -22,3 +22,6 @@ sourceTypes:
   - okta
 mitreAttacks:
   - discovery
+mitreTechniques:
+  - T1078
+  - T1087

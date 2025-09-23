@@ -20,7 +20,9 @@ categories:
     - network-zone
     - zone-deactivation
 mitreattacks:
-    - persistence
+    - defense-evasion
+mitretechniques:
+    - T1562.001
 detection:
     selection:
         eventtype:

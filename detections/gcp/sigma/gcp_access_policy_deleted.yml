@@ -39,3 +39,6 @@ categories:
 mitreattacks:
     - persistence
     - privilege-escalation
+mitretechniques:
+    - T1098.001  # Account Manipulation: Additional Cloud Credentials
+    - T1484.002  # Domain Policy Modification: Trust Modification

@@ -19,6 +19,10 @@ notificationNames: []
 mitreAttacks:
   - privilege-escalation
   - persistence
+  - defense-evasion
+mitreTechniques:
+  - T1484.002
+  - T1098.003
 severity: medium
 riskScore: 0
 sourceTypes:

@@ -20,4 +20,8 @@ severity: High
 sourceTypes:
   - aad
 mitreAttacks:
-  - evasion
+  - credential-access
+  - initial-access
+mitreTechniques:
+  - T1110
+  - T1078

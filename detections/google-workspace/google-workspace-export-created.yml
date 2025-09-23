@@ -12,6 +12,9 @@ categories:
   - data-exfiltration
 mitreAttacks:
   - exfiltration
+mitreTechniques:
+  - T1005      # Data from Local System
+  - T1537      # Transfer Data to Cloud Account
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

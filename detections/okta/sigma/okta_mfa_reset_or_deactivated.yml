@@ -24,6 +24,9 @@ categories:
     - mfa-deactivated
 mitreattacks:
     - persistence
+    - defense-evasion
+mitretechniques:
+    - T1556.006  # Modify Authentication Process: Multi-Factor Authentication
 detection:
     selection:
         eventtype:

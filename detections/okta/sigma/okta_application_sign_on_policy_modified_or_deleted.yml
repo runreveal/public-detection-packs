@@ -20,7 +20,9 @@ categories:
     - application-policy
     - sign-on-policy
 mitreattacks:
-    - impact
+    - defense-evasion
+mitretechniques:
+    - T1484.002
 detection:
     selection:
         eventtype:

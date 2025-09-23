@@ -40,3 +40,5 @@ riskscore: 60
 mitreattacks:
     - persistence
     - defense-evasion
+mitretechniques:
+    - T1205

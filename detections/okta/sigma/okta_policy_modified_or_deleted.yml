@@ -20,7 +20,9 @@ categories:
     - policy-modification
     - policy-lifecycle
 mitreattacks:
-    - persistence
+    - defense-evasion
+mitretechniques:
+    - T1484.002
 detection:
     selection:
         eventtype:

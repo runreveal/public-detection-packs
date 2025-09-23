@@ -15,6 +15,10 @@ categories:
   - single-sign-on
 mitreAttacks:
   - persistence
+  - defense-evasion
+mitreTechniques:
+  - T1484.002  # Trust Modification
+  - T1556.006  # Modify Authentication Process: Multi-Factor Authentication
 severity: High
 riskScore: 50
 schedule: '*/15 * * * *'

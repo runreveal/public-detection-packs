@@ -14,7 +14,9 @@ categories:
 mitreAttacks:
   - collection
   - exfiltration
-  - defense-evasion
+mitreTechniques:
+  - T1020
+  - T1114
 severity: Medium
 riskScore: 70
 schedule: '*/15 * * * *'

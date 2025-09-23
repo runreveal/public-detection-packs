@@ -22,7 +22,9 @@ categories:
     - new-behavior
     - anomalous-behavior
 mitreattacks:
-    - execution
+    - initial-access
+mitretechniques:
+    - T1078.004
 detection:
     selection_event:
         eventtype: 'policy.evaluate_sign_on'

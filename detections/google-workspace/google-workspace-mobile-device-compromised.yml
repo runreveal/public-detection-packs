@@ -16,8 +16,9 @@ mitreAttacks:
   - initial-access
   - persistence
   - credential-access
-  - collection
-  - exfiltration
+mitreTechniques:
+  - T1078
+  - T1200
 severity: Critical
 riskScore: 95
 schedule: '*/5 * * * *'

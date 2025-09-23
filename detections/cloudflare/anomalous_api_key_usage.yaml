@@ -20,3 +20,7 @@ sourceTypes:
   - cf-audit
 mitreAttacks:
   - credential-access
+  - initial-access
+mitreTechniques:
+  - T1078
+  - T1535

@@ -30,3 +30,5 @@ falsepositives:
 
 level: medium
 riskscore: 20
+mitretechniques:
+    - T1484.002

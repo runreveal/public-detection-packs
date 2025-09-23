@@ -28,3 +28,6 @@ categories:
     - dlp
 mitreattacks:
     - impact
+mitretechniques:
+    - T1565.001  # Data Manipulation: Stored Data Manipulation
+    - T1005      # Data from Local System

@@ -15,6 +15,8 @@ severity: Low
 riskScore: 20
 mitreAttacks:
   - credential-access
+mitreTechniques:
+  - T1078
 sourceTypes:
   - 1password
 schedule: '*/15 * * * *'

@@ -18,6 +18,8 @@ categories:
     - policy-configuration
 mitreattacks:
     - defense-evasion
+mitretechniques:
+    - T1562
 detection:
     selection:
         normalized.eventName:

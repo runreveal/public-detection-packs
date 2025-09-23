@@ -15,6 +15,10 @@ categories:
   - network-location-change
 mitreAttacks:
   - initial-access
+  - credential-access
+mitreTechniques:
+  - T1078.004
+  - T1535
 severity: High
 riskScore: 80
 schedule: '*/15 * * * *'

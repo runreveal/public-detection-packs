@@ -20,6 +20,8 @@ mitreAttacks:
   - persistence
   - credential-access
   - initial-access
+mitreTechniques:
+  - T1098.001
 severity: Medium
 riskScore: 55
 schedule: '*/15 * * * *' 

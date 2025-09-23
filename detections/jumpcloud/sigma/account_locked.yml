@@ -19,6 +19,8 @@ categories:
     - account-lockout
 mitreattacks:
     - credential-access
+mitretechniques:
+    - T1110
 detection:
     selection1:
       normalized.eventName:

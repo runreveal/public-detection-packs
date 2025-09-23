@@ -39,3 +39,5 @@ riskscore: 55
 mitreattacks:
     - persistence
     - collection
+mitretechniques:
+    - T1098

@@ -16,6 +16,8 @@ mitreAttacks:
   - persistence
   - lateral-movement
   - credential-access
+mitreTechniques:
+  - T1098.001
 severity: medium
 riskScore: 90
 sourceTypes:

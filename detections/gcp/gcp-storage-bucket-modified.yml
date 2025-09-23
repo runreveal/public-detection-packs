@@ -14,6 +14,10 @@ categories:
   - storage-bucket
 mitreAttacks:
   - execution
+  - impact
+mitreTechniques:
+  - T1485      # Data Destruction
+  - T1565.001  # Data Manipulation: Stored Data Manipulation
 severity: Medium
 riskScore: 40
 schedule: '*/15 * * * *'

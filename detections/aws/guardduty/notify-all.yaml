@@ -14,5 +14,22 @@ detection:
         keywords: '*'
     condition: selection
 level: medium
+mitreattacks:
+  - initial-access
+  - execution
+  - persistence
+  - privilege-escalation
+  - defense-evasion
+  - credential-access
+  - discovery
+  - lateral-movement
+  - collection
+  - command-control
+  - exfiltration
+  - impact
+mitretechniques:
+  - T1190
+  - T1078
+  - T1562
 notificationnames:
   - email
