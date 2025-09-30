@@ -18,6 +18,10 @@ mitreTechniques:
   - T1537
 severity: Low
 riskScore: 20
+fields:
+  - url
+  - doc_title
+  - doc_type
 schedule: '*/15 * * * *'
 parameters:
   window: '30'
