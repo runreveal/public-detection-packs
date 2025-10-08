@@ -13,12 +13,12 @@ categories:
   - signal
   - impersonation
   - session-management
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 severity: High
 riskScore: 80
 sourceTypes:
   - okta
 mitreAttacks:
-  - evasion
+  - defense-evasion
 mitreTechniques:
   - T1078.004

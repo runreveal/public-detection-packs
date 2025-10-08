@@ -12,7 +12,7 @@ categories:
   - security-finding
   - signal
   - threat-intelligence
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 sourceTypes:
   - okta
 riskScore: 80
@@ -20,7 +20,7 @@ severity: High
 mitreAttacks:
   - initial-access
   - execution
-  - evasion
+  - defense-evasion
 mitreTechniques:
   - T1078
   - T1566

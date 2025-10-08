@@ -7,12 +7,12 @@ categories:
   - security-finding
   - monitoring
 logsource:
-    product: aws
-    service: guardduty
+  product: aws
+  service: guardduty
 detection:
-    selection:
-        keywords: '*'
-    condition: selection
+  selection:
+    keywords: "*"
+  condition: selection
 level: medium
 mitreattacks:
   - initial-access
@@ -24,7 +24,7 @@ mitreattacks:
   - discovery
   - lateral-movement
   - collection
-  - command-control
+  - command-and-control
   - exfiltration
   - impact
 mitretechniques:
