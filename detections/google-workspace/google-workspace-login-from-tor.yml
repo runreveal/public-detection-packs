@@ -10,6 +10,8 @@ categories:
   - tor-network
   - suspicious-login
 mitreAttacks:
+  - initial-access
+  - defense-evasion
   - command-and-control
 mitreTechniques:
   - T1090.003

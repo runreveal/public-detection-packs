@@ -24,5 +24,6 @@ sourceTypes:
   - gsuite
 mitreAttacks:
   - discovery
+  - collection
 mitreTechniques:
   - T1087

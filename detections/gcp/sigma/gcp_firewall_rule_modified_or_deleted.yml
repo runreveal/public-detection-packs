@@ -37,6 +37,7 @@ categories:
   - firewall
 mitreattacks:
   - defense-evasion
+  - impact
 mitretechniques:
   - T1562.001
   - T1562.004

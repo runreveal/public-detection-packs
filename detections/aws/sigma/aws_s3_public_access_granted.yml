@@ -47,5 +47,6 @@ level: high
 riskscore: 80
 mitreattacks:
   - collection
+  - exfiltration
 mitretechniques:
   - T1530

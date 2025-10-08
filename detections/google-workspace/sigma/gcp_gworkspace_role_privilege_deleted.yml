@@ -37,3 +37,4 @@ mitretechniques:
 mitreattacks:
   - persistence
   - privilege-escalation
+  - impact

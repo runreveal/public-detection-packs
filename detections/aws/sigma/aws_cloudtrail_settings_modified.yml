@@ -1,37 +1,40 @@
 title: AWS CloudTrail Log Settings Modified
 id: n5o6p7q8-r9s0-t1u2-v3w4-x5y6z7a8b9c0
-description: Detects modifications to CloudTrail logging settings, which could indicate attempts to disable or manipulate logging.
+description:
+  Detects modifications to CloudTrail logging settings, which could indicate
+  attempts to disable or manipulate logging.
 references:
-    - https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html
-    - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html
+  - https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html
+  - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - audit-activity
-    - signal
-    - log-tampering
-    - defense-evasion
+  - aws
+  - cloudtrail
+  - system-activity
+  - audit-activity
+  - signal
+  - log-tampering
+  - defense-evasion
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: cloudtrail.amazonaws.com
-        eventName:
-            - UpdateTrail
-            - StartLogging
-            - StopLogging
-            - DeleteTrail
-            - RemoveTags
-            - PutEventSelectors
-    condition: selection
+  selection:
+    eventSource: cloudtrail.amazonaws.com
+    eventName:
+      - UpdateTrail
+      - StartLogging
+      - StopLogging
+      - DeleteTrail
+      - RemoveTags
+      - PutEventSelectors
+  condition: selection
 falsepositives:
-    - Legitimate CloudTrail configuration changes by authorized administrators
+  - Legitimate CloudTrail configuration changes by authorized administrators
 level: high
 riskscore: 80
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1562.008
+  - T1562.008

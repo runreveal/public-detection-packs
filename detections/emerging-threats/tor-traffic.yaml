@@ -28,6 +28,7 @@ fields:
   - result
 riskscore: 80
 mitreattacks:
+  - defense-evasion
   - command-and-control
 mitretechniques:
   - T1090

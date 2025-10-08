@@ -45,6 +45,7 @@ mitreattacks:
   - persistence
   - privilege-escalation
   - defense-evasion
+  - impact
 mitretechniques:
   - T1098.001
   - T1484.002

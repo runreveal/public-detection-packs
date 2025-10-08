@@ -32,5 +32,6 @@ riskscore: 40
 mitreattacks:
   - persistence
   - privilege-escalation
+  - credential-access
 mitretechniques:
   - T1098.001

@@ -1,35 +1,38 @@
 title: 1Password Data Exfiltration Attempts
 id: 4d5e6f7g-8h9i-0123-4567-890123defghi
-description: Detects vault exports or external item sharing that could indicate data exfiltration
+description:
+  Detects vault exports or external item sharing that could indicate data
+  exfiltration
 author: RunReveal
 date: 2025-01-06
 references:
-    - https://developer.1password.com/docs/events-api/audit-events/
+  - https://developer.1password.com/docs/events-api/audit-events/
 tags:
-    - attack.exfiltration
-    - attack.t1041
+  - attack.exfiltration
+  - attack.t1041
 sourcetypes:
-    - 1password
+  - 1password
 categories:
-    - 1password
-    - identity-access-management
-    - entity-management
-    - signal
-    - data-exfiltration
+  - 1password
+  - identity-access-management
+  - entity-management
+  - signal
+  - data-exfiltration
 mitreattacks:
-    - exfiltration
+  - collection
+  - exfiltration
 mitretechniques:
-    - T1041
+  - T1041
 detection:
-    selection:
-        normalized.eventName:
-            - export     # Export vault
-            - share      # Share item externally
-            - sendpkg    # Send item to another user
-    condition: selection
+  selection:
+    normalized.eventName:
+      - export
+      - share
+      - sendpkg
+  condition: selection
 falsepositives:
-    - Legitimate data sharing with partners
-    - Authorized backup procedures
-    - Normal collaboration workflows
+  - Legitimate data sharing with partners
+  - Authorized backup procedures
+  - Normal collaboration workflows
 level: medium
 riskscore: 60

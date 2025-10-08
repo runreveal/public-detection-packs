@@ -19,6 +19,8 @@ categories:
 mitreAttacks:
   - persistence
   - privilege-escalation
+  - credential-access
+  - lateral-movement
 mitreTechniques:
   - T1098.001
 severity: Medium

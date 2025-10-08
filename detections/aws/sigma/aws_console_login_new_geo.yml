@@ -39,5 +39,6 @@ mitreattacks:
   - persistence
   - privilege-escalation
   - defense-evasion
+  - credential-access
 mitretechniques:
   - T1078

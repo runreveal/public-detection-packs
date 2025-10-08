@@ -23,6 +23,7 @@ mitreAttacks:
   - persistence
   - privilege-escalation
   - defense-evasion
+  - credential-access
   - lateral-movement
 mitreTechniques:
   - T1078

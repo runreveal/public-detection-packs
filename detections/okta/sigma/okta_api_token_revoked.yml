@@ -22,6 +22,7 @@ categories:
 mitreattacks:
   - persistence
   - privilege-escalation
+  - credential-access
 mitretechniques:
   - T1098.001
 detection:

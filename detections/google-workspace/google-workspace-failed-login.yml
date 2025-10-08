@@ -9,14 +9,15 @@ categories:
   - signal
   - failed-login
 mitreAttacks:
+  - initial-access
   - credential-access
 mitreTechniques:
   - T1110
 severity: Low
 riskScore: 10
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

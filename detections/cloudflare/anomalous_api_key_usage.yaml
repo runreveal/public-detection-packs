@@ -21,6 +21,7 @@ mitreAttacks:
   - persistence
   - privilege-escalation
   - defense-evasion
+  - credential-access
 mitreTechniques:
   - T1078
   - T1535

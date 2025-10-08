@@ -1,43 +1,46 @@
 title: AWS WAF Web ACL Modified
 id: m3n4o5p6-q7r8-s9t0-u1v2-w3x4y5z6a7b8
-description: Detects modifications to AWS WAF Web ACLs, which could indicate attempts to disable or bypass web application firewall protections.
+description:
+  Detects modifications to AWS WAF Web ACLs, which could indicate attempts
+  to disable or bypass web application firewall protections.
 references:
-    - https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html
-    - https://docs.aws.amazon.com/waf/latest/developerguide/web-acl.html
+  - https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html
+  - https://docs.aws.amazon.com/waf/latest/developerguide/web-acl.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - network-activity
-    - network-configuration
-    - signal
-    - waf
-    - firewall-modification
-    - attack.defense_evasion
-    - attack.t1562.001
+  - aws
+  - cloudtrail
+  - network-activity
+  - network-configuration
+  - signal
+  - waf
+  - firewall-modification
+  - attack.defense_evasion
+  - attack.t1562.001
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource:
-            - waf.amazonaws.com
-            - wafv2.amazonaws.com
-        eventName:
-            - UpdateWebACL
-            - DeleteWebACL
-            - CreateWebACL
-            - UpdateRuleGroup
-            - DeleteRuleGroup
-            - DeleteLoggingConfiguration
-    condition: selection
+  selection:
+    eventSource:
+      - waf.amazonaws.com
+      - wafv2.amazonaws.com
+    eventName:
+      - UpdateWebACL
+      - DeleteWebACL
+      - CreateWebACL
+      - UpdateRuleGroup
+      - DeleteRuleGroup
+      - DeleteLoggingConfiguration
+  condition: selection
 falsepositives:
-    - Legitimate WAF configuration updates
-    - Security posture improvements
-    - Infrastructure as code deployments
+  - Legitimate WAF configuration updates
+  - Security posture improvements
+  - Infrastructure as code deployments
 level: medium
 riskscore: 65
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1562.001
+  - T1562.001

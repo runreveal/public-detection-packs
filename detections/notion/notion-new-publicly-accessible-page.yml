@@ -13,6 +13,7 @@ categories:
   - data-exposure
 mitreAttacks:
   - collection
+  - exfiltration
 mitreTechniques:
   - T1530
   - T1213

@@ -4,32 +4,33 @@ description: Detects when a user or admin account is locked out in JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.credential-access
-    - attack.t1110
+  - attack.credential-access
+  - attack.t1110
 sourcetypes:
-    - jumpcloud
+  - jumpcloud
 categories:
-    - jumpcloud
-    - jumpcloud
-    - identity-access-management
-    - authentication
-    - signal
-    - account-lockout
+  - jumpcloud
+  - jumpcloud
+  - identity-access-management
+  - authentication
+  - signal
+  - account-lockout
 mitreattacks:
-    - credential-access
+  - credential-access
+  - impact
 mitretechniques:
-    - T1110
+  - T1110
 detection:
-    selection1:
-      normalized.eventName:
-          - user_lockout
-          - user_suspended
-    selection2:
-      admin_login_attempt: failure
-    condition: selection1 or selection2
+  selection1:
+    normalized.eventName:
+      - user_lockout
+      - user_suspended
+  selection2:
+    admin_login_attempt: failure
+  condition: selection1 or selection2
 falsepositives:
-    - Legitimate account lockouts due to forgotten passwords
+  - Legitimate account lockouts due to forgotten passwords
 level: medium
 riskscore: 30

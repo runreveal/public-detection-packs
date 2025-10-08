@@ -18,6 +18,7 @@ categories:
   - visibility-change
 mitreAttacks:
   - collection
+  - exfiltration
 mitreTechniques:
   - T1530
 severity: High

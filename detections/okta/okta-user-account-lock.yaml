@@ -18,7 +18,9 @@ categories:
   - brute-force
   - security-policy
 mitreAttacks:
+  - initial-access
   - credential-access
+  - impact
 mitreTechniques:
   - T1110
   - T1110.003

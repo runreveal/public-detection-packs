@@ -34,6 +34,7 @@ categories:
 mitreattacks:
   - defense-evasion
   - command-and-control
+  - impact
 mitretechniques:
   - T1562.001
   - T1571

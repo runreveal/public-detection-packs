@@ -22,6 +22,7 @@ mitreattacks:
   - persistence
   - defense-evasion
   - credential-access
+  - impact
 mitretechniques:
   - T1556.006
 detection:

@@ -1,41 +1,44 @@
 title: AWS Network ACL Modified
 id: k1l2m3n4-o5p6-q7r8-s9t0-u1v2w3x4y5z6
-description: Detects modifications to AWS Network Access Control Lists, which could indicate attempts to open network paths for data exfiltration or command and control.
+description:
+  Detects modifications to AWS Network Access Control Lists, which could
+  indicate attempts to open network paths for data exfiltration or command and control.
 references:
-    - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
-    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAcl.html
+  - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAcl.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - network-activity
-    - network-configuration
-    - signal
-    - network-acl
-    - defense-evasion
-    - attack.defense_evasion
-    - attack.t1562.007
+  - aws
+  - cloudtrail
+  - network-activity
+  - network-configuration
+  - signal
+  - network-acl
+  - defense-evasion
+  - attack.defense_evasion
+  - attack.t1562.007
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: ec2.amazonaws.com
-        eventName:
-            - CreateNetworkAcl
-            - DeleteNetworkAcl
-            - CreateNetworkAclEntry
-            - DeleteNetworkAclEntry
-            - ReplaceNetworkAclEntry
-            - ReplaceNetworkAclAssociation
-    condition: selection
+  selection:
+    eventSource: ec2.amazonaws.com
+    eventName:
+      - CreateNetworkAcl
+      - DeleteNetworkAcl
+      - CreateNetworkAclEntry
+      - DeleteNetworkAclEntry
+      - ReplaceNetworkAclEntry
+      - ReplaceNetworkAclAssociation
+  condition: selection
 falsepositives:
-    - Legitimate network configuration changes
-    - Infrastructure as code deployments
-    - Security hardening efforts
+  - Legitimate network configuration changes
+  - Infrastructure as code deployments
+  - Security hardening efforts
 level: medium
 riskscore: 55
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
+  - command-and-control
 mitretechniques:
-    - T1562.007
+  - T1562.007

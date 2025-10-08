@@ -18,5 +18,6 @@ sourceTypes:
 mitreAttacks:
   - persistence
   - privilege-escalation
+  - credential-access
 mitreTechniques:
   - T1098.001

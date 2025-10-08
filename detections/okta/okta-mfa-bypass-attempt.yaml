@@ -16,6 +16,7 @@ categories:
   - mfa-bypass
   - bypass-attempt
 mitreAttacks:
+  - initial-access
   - persistence
   - defense-evasion
   - credential-access

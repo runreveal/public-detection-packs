@@ -25,6 +25,7 @@ mitreAttacks:
   - privilege-escalation
   - defense-evasion
   - credential-access
+  - impact
 mitreTechniques:
   - T1110
   - T1078

@@ -12,6 +12,7 @@ categories:
   - data-exposure
   - public-access
 mitreAttacks:
+  - collection
   - exfiltration
 mitreTechniques:
   - T1537

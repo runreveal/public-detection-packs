@@ -18,6 +18,7 @@ categories:
   - policy-management
 mitreAttacks:
   - defense-evasion
+  - impact
 mitreTechniques:
   - T1562.001
 severity: Critical

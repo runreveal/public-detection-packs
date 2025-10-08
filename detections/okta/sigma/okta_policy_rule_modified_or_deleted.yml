@@ -34,3 +34,4 @@ mitretechniques:
 mitreattacks:
   - privilege-escalation
   - defense-evasion
+  - impact

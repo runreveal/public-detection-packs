@@ -23,6 +23,7 @@ categories:
   - anonymised-proxy
   - session-start
 mitreattacks:
+  - defense-evasion
   - command-and-control
 mitretechniques:
   - T1090

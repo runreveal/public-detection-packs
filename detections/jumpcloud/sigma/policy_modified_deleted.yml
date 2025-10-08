@@ -20,6 +20,7 @@ categories:
 mitreattacks:
   - privilege-escalation
   - defense-evasion
+  - impact
 mitretechniques:
   - T1484.002
 detection:
