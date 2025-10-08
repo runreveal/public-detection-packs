@@ -1,11 +1,11 @@
 name: github-repository-collaborator-change
 displayName: GitHub Repository Collaborator Change
-description: >-
+description:
   Detects additions or removals of collaborators from private GitHub repositories,
-  excluding automated service accounts. Collaborator changes can significantly
-  impact repository security and access controls. Unauthorized collaborator
-  modifications could lead to data exposure, unauthorized code access, or
-  privilege escalation within private repositories.
+  excluding automated service accounts. Collaborator changes can significantly impact
+  repository security and access controls. Unauthorized collaborator modifications
+  could lead to data exposure, unauthorized code access, or privilege escalation within
+  private repositories.
 file: github-repository-collaborator-change.sql
 categories:
   - github
@@ -17,12 +17,11 @@ categories:
   - collaborator-management
   - user-management
 mitreAttacks:
-  - privilege-escalation
   - persistence
-  - credential-access
+  - privilege-escalation
 mitreTechniques:
   - T1098
   - T1098.003
 severity: Medium
 riskScore: 65
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"

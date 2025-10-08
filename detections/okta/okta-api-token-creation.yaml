@@ -9,13 +9,12 @@ categories:
   - entity-management
   - api-token
   - token-creation
-schedule: '*/15 * * * *'
-notes: ''
+schedule: "*/15 * * * *"
+notes: ""
 notificationNames: []
 mitreAttacks:
   - persistence
-  - lateral-movement
-  - credential-access
+  - privilege-escalation
 mitreTechniques:
   - T1098.001
 severity: medium

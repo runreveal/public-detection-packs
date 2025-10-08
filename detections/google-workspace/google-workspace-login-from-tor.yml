@@ -10,15 +10,14 @@ categories:
   - tor-network
   - suspicious-login
 mitreAttacks:
-  - initial-access
-  - defense-evasion
+  - command-and-control
 mitreTechniques:
   - T1090.003
 severity: Critical
 riskScore: 95
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

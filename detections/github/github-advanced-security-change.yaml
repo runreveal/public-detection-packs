@@ -1,12 +1,11 @@
 name: github-advanced-security-change
 displayName: GitHub Advanced Security Change
-description: >-
+description:
   Detects critical security configuration changes in GitHub including disabling
-  of advanced security features, secret scanning, Dependabot alerts, and other
-  security controls. These changes are classified by severity level and can
-  significantly impact organizational security posture. Unauthorized security
-  feature disabling could weaken defenses, hide vulnerabilities, or enable
-  malicious activities.
+  of advanced security features, secret scanning, Dependabot alerts, and other security
+  controls. These changes are classified by severity level and can significantly impact
+  organizational security posture. Unauthorized security feature disabling could weaken
+  defenses, hide vulnerabilities, or enable malicious activities.
 file: github-advanced-security-change.sql
 categories:
   - github
@@ -19,10 +18,8 @@ categories:
   - policy-management
 mitreAttacks:
   - defense-evasion
-  - persistence
-  - impact
 mitreTechniques:
   - T1562.001
 severity: Critical
 riskScore: 95
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"

@@ -1,9 +1,7 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: new-tailscale-user
 displayName: New Tailscale User
-description: >-
+description:
   This detection will show you a list of users who have created an account,
   who invited them, and how the user was invited.
 file: new_tailscale_user.sql
@@ -16,10 +14,13 @@ categories:
   - account-creation
 severity: Medium
 riskScore: 50
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 sourceTypes:
   - tailscale-audit
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078

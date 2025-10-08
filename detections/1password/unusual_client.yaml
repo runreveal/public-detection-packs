@@ -1,10 +1,10 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: 1password-unusual-client
 displayName: 1Password Unusual Client
 file: unusual_client.sql
-description: This detects 1Password access from a client app and platform combination that the user has not previously accessed 1Password from.
+description:
+  This detects 1Password access from a client app and platform combination
+  that the user has not previously accessed 1Password from.
 categories:
   - 1password
   - identity-access-management
@@ -14,9 +14,12 @@ categories:
 severity: Low
 riskScore: 20
 mitreAttacks:
-  - credential-access
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
 sourceTypes:
   - 1password
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"

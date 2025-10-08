@@ -11,15 +11,16 @@ categories:
   - data-export
   - data-exfiltration
 mitreAttacks:
+  - collection
   - exfiltration
 mitreTechniques:
-  - T1005      # Data from Local System
-  - T1537      # Transfer Data to Cloud Account
+  - T1005
+  - T1537
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

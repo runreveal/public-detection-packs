@@ -1,7 +1,8 @@
 title: Non-standard Web Destination Port
 id: 2sEoh9NwefTdUD5BOZBkvLZlraD
-description: |
-    Identifies unusual
+description: "Identifies unusual
+
+  "
 categories:
   - cloudflare
   - gateway
@@ -10,24 +11,24 @@ categories:
   - signal
   - anomaly-detection
 references:
-    - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
+  - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_
 date: 2025-01-27
 modified: 2025-01-27
 sourcetypes:
-    - cf-gateway-http
+  - cf-gateway-http
 detection:
-    selection:
-      DestinationPort:
-        - 80
-        - 443
-    condition: not selection
+  selection:
+    DestinationPort:
+      - 80
+      - 443
+  condition: not selection
 falsepositives:
-    - It's possible that a legitimate user is using a non-standard port for a web destination but this is unlikely.
+  - It's possible that a legitimate user is using a non-standard port for a web destination
+    but this is unlikely.
 level: medium
 risk_score: 75
 mitreattacks:
-    - initial-access
-    - execution
+  - command-and-control
 mitretechniques:
-    - T1071.001
+  - T1071.001

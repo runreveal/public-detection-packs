@@ -2,33 +2,35 @@ title: Okta Identity Provider Created
 id: 969c7590-8c19-4797-8c1b-23155de6e7ac
 description: Detects when a new identity provider is created for Okta.
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://sec.okta.com/articles/2023/08/cross-tenant-impersonation-prevention-and-detection
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://sec.okta.com/articles/2023/08/cross-tenant-impersonation-prevention-and-detection
 author: kelnage
 date: 2023-09-07
 tags:
-    - attack.persistence
-    - attack.t1098.001
+  - attack.persistence
+  - attack.t1098.001
 sourcetypes:
-    - okta
+  - okta
 categories:
-    - okta
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - identity-provider
-    - idp-creation
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - identity-provider
+  - idp-creation
 mitreattacks:
-    - persistence
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1098.001  # Account Manipulation: Additional Cloud Credentials
-    - T1484.002  # Trust Modification
+  - T1098.001
+  - T1484.002
 detection:
-    selection:
-        eventtype: 'system.idp.lifecycle.create'
-    condition: selection
+  selection:
+    eventtype: system.idp.lifecycle.create
+  condition: selection
 falsepositives:
-    - When an admin creates a new, authorised identity provider.
+  - When an admin creates a new, authorised identity provider.
 level: medium
 riskscore: 100

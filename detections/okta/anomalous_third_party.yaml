@@ -1,6 +1,4 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: okta-anomalous-third-party
 displayName: Anomalous Third Party Activity
 description: Third party in Okta has changed its pattern of activity
@@ -14,13 +12,16 @@ categories:
   - third-party
   - anomalous-behavior
 mitreAttacks:
-  - execution
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - okta

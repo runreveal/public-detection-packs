@@ -1,36 +1,40 @@
 title: AWS Root User Console Login
 id: f3ca6b20-33c7-45c4-b938-5e9a2a5ffc2d
-description: Detects successful console logins by the AWS root user. The root user has unrestricted access to all resources and should only be used in rare circumstances.
+description:
+  Detects successful console logins by the AWS root user. The root user
+  has unrestricted access to all resources and should only be used in rare circumstances.
 references:
-    - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html
-    - https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - identity-access-management
-    - authentication
-    - signal
-    - root-account
-    - privileged-access
-    - attack.initial_access
-    - attack.privilege_escalation
-    - attack.t1078
+  - aws
+  - cloudtrail
+  - identity-access-management
+  - authentication
+  - signal
+  - root-account
+  - privileged-access
+  - attack.initial_access
+  - attack.privilege_escalation
+  - attack.t1078
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventName: ConsoleLogin
-        userIdentity.type: Root
-        responseElements.ConsoleLogin: Success
-    condition: selection
+  selection:
+    eventName: ConsoleLogin
+    userIdentity.type: Root
+    responseElements.ConsoleLogin: Success
+  condition: selection
 falsepositives:
-    - Legitimate emergency use of root account by authorized administrators
+  - Legitimate emergency use of root account by authorized administrators
 level: high
 riskscore: 80
 mitreattacks:
-    - initial-access
-    - privilege-escalation
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1078
+  - T1078

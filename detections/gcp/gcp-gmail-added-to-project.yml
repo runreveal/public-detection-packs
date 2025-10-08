@@ -1,9 +1,9 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: gcp-gmail-added-to-project
 displayName: gmail-added-to-project
-description: Detect when a gmail, or easily modified to your corporate email domain, is added to a project
+description:
+  Detect when a gmail, or easily modified to your corporate email domain,
+  is added to a project
 file: gcp-gmail-added-to-project.sql
 categories:
   - gcp
@@ -15,14 +15,16 @@ categories:
 mitreAttacks:
   - initial-access
   - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
-  - T1078.004  # Valid Accounts: Cloud Accounts
-  - T1136.003  # Create Account: Cloud Account
+  - T1078.004
+  - T1136.003
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - gcp
   - gcplogs

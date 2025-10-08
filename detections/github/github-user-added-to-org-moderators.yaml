@@ -1,10 +1,10 @@
 name: github-user-added-to-org-moderators
 displayName: GitHub User Added to Org Moderators
-description: >-
-  Detects when users are added to GitHub organization moderator roles. Organization
-  moderators have elevated privileges including the ability to manage organization
-  members, teams, and certain security settings. Unauthorized moderator role
-  assignments could indicate privilege escalation attempts, account compromise,
+description:
+  Detects when users are added to GitHub organization moderator roles.
+  Organization moderators have elevated privileges including the ability to manage
+  organization members, teams, and certain security settings. Unauthorized moderator
+  role assignments could indicate privilege escalation attempts, account compromise,
   or administrative errors that could lead to unauthorized administrative access.
 file: github-user-added-to-org-moderators.sql
 categories:
@@ -17,12 +17,13 @@ categories:
   - organization-management
   - privilege-escalation
 mitreAttacks:
-  - privilege-escalation
+  - initial-access
   - persistence
-  - credential-access
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1098.003
   - T1078.004
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"

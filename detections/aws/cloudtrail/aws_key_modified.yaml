@@ -1,6 +1,4 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: aws-key-modified
 displayName: AWS Key Created, Modified, or Deleted
 description: Monitor for critical lifecycle events of AWS keys
@@ -13,11 +11,12 @@ categories:
   - signal
   - credential-access
   - iam-key-management
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 severity: Medium
 riskScore: 50
 mitreAttacks:
-  - credential-access
+  - persistence
+  - privilege-escalation
 mitreTechniques:
   - T1098.001
 sourceTypes:

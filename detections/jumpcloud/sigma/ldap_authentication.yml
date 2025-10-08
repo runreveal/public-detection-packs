@@ -4,30 +4,33 @@ description: Detects LDAP authentication and bind events via JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.initial-access
-    - attack.t1078 # Valid Accounts
+  - attack.initial-access
+  - attack.t1078
 sourcetypes:
-    - jumpcloud
+  - jumpcloud
 categories:
-    - jumpcloud
-    - directory
-    - identity-access-management
-    - authentication
-    - signal
-    - ldap-auth
+  - jumpcloud
+  - directory
+  - identity-access-management
+  - authentication
+  - signal
+  - ldap-auth
 mitreattacks:
-    - initial-access
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1078
+  - T1078
 detection:
-    selection:
-        normalized.eventName:
-            - ldap_bind
-            - ldap_search
-    condition: selection
+  selection:
+    normalized.eventName:
+      - ldap_bind
+      - ldap_search
+  condition: selection
 falsepositives:
-    - Legitimate LDAP authentication for on-premise resources
+  - Legitimate LDAP authentication for on-premise resources
 level: low
 riskscore: 5

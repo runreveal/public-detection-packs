@@ -1,6 +1,13 @@
 name: okta-mfasigned-nonce-unexpected-geo
 displayName: Okta MFA Signed Nonce from Unexpected Geography
-description: Detects successful MFA authentication using SIGNED_NONCE factor from computer devices in unexpected geographical locations. SIGNED_NONCE is typically used by hardware security keys or advanced authentication methods. Authentication from unexpected countries could indicate account compromise, credential theft, or unauthorized access attempts. This detection helps identify potential security incidents involving compromised accounts or stolen authentication devices. Expected countries are hardcoded as full country names - modify the SQL query to adjust the allowlist.
+description:
+  Detects successful MFA authentication using SIGNED_NONCE factor from
+  computer devices in unexpected geographical locations. SIGNED_NONCE is typically
+  used by hardware security keys or advanced authentication methods. Authentication
+  from unexpected countries could indicate account compromise, credential theft, or
+  unauthorized access attempts. This detection helps identify potential security incidents
+  involving compromised accounts or stolen authentication devices. Expected countries
+  are hardcoded as full country names - modify the SQL query to adjust the allowlist.
 file: okta-mfa-signed-nonce-unexpected-geo.sql
 categories:
   - okta
@@ -13,16 +20,23 @@ categories:
   - security-key
 mitreAttacks:
   - initial-access
-  - credential-access
+  - persistence
+  - privilege-escalation
   - defense-evasion
+  - credential-access
 mitreTechniques:
   - T1078
   - T1556.006
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'Note: This detection implements the geographical filtering but does not include the user-specific location allowlist (OKTA_EXPECTED_USER_LOCATIONS) from the original Python rule. Expected countries (United States, Canada, United Kingdom, Australia, Germany, France, Netherlands) are hardcoded in the SQL query - modify as needed for your organization.'
+  window: "30"
+notes:
+  "Note: This detection implements the geographical filtering but does not include
+  the user-specific location allowlist (OKTA_EXPECTED_USER_LOCATIONS) from the original
+  Python rule. Expected countries (United States, Canada, United Kingdom, Australia,
+  Germany, France, Netherlands) are hardcoded in the SQL query - modify as needed
+  for your organization."
 sourceTypes:
-  - okta 
+  - okta

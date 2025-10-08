@@ -12,16 +12,18 @@ categories:
   - domain-settings
   - configuration-change
 mitreAttacks:
+  - initial-access
   - persistence
-  - lateral-movement
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
-  - T1484.002  # Trust Modification
-  - T1078.004  # Valid Accounts: Cloud Accounts
+  - T1484.002
+  - T1078.004
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

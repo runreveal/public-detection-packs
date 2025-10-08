@@ -17,20 +17,20 @@ categories:
   - c2-communication
   - dprk-threat-actor
 sourcetypes:
-  - "crowdstrike-fdr"
-  - "cf-gateway-dns"
-  - "dnsfilter"
+  - crowdstrike-fdr
+  - cf-gateway-dns
+  - dnsfilter
 detection:
   selection:
     normalized.serviceName:
-      - "connection.lockscreen.kro.kr"
-      - "updating.dothome.co.kr"
+      - connection.lockscreen.kro.kr
+      - updating.dothome.co.kr
   condition: selection
 falsepositives:
   - Unlikely
 level: high
 riskscore: 100
 mitreattacks:
-  - defense-evasion
+  - command-and-control
 mitretechniques:
   - T1071.004

@@ -1,31 +1,35 @@
 title: 1Password MFA Disabled
 id: a1b2c3d4-e5f6-7890-1234-567890abcdef
-description: Detects when multi-factor authentication is disabled for a 1Password user account
+description:
+  Detects when multi-factor authentication is disabled for a 1Password
+  user account
 author: RunReveal
 date: 2025-01-06
 references:
-    - https://developer.1password.com/docs/events-api/audit-events/
+  - https://developer.1password.com/docs/events-api/audit-events/
 tags:
-    - attack.credential-access
-    - attack.t1556
+  - attack.credential-access
+  - attack.t1556
 sourcetypes:
-    - 1password
+  - 1password
 categories:
-    - 1password
-    - identity-access-management
-    - authentication
-    - signal
-    - mfa
+  - 1password
+  - identity-access-management
+  - authentication
+  - signal
+  - mfa
 mitreattacks:
-    - defense-evasion
+  - persistence
+  - defense-evasion
+  - credential-access
 mitretechniques:
-    - T1556.006
+  - T1556.006
 detection:
-    selection:
-        normalized.eventName:
-            - disblmfa
-    condition: selection
+  selection:
+    normalized.eventName:
+      - disblmfa
+  condition: selection
 falsepositives:
-    - Legitimate MFA configuration changes by administrators
+  - Legitimate MFA configuration changes by administrators
 level: high
 riskscore: 85

@@ -1,6 +1,10 @@
 name: okta-unauth-app-access-attempt
 displayName: Okta Unauthorized App Access Attempt
-description: Detects when a user attempts unauthorized access to an application in Okta. This event indicates potential security violations where users are trying to access applications they don't have permission to use. These attempts could indicate compromised accounts, privilege escalation attempts, or users testing system boundaries.
+description:
+  Detects when a user attempts unauthorized access to an application in
+  Okta. This event indicates potential security violations where users are trying
+  to access applications they don't have permission to use. These attempts could indicate
+  compromised accounts, privilege escalation attempts, or users testing system boundaries.
 file: okta-unauth-app-access-attempt.sql
 categories:
   - okta
@@ -12,15 +16,17 @@ categories:
   - security-violation
 mitreAttacks:
   - initial-access
+  - persistence
   - privilege-escalation
+  - defense-evasion
   - discovery
 mitreTechniques:
   - T1078
   - T1087
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
-  - okta 
+  - okta

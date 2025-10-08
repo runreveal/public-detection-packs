@@ -1,6 +1,10 @@
 name: google-workspace-calendar-external-sharing
 displayName: Google Workspace Calendar External Sharing Enabled
-description: Detects when calendar sharing outside the domain is enabled in Google Workspace with permissive access levels (read-write, read-only, or manage access). This could allow external users to access internal calendar information and represents a potential data exposure risk.
+description:
+  Detects when calendar sharing outside the domain is enabled in Google
+  Workspace with permissive access levels (read-write, read-only, or manage access).
+  This could allow external users to access internal calendar information and represents
+  a potential data exposure risk.
 file: google-workspace-calendar-external-sharing.sql
 categories:
   - google-workspace
@@ -13,16 +17,14 @@ categories:
   - external-sharing
 mitreAttacks:
   - collection
-  - exfiltration
-  - initial-access
 mitreTechniques:
-  - T1114      # Email Collection
-  - T1213      # Data from Information Repositories
+  - T1114
+  - T1213
 severity: Medium
 riskScore: 65
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite

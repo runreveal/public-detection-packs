@@ -1,6 +1,4 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: critical-policy-changes
 displayName: Critical Policy Changes
 description: Monitor for critical policy changes of your AWS assets.
@@ -13,12 +11,13 @@ categories:
   - signal
   - policy-change
   - iam
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 severity: Medium
 riskScore: 60
 sourceTypes:
   - cloudtrail
 mitreAttacks:
+  - privilege-escalation
   - defense-evasion
 mitreTechniques:
   - T1484.002

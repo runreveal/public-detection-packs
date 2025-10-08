@@ -1,40 +1,42 @@
 title: AWS SQS Queue Policy Modified
 id: y5z6a7b8-c9d0-e1f2-g3h4-i5j6k7l8m9n0
-description: Detects modifications to SQS queue policies that could allow unauthorized access to message queues.
+description:
+  Detects modifications to SQS queue policies that could allow unauthorized
+  access to message queues.
 references:
-    - https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html
-    - https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html
+  - https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html
+  - https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - resource-activity
-    - signal
-    - sqs
-    - policy-modification
-    - attack.persistence
-    - attack.collection
-    - attack.t1098
+  - aws
+  - cloudtrail
+  - system-activity
+  - resource-activity
+  - signal
+  - sqs
+  - policy-modification
+  - attack.persistence
+  - attack.collection
+  - attack.t1098
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: sqs.amazonaws.com
-        eventName: SetQueueAttributes
-    public_policy:
-        requestParameters.attributes.Policy|contains:
-            - '"Principal":"*"'
-            - '"Principal":{"AWS":"*"}'
-    condition: selection and public_policy
+  selection:
+    eventSource: sqs.amazonaws.com
+    eventName: SetQueueAttributes
+  public_policy:
+    requestParameters.attributes.Policy|contains:
+      - '"Principal":"*"'
+      - '"Principal":{"AWS":"*"}'
+  condition: selection and public_policy
 falsepositives:
-    - Legitimate public SQS queues for integration with other services
-    - Application architecture changes
+  - Legitimate public SQS queues for integration with other services
+  - Application architecture changes
 level: medium
 riskscore: 60
 mitreattacks:
-    - persistence
-    - collection
+  - persistence
+  - privilege-escalation
 mitretechniques:
-    - T1098
+  - T1098

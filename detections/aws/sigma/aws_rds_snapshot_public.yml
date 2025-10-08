@@ -1,37 +1,39 @@
 title: AWS RDS Database Snapshot Made Public
 id: q7r8s9t0-u1v2-w3x4-y5z6-a7b8c9d0e1f2
-description: Detects when an RDS database snapshot is modified to be publicly accessible, which could lead to data exposure.
+description:
+  Detects when an RDS database snapshot is modified to be publicly accessible,
+  which could lead to data exposure.
 references:
-    - https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html
-    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html
+  - https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - file-activity
-    - signal
-    - rds
-    - snapshot
-    - public-access
-    - attack.exfiltration
-    - attack.t1530
+  - aws
+  - cloudtrail
+  - system-activity
+  - file-activity
+  - signal
+  - rds
+  - snapshot
+  - public-access
+  - attack.exfiltration
+  - attack.t1530
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: rds.amazonaws.com
-        eventName: ModifyDBSnapshotAttribute
-    public_attribute:
-        requestParameters.attributeName: 'restore'
-        requestParameters.valuesToAdd: 'all'
-    condition: selection and public_attribute
+  selection:
+    eventSource: rds.amazonaws.com
+    eventName: ModifyDBSnapshotAttribute
+  public_attribute:
+    requestParameters.attributeName: restore
+    requestParameters.valuesToAdd: all
+  condition: selection and public_attribute
 falsepositives:
-    - Legitimate sharing of non-sensitive database snapshots for migration or recovery
+  - Legitimate sharing of non-sensitive database snapshots for migration or recovery
 level: high
 riskscore: 85
 mitreattacks:
-    - exfiltration
+  - collection
 mitretechniques:
-    - T1530
+  - T1530

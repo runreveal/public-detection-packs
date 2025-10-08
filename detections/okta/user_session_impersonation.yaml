@@ -1,6 +1,4 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: okta-user-session-impersonation
 displayName: Okta User Session Impersonation
 description: Someone has impersonated a user session
@@ -19,6 +17,9 @@ riskScore: 80
 sourceTypes:
   - okta
 mitreAttacks:
+  - initial-access
+  - persistence
+  - privilege-escalation
   - defense-evasion
 mitreTechniques:
   - T1078.004

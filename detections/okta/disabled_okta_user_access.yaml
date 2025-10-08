@@ -1,11 +1,9 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: disabled-okta-user-access
 displayName: Disabled Okta User Access
-description: >-
-  Alerts you when a suspended, deactivated, or deleted Okta user, from the
-  past 90 days, appears in any other log.
+description:
+  Alerts you when a suspended, deactivated, or deleted Okta user, from
+  the past 90 days, appears in any other log.
 file: disabled_okta_user_access.sql
 categories:
   - okta
@@ -17,10 +15,14 @@ categories:
   - unauthorized-access
 riskScore: 50
 severity: Medium
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 sourceTypes:
   - okta
 mitreAttacks:
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
   - discovery
 mitreTechniques:
   - T1078

@@ -4,29 +4,32 @@ description: Detects user authentication to SSO applications via JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.initial-access
-    - attack.t1078 # Valid Accounts
+  - attack.initial-access
+  - attack.t1078
 sourcetypes:
-    - jumpcloud
+  - jumpcloud
 categories:
-    - jumpcloud
-    - jumpcloud
-    - identity-access-management
-    - authentication
-    - signal
-    - sso-access
+  - jumpcloud
+  - jumpcloud
+  - identity-access-management
+  - authentication
+  - signal
+  - sso-access
 mitreattacks:
-    - initial-access
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1078
+  - T1078
 detection:
-    selection:
-        normalized.eventName:
-            - sso_auth
-    condition: selection
+  selection:
+    normalized.eventName:
+      - sso_auth
+  condition: selection
 falsepositives:
-    - Legitimate SSO application access by authorized users
+  - Legitimate SSO application access by authorized users
 level: low
 riskscore: 5

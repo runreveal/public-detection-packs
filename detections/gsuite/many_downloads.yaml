@@ -1,15 +1,12 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: gsuite-many-downloads
 displayName: GSuite Many Downloads
-description: >-
-  This detection will run every 15 minutes,
+description: "This detection will run every 15 minutes,
 
-  and check if there are a large number of download events from a single user
-  that have occurred.
+  and check if there are a large number of download events from a single user that
+  have occurred.
 
-  The number of download events to alert on is configurable.
+  The number of download events to alert on is configurable."
 file: many_downloads.sql
 categories:
   - gsuite
@@ -21,14 +18,13 @@ categories:
   - bulk-download
 riskScore: 50
 severity: Medium
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  threshold: '100'
+  threshold: "100"
 sourceTypes:
   - gsuite
 mitreAttacks:
   - collection
-  - exfiltration
 mitreTechniques:
   - T1005
   - T1114

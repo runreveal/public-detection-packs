@@ -1,6 +1,4 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: gcp-storage-bucket-modified
 displayName: storage-bucket-modified
 description: GCS bucket modified or deleted
@@ -13,16 +11,15 @@ categories:
   - signal
   - storage-bucket
 mitreAttacks:
-  - execution
   - impact
 mitreTechniques:
-  - T1485      # Data Destruction
-  - T1565.001  # Data Manipulation: Stored Data Manipulation
+  - T1485
+  - T1565.001
 severity: Medium
 riskScore: 40
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - gcp
   - gcplogs

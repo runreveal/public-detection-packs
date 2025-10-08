@@ -11,15 +11,14 @@ categories:
   - calendar-sharing
   - public-access
 mitreAttacks:
-  - collection
   - exfiltration
 mitreTechniques:
   - T1537
 severity: Medium
 riskScore: 50
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

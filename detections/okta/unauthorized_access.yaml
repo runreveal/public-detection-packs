@@ -1,10 +1,10 @@
 name: okta-unauthorized-access
 displayName: Okta Unauthorized Access
-description: >-
+description:
   On October 20 2023, Okta published a list of IP addresses that they found
-  had accessed their systems using stolen credentials
-  (https://sec.okta.com/harfiles). This query will check your logs for any
-  authenticated user that accessed your system from these IPs.
+  had accessed their systems using stolen credentials (https://sec.okta.com/harfiles).
+  This query will check your logs for any authenticated user that accessed your system
+  from these IPs.
 file: unauthorized_access.sql
 categories:
   - okta
@@ -16,12 +16,14 @@ categories:
   - credential-compromise
 riskScore: 90
 severity: Critical
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 sourceTypes:
   - okta
 mitreAttacks:
-  - credential-access
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
   - T1535

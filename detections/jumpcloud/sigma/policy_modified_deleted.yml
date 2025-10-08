@@ -4,32 +4,33 @@ description: Detects when policies are modified or deleted in JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.defense-evasion
-    - attack.persistence
+  - attack.defense-evasion
+  - attack.persistence
 sourcetypes:
-    - jumpcloud
+  - jumpcloud
 categories:
-    - jumpcloud
-    - admin
-    - system-activity
-    - configuration-access
-    - signal
-    - policy-management
+  - jumpcloud
+  - admin
+  - system-activity
+  - configuration-access
+  - signal
+  - policy-management
 mitreattacks:
-    - defense-evasion
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1484.002
+  - T1484.002
 detection:
-    selection:
-        normalized.eventName:
-            - policy_update
-            - policy_delete
-            - authpolicy_update
-            - authpolicy_delete
-    condition: selection
+  selection:
+    normalized.eventName:
+      - policy_update
+      - policy_delete
+      - authpolicy_update
+      - authpolicy_delete
+  condition: selection
 falsepositives:
-    - Legitimate policy changes by authorized administrators
+  - Legitimate policy changes by authorized administrators
 level: low
 riskscore: 20

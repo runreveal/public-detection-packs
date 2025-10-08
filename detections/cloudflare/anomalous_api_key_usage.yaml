@@ -1,9 +1,7 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: anomalous-api-key-usage
 displayName: Anomalous Cloudflare API Key Usage
-description: 'A Cloudflare API key was first seen, or used from a new network.'
+description: A Cloudflare API key was first seen, or used from a new network.
 file: anomalous_api_key_usage.sql
 categories:
   - cloudflare
@@ -15,12 +13,14 @@ categories:
   - anomaly-detection
 riskScore: 85
 severity: High
-schedule: '*/25 * * * *'
+schedule: "*/25 * * * *"
 sourceTypes:
   - cf-audit
 mitreAttacks:
-  - credential-access
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
   - T1535

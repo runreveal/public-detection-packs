@@ -1,10 +1,11 @@
 name: github-ip-allow-list-changes
 displayName: GitHub IP Allow List Changes
-description: >-
-  Detects changes to GitHub organization IP allow list settings including enabling/disabling
-  the allow list, modifying entries, and changes to installed app restrictions. IP allow list
-  modifications can impact organization security posture and should be monitored for unauthorized
-  changes that could bypass network security controls or enable unauthorized access.
+description:
+  Detects changes to GitHub organization IP allow list settings including
+  enabling/disabling the allow list, modifying entries, and changes to installed app
+  restrictions. IP allow list modifications can impact organization security posture
+  and should be monitored for unauthorized changes that could bypass network security
+  controls or enable unauthorized access.
 file: github-ip-allow-list-changes.sql
 categories:
   - github
@@ -16,12 +17,11 @@ categories:
   - access-control
   - ip-allow-list
 mitreAttacks:
+  - privilege-escalation
   - defense-evasion
-  - persistence
-  - initial-access
 mitreTechniques:
   - T1562.001
   - T1484.002
 severity: Medium
 riskScore: 70
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"

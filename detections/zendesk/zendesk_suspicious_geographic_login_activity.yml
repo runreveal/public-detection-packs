@@ -1,8 +1,10 @@
 name: zendesk-suspicious-geographic-login-activity
 displayName: Zendesk Login from Suspicious Geographic Location
-description: Detects logins to Zendesk from countries that may be unusual for the organization
+description:
+  Detects logins to Zendesk from countries that may be unusual for the
+  organization
 file: zendesk-suspicious-geographic-login-activity.sql
-schedule: '*/5 * * * *'
+schedule: "*/5 * * * *"
 categories:
   - zendesk
   - identity-access-management
@@ -12,11 +14,18 @@ severity: medium
 riskScore: 60
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
 sourceTypes:
   - zendesk
-notes: |
-  Adjust the NOT IN clause to include countries where your organization typically operates.
+notes:
+  "Adjust the NOT IN clause to include countries where your organization typically
+  operates.
+
   Review logins from unexpected geographic locations for potential account compromise.
+
+  "
 disabled: false

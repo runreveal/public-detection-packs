@@ -1,6 +1,4 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: okta-new-network-access
 displayName: User Access from New Network
 description: User accessed Okta from a network that they previously have not used.
@@ -15,13 +13,16 @@ categories:
   - network-access
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
 severity: Low
 riskScore: 25
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-  ignoreNetworksByAS: '[]'
+  window: "30"
+  ignoreNetworksByAS: "[]"
 sourceTypes:
   - okta

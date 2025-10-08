@@ -1,36 +1,40 @@
 title: 1Password Account Deletion or Suspension
 id: 6f7g8h9i-0j1k-2345-6789-012345fghijk
-description: Detects when accounts are deleted or suspended, which could indicate malicious activity
+description:
+  Detects when accounts are deleted or suspended, which could indicate
+  malicious activity
 author: RunReveal
 date: 2025-01-06
 references:
-    - https://developer.1password.com/docs/events-api/audit-events/
+  - https://developer.1password.com/docs/events-api/audit-events/
 tags:
-    - attack.impact
-    - attack.t1531
+  - attack.impact
+  - attack.t1531
 sourcetypes:
-    - 1password
+  - 1password
 categories:
-    - 1password
-    - identity-access-management
-    - entity-management
-    - signal
-    - account-lifecycle
+  - 1password
+  - identity-access-management
+  - entity-management
+  - signal
+  - account-lifecycle
 mitreattacks:
-    - impact
+  - persistence
+  - privilege-escalation
+  - impact
 mitretechniques:
-    - T1531      # Account Access Removal
-    - T1098      # Account Manipulation
+  - T1531
+  - T1098
 detection:
-    selection:
-        normalized.eventName:
-            - delete     # Delete (when object_type is account/user)
-            - suspend    # Suspend account
-            - purge      # Permanently delete
-    condition: selection
+  selection:
+    normalized.eventName:
+      - delete
+      - suspend
+      - purge
+  condition: selection
 falsepositives:
-    - Legitimate account cleanup
-    - Employee termination procedures
-    - Policy enforcement actions
+  - Legitimate account cleanup
+  - Employee termination procedures
+  - Policy enforcement actions
 level: medium
 riskscore: 55

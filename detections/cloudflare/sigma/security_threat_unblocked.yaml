@@ -1,7 +1,10 @@
 title: Security Threat Unblocked
 id: 2sEoh9NwefTdUD5BOZBkvLZlraD
-description: |
-    Identifies when a security threat is unblocked by the Cloudflare Zero Trust forward proxy.
+description:
+  "Identifies when a security threat is unblocked by the Cloudflare Zero
+  Trust forward proxy.
+
+  "
 categories:
   - cloudflare
   - gateway
@@ -11,26 +14,26 @@ categories:
   - security-finding
   - zerotrust
 references:
-    - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
+  - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_
 date: 2025-01-27
 modified: 2025-01-27
 sourcetypes:
-    - cf-gateway-dns
+  - cf-gateway-dns
 detection:
-    selection:
-      QueryCategoryNames|contains:
-        - "Security threats"
-    filter:
-      ResolverDecision: blockedRule
-    condition: selection and not filter
+  selection:
+    QueryCategoryNames|contains:
+      - Security threats
+  filter:
+    ResolverDecision: blockedRule
+  condition: selection and not filter
 falsepositives:
-    - False positives are possible if the security threat is detected by Cloudflare but not blocked.
+  - False positives are possible if the security threat is detected by Cloudflare but
+    not blocked.
 level: medium
 risk_score: 75
 mitreattacks:
-    - initial-access
-    - execution
+  - command-and-control
 mitretechniques:
-    - T1071.001
-    - T1568
+  - T1071.001
+  - T1568

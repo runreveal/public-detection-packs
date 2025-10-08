@@ -14,8 +14,11 @@ riskScore: 50
 severity: Medium
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 sourceTypes:
   - okta

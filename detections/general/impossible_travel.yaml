@@ -1,13 +1,11 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: impossible-travel
 displayName: Impossible Travel
-description: >-
-  Impossible travel events are measured by looking for source IP addresses on
-  logs, determining the latitude and longitude of those logs, and doing point
-  arithmatic to determine their speed
-schedule: '*/15 * * * *'
+description:
+  Impossible travel events are measured by looking for source IP addresses
+  on logs, determining the latitude and longitude of those logs, and doing point arithmatic
+  to determine their speed
+schedule: "*/15 * * * *"
 file: impossible_travel.sql
 categories:
   - general
@@ -16,12 +14,14 @@ categories:
   - signal
   - impossible-travel
 riskScore: 40
-severity: Medium
+severity: High
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
-severity: High
 parameters:
-  excludeIPv4CIDRs: '[]'
-  excludeIPv6CIDRs: '[]'
+  excludeIPv4CIDRs: "[]"
+  excludeIPv6CIDRs: "[]"

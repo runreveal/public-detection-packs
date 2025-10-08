@@ -16,17 +16,9 @@ detection:
 level: medium
 mitreattacks:
   - initial-access
-  - execution
   - persistence
   - privilege-escalation
   - defense-evasion
-  - credential-access
-  - discovery
-  - lateral-movement
-  - collection
-  - command-and-control
-  - exfiltration
-  - impact
 mitretechniques:
   - T1190
   - T1078

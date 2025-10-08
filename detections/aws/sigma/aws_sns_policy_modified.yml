@@ -1,43 +1,45 @@
 title: AWS SNS Topic Policy Modified
 id: e1f2g3h4-i5j6-k7l8-m9n0-p1q2r3s4t5u6
-description: Detects modifications to SNS topic policies that could allow unauthorized access to publish or subscribe to topics.
+description:
+  Detects modifications to SNS topic policies that could allow unauthorized
+  access to publish or subscribe to topics.
 references:
-    - https://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html
-    - https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-language-allow-paths.html
+  - https://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html
+  - https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-language-allow-paths.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - resource-activity
-    - signal
-    - sns
-    - policy-modification
-    - attack.persistence
-    - attack.collection
-    - attack.t1098
+  - aws
+  - cloudtrail
+  - system-activity
+  - resource-activity
+  - signal
+  - sns
+  - policy-modification
+  - attack.persistence
+  - attack.collection
+  - attack.t1098
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: sns.amazonaws.com
-        eventName: 
-            - SetTopicAttributes
-            - AddPermission
-    public_policy:
-        requestParameters.attributeName: 'Policy'
-        requestParameters.attributeValue|contains:
-            - '"Principal":"*"'
-            - '"Principal":{"AWS":"*"}'
-    condition: selection and public_policy
+  selection:
+    eventSource: sns.amazonaws.com
+    eventName:
+      - SetTopicAttributes
+      - AddPermission
+  public_policy:
+    requestParameters.attributeName: Policy
+    requestParameters.attributeValue|contains:
+      - '"Principal":"*"'
+      - '"Principal":{"AWS":"*"}'
+  condition: selection and public_policy
 falsepositives:
-    - Legitimate public SNS topics for integration with other services or public notifications
-    - Application architecture changes
+  - Legitimate public SNS topics for integration with other services or public notifications
+  - Application architecture changes
 level: medium
 riskscore: 55
 mitreattacks:
-    - persistence
-    - collection
+  - persistence
+  - privilege-escalation
 mitretechniques:
-    - T1098
+  - T1098

@@ -1,6 +1,4 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: notion-new-teamspace-owner
 displayName: New teamspace owner
 description: A new teamspace owner has been added to your Notion account
@@ -14,15 +12,17 @@ categories:
   - teamspace-owner
   - privilege-escalation
 mitreAttacks:
+  - initial-access
+  - persistence
   - privilege-escalation
-  - lateral-movement
+  - defense-evasion
 mitreTechniques:
-  - T1078.004  # Valid Accounts: Cloud Accounts
-  - T1098.003  # Account Manipulation: Add Office 365 Global Administrator Role
+  - T1078.004
+  - T1098.003
 riskScore: 75
 severity: High
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - notion

@@ -1,6 +1,9 @@
 name: google-workspace-add-mobile-app-whitelist
 displayName: Mobile Application Added to Whitelist
-description: Detects when a mobile application is added to the whitelist in Google Workspace and extracts the mobile app package ID and other parameters for detailed analysis.
+description:
+  Detects when a mobile application is added to the whitelist in Google
+  Workspace and extracts the mobile app package ID and other parameters for detailed
+  analysis.
 file: google-workspace-add-mobile-app-whitelist.sql
 categories:
   - google-workspace
@@ -10,16 +13,16 @@ categories:
   - signal
   - mobile-security
 mitreAttacks:
-  - persistence
+  - privilege-escalation
   - defense-evasion
 mitreTechniques:
-  - T1562.001  # Disable or Modify Tools
-  - T1484.002  # Trust Modification
+  - T1562.001
+  - T1484.002
 severity: Medium
 riskScore: 60
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite

@@ -1,6 +1,12 @@
 name: okta-user-report-suspicious-activity
 displayName: Okta User Report Suspicious Activity by End User
-description: Detects when end users report suspicious activity on their own accounts in Okta. This is a valuable security signal as users are often the first to notice unauthorized access attempts or unusual activity on their accounts. These reports can indicate ongoing attacks, compromised credentials, or social engineering attempts. While some reports may be false positives due to user confusion, they should all be investigated as they represent user-initiated security concerns.
+description:
+  Detects when end users report suspicious activity on their own accounts
+  in Okta. This is a valuable security signal as users are often the first to notice
+  unauthorized access attempts or unusual activity on their accounts. These reports
+  can indicate ongoing attacks, compromised credentials, or social engineering attempts.
+  While some reports may be false positives due to user confusion, they should all
+  be investigated as they represent user-initiated security concerns.
 file: okta-user-report-suspicious-activity.sql
 categories:
   - okta
@@ -15,18 +21,22 @@ categories:
   - user-awareness
 mitreAttacks:
   - initial-access
-  - credential-access
   - persistence
+  - privilege-escalation
+  - defense-evasion
   - discovery
-  - collection
 mitreTechniques:
   - T1078
   - T1087
 severity: High
 riskScore: 85
-schedule: '*/5 * * * *'
+schedule: "*/5 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection captures user-reported suspicious activity which is a critical security signal. Users reporting suspicious activity on their own accounts should trigger immediate investigation as they may indicate active attacks or compromised accounts.'
+  window: "30"
+notes:
+  This detection captures user-reported suspicious activity which is a critical
+  security signal. Users reporting suspicious activity on their own accounts should
+  trigger immediate investigation as they may indicate active attacks or compromised
+  accounts.
 sourceTypes:
-  - okta 
+  - okta

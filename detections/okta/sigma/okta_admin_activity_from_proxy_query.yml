@@ -2,36 +2,39 @@ title: Okta Admin Functions Access Through Proxy
 id: 9058ca8b-f397-4fd1-a9fa-2b7aad4d6309
 description: Detects access to Okta admin functions through proxy.
 references:
-    - https://www.beyondtrust.com/blog/entry/okta-support-unit-breach
-    - https://dataconomy.com/2023/10/23/okta-data-breach/
-    - https://blog.cloudflare.com/how-cloudflare-mitigated-yet-another-okta-compromise/
+  - https://www.beyondtrust.com/blog/entry/okta-support-unit-breach
+  - https://dataconomy.com/2023/10/23/okta-data-breach/
+  - https://blog.cloudflare.com/how-cloudflare-mitigated-yet-another-okta-compromise/
 author: Muhammad Faisal @faisalusuf
 date: 2023-10-25
 tags:
-    - attack.credential-access
+  - attack.credential-access
 sourcetypes:
-    - okta
+  - okta
 categories:
-    - okta
-    - admin
-    - identity-access-management
-    - authentication
-    - signal
-    - proxy-access
-    - admin-activity
+  - okta
+  - admin
+  - identity-access-management
+  - authentication
+  - signal
+  - proxy-access
+  - admin-activity
 mitreattacks:
-    - credential-access
-    - initial-access
-    - defense-evasion
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
+  - command-and-control
 mitretechniques:
-    - T1078.004  # Valid Accounts: Cloud Accounts
-    - T1090.003  # Proxy: Multi-hop Proxy
+  - T1078.004
+  - T1090.003
 detection:
-    selection:
-        debugContext.debugData.requestUri|contains: 'admin'
-        securityContext.isProxy: 'true'
-    condition: selection
+  selection:
+    debugContext.debugData.requestUri|contains: admin
+    securityContext.isProxy: "true"
+  condition: selection
 falsepositives:
-    - False positives are expected if administrators access these function through proxy legitimatly. Apply additional filters if necessary
+  - False positives are expected if administrators access these function through proxy
+    legitimatly. Apply additional filters if necessary
 level: medium
 riskscore: 100

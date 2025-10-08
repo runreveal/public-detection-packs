@@ -10,15 +10,16 @@ categories:
   - signal
   - rate-limiting
 mitreAttacks:
-  - execution
+  - credential-access
+  - impact
 mitreTechniques:
   - T1110
   - T1499
 severity: Low
 riskScore: 20
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  ignoreIPs: '[]'
-  ignoreEmails: '[]'
+  ignoreIPs: "[]"
+  ignoreEmails: "[]"
 sourceTypes:
   - okta

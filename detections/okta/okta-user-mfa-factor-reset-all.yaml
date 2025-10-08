@@ -1,6 +1,12 @@
 name: okta-user-mfa-factor-reset-all
 displayName: Okta User MFA Factor Reset All
-description: Detects when all MFA factors are reset for a user in Okta. This is a high-impact security event that completely removes all multi-factor authentication protections for the target user. While this can be a legitimate administrative action for users who have lost access to all their MFA devices, it significantly weakens security and should be closely monitored. This action could also indicate an attacker attempting to remove security controls after gaining administrative access.
+description:
+  Detects when all MFA factors are reset for a user in Okta. This is a
+  high-impact security event that completely removes all multi-factor authentication
+  protections for the target user. While this can be a legitimate administrative action
+  for users who have lost access to all their MFA devices, it significantly weakens
+  security and should be closely monitored. This action could also indicate an attacker
+  attempting to remove security controls after gaining administrative access.
 file: okta-user-mfa-factor-reset-all.sql
 categories:
   - okta
@@ -13,19 +19,21 @@ categories:
   - administrative-action
   - authentication-bypass
 mitreAttacks:
-  - defense-evasion
   - persistence
-  - credential-access
   - privilege-escalation
-  - impact
+  - defense-evasion
+  - credential-access
 mitreTechniques:
   - T1556.006
   - T1098
 severity: Critical
 riskScore: 90
-schedule: '*/5 * * * *'
+schedule: "*/5 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection identifies complete MFA factor resets which remove all authentication protections for users. These events should be immediately investigated and correlated with approved administrative procedures or legitimate user support requests.'
+  window: "30"
+notes:
+  This detection identifies complete MFA factor resets which remove all authentication
+  protections for users. These events should be immediately investigated and correlated
+  with approved administrative procedures or legitimate user support requests.
 sourceTypes:
-  - okta 
+  - okta

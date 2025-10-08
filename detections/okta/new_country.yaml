@@ -1,9 +1,8 @@
-
 name: user-access-new-country
 displayName: User access from new country
-description: >-
-    Monitors for user activity from a country that the user has not previously
-    accessed okta from
+description:
+  Monitors for user activity from a country that the user has not previously
+  accessed okta from
 file: new_country.sql
 categories:
   - okta
@@ -15,10 +14,13 @@ categories:
   - new-country
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
 severity: Medium
 riskScore: 50
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 sourceTypes:
   - okta

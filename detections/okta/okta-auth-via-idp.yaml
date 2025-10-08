@@ -1,6 +1,11 @@
 name: okta-auth-via-idp
 displayName: Okta Authentication via Identity Provider
-description: Detects when users authenticate to Okta via an external Identity Provider (IDP). This event indicates federated authentication where users are authenticating through external systems like SAML or OIDC providers. Monitoring these events helps track federated authentication usage and can help identify potential security issues with external identity providers or unusual authentication patterns.
+description:
+  Detects when users authenticate to Okta via an external Identity Provider
+  (IDP). This event indicates federated authentication where users are authenticating
+  through external systems like SAML or OIDC providers. Monitoring these events helps
+  track federated authentication usage and can help identify potential security issues
+  with external identity providers or unusual authentication patterns.
 file: okta-auth-via-idp.sql
 categories:
   - okta
@@ -14,15 +19,20 @@ categories:
   - oidc
 mitreAttacks:
   - initial-access
-  - credential-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
   - T1484.002
 severity: Low
 riskScore: 30
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection monitors federated authentication events where users authenticate via external identity providers. These are typically legitimate events but should be monitored for unusual patterns or unauthorized IDP usage.'
+  window: "30"
+notes:
+  This detection monitors federated authentication events where users authenticate
+  via external identity providers. These are typically legitimate events but should
+  be monitored for unusual patterns or unauthorized IDP usage.
 sourceTypes:
-  - okta 
+  - okta

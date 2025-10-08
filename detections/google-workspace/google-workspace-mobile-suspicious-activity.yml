@@ -1,6 +1,8 @@
 name: google-workspace-mobile-suspicious-activity
 displayName: Mobile Suspicious Activity Event
-description: Detects suspicious activity events from mobile applications in Google Workspace.
+description:
+  Detects suspicious activity events from mobile applications in Google
+  Workspace.
 file: google-workspace-mobile-suspicious-activity.sql
 categories:
   - google-workspace
@@ -12,13 +14,16 @@ categories:
   - suspicious-activity
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite

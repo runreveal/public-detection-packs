@@ -1,6 +1,12 @@
 name: okta-network-zone-policy-changes
 displayName: Okta Network Zone and Policy Changes
-description: Detects changes to network zones and security policies in Okta including zone deactivations, deletions, updates, policy rule modifications, and security zone blacklist removals. These events represent critical security boundary changes that can affect access controls, IP restrictions, and authentication policies. Network zone changes can bypass geographic restrictions or IP-based security controls, while policy changes can weaken authentication requirements.
+description:
+  Detects changes to network zones and security policies in Okta including
+  zone deactivations, deletions, updates, policy rule modifications, and security
+  zone blacklist removals. These events represent critical security boundary changes
+  that can affect access controls, IP restrictions, and authentication policies. Network
+  zone changes can bypass geographic restrictions or IP-based security controls, while
+  policy changes can weaken authentication requirements.
 file: okta-network-zone-policy-changes.sql
 categories:
   - okta
@@ -14,19 +20,19 @@ categories:
   - access-control
   - ip-restriction
 mitreAttacks:
-  - defense-evasion
-  - persistence
   - privilege-escalation
-  - impact
-  - lateral-movement
+  - defense-evasion
 mitreTechniques:
   - T1562.007
   - T1484.002
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection monitors critical security boundary changes including network zones and policy rules. Zone deletions and blacklist removals should be particularly scrutinized as they may remove IP-based security controls.'
+  window: "30"
+notes:
+  This detection monitors critical security boundary changes including network
+  zones and policy rules. Zone deletions and blacklist removals should be particularly
+  scrutinized as they may remove IP-based security controls.
 sourceTypes:
-  - okta 
+  - okta
