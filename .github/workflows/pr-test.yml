@@ -24,6 +24,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - name: lint-runreveal-detections
+        uses: runreveal/detection-lint-action
+        with:
+          token: ${{ secrets.RUNREVEAL_TOKEN }}
+          workspace: ${{ secrets.RUNREVEAL_WORKSPACE }}
+
       - name: sync-runreveal-detections
         uses: runreveal/detection-sync-action@v2
         with:
