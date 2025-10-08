@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: lint-runreveal-detections
-        uses: runreveal/detection-lint-action@main
+        uses: runreveal/detections-lint-action@main
         with:
           token: ${{ secrets.RUNREVEAL_TOKEN }}
           workspace: ${{ secrets.RUNREVEAL_WORKSPACE }}
