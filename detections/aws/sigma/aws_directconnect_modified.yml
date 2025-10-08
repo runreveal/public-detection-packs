@@ -2,43 +2,44 @@ title: AWS Direct Connect Virtual Interface Modified
 id: p1q2r3s4-t5u6-v7w8-x9y0-z1a2b3c4d5e6
 description: Detects modifications to AWS Direct Connect virtual interfaces, which could indicate network path manipulation or rerouting of traffic.
 references:
-    - https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateVirtualInterface.html
-    - https://docs.aws.amazon.com/directconnect/latest/UserGuide/virtualgateways.html
+  - https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateVirtualInterface.html
+  - https://docs.aws.amazon.com/directconnect/latest/UserGuide/virtualgateways.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - network-activity
-    - network-configuration
-    - signal
-    - directconnect
-    - network-tampering
-    - attack.persistence
-    - attack.defense_evasion
-    - attack.t1205
+  - aws
+  - cloudtrail
+  - network-activity
+  - network-configuration
+  - signal
+  - directconnect
+  - network-tampering
+  - attack.persistence
+  - attack.defense_evasion
+  - attack.t1205
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: directconnect.amazonaws.com
-        eventName:
-            - CreateVirtualInterface
-            - DeleteVirtualInterface
-            - UpdateVirtualInterface
-            - CreateDirectConnectGateway
-            - DeleteDirectConnectGateway
-            - CreateDirectConnectGatewayAssociation
-            - DeleteDirectConnectGatewayAssociation
-    condition: selection
+  selection:
+    eventSource: directconnect.amazonaws.com
+    eventName:
+      - CreateVirtualInterface
+      - DeleteVirtualInterface
+      - UpdateVirtualInterface
+      - CreateDirectConnectGateway
+      - DeleteDirectConnectGateway
+      - CreateDirectConnectGatewayAssociation
+      - DeleteDirectConnectGatewayAssociation
+  condition: selection
 falsepositives:
-    - Legitimate network architecture changes
-    - Disaster recovery testing
-    - Migration activities
+  - Legitimate network architecture changes
+  - Disaster recovery testing
+  - Migration activities
 level: medium
 riskscore: 60
 mitreattacks:
-    - persistence
-    - defense-evasion
+  - persistence
+  - defense-evasion
+  - command-and-control
 mitretechniques:
-    - T1205
+  - T1205
