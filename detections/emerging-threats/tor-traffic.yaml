@@ -14,11 +14,11 @@ sourcetypes:
   - flow
   - nsg-flow
 detection:
-    selection1:
-        enrichments.ip_threat_intel.tor-node: true
-    selection2:
-        enrichments.ip_threat_intel.tor-exit: true
-    condition: selection1 or selection2
+  selection1:
+    enrichments.ip_threat_intel.tor-node: true
+  selection2:
+    enrichments.ip_threat_intel.tor-exit: true
+  condition: selection1 or selection2
 level: high
 fields:
   - action # nsg/flow logs
@@ -26,7 +26,7 @@ fields:
   - result # cf-audit logs
 riskscore: 80
 mitreattacks:
-  - command-control
+  - command-and-control
   - defense-evasion
 mitretechniques:
   - T1090
