@@ -7,6 +7,9 @@ references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
   - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
   - jumpcloud
   - admin
   - identity-access-management

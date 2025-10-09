@@ -4,6 +4,9 @@ displayName: Critical Policy Changes
 description: Monitor for critical policy changes of your AWS assets.
 file: critical_policy_change.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1484.002
   - aws
   - cloudtrail
   - identity-access-management

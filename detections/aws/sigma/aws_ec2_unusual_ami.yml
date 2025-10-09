@@ -9,6 +9,11 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - aws
   - cloudtrail
   - system-activity
@@ -17,8 +22,6 @@ tags:
   - ec2
   - unusual-ami
   - attack.execution
-  - attack.persistence
-  - attack.t1078
 sourcetypes:
   - cloudtrail
 detection:

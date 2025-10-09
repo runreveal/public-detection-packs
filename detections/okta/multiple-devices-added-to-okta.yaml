@@ -9,7 +9,13 @@ description:
   for number of devices added."
 file: multiple-devices-added-to-okta.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
+  - attack.t1110
   - okta
   - identity-access-management
   - entity-management

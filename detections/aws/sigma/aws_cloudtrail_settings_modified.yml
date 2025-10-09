@@ -9,6 +9,9 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1562.008
   - aws
   - cloudtrail
   - system-activity

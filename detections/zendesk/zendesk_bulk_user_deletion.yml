@@ -1,9 +1,13 @@
 name: zendesk-bulk-user-deletion
 displayName: Zendesk Bulk User Deletion Detected
-description: Detects when multiple users are deleted in bulk from Zendesk, which could indicate account cleanup or potential security incidents
+description:
+  Detects when multiple users are deleted in bulk from Zendesk, which could
+  indicate account cleanup or potential security incidents
 file: zendesk-bulk-user-deletion.sql
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 categories:
+  - attack.impact
+  - attack.t1485
   - zendesk
   - identity-access-management
   - signal
@@ -16,7 +20,11 @@ mitreTechniques:
   - T1485
 sourceTypes:
   - zendesk
-notes: |
-  Monitor for bulk user deletions that could indicate account compromise or unauthorized cleanup activities.
+notes:
+  "Monitor for bulk user deletions that could indicate account compromise or
+  unauthorized cleanup activities.
+
   Review the actor performing the deletion and validate it was authorized.
+
+  "
 disabled: false

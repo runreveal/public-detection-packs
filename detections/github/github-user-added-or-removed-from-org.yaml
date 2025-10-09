@@ -8,6 +8,9 @@ description:
   lead to unauthorized access or loss of legitimate access.
 file: github-user-added-or-removed-from-org.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
   - github
   - organization
   - identity-access-management

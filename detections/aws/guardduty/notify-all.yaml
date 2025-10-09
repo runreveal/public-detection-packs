@@ -20,6 +20,13 @@ mitretechniques:
 notificationnames:
   - email
 tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1190
+  - attack.t1078
+  - attack.t1562
   - aws
   - guardduty
   - findings

@@ -8,6 +8,8 @@ date: 2021-08-14
 modified: 2022-10-09
 tags:
   - attack.discovery
+  - attack.t1083
+  - attack.t1526
   - gcp
   - storage
   - system-activity

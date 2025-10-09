@@ -3,6 +3,9 @@ displayName: Document made public
 description: A google document was made public
 file: google-workspace-document-made-public.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1537
   - google-workspace
   - drive
   - identity-access-management
@@ -11,6 +14,7 @@ categories:
   - document-security
   - data-exposure
   - public-access
+  - gsuite
 mitreAttacks:
   - collection
   - exfiltration

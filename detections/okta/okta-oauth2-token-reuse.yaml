@@ -9,6 +9,11 @@ description:
   tokens.
 file: okta-oauth2-token-reuse.sql
 categories:
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.lateral-movement
+  - attack.t1528
+  - attack.t1550.001
   - okta
   - auth
   - identity-access-management

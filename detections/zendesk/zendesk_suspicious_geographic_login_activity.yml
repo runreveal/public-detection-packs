@@ -6,6 +6,11 @@ description:
 file: zendesk-suspicious-geographic-login-activity.sql
 schedule: "*/5 * * * *"
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - zendesk
   - identity-access-management
   - signal

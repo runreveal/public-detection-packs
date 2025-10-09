@@ -4,12 +4,17 @@ displayName: workload-identity-change
 description: Detects changes to the Workload Identity configuration in GCP
 file: gcp-workload-identity-change.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1578.004
+  - attack.t1484.002
   - gcp
   - iam
   - identity-access-management
   - entity-management
   - signal
   - workload-identity
+  - gcplogs
 mitreAttacks:
   - privilege-escalation
   - defense-evasion

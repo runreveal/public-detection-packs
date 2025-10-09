@@ -4,7 +4,12 @@ displayName: Okta's Threat Intelligence
 description: Alert on suspicious activity detected by Okta's threat intelligence team.
 file: okta_threat_intelligence.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - attack.t1566
   - okta
   - findings
   - security-finding

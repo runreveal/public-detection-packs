@@ -9,6 +9,9 @@ description:
   "
 file: user_list_download.sql
 categories:
+  - attack.discovery
+  - attack.collection
+  - attack.t1087
   - gsuite
   - admin
   - system-activity

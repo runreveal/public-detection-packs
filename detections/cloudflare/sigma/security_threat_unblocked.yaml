@@ -30,6 +30,9 @@ mitretechniques:
   - T1071.001
   - T1568
 tags:
+  - attack.command-and-control
+  - attack.t1071.001
+  - attack.t1568
   - cloudflare
   - gateway
   - network-activity
@@ -37,3 +40,4 @@ tags:
   - signal
   - security-finding
   - zerotrust
+  - cf-gateway-dns

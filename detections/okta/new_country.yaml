@@ -5,7 +5,11 @@ description:
   accessed okta from
 file: new_country.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - okta
   - identity-access-management
   - authentication

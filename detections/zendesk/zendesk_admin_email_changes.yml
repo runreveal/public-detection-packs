@@ -6,6 +6,9 @@ description:
 file: zendesk-admin-email-changes.sql
 schedule: "*/10 * * * *"
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
   - zendesk
   - identity-access-management
   - signal

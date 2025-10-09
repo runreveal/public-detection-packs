@@ -4,6 +4,13 @@ displayName: Anomalous Cloudflare API Key Usage
 description: A Cloudflare API key was first seen, or used from a new network.
 file: anomalous_api_key_usage.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
+  - attack.t1535
   - cloudflare
   - audit
   - identity-access-management
@@ -11,6 +18,7 @@ categories:
   - signal
   - api-key
   - anomaly-detection
+  - cf-audit
 riskScore: 85
 severity: High
 schedule: "*/25 * * * *"

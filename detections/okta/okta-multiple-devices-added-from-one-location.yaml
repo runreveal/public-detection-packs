@@ -7,7 +7,13 @@ description:
   that multiple users could have been compromised by one threat actor.
 file: okta-multiple-devices-added-from-one-location.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
+  - attack.t1110
   - okta
   - identity-access-management
   - entity-management

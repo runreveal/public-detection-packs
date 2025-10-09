@@ -9,6 +9,12 @@ description:
   attempting to remove security controls after gaining administrative access.
 file: okta-user-mfa-factor-reset-all.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1556.006
+  - attack.t1098
   - okta
   - mfa
   - identity-access-management

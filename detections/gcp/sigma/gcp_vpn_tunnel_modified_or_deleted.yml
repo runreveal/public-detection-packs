@@ -7,7 +7,11 @@ author: Austin Songer @austinsonger
 date: 2021-08-16
 modified: 2022-10-09
 tags:
+  - attack.defense-evasion
+  - attack.command-and-control
   - attack.impact
+  - attack.t1562.001
+  - attack.t1571
   - gcp
   - network
   - network-activity

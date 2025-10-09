@@ -6,12 +6,18 @@ description:
   who invited them, and how the user was invited.
 file: new_tailscale_user.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - tailscale
   - identity-access-management
   - entity-management
   - signal
   - user-management
   - account-creation
+  - tailscale-audit
 severity: Medium
 riskScore: 50
 schedule: "*/15 * * * *"

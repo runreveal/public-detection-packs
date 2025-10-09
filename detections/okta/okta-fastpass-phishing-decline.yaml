@@ -8,6 +8,12 @@ description:
   investigation and user notification to prevent successful attacks.
 file: okta-fastpass-phishing-decline.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1566
+  - attack.t1556.006
   - okta
   - mfa
   - identity-access-management
@@ -15,7 +21,6 @@ categories:
   - signal
   - phishing
   - fastpass
-  - mfa
   - authentication-failure
   - threat-detection
 mitreAttacks:

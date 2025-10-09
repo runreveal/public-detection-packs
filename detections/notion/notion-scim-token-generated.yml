@@ -1,11 +1,12 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: notion-scim-token-generated
 displayName: SCIM token generated
 description: A new SCIM token was generated
 file: notion-scim-token-generated.sql
 categories:
+  - attack.credential-access
+  - attack.t1552.001
+  - attack.t1606.002
   - notion
   - admin
   - identity-access-management
@@ -16,12 +17,12 @@ categories:
 mitreAttacks:
   - credential-access
 mitreTechniques:
-  - T1552.001  # Unsecured Credentials: Credentials In Files
-  - T1606.002  # Forge Web Credentials: SAML Tokens
+  - T1552.001
+  - T1606.002
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - notion

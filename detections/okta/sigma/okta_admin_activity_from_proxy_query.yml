@@ -8,6 +8,13 @@ references:
 author: Muhammad Faisal @faisalusuf
 date: 2023-10-25
 tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.command-and-control
+  - attack.t1078.004
+  - attack.t1090.003
   - attack.credential-access
   - okta
   - admin

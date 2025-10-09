@@ -8,6 +8,13 @@ description:
   visibility into cloud infrastructure access through identity federation.
 file: okta-aws-iam-identity-center-sso.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078.004
+  - attack.t1484.002
   - okta
   - auth
   - identity-access-management

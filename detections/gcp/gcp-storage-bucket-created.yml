@@ -4,12 +4,15 @@ displayName: storage-bucket-created
 description: GCS bucket created
 file: gcp-storage-bucket-created.sql
 categories:
+  - attack.defense-evasion
+  - attack.t1578.004
   - gcp
   - storage
   - system-activity
   - file-activity
   - signal
   - storage-bucket
+  - gcplogs
 mitreAttacks:
   - defense-evasion
 mitreTechniques:

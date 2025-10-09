@@ -9,6 +9,10 @@ description:
   code deployment.
 file: github-repository-ruleset-modified.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1562.001
+  - attack.t1484.002
   - github
   - repository
   - system-activity

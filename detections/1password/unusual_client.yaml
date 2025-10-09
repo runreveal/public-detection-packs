@@ -6,6 +6,11 @@ description:
   This detects 1Password access from a client app and platform combination
   that the user has not previously accessed 1Password from.
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - 1password
   - identity-access-management
   - authentication

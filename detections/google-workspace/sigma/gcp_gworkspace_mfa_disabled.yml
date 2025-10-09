@@ -9,7 +9,12 @@ author: Austin Songer
 date: 2021-08-26
 modified: 2023-10-11
 tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.credential-access
   - attack.impact
+  - attack.t1556.006
   - google-workspace
   - admin
   - identity-access-management
@@ -17,6 +22,7 @@ tags:
   - signal
   - mfa
   - security-bypass
+  - gsuite
 sourcetypes:
   - gsuite
 detection:

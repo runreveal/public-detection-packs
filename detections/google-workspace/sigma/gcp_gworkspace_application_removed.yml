@@ -9,7 +9,9 @@ author: Austin Songer
 date: 2021-08-26
 modified: 2023-10-11
 tags:
+  - attack.defense-evasion
   - attack.impact
+  - attack.t1562.001
   - google-workspace
   - admin
   - identity-access-management
@@ -17,6 +19,7 @@ tags:
   - signal
   - application-security
   - application-removal
+  - gsuite
 sourcetypes:
   - gsuite
 detection:

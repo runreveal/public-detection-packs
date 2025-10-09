@@ -8,6 +8,11 @@ description:
 schedule: "*/15 * * * *"
 file: impossible_travel.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - general
   - network-activity
   - authentication

@@ -4,6 +4,9 @@ displayName: Potential defacement new public homepage
 description: New notion public homepage created
 file: notion-potential-defacement-new-public-homepage.sql
 categories:
+  - attack.impact
+  - attack.t1491.002
+  - attack.t1496
   - notion
   - sharing
   - system-activity

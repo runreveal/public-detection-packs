@@ -1,11 +1,12 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: notion-export-of-workspace
 displayName: Export of Workspace
 description: The entire content of the workspace has been exported
 file: notion-export-of-workspace.sql
 categories:
+  - attack.collection
+  - attack.t1005
+  - attack.t1213
   - notion
   - workspace
   - system-activity
@@ -16,12 +17,12 @@ categories:
 mitreAttacks:
   - collection
 mitreTechniques:
-  - T1005      # Data from Local System
-  - T1213      # Data from Information Repositories
+  - T1005
+  - T1213
 riskScore: 90
 severity: Critical
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - notion

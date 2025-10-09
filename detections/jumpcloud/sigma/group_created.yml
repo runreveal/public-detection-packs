@@ -7,7 +7,7 @@ references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
   - attack.persistence
-  - jumpcloud
+  - attack.t1136
   - jumpcloud
   - identity-access-management
   - entity-management

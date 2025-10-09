@@ -6,8 +6,9 @@ date: 2025-05-26
 references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
+  - attack.persistence
+  - attack.t1136.003
   - attack.credential-access
-  - jumpcloud
   - jumpcloud
   - identity-access-management
   - entity-management

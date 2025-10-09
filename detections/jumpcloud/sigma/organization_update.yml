@@ -7,6 +7,8 @@ references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
   - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
   - attack.defense-evasion
   - jumpcloud
   - admin

@@ -9,6 +9,10 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
   - aws
   - cloudtrail
   - identity-access-management
@@ -16,8 +20,6 @@ tags:
   - signal
   - access-key-creation
   - iam
-  - attack.persistence
-  - attack.t1098
 sourcetypes:
   - cloudtrail
 detection:

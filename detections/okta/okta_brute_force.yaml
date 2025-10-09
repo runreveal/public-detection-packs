@@ -4,6 +4,8 @@ displayName: Okta Brute Force Attack
 file: okta_brute_force.sql
 description: Brute force attack on a specific Okta user account
 categories:
+  - attack.credential-access
+  - attack.t1110
   - okta
   - auth
   - identity-access-management

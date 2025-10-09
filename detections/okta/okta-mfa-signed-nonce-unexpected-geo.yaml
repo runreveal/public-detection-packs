@@ -10,12 +10,18 @@ description:
   are hardcoded as full country names - modify the SQL query to adjust the allowlist.
 file: okta-mfa-signed-nonce-unexpected-geo.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
+  - attack.t1556.006
   - okta
   - mfa
   - identity-access-management
   - authentication
   - signal
-  - mfa
   - geographical-anomaly
   - security-key
 mitreAttacks:

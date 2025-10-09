@@ -8,6 +8,10 @@ description:
   who may need assistance with account access.
 file: okta-user-account-lock.sql
 categories:
+  - attack.initial-access
+  - attack.credential-access
+  - attack.impact
+  - attack.t1110.003
   - okta
   - auth
   - identity-access-management

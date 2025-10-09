@@ -5,6 +5,12 @@ description:
   account
 file: google-workspace-domain-wide-application-added.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078.004
+  - attack.t1484.002
   - google-workspace
   - admin
   - identity-access-management
@@ -12,6 +18,7 @@ categories:
   - signal
   - application-security
   - domain-wide-access
+  - gsuite
 mitreAttacks:
   - initial-access
   - persistence

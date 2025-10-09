@@ -9,6 +9,13 @@ description:
   user accounts.
 file: okta-support-impersonation.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.lateral-movement
+  - attack.t1078.004
+  - attack.t1550.001
   - okta
   - admin
   - identity-access-management

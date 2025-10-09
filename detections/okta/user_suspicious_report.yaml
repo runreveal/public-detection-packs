@@ -3,7 +3,11 @@ displayName: Okta User Reported Suspicious Activity
 description: Suspicious activity reported by end user
 file: user_suspicious_report.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - okta
   - identity-access-management
   - authentication

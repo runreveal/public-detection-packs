@@ -1,12 +1,18 @@
 title: AWS Direct Connect Virtual Interface Modified
 id: p1q2r3s4-t5u6-v7w8-x9y0-z1a2b3c4d5e6
-description: Detects modifications to AWS Direct Connect virtual interfaces, which could indicate network path manipulation or rerouting of traffic.
+description:
+  Detects modifications to AWS Direct Connect virtual interfaces, which
+  could indicate network path manipulation or rerouting of traffic.
 references:
   - https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateVirtualInterface.html
   - https://docs.aws.amazon.com/directconnect/latest/UserGuide/virtualgateways.html
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.command-and-control
+  - attack.t1205
   - aws
   - cloudtrail
   - network-activity
@@ -14,9 +20,7 @@ tags:
   - signal
   - directconnect
   - network-tampering
-  - attack.persistence
   - attack.defense_evasion
-  - attack.t1205
 sourcetypes:
   - cloudtrail
 detection:

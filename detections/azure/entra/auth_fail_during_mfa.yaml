@@ -8,12 +8,19 @@ description:
   "
 file: auth_fail_during_mfa.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1110
+  - attack.t1556.006
   - azure
   - entra
   - identity-access-management
   - authentication
   - signal
   - mfa
+  - aad
 schedule: "*/15 * * * *"
 severity: Low
 riskScore: 15

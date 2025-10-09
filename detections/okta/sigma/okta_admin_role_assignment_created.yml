@@ -10,6 +10,8 @@ author: Nikita Khalimonenkov
 date: 2023-01-19
 tags:
   - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098.003
   - okta
   - admin
   - identity-access-management

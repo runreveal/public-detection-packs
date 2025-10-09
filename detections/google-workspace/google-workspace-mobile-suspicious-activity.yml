@@ -5,6 +5,11 @@ description:
   Workspace.
 file: google-workspace-mobile-suspicious-activity.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - google-workspace
   - admin
   - findings
@@ -12,6 +17,7 @@ categories:
   - signal
   - mobile-security
   - suspicious-activity
+  - gsuite
 mitreAttacks:
   - initial-access
   - persistence

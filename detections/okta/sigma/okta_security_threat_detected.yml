@@ -10,7 +10,8 @@ date: 2021-09-12
 modified: 2022-10-09
 tags:
   - attack.command-and-control
-  - okta
+  - attack.t1071.001
+  - attack.t1104
   - okta
   - findings
   - security-finding

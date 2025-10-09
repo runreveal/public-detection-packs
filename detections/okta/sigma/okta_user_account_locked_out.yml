@@ -8,8 +8,10 @@ author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
+  - attack.credential-access
   - attack.impact
   - attack.t1531
+  - attack.t1110
   - okta
   - auth
   - identity-access-management

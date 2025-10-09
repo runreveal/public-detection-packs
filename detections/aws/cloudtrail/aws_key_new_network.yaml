@@ -6,6 +6,12 @@ description:
   from.
 file: aws_key_new_network.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078.004
+  - attack.t1535
   - aws
   - cloudtrail
   - identity-access-management

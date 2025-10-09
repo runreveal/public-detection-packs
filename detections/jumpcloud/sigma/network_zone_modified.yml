@@ -7,8 +7,9 @@ references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
   - attack.defense-evasion
+  - attack.impact
+  - attack.t1562.001
   - attack.persistence
-  - jumpcloud
   - jumpcloud
   - system-activity
   - configuration-access

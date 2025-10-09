@@ -8,6 +8,8 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.impact
+  - attack.t1496
   - aws
   - cloudtrail
   - system-activity
@@ -16,7 +18,6 @@ tags:
   - ec2
   - unusual-region
   - attack.execution
-  - attack.t1496
 sourcetypes:
   - cloudtrail
 detection:

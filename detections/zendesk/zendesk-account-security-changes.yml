@@ -6,6 +6,11 @@ description:
 file: zendesk-account-security-changes.sql
 schedule: "*/10 * * * *"
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1562
+  - attack.t1531
   - zendesk
   - identity-access-management
   - signal

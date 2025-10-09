@@ -4,12 +4,17 @@ displayName: workforce-pool-change
 description: Detects changes to the workforce pool in GCP
 file: gcp-workforce-pool-change.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1578.004
+  - attack.t1484.002
   - gcp
   - iam
   - identity-access-management
   - entity-management
   - signal
   - workforce-pool
+  - gcplogs
 mitreAttacks:
   - privilege-escalation
   - defense-evasion

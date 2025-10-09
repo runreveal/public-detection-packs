@@ -26,9 +26,12 @@ mitreattacks:
 mitretechniques:
   - T1071.001
 tags:
+  - attack.command-and-control
+  - attack.t1071.001
   - cloudflare
   - gateway
   - network-activity
   - http-activity
   - signal
   - anomaly-detection
+  - cf-gateway-http

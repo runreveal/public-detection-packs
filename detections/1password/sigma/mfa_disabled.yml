@@ -8,8 +8,11 @@ date: 2025-01-06
 references:
   - https://developer.1password.com/docs/events-api/audit-events/
 tags:
+  - attack.persistence
+  - attack.defense-evasion
   - attack.credential-access
-  - attack.t1556
+  - attack.impact
+  - attack.t1556.006
   - 1password
   - identity-access-management
   - authentication

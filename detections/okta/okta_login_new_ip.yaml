@@ -5,6 +5,11 @@ description:
   that has not been recently seen from CrowdStrike
 file: okta_login_new_ip.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - okta
   - auth
   - identity-access-management

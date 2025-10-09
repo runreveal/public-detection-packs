@@ -8,6 +8,9 @@ description:
   private repositories.
 file: github-repository-collaborator-change.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098.003
   - github
   - repository
   - identity-access-management

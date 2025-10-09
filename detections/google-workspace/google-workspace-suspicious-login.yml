@@ -6,12 +6,20 @@ description:
   parameters for detailed analysis.
 file: google-workspace-suspicious-login.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
+  - attack.t1110
   - google-workspace
   - identity-access-management
   - authentication
   - signal
   - suspicious-activity
   - suspicious-login
+  - gsuite
 mitreAttacks:
   - initial-access
   - persistence

@@ -9,7 +9,10 @@ description:
   malicious or problematic activity.
 file: okta-rate-limit-violations.sql
 categories:
-  - okta
+  - attack.credential-access
+  - attack.impact
+  - attack.t1499
+  - attack.t1110
   - okta
   - system-activity
   - security-finding

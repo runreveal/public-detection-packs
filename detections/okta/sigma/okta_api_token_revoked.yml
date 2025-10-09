@@ -8,6 +8,10 @@ author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
   - attack.impact
   - okta
   - admin

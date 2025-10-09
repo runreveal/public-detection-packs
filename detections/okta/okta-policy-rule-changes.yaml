@@ -8,6 +8,10 @@ description:
   security policies and don't introduce vulnerabilities or weaken security controls.
 file: okta-policy-rule-changes.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1484.002
+  - attack.t1562.007
   - okta
   - admin
   - identity-access-management

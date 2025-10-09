@@ -17,7 +17,10 @@ date: 2024-01-12
 tags:
   - attack.persistence
   - attack.privilege-escalation
-  - attack.t1098
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1098.001
+  - attack.t1484.002
   - gcp
   - iam
   - identity-access-management

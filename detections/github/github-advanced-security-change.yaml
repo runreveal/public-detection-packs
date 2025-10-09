@@ -8,6 +8,9 @@ description:
   defenses, hide vulnerabilities, or enable malicious activities.
 file: github-advanced-security-change.sql
 categories:
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1562.001
   - github
   - security
   - system-activity

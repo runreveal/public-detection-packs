@@ -8,6 +8,12 @@ description:
   lateral movement within the organization.
 file: google-workspace-mobile-device-compromised.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - attack.t1200
   - google-workspace
   - admin
   - findings
@@ -17,6 +23,7 @@ categories:
   - device-security
   - compromise
   - endpoint-security
+  - gsuite
 mitreAttacks:
   - initial-access
   - persistence

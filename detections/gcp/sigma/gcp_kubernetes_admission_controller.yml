@@ -28,11 +28,14 @@ author: Austin Songer @austinsonger
 date: 2021-11-25
 modified: 2022-12-18
 tags:
+  - attack.initial-access
   - attack.persistence
-  - attack.t1078
+  - attack.privilege-escalation
+  - attack.defense-evasion
   - attack.credential-access
-  - attack.t1552
+  - attack.t1078.004
   - attack.t1552.007
+  - attack.t1574.007
   - gcp
   - compute
   - system-activity

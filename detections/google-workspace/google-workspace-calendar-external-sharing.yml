@@ -7,6 +7,9 @@ description:
   a potential data exposure risk.
 file: google-workspace-calendar-external-sharing.sql
 categories:
+  - attack.collection
+  - attack.t1114
+  - attack.t1213
   - google-workspace
   - calendar
   - identity-access-management
@@ -15,6 +18,7 @@ categories:
   - calendar-sharing
   - data-exposure
   - external-sharing
+  - gsuite
 mitreAttacks:
   - collection
 mitreTechniques:

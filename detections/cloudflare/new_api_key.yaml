@@ -4,12 +4,17 @@ displayName: New Cloudflare API key
 description: A Cloudflare API key was created or rotated.
 file: new_api_key.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
   - cloudflare
   - audit
   - identity-access-management
   - entity-management
   - signal
   - api-key
+  - cf-audit
 schedule: "*/15 * * * *"
 riskScore: 80
 severity: High

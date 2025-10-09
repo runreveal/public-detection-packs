@@ -6,7 +6,10 @@ date: 2025-05-26
 references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
+  - attack.privilege-escalation
   - attack.defense-evasion
+  - attack.impact
+  - attack.t1484.002
   - attack.persistence
   - jumpcloud
   - admin

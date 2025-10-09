@@ -3,6 +3,9 @@ displayName: Calendar made public
 description: Detects when a Google Workspace calendar is made public
 file: google-workspace-calendar-made-public.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1537
   - google-workspace
   - calendar
   - identity-access-management
@@ -10,6 +13,7 @@ categories:
   - signal
   - calendar-sharing
   - public-access
+  - gsuite
 mitreAttacks:
   - collection
   - exfiltration

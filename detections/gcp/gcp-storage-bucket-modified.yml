@@ -4,12 +4,16 @@ displayName: storage-bucket-modified
 description: GCS bucket modified or deleted
 file: gcp-storage-bucket-modified.sql
 categories:
+  - attack.impact
+  - attack.t1485
+  - attack.t1565.001
   - gcp
   - storage
   - system-activity
   - file-activity
   - signal
   - storage-bucket
+  - gcplogs
 mitreAttacks:
   - impact
 mitreTechniques:

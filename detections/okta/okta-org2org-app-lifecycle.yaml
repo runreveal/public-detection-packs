@@ -8,6 +8,11 @@ description:
   could affect security boundaries between organizations.
 file: okta-org2org-app-lifecycle.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1484.002
+  - attack.t1098.003
   - okta
   - admin
   - identity-access-management

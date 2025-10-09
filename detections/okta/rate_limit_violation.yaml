@@ -3,7 +3,10 @@ displayName: Rate limit violation
 file: rate_limit_violation.sql
 description: User received a ratelimit violation within okta
 categories:
-  - okta
+  - attack.credential-access
+  - attack.impact
+  - attack.t1110
+  - attack.t1499
   - okta
   - system-activity
   - security-finding

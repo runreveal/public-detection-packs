@@ -9,11 +9,14 @@ description: "This detection will run every 15 minutes,
   The number of download events to alert on is configurable."
 file: many_downloads.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1005
+  - attack.t1114
   - gsuite
   - system-activity
   - file-activity
   - signal
-  - file-activity
   - data-download
   - bulk-download
 riskScore: 50

@@ -4,6 +4,13 @@ displayName: Potential initial access attack pattern
 description: Suspicious initial access was followed by another attack technique
 file: initial_access_attack_pattern.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - attack.t1190
+  - attack.t1566
   - general
   - findings
   - security-finding

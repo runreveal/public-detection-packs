@@ -9,6 +9,10 @@ description:
   policy changes can weaken authentication requirements.
 file: okta-network-zone-policy-changes.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1562.007
+  - attack.t1484.002
   - okta
   - admin
   - identity-access-management

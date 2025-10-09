@@ -8,7 +8,11 @@ description:
   according to security policies.
 file: github-user-access-key-created.sql
 categories:
-  - github
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.lateral-movement
+  - attack.t1098.001
   - github
   - identity-access-management
   - authentication

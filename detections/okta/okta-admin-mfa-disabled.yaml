@@ -8,6 +8,14 @@ description:
   account compromise or insider threats.
 file: okta-admin-mfa-disabled.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.impact
+  - attack.t1556.006
+  - attack.t1098.003
   - okta
   - admin
   - identity-access-management

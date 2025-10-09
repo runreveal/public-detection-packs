@@ -9,6 +9,9 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1530
   - aws
   - cloudtrail
   - system-activity
@@ -17,8 +20,6 @@ tags:
   - s3
   - public-access
   - data-exposure
-  - attack.exfiltration
-  - attack.t1530
 sourcetypes:
   - cloudtrail
 detection:

@@ -8,6 +8,8 @@ description:
   exposure of sensitive calendar information or potential data exfiltration.
 file: google-workspace-calendar-public-acl.sql
 categories:
+  - attack.exfiltration
+  - attack.t1537
   - google-workspace
   - calendar
   - identity-access-management
@@ -16,6 +18,7 @@ categories:
   - calendar-sharing
   - public-access
   - data-exposure
+  - gsuite
 mitreAttacks:
   - exfiltration
 mitreTechniques:

@@ -9,6 +9,14 @@ description:
   This detection helps monitor critical organizational security configuration changes.
 file: github-org-authentication-method-changed.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.impact
+  - attack.t1556.006
+  - attack.t1484.002
   - github
   - organization
   - identity-access-management

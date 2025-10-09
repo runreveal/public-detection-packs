@@ -6,12 +6,17 @@ description:
   analysis.
 file: google-workspace-add-mobile-app-whitelist.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1562.001
+  - attack.t1484.002
   - google-workspace
   - admin
   - identity-access-management
   - entity-management
   - signal
   - mobile-security
+  - gsuite
 mitreAttacks:
   - privilege-escalation
   - defense-evasion

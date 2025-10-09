@@ -10,8 +10,11 @@ references:
 author: Bryan Lim
 date: 2024-01-12
 tags:
+  - attack.execution
+  - attack.privilege-escalation
   - attack.defense-evasion
-  - attack.t1548
+  - attack.t1548.001
+  - attack.t1610
   - gcp
   - compute
   - system-activity

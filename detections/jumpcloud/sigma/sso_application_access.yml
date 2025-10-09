@@ -7,8 +7,11 @@ references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
   - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
   - attack.t1078
-  - jumpcloud
   - jumpcloud
   - identity-access-management
   - authentication

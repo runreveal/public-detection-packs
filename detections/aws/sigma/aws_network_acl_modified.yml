@@ -9,6 +9,9 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.defense-evasion
+  - attack.command-and-control
+  - attack.t1562.007
   - aws
   - cloudtrail
   - network-activity
@@ -17,7 +20,6 @@ tags:
   - network-acl
   - defense-evasion
   - attack.defense_evasion
-  - attack.t1562.007
 sourcetypes:
   - cloudtrail
 detection:

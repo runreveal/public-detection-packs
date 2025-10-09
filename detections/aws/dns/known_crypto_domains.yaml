@@ -3,9 +3,11 @@ name: known-crypto-domains
 displayName: Known Crypto Domains
 description:
   This detection will check if there are any DNS requests against a known
- crypto domain.
+  crypto domain.
 file: known_crypto_domains.sql
 categories:
+  - attack.command-and-control
+  - attack.t1071.004
   - aws
   - dns
   - network-activity
@@ -13,6 +15,7 @@ categories:
   - signal
   - threat-intelligence
   - cryptocurrency
+  - awsdns
 schedule: "*/15 * * * *"
 riskScore: 80
 severity: High

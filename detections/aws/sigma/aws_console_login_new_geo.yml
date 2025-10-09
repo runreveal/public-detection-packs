@@ -9,6 +9,12 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
   - aws
   - cloudtrail
   - identity-access-management
@@ -18,7 +24,6 @@ tags:
   - new-location
   - attack.initial_access
   - attack.credential_access
-  - attack.t1078
 sourcetypes:
   - cloudtrail
 detection:

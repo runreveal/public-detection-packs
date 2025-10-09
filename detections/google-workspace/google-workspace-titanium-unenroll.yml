@@ -1,8 +1,15 @@
 name: google-workspace-titanium-unenroll
 displayName: Google Workspace Titanium Unenroll
-description: Detects when a user unenrolls from Google's Titanium security program or advanced protection features. Titanium unenrollment can indicate a potential security risk as it removes enhanced protection mechanisms. This event should be monitored to ensure legitimate security changes and detect potential account compromise or policy violations.
+description:
+  Detects when a user unenrolls from Google's Titanium security program
+  or advanced protection features. Titanium unenrollment can indicate a potential
+  security risk as it removes enhanced protection mechanisms. This event should be
+  monitored to ensure legitimate security changes and detect potential account compromise
+  or policy violations.
 file: google-workspace-titanium-unenroll.sql
 categories:
+  - attack.defense-evasion
+  - attack.t1562.001
   - google-workspace
   - admin
   - identity-access-management
@@ -12,15 +19,16 @@ categories:
   - titanium
   - unenroll
   - authentication
+  - gsuite
 mitreAttacks:
   - defense-evasion
 mitreTechniques:
   - T1562.001
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite

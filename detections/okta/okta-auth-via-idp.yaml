@@ -8,6 +8,13 @@ description:
   with external identity providers or unusual authentication patterns.
 file: okta-auth-via-idp.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
+  - attack.t1484.002
   - okta
   - auth
   - identity-access-management

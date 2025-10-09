@@ -8,6 +8,9 @@ description:
   external systems are trusted for identity verification.
 file: okta-idp-lifecycle.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1484.002
   - okta
   - admin
   - identity-access-management

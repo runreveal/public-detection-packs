@@ -4,6 +4,10 @@ displayName: Sharing and visibility settings updated
 description: Detects when a Notion page's sharing and visibility settings are updated
 file: notion-sharing-and-visibility-settings-updated.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1070.005
+  - attack.t1484.002
   - notion
   - sharing
   - system-activity

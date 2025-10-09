@@ -1,20 +1,24 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: entra-new-global-admin
 displayName: New Global Admin User
-description: >
-  This detection will notify you when a user is added to the Global Admin role
-  in Entra. Other roles can be added to the parameter to alert on.
+description:
+  "This detection will notify you when a user is added to the Global Admin
+  role in Entra. Other roles can be added to the parameter to alert on.
+
+  "
 file: new_global_admin.sql
 categories:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1098.003
   - azure
   - entra
   - identity-access-management
   - entity-management
   - signal
   - admin-privilege
-schedule: '*/15 * * * *'
+  - aad
+schedule: "*/15 * * * *"
 severity: High
 riskScore: 90
 parameters:

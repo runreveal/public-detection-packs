@@ -1,8 +1,20 @@
 name: okta-user-mfa-factor-suspend
 displayName: Okta User MFA Factor Suspend
-description: Detects when MFA factors are successfully suspended for users in Okta. MFA factor suspension can be a legitimate administrative action but may also indicate an attacker attempting to weaken security controls after gaining initial access. This event should be monitored to ensure it aligns with approved administrative procedures and is not part of an attack chain to bypass multi-factor authentication requirements.
+description:
+  Detects when MFA factors are successfully suspended for users in Okta.
+  MFA factor suspension can be a legitimate administrative action but may also indicate
+  an attacker attempting to weaken security controls after gaining initial access.
+  This event should be monitored to ensure it aligns with approved administrative
+  procedures and is not part of an attack chain to bypass multi-factor authentication
+  requirements.
 file: okta-user-mfa-factor-suspend.sql
 categories:
+  - attack.defense-evasion
+  - attack.persistence
+  - attack.credential-access
+  - attack.privilege-escalation
+  - attack.t1556.006
+  - attack.t1098
   - okta
   - mfa
   - identity-access-management
@@ -22,9 +34,13 @@ mitreTechniques:
   - T1098
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection identifies successful MFA factor suspensions which could indicate legitimate administrative actions or potential security control bypass attempts. Correlate with approved change requests and verify the actor has appropriate permissions for MFA management.'
+  window: "30"
+notes:
+  This detection identifies successful MFA factor suspensions which could indicate
+  legitimate administrative actions or potential security control bypass attempts.
+  Correlate with approved change requests and verify the actor has appropriate permissions
+  for MFA management.
 sourceTypes:
-  - okta 
+  - okta

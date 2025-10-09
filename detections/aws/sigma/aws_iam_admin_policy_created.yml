@@ -9,13 +9,14 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1098
   - cloudtrail
   - iam
   - admin-policy
   - privilege-escalation
   - attack.privilege_escalation
-  - attack.persistence
-  - attack.t1098
   - aws
   - identity-access-management
   - signal

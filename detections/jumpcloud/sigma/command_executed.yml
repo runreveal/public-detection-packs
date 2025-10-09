@@ -9,7 +9,6 @@ tags:
   - attack.execution
   - attack.t1059
   - jumpcloud
-  - jumpcloud
   - system-activity
   - process-activity
   - signal

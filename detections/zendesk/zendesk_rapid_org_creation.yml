@@ -1,9 +1,13 @@
 name: zendesk-rapid-org-creation
 displayName: Zendesk Rapid Organization Creation
-description: Detects when a single user creates multiple organizations in a short time period
+description:
+  Detects when a single user creates multiple organizations in a short
+  time period
 file: zendesk-rapid-org-creation.sql
-schedule: '*/30 * * * *'
+schedule: "*/30 * * * *"
 categories:
+  - attack.persistence
+  - attack.t1136
   - zendesk
   - identity-access-management
   - signal
@@ -16,7 +20,11 @@ mitreTechniques:
   - T1136
 sourceTypes:
   - zendesk
-notes: |
-  Detects users creating many organizations quickly, which could indicate automation or abuse.
+notes:
+  "Detects users creating many organizations quickly, which could indicate automation
+  or abuse.
+
   Review the business justification for rapid organization creation.
+
+  "
 disabled: false

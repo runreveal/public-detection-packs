@@ -4,7 +4,9 @@ displayName: Audit log exported
 description: Workspace audit log exported
 file: notion-audit-log-exported.sql
 categories:
-  - notion
+  - attack.collection
+  - attack.t1005
+  - attack.t1039
   - notion
   - system-activity
   - audit-activity

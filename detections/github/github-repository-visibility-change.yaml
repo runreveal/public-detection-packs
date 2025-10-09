@@ -8,6 +8,9 @@ description:
   These changes should be carefully monitored and validated.
 file: github-repository-visibility-change.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1530
   - github
   - repository
   - system-activity

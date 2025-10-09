@@ -9,6 +9,8 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.exfiltration
+  - attack.t1048
   - aws
   - cloudtrail
   - network-activity
@@ -17,7 +19,6 @@ tags:
   - route-table
   - network-tampering
   - attack.defense_evasion
-  - attack.t1048
 sourcetypes:
   - cloudtrail
 detection:

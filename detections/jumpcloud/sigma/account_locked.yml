@@ -7,8 +7,8 @@ references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
   - attack.credential-access
+  - attack.impact
   - attack.t1110
-  - jumpcloud
   - jumpcloud
   - identity-access-management
   - authentication

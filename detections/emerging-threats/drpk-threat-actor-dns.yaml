@@ -7,6 +7,7 @@ author: Nasreddine Bencherchali (Nextron Systems)
 date: 2024-02-20
 tags:
   - attack.command-and-control
+  - attack.t1071.004
   - detection.emerging-threats
   - emerging-threats
   - dns
@@ -15,6 +16,9 @@ tags:
   - signal
   - c2-communication
   - dprk-threat-actor
+  - crowdstrike-fdr
+  - cf-gateway-dns
+  - dnsfilter
 sourcetypes:
   - crowdstrike-fdr
   - cf-gateway-dns

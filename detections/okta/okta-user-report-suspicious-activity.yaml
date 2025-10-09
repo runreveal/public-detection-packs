@@ -9,7 +9,13 @@ description:
   be investigated as they represent user-initiated security concerns.
 file: okta-user-report-suspicious-activity.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.discovery
+  - attack.t1078
+  - attack.t1087
   - okta
   - identity-access-management
   - authentication

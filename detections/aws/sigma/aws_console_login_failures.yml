@@ -9,6 +9,9 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.initial-access
+  - attack.credential-access
+  - attack.t1110
   - aws
   - cloudtrail
   - identity-access-management
@@ -17,7 +20,6 @@ tags:
   - brute-force
   - failed-login
   - attack.credential_access
-  - attack.t1110
 sourcetypes:
   - cloudtrail
 detection:

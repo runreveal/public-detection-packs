@@ -8,6 +8,11 @@ description:
   policies and security standards.
 file: github-repository-created.sql
 categories:
+  - attack.defense-evasion
+  - attack.lateral-movement
+  - attack.collection
+  - attack.t1074.001
+  - attack.t1550.001
   - github
   - repository
   - system-activity

@@ -26,9 +26,16 @@ mitreattacks:
 mitretechniques:
   - T1090
 tags:
+  - attack.defense-evasion
+  - attack.command-and-control
+  - attack.t1090
   - emerging-threats
-  - network-activity
   - network-activity
   - signal
   - threat-intelligence
   - tor-network
+  - alb
+  - cf-gateway-dns
+  - cf-gateway-http
+  - flow
+  - nsg-flow

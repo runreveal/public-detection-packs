@@ -7,6 +7,15 @@ description:
   the time the detection is run.
 file: okta-auth-change-then-multi-app-access.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.lateral-movement
+  - attack.t1078
+  - attack.t1484.002
+  - attack.t1534
   - okta
   - auth
   - identity-access-management

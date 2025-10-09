@@ -1,21 +1,22 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: tor-exit-nodes
 displayName: Tor Exit Node Enrichment
 file: tor_exit_nodes.sql
-description: >-
-  This IP enrichment looks for events where the IP address was associated with
-  a known TOR exit node.
+description:
+  This IP enrichment looks for events where the IP address was associated
+  with a known TOR exit node.
 categories:
+  - attack.command-and-control
+  - attack.defense-evasion
+  - attack.t1090.003
+  - attack.t1562.006
   - general
-  - network-activity
   - network-activity
   - signal
   - tor-exit-nodes
 riskScore: 90
 severity: High
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 mitreAttacks:
   - command-and-control
   - defense-evasion

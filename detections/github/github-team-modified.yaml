@@ -8,6 +8,10 @@ description:
   or disruption of collaborative workflows.
 file: github-team-modified.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098.003
+  - attack.t1136.003
   - github
   - organization
   - identity-access-management

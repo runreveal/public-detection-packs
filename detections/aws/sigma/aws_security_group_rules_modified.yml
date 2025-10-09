@@ -9,6 +9,8 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.defense-evasion
+  - attack.t1562.007
   - aws
   - cloudtrail
   - network-activity
@@ -18,7 +20,6 @@ tags:
   - firewall-modification
   - attack.defense_evasion
   - attack.persistence
-  - attack.t1562.007
 sourcetypes:
   - cloudtrail
 detection:

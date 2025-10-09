@@ -1,12 +1,18 @@
 title: AWS VPC Endpoint Modified
 id: v7w8x9y0-z1a2-b3c4-d5e6-f7g8h9i0j1k2
-description: Detects modifications to VPC endpoints, which could be used to redirect traffic or establish covert channels.
+description:
+  Detects modifications to VPC endpoints, which could be used to redirect
+  traffic or establish covert channels.
 references:
   - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html
   - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.defense-evasion
+  - attack.persistence
+  - attack.command-and-control
+  - attack.t1205
   - aws
   - cloudtrail
   - network-activity
@@ -15,8 +21,6 @@ tags:
   - vpc-endpoint
   - network-tampering
   - attack.defense_evasion
-  - attack.persistence
-  - attack.t1205
 sourcetypes:
   - cloudtrail
 detection:

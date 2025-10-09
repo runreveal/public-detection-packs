@@ -2,10 +2,17 @@ disabled: true
 name: invalid-user-system-access
 displayName: Invalid User System Access
 description:
-  "This detection will notify you if any users who have a suspended/deleted
-  event in the past 90 days and have not been reinstated appear in any other log."
+  This detection will notify you if any users who have a suspended/deleted
+  event in the past 90 days and have not been reinstated appear in any other log.
 file: invalid_user_system_access.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.discovery
+  - attack.t1078
+  - attack.t1087
   - gsuite
   - identity-access-management
   - entity-management

@@ -9,6 +9,9 @@ references:
 author: Claude
 date: 2024-06-20
 tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
   - aws
   - cloudtrail
   - system-activity
@@ -16,9 +19,7 @@ tags:
   - signal
   - lambda
   - policy-modification
-  - attack.persistence
   - attack.privilege_escalation
-  - attack.t1098
 sourcetypes:
   - cloudtrail
 detection:
