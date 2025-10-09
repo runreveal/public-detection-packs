@@ -2,10 +2,8 @@ disabled: true
 name: known-crypto-domains
 displayName: Known Crypto Domains
 description:
-  "This detection will check if there are any DNS requests against a known
-  crypto domain.
-
-  "
+  This detection will check if there are any DNS requests against a known
+ crypto domain.
 file: known_crypto_domains.sql
 categories:
   - aws
