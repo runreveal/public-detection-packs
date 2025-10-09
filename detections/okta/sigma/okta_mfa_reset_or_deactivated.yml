@@ -2,38 +2,38 @@ title: Okta MFA Reset or Deactivated
 id: 50e068d7-1e6b-4054-87e5-0a592c40c7e0
 description: Detects when an attempt at deactivating  or resetting MFA.
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Austin Songer @austinsonger
 date: 2021-09-21
 modified: 2022-10-09
 tags:
-    - attack.persistence
-    - attack.credential-access
-    - attack.defense-evasion
-    - attack.t1556.006
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1556.006
+  - okta
+  - mfa
+  - identity-access-management
+  - entity-management
+  - signal
+  - mfa-reset
+  - mfa-deactivated
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - mfa
-    - identity-access-management
-    - entity-management
-    - signal
-    - mfa-reset
-    - mfa-deactivated
+  - okta
 mitreattacks:
-    - persistence
-    - defense-evasion
+  - persistence
+  - defense-evasion
+  - credential-access
 mitretechniques:
-    - T1556.006  # Modify Authentication Process: Multi-Factor Authentication
+  - T1556.006
 detection:
-    selection:
-        eventtype:
-            - user.mfa.factor.deactivate
-            - user.mfa.factor.reset_all
-    condition: selection
+  selection:
+    eventtype:
+      - user.mfa.factor.deactivate
+      - user.mfa.factor.reset_all
+  condition: selection
 falsepositives:
-    - If a MFA reset or deactivated was performed by a system administrator.
+  - If a MFA reset or deactivated was performed by a system administrator.
 level: medium
 riskscore: 50

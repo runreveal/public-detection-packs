@@ -2,33 +2,40 @@ title: Okta Unauthorized Access to App
 id: 6cc2b61b-d97e-42ef-a9dd-8aa8dc951657
 description: Detects when unauthorized access to app occurs.
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
-    - attack.impact
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - attack.t1190
+  - attack.impact
+  - okta
+  - identity-access-management
+  - authentication
+  - signal
+  - unauthorized-access
+  - app-access
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - okta
-    - identity-access-management
-    - authentication
-    - signal
-    - unauthorized-access
-    - app-access
+  - okta
 mitreattacks:
-    - initial-access
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1078      # Valid Accounts
-    - T1190      # Exploit Public-Facing Application
+  - T1078
+  - T1190
 detection:
-    selection:
-        displaymessage: User attempted unauthorized access to app
-    condition: selection
+  selection:
+    displaymessage: User attempted unauthorized access to app
+  condition: selection
 falsepositives:
-    - User might of believe that they had access.
+  - User might of believe that they had access.
 level: high
 riskscore: 100

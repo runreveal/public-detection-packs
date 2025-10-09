@@ -1,9 +1,18 @@
 name: okta-rate-limit-violations
 displayName: Okta Rate Limit Violations
-description: Detects rate limit violations in Okta including OAuth2 client rate limits, application integration limits, system client limits, operation limits, and organizational concurrency limits. Rate limit violations can indicate automated attacks, API abuse, or misconfigured integrations. This detection excludes known legitimate automated tools (Cloudquery and Permiso) to reduce false positives while identifying potentially malicious or problematic activity.
+description:
+  Detects rate limit violations in Okta including OAuth2 client rate limits,
+  application integration limits, system client limits, operation limits, and organizational
+  concurrency limits. Rate limit violations can indicate automated attacks, API abuse,
+  or misconfigured integrations. This detection excludes known legitimate automated
+  tools (Cloudquery and Permiso) to reduce false positives while identifying potentially
+  malicious or problematic activity.
 file: okta-rate-limit-violations.sql
 categories:
-  - okta
+  - attack.credential-access
+  - attack.impact
+  - attack.t1499
+  - attack.t1110
   - okta
   - system-activity
   - security-finding
@@ -13,18 +22,19 @@ categories:
   - automation-detection
   - resource-exhaustion
 mitreAttacks:
-  - impact
-  - discovery
   - credential-access
-  - defense-evasion
+  - impact
 mitreTechniques:
   - T1499
   - T1110
 severity: Low
 riskScore: 15
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection identifies rate limit violations while excluding known legitimate automated tools. High frequency violations from unknown sources should be investigated for potential abuse or attacks.'
+  window: "30"
+notes:
+  This detection identifies rate limit violations while excluding known legitimate
+  automated tools. High frequency violations from unknown sources should be investigated
+  for potential abuse or attacks.
 sourceTypes:
-  - okta 
+  - okta

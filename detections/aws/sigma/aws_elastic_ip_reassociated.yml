@@ -1,39 +1,42 @@
 title: AWS Elastic IP Reassociated
 id: b3c4d5e6-f7g8-h9i0-j1k2-l3m4n5o6p7q8
-description: Detects when an Elastic IP is reassociated from one instance to another, which could indicate hijacking of public IP addresses or attempt to impersonate services.
+description:
+  Detects when an Elastic IP is reassociated from one instance to another,
+  which could indicate hijacking of public IP addresses or attempt to impersonate
+  services.
 references:
-    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateAddress.html
-    - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateAddress.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - network-activity
-    - network-configuration
-    - signal
-    - elastic-ip
-    - ip-reassociation
-    - attack.defense_evasion
-    - attack.persistence
-    - attack.t1578
+  - attack.defense-evasion
+  - attack.t1578
+  - aws
+  - cloudtrail
+  - network-activity
+  - network-configuration
+  - signal
+  - elastic-ip
+  - ip-reassociation
+  - attack.defense_evasion
+  - attack.persistence
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: ec2.amazonaws.com
-        eventName:
-            - AssociateAddress
-            - DisassociateAddress
-    condition: selection
+  selection:
+    eventSource: ec2.amazonaws.com
+    eventName:
+      - AssociateAddress
+      - DisassociateAddress
+  condition: selection
 falsepositives:
-    - Instance replacement during maintenance
-    - Auto-scaling activities
-    - Infrastructure as code deployments
+  - Instance replacement during maintenance
+  - Auto-scaling activities
+  - Infrastructure as code deployments
 level: low
 riskscore: 45
 mitreattacks:
-    - defense-evasion
-    - persistence
+  - defense-evasion
 mitretechniques:
-    - T1578
+  - T1578

@@ -1,8 +1,20 @@
 name: okta-aws-iam-identity-center-sso
 displayName: Okta AWS IAM Identity Center SSO Authentication
-description: Detects successful SSO authentication to AWS IAM Identity Center through Okta. This event indicates federated access to AWS resources where users are authenticating to AWS through Okta's identity federation. Monitoring these events helps track AWS resource access patterns, identify unusual access times or locations, and maintain visibility into cloud infrastructure access through identity federation.
+description:
+  Detects successful SSO authentication to AWS IAM Identity Center through
+  Okta. This event indicates federated access to AWS resources where users are authenticating
+  to AWS through Okta's identity federation. Monitoring these events helps track AWS
+  resource access patterns, identify unusual access times or locations, and maintain
+  visibility into cloud infrastructure access through identity federation.
 file: okta-aws-iam-identity-center-sso.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078.004
+  - attack.t1484.002
   - okta
   - auth
   - identity-access-management
@@ -15,17 +27,22 @@ categories:
   - cloud-access
 mitreAttacks:
   - initial-access
-  - lateral-movement
-  - privilege-escalation
   - persistence
+  - privilege-escalation
+  - defense-evasion
+  - credential-access
 mitreTechniques:
   - T1078.004
   - T1484.002
 severity: Low
 riskScore: 25
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection monitors successful federated authentication to AWS IAM Identity Center. While typically legitimate, these events should be reviewed for unusual access patterns, unexpected geographic locations, or access outside normal business hours.'
+  window: "30"
+notes:
+  This detection monitors successful federated authentication to AWS IAM Identity
+  Center. While typically legitimate, these events should be reviewed for unusual
+  access patterns, unexpected geographic locations, or access outside normal business
+  hours.
 sourceTypes:
-  - okta 
+  - okta

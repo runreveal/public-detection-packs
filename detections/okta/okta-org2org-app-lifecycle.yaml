@@ -1,8 +1,18 @@
 name: okta-org2org-app-lifecycle
 displayName: Okta Org2Org Application Lifecycle Events
-description: Detects lifecycle events (create, update, activate) for Org2Org applications in Okta. Org2Org applications enable cross-organizational integrations and federation between Okta instances. Changes to these applications can significantly impact inter-organizational trust relationships and should be monitored for unauthorized modifications that could affect security boundaries between organizations.
+description:
+  Detects lifecycle events (create, update, activate) for Org2Org applications
+  in Okta. Org2Org applications enable cross-organizational integrations and federation
+  between Okta instances. Changes to these applications can significantly impact inter-organizational
+  trust relationships and should be monitored for unauthorized modifications that
+  could affect security boundaries between organizations.
 file: okta-org2org-app-lifecycle.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1484.002
+  - attack.t1098.003
   - okta
   - admin
   - identity-access-management
@@ -16,16 +26,18 @@ categories:
 mitreAttacks:
   - persistence
   - privilege-escalation
-  - lateral-movement
   - defense-evasion
 mitreTechniques:
   - T1484.002
   - T1098.003
 severity: Medium
 riskScore: 70
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection monitors lifecycle changes to Org2Org applications which facilitate cross-organizational integrations. These changes should be reviewed to ensure they align with approved inter-organizational trust policies.'
+  window: "30"
+notes:
+  This detection monitors lifecycle changes to Org2Org applications which facilitate
+  cross-organizational integrations. These changes should be reviewed to ensure they
+  align with approved inter-organizational trust policies.
 sourceTypes:
-  - okta 
+  - okta

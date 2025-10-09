@@ -3,6 +3,10 @@ displayName: Workspace export activity
 description: Detects when a user exports data from Google Workspace.
 file: google-workspace-export-created.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1005
+  - attack.t1537
   - google-workspace
   - admin
   - system-activity
@@ -10,16 +14,18 @@ categories:
   - signal
   - data-export
   - data-exfiltration
+  - gsuite
 mitreAttacks:
+  - collection
   - exfiltration
 mitreTechniques:
-  - T1005      # Data from Local System
-  - T1537      # Transfer Data to Cloud Account
+  - T1005
+  - T1537
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

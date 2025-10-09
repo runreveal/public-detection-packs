@@ -3,6 +3,9 @@ displayName: Delegated admin to role
 description: Detects when a delegated admin is assigned to a role in Google Workspace
 file: google-workspace-delegated-admin-to-role.sql
 categories:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1098.003
   - google-workspace
   - admin
   - identity-access-management
@@ -10,6 +13,7 @@ categories:
   - signal
   - admin-privilege
   - role-assignment
+  - gsuite
 mitreAttacks:
   - privilege-escalation
   - persistence
@@ -17,9 +21,9 @@ mitreTechniques:
   - T1098.003
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

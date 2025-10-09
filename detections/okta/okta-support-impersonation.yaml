@@ -1,8 +1,21 @@
 name: okta-support-impersonation
 displayName: Okta Support User Session Impersonation
-description: Detects when Okta support staff grant or initiate user session impersonation for troubleshooting purposes. These events indicate that Okta support personnel are accessing user accounts to provide technical assistance or resolve issues. While typically legitimate, these events should be monitored to ensure they align with approved support tickets and follow proper authorization procedures for accessing user accounts.
+description:
+  Detects when Okta support staff grant or initiate user session impersonation
+  for troubleshooting purposes. These events indicate that Okta support personnel
+  are accessing user accounts to provide technical assistance or resolve issues. While
+  typically legitimate, these events should be monitored to ensure they align with
+  approved support tickets and follow proper authorization procedures for accessing
+  user accounts.
 file: okta-support-impersonation.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.lateral-movement
+  - attack.t1078.004
+  - attack.t1550.001
   - okta
   - admin
   - identity-access-management
@@ -13,18 +26,22 @@ categories:
   - privileged-access
   - session-management
 mitreAttacks:
-  - privilege-escalation
-  - lateral-movement
+  - initial-access
   - persistence
+  - privilege-escalation
   - defense-evasion
+  - lateral-movement
 mitreTechniques:
   - T1078.004
   - T1550.001
 severity: Medium
 riskScore: 70
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection monitors Okta support impersonation events. These should be correlated with approved support tickets and verified as legitimate troubleshooting activities. Unexpected impersonation events should be investigated immediately.'
+  window: "30"
+notes:
+  This detection monitors Okta support impersonation events. These should be
+  correlated with approved support tickets and verified as legitimate troubleshooting
+  activities. Unexpected impersonation events should be investigated immediately.
 sourceTypes:
-  - okta 
+  - okta

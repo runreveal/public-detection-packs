@@ -1,8 +1,16 @@
 name: google-workspace-domain-wide-application-added
 displayName: Domain wide application added
-description: Detects when a domain wide application is added to a Google Workspace account
+description:
+  Detects when a domain wide application is added to a Google Workspace
+  account
 file: google-workspace-domain-wide-application-added.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078.004
+  - attack.t1484.002
   - google-workspace
   - admin
   - identity-access-management
@@ -10,19 +18,20 @@ categories:
   - signal
   - application-security
   - domain-wide-access
+  - gsuite
 mitreAttacks:
-  - execution
-  - lateral-movement
+  - initial-access
   - persistence
-  - collection
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
-  - T1078.004  # Valid Accounts: Cloud Accounts
-  - T1484.002  # Trust Modification
+  - T1078.004
+  - T1484.002
 severity: High
 riskScore: 75
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

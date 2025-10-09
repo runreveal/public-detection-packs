@@ -1,9 +1,14 @@
 name: zendesk-admin-email-changes
 displayName: Zendesk Administrative Email Address Changes
-description: Detects when administrative or high-privilege user email addresses are modified
+description:
+  Detects when administrative or high-privilege user email addresses are
+  modified
 file: zendesk-admin-email-changes.sql
-schedule: '*/10 * * * *'
+schedule: "*/10 * * * *"
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
   - zendesk
   - identity-access-management
   - signal
@@ -12,11 +17,16 @@ severity: high
 riskScore: 80
 mitreAttacks:
   - persistence
+  - privilege-escalation
 mitreTechniques:
   - T1098
 sourceTypes:
   - zendesk
-notes: |
-  Monitor for changes to administrative email addresses which could indicate account takeover.
+notes:
+  "Monitor for changes to administrative email addresses which could indicate
+  account takeover.
+
   All admin email changes should be verified through secondary channels.
+
+  "
 disabled: false

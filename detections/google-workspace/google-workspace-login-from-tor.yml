@@ -3,22 +3,28 @@ displayName: Login from Tor
 description: A user successfully logged in to Google Workspace from the Tor network.
 file: google-workspace-login-from-tor.sql
 categories:
+  - attack.initial-access
+  - attack.defense-evasion
+  - attack.command-and-control
+  - attack.t1090.003
   - google-workspace
   - identity-access-management
   - authentication
   - signal
   - tor-network
   - suspicious-login
+  - gsuite
 mitreAttacks:
   - initial-access
   - defense-evasion
+  - command-and-control
 mitreTechniques:
   - T1090.003
 severity: Critical
 riskScore: 95
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

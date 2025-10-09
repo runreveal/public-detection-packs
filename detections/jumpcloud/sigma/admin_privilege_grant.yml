@@ -4,29 +4,30 @@ description: Detects when admin privileges are granted to a user in JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.persistence
-    - attack.t1098.003 # account manipulation
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098.003
+  - jumpcloud
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - admin-privilege
 sourcetypes:
-    - jumpcloud
-categories:
-    - jumpcloud
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - admin-privilege
+  - jumpcloud
 mitreattacks:
-    - persistence
+  - persistence
+  - privilege-escalation
 mitretechniques:
-    - T1098.003
+  - T1098.003
 detection:
-    selection:
-        normalized.eventName:
-            - user_admin_granted
-    condition: selection
+  selection:
+    normalized.eventName:
+      - user_admin_granted
+  condition: selection
 falsepositives:
-    - Administrator privileges granted by authorized admin users
+  - Administrator privileges granted by authorized admin users
 level: low
 riskscore: 20

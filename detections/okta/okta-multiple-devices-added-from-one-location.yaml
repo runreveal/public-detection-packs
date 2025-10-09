@@ -1,32 +1,39 @@
 name: okta-multiple-devices-added-from-one-location
 displayName: Okta Multiple Devices Added From One Location
 type: sql
-description: >-
-  This detection shows multiple users added a new device from the same IP
-  address with a whitelist to exclude an office IP address space, indicating
-  likelyhood that multiple users could have been compromised by one threat
-  actor.
+description:
+  This detection shows multiple users added a new device from the same
+  IP address with a whitelist to exclude an office IP address space, indicating likelyhood
+  that multiple users could have been compromised by one threat actor.
 file: okta-multiple-devices-added-from-one-location.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078
+  - attack.t1110
   - okta
   - identity-access-management
   - entity-management
   - multiple-devices
   - same-location
   - suspicious-activity
-schedule: '*/15 * * * *'
-notes: ''
+schedule: "*/15 * * * *"
+notes: ""
 parameters:
-  deviceThreshold: '3'
-  interval: '7'
+  deviceThreshold: "3"
+  interval: "7"
   officeCIDR: 127.0.0.1/32
 disabled: true
 notificationNames: []
 mitreAttacks:
   - initial-access
+  - persistence
   - privilege-escalation
-  - lateral-movement
+  - defense-evasion
+  - credential-access
 mitreTechniques:
   - T1078
   - T1110

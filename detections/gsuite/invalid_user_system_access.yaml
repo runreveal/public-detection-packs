@@ -1,14 +1,18 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: invalid-user-system-access
 displayName: Invalid User System Access
-description: >
+description:
   This detection will notify you if any users who have a suspended/deleted
-  event in the past 90 days and have not been reinstated appear in any other
-  log.
+  event in the past 90 days and have not been reinstated appear in any other log.
 file: invalid_user_system_access.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.discovery
+  - attack.t1078
+  - attack.t1087
   - gsuite
   - identity-access-management
   - entity-management
@@ -18,13 +22,15 @@ categories:
   - deleted-user
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 sourceTypes:
   - gsuite
 mitreAttacks:
-  - discovery
-  - persistence
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
+  - discovery
 mitreTechniques:
   - T1078
   - T1087

@@ -2,34 +2,38 @@ title: Okta Application Sign-On Policy Modified or Deleted
 id: 8f668cc4-c18e-45fe-ad00-624a981cf88a
 description: Detects when an application Sign-on Policy is modified or deleted.
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
-    - attack.impact
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1484.002
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - application-policy
+  - sign-on-policy
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - application-policy
-    - sign-on-policy
+  - okta
 mitreattacks:
-    - defense-evasion
+  - privilege-escalation
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1484.002
+  - T1484.002
 detection:
-    selection:
-        eventtype:
-            - application.policy.sign_on.update
-            - application.policy.sign_on.rule.delete
-    condition: selection
+  selection:
+    eventtype:
+      - application.policy.sign_on.update
+      - application.policy.sign_on.rule.delete
+  condition: selection
 falsepositives:
-    - Unknown
+  - Unknown
 level: medium
 riskscore: 40

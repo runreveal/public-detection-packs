@@ -1,11 +1,17 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: aws-key-new-network
 displayName: AWS Key Used from New Network
-description: This AWS key was used from a network it previously had not been used from.
+description:
+  This AWS key was used from a network it previously had not been used
+  from.
 file: aws_key_new_network.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078.004
+  - attack.t1535
   - aws
   - cloudtrail
   - identity-access-management
@@ -15,16 +21,18 @@ categories:
   - network-location-change
 mitreAttacks:
   - initial-access
-  - credential-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078.004
   - T1535
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-  ignoreNetworksByAS: '[]'
-  ignoreIPs: '[]'
+  window: "30"
+  ignoreNetworksByAS: "[]"
+  ignoreIPs: "[]"
 sourceTypes:
   - cloudtrail

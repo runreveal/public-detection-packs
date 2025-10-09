@@ -1,8 +1,38 @@
 title: Security Threat Unblocked
 id: 2sEoh9NwefTdUD5BOZBkvLZlraD
-description: |
-    Identifies when a security threat is unblocked by the Cloudflare Zero Trust forward proxy.
-categories:
+description:
+  "Identifies when a security threat is unblocked by the Cloudflare Zero
+  Trust forward proxy.
+
+  "
+references:
+  - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
+author: Evan Johnson @ejcx_
+date: 2025-01-27
+modified: 2025-01-27
+sourcetypes:
+  - cf-gateway-dns
+detection:
+  selection:
+    QueryCategoryNames|contains:
+      - Security threats
+  filter:
+    ResolverDecision: blockedRule
+  condition: selection and not filter
+falsepositives:
+  - False positives are possible if the security threat is detected by Cloudflare but
+    not blocked.
+level: medium
+risk_score: 75
+mitreattacks:
+  - command-and-control
+mitretechniques:
+  - T1071.001
+  - T1568
+tags:
+  - attack.command-and-control
+  - attack.t1071.001
+  - attack.t1568
   - cloudflare
   - gateway
   - network-activity
@@ -10,27 +40,4 @@ categories:
   - signal
   - security-finding
   - zerotrust
-references:
-    - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
-author: Evan Johnson @ejcx_
-date: 2025-01-27
-modified: 2025-01-27
-sourcetypes:
-    - cf-gateway-dns
-detection:
-    selection:
-      QueryCategoryNames|contains:
-        - "Security threats"
-    filter:
-      ResolverDecision: blockedRule
-    condition: selection and not filter
-falsepositives:
-    - False positives are possible if the security threat is detected by Cloudflare but not blocked.
-level: medium
-risk_score: 75
-mitreattacks:
-    - initial-access
-    - execution
-mitretechniques:
-    - T1071.001
-    - T1568
+  - cf-gateway-dns

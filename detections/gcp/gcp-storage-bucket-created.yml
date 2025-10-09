@@ -1,26 +1,27 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: gcp-storage-bucket-created
 displayName: storage-bucket-created
 description: GCS bucket created
 file: gcp-storage-bucket-created.sql
 categories:
+  - attack.defense-evasion
+  - attack.t1578.004
   - gcp
   - storage
   - system-activity
   - file-activity
   - signal
   - storage-bucket
+  - gcplogs
 mitreAttacks:
-  - execution
+  - defense-evasion
 mitreTechniques:
-  - T1578.004  # Modify Cloud Compute Infrastructure
+  - T1578.004
 severity: Medium
 riskScore: 40
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - gcp
   - gcplogs

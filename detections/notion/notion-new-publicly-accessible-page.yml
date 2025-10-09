@@ -1,11 +1,13 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: notion-new-publicly-accessible-page
 displayName: New publicly accessible page
 description: Detects when a new page is made publicly accessible in Notion
 file: notion-new-publicly-accessible-page.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1530
+  - attack.t1213
   - notion
   - sharing
   - system-activity
@@ -14,15 +16,15 @@ categories:
   - public-access
   - data-exposure
 mitreAttacks:
-  - execution
   - collection
+  - exfiltration
 mitreTechniques:
-  - T1530      # Data from Cloud Storage Object
-  - T1213      # Data from Information Repositories
+  - T1530
+  - T1213
 severity: Medium
 riskScore: 35
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - notion

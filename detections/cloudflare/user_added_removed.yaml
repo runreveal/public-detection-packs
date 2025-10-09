@@ -1,23 +1,26 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: user-added-removed-cloudflare
 displayName: User added or removed from Cloudflare account
 description: A user was either added to or removed from your Cloudflare account.
 file: user_added_removed.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
   - cloudflare
   - audit
   - identity-access-management
   - entity-management
   - signal
   - user-management
-schedule: '*/15 * * * *'
+  - cf-audit
+schedule: "*/15 * * * *"
 riskScore: 50
 severity: Medium
 sourceTypes:
   - cf-audit
 mitreAttacks:
-  - initial-access
+  - persistence
+  - privilege-escalation
 mitreTechniques:
   - T1098

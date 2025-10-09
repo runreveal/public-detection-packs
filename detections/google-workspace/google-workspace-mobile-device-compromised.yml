@@ -1,8 +1,19 @@
 name: google-workspace-mobile-device-compromised
 displayName: Google Workspace Mobile Device Compromised
-description: Detects when a mobile device is marked as compromised in Google Workspace. This event indicates that Google has detected suspicious or malicious activity on a mobile device that accesses organizational resources. A compromised device poses significant security risks including data theft, unauthorized access, and potential lateral movement within the organization.
+description:
+  Detects when a mobile device is marked as compromised in Google Workspace.
+  This event indicates that Google has detected suspicious or malicious activity on
+  a mobile device that accesses organizational resources. A compromised device poses
+  significant security risks including data theft, unauthorized access, and potential
+  lateral movement within the organization.
 file: google-workspace-mobile-device-compromised.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - attack.t1200
   - google-workspace
   - admin
   - findings
@@ -12,18 +23,20 @@ categories:
   - device-security
   - compromise
   - endpoint-security
+  - gsuite
 mitreAttacks:
   - initial-access
   - persistence
-  - credential-access
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
   - T1200
 severity: Critical
 riskScore: 95
-schedule: '*/5 * * * *'
+schedule: "*/5 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite

@@ -4,28 +4,30 @@ description: Detects modifications to JumpCloud organization settings
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.persistence
-    - attack.defense-evasion
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
+  - attack.defense-evasion
+  - jumpcloud
+  - admin
+  - system-activity
+  - configuration-access
+  - signal
+  - organization-config
 sourcetypes:
-    - jumpcloud
-categories:
-    - jumpcloud
-    - admin
-    - system-activity
-    - configuration-access
-    - signal
-    - organization-config
+  - jumpcloud
 mitreattacks:
-    - persistence
+  - persistence
+  - privilege-escalation
 mitretechniques:
-    - T1098
+  - T1098
 detection:
-    selection:
-        normalized.eventName: organization_update
-    condition: selection
+  selection:
+    normalized.eventName: organization_update
+  condition: selection
 falsepositives:
-    - Legitimate organization configuration changes by authorized administrators
+  - Legitimate organization configuration changes by authorized administrators
 level: medium
-riskscore: 30 
+riskscore: 30

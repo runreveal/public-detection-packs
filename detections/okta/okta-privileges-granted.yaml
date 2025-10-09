@@ -4,14 +4,17 @@ type: sql
 description: This signals whenever a new okta privilege was granted to a user or group.
 file: okta-privileges-granted.sql
 categories:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1098.003
   - okta
   - admin
   - identity-access-management
   - entity-management
   - privileges-granted
   - privilege-escalation
-schedule: '*/15 * * * *'
-notes: ''
+schedule: "*/15 * * * *"
+notes: ""
 disabled: true
 notificationNames: []
 mitreAttacks:

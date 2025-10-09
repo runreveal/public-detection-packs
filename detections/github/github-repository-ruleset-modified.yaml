@@ -1,14 +1,18 @@
 name: github-repository-ruleset-modified
 displayName: GitHub Repository Ruleset Modified
-description: >-
-  Detects modifications to GitHub repository rulesets including creation, updates,
-  and deletion of rules that govern repository behavior and security policies.
+description:
+  Detects modifications to GitHub repository rulesets including creation,
+  updates, and deletion of rules that govern repository behavior and security policies.
   Repository rulesets enforce critical security controls such as branch protection,
   required status checks, and merge restrictions. Unauthorized ruleset modifications
-  could weaken security posture, bypass code review requirements, or enable
-  unauthorized code deployment.
+  could weaken security posture, bypass code review requirements, or enable unauthorized
+  code deployment.
 file: github-repository-ruleset-modified.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1562.001
+  - attack.t1484.002
   - github
   - repository
   - system-activity
@@ -18,12 +22,11 @@ categories:
   - ruleset-management
   - branch-protection
 mitreAttacks:
-  - defense-evasion
-  - persistence
   - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1562.001
   - T1484.002
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"

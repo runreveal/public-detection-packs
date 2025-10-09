@@ -1,38 +1,43 @@
 title: AWS Config Service Disabled
 id: f1e2d3c4-b5a6-7c8d-9e0f-1a2b3c4d5e6f
-description: Detects when AWS Config service is disabled or modified, which would prevent configuration compliance monitoring.
+description:
+  Detects when AWS Config service is disabled or modified, which would
+  prevent configuration compliance monitoring.
 references:
-    - https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html
-    - https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html
+  - https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html
+  - https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - audit-activity
-    - signal
-    - config-service
-    - defense-evasion
-    - attack.defense_evasion
-    - attack.t1562.001
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1562.001
+  - aws
+  - cloudtrail
+  - system-activity
+  - audit-activity
+  - signal
+  - config-service
+  - defense-evasion
+  - attack.defense_evasion
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: config.amazonaws.com
-        eventName:
-            - DeleteConfigRule
-            - DeleteConfigurationRecorder
-            - DeleteDeliveryChannel
-            - StopConfigurationRecorder
-            - DeleteOrganizationConfigRule
-    condition: selection
+  selection:
+    eventSource: config.amazonaws.com
+    eventName:
+      - DeleteConfigRule
+      - DeleteConfigurationRecorder
+      - DeleteDeliveryChannel
+      - StopConfigurationRecorder
+      - DeleteOrganizationConfigRule
+  condition: selection
 falsepositives:
-    - Legitimate administrative actions when reconfiguring compliance monitoring
+  - Legitimate administrative actions when reconfiguring compliance monitoring
 level: high
 riskscore: 80
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1562.001
+  - T1562.001

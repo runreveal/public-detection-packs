@@ -4,34 +4,40 @@ description: Detects potentially suspicious authentication-related activities
 author: RunReveal
 date: 2025-01-06
 references:
-    - https://developer.1password.com/docs/events-api/audit-events/
+  - https://developer.1password.com/docs/events-api/audit-events/
 tags:
-    - attack.credential-access
-    - attack.t1078
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - attack.credential-access
+  - 1password
+  - identity-access-management
+  - authentication
+  - signal
+  - suspicious-activity
 sourcetypes:
-    - 1password
-categories:
-    - 1password
-    - identity-access-management
-    - authentication
-    - signal
-    - suspicious-activity
+  - 1password
 mitreattacks:
-    - credential-access
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1078
+  - T1078
 detection:
-    selection:
-        normalized.eventName:
-            - reauth     # Reauthorize device
-            - ssotkn     # Create sign-in token
-            - ssotknv    # Sign in with sign-in token
-            - beginr     # Begin recovery
-            - completr   # Complete recovery
-    condition: selection
+  selection:
+    normalized.eventName:
+      - reauth
+      - ssotkn
+      - ssotknv
+      - beginr
+      - completr
+  condition: selection
 falsepositives:
-    - Legitimate device reauthorization
-    - Normal SSO token usage
-    - Authorized account recovery
+  - Legitimate device reauthorization
+  - Normal SSO token usage
+  - Authorized account recovery
 level: medium
 riskscore: 40

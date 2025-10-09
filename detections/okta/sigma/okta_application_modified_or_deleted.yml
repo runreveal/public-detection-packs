@@ -2,35 +2,38 @@ title: Okta Application Modified or Deleted
 id: 7899144b-e416-4c28-b0b5-ab8f9e0a541d
 description: Detects when an application is modified or deleted.
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
-    - attack.impact
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1484.002
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - application-lifecycle
+  - application-modification
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - application-lifecycle
-    - application-modification
+  - okta
 mitreattacks:
-    - defense-evasion
+  - privilege-escalation
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1484.002
+  - T1484.002
 detection:
-    selection:
-        eventtype:
-            - application.lifecycle.update
-            - application.lifecycle.delete
-    condition: selection
+  selection:
+    eventtype:
+      - application.lifecycle.update
+      - application.lifecycle.delete
+  condition: selection
 falsepositives:
-    - Unknown
-
+  - Unknown
 level: medium
 riskscore: 100

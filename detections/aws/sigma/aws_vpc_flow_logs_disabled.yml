@@ -1,35 +1,40 @@
 title: AWS VPC Flow Logs Disabled
 id: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
-description: Detects when VPC Flow Logs are deleted or modified, which would reduce visibility into network traffic.
+description:
+  Detects when VPC Flow Logs are deleted or modified, which would reduce
+  visibility into network traffic.
 references:
-    - https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html
-    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html
+  - https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - network-activity
-    - network-configuration
-    - signal
-    - vpc-flow-logs
-    - defense-evasion
-    - attack.defense_evasion
-    - attack.t1562.001
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1562.001
+  - aws
+  - cloudtrail
+  - network-activity
+  - network-configuration
+  - signal
+  - vpc-flow-logs
+  - defense-evasion
+  - attack.defense_evasion
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: ec2.amazonaws.com
-        eventName:
-            - DeleteFlowLogs
-            - ModifyFlowLogs
-    condition: selection
+  selection:
+    eventSource: ec2.amazonaws.com
+    eventName:
+      - DeleteFlowLogs
+      - ModifyFlowLogs
+  condition: selection
 falsepositives:
-    - Legitimate administrative actions when reconfiguring network monitoring
+  - Legitimate administrative actions when reconfiguring network monitoring
 level: high
 riskscore: 75
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1562.001
+  - T1562.001

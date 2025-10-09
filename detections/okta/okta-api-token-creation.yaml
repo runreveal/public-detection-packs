@@ -3,18 +3,22 @@ displayName: Okta API Key Created
 description: Alert on the creation of a new okta API key.
 file: okta-api-token-creation.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
   - okta
   - admin
   - identity-access-management
   - entity-management
   - api-token
   - token-creation
-schedule: '*/15 * * * *'
-notes: ''
+schedule: "*/15 * * * *"
+notes: ""
 notificationNames: []
 mitreAttacks:
   - persistence
-  - lateral-movement
+  - privilege-escalation
   - credential-access
 mitreTechniques:
   - T1098.001

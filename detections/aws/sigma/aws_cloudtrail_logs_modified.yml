@@ -1,37 +1,42 @@
 title: AWS CloudTrail Logs Modified
 id: 8c2d29b9-f20f-4c5b-a03f-a3c6a8c3f19c
-description: Detects modifications to CloudTrail logging configuration, which could indicate an attempt to hide malicious activity by disabling logging or modifying where logs are delivered.
+description:
+  Detects modifications to CloudTrail logging configuration, which could
+  indicate an attempt to hide malicious activity by disabling logging or modifying
+  where logs are delivered.
 references:
-    - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html
-    - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events
+  - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html
+  - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - audit-activity
-    - signal
-    - log-tampering
-    - defense-evasion
+  - attack.defense-evasion
+  - attack.t1562.008
+  - aws
+  - cloudtrail
+  - system-activity
+  - audit-activity
+  - signal
+  - log-tampering
+  - defense-evasion
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: cloudtrail.amazonaws.com
-        eventName:
-            - StopLogging
-            - DeleteTrail
-            - UpdateTrail
-            - CreateTrail
-            - RemoveTags
-            - PutEventSelectors
-    condition: selection
+  selection:
+    eventSource: cloudtrail.amazonaws.com
+    eventName:
+      - StopLogging
+      - DeleteTrail
+      - UpdateTrail
+      - CreateTrail
+      - RemoveTags
+      - PutEventSelectors
+  condition: selection
 falsepositives:
-    - Legitimate CloudTrail configuration changes by authorized administrators
+  - Legitimate CloudTrail configuration changes by authorized administrators
 level: high
 riskscore: 85
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
 mitretechniques:
-    - T1562.008
+  - T1562.008

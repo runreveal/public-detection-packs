@@ -1,8 +1,20 @@
 name: okta-admin-console-new-device-ip
 displayName: Okta Admin Console Access from New Device and IP
-description: Detects when someone accesses the Okta Admin Console from both a new device and a new IP address simultaneously. This combination of risk factors indicates potential unauthorized access to administrative functions, possibly from a compromised account or credential theft. Admin console access from new devices and IPs should be carefully scrutinized as it represents high-privilege access from unfamiliar sources.
+description:
+  Detects when someone accesses the Okta Admin Console from both a new
+  device and a new IP address simultaneously. This combination of risk factors indicates
+  potential unauthorized access to administrative functions, possibly from a compromised
+  account or credential theft. Admin console access from new devices and IPs should
+  be carefully scrutinized as it represents high-privilege access from unfamiliar
+  sources.
 file: okta-admin-console-new-device-ip.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1078.004
   - okta
   - admin
   - identity-access-management
@@ -14,16 +26,21 @@ categories:
   - risk-behavior
 mitreAttacks:
   - initial-access
-  - privilege-escalation
-  - credential-access
   - persistence
+  - privilege-escalation
+  - defense-evasion
+  - credential-access
 mitreTechniques:
   - T1078.004
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection identifies admin console access from both new devices and new IPs simultaneously. It checks both the behaviors field and logOnlySecurityData for risk indicators. These events warrant immediate investigation due to the administrative privileges involved.'
+  window: "30"
+notes:
+  This detection identifies admin console access from both new devices and new
+  IPs simultaneously. It checks both the behaviors field and logOnlySecurityData for
+  risk indicators. These events warrant immediate investigation due to the administrative
+  privileges involved.
 sourceTypes:
-  - okta 
+  - okta

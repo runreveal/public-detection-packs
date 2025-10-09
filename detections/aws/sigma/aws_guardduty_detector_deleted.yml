@@ -1,37 +1,42 @@
 title: AWS GuardDuty Detector Deleted
 id: 7e4a9d2c-8b5f-47f3-b8e2-4c9a1c3d0e5f
-description: Detects when an AWS GuardDuty detector is deleted or disabled, which would prevent threat detection.
+description:
+  Detects when an AWS GuardDuty detector is deleted or disabled, which
+  would prevent threat detection.
 references:
-    - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_suspend-disable.html
-    - https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteDetector.html
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_suspend-disable.html
+  - https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteDetector.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - findings
-    - security-finding
-    - signal
-    - guardduty
-    - defense-evasion
-    - attack.defense_evasion
-    - attack.t1562.001
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1562.001
+  - aws
+  - cloudtrail
+  - findings
+  - security-finding
+  - signal
+  - guardduty
+  - defense-evasion
+  - attack.defense_evasion
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: guardduty.amazonaws.com
-        eventName:
-            - DeleteDetector
-            - StopMonitoringMembers
-            - DisassociateMembers
-            - DeleteMembers
-    condition: selection
+  selection:
+    eventSource: guardduty.amazonaws.com
+    eventName:
+      - DeleteDetector
+      - StopMonitoringMembers
+      - DisassociateMembers
+      - DeleteMembers
+  condition: selection
 falsepositives:
-    - Legitimate administrative activities when decommissioning a GuardDuty deployment
+  - Legitimate administrative activities when decommissioning a GuardDuty deployment
 level: high
 riskscore: 85
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1562.001
+  - T1562.001

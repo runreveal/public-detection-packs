@@ -1,12 +1,7 @@
 title: Tor Network Traffic
-description: Detect threats from Tor network traffic using RunReveal managed enrichment data.
-categories:
-  - emerging-threats
-  - network-activity
-  - network-activity
-  - signal
-  - threat-intelligence
-  - tor-network
+description:
+  Detect threats from Tor network traffic using RunReveal managed enrichment
+  data.
 sourcetypes:
   - alb
   - cf-gateway-dns
@@ -21,12 +16,26 @@ detection:
   condition: selection1 or selection2
 level: high
 fields:
-  - action # nsg/flow logs
-  - elbStatusCode # elb logs
-  - result # cf-audit logs
+  - action
+  - elbStatusCode
+  - result
 riskscore: 80
 mitreattacks:
-  - command-and-control
   - defense-evasion
+  - command-and-control
 mitretechniques:
   - T1090
+tags:
+  - attack.defense-evasion
+  - attack.command-and-control
+  - attack.t1090
+  - emerging-threats
+  - network-activity
+  - signal
+  - threat-intelligence
+  - tor-network
+  - alb
+  - cf-gateway-dns
+  - cf-gateway-http
+  - flow
+  - nsg-flow

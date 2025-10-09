@@ -1,19 +1,24 @@
 name: okta-policy-changes
 displayName: Okta Policy Changes
 type: sql
-description: >-
+description:
   This signal represents any changes made to Okta policies, including lifecycle,
   rule and application sign on policies.
 file: okta-policy-changes.sql
 categories:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.t1484.002
+  - attack.t1098.003
   - okta
   - admin
   - identity-access-management
   - entity-management
   - policy-changes
   - configuration-change
-schedule: '*/15 * * * *'
-notes: ''
+schedule: "*/15 * * * *"
+notes: ""
 disabled: true
 notificationNames: []
 mitreAttacks:

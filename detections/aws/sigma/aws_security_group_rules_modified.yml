@@ -1,44 +1,46 @@
 title: AWS Security Group Rules Modified
 id: a3032a9b-d5a5-447c-9308-db9be23e4a2f
-description: Detects modifications to AWS Security Group rules, which control network traffic to AWS resources. Attackers may modify these to allow unauthorized access.
+description:
+  Detects modifications to AWS Security Group rules, which control network
+  traffic to AWS resources. Attackers may modify these to allow unauthorized access.
 references:
-    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html
-    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupEgress.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupEgress.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - network-activity
-    - network-configuration
-    - signal
-    - security-group
-    - firewall-modification
-    - attack.defense_evasion
-    - attack.persistence
-    - attack.t1562.007
+  - attack.defense-evasion
+  - attack.t1562.007
+  - aws
+  - cloudtrail
+  - network-activity
+  - network-configuration
+  - signal
+  - security-group
+  - firewall-modification
+  - attack.defense_evasion
+  - attack.persistence
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: ec2.amazonaws.com
-        eventName:
-            - AuthorizeSecurityGroupIngress
-            - AuthorizeSecurityGroupEgress
-            - RevokeSecurityGroupIngress
-            - RevokeSecurityGroupEgress
-            - ModifySecurityGroupRules
-    suspicious_cidr:
-        requestParameters|re: '.*"cidrIp"\s*:\s*"0\.0\.0\.0/0".*'
-    suspicious_ipv6:
-        requestParameters|re: '.*"cidrIpv6"\s*:\s*"::/0".*'
-    condition: selection and (suspicious_cidr or suspicious_ipv6)
+  selection:
+    eventSource: ec2.amazonaws.com
+    eventName:
+      - AuthorizeSecurityGroupIngress
+      - AuthorizeSecurityGroupEgress
+      - RevokeSecurityGroupIngress
+      - RevokeSecurityGroupEgress
+      - ModifySecurityGroupRules
+  suspicious_cidr:
+    requestParameters|re: .*"cidrIp"\s*:\s*"0\.0\.0\.0/0".*
+  suspicious_ipv6:
+    requestParameters|re: .*"cidrIpv6"\s*:\s*"::/0".*
+  condition: selection and (suspicious_cidr or suspicious_ipv6)
 falsepositives:
-    - Legitimate security group changes for public-facing services
+  - Legitimate security group changes for public-facing services
 level: medium
 riskscore: 60
 mitreattacks:
-    - defense-evasion
-    - persistence
+  - defense-evasion
 mitretechniques:
-    - T1562.007
+  - T1562.007

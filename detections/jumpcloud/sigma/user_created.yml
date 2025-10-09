@@ -4,27 +4,27 @@ description: Detects new user account creation in JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.credential-access
+  - attack.persistence
+  - attack.t1136.003
+  - attack.credential-access
+  - jumpcloud
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-management
 sourcetypes:
-    - jumpcloud
-categories:
-    - jumpcloud
-    - jumpcloud
-    - identity-access-management
-    - entity-management
-    - signal
-    - user-management
+  - jumpcloud
 mitreattacks:
-    - persistence
+  - persistence
 mitretechniques:
-    - T1136.003
+  - T1136.003
 detection:
-    selection:
-        normalized.eventName: user_create
-    condition: selection
+  selection:
+    normalized.eventName: user_create
+  condition: selection
 falsepositives:
-    - Legitimate and authorized user creation
+  - Legitimate and authorized user creation
 level: low
 riskscore: 5

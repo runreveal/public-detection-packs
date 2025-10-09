@@ -1,25 +1,35 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: entra-sign-in-fail-during-mfa
 displayName: Entra Sign-In Fail During MFA
-description: >
-  This signal will fire when a user attempts to sign in to Azure Entra 
-  and fails during the Multi Factor Authentication challenge.
+description:
+  "This signal will fire when a user attempts to sign in to Azure Entra  and
+  fails during the Multi Factor Authentication challenge.
+
+  "
 file: auth_fail_during_mfa.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1110
+  - attack.t1556.006
   - azure
   - entra
   - identity-access-management
   - authentication
   - signal
   - mfa
-schedule: '*/15 * * * *'
+  - aad
+schedule: "*/15 * * * *"
 severity: Low
 riskScore: 15
 sourceTypes:
   - aad
 mitreAttacks:
+  - initial-access
+  - persistence
+  - defense-evasion
   - credential-access
 mitreTechniques:
   - T1110

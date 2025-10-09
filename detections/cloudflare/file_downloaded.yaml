@@ -1,10 +1,13 @@
-# Remove disabled property to start using the detection
 disabled: false
 name: file-downloaded
 displayName: File Downloaded
 description: A file was downloaded through Cloudflare gateway.
 file: file_downloaded.sql
-categories: 
+categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1005
+  - attack.t1041
   - cloudflare
   - gateway
   - network-activity
@@ -12,7 +15,8 @@ categories:
   - signal
   - file-activity
   - data-exposure
-schedule: '*/15 * * * *'
+  - cf-gateway-http
+schedule: "*/15 * * * *"
 riskScore: 30
 severity: Low
 sourceTypes:

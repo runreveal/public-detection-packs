@@ -1,13 +1,16 @@
 name: github-user-added-or-removed-from-org
 displayName: GitHub User Added or Removed from Org
-description: >-
-  Detects when users are added to or removed from GitHub organizations. Organization
-  membership changes can significantly impact access to repositories, teams, and
-  organizational resources. Unauthorized membership modifications could indicate
-  account compromise, insider threats, or administrative errors that could lead
-  to unauthorized access or loss of legitimate access.
+description:
+  Detects when users are added to or removed from GitHub organizations.
+  Organization membership changes can significantly impact access to repositories,
+  teams, and organizational resources. Unauthorized membership modifications could
+  indicate account compromise, insider threats, or administrative errors that could
+  lead to unauthorized access or loss of legitimate access.
 file: github-user-added-or-removed-from-org.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
   - github
   - organization
   - identity-access-management
@@ -15,11 +18,10 @@ categories:
   - signal
   - user-management
 mitreAttacks:
-  - privilege-escalation
   - persistence
-  - initial-access
+  - privilege-escalation
 mitreTechniques:
   - T1098
 severity: Medium
 riskScore: 70
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"

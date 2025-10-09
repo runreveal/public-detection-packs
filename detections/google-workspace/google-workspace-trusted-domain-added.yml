@@ -3,6 +3,12 @@ displayName: Trusted domain added
 description: Detects when a trusted domain is added to Google Workspace
 file: google-workspace-trusted-domain-added.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1484.002
+  - attack.t1078.004
   - google-workspace
   - admin
   - identity-access-management
@@ -11,17 +17,20 @@ categories:
   - trusted-domains
   - domain-settings
   - configuration-change
+  - gsuite
 mitreAttacks:
+  - initial-access
   - persistence
-  - lateral-movement
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
-  - T1484.002  # Trust Modification
-  - T1078.004  # Valid Accounts: Cloud Accounts
+  - T1484.002
+  - T1078.004
 severity: High
 riskScore: 85
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

@@ -4,32 +4,33 @@ description: Detects when a network zone is modified or deleted in JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.defense-evasion
-    - attack.persistence
+  - attack.defense-evasion
+  - attack.impact
+  - attack.t1562.001
+  - attack.persistence
+  - jumpcloud
+  - system-activity
+  - configuration-access
+  - signal
+  - network-zone
 sourcetypes:
-    - jumpcloud
-categories:
-    - jumpcloud
-    - jumpcloud
-    - system-activity
-    - configuration-access
-    - signal
-    - network-zone
+  - jumpcloud
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
+  - impact
 mitretechniques:
-    - T1562.001
+  - T1562.001
 detection:
-    selection:
-        normalized.eventName:
-            - network_zone_deactivate
-            - network_zone_delete
-            - zone_deactivate
-            - zone_delete
-    condition: selection
+  selection:
+    normalized.eventName:
+      - network_zone_deactivate
+      - network_zone_delete
+      - zone_deactivate
+      - zone_delete
+  condition: selection
 falsepositives:
-    - Legitimate network zone changes by authorized administrators
+  - Legitimate network zone changes by authorized administrators
 level: low
 riskscore: 10

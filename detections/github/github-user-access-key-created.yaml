@@ -1,14 +1,18 @@
 name: github-user-access-key-created
 displayName: GitHub User Access Key Created
-description: >-
-  Detects creation of new SSH public keys for GitHub user accounts. SSH key
-  creation can indicate legitimate setup of development environments but may
-  also represent unauthorized access attempts, account compromise, or persistence
-  mechanisms. New SSH keys should be monitored to ensure they are authorized
-  and properly managed according to security policies.
+description:
+  Detects creation of new SSH public keys for GitHub user accounts. SSH
+  key creation can indicate legitimate setup of development environments but may also
+  represent unauthorized access attempts, account compromise, or persistence mechanisms.
+  New SSH keys should be monitored to ensure they are authorized and properly managed
+  according to security policies.
 file: github-user-access-key-created.sql
 categories:
-  - github
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.lateral-movement
+  - attack.t1098.001
   - github
   - identity-access-management
   - authentication
@@ -18,10 +22,11 @@ categories:
   - ssh-keys
 mitreAttacks:
   - persistence
+  - privilege-escalation
   - credential-access
-  - initial-access
+  - lateral-movement
 mitreTechniques:
   - T1098.001
 severity: Medium
 riskScore: 55
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"

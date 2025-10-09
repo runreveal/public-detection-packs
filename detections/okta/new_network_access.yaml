@@ -1,12 +1,14 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: okta-new-network-access
 displayName: User Access from New Network
 description: User accessed Okta from a network that they previously have not used.
 file: new_network_access.sql
 categories:
-  - okta
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
   - okta
   - identity-access-management
   - authentication
@@ -15,13 +17,16 @@ categories:
   - network-access
 mitreAttacks:
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
 severity: Low
 riskScore: 25
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-  ignoreNetworksByAS: '[]'
+  window: "30"
+  ignoreNetworksByAS: "[]"
 sourceTypes:
   - okta

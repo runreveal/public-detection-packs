@@ -1,8 +1,18 @@
 name: okta-mfa-bypass-attempt
 displayName: Okta MFA Bypass Attempt
-description: Detects attempts to bypass multi-factor authentication (MFA) in Okta. MFA bypass attempts are serious security events that could indicate account compromise, social engineering attacks, or malicious insider activity. These events should be investigated immediately as they represent direct attempts to circumvent critical security controls.
+description:
+  Detects attempts to bypass multi-factor authentication (MFA) in Okta.
+  MFA bypass attempts are serious security events that could indicate account compromise,
+  social engineering attacks, or malicious insider activity. These events should be
+  investigated immediately as they represent direct attempts to circumvent critical
+  security controls.
 file: okta-mfa-bypass-attempt.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1556.006
   - okta
   - mfa
   - identity-access-management
@@ -11,17 +21,20 @@ categories:
   - mfa-bypass
   - bypass-attempt
 mitreAttacks:
+  - initial-access
+  - persistence
   - defense-evasion
   - credential-access
-  - initial-access
-  - privilege-escalation
 mitreTechniques:
   - T1556.006
 severity: Critical
 riskScore: 95
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection identifies attempts to bypass MFA requirements. All MFA bypass attempts should be treated as high-priority security incidents and investigated immediately.'
+  window: "30"
+notes:
+  This detection identifies attempts to bypass MFA requirements. All MFA bypass
+  attempts should be treated as high-priority security incidents and investigated
+  immediately.
 sourceTypes:
-  - okta 
+  - okta

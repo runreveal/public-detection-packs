@@ -1,11 +1,13 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: notion-sharing-and-visibility-settings-updated
 displayName: Sharing and visibility settings updated
 description: Detects when a Notion page's sharing and visibility settings are updated
 file: notion-sharing-and-visibility-settings-updated.sql
 categories:
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1070.005
+  - attack.t1484.002
   - notion
   - sharing
   - system-activity
@@ -14,15 +16,15 @@ categories:
   - sharing-settings
   - visibility-settings
 mitreAttacks:
-  - persistence
+  - privilege-escalation
   - defense-evasion
 mitreTechniques:
-  - T1070.005  # Indicator Removal on Host: Network Share Connection Removal
-  - T1484.002  # Trust Modification
+  - T1070.005
+  - T1484.002
 riskScore: 40
 severity: Medium
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - notion

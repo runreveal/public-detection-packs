@@ -1,13 +1,18 @@
 name: github-repository-created
 displayName: GitHub Repository Created
-description: >-
-  Detects creation of new GitHub repositories within the organization. Repository
-  creation can indicate legitimate development activities but may also represent
-  unauthorized resource usage, data exfiltration attempts, or shadow IT practices.
-  New repositories should be monitored to ensure they comply with organizational
+description:
+  Detects creation of new GitHub repositories within the organization.
+  Repository creation can indicate legitimate development activities but may also
+  represent unauthorized resource usage, data exfiltration attempts, or shadow IT
+  practices. New repositories should be monitored to ensure they comply with organizational
   policies and security standards.
 file: github-repository-created.sql
 categories:
+  - attack.defense-evasion
+  - attack.lateral-movement
+  - attack.collection
+  - attack.t1074.001
+  - attack.t1550.001
   - github
   - repository
   - system-activity
@@ -15,12 +20,12 @@ categories:
   - signal
   - resource-creation
 mitreAttacks:
-  - persistence
-  - collection
   - defense-evasion
+  - lateral-movement
+  - collection
 mitreTechniques:
   - T1074.001
   - T1550.001
 severity: Low
 riskScore: 30
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"

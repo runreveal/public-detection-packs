@@ -1,26 +1,36 @@
 title: Slack Anomaly Detection Triggered
 id: slack-anomaly-detected
 status: experimental
-description: Detects when Slack's built-in anomaly detection flags suspicious user or app behavior
+description:
+  Detects when Slack's built-in anomaly detection flags suspicious user
+  or app behavior
 author: RunReveal
 date: 2025/07/07
 references:
   - https://slack.engineering/slack-audit-logs-and-anomalies/
 tags:
-  - attack.collection
-  - attack.TA0009
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
   - attack.exfiltration
-  - attack.TA0010
+  - attack.t1078
+  - attack.t1537
+  - attack.collection
+  - attack.tA0009
+  - attack.tA0010
   - attack.initial_access
-  - attack.TA0001
+  - attack.tA0001
+  - slack
+  - identity-access-management
 sourcetypes:
   - slack
-categories:
-  - slack
 mitreattacks:
-  - collection
-  - exfiltration
   - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
+  - exfiltration
 mitretechniques:
   - T1078
   - T1537

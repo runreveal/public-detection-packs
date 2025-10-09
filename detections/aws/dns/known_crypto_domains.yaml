@@ -1,13 +1,13 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: known-crypto-domains
 displayName: Known Crypto Domains
-description: >
+description:
   This detection will check if there are any DNS requests against a known
   crypto domain.
 file: known_crypto_domains.sql
 categories:
+  - attack.command-and-control
+  - attack.t1071.004
   - aws
   - dns
   - network-activity
@@ -15,12 +15,13 @@ categories:
   - signal
   - threat-intelligence
   - cryptocurrency
-schedule: '*/15 * * * *'
+  - awsdns
+schedule: "*/15 * * * *"
 riskScore: 80
 severity: High
 sourceTypes:
   - awsdns
 mitreAttacks:
-  - collection
+  - command-and-control
 mitreTechniques:
   - T1071.004

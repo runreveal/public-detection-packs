@@ -1,8 +1,21 @@
 name: okta-admin-mfa-disabled
 displayName: Okta Admin MFA Disabled
-description: Detects when multi-factor authentication (MFA) is disabled for admin users or when MFA-related policies are modified. This includes MFA factor deactivation, MFA resets, and policy changes that could weaken MFA requirements for administrative accounts. Disabling admin MFA significantly reduces security posture and could indicate account compromise or insider threats.
+description:
+  Detects when multi-factor authentication (MFA) is disabled for admin
+  users or when MFA-related policies are modified. This includes MFA factor deactivation,
+  MFA resets, and policy changes that could weaken MFA requirements for administrative
+  accounts. Disabling admin MFA significantly reduces security posture and could indicate
+  account compromise or insider threats.
 file: okta-admin-mfa-disabled.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.impact
+  - attack.t1556.006
+  - attack.t1098.003
   - okta
   - admin
   - identity-access-management
@@ -13,18 +26,23 @@ categories:
   - policy-change
   - defense-evasion
 mitreAttacks:
-  - defense-evasion
+  - initial-access
   - persistence
-  - credential-access
   - privilege-escalation
+  - defense-evasion
+  - credential-access
+  - impact
 mitreTechniques:
   - T1556.006
   - T1098.003
 severity: Critical
 riskScore: 95
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
-notes: 'This detection looks for MFA being disabled for admin users through factor deactivation, resets, or policy changes. It uses pattern matching to identify admin accounts and MFA-related policy modifications.'
+  window: "30"
+notes:
+  This detection looks for MFA being disabled for admin users through factor
+  deactivation, resets, or policy changes. It uses pattern matching to identify admin
+  accounts and MFA-related policy modifications.
 sourceTypes:
-  - okta 
+  - okta

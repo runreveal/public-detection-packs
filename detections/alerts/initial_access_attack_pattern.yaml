@@ -1,11 +1,16 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: initial-access-attack-pattern
 displayName: Potential initial access attack pattern
 description: Suspicious initial access was followed by another attack technique
 file: initial_access_attack_pattern.sql
 categories:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - attack.t1190
+  - attack.t1566
   - general
   - findings
   - security-finding
@@ -15,17 +20,17 @@ notificationNames:
   - email
 severity: Critical
 riskScore: 90
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '14400'
-  signalCount: '2'
-  ignoreIPs: '[]'
-  ignoreEmails: '[]'
+  window: "14400"
+  signalCount: "2"
+  ignoreIPs: "[]"
+  ignoreEmails: "[]"
 mitreAttacks:
   - initial-access
-  - execution
   - persistence
   - privilege-escalation
+  - defense-evasion
 mitreTechniques:
   - T1078
   - T1190

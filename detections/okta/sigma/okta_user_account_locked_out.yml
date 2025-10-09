@@ -2,35 +2,36 @@ title: Okta User Account Locked Out
 id: 14701da0-4b0f-4ee6-9c95-2ffb4e73bb9a
 description: Detects when an user account is locked out.
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
-    - attack.impact
-    - attack.t1531
+  - attack.credential-access
+  - attack.impact
+  - attack.t1531
+  - attack.t1110
+  - okta
+  - auth
+  - identity-access-management
+  - authentication
+  - signal
+  - account-lockout
+  - authentication-failure
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - auth
-    - identity-access-management
-    - authentication
-    - signal
-    - account-lockout
-    - authentication-failure
+  - okta
 mitreattacks:
-    - impact
-    - persistence
+  - credential-access
+  - impact
 mitretechniques:
-    - T1531      # Account Access Removal
-    - T1110      # Brute Force
+  - T1531
+  - T1110
 detection:
-    selection:
-        displaymessage: Max sign in attempts exceeded
-    condition: selection
+  selection:
+    displaymessage: Max sign in attempts exceeded
+  condition: selection
 falsepositives:
-    - Unknown
+  - Unknown
 level: high
 riskscore: 80

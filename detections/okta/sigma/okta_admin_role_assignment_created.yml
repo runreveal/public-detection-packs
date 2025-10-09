@@ -1,31 +1,35 @@
 title: Okta Admin Role Assignment Created
 id: 139bdd4b-9cd7-49ba-a2f4-744d0a8f5d8c
-description: Detects when a new admin role assignment is created. Which could be a sign of privilege escalation or persistence
+description:
+  Detects when a new admin role assignment is created. Which could be a
+  sign of privilege escalation or persistence
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Nikita Khalimonenkov
 date: 2023-01-19
 tags:
-    - attack.persistence
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098.003
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - admin-role
+  - role-assignment
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - admin-role
-    - role-assignment
+  - okta
 mitreattacks:
-    - persistence
+  - persistence
+  - privilege-escalation
 mitretechniques:
-    - T1098.003
+  - T1098.003
 detection:
-    selection:
-        eventtype: 'iam.resourceset.bindings.add'
-    condition: selection
+  selection:
+    eventtype: iam.resourceset.bindings.add
+  condition: selection
 falsepositives:
-    - Legitimate creation of a new admin role assignment
+  - Legitimate creation of a new admin role assignment
 level: medium

@@ -1,8 +1,15 @@
 name: google-workspace-calendar-public-acl
 displayName: Google Workspace Calendar Made Public
-description: Detects when a Google Calendar's access control list (ACL) is changed to make the calendar publicly accessible. This occurs when the grantee_email is set to the public principal (__public_principal__@public.calendar.google.com), which allows anyone on the internet to access the calendar. This could indicate accidental exposure of sensitive calendar information or potential data exfiltration.
+description:
+  Detects when a Google Calendar's access control list (ACL) is changed
+  to make the calendar publicly accessible. This occurs when the grantee_email is
+  set to the public principal (__public_principal__@public.calendar.google.com), which
+  allows anyone on the internet to access the calendar. This could indicate accidental
+  exposure of sensitive calendar information or potential data exfiltration.
 file: google-workspace-calendar-public-acl.sql
 categories:
+  - attack.exfiltration
+  - attack.t1537
   - google-workspace
   - calendar
   - identity-access-management
@@ -11,16 +18,16 @@ categories:
   - calendar-sharing
   - public-access
   - data-exposure
+  - gsuite
 mitreAttacks:
-  - collection
   - exfiltration
 mitreTechniques:
   - T1537
 severity: High
 riskScore: 75
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite

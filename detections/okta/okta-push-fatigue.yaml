@@ -1,25 +1,30 @@
 name: okta-push-fatigue
 displayName: Okta Push Fatigue
 type: sql
-description: >-
-  This detection notifies when a series of failed Okta Push MFA requests are
-  followed by a Successful one, indicating possible MFA push fatigue attack
-  against a given user in a 10 minute window.
+description:
+  This detection notifies when a series of failed Okta Push MFA requests
+  are followed by a Successful one, indicating possible MFA push fatigue attack against
+  a given user in a 10 minute window.
 file: okta-push-fatigue.sql
 categories:
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1110
+  - attack.t1556.006
   - okta
   - mfa
   - identity-access-management
   - authentication
   - push-fatigue
   - mfa-bypass
-schedule: '*/30 * * * *'
-notes: ''
+schedule: "*/30 * * * *"
+notes: ""
 disabled: false
 notificationNames: []
 mitreAttacks:
-  - initial-access
-  - privilege-escalation
+  - persistence
+  - defense-evasion
   - credential-access
 mitreTechniques:
   - T1110

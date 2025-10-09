@@ -3,20 +3,25 @@ displayName: failed-login
 description: A user failed to log in to Google Workspace.
 file: google-workspace-failed-login.sql
 categories:
+  - attack.initial-access
+  - attack.credential-access
+  - attack.t1110
   - google-workspace
   - identity-access-management
   - authentication
   - signal
   - failed-login
+  - gsuite
 mitreAttacks:
+  - initial-access
   - credential-access
 mitreTechniques:
   - T1110
 severity: Low
 riskScore: 10
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
   - gsuite

@@ -1,38 +1,45 @@
 title: AWS EC2 Instance Launched with Unusual AMI
 id: e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0
-description: Detects when EC2 instances are launched with AMIs (Amazon Machine Images) from unknown or unusual sources, which could indicate malicious activity.
+description:
+  Detects when EC2 instances are launched with AMIs (Amazon Machine Images)
+  from unknown or unusual sources, which could indicate malicious activity.
 references:
-    - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html
-    - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html
+  - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - process-activity
-    - signal
-    - ec2
-    - unusual-ami
-    - attack.execution
-    - attack.persistence
-    - attack.t1078
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1078
+  - aws
+  - cloudtrail
+  - system-activity
+  - process-activity
+  - signal
+  - ec2
+  - unusual-ami
+  - attack.execution
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: ec2.amazonaws.com
-        eventName: RunInstances
-    public_ami:
-        requestParameters.instancesSet.items.imageId|startswith: 'ami-'
-    condition: selection and public_ami
+  selection:
+    eventSource: ec2.amazonaws.com
+    eventName: RunInstances
+  public_ami:
+    requestParameters.instancesSet.items.imageId|startswith: ami-
+  condition: selection and public_ami
 falsepositives:
-    - Legitimate use of public AMIs for development or testing
-    - Use of community AMIs from trusted sources
+  - Legitimate use of public AMIs for development or testing
+  - Use of community AMIs from trusted sources
 level: medium
 riskscore: 60
 mitreattacks:
-    - execution
-    - persistence
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
 mitretechniques:
-    - T1078
+  - T1078

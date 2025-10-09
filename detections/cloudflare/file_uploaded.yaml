@@ -3,7 +3,11 @@ name: file-uploaded
 displayName: File Uploaded
 description: A file was uploaded through Cloudflare gateway.
 file: file_uploaded.sql
-categories: 
+categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1005
+  - attack.t1567
   - cloudflare
   - gateway
   - network-activity
@@ -11,7 +15,8 @@ categories:
   - signal
   - file-activity
   - data-exposure
-schedule: '*/15 * * * *'
+  - cf-gateway-http
+schedule: "*/15 * * * *"
 riskScore: 30
 severity: Low
 sourceTypes:

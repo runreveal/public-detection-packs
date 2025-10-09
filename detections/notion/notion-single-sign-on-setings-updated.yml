@@ -1,11 +1,15 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: notion-single-sign-on-setings-updated
 displayName: Single Sign-On setings updated
 description: Detects when the Single Sign-On settings are updated in Notion
 file: notion-single-sign-on-setings-updated.sql
 categories:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - attack.t1484.002
+  - attack.t1556.006
   - notion
   - admin
   - identity-access-management
@@ -15,14 +19,16 @@ categories:
   - single-sign-on
 mitreAttacks:
   - persistence
+  - privilege-escalation
   - defense-evasion
+  - credential-access
 mitreTechniques:
-  - T1484.002  # Trust Modification
-  - T1556.006  # Modify Authentication Process: Multi-Factor Authentication
+  - T1484.002
+  - T1556.006
 severity: High
 riskScore: 50
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - notion

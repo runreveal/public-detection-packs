@@ -1,33 +1,39 @@
 title: AWS IAM User Access Key Created
 id: y3z4a5b6-c7d8-e9f0-g1h2-i3j4k5l6m7n8
-description: Detects when a new IAM access key is created for a user, which could indicate persistence or exfiltration preparation.
+description:
+  Detects when a new IAM access key is created for a user, which could
+  indicate persistence or exfiltration preparation.
 references:
-    - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
-    - https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
+  - https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - identity-access-management
-    - entity-management
-    - signal
-    - access-key-creation
-    - iam
-    - attack.persistence
-    - attack.t1098
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
+  - aws
+  - cloudtrail
+  - identity-access-management
+  - entity-management
+  - signal
+  - access-key-creation
+  - iam
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: iam.amazonaws.com
-        eventName: CreateAccessKey
-    condition: selection
+  selection:
+    eventSource: iam.amazonaws.com
+    eventName: CreateAccessKey
+  condition: selection
 falsepositives:
-    - Legitimate access key creation for new applications or key rotation
+  - Legitimate access key creation for new applications or key rotation
 level: low
 riskscore: 40
 mitreattacks:
-    - persistence
+  - persistence
+  - privilege-escalation
+  - credential-access
 mitretechniques:
-    - T1098.001
+  - T1098.001

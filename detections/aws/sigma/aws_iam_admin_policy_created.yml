@@ -1,23 +1,25 @@
 title: AWS IAM Policy Created with Admin Privileges
 id: 5f4c71d2-8025-48c9-a98e-f5f9d7b24701
-description: Detects the creation of IAM policies that grant administrator privileges, which could indicate privilege escalation attempts.
+description:
+  Detects the creation of IAM policies that grant administrator privileges,
+  which could indicate privilege escalation attempts.
 references:
   - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html
   - https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html
 author: Claude
 date: 2024-06-20
-categories:
-  - aws
-  - identity-access-management
-  - signal
 tags:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1098
   - cloudtrail
   - iam
   - admin-policy
   - privilege-escalation
   - attack.privilege_escalation
-  - attack.persistence
-  - attack.t1098
+  - aws
+  - identity-access-management
+  - signal
 sourcetypes:
   - cloudtrail
 detection:
@@ -33,7 +35,7 @@ detection:
       - AttachRolePolicy
       - AttachGroupPolicy
   filter_hcp_terraform:
-    userIdentity.sessionContext.sessionIssuer.userName: 'hcp-terraform'
+    userIdentity.sessionContext.sessionIssuer.userName: hcp-terraform
   filter_admin_wildcard:
     requestParameters|contains:
       - '"Action":"*"'
@@ -41,8 +43,10 @@ detection:
   filter_iam_wildcard:
     requestParameters|contains: '"iam:*"'
   filter_passrole_wildcard:
-    requestParameters|contains: 'iam:PassRole'
-  condition: selection and not filter_hcp_terraform and (all of filter_admin_wildcard or filter_iam_wildcard or filter_passrole_wildcard)
+    requestParameters|contains: iam:PassRole
+  condition:
+    selection and not filter_hcp_terraform and (all of filter_admin_wildcard
+    or filter_iam_wildcard or filter_passrole_wildcard)
 falsepositives:
   - Legitimate creation of administrative policies by authorized administrators
   - HCP Terraform service activities

@@ -2,32 +2,37 @@ title: Okta API Token Revoked
 id: cf1dbc6b-6205-41b4-9b88-a83980d2255b
 description: Detects when a API Token is revoked.
 references:
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
-    - attack.impact
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
+  - attack.impact
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - api-token
+  - token-revocation
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - api-token
-    - token-revocation
+  - okta
 mitreattacks:
-    - defense-evasion
+  - persistence
+  - privilege-escalation
+  - credential-access
 mitretechniques:
-    - T1098.001
+  - T1098.001
 detection:
-    selection:
-        eventtype: system.api_token.revoke
-    condition: selection
+  selection:
+    eventtype: system.api_token.revoke
+  condition: selection
 falsepositives:
-    - Unknown
+  - Unknown
 level: medium
 riskscore: 100

@@ -1,34 +1,37 @@
 title: AWS CloudWatch Log Retention Policy Deletion
 id: k7l8m9n0-p1q2-r3s4-t5u6-v7w8x9y0z1a2
-description: Detects deletion of CloudWatch Log retention policies, which could indicate attempts to keep logs indefinitely or eliminate log lifecycle management.
+description:
+  Detects deletion of CloudWatch Log retention policies, which could indicate
+  attempts to keep logs indefinitely or eliminate log lifecycle management.
 references:
-    - https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html
-    - https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html
+  - https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html
+  - https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html
 author: Claude
 date: 2024-06-20
 tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - audit-activity
-    - signal
-    - cloudwatch
-    - log-tampering
-    - attack.defense_evasion
-    - attack.t1070
+  - attack.defense-evasion
+  - attack.t1070
+  - aws
+  - cloudtrail
+  - system-activity
+  - audit-activity
+  - signal
+  - cloudwatch
+  - log-tampering
+  - attack.defense_evasion
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: logs.amazonaws.com
-        eventName: DeleteRetentionPolicy
-    condition: selection
+  selection:
+    eventSource: logs.amazonaws.com
+    eventName: DeleteRetentionPolicy
+  condition: selection
 falsepositives:
-    - Legitimate log management and cleanup
-    - Cost optimization efforts
+  - Legitimate log management and cleanup
+  - Cost optimization efforts
 level: medium
 riskscore: 65
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
 mitretechniques:
-    - T1070
+  - T1070

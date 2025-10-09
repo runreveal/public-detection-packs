@@ -1,8 +1,16 @@
 name: google-workspace-customer-takeout
 displayName: Google Workspace Customer Takeout Activity
-description: Detects Google Workspace customer takeout events including creation and completion of data export requests. Customer takeout allows users to export their data from Google services, which could indicate potential data exfiltration or legitimate backup activities that should be monitored.
+description:
+  Detects Google Workspace customer takeout events including creation and
+  completion of data export requests. Customer takeout allows users to export their
+  data from Google services, which could indicate potential data exfiltration or legitimate
+  backup activities that should be monitored.
 file: google-workspace-customer-takeout.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1020
+  - attack.t1114
   - google-workspace
   - admin
   - system-activity
@@ -11,6 +19,7 @@ categories:
   - data-export
   - data-exfiltration
   - takeout
+  - gsuite
 mitreAttacks:
   - collection
   - exfiltration
@@ -19,9 +28,9 @@ mitreTechniques:
   - T1114
 severity: Medium
 riskScore: 70
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - google-workspace
-  - gsuite 
+  - gsuite

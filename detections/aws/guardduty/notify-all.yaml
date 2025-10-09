@@ -1,11 +1,5 @@
 title: Notify on all Guardduty events
 description: Send a notification when receiving any event from a Guardduty source
-categories:
-  - aws
-  - guardduty
-  - findings
-  - security-finding
-  - monitoring
 logsource:
   product: aws
   service: guardduty
@@ -16,20 +10,25 @@ detection:
 level: medium
 mitreattacks:
   - initial-access
-  - execution
   - persistence
   - privilege-escalation
   - defense-evasion
-  - credential-access
-  - discovery
-  - lateral-movement
-  - collection
-  - command-and-control
-  - exfiltration
-  - impact
 mitretechniques:
   - T1190
   - T1078
   - T1562
 notificationnames:
   - email
+tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.t1190
+  - attack.t1078
+  - attack.t1562
+  - aws
+  - guardduty
+  - findings
+  - security-finding
+  - monitoring

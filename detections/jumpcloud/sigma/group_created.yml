@@ -4,27 +4,26 @@ description: Detects when a new group is created in JumpCloud
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.persistence
+  - attack.persistence
+  - attack.t1136
+  - jumpcloud
+  - identity-access-management
+  - entity-management
+  - signal
+  - group-management
 sourcetypes:
-    - jumpcloud
-categories:
-    - jumpcloud
-    - jumpcloud
-    - identity-access-management
-    - entity-management
-    - signal
-    - group-management
+  - jumpcloud
 mitreattacks:
-    - persistence
+  - persistence
 mitretechniques:
-    - T1136
+  - T1136
 detection:
-    selection:
-        normalized.eventName: 'group_create'
-    condition: selection
+  selection:
+    normalized.eventName: group_create
+  condition: selection
 falsepositives:
-    - Legitimate group creation by authorized administrators
+  - Legitimate group creation by authorized administrators
 level: low
 riskscore: 5

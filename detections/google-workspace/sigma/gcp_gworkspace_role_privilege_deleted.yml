@@ -3,35 +3,41 @@ id: bf638ef7-4d2d-44bb-a1dc-a238252e6267
 status: test
 description: Detects when an a role privilege is deleted in Google Workspace.
 references:
-    - https://cloud.google.com/logging/docs/audit/gsuite-audit-logging#3
-    - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-delegated-admin-settings
+  - https://cloud.google.com/logging/docs/audit/gsuite-audit-logging#3
+  - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-delegated-admin-settings
 author: Austin Songer
 date: 2021-08-24
 modified: 2023-10-11
 tags:
-    - attack.impact
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.impact
+  - attack.t1098.003
+  - google-workspace
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - role-management
+  - admin-privilege
+  - gsuite
 sourcetypes:
-    - gsuite
-categories:
-    - google-workspace
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - role-management
-    - admin-privilege
+  - gsuite
 logsource:
-    product: gcp
-    service: google_workspace.admin
+  product: gcp
+  service: google_workspace.admin
 detection:
-    selection:
-        eventService: admin.googleapis.com
-        eventName: REMOVE_PRIVILEGE
-    condition: selection
+  selection:
+    eventService: admin.googleapis.com
+    eventName: REMOVE_PRIVILEGE
+  condition: selection
 falsepositives:
-    - Unknown
-
+  - Unknown
 level: medium
 riskscore: 50
 mitretechniques:
-    - T1098.003
+  - T1098.003
+mitreattacks:
+  - persistence
+  - privilege-escalation
+  - impact

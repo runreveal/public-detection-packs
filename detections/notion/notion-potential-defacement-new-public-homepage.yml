@@ -1,11 +1,12 @@
-# Remove disabled property to start using the detection
 disabled: true
-
 name: notion-potential-defacement-new-public-homepage
 displayName: Potential defacement new public homepage
 description: New notion public homepage created
 file: notion-potential-defacement-new-public-homepage.sql
 categories:
+  - attack.impact
+  - attack.t1491.002
+  - attack.t1496
   - notion
   - sharing
   - system-activity
@@ -14,15 +15,14 @@ categories:
   - public-homepage
   - defacement
 mitreAttacks:
-  - execution
   - impact
 mitreTechniques:
-  - T1491.002  # Defacement: External Defacement
-  - T1496      # Resource Hijacking
+  - T1491.002
+  - T1496
 riskScore: 40
 severity: Medium
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  window: '30'
+  window: "30"
 sourceTypes:
   - notion

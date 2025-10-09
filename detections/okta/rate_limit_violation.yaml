@@ -3,22 +3,26 @@ displayName: Rate limit violation
 file: rate_limit_violation.sql
 description: User received a ratelimit violation within okta
 categories:
-  - okta
+  - attack.credential-access
+  - attack.impact
+  - attack.t1110
+  - attack.t1499
   - okta
   - system-activity
   - security-finding
   - signal
   - rate-limiting
 mitreAttacks:
-  - execution
+  - credential-access
+  - impact
 mitreTechniques:
   - T1110
   - T1499
 severity: Low
 riskScore: 20
-schedule: '*/15 * * * *'
+schedule: "*/15 * * * *"
 parameters:
-  ignoreIPs: '[]'
-  ignoreEmails: '[]'
+  ignoreIPs: "[]"
+  ignoreEmails: "[]"
 sourceTypes:
   - okta

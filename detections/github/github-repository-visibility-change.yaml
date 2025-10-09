@@ -1,14 +1,16 @@
 name: github-repository-visibility-change
 displayName: GitHub Repository Visibility Change
-description: >-
-  Detects changes to GitHub repository visibility settings, particularly when
-  private repositories are made public or access permissions are modified.
-  Repository visibility changes can have significant security implications,
-  potentially exposing sensitive code, credentials, or proprietary information
-  to unauthorized parties. These changes should be carefully monitored and
-  validated.
+description:
+  Detects changes to GitHub repository visibility settings, particularly
+  when private repositories are made public or access permissions are modified. Repository
+  visibility changes can have significant security implications, potentially exposing
+  sensitive code, credentials, or proprietary information to unauthorized parties.
+  These changes should be carefully monitored and validated.
 file: github-repository-visibility-change.sql
 categories:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1530
   - github
   - repository
   - system-activity
@@ -18,11 +20,10 @@ categories:
   - data-exposure
   - visibility-change
 mitreAttacks:
+  - collection
   - exfiltration
-  - defense-evasion
-  - impact
 mitreTechniques:
   - T1530
 severity: High
 riskScore: 80
-schedule: '*/15 * * * *' 
+schedule: "*/15 * * * *"
