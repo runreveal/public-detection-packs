@@ -8,15 +8,14 @@ references:
 tags:
   - attack.defense-evasion
   - attack.persistence
-sourcetypes:
-  - jumpcloud
-categories:
   - jumpcloud
   - jumpcloud
   - system-activity
   - configuration-access
   - signal
   - network-zone
+sourcetypes:
+  - jumpcloud
 mitreattacks:
   - defense-evasion
   - impact

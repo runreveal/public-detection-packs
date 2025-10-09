@@ -8,6 +8,12 @@ date: 2021-08-16
 modified: 2022-10-09
 tags:
   - attack.impact
+  - gcp
+  - network
+  - network-activity
+  - security-finding
+  - signal
+  - vpn
 sourcetypes:
   - gcp
 detection:
@@ -24,13 +30,6 @@ falsepositives:
     known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 riskscore: 50
-categories:
-  - gcp
-  - network
-  - network-activity
-  - security-finding
-  - signal
-  - vpn
 mitreattacks:
   - defense-evasion
   - command-and-control

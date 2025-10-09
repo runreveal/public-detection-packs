@@ -8,6 +8,12 @@ date: 2021-10-15
 modified: 2022-12-25
 tags:
   - attack.impact
+  - gcp
+  - database
+  - system-activity
+  - entity-management
+  - signal
+  - sql-database
 sourcetypes:
   - gcp
 detection:
@@ -26,13 +32,6 @@ falsepositives:
     known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 riskscore: 50
-categories:
-  - gcp
-  - database
-  - system-activity
-  - entity-management
-  - signal
-  - sql-database
 mitreattacks:
   - impact
 mitretechniques:

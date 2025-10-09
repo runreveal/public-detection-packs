@@ -4,28 +4,27 @@ description: Detects new user account creation
 author: Nasreddine Bencherchali (Nextron Systems)
 date: 2023-10-25
 references:
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://developer.okta.com/docs/reference/api/event-types/
 tags:
-    - attack.credential-access
+  - attack.credential-access
+  - okta
+  - admin
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-creation
+  - user-lifecycle
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - admin
-    - identity-access-management
-    - entity-management
-    - signal
-    - user-creation
-    - user-lifecycle
+  - okta
 mitreattacks:
-    - persistence
+  - persistence
 mitretechniques:
-    - T1136.003
+  - T1136.003
 detection:
-    selection:
-        eventtype: 'user.lifecycle.create'
-    condition: selection
+  selection:
+    eventtype: user.lifecycle.create
+  condition: selection
 falsepositives:
-    - Legitimate and authorized user creation
+  - Legitimate and authorized user creation
 level: low
 riskscore: 10

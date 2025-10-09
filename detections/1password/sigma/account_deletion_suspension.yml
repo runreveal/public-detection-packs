@@ -10,14 +10,13 @@ references:
 tags:
   - attack.impact
   - attack.t1531
-sourcetypes:
-  - 1password
-categories:
   - 1password
   - identity-access-management
   - entity-management
   - signal
   - account-lifecycle
+sourcetypes:
+  - 1password
 mitreattacks:
   - persistence
   - privilege-escalation

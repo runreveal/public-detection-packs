@@ -8,15 +8,14 @@ references:
 tags:
   - attack.initial-access
   - attack.t1078
-sourcetypes:
-  - jumpcloud
-categories:
   - jumpcloud
   - jumpcloud
   - identity-access-management
   - authentication
   - signal
   - sso-access
+sourcetypes:
+  - jumpcloud
 mitreattacks:
   - initial-access
   - persistence

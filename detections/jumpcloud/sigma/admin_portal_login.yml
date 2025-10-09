@@ -8,15 +8,14 @@ references:
 tags:
   - attack.initial-access
   - attack.t1078.004
-sourcetypes:
-  - jumpcloud
-categories:
   - jumpcloud
   - admin
   - identity-access-management
   - authentication
   - signal
   - admin-access
+sourcetypes:
+  - jumpcloud
 mitreattacks:
   - initial-access
   - persistence

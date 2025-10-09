@@ -8,15 +8,14 @@ references:
 tags:
   - attack.persistence
   - attack.defense-evasion
-sourcetypes:
-  - jumpcloud
-categories:
   - jumpcloud
   - admin
   - system-activity
   - configuration-access
   - signal
   - organization-config
+sourcetypes:
+  - jumpcloud
 mitreattacks:
   - persistence
   - privilege-escalation

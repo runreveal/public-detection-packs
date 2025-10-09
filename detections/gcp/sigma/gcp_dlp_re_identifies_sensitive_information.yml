@@ -9,6 +9,12 @@ modified: 2022-10-09
 tags:
   - attack.impact
   - attack.t1565
+  - gcp
+  - security
+  - findings
+  - security-finding
+  - signal
+  - dlp
 sourcetypes:
   - gcp
 detection:
@@ -19,13 +25,6 @@ falsepositives:
   - Unknown
 level: medium
 riskscore: 50
-categories:
-  - gcp
-  - security
-  - findings
-  - security-finding
-  - signal
-  - dlp
 mitreattacks:
   - collection
   - impact

@@ -2,34 +2,33 @@ title: Okta Security Threat Detected
 id: 5c82f0b9-3c6d-477f-a318-0e14a1df73e0
 description: Detects when an security threat is detected in Okta.
 references:
-    - https://okta.github.io/okta-help/en/prod/Content/Topics/Security/threat-insight/configure-threatinsight-system-log.htm
-    - https://developer.okta.com/docs/reference/api/system-log/
-    - https://developer.okta.com/docs/reference/api/event-types/
+  - https://okta.github.io/okta-help/en/prod/Content/Topics/Security/threat-insight/configure-threatinsight-system-log.htm
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://developer.okta.com/docs/reference/api/event-types/
 author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
-    - attack.command-and-control
+  - attack.command-and-control
+  - okta
+  - okta
+  - findings
+  - security-finding
+  - signal
+  - threat-detection
+  - security-threat
 sourcetypes:
-    - okta
-categories:
-    - okta
-    - okta
-    - findings
-    - security-finding
-    - signal
-    - threat-detection
-    - security-threat
+  - okta
 mitreattacks:
-    - command-and-control
+  - command-and-control
 mitretechniques:
-    - T1071.001  # Application Layer Protocol: Web Protocols
-    - T1104      # Multi-Stage Channels
+  - T1071.001
+  - T1104
 detection:
-    selection:
-        eventtype: security.threat.detected
-    condition: selection
+  selection:
+    eventtype: security.threat.detected
+  condition: selection
 falsepositives:
-    - Unknown
+  - Unknown
 level: high
 riskscore: 100

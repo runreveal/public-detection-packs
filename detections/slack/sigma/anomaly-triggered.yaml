@@ -15,9 +15,8 @@ tags:
   - attack.TA0010
   - attack.initial_access
   - attack.TA0001
-sourcetypes:
   - slack
-categories:
+sourcetypes:
   - slack
 mitreattacks:
   - initial-access

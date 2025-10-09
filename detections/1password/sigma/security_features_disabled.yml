@@ -8,14 +8,13 @@ references:
 tags:
   - attack.defense-evasion
   - attack.t1562
-sourcetypes:
-  - 1password
-categories:
   - 1password
   - identity-access-management
   - authentication
   - signal
   - security-controls
+sourcetypes:
+  - 1password
 mitreattacks:
   - defense-evasion
   - impact

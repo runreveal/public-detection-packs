@@ -9,9 +9,6 @@ date: 2021-09-12
 modified: 2022-10-09
 tags:
   - attack.impact
-sourcetypes:
-  - okta
-categories:
   - okta
   - okta
   - identity-access-management
@@ -19,6 +16,8 @@ categories:
   - signal
   - unauthorized-access
   - app-access
+sourcetypes:
+  - okta
 mitreattacks:
   - initial-access
   - persistence

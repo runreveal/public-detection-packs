@@ -1,36 +1,37 @@
 title: 1Password Domain and Firewall Configuration Changes
 id: 8h9i0j1k-2l3m-4567-8901-234567hijklm
-description: Detects changes to domain verification or firewall rules that could indicate security policy bypass
+description:
+  Detects changes to domain verification or firewall rules that could indicate
+  security policy bypass
 author: RunReveal
 date: 2025-01-06
 references:
-    - https://developer.1password.com/docs/events-api/audit-events/
+  - https://developer.1password.com/docs/events-api/audit-events/
 tags:
-    - attack.defense-evasion
-    - attack.t1562
+  - attack.defense-evasion
+  - attack.t1562
+  - 1password
+  - identity-access-management
+  - entity-management
+  - signal
+  - policy-configuration
 sourcetypes:
-    - 1password
-categories:
-    - 1password
-    - identity-access-management
-    - entity-management
-    - signal
-    - policy-configuration
+  - 1password
 mitreattacks:
-    - defense-evasion
+  - defense-evasion
 mitretechniques:
-    - T1562
+  - T1562
 detection:
-    selection:
-        normalized.eventName:
-            - vrfydmn    # Add verified domain
-            - uvrfydmn   # Update verified domain
-            - dvrfydmn   # Delete verified domain
-            - updatfw    # Update firewall rules
-    condition: selection
+  selection:
+    normalized.eventName:
+      - vrfydmn
+      - uvrfydmn
+      - dvrfydmn
+      - updatfw
+  condition: selection
 falsepositives:
-    - Legitimate domain management activities
-    - Authorized firewall rule updates
-    - Infrastructure changes by administrators
+  - Legitimate domain management activities
+  - Authorized firewall rule updates
+  - Infrastructure changes by administrators
 level: medium
 riskscore: 55

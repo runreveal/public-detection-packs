@@ -10,14 +10,13 @@ references:
 tags:
   - attack.exfiltration
   - attack.t1041
-sourcetypes:
-  - 1password
-categories:
   - 1password
   - identity-access-management
   - entity-management
   - signal
   - data-exfiltration
+sourcetypes:
+  - 1password
 mitreattacks:
   - collection
   - exfiltration

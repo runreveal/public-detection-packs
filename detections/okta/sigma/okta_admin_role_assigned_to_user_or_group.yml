@@ -10,9 +10,6 @@ modified: 2022-10-09
 tags:
   - attack.persistence
   - attack.t1098.003
-sourcetypes:
-  - okta
-categories:
   - okta
   - admin
   - identity-access-management
@@ -20,6 +17,8 @@ categories:
   - signal
   - admin-role
   - privilege-escalation
+sourcetypes:
+  - okta
 mitreattacks:
   - persistence
   - privilege-escalation

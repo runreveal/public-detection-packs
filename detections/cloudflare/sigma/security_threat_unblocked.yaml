@@ -5,14 +5,6 @@ description:
   Trust forward proxy.
 
   "
-categories:
-  - cloudflare
-  - gateway
-  - network-activity
-  - dns-activity
-  - signal
-  - security-finding
-  - zerotrust
 references:
   - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_
@@ -37,3 +29,11 @@ mitreattacks:
 mitretechniques:
   - T1071.001
   - T1568
+tags:
+  - cloudflare
+  - gateway
+  - network-activity
+  - dns-activity
+  - signal
+  - security-finding
+  - zerotrust

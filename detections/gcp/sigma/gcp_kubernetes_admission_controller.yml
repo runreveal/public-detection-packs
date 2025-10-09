@@ -33,6 +33,12 @@ tags:
   - attack.credential-access
   - attack.t1552
   - attack.t1552.007
+  - gcp
+  - compute
+  - system-activity
+  - entity-management
+  - signal
+  - kubernetes
 sourcetypes:
   - gcp
 detection:
@@ -51,13 +57,6 @@ falsepositives:
   - If known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 riskscore: 50
-categories:
-  - gcp
-  - compute
-  - system-activity
-  - entity-management
-  - signal
-  - kubernetes
 mitreattacks:
   - initial-access
   - persistence

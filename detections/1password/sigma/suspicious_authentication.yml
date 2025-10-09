@@ -8,14 +8,13 @@ references:
 tags:
   - attack.credential-access
   - attack.t1078
-sourcetypes:
-  - 1password
-categories:
   - 1password
   - identity-access-management
   - authentication
   - signal
   - suspicious-activity
+sourcetypes:
+  - 1password
 mitreattacks:
   - initial-access
   - persistence

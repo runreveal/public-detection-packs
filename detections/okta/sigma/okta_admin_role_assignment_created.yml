@@ -10,9 +10,6 @@ author: Nikita Khalimonenkov
 date: 2023-01-19
 tags:
   - attack.persistence
-sourcetypes:
-  - okta
-categories:
   - okta
   - admin
   - identity-access-management
@@ -20,6 +17,8 @@ categories:
   - signal
   - admin-role
   - role-assignment
+sourcetypes:
+  - okta
 mitreattacks:
   - persistence
   - privilege-escalation

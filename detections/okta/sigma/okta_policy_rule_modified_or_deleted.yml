@@ -9,9 +9,6 @@ date: 2021-09-12
 modified: 2022-10-09
 tags:
   - attack.impact
-sourcetypes:
-  - okta
-categories:
   - okta
   - admin
   - identity-access-management
@@ -19,6 +16,8 @@ categories:
   - signal
   - policy-rule
   - rule-modification
+sourcetypes:
+  - okta
 detection:
   selection:
     eventtype:

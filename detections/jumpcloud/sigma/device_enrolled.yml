@@ -8,15 +8,14 @@ references:
 tags:
   - attack.persistence
   - attack.t1078
-sourcetypes:
-  - jumpcloud
-categories:
   - jumpcloud
   - jumpcloud
   - system-activity
   - entity-management
   - signal
   - device-enrollment
+sourcetypes:
+  - jumpcloud
 mitreattacks:
   - initial-access
   - persistence

@@ -4,31 +4,30 @@ description: Detects when commands are executed via JumpCloud on managed systems
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.execution
-    - attack.t1059 # Command and Scripting Interpreter: Command Line Interface
+  - attack.execution
+  - attack.t1059
+  - jumpcloud
+  - jumpcloud
+  - system-activity
+  - process-activity
+  - signal
+  - command-execution
 sourcetypes:
-    - jumpcloud
-categories:
-    - jumpcloud
-    - jumpcloud
-    - system-activity
-    - process-activity
-    - signal
-    - command-execution
+  - jumpcloud
 mitreattacks:
-    - execution
+  - execution
 mitretechniques:
-    - T1059
+  - T1059
 detection:
-    selection:
-        normalized.eventName:
-            - commandresult_delete
-            - command_run
-            - mdm_command_result 
-    condition: selection
+  selection:
+    normalized.eventName:
+      - commandresult_delete
+      - command_run
+      - mdm_command_result
+  condition: selection
 falsepositives:
-    - Legitimate command execution by authorized administrators
+  - Legitimate command execution by authorized administrators
 level: high
-riskscore: 75 
+riskscore: 75

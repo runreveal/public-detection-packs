@@ -10,9 +10,6 @@ date: 2021-08-24
 modified: 2023-10-11
 tags:
   - attack.impact
-sourcetypes:
-  - gsuite
-categories:
   - google-workspace
   - admin
   - identity-access-management
@@ -20,6 +17,8 @@ categories:
   - signal
   - role-management
   - admin-privilege
+sourcetypes:
+  - gsuite
 logsource:
   product: gcp
   service: google_workspace.admin

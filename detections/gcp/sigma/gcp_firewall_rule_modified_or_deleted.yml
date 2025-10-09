@@ -12,6 +12,12 @@ modified: 2022-10-09
 tags:
   - attack.defense-evasion
   - attack.t1562
+  - gcp
+  - network
+  - network-activity
+  - security-finding
+  - signal
+  - firewall
 sourcetypes:
   - gcp
 detection:
@@ -28,13 +34,6 @@ falsepositives:
   - Exceptions can be added to this rule to filter expected behavior.
 level: medium
 risk_score: 50
-categories:
-  - gcp
-  - network
-  - network-activity
-  - security-finding
-  - signal
-  - firewall
 mitreattacks:
   - defense-evasion
   - impact

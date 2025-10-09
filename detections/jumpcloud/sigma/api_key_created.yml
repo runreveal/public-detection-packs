@@ -7,15 +7,14 @@ references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
   - attack.persistence
-sourcetypes:
-  - jumpcloud
-categories:
   - jumpcloud
   - admin
   - identity-access-management
   - entity-management
   - signal
   - api-key
+sourcetypes:
+  - jumpcloud
 mitreattacks:
   - persistence
   - privilege-escalation

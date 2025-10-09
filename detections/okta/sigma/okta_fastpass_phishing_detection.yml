@@ -10,9 +10,6 @@ date: 2023-05-07
 tags:
   - attack.initial-access
   - attack.t1566
-sourcetypes:
-  - okta
-categories:
   - okta
   - mfa
   - identity-access-management
@@ -21,6 +18,8 @@ categories:
   - fastpass
   - phishing
   - threat-detection
+sourcetypes:
+  - okta
 mitreattacks:
   - initial-access
   - credential-access

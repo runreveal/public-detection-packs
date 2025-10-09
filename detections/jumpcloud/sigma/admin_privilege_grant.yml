@@ -8,15 +8,14 @@ references:
 tags:
   - attack.persistence
   - attack.t1098.003
-sourcetypes:
-  - jumpcloud
-categories:
   - jumpcloud
   - admin
   - identity-access-management
   - entity-management
   - signal
   - admin-privilege
+sourcetypes:
+  - jumpcloud
 mitreattacks:
   - persistence
   - privilege-escalation

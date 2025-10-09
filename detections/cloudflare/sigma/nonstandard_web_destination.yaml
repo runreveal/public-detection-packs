@@ -3,13 +3,6 @@ id: 2sEoh9NwefTdUD5BOZBkvLZlraD
 description: "Identifies unusual
 
   "
-categories:
-  - cloudflare
-  - gateway
-  - network-activity
-  - http-activity
-  - signal
-  - anomaly-detection
 references:
   - https://developers.cloudflare.com/logs/reference/log-fields/account/gateway_dns/#resolverdecision
 author: Evan Johnson @ejcx_
@@ -32,3 +25,10 @@ mitreattacks:
   - command-and-control
 mitretechniques:
   - T1071.001
+tags:
+  - cloudflare
+  - gateway
+  - network-activity
+  - http-activity
+  - signal
+  - anomaly-detection

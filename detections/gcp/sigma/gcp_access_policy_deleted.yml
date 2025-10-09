@@ -18,6 +18,12 @@ tags:
   - attack.persistence
   - attack.privilege-escalation
   - attack.t1098
+  - gcp
+  - iam
+  - identity-access-management
+  - entity-management
+  - signal
+  - access-policy
 sourcetypes:
   - gcp
 detection:
@@ -34,13 +40,6 @@ falsepositives:
   - Legitimate administrative activities
 level: medium
 risk_score: 50
-categories:
-  - gcp
-  - iam
-  - identity-access-management
-  - entity-management
-  - signal
-  - access-policy
 mitreattacks:
   - persistence
   - privilege-escalation

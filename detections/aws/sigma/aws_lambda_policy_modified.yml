@@ -1,12 +1,14 @@
 title: AWS Lambda Function Policy Modified
 id: s9t0u1v2-w3x4-y5z6-a7b8-c9d0e1f2g3h4
-description: Detects modifications to Lambda function policies that could allow public or unintended access to invoke the function.
+description:
+  Detects modifications to Lambda function policies that could allow public
+  or unintended access to invoke the function.
 references:
-    - https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html
-    - https://docs.aws.amazon.com/lambda/latest/api/API_AddPermission.html
+  - https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html
+  - https://docs.aws.amazon.com/lambda/latest/api/API_AddPermission.html
 author: Claude
 date: 2024-06-20
-categories:
+tags:
   - aws
   - cloudtrail
   - system-activity
@@ -14,36 +16,28 @@ categories:
   - signal
   - lambda
   - policy-modification
-tags:
-    - aws
-    - cloudtrail
-    - system-activity
-    - resource-activity
-    - signal
-    - lambda
-    - policy-modification
-    - attack.persistence
-    - attack.privilege_escalation
-    - attack.t1098
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1098
 sourcetypes:
-    - cloudtrail
+  - cloudtrail
 detection:
-    selection:
-        eventSource: lambda.amazonaws.com
-        eventName:
-            - AddPermission
-            - RemovePermission
-            - PutFunctionPolicy
-    public_invoke:
-        requestParameters.principal: '*'
-    condition: selection and public_invoke
+  selection:
+    eventSource: lambda.amazonaws.com
+    eventName:
+      - AddPermission
+      - RemovePermission
+      - PutFunctionPolicy
+  public_invoke:
+    requestParameters.principal: "*"
+  condition: selection and public_invoke
 falsepositives:
-    - Legitimate public API endpoints backed by Lambda functions
-    - Serverless application deployments
+  - Legitimate public API endpoints backed by Lambda functions
+  - Serverless application deployments
 level: high
 riskscore: 75
 mitreattacks:
-    - persistence
-    - privilege-escalation
+  - persistence
+  - privilege-escalation
 mitretechniques:
-    - T1098
+  - T1098

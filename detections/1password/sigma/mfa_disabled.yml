@@ -10,14 +10,13 @@ references:
 tags:
   - attack.credential-access
   - attack.t1556
-sourcetypes:
-  - 1password
-categories:
   - 1password
   - identity-access-management
   - authentication
   - signal
   - mfa
+sourcetypes:
+  - 1password
 mitreattacks:
   - persistence
   - defense-evasion

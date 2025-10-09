@@ -8,6 +8,12 @@ date: 2021-08-15
 modified: 2022-10-09
 tags:
   - attack.impact
+  - gcp
+  - network
+  - network-activity
+  - security-finding
+  - signal
+  - dns
 sourcetypes:
   - gcp
 detection:
@@ -21,13 +27,6 @@ falsepositives:
   - Unknown
 level: medium
 riskscore: 50
-categories:
-  - gcp
-  - network
-  - network-activity
-  - security-finding
-  - signal
-  - dns
 mitreattacks:
   - command-and-control
   - impact

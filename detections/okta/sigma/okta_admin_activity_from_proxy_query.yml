@@ -9,9 +9,6 @@ author: Muhammad Faisal @faisalusuf
 date: 2023-10-25
 tags:
   - attack.credential-access
-sourcetypes:
-  - okta
-categories:
   - okta
   - admin
   - identity-access-management
@@ -19,6 +16,8 @@ categories:
   - signal
   - proxy-access
   - admin-activity
+sourcetypes:
+  - okta
 mitreattacks:
   - initial-access
   - persistence

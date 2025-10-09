@@ -4,31 +4,30 @@ description: Detects when a user account is deactivated or suspended in JumpClou
 author: RunReveal
 date: 2025-05-26
 references:
-    - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
+  - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
-    - attack.impact
-    - attack.t1531 # Account Access Removal
+  - attack.impact
+  - attack.t1531
+  - jumpcloud
+  - jumpcloud
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-management
 sourcetypes:
-    - jumpcloud
-categories:
-    - jumpcloud
-    - jumpcloud
-    - identity-access-management
-    - entity-management
-    - signal
-    - user-management
+  - jumpcloud
 mitreattacks:
-    - impact
+  - impact
 mitretechniques:
-    - T1531
+  - T1531
 detection:
-    selection:
-        normalized.eventName:
-            - user_deactivated
-            - user_suspended
-            - account_deactivated
-    condition: selection
+  selection:
+    normalized.eventName:
+      - user_deactivated
+      - user_suspended
+      - account_deactivated
+  condition: selection
 falsepositives:
-    - Legitimate user deactivation by administrators
+  - Legitimate user deactivation by administrators
 level: medium
 riskscore: 30
