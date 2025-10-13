@@ -5,7 +5,7 @@ logsource:
   service: guardduty
 detection:
   selection:
-    keywords: "*"
+    eventName: "*"
   condition: selection
 level: medium
 mitreattacks:
