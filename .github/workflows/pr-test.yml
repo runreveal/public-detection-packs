@@ -17,12 +17,18 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    name: Sync RunReveal Detections
+    name: Lint & Sync RunReveal Detections
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+
+      - name: lint-runreveal-detections
+        uses: runreveal/detection-lint-action@v1
+        with:
+          token: ${{ secrets.RUNREVEAL_TOKEN }}
+          workspace: ${{ secrets.RUNREVEAL_WORKSPACE }}
 
       - name: sync-runreveal-detections
         uses: runreveal/detection-sync-action@v2
