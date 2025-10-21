@@ -1,0 +1,47 @@
+title: Google Cloud Storage Bucket Modified
+id: 8e9f0a1b-2c3d-4e5f-6a7b-8c9d0e1f2a3b
+description:
+  Detects when a Google Cloud Storage bucket is modified. This includes updates
+  to bucket configuration, IAM policies, lifecycle rules, and other settings.
+  Excludes bucket creation and deletion events to focus on modification activities.
+references:
+  - https://cloud.google.com/storage/docs/json_api/v1/buckets
+  - https://cloud.google.com/storage/docs/audit-logging
+author: RunReveal
+date: 2025-10-21
+tags:
+  - attack.impact
+  - attack.t1565.001
+  - gcp
+  - storage
+  - system-activity
+  - file-activity
+  - signal
+  - storage-bucket
+sourcetypes:
+  - gcp
+  - gcplogs
+detection:
+  selection:
+    methodName|startswith: storage.buckets.
+  filter_create:
+    methodName:
+      - storage.buckets.create
+      - storage.buckets.insert
+  filter_delete:
+    methodName: storage.buckets.delete
+  filter_readonly:
+    methodName|endswith:
+      - .list
+      - .get
+  condition: selection and not filter_create and not filter_delete and not filter_readonly
+falsepositives:
+  - Storage bucket modifications may be performed by system administrators
+  - Infrastructure as Code (IaC) deployments
+  - Automated backup and lifecycle management tools
+level: medium
+riskscore: 50
+mitreattacks:
+  - impact
+mitretechniques:
+  - T1565.001
