@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html
   - https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.defense-evasion

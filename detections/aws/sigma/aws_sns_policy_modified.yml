@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html
   - https://docs.aws.amazon.com/sns/latest/dg/sns-access-policy-language-allow-paths.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.persistence

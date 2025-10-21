@@ -1,0 +1,40 @@
+title: AWS CloudTrail Disabled
+id: 9c8e1a2b-3d4e-5f6a-7b8c-9d0e1f2a3b4c
+description:
+  Detects when AWS CloudTrail logging is stopped or a trail is deleted,
+  which are critical security events that could indicate an attacker
+  attempting to evade detection by disabling audit logging.
+references:
+  - https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html
+  - https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html
+  - https://attack.mitre.org/techniques/T1562/008/
+author: RunReveal
+date: 2025-10-21
+tags:
+  - aws
+  - cloudtrail
+  - system-activity
+  - audit-activity
+  - signal
+  - log-tampering
+  - defense-evasion
+sourcetypes:
+  - cloudtrail
+detection:
+  selection:
+    eventSource: cloudtrail.amazonaws.com
+    eventName:
+      - StopLogging
+      - DeleteTrail
+      - UpdateTrail
+    readOnly: false
+  condition: selection
+falsepositives:
+  - Legitimate CloudTrail decommissioning during infrastructure changes by authorized administrators
+  - Trail consolidation or migration activities
+level: critical
+riskscore: 95
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1562.008

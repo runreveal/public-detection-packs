@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html
   - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.defense-evasion

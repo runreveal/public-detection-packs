@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.collection
