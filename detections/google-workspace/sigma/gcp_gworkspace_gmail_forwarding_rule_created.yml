@@ -1,0 +1,41 @@
+title: Google Workspace Gmail Forwarding Rule Created
+id: 5d6e7f8a-9b0c-1d2e-3f4a-5b6c7d8e9f0a
+description:
+  Detects when a Gmail forwarding rule is created in Google Workspace. Email
+  forwarding rules can be used by attackers to exfiltrate sensitive data, maintain
+  persistence, or monitor communications after gaining access to an account.
+references:
+  - https://cloud.google.com/logging/docs/audit/gsuite-audit-logging
+  - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/gmail
+  - https://attack.mitre.org/techniques/T1114/003/
+author: RunReveal
+date: 2025-10-21
+tags:
+  - google-workspace
+  - gmail
+  - application-activity
+  - signal
+  - email-forwarding
+  - data-exfiltration
+  - gsuite
+sourcetypes:
+  - gsuite
+detection:
+  selection:
+    serviceName: user_accounts
+    eventName:
+      - create_forwarding_address
+      - add_auto_forwarding
+      - enable_auto_forwarding
+      - email_forwarding_out_of_domain
+  condition: selection
+falsepositives:
+  - Legitimate email forwarding configured by users for business purposes
+  - Automated forwarding rules for shared mailboxes or distribution
+level: medium
+riskscore: 70
+mitreattacks:
+  - collection
+  - exfiltration
+mitretechniques:
+  - T1114.003

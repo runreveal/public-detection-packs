@@ -1,0 +1,45 @@
+title: Google Workspace MDM Bypass Detected
+id: 1a2b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+description:
+  Detects when a mobile device management (MDM) policy is bypassed or when
+  mobile device security settings are modified to allow unmanaged devices.
+  This could indicate an attempt to evade mobile device security controls
+  and access organizational resources from unmanaged devices.
+references:
+  - https://cloud.google.com/logging/docs/audit/gsuite-audit-logging
+  - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/mobile
+  - https://attack.mitre.org/techniques/T1562/001/
+author: RunReveal
+date: 2025-10-21
+tags:
+  - google-workspace
+  - mobile
+  - identity-access-management
+  - system-activity
+  - signal
+  - mdm
+  - mobile-security
+  - policy-bypass
+  - gsuite
+sourcetypes:
+  - gsuite
+detection:
+  selection:
+    serviceName: mobile
+    eventName:
+      - unblock_device
+      - change_device_policy
+      - company_owned_device_unblocked
+      - remove_device_management
+      - bypass_device_policy
+  condition: selection
+falsepositives:
+  - Legitimate MDM policy changes by authorized administrators
+  - Device unblocking for troubleshooting purposes
+  - Organizational policy updates
+level: high
+riskscore: 75
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1562.001
