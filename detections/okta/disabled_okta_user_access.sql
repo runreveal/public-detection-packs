@@ -44,6 +44,6 @@ SELECT
     srcLongitude
 FROM runreveal_logs
 INNER JOIN disabledUsers ON (runreveal_logs.actor['email']) = disabledUsers.targetUser
-WHERE ((runreveal_logs.actor['email']) != '') AND (runreveal_logs.eventTime > disabledUsers.disabledTime) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime}))
+WHERE ((runreveal_logs.actor['email']) != '') AND (runreveal_logs.eventTime > disabledUsers.disabledTime) AND ((receivedAt >= {from:DateTime}) AND (receivedAt <= {to:DateTime})) AND (runreveal_logs.sourceType != 'okta')
 ;
 
