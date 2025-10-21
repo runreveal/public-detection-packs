@@ -1,0 +1,40 @@
+title: AWS Lambda Function Code Modified
+id: 3b4c5d6e-7f8a-9b0c-1d2e-3f4a5b6c7d8e
+description:
+  Detects when Lambda function code is updated or modified. This could indicate
+  malicious code injection, backdoor installation, or unauthorized changes to
+  serverless application logic.
+references:
+  - https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html
+  - https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
+  - https://attack.mitre.org/techniques/T1525/
+author: Claude
+date: 2025-10-21
+tags:
+  - aws
+  - lambda
+  - cloudtrail
+  - application-activity
+  - system-activity
+  - signal
+  - code-modification
+sourcetypes:
+  - cloudtrail
+detection:
+  selection:
+    eventSource: lambda.amazonaws.com
+    eventName:
+      - UpdateFunctionCode
+      - UpdateFunctionCode20150331v2
+  condition: selection
+falsepositives:
+  - Legitimate Lambda function deployments and updates
+  - CI/CD pipeline deployments
+  - Infrastructure as Code (IaC) updates
+level: medium
+riskscore: 60
+mitreattacks:
+  - persistence
+  - execution
+mitretechniques:
+  - T1525

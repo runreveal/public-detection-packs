@@ -1,0 +1,36 @@
+title: Google Workspace Domain Transferred
+id: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
+description: Detects when a domain is transferred in Google Workspace, which could indicate unauthorized domain ownership changes or administrative takeover attempts.
+references:
+  - https://cloud.google.com/logging/docs/audit/gsuite-audit-logging#3
+  - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-domain-settings
+author: Claude
+date: 2025-10-21
+tags:
+  - attack.persistence
+  - attack.impact
+  - attack.t1098
+  - google-workspace
+  - admin
+  - identity-access-management
+  - audit-activity
+  - signal
+  - domain-management
+  - gsuite
+sourcetypes:
+  - gsuite
+detection:
+  selection:
+    serviceName: admin.googleapis.com
+    eventName: TRANSFER_DOMAIN
+  condition: selection
+falsepositives:
+  - Legitimate domain transfers performed by authorized administrators during organizational changes
+  - Domain migration activities
+level: high
+riskscore: 85
+mitreattacks:
+  - persistence
+  - impact
+mitretechniques:
+  - T1098
