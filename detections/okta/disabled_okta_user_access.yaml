@@ -3,7 +3,8 @@ name: disabled-okta-user-access
 displayName: Disabled Okta User Access
 description:
   Alerts you when a suspended, deactivated, or deleted Okta user, from
-  the past 90 days, appears in any other log.
+  the past 90 days, appears in logs from non-Okta systems (AWS, GCP,
+  Azure, etc.). Okta logs are excluded from results.
 file: disabled_okta_user_access.sql
 categories:
   - attack.initial-access
