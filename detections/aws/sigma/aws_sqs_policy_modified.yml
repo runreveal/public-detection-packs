@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SetQueueAttributes.html
   - https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.persistence

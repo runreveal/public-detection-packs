@@ -4,7 +4,7 @@ description: Detects when a domain is transferred in Google Workspace, which cou
 references:
   - https://cloud.google.com/logging/docs/audit/gsuite-audit-logging#3
   - https://developers.google.com/admin-sdk/reports/v1/appendix/activity/admin-domain-settings
-author: Claude
+author: RunReveal
 date: 2025-10-21
 tags:
   - attack.persistence

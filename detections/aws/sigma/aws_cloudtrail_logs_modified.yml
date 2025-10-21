@@ -7,7 +7,7 @@ description:
 references:
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.defense-evasion

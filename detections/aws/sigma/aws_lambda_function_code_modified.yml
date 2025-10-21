@@ -8,7 +8,7 @@ references:
   - https://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html
   - https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html
   - https://attack.mitre.org/techniques/T1525/
-author: Claude
+author: RunReveal
 date: 2025-10-21
 tags:
   - aws

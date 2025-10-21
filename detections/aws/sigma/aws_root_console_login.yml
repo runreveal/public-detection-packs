@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html
   - https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.initial-access

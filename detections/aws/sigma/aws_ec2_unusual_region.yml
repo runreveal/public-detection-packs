@@ -5,7 +5,7 @@ description:
   which could indicate cryptomining or data exfiltration.
 references:
   - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.impact

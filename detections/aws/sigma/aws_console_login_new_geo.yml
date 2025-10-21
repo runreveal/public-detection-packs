@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.initial-access

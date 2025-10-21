@@ -6,7 +6,7 @@ description:
 references:
   - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
   - https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html
-author: Claude
+author: RunReveal
 date: 2024-06-20
 tags:
   - attack.persistence

@@ -8,7 +8,7 @@ references:
   - https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html
   - https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html
   - https://attack.mitre.org/techniques/T1562/008/
-author: Claude
+author: RunReveal
 date: 2025-10-21
 tags:
   - aws
