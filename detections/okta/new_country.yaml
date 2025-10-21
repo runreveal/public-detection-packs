@@ -1,5 +1,5 @@
 name: user-access-new-country
-displayName: User access from new country
+displayName: Okta User Access from New Country
 description:
   Monitors for user activity from a country that the user has not previously
   accessed okta from

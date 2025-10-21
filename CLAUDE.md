@@ -126,3 +126,50 @@ Supplementary metadata for enhanced categorization.
 Examples:
 Attack techniques: persistence, privilege-escalation, lateral-movement
 Asset types: production, staging, development
+
+## Display Name Convention
+
+The `displayName` field is what users see in the UI when viewing detections in the queries and alerts lists. It should follow a consistent convention to make it immediately clear which service or platform the detection applies to.
+
+### Display Name Format
+
+**Format:** `{Service Name} {Description in Title Case}`
+
+**Examples:**
+- ✅ `Google Workspace Failed Login`
+- ✅ `AWS S3 Bucket Created or Deleted`
+- ✅ `Okta User Access from New Country`
+- ✅ `Cloudflare File Downloaded`
+- ❌ `failed-login` (missing service prefix)
+- ❌ `Bucket Created or Deleted` (missing service prefix)
+- ❌ `user-access-new-country` (kebab-case instead of Title Case)
+
+### Service Name Prefixes
+
+Use these standard prefixes for consistency:
+
+- **AWS** - Amazon Web Services (e.g., `AWS Root Account Usage`)
+- **Azure Entra** - Microsoft Entra ID (e.g., `Azure Entra New Global Admin User`)
+- **Cloudflare** - Cloudflare services (e.g., `Cloudflare API Abuse`)
+- **GCP** - Google Cloud Platform (e.g., `GCP Service Account Created`)
+- **GitHub** - GitHub services (e.g., `GitHub Branch Protection Override`)
+- **Google Workspace** - Google Workspace/GSuite (e.g., `Google Workspace Document Made Public`)
+- **GSuite** - Legacy Google Workspace (e.g., `GSuite Many Downloads`)
+- **Notion** - Notion workspace (e.g., `Notion Audit Log Exported`)
+- **Okta** - Okta identity platform (e.g., `Okta Push Fatigue`)
+- **Zendesk** - Zendesk services (e.g., `Zendesk Bulk User Deletion`)
+
+### Guidelines
+
+1. **Always include the service name** - Users should never have to guess which service a detection applies to
+2. **Use Title Case** - Capitalize the first letter of each major word (avoid kebab-case or snake_case)
+3. **Be descriptive but concise** - The name should clearly indicate what the detection does without being overly verbose
+4. **Match the detection purpose** - The display name should align with what the detection actually monitors
+
+### Sigma Detections
+
+For Sigma detections, use the `title` field instead of `displayName`, following the same convention:
+
+```yaml
+title: Google Workspace Application Removed
+```

@@ -1,6 +1,6 @@
 disabled: true
 name: notion-new-teamspace-owner
-displayName: New teamspace owner
+displayName: Notion New Teamspace Owner
 description: A new teamspace owner has been added to your Notion account
 file: notion-new-teamspace-owner.sql
 categories:

@@ -1,6 +1,6 @@
 disabled: true
 name: critical-policy-changes
-displayName: Critical Policy Changes
+displayName: AWS Critical Policy Changes
 description: Monitor for critical policy changes of your AWS assets.
 file: critical_policy_change.sql
 categories:

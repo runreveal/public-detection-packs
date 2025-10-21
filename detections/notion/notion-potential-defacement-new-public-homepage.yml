@@ -1,6 +1,6 @@
 disabled: true
 name: notion-potential-defacement-new-public-homepage
-displayName: Potential defacement new public homepage
+displayName: Notion Potential Defacement New Public Homepage
 description: New notion public homepage created
 file: notion-potential-defacement-new-public-homepage.sql
 categories:

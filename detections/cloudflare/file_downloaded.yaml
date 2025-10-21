@@ -1,6 +1,6 @@
 disabled: false
 name: file-downloaded
-displayName: File Downloaded
+displayName: Cloudflare File Downloaded
 description: A file was downloaded through Cloudflare gateway.
 file: file_downloaded.sql
 categories:

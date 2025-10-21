@@ -1,6 +1,6 @@
 disabled: true
 name: notion-scim-token-generated
-displayName: SCIM token generated
+displayName: Notion SCIM Token Generated
 description: A new SCIM token was generated
 file: notion-scim-token-generated.sql
 categories:

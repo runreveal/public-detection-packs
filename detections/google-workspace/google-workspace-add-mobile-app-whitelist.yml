@@ -1,5 +1,5 @@
 name: google-workspace-add-mobile-app-whitelist
-displayName: Mobile Application Added to Whitelist
+displayName: Google Workspace Mobile Application Added to Whitelist
 description:
   Detects when a mobile application is added to the whitelist in Google
   Workspace and extracts the mobile app package ID and other parameters for detailed

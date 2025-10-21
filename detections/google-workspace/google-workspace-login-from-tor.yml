@@ -1,5 +1,5 @@
 name: google-workspace-login-from-tor
-displayName: Login from Tor
+displayName: Google Workspace Login from Tor
 description: A user successfully logged in to Google Workspace from the Tor network.
 file: google-workspace-login-from-tor.sql
 categories:

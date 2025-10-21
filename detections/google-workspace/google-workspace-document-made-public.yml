@@ -1,5 +1,5 @@
 name: google-workspace-document-made-public
-displayName: Document made public
+displayName: Google Workspace Document Made Public
 description: A google document was made public
 file: google-workspace-document-made-public.sql
 categories:

@@ -1,6 +1,6 @@
 disabled: true
 name: gcp-storage-bucket-created
-displayName: storage-bucket-created
+displayName: GCP Storage Bucket Created
 description: GCS bucket created
 file: gcp-storage-bucket-created.sql
 categories:

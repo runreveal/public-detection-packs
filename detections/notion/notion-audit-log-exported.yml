@@ -1,6 +1,6 @@
 disabled: true
 name: notion-audit-log-exported
-displayName: Audit log exported
+displayName: Notion Audit Log Exported
 description: Workspace audit log exported
 file: notion-audit-log-exported.sql
 categories:

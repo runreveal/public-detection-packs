@@ -1,6 +1,6 @@
 disabled: true
 name: invalid-user-system-access
-displayName: Invalid User System Access
+displayName: GSuite Invalid User System Access
 description:
   This detection will notify you if any users who have a suspended/deleted
   event in the past 90 days and have not been reinstated appear in any other log.

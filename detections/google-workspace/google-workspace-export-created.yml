@@ -1,5 +1,5 @@
 name: google-wrkspace-export-created
-displayName: Workspace export activity
+displayName: Google Workspace Export Activity
 description: Detects when a user exports data from Google Workspace.
 file: google-workspace-export-created.sql
 categories:

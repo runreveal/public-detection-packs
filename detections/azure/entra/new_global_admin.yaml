@@ -1,6 +1,6 @@
 disabled: true
 name: entra-new-global-admin
-displayName: New Global Admin User
+displayName: Azure Entra New Global Admin User
 description:
   "This detection will notify you when a user is added to the Global Admin
   role in Entra. Other roles can be added to the parameter to alert on.
