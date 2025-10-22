@@ -41,7 +41,7 @@ detection:
       - 'truncate -s 0'
       - 'auditpol /clear'
       - 'wevtutil.exe cl'
-      - 'for /F "tokens=*" %1 in (\'wevtutil.exe el\') DO wevtutil.exe cl'
+      - 'for /F "tokens=*" %1 in ("wevtutil.exe el") DO wevtutil.exe cl'
   condition: selection_process and selection_commands
 falsepositives:
   - Legitimate system maintenance scripts
