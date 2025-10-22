@@ -1,0 +1,44 @@
+title: Wiz User Role Privilege Escalation
+id: wiz-user-role-privilege-escalation
+description: Tracks access control privilege changes that may indicate unauthorized privilege escalation
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1078/
+tags:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1078
+  - wiz
+  - identity-access-management
+  - signal
+  - rbac
+sourcetypes:
+  - wiz-threats
+  - wiz-issue
+mitreattacks:
+  - privilege-escalation
+  - persistence
+mitretechniques:
+  - T1078
+detection:
+  selection:
+    controlName|contains:
+      - 'Role'
+      - 'Permission'
+      - 'Access Control'
+      - 'Privilege'
+      - 'Admin'
+    triggerType:
+      - 'UPDATED'
+      - 'CREATED'
+    controlSeverity:
+      - 'CRITICAL'
+      - 'HIGH'
+  condition: selection
+falsepositives:
+  - Legitimate role assignments
+  - Organizational changes
+  - Onboarding processes
+level: high
+riskscore: 70

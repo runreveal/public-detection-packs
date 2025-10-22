@@ -1,0 +1,35 @@
+title: S3 Insecure Connection Detected
+id: aws-s3-insecure-connection-detected
+description: Flags unencrypted or non-TLS S3 connections that could expose data in transit
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1048/
+tags:
+  - attack.exfiltration
+  - attack.t1048
+  - aws
+  - s3
+  - network-activity
+  - signal
+  - encryption
+sourcetypes:
+  - s3-access
+mitreattacks:
+  - exfiltration
+mitretechniques:
+  - T1048
+detection:
+  selection_no_tls:
+    tlsVersion: '-'
+    httpStatus: '200'
+  selection_old_tls:
+    tlsVersion:
+      - 'TLSv1.0'
+      - 'TLSv1.1'
+  condition: selection_no_tls or selection_old_tls
+falsepositives:
+  - Legacy systems or applications
+  - Internal network traffic
+level: medium
+riskscore: 55

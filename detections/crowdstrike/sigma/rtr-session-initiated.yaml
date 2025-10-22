@@ -1,0 +1,32 @@
+title: CrowdStrike Real Time Response Session Initiated
+id: crowdstrike-rtr-session-initiated
+description: Tracks CrowdStrike Real Time Response session initiation for incident response and forensic activities
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1219/
+tags:
+  - crowdstrike
+  - audit-activity
+  - non-signal
+  - rtr
+  - incident-response
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - command-and-control
+mitretechniques:
+  - T1219
+detection:
+  selection:
+    CommandLine|contains:
+      - 'RTR'
+      - 'Real Time Response'
+  condition: selection
+falsepositives:
+  - Authorized incident response activities
+  - Security team investigations
+level: informational
+riskscore: 20

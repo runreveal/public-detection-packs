@@ -1,0 +1,30 @@
+title: AWS GuardDuty Low Severity Findings
+id: aws-guardduty-low-severity-findings
+description: Tracks low-priority security observations from AWS GuardDuty for monitoring and baseline establishment
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+tags:
+  - attack.discovery
+  - attack.reconnaissance
+  - aws
+  - guardduty
+  - findings
+  - non-signal
+logsource:
+  product: aws
+  service: guardduty
+mitreattacks:
+  - discovery
+mitretechniques:
+  - T1526
+detection:
+  selection:
+    severity: 'Low'
+  condition: selection
+falsepositives:
+  - Legitimate activities
+  - Normal operations may trigger low findings
+level: low
+riskscore: 30

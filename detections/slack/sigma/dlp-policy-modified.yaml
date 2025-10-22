@@ -1,0 +1,32 @@
+title: Slack DLP Policy Modified
+id: slack-dlp-policy-modified
+description: Detects data loss prevention policy tampering that could enable data exfiltration
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1562/
+tags:
+  - attack.defense-evasion
+  - attack.t1562
+  - slack
+  - application-activity
+  - signal
+  - dlp
+sourcetypes:
+  - slack
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1562
+detection:
+  selection:
+    action|contains:
+      - 'dlp'
+      - 'data_loss_prevention'
+      - 'information_barrier'
+  condition: selection
+falsepositives:
+  - DLP policy tuning
+  - Compliance requirement updates
+level: high
+riskscore: 75

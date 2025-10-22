@@ -1,0 +1,42 @@
+title: Wiz Integration Connector Modified
+id: wiz-integration-connector-modified
+description: Monitors third-party integration alterations that could be used for data exfiltration or lateral movement
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1199/
+tags:
+  - attack.persistence
+  - attack.lateral-movement
+  - attack.t1199
+  - wiz
+  - application-activity
+  - signal
+  - integration
+sourcetypes:
+  - wiz-threats
+  - wiz-issue
+mitreattacks:
+  - persistence
+  - lateral-movement
+mitretechniques:
+  - T1199
+detection:
+  selection:
+    controlName|contains:
+      - 'Integration'
+      - 'Connector'
+      - 'Third Party'
+      - 'API Connection'
+      - 'External Service'
+    triggerType:
+      - 'CREATED'
+      - 'UPDATED'
+      - 'DELETED'
+  condition: selection
+falsepositives:
+  - Legitimate integration updates
+  - New tool integrations
+  - Integration maintenance
+level: medium
+riskscore: 55

@@ -1,0 +1,23 @@
+name: github-mass-repository-deletion
+displayName: GitHub Mass Repository Deletion
+description: Detects bulk repository deletion patterns that may indicate sabotage or data destruction
+file: github-mass-repository-deletion.sql
+categories:
+  - attack.impact
+  - attack.t1485
+  - github
+  - audit-activity
+  - signal
+  - data-destruction
+mitreAttacks:
+  - impact
+mitreTechniques:
+  - T1485
+severity: Critical
+riskScore: 90
+schedule: "*/15 * * * *"
+sourceTypes:
+  - github
+parameters:
+  window: "30"
+  threshold: "10"

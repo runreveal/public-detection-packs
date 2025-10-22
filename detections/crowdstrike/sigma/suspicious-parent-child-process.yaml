@@ -1,0 +1,60 @@
+title: CrowdStrike Suspicious Parent-Child Process Relationship
+id: crowdstrike-suspicious-parent-child-process
+description: Identifies unusual process execution hierarchies that may indicate process injection, privilege escalation, or malware execution
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1055/
+tags:
+  - attack.defense-evasion
+  - attack.privilege-escalation
+  - attack.t1055
+  - crowdstrike
+  - system-activity
+  - signal
+  - process-injection
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - defense-evasion
+  - privilege-escalation
+mitretechniques:
+  - T1055
+detection:
+  selection_office_parent:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+    ParentBaseFileName|contains:
+      - 'WINWORD.EXE'
+      - 'EXCEL.EXE'
+      - 'POWERPNT.EXE'
+      - 'OUTLOOK.EXE'
+    ImageFileName|endswith:
+      - '\cmd.exe'
+      - '\powershell.exe'
+      - '\pwsh.exe'
+      - '\wscript.exe'
+      - '\cscript.exe'
+      - '\mshta.exe'
+  selection_suspicious_parent:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+    ParentBaseFileName|contains:
+      - 'notepad.exe'
+      - 'calc.exe'
+      - 'mspaint.exe'
+    ImageFileName|endswith:
+      - '\cmd.exe'
+      - '\powershell.exe'
+      - '\net.exe'
+      - '\net1.exe'
+  condition: selection_office_parent or selection_suspicious_parent
+falsepositives:
+  - Legitimate macros and automation
+  - Administrative scripts launched from productivity applications
+level: medium
+riskscore: 65

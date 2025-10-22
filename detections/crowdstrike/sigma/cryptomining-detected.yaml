@@ -1,0 +1,54 @@
+title: CrowdStrike Cryptocurrency Mining Detected
+id: crowdstrike-cryptomining-detected
+description: Identifies cryptocurrency mining software installation or execution including XMRig, NiceHash, and other mining tools that may indicate resource hijacking
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1496/
+tags:
+  - attack.impact
+  - attack.t1496
+  - crowdstrike
+  - system-activity
+  - signal
+  - resource-hijacking
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - impact
+mitretechniques:
+  - T1496
+detection:
+  selection_process:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+      - 'ProcessRollup2V2'
+      - 'ProcessRollup2V3'
+  selection_indicators:
+    - CommandLine|contains:
+        - 'xmrig'
+        - 'minergate'
+        - 'nicehash'
+        - 'claymore'
+        - 'ethminer'
+        - 'cgminer'
+        - 'bfgminer'
+        - '-o pool.'
+        - '--donate-level'
+        - 'stratum+tcp'
+        - 'stratum+ssl'
+    - ImageFileName|contains:
+        - 'xmrig'
+        - 'xmr-stak'
+        - 'minerd'
+        - 'ccminer'
+        - 'ethminer'
+  condition: selection_process and selection_indicators
+falsepositives:
+  - Authorized cryptocurrency mining operations
+  - Performance testing tools
+level: high
+riskscore: 75

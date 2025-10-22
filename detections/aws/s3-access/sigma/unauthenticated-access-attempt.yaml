@@ -1,0 +1,37 @@
+title: S3 Unauthenticated Access Attempt
+id: aws-s3-unauthenticated-access-attempt
+description: Detects unauthorized S3 bucket access attempts that may indicate misconfiguration or reconnaissance
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1530/
+tags:
+  - attack.collection
+  - attack.t1530
+  - aws
+  - s3
+  - network-activity
+  - signal
+  - data-exfiltration
+sourcetypes:
+  - s3-access
+mitreattacks:
+  - collection
+mitretechniques:
+  - T1530
+detection:
+  selection:
+    authenticationType: '-'
+    httpStatus:
+      - '403'
+      - '401'
+    operation:
+      - 'REST.GET.OBJECT'
+      - 'REST.HEAD.OBJECT'
+      - 'REST.GET.BUCKET'
+  condition: selection
+falsepositives:
+  - Public bucket access attempts
+  - CDN or proxy access patterns
+level: medium
+riskscore: 65

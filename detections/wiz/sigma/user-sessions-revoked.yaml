@@ -1,0 +1,35 @@
+title: Wiz User Sessions Revoked
+id: wiz-user-sessions-revoked
+description: Detects bulk user session terminations which may indicate security incident response or account compromise
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1531/
+tags:
+  - attack.impact
+  - attack.t1531
+  - wiz
+  - identity-access-management
+  - signal
+  - session-management
+sourcetypes:
+  - wiz-threats
+  - wiz-issue
+mitreattacks:
+  - impact
+mitretechniques:
+  - T1531
+detection:
+  selection:
+    controlName|contains:
+      - 'Session'
+      - 'User Access'
+      - 'Revoke'
+    triggerType: 'REVOKED'
+  condition: selection
+falsepositives:
+  - Legitimate security operations
+  - Password reset procedures
+  - Compromised account remediation
+level: medium
+riskscore: 55

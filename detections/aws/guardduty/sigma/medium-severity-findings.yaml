@@ -1,0 +1,34 @@
+title: AWS GuardDuty Medium Severity Findings
+id: aws-guardduty-medium-severity-findings
+description: Captures medium-level security findings from AWS GuardDuty that require investigation
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+tags:
+  - attack.discovery
+  - attack.collection
+  - attack.lateral-movement
+  - aws
+  - guardduty
+  - findings
+  - signal
+logsource:
+  product: aws
+  service: guardduty
+mitreattacks:
+  - discovery
+  - collection
+  - lateral-movement
+mitretechniques:
+  - T1526
+  - T1078
+detection:
+  selection:
+    severity: 'Medium'
+  condition: selection
+falsepositives:
+  - Some benign activities may trigger medium findings
+  - Routine security scanning
+level: medium
+riskscore: 50

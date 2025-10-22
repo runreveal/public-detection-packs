@@ -1,0 +1,38 @@
+title: Wiz IP Restrictions Modified
+id: wiz-ip-restrictions-modified
+description: Monitors IP allowlist/blocklist changes that could expand attack surface or bypass security controls
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1562/
+tags:
+  - attack.defense-evasion
+  - attack.t1562
+  - wiz
+  - network-activity
+  - signal
+  - ip-filtering
+sourcetypes:
+  - wiz-threats
+  - wiz-issue
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1562
+detection:
+  selection:
+    controlName|contains:
+      - 'IP Restriction'
+      - 'IP Allow'
+      - 'IP Block'
+      - 'Network Access'
+      - 'Firewall Rule'
+    triggerType:
+      - 'UPDATED'
+      - 'DELETED'
+  condition: selection
+falsepositives:
+  - Network configuration updates
+  - Authorized IP range modifications
+level: medium
+riskscore: 60

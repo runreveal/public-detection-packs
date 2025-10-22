@@ -1,0 +1,38 @@
+title: Slack MFA Disabled
+id: slack-mfa-disabled
+description: Detects multi-factor authentication modifications that may weaken account security
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1556/
+tags:
+  - attack.defense-evasion
+  - attack.persistence
+  - attack.t1556
+  - slack
+  - identity-access-management
+  - signal
+  - mfa
+sourcetypes:
+  - slack
+mitreattacks:
+  - defense-evasion
+  - persistence
+mitretechniques:
+  - T1556
+detection:
+  selection:
+    action|contains:
+      - 'mfa'
+      - '2fa'
+      - 'two_factor'
+    details|contains:
+      - 'disabled'
+      - 'removed'
+      - 'turned_off'
+  condition: selection
+falsepositives:
+  - Legitimate MFA policy changes
+  - Account recovery processes
+level: high
+riskscore: 75

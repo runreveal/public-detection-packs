@@ -1,0 +1,39 @@
+title: Tailscale Machine Approval Requirements Disabled
+id: tailscale-machine-approval-disabled
+description: Identifies when machine approval requirements are disabled, flagging gaps in device authentication controls
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1078/
+tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.t1078
+  - tailscale
+  - identity-access-management
+  - signal
+  - device-authentication
+sourcetypes:
+  - tailscale
+  - tailscale-audit
+mitreattacks:
+  - initial-access
+  - persistence
+mitretechniques:
+  - T1078
+detection:
+  selection:
+    action|contains:
+      - 'machine_approval'
+      - 'device_approval'
+      - 'node_approval'
+    new|contains:
+      - 'disabled'
+      - 'false'
+      - 'off'
+  condition: selection
+falsepositives:
+  - Automated deployment processes
+  - Development/testing networks
+level: medium
+riskscore: 65

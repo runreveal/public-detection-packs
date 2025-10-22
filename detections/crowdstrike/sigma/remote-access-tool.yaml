@@ -1,0 +1,54 @@
+title: CrowdStrike Unauthorized Remote Access Tool
+id: crowdstrike-remote-access-tool
+description: Detects execution of unauthorized remote access utilities including TeamViewer, AnyDesk, LogMeIn, and other RATs that may indicate unauthorized system access
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1219/
+tags:
+  - attack.command-and-control
+  - attack.t1219
+  - crowdstrike
+  - system-activity
+  - signal
+  - remote-access
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - command-and-control
+mitretechniques:
+  - T1219
+detection:
+  selection_process:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+      - 'ProcessRollup2V2'
+      - 'ProcessRollup2V3'
+  selection_indicators:
+    - ImageFileName|contains:
+        - 'teamviewer'
+        - 'anydesk'
+        - 'logmein'
+        - 'ammyy'
+        - 'remotepc'
+        - 'atera'
+        - 'screenconnect'
+        - 'supremo'
+        - 'splashtop'
+        - 'vnc'
+        - 'ultravnc'
+        - 'tightvnc'
+    - CommandLine|contains:
+        - 'teamviewer'
+        - 'anydesk'
+        - 'vnc'
+  condition: selection_process and selection_indicators
+falsepositives:
+  - Authorized remote support tools
+  - IT helpdesk operations
+  - Approved remote work solutions
+level: medium
+riskscore: 60

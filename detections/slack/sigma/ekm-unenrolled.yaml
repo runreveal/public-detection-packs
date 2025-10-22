@@ -1,0 +1,32 @@
+title: Slack Enterprise Key Management Unenrolled
+id: slack-ekm-unenrolled
+description: Detects Enterprise Key Management removal that may expose encrypted data
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1552/
+tags:
+  - attack.credential-access
+  - attack.t1552
+  - slack
+  - application-activity
+  - signal
+  - encryption
+sourcetypes:
+  - slack
+mitreattacks:
+  - credential-access
+mitretechniques:
+  - T1552
+detection:
+  selection:
+    action|contains:
+      - 'ekm_unenrolled'
+      - 'ekm_disabled'
+      - 'encryption_key_removed'
+  condition: selection
+falsepositives:
+  - Key rotation activities
+  - Security policy changes
+level: high
+riskscore: 80

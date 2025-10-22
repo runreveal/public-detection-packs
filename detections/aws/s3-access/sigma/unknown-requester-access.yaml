@@ -1,0 +1,36 @@
+title: S3 Unknown Requester Access
+id: aws-s3-unknown-requester-access
+description: Detects GetObject operations from unrecognized entities that may indicate data exfiltration
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1530/
+tags:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1530
+  - aws
+  - s3
+  - network-activity
+  - signal
+  - data-access
+sourcetypes:
+  - s3-access
+mitreattacks:
+  - collection
+  - exfiltration
+mitretechniques:
+  - T1530
+detection:
+  selection:
+    operation:
+      - 'REST.GET.OBJECT'
+      - 'REST.COPY.OBJECT'
+    requester: '-'
+    httpStatus: '200'
+  condition: selection
+falsepositives:
+  - Public buckets with legitimate anonymous access
+  - CDN or caching services
+level: high
+riskscore: 70

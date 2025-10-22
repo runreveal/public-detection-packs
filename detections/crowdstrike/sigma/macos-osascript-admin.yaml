@@ -1,0 +1,44 @@
+title: CrowdStrike macOS AppleScript Execution with Elevated Privileges
+id: crowdstrike-macos-osascript-admin
+description: Flags AppleScript execution with elevated privileges that may be used for persistence, privilege escalation, or malicious automation
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1059/002/
+tags:
+  - attack.execution
+  - attack.privilege-escalation
+  - attack.t1059
+  - attack.t1059.002
+  - crowdstrike
+  - system-activity
+  - signal
+  - macos
+  - applescript
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - execution
+  - privilege-escalation
+mitretechniques:
+  - T1059
+  - T1059.002
+detection:
+  selection:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+    event_platform: 'Mac'
+    ImageFileName|contains: 'osascript'
+    CommandLine|contains:
+      - 'with administrator privileges'
+      - 'do shell script'
+      - 'sudo'
+  condition: selection
+falsepositives:
+  - Legitimate administrative automation
+  - Software installation scripts
+level: medium
+riskscore: 55

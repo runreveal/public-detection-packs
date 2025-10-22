@@ -1,0 +1,46 @@
+title: CrowdStrike macOS Property List Manipulation
+id: crowdstrike-macos-plutil-usage
+description: Monitors property list (plist) manipulation on macOS which may indicate persistence mechanism installation or configuration tampering
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1647/
+tags:
+  - attack.persistence
+  - attack.defense-evasion
+  - attack.t1647
+  - attack.t1543
+  - crowdstrike
+  - system-activity
+  - signal
+  - macos
+  - plist
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - persistence
+  - defense-evasion
+mitretechniques:
+  - T1647
+  - T1543
+detection:
+  selection:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+    event_platform: 'Mac'
+    ImageFileName|contains: 'plutil'
+    CommandLine|contains:
+      - 'LaunchAgents'
+      - 'LaunchDaemons'
+      - 'loginwindow'
+      - 'StartupItems'
+  condition: selection
+falsepositives:
+  - System configuration changes
+  - Application installations
+  - Legitimate administrative tasks
+level: low
+riskscore: 40

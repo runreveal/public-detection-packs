@@ -1,0 +1,51 @@
+title: CrowdStrike WMI Lateral Movement Detected
+id: crowdstrike-wmi-lateral-movement
+description: Detects Windows Management Instrumentation queries and commands commonly used for lateral movement and remote code execution
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1047/
+tags:
+  - attack.execution
+  - attack.lateral-movement
+  - attack.t1047
+  - crowdstrike
+  - system-activity
+  - signal
+  - wmi
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - execution
+  - lateral-movement
+mitretechniques:
+  - T1047
+detection:
+  selection_process:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+  selection_wmi:
+    - ImageFileName|endswith:
+        - '\wmic.exe'
+        - '\wmiprvse.exe'
+      CommandLine|contains:
+        - 'process call create'
+        - '/node:'
+        - 'shadowcopy'
+        - 'antivirusproduct'
+        - 'Invoke-WmiMethod'
+        - 'Get-WmiObject'
+        - 'Invoke-CimMethod'
+        - 'wmic.exe'
+        - 'Win32_Process'
+        - 'Win32_Service'
+        - 'Win32_Product'
+  condition: selection_process and selection_wmi
+falsepositives:
+  - Legitimate system administration and monitoring
+  - IT management tools
+level: medium
+riskscore: 70
