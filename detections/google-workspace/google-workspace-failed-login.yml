@@ -1,5 +1,5 @@
 name: google-workspace-failed-login
-displayName: failed-login
+displayName: Google Workspace Failed Login
 description: A user failed to log in to Google Workspace.
 file: google-workspace-failed-login.sql
 categories:

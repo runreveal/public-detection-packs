@@ -1,6 +1,6 @@
 disabled: true
 name: notion-sharing-and-visibility-settings-updated
-displayName: Sharing and visibility settings updated
+displayName: Notion Sharing and Visibility Settings Updated
 description: Detects when a Notion page's sharing and visibility settings are updated
 file: notion-sharing-and-visibility-settings-updated.sql
 categories:

@@ -1,6 +1,6 @@
 disabled: false
 name: file-uploaded
-displayName: File Uploaded
+displayName: Cloudflare File Uploaded
 description: A file was uploaded through Cloudflare gateway.
 file: file_uploaded.sql
 categories:

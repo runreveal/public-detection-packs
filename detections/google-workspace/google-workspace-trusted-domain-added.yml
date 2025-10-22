@@ -1,5 +1,5 @@
 name: google-workspace-trusted-domain-added
-displayName: Trusted domain added
+displayName: Google Workspace Trusted Domain Added
 description: Detects when a trusted domain is added to Google Workspace
 file: google-workspace-trusted-domain-added.sql
 categories:

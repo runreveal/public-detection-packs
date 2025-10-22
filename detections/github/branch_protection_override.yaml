@@ -1,6 +1,6 @@
 disabled: true
 name: branch-protection-override
-displayName: Branch Protection Override
+displayName: GitHub Branch Protection Override
 description:
   Alert when a pull request is merged without an approval using only webhooks.
   This is helpful if you're using the Github Free Tier, and don't have Github Enterprise.

@@ -1,6 +1,6 @@
 disabled: true
 name: bucket-created-deleted
-displayName: Bucket Created or Deleted
+displayName: AWS S3 Bucket Created or Deleted
 description: Monitor for bucket creation or deletion
 file: bucket_created_deleted.sql
 categories:

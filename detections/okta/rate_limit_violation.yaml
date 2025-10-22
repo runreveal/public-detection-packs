@@ -1,5 +1,5 @@
 name: okta-rate-limit-violation
-displayName: Rate limit violation
+displayName: Okta Rate Limit Violation
 file: rate_limit_violation.sql
 description: User received a ratelimit violation within okta
 categories:

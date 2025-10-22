@@ -1,6 +1,6 @@
 disabled: true
 name: notion-new-publicly-accessible-page
-displayName: New publicly accessible page
+displayName: Notion New Publicly Accessible Page
 description: Detects when a new page is made publicly accessible in Notion
 file: notion-new-publicly-accessible-page.sql
 categories:

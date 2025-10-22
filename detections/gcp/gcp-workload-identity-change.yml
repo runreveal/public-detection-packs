@@ -1,6 +1,6 @@
 disabled: true
 name: gcp-workload-identity-change
-displayName: workload-identity-change
+displayName: GCP Workload Identity Change
 description: Detects changes to the Workload Identity configuration in GCP
 file: gcp-workload-identity-change.sql
 categories:

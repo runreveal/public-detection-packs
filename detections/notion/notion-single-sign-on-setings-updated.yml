@@ -1,6 +1,6 @@
 disabled: true
 name: notion-single-sign-on-setings-updated
-displayName: Single Sign-On setings updated
+displayName: Notion Single Sign-On Settings Updated
 description: Detects when the Single Sign-On settings are updated in Notion
 file: notion-single-sign-on-setings-updated.sql
 categories:
