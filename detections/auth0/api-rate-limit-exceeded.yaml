@@ -16,7 +16,7 @@ mitreTechniques:
   - T1498
 severity: Medium
 riskScore: 55
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 parameters:
   window: "30"
   threshold: "5"

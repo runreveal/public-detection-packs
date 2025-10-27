@@ -15,7 +15,7 @@ mitreTechniques:
   - T1621
 severity: High
 riskScore: 75
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 parameters:
   window: "30"
   threshold: "5"
