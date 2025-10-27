@@ -1,0 +1,23 @@
+name: auth0-mfa-push-fatigue
+displayName: Auth0 MFA Push Notification Fatigue Attack
+description: Detects excessive MFA push notifications sent to a user within a short time window, indicating a potential MFA fatigue attack where attackers spam push notifications hoping the user approves one.
+file: mfa-push-fatigue.sql
+categories:
+  - auth0
+  - identity-access-management
+  - signal
+  - mfa-abuse
+  - push-fatigue
+mitreAttacks:
+  - credential-access
+  - defense-evasion
+mitreTechniques:
+  - T1621
+severity: High
+riskScore: 75
+schedule: "*/15 * * * *"
+parameters:
+  window: "30"
+  threshold: "5"
+sourceTypes:
+  - auth0

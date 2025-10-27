@@ -1,0 +1,24 @@
+name: auth0-user-enumeration
+displayName: Auth0 User Enumeration Attempt
+description: Detects attempts to enumerate valid user accounts by analyzing patterns of failed login attempts across multiple different usernames from the same source.
+file: user-enumeration.sql
+categories:
+  - auth0
+  - identity-access-management
+  - signal
+  - user-enumeration
+  - reconnaissance
+mitreAttacks:
+  - reconnaissance
+  - discovery
+mitreTechniques:
+  - T1589
+  - T1087
+severity: Medium
+riskScore: 55
+schedule: "*/15 * * * *"
+parameters:
+  window: "30"
+  threshold: "30"
+sourceTypes:
+  - auth0

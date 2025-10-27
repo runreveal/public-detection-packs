@@ -1,0 +1,22 @@
+name: auth0-brute-force-login
+displayName: Auth0 Brute Force Login Attempts
+description: Detects multiple failed login attempts from a single IP address or user within a short time window, indicating potential brute force attack.
+file: brute-force-login.sql
+categories:
+  - auth0
+  - identity-access-management
+  - signal
+  - brute-force
+  - failed-authentication
+mitreAttacks:
+  - credential-access
+mitreTechniques:
+  - T1110
+severity: High
+riskScore: 75
+schedule: "*/15 * * * *"
+parameters:
+  window: "30"
+  threshold: "10"
+sourceTypes:
+  - auth0

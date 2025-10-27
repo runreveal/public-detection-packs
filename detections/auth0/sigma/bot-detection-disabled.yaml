@@ -1,0 +1,44 @@
+title: Auth0 Bot Detection Disabled
+id: 7f8e9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b
+description: Detects when Auth0's bot detection policy is disabled, removing automated protections against bot-driven attacks.
+references:
+  - https://auth0.com/docs/secure/attack-protection/bot-detection
+author: RunReveal
+date: 2025-01-27
+tags:
+  - attack.defense-evasion
+  - auth0
+  - identity-access-management
+  - signal
+  - bot-detection
+  - security-configuration
+sourcetypes:
+  - auth0
+detection:
+  selection_type:
+    type: sapi
+  selection_api:
+    rawLog|contains|all:
+      - '/v2/attack-protection/bot-detection'
+      - 'policy'
+      - 'off'
+  selection_description_disabled:
+    description|contains|all:
+      - 'bot'
+      - 'detection'
+      - 'disabl'
+  selection_description_off:
+    description|contains|all:
+      - 'bot'
+      - 'detection'
+      - 'off'
+  condition: selection_type and (selection_api or selection_description_disabled or selection_description_off)
+falsepositives:
+  - Legitimate administrative changes to security policies
+  - Testing or development environment configuration changes
+level: high
+riskscore: 80
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1562

@@ -1,0 +1,39 @@
+title: Auth0 Attack Protection Disabled
+id: 3c7e8f2a-9d1b-4c3e-a5f6-1d2e3f4a5b6c
+description: Detects when Auth0 attack protection features are disabled, including suspicious IP throttling, breached password detection, and brute-force protection mechanisms.
+references:
+  - https://auth0.com/docs/secure/attack-protection
+author: RunReveal
+date: 2025-01-27
+tags:
+  - attack.defense-evasion
+  - auth0
+  - identity-access-management
+  - signal
+  - attack-protection
+  - security-configuration
+sourcetypes:
+  - auth0
+detection:
+  selection_type:
+    type: sapi
+  selection_api_endpoints:
+    rawLog.path|contains:
+      - '/v2/attack-protection/suspicious-ip-throttling'
+      - '/v2/attack-protection/breached-password-detection'
+      - '/v2/attack-protection/brute-force-protection'
+  selection_description:
+    description|contains|all:
+      - 'attack'
+      - 'protection'
+      - 'disabl'
+  condition: selection_type and (selection_api_endpoints or selection_description)
+falsepositives:
+  - Legitimate administrative changes to security policies
+  - Testing or development environment configuration changes
+level: high
+riskscore: 85
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1562
