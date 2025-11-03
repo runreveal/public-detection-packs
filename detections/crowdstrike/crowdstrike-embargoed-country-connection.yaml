@@ -15,7 +15,7 @@ mitreTechniques:
   - T1071
 severity: High
 riskScore: 70
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 parameters:
   window: "30"
   embargoedCountries: "[]"

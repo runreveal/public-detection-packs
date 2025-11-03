@@ -15,7 +15,7 @@ mitreTechniques:
   - T1485
 severity: Critical
 riskScore: 90
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 sourceTypes:
   - github
 parameters:

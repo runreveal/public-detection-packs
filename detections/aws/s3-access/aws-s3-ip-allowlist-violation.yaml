@@ -16,7 +16,7 @@ mitreTechniques:
   - T1078
 severity: Medium
 riskScore: 60
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 parameters:
   window: "30"
   allowedIPs: "[]"
