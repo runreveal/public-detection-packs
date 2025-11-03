@@ -1,0 +1,35 @@
+title: Slack Legal Hold Policy Tampered
+id: slack-legal-hold-tampered
+description: Detects legal hold policy modifications that may indicate evidence destruction
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1070/
+tags:
+  - attack.defense-evasion
+  - attack.t1070
+  - slack
+  - audit-activity
+  - signal
+  - compliance
+sourcetypes:
+  - slack
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1070
+detection:
+  selection:
+    action|contains:
+      - 'legal_hold'
+      - 'retention_policy'
+    details|contains:
+      - 'removed'
+      - 'disabled'
+      - 'deleted'
+  condition: selection
+falsepositives:
+  - Legitimate legal hold management
+  - Retention policy updates
+level: high
+riskscore: 80

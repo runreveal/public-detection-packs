@@ -1,0 +1,41 @@
+title: Wiz Security Rule Disabled or Modified
+id: wiz-security-rule-disabled
+description: Detects security rule modifications or deletions that could weaken security posture
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1562/
+tags:
+  - attack.defense-evasion
+  - attack.t1562
+  - wiz
+  - findings
+  - signal
+  - security-controls
+sourcetypes:
+  - wiz-threats
+  - wiz-issue
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1562
+detection:
+  selection:
+    controlName|contains:
+      - 'Security Rule'
+      - 'Detection Rule'
+      - 'Policy'
+      - 'Control'
+    triggerType:
+      - 'DISABLED'
+      - 'DELETED'
+      - 'UPDATED'
+    controlSeverity:
+      - 'CRITICAL'
+      - 'HIGH'
+  condition: selection
+falsepositives:
+  - Rule tuning and optimization
+  - False positive reduction efforts
+level: high
+riskscore: 75

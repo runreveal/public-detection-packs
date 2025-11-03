@@ -1,0 +1,24 @@
+name: aws-s3-ip-allowlist-violation
+displayName: S3 IP Allowlist Violation
+description: Identifies S3 access attempts from non-approved IPs that may indicate unauthorized access or compromised credentials. Configure allowedIPs parameter to specify authorized IP addresses.
+file: aws-s3-ip-allowlist-violation.sql
+categories:
+  - attack.initial-access
+  - attack.t1078
+  - aws
+  - s3
+  - network-activity
+  - signal
+  - access-control
+mitreAttacks:
+  - initial-access
+mitreTechniques:
+  - T1078
+severity: Medium
+riskScore: 60
+schedule: "*/30 * * * *"
+parameters:
+  window: "30"
+  allowedIPs: "[]"
+sourceTypes:
+  - s3-access

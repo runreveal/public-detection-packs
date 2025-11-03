@@ -1,0 +1,36 @@
+title: S3 Access Error Patterns
+id: aws-s3-access-error-patterns
+description: Detects error patterns indicating reconnaissance, permission testing, or brute force attempts
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1526/
+tags:
+  - attack.discovery
+  - attack.t1526
+  - aws
+  - s3
+  - network-activity
+  - signal
+  - reconnaissance
+sourcetypes:
+  - s3-access
+mitreattacks:
+  - discovery
+mitretechniques:
+  - T1526
+detection:
+  selection:
+    errorCode:
+      - 'AccessDenied'
+      - 'NoSuchBucket'
+      - 'InvalidAccessKeyId'
+      - 'SignatureDoesNotMatch'
+      - 'NoSuchKey'
+  condition: selection
+falsepositives:
+  - Application errors
+  - Misconfigured services
+  - Development and testing activities
+level: low
+riskscore: 40

@@ -1,0 +1,56 @@
+title: CrowdStrike Reverse Shell Execution Detected
+id: crowdstrike-reverse-shell-execution
+description: Identifies reverse shell payload execution using common techniques including netcat, bash, PowerShell, or Python reverse shells
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1059/
+tags:
+  - attack.execution
+  - attack.command-and-control
+  - attack.t1059
+  - attack.t1071
+  - crowdstrike
+  - system-activity
+  - signal
+  - reverse-shell
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - execution
+  - command-and-control
+mitretechniques:
+  - T1059
+  - T1071
+detection:
+  selection_process:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+      - 'ProcessRollup2V2'
+      - 'ProcessRollup2V3'
+  selection_indicators:
+    CommandLine|contains:
+      - '/bin/bash -i'
+      - '/bin/sh -i'
+      - 'nc -e'
+      - 'ncat -e'
+      - 'socat'
+      - 'pty.spawn'
+      - 'ConPtyShell'
+      - 'Invoke-PowerShellTcp'
+      - 'powercat'
+      - 'System.Net.Sockets.TCPClient'
+      - 'SOCK_STREAM'
+      - '/dev/tcp/'
+      - 'mkfifo'
+      - 'bash -c "bash -i'
+  condition: selection_process and selection_indicators
+falsepositives:
+  - Legitimate remote administration tools
+  - Development and testing activities
+  - Security tools and monitoring solutions
+level: high
+riskscore: 85

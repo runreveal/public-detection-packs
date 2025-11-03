@@ -1,0 +1,32 @@
+title: Slack Workspace Deletion
+id: slack-workspace-deleted
+description: Detects workspace deletion events that may indicate data destruction or sabotage
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1485/
+tags:
+  - attack.impact
+  - attack.t1485
+  - slack
+  - audit-activity
+  - signal
+  - data-destruction
+sourcetypes:
+  - slack
+mitreattacks:
+  - impact
+mitretechniques:
+  - T1485
+detection:
+  selection:
+    action|contains:
+      - 'workspace_deleted'
+      - 'workspace_deactivated'
+      - 'team_deleted'
+  condition: selection
+falsepositives:
+  - Authorized workspace decommissioning
+  - Company closure or restructuring
+level: critical
+riskscore: 90

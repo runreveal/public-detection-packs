@@ -1,0 +1,51 @@
+title: CrowdStrike System Log Tampering Detected
+id: crowdstrike-log-tampering
+description: Flags system log deletion or modification attempts that may indicate defense evasion activities
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1070/
+tags:
+  - attack.defense-evasion
+  - attack.t1070
+  - attack.t1070.001
+  - crowdstrike
+  - system-activity
+  - signal
+  - log-tampering
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1070
+  - T1070.001
+detection:
+  selection_process:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+      - 'ProcessRollup2V2'
+      - 'ProcessRollup2V3'
+  selection_commands:
+    CommandLine|contains:
+      - 'wevtutil cl'
+      - 'Clear-EventLog'
+      - 'Remove-EventLog'
+      - 'rm /var/log'
+      - 'rm -rf /var/log'
+      - 'echo > /var/log'
+      - 'cat /dev/null >'
+      - 'truncate -s 0'
+      - 'auditpol /clear'
+      - 'wevtutil.exe cl'
+      - 'for /F "tokens=*" %1 in ("wevtutil.exe el") DO wevtutil.exe cl'
+  condition: selection_process and selection_commands
+falsepositives:
+  - Legitimate system maintenance scripts
+  - Log rotation activities
+  - Authorized security tools
+level: high
+riskscore: 75

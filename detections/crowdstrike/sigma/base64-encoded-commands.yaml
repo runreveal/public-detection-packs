@@ -1,0 +1,48 @@
+title: CrowdStrike Base64 Encoded Command Execution
+id: crowdstrike-base64-encoded-commands
+description: Detects obfuscated command-line arguments using base64 encoding, commonly used to evade detection
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1027/
+tags:
+  - attack.defense-evasion
+  - attack.execution
+  - attack.t1027
+  - attack.t1059.001
+  - crowdstrike
+  - system-activity
+  - signal
+  - obfuscation
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - defense-evasion
+  - execution
+mitretechniques:
+  - T1027
+  - T1059.001
+detection:
+  selection_process:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+  selection_base64:
+    - CommandLine|contains:
+        - ' -e '
+        - ' -enc '
+        - ' -encodedcommand '
+        - 'FromBase64String'
+        - '::FromBase64String'
+        - 'base64 -d'
+        - 'base64 --decode'
+        - 'openssl base64 -d'
+    - CommandLine|re: '.*[A-Za-z0-9+/]{50,}={0,2}.*'
+  condition: selection_process and selection_base64
+falsepositives:
+  - Legitimate scripts using base64 for data encoding
+  - Software installation and update processes
+level: medium
+riskscore: 65

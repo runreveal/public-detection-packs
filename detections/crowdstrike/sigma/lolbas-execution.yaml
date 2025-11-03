@@ -1,0 +1,59 @@
+title: CrowdStrike Living off the Land Binaries Abuse
+id: crowdstrike-lolbas-execution
+description: Detects abuse of legitimate Windows binaries (LOLBAS) for malicious purposes such as code execution, lateral movement, or defense evasion
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1218/
+  - https://lolbas-project.github.io/
+tags:
+  - attack.defense-evasion
+  - attack.execution
+  - attack.t1218
+  - crowdstrike
+  - system-activity
+  - signal
+  - lolbas
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - defense-evasion
+  - execution
+mitretechniques:
+  - T1218
+detection:
+  selection_process:
+    event_simpleName:
+      - 'ProcessRollup2'
+      - 'SyntheticProcessRollup2'
+      - 'ProcessRollup2V2'
+      - 'ProcessRollup2V3'
+    ImageFileName|endswith:
+      - '\rundll32.exe'
+      - '\regsvr32.exe'
+      - '\mshta.exe'
+      - '\certutil.exe'
+      - '\bitsadmin.exe'
+      - '\wmic.exe'
+      - '\msiexec.exe'
+      - '\installutil.exe'
+      - '\regasm.exe'
+      - '\regsvcs.exe'
+  selection_suspicious:
+    CommandLine|contains:
+      - 'http://'
+      - 'https://'
+      - '-decode'
+      - '/c '
+      - 'javascript:'
+      - 'vbscript:'
+      - '.sct'
+      - 'scrobj.dll'
+  condition: selection_process and selection_suspicious
+falsepositives:
+  - Legitimate administrative scripts and automation
+  - Software installation and updates
+level: medium
+riskscore: 60

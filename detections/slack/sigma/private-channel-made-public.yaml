@@ -1,0 +1,32 @@
+title: Slack Private Channel Made Public
+id: slack-private-channel-made-public
+description: Detects when a private channel is converted to public, potentially exposing sensitive information
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1074/
+tags:
+  - attack.collection
+  - attack.t1074
+  - slack
+  - application-activity
+  - signal
+  - data-exposure
+sourcetypes:
+  - slack
+mitreattacks:
+  - collection
+mitretechniques:
+  - T1074
+detection:
+  selection:
+    action:
+      - 'channel_converted_to_public'
+      - 'private_channel_converted'
+    entityType: 'channel'
+  condition: selection
+falsepositives:
+  - Intentional channel visibility changes
+  - Project transparency initiatives
+level: medium
+riskscore: 60

@@ -1,0 +1,36 @@
+title: CrowdStrike Suspicious DNS Query Patterns
+id: crowdstrike-suspicious-dns-patterns
+description: Monitors suspicious DNS query patterns including DGA domains, DNS tunneling, and queries to suspicious TLDs
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1071/004/
+tags:
+  - attack.command-and-control
+  - attack.t1071
+  - attack.t1071.004
+  - crowdstrike
+  - network-activity
+  - signal
+  - dns
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - command-and-control
+mitretechniques:
+  - T1071
+  - T1071.004
+detection:
+  selection_suspicious_dns:
+    event_simpleName: 'SuspiciousDnsRequest'
+  selection_dga_indicators:
+    event_simpleName: 'DnsRequest'
+    CommandLine|re: '.*[a-z0-9]{20,}\..*'
+  condition: selection_suspicious_dns or selection_dga_indicators
+falsepositives:
+  - CDN and cloud service queries
+  - Legitimate long domain names
+level: medium
+riskscore: 60

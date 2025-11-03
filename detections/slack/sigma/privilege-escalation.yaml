@@ -1,0 +1,40 @@
+title: Slack Privilege Escalation
+id: slack-privilege-escalation
+description: Detects unauthorized user permission elevation that may indicate account compromise or insider threat
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1078/004/
+tags:
+  - attack.privilege-escalation
+  - attack.persistence
+  - attack.t1078
+  - attack.t1078.004
+  - slack
+  - identity-access-management
+  - signal
+sourcetypes:
+  - slack
+mitreattacks:
+  - privilege-escalation
+  - persistence
+mitretechniques:
+  - T1078
+  - T1078.004
+detection:
+  selection:
+    action:
+      - 'role_assigned'
+      - 'user_role_change'
+      - 'permissions_assigned'
+    details|contains:
+      - 'admin'
+      - 'owner'
+      - 'primary_owner'
+  condition: selection
+falsepositives:
+  - Legitimate role assignments
+  - Organizational changes
+  - Onboarding processes
+level: medium
+riskscore: 65

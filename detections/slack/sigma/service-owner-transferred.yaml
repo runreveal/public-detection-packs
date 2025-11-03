@@ -1,0 +1,34 @@
+title: Slack Service Owner Transferred
+id: slack-service-owner-transferred
+description: Monitors ownership transfer events that could indicate account takeover or unauthorized administrative changes
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1098/
+tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
+  - slack
+  - identity-access-management
+  - signal
+  - ownership
+sourcetypes:
+  - slack
+mitreattacks:
+  - persistence
+  - privilege-escalation
+mitretechniques:
+  - T1098
+detection:
+  selection:
+    action|contains:
+      - 'owner_transferred'
+      - 'ownership_changed'
+      - 'primary_owner_changed'
+  condition: selection
+falsepositives:
+  - Legitimate administrative transfers
+  - Organizational restructuring
+level: high
+riskscore: 75

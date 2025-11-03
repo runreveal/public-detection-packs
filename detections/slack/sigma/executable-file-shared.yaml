@@ -1,0 +1,42 @@
+title: Slack Suspicious File Shared
+id: slack-suspicious-file-shared
+description: Identifies suspicious file distribution that may contain executables (malware or phishing content)
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1566/001/
+tags:
+  - attack.initial-access
+  - attack.t1566
+  - attack.t1566.001
+  - slack
+  - application-activity
+  - signal
+  - malware
+sourcetypes:
+  - slack
+mitreattacks:
+  - initial-access
+mitretechniques:
+  - T1566
+  - T1566.001
+detection:
+  selection:
+    action: 'file_shared'
+    details|contains:
+      - '.exe'
+      - '.scr'
+      - '.bat'
+      - '.cmd'
+      - '.vbs'
+      - '.ps1'
+      - '.zip'
+      - '.rar'
+      - '.7z'
+  condition: selection
+falsepositives:
+  - Legitimate executable distribution
+  - Software deployment
+  - IT support activities
+level: medium
+riskscore: 65

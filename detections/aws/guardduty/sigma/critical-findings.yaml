@@ -1,0 +1,40 @@
+title: AWS GuardDuty Critical Severity Findings
+id: aws-guardduty-critical-findings
+description: Detects critical severity findings from AWS GuardDuty requiring immediate investigation and response
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+tags:
+  - attack.initial-access
+  - attack.execution
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - aws
+  - guardduty
+  - findings
+  - signal
+logsource:
+  product: aws
+  service: guardduty
+mitreattacks:
+  - initial-access
+  - execution
+  - persistence
+  - privilege-escalation
+  - defense-evasion
+mitretechniques:
+  - T1190
+  - T1078
+  - T1562
+detection:
+  selection:
+    severity:
+      - 'CRITICAL'
+    title: '*'
+  condition: selection
+falsepositives:
+  - None - these are AWS GuardDuty validated findings
+level: critical
+riskscore: 90

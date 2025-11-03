@@ -1,0 +1,38 @@
+title: AWS GuardDuty High Severity Findings
+id: aws-guardduty-high-severity-findings
+description: Identifies high severity security findings from AWS GuardDuty that warrant prompt investigation
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+tags:
+  - attack.initial-access
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.defense-evasion
+  - attack.credential-access
+  - aws
+  - guardduty
+  - findings
+  - signal
+logsource:
+  product: aws
+  service: guardduty
+mitreattacks:
+  - initial-access
+  - persistence
+  - privilege-escalation
+  - defense-evasion
+  - credential-access
+mitretechniques:
+  - T1078
+  - T1110
+  - T1562
+detection:
+  selection:
+    severity: 'High'
+  condition: selection
+falsepositives:
+  - None - these are AWS GuardDuty validated findings
+level: high
+riskscore: 75

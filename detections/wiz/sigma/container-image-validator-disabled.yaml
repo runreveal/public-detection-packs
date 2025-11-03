@@ -1,0 +1,39 @@
+title: Wiz Container Image Validation Disabled
+id: wiz-container-image-validator-disabled
+description: Identifies when container image validation is disabled, potentially allowing malicious or vulnerable images
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1525/
+tags:
+  - attack.persistence
+  - attack.t1525
+  - wiz
+  - application-activity
+  - signal
+  - container
+  - kubernetes
+sourcetypes:
+  - wiz-threats
+  - wiz-issue
+mitreattacks:
+  - persistence
+mitretechniques:
+  - T1525
+detection:
+  selection:
+    controlName|contains:
+      - 'Container'
+      - 'Image'
+      - 'Validation'
+      - 'Registry'
+      - 'Admission Control'
+    triggerType:
+      - 'DISABLED'
+      - 'DELETED'
+  condition: selection
+falsepositives:
+  - Temporary validation bypass for testing
+  - Registry maintenance
+level: high
+riskscore: 75

@@ -1,0 +1,38 @@
+title: CrowdStrike Detection Passthrough
+id: crowdstrike-detection-passthrough
+description: Routes all CrowdStrike detections for analysis and correlation with other security events
+author: RunReveal
+date: 2025/01/22
+tags:
+  - crowdstrike
+  - findings
+  - signal
+  - detection
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreattacks:
+  - initial-access
+  - execution
+  - persistence
+  - privilege-escalation
+  - defense-evasion
+  - credential-access
+  - discovery
+  - lateral-movement
+  - collection
+  - exfiltration
+  - command-and-control
+  - impact
+detection:
+  selection:
+    event_simpleName:
+      - 'DetectionSummaryEvent'
+      - 'UserActivityAuditEvent'
+      - 'IncidentSummaryEvent'
+  condition: selection
+falsepositives:
+  - None - these are CrowdStrike native detections
+level: medium
+riskscore: 50

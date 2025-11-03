@@ -1,0 +1,40 @@
+title: Wiz CI/CD Scan Policy Tampered
+id: wiz-cicd-scan-policy-tampered
+description: Detects CI/CD scanning policy changes that could enable vulnerable code deployment
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1554/
+tags:
+  - attack.defense-evasion
+  - attack.t1554
+  - wiz
+  - application-activity
+  - signal
+  - cicd
+  - supply-chain
+sourcetypes:
+  - wiz-threats
+  - wiz-issue
+mitreattacks:
+  - defense-evasion
+mitretechniques:
+  - T1554
+detection:
+  selection:
+    controlName|contains:
+      - 'CI/CD'
+      - 'Pipeline'
+      - 'Build'
+      - 'Scan Policy'
+      - 'Image Scan'
+    triggerType:
+      - 'UPDATED'
+      - 'DELETED'
+      - 'DISABLED'
+  condition: selection
+falsepositives:
+  - Pipeline configuration updates
+  - Development workflow changes
+level: high
+riskscore: 70

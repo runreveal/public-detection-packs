@@ -1,0 +1,31 @@
+title: Slack Application Permissions Expanded
+id: slack-app-permissions-expanded
+description: Identifies application access scope expansion that could lead to data exposure or unauthorized operations
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1550/
+tags:
+  - attack.credential-access
+  - attack.t1550
+  - slack
+  - application-activity
+  - signal
+  - oauth
+sourcetypes:
+  - slack
+mitreattacks:
+  - credential-access
+mitretechniques:
+  - T1550
+detection:
+  selection:
+    action:
+      - 'app_scopes_expanded'
+      - 'app_permissions_changed'
+  condition: selection
+falsepositives:
+  - Legitimate app updates
+  - Feature additions requiring new permissions
+level: medium
+riskscore: 60

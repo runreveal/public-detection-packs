@@ -1,0 +1,39 @@
+title: Tailscale HTTPS Disabled
+id: tailscale-https-disabled
+description: Detects when HTTPS is disabled in Tailscale configurations, identifying potential unencrypted communication risks
+author: RunReveal
+date: 2025/01/22
+references:
+  - https://attack.mitre.org/techniques/T1040/
+tags:
+  - attack.credential-access
+  - attack.collection
+  - attack.t1040
+  - tailscale
+  - network-activity
+  - signal
+  - encryption
+sourcetypes:
+  - tailscale
+  - tailscale-audit
+mitreattacks:
+  - credential-access
+  - collection
+mitretechniques:
+  - T1040
+detection:
+  selection:
+    action|contains:
+      - 'https'
+      - 'tls'
+      - 'ssl'
+    new|contains:
+      - 'disabled'
+      - 'false'
+      - 'off'
+  condition: selection
+falsepositives:
+  - Testing and development environments
+  - Internal network segments
+level: high
+riskscore: 70
