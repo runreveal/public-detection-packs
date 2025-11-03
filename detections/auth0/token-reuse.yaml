@@ -1,0 +1,24 @@
+name: auth0-token-reuse
+displayName: Auth0 Suspicious Token Reuse
+description: Detects when an authentication token is reused from multiple different IP addresses or locations, indicating potential token theft or compromise.
+file: token-reuse.sql
+categories:
+  - auth0
+  - identity-access-management
+  - signal
+  - token-theft
+  - session-hijacking
+mitreAttacks:
+  - credential-access
+  - lateral-movement
+mitreTechniques:
+  - T1528
+  - T1550
+severity: High
+riskScore: 75
+schedule: "*/30 * * * *"
+parameters:
+  window: "30"
+  threshold: "5"
+sourceTypes:
+  - auth0

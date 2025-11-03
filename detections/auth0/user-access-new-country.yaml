@@ -1,0 +1,22 @@
+name: auth0-user-access-new-country
+displayName: Auth0 User Access from New Country
+description: Monitors for user activity from a country that the user has not previously accessed Auth0 from, indicating potential account takeover or credential compromise.
+file: user-access-new-country.sql
+categories:
+  - auth0
+  - identity-access-management
+  - signal
+  - geographical-anomaly
+  - new-country
+mitreAttacks:
+  - initial-access
+  - persistence
+mitreTechniques:
+  - T1078
+severity: Medium
+riskScore: 60
+schedule: "*/30 * * * *"
+parameters:
+  window: "30"
+sourceTypes:
+  - auth0

@@ -1,0 +1,43 @@
+title: Auth0 MFA Policy Disabled
+id: 1b2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e
+description: Detects when Multi-Factor Authentication policies are disabled in Auth0, indicating a significant weakening of authentication security controls.
+references:
+  - https://auth0.com/docs/secure/multi-factor-authentication
+author: RunReveal
+date: 2025-01-27
+tags:
+  - attack.defense-evasion
+  - attack.persistence
+  - auth0
+  - identity-access-management
+  - signal
+  - mfa-disabled
+  - security-configuration
+sourcetypes:
+  - auth0
+detection:
+  selection_type:
+    type: sapi
+  selection_mfa_description:
+    description|contains:
+      - 'Multi-factor Authentication policies'
+  selection_guardian_description:
+    description|contains:
+      - 'guardian'
+      - 'policies'
+  selection_api:
+    rawLog|contains|all:
+      - '/api/v2/guardian/policies'
+      - 'PUT'
+  condition: selection_type and (selection_mfa_description or selection_guardian_description or selection_api)
+falsepositives:
+  - Legitimate administrative changes to MFA policies
+  - Testing or development environment configuration changes
+level: high
+riskscore: 85
+mitreattacks:
+  - defense-evasion
+  - persistence
+mitretechniques:
+  - T1562
+  - T1556

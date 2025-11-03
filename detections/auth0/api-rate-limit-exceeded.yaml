@@ -1,0 +1,24 @@
+name: auth0-api-rate-limit-exceeded
+displayName: Auth0 API Rate Limit Exceeded
+description: Detects when API rate limits are exceeded, which could indicate automated attacks, credential stuffing, or abuse of the Auth0 service.
+file: api-rate-limit-exceeded.sql
+categories:
+  - auth0
+  - identity-access-management
+  - signal
+  - rate-limiting
+  - api-abuse
+mitreAttacks:
+  - credential-access
+  - impact
+mitreTechniques:
+  - T1110
+  - T1498
+severity: Medium
+riskScore: 55
+schedule: "*/30 * * * *"
+parameters:
+  window: "30"
+  threshold: "5"
+sourceTypes:
+  - auth0
