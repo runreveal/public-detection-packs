@@ -1,5 +1,4 @@
-title: Cloudflare File Downloaded
-id: file-downloaded
+title: File Downloaded
 status: stable
 description: A file was downloaded through Cloudflare gateway.
 references:
@@ -12,8 +11,23 @@ tags:
   - attack.exfiltration
   - attack.t1005
   - attack.t1041
+  - cloudflare
+  - gateway
+  - network-activity
+  - http-activity
+  - signal
+  - file-activity
+  - data-exposure
+  - cf-gateway-http
 sourcetypes:
   - cf-gateway-http
+riskscore: 30
+mitreattacks:
+  - collection
+  - exfiltration
+mitretechniques:
+  - T1005
+  - T1041
 detection:
   selection_action:
     rawLog.Action: "allow"

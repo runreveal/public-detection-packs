@@ -1,5 +1,4 @@
 title: New Cloudflare API Key
-id: new-cloudflare-api-key
 status: stable
 description: A Cloudflare API key was created or rotated.
 references:
@@ -12,8 +11,22 @@ tags:
   - attack.privilege-escalation
   - attack.credential-access
   - attack.t1098.001
+  - cloudflare
+  - audit
+  - identity-access-management
+  - entity-management
+  - signal
+  - api-key
+  - cf-audit
 sourcetypes:
   - cf-audit
+riskscore: 80
+mitreattacks:
+  - persistence
+  - privilege-escalation
+  - credential-access
+mitretechniques:
+  - T1098.001
 detection:
   selection:
     eventName:
