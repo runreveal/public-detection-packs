@@ -1,0 +1,66 @@
+title: File Uploaded
+status: stable
+description: A file was uploaded through Cloudflare gateway.
+references:
+  - https://developers.cloudflare.com/cloudflare-one/insights/logs/gateway-logs/
+author: RunReveal
+date: 2025-01-13
+modified: 2025-01-13
+tags:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1005
+  - attack.t1567
+  - cloudflare
+  - gateway
+  - network-activity
+  - http-activity
+  - signal
+  - file-activity
+  - data-exposure
+  - cf-gateway-http
+sourcetypes:
+  - cf-gateway-http
+riskscore: 30
+mitreattacks:
+  - collection
+  - exfiltration
+mitretechniques:
+  - T1005
+  - T1567
+detection:
+  selection_action:
+    rawLog.Action: "allow"
+  filter_empty:
+    rawLog.UploadedFileNames.#: 0
+  filter_unknown_only:
+    rawLog.UploadedFileNames.#: 1
+    rawLog.UploadedFileNames.0: "<unknown file name>"
+  filter_blob_unknown:
+    rawLog.UploadedFileNames.#: 2
+    rawLog.UploadedFileNames|contains|all:
+      - "blob"
+      - "<unknown file name>"
+  filter_empty_unknown:
+    rawLog.UploadedFileNames.#: 2
+    rawLog.UploadedFileNames|contains|all:
+      - ""
+      - "<unknown file name>"
+  condition: selection_action and not filter_empty and not filter_unknown_only and not filter_blob_unknown and not filter_empty_unknown
+falsepositives:
+  - Legitimate file uploads by users
+  - Automated system updates
+  - Business-critical file transfers
+level: low
+fields:
+  - UploadedFileNames
+  - URL
+  - HTTPHost
+  - Email
+  - DeviceName
+  - SourceIP
+  - PolicyName
+  - UserAgent
+  - HTTPMethod
+  - HTTPStatusCode
+  - FileInfo.files

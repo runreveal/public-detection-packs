@@ -1,0 +1,48 @@
+title: User Added Removed Cloudflare
+status: stable
+description: A user was either added to or removed from your Cloudflare account.
+references:
+  - https://developers.cloudflare.com/fundamentals/setup/manage-members/
+author: RunReveal
+date: 2025-01-13
+modified: 2025-01-13
+tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.t1098
+  - cloudflare
+  - audit
+  - identity-access-management
+  - entity-management
+  - signal
+  - user-management
+  - cf-audit
+sourcetypes:
+  - cf-audit
+riskscore: 50
+mitreattacks:
+  - persistence
+  - privilege-escalation
+mitretechniques:
+  - T1098
+detection:
+  selection:
+    eventName:
+      - "add_member"
+      - "accept_member"
+      - "account_member_delete"
+  condition: selection
+falsepositives:
+  - Legitimate user onboarding and offboarding
+  - Administrative user management activities
+  - Automated provisioning systems
+level: medium
+fields:
+  - eventName
+  - actorEmail
+  - actorIP
+  - actorType
+  - metadata
+  - newValue
+  - oldValue
+  - targetEmail

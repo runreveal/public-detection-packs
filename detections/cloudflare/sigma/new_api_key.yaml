@@ -1,0 +1,49 @@
+title: New Cloudflare API Key
+status: stable
+description: A Cloudflare API key was created or rotated.
+references:
+  - https://developers.cloudflare.com/fundamentals/api/reference/
+author: RunReveal
+date: 2025-01-13
+modified: 2025-01-13
+tags:
+  - attack.persistence
+  - attack.privilege-escalation
+  - attack.credential-access
+  - attack.t1098.001
+  - cloudflare
+  - audit
+  - identity-access-management
+  - entity-management
+  - signal
+  - api-key
+  - cf-audit
+sourcetypes:
+  - cf-audit
+riskscore: 80
+mitreattacks:
+  - persistence
+  - privilege-escalation
+  - credential-access
+mitretechniques:
+  - T1098.001
+detection:
+  selection:
+    eventName:
+      - "token_create"
+      - "rotate_API_key"
+  condition: selection
+falsepositives:
+  - Legitimate API key creation by administrators
+  - Scheduled API key rotation policies
+  - Service account automation
+level: high
+fields:
+  - eventName
+  - actorEmail
+  - actorIP
+  - actorType
+  - metadata
+  - interface
+  - newValue
+  - oldValue
