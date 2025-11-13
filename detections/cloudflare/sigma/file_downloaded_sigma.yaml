@@ -1,0 +1,39 @@
+title: Cloudflare File Downloaded
+id: 2sEur1Rrc3378BNH8tVkIBPCEYH
+description: A file was downloaded through Cloudflare gateway.
+author: RunReveal
+date: 2025-11-13
+tags:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1005
+  - attack.t1041
+  - cloudflare
+  - gateway
+  - network-activity
+  - http-activity
+  - signal
+  - file-activity
+  - data-exposure
+  - cf-gateway-http
+sourcetypes:
+  - cf-gateway-http
+detection:
+  selection:
+    Action: allow
+  filter_non_empty:
+    DownloadedFileNames.#: 0
+  filter_unknown:
+    DownloadedFileNames.#: 1
+    DownloadedFileNames.0: '<unknown file name>'
+  condition: selection and not filter_non_empty and not filter_unknown
+falsepositives:
+  - Legitimate file downloads by users may trigger this detection
+level: low
+riskscore: 30
+mitreattacks:
+  - collection
+  - exfiltration
+mitretechniques:
+  - T1005
+  - T1041
