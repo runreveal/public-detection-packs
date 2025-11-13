@@ -1,0 +1,42 @@
+title: Cloudflare File Downloaded
+id: file-downloaded
+status: stable
+description: A file was downloaded through Cloudflare gateway.
+references:
+  - https://developers.cloudflare.com/cloudflare-one/insights/logs/gateway-logs/
+author: RunReveal
+date: 2025-01-13
+modified: 2025-01-13
+tags:
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1005
+  - attack.t1041
+sourcetypes:
+  - cf-gateway-http
+detection:
+  selection_action:
+    rawLog.Action: "allow"
+  filter_empty:
+    rawLog.DownloadedFileNames.#: 0
+  filter_unknown_only:
+    rawLog.DownloadedFileNames.#: 1
+    rawLog.DownloadedFileNames.0: "<unknown file name>"
+  condition: selection_action and not filter_empty and not filter_unknown_only
+falsepositives:
+  - Legitimate file downloads by users
+  - Automated system updates
+  - Business-critical file transfers
+level: low
+fields:
+  - DownloadedFileNames
+  - URL
+  - HTTPHost
+  - Email
+  - DeviceName
+  - SourceIP
+  - PolicyName
+  - UserAgent
+  - HTTPMethod
+  - HTTPStatusCode
+  - FileInfo.files
