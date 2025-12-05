@@ -1,0 +1,60 @@
+title: AWS WAF CVE-2025-55182 React Server RCE Detection
+id: aws-waf-cve-2025-55182
+description: Detects exploitation attempts of CVE-2025-55182, a critical pre-authentication remote code execution vulnerability in React Server Components (versions 19.0.0, 19.1.0, 19.1.1, and 19.2.0). The vulnerability stems from unsafe deserialization of payloads to Server Function endpoints allowing unauthenticated remote code execution. This detection identifies traffic blocked or logged by AWS WAF's Known Bad Inputs rule set targeting the ReactJSRCE_BODY rule.
+references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2025-55182
+  - https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-baseline.html#aws-managed-rule-groups-baseline-known-bad-inputs
+  - https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html
+author: RunReveal
+date: 2025-12-05
+modified: 2025-12-05
+tags:
+  - attack.initial-access
+  - attack.execution
+  - attack.t1190
+  - attack.t1059
+  - aws
+  - waf
+  - network-activity
+  - signal
+  - findings
+  - cve-2025-55182
+  - react
+  - rce
+sourcetypes:
+  - aws-waf
+logsource:
+  product: aws
+  service: waf
+riskscore: 80
+mitreattacks:
+  - initial-access
+  - execution
+mitretechniques:
+  - T1190
+  - T1059
+detection:
+  selection_rulegroup:
+    rawLog.ruleGroupList.ruleGroupId: 'AWS#AWSManagedRulesKnownBadInputsRuleSet'
+  selection_rule:
+    rawLog.ruleGroupList.terminatingRule.ruleId: 'ReactJSRCE_BODY'
+  condition: selection_rulegroup and selection_rule
+falsepositives:
+  - Legitimate traffic matching WAF rules
+  - Security scanning and testing activities
+  - Traffic blocked by the WAF
+  - False positives in WAF rule matching
+level: critical
+fields:
+  - ruleGroupList
+  - terminatingRuleId
+  - terminatingRuleType
+  - action
+  - httpRequest.clientIp
+  - httpRequest.country
+  - httpRequest.uri
+  - httpRequest.httpMethod
+  - httpRequest.headers
+  - labels
+  - webaclId
+  - httpSourceName
