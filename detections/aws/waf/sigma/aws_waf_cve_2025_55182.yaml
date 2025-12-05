@@ -23,9 +23,6 @@ tags:
   - rce
 sourcetypes:
   - aws-waf
-logsource:
-  product: aws
-  service: waf
 riskscore: 80
 mitreattacks:
   - initial-access
