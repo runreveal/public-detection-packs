@@ -1,0 +1,30 @@
+name: cloudflare_origin-server-pivoting
+displayName: Cloudflare Origin Server Pivoting
+description: |
+  Detects traffic patterns suggesting use of Cloudflare infrastructure to pivot to
+  origin servers. Monitors for unusual origin connection patterns, direct origin IP
+  access attempts, or suspicious routing changes that could indicate lateral movement
+  through Cloudflare's edge to backend systems.
+file: cloudflare_origin-server-pivoting.sql
+categories:
+  - cloudflare
+  - network-activity
+  - lateral-movement
+  - signal
+  - cf-http
+mitreAttacks:
+  - lateral-movement
+mitreTechniques:
+  - T1090
+riskScore: 75
+severity: High
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "100"
+  window: "10"
+sourceTypes:
+  - cf-http
+falsepositives:
+  - Load testing activities
+  - Migration operations
+  - Legitimate high-traffic applications

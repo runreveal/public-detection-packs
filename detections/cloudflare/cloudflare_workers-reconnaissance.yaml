@@ -1,0 +1,29 @@
+name: cloudflare_workers-reconnaissance
+displayName: Cloudflare Workers Reconnaissance
+description: |
+  Detects enumeration of Cloudflare Workers endpoints through systematic path discovery
+  attempts. Attackers probe for Workers script paths to understand application logic,
+  identify vulnerabilities, or map serverless infrastructure.
+file: cloudflare_workers-reconnaissance.sql
+categories:
+  - cloudflare
+  - network-activity
+  - reconnaissance
+  - signal
+  - cf-http
+mitreAttacks:
+  - reconnaissance
+mitreTechniques:
+  - T1595
+riskScore: 45
+severity: Medium
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "30"
+  window: "10"
+sourceTypes:
+  - cf-http
+falsepositives:
+  - Development testing of Workers scripts
+  - Automated CI/CD pipelines
+  - Load testing tools

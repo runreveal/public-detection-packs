@@ -1,0 +1,30 @@
+name: cloudflare_dns-record-manipulation
+displayName: Cloudflare DNS Record Manipulation
+description: |
+  Detects suspicious DNS record creation or modification that could indicate
+  infrastructure setup for attacks. Monitors bulk DNS changes, unusual record types,
+  or modifications to critical records that could support phishing, C2, or other
+  malicious infrastructure.
+file: cloudflare_dns-record-manipulation.sql
+categories:
+  - cloudflare
+  - audit-activity
+  - resource-development
+  - signal
+  - cf-audit
+mitreAttacks:
+  - resource-development
+mitreTechniques:
+  - T1583.002
+riskScore: 60
+severity: Medium
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "10"
+  window: "30"
+sourceTypes:
+  - cf-audit
+falsepositives:
+  - Legitimate DNS infrastructure changes
+  - Migration activities
+  - Bulk DNS management operations

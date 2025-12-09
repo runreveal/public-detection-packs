@@ -1,0 +1,29 @@
+name: cloudflare_dns-zone-enumeration
+displayName: Cloudflare DNS Zone Enumeration
+description: |
+  Detects DNS zone walking or enumeration attempts through systematic DNS queries
+  across subdomain ranges. Attackers use this technique to map the attack surface
+  and identify potential targets within a DNS zone.
+file: cloudflare_dns-zone-enumeration.sql
+categories:
+  - cloudflare
+  - network-activity
+  - reconnaissance
+  - signal
+  - cf-http
+mitreAttacks:
+  - reconnaissance
+mitreTechniques:
+  - T1590.002
+riskScore: 50
+severity: Medium
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "100"
+  window: "5"
+sourceTypes:
+  - cf-http
+falsepositives:
+  - Legitimate subdomain discovery tools
+  - Security scanners performing authorized assessments
+  - DNS monitoring services

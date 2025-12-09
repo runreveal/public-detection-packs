@@ -1,0 +1,30 @@
+name: cloudflare_access-policy-lateral-movement
+displayName: Cloudflare Access Policy Lateral Movement
+description: |
+  Detects Access policy modifications that expand permissions and could enable
+  unauthorized lateral movement between protected applications. Monitors for policy
+  changes followed by new connection patterns indicating privilege escalation or
+  unauthorized access.
+file: cloudflare_access-policy-lateral-movement.sql
+categories:
+  - cloudflare
+  - audit-activity
+  - lateral-movement
+  - signal
+  - cf-audit
+mitreAttacks:
+  - lateral-movement
+mitreTechniques:
+  - T1021
+riskScore: 70
+severity: High
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "3"
+  window: "30"
+sourceTypes:
+  - cf-audit
+falsepositives:
+  - Legitimate Access policy updates
+  - Security team policy reviews
+  - Compliance-driven access changes

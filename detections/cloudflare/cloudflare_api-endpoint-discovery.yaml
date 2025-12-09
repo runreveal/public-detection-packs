@@ -1,0 +1,30 @@
+name: cloudflare_api-endpoint-discovery
+displayName: Cloudflare API Endpoint Discovery
+description: |
+  Detects reconnaissance of API endpoints through sequential path probing in WAF logs.
+  Attackers systematically test different API paths to map available endpoints and identify
+  potential vulnerabilities or authentication weaknesses.
+file: cloudflare_api-endpoint-discovery.sql
+categories:
+  - cloudflare
+  - network-activity
+  - reconnaissance
+  - signal
+  - cf-http
+  - cf-waf
+mitreAttacks:
+  - reconnaissance
+mitreTechniques:
+  - T1595.002
+riskScore: 55
+severity: Medium
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "50"
+  window: "10"
+sourceTypes:
+  - cf-http
+falsepositives:
+  - API documentation tools
+  - Development/testing activities
+  - Automated integration tests
