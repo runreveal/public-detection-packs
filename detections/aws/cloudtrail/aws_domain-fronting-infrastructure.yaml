@@ -1,0 +1,20 @@
+name: aws-domain-fronting-infrastructure
+displayName: AWS Domain Fronting Infrastructure Setup
+description: Detects creation of CloudFront distributions with custom origin configurations that could be used for domain fronting or command and control infrastructure
+file: aws_domain-fronting-infrastructure.sql
+categories:
+  - aws
+  - cloudfront
+  - cloudtrail
+  - network-activity
+  - resource-development
+  - signal
+mitreAttacks:
+  - resource-development
+mitreTechniques:
+  - T1583.006
+schedule: "*/15 * * * *"
+riskScore: 60
+severity: Medium
+sourceTypes:
+  - cloudtrail
