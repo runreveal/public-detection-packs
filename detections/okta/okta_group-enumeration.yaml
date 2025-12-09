@@ -1,0 +1,24 @@
+name: okta_group-enumeration
+displayName: Okta Group Membership Enumeration
+description: Detects enumeration of group memberships and organizational structure that could reveal privilege escalation paths
+file: okta_group-enumeration.sql
+categories:
+  - okta
+  - identity-access-management
+  - reconnaissance
+  - signal
+mitreAttacks:
+  - reconnaissance
+mitreTechniques:
+  - T1087.004
+schedule: "*/15 * * * *"
+riskScore: 50
+severity: Medium
+parameters:
+  threshold: "20"
+falsepositives:
+  - IT administrators reviewing group structures
+  - Security audit tools
+  - Identity governance systems
+sourceTypes:
+  - okta

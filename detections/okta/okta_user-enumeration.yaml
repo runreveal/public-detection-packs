@@ -1,0 +1,24 @@
+name: okta_user-enumeration
+displayName: Okta User Enumeration Activity
+description: Detects repeated user lookup or directory browsing activities that could indicate reconnaissance of organizational structure
+file: okta_user-enumeration.sql
+categories:
+  - okta
+  - identity-access-management
+  - reconnaissance
+  - signal
+mitreAttacks:
+  - reconnaissance
+mitreTechniques:
+  - T1589.001
+schedule: "*/15 * * * *"
+riskScore: 45
+severity: Medium
+parameters:
+  threshold: "30"
+falsepositives:
+  - HR systems performing automated directory synchronization
+  - Administrators conducting user audits
+  - Legitimate directory integration tools
+sourceTypes:
+  - okta

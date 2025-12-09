@@ -1,0 +1,24 @@
+name: okta_group-membership-exfiltration
+displayName: Okta Group Membership Data Exfiltration
+description: Detects bulk export of group membership and organizational structure data suggesting potential exfiltration
+file: okta_group-membership-exfiltration.sql
+categories:
+  - okta
+  - identity-access-management
+  - exfiltration
+  - signal
+mitreAttacks:
+  - exfiltration
+mitreTechniques:
+  - T1087.004
+schedule: "*/15 * * * *"
+riskScore: 75
+severity: High
+parameters:
+  threshold: "30"
+falsepositives:
+  - IT administrators exporting group data for reporting
+  - Security audit activities
+  - Identity management system synchronization
+sourceTypes:
+  - okta

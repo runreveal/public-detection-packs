@@ -1,0 +1,24 @@
+name: okta_session-token-collection
+displayName: Okta Session Token Collection
+description: Detects suspicious session token generation or validation patterns that could indicate session hijacking attempts
+file: okta_session-token-collection.sql
+categories:
+  - okta
+  - identity-access-management
+  - collection
+  - signal
+mitreAttacks:
+  - collection
+mitreTechniques:
+  - T1539
+schedule: "*/15 * * * *"
+riskScore: 65
+severity: High
+parameters:
+  threshold: "20"
+falsepositives:
+  - Single sign-on applications refreshing sessions
+  - Mobile applications maintaining active sessions
+  - Load balancers performing health checks
+sourceTypes:
+  - okta

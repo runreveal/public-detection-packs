@@ -1,0 +1,24 @@
+name: okta_bulk-user-data-export
+displayName: Okta Bulk User Data Export
+description: Detects mass export of user data via admin console or API that could indicate data collection for exfiltration
+file: okta_bulk-user-data-export.sql
+categories:
+  - okta
+  - identity-access-management
+  - collection
+  - signal
+mitreAttacks:
+  - collection
+mitreTechniques:
+  - T1530
+schedule: "*/15 * * * *"
+riskScore: 70
+severity: High
+parameters:
+  threshold: "50"
+falsepositives:
+  - IT administrators performing user audits
+  - Compliance reporting activities
+  - Identity management system synchronization
+sourceTypes:
+  - okta

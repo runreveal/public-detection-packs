@@ -1,0 +1,24 @@
+name: okta_application-discovery
+displayName: Okta Application Discovery Activity
+description: Detects systematic enumeration of available applications that could indicate reconnaissance of accessible resources
+file: okta_application-discovery.sql
+categories:
+  - okta
+  - application-activity
+  - reconnaissance
+  - signal
+mitreAttacks:
+  - reconnaissance
+mitreTechniques:
+  - T1580
+schedule: "*/15 * * * *"
+riskScore: 40
+severity: Medium
+parameters:
+  threshold: "15"
+falsepositives:
+  - Users exploring available applications legitimately
+  - Application catalog synchronization tools
+  - Security scanning tools
+sourceTypes:
+  - okta
