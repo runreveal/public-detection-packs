@@ -1,0 +1,24 @@
+name: gsuite_cross-service-lateral-movement
+displayName: GSuite Cross-Service Lateral Movement
+description: Detects rapid access patterns across multiple GSuite services that could indicate lateral movement using compromised credentials
+file: gsuite_cross-service-lateral-movement.sql
+categories:
+  - gsuite
+  - identity-access-management
+  - lateral-movement
+  - signal
+mitreAttacks:
+  - lateral-movement
+mitreTechniques:
+  - T1550.001
+schedule: "*/15 * * * *"
+riskScore: 60
+severity: Medium
+parameters:
+  threshold: "8"
+falsepositives:
+  - Normal user workflow accessing multiple services
+  - Power users with legitimate multi-service needs
+  - Automated tools syncing across services
+sourceTypes:
+  - gsuite

@@ -1,0 +1,31 @@
+title: GSuite Apps Script Execution
+description: |
+  Detects Apps Script executions that could be running malicious code including
+  unauthorized API calls or data access.
+references:
+  - https://developers.google.com/apps-script
+  - https://attack.mitre.org/techniques/T1059/009/
+author: RunReveal
+date: 2025-12-09
+tags:
+  - gsuite
+  - application-activity
+  - execution
+  - signal
+sourcetypes:
+  - gsuite
+detection:
+  selection:
+    eventName: authorize
+    id.applicationName: token
+  condition: selection
+falsepositives:
+  - Normal Apps Script execution for automation
+  - Legitimate workflow tools
+  - Authorized integrations
+level: low
+riskscore: 35
+mitreattacks:
+  - execution
+mitretechniques:
+  - T1059.009

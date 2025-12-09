@@ -1,0 +1,24 @@
+name: gsuite_mass-data-deletion
+displayName: GSuite Mass Data Deletion
+description: Detects bulk deletion of Drive files or emails that could indicate destructive activity or data destruction
+file: gsuite_mass-data-deletion.sql
+categories:
+  - gsuite
+  - application-activity
+  - impact
+  - signal
+mitreAttacks:
+  - impact
+mitreTechniques:
+  - T1485
+schedule: "*/15 * * * *"
+riskScore: 75
+severity: High
+parameters:
+  threshold: "100"
+falsepositives:
+  - Cleanup activities by users managing storage quotas
+  - Legitimate data archival processes
+  - Automated retention policy enforcement
+sourceTypes:
+  - gsuite

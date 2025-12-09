@@ -1,0 +1,35 @@
+title: GSuite OAuth Token Theft
+description: |
+  Detects suspicious OAuth token generation or authorization patterns that could
+  indicate token theft or abuse.
+references:
+  - https://developers.google.com/identity/protocols/oauth2
+  - https://attack.mitre.org/techniques/T1528/
+author: RunReveal
+date: 2025-12-09
+tags:
+  - gsuite
+  - identity-access-management
+  - credential-access
+  - signal
+sourcetypes:
+  - gsuite
+detection:
+  selection:
+    eventName:
+      - authorize
+      - AUTHORIZE_API_CLIENT_ACCESS
+    id.applicationName:
+      - token
+      - admin
+  condition: selection
+falsepositives:
+  - Normal OAuth flows for legitimate applications
+  - User-authorized third-party app installations
+  - IT-sanctioned integrations
+level: medium
+riskscore: 55
+mitreattacks:
+  - credential-access
+mitretechniques:
+  - T1528

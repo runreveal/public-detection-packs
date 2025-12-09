@@ -1,0 +1,32 @@
+title: GSuite Macro Execution
+description: |
+  Detects execution of macros from Sheets or Docs that could contain malicious code.
+references:
+  - https://support.google.com/docs/answer/6325535
+  - https://attack.mitre.org/techniques/T1204/002/
+author: RunReveal
+date: 2025-12-09
+tags:
+  - gsuite
+  - application-activity
+  - execution
+  - signal
+sourcetypes:
+  - gsuite
+detection:
+  selection:
+    id.applicationName:
+      - drive
+      - docs
+    eventName: action_complete
+  condition: selection
+falsepositives:
+  - Legitimate macro-enabled spreadsheets for data processing
+  - Business automation workflows
+  - IT approved templates with macros
+level: low
+riskscore: 30
+mitreattacks:
+  - execution
+mitretechniques:
+  - T1204.002
