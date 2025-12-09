@@ -1,0 +1,35 @@
+title: 1Password Shared Vault for Credential Staging
+id: 2b3c4d5e-6f7a-8901-bcde-f12345678901
+description: |
+  Detects creation of shared vaults followed by grant permissions, which could indicate
+  setup of infrastructure for credential staging or malicious sharing activities.
+references:
+  - https://developer.1password.com/docs/events-api/audit-events/
+  - https://attack.mitre.org/techniques/T1586/003/
+author: RunReveal
+date: 2025-12-09
+tags:
+  - 1password
+  - identity-access-management
+  - resource-development
+  - signal
+  - vault-management
+sourcetypes:
+  - 1password
+detection:
+  selection_create:
+    eventName: create
+    audit.objectType: vault
+  selection_grant:
+    eventName: grant
+  condition: selection_create or selection_grant
+falsepositives:
+  - Legitimate vault creation for team collaboration
+  - Normal sharing of credentials with team members
+  - Onboarding new users to shared vaults
+level: low
+riskscore: 40
+mitreattacks:
+  - resource-development
+mitretechniques:
+  - T1586.003
