@@ -1,0 +1,36 @@
+name: github-container-image-published
+displayName: GitHub Container Image Published
+description:
+  Detects when container images are published to GitHub Container Registry
+  (ghcr.io). Container images provide a powerful mechanism for software distribution
+  but can be exploited to distribute malware, crypto miners, or backdoored applications.
+  Malicious actors may publish compromised images, images with excessive privileges,
+  or images containing hidden malware layers. This detection monitors container
+  publishing activities to identify suspicious patterns including first-time publishers,
+  images from recently created accounts, or publishing activity that deviates from
+  established patterns. Container supply chain attacks can have widespread impact
+  on downstream users and production environments.
+file: github-container-image-published.sql
+categories:
+  - attack.resource-development
+  - attack.execution
+  - attack.t1587.001
+  - attack.t1525
+  - github
+  - repository
+  - application-activity
+  - signal
+  - supply-chain
+  - container-security
+  - registry-management
+mitreAttacks:
+  - resource-development
+  - execution
+mitreTechniques:
+  - T1587.001
+  - T1525
+severity: High
+riskScore: 70
+schedule: "*/15 * * * *"
+sourceTypes:
+  - github

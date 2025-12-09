@@ -1,0 +1,36 @@
+name: github-actions-self-hosted-runner-added
+displayName: GitHub Actions Self-Hosted Runner Added
+description:
+  Detects when self-hosted runners are registered to GitHub organizations
+  or repositories. Self-hosted runners provide execution environments for GitHub
+  Actions workflows and can pose significant security risks if compromised or maliciously
+  configured. Attackers may register malicious runners to intercept secrets, execute
+  arbitrary code, or establish command and control channels. Self-hosted runner
+  registrations should be carefully reviewed to ensure they meet security requirements
+  and are authorized by appropriate personnel.
+file: github-actions-self-hosted-runner-added.sql
+categories:
+  - attack.execution
+  - attack.command-and-control
+  - attack.persistence
+  - attack.t1651
+  - attack.t1059
+  - github
+  - organization
+  - application-activity
+  - signal
+  - ci-cd-security
+  - runner-management
+  - infrastructure
+mitreAttacks:
+  - execution
+  - command-and-control
+  - persistence
+mitreTechniques:
+  - T1651
+  - T1059
+severity: High
+riskScore: 75
+schedule: "*/15 * * * *"
+sourceTypes:
+  - github
