@@ -1,0 +1,60 @@
+title: Cloudflare HTTP CVE-2025-55183 React Server Function Leaking Detection
+id: cf-http-cve-2025-55183
+description: Detects exploitation attempts of CVE-2025-55183, a critical vulnerability that allows server-function abuse techniques to expose internal logic in React Server Components. This vulnerability enables attackers to leak server function source code and internal application logic through specially crafted requests. This detection analyzes HTTP logs for traffic matching specific Cloudflare security rules.
+references:
+  - https://nvd.nist.gov/vuln/detail/CVE-2025-55183
+  - https://developers.cloudflare.com/changelog/2025-12-11-emergency-waf-release/
+  - https://developers.cloudflare.com/logs/reference/log-fields/zone/http_requests/
+author: RunReveal
+date: 2025-12-12
+modified: 2025-12-12
+tags:
+  - attack.initial-access
+  - attack.discovery
+  - attack.t1190
+  - attack.t1592
+  - cloudflare
+  - cf-http
+  - network-activity
+  - signal
+  - findings
+  - cve-2025-55183
+  - react
+  - information-disclosure
+sourcetypes:
+  - cf-http
+riskscore: 85
+mitreattacks:
+  - initial-access
+  - discovery
+mitretechniques:
+  - T1190
+  - T1592
+detection:
+  selection:
+    rawLog.SecurityRuleIDs:
+      - "17c5123f1ac049818765ebf2fefb4e9b"
+      - "3114709a3c3b4e3685052c7b251e86aa"
+  condition: selection
+falsepositives:
+  - Legitimate traffic matching firewall rules
+  - Security scanning and testing activities
+  - Traffic blocked by the firewall
+  - False positives in firewall rule matching
+level: critical
+fields:
+  - SecurityRuleIDs
+  - SecurityRuleID
+  - SecurityRuleDescription
+  - SecurityActions
+  - SecurityAction
+  - ClientIP
+  - ClientCountry
+  - ClientRequestHost
+  - ClientRequestURI
+  - ClientRequestMethod
+  - ClientRequestUserAgent
+  - EdgeResponseStatus
+  - OriginResponseStatus
+  - BotScore
+  - BotScoreSrc
