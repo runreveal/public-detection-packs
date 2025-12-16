@@ -7,7 +7,7 @@ SELECT
 FROM
 (
     SELECT
-        eventTime AS acceptTime,
+        receivedAt AS acceptTime,
         `actor.loginName` AS acceptUser,
         `target.id` AS inviteID
     FROM tailscale_audit_logs
@@ -16,7 +16,7 @@ FROM
 INNER JOIN
 (
     SELECT
-        eventTime AS inviteAt,
+        receivedAt AS inviteAt,
         `actor.loginName` AS invitedBy,
         `target.id` AS inviteID
     FROM tailscale_audit_logs
@@ -32,7 +32,7 @@ SELECT
 FROM
 (
     SELECT
-        eventTime AS acceptTime,
+        receivedAt AS acceptTime,
         `actor.loginName` AS acceptUser,
         `target.name` AS inviteName
     FROM tailscale_audit_logs
@@ -41,7 +41,7 @@ FROM
 INNER JOIN
 (
     SELECT
-        eventTime AS createTime,
+        receivedAt AS createTime,
         `actor.loginName` AS createUser,
         `target.name` AS inviteName
     FROM tailscale_audit_logs

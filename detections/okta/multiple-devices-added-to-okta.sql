@@ -21,7 +21,7 @@ SELECT
     srcISP,
     actor,
     simpleJSONExtractRaw(rawLog, 'client') AS clientInfo
-FROM runreveal.logs
+FROM runreveal.logs AS logs
 INNER JOIN mda ON mda.actorEmail = lower(actor['email'])
 WHERE (logs.sourceType = 'okta') AND (logs.eventName = 'device.user.add') AND ((receivedAt >= {from:DateTime}) AND (receivedAt < {to:DateTime}))
 ORDER BY

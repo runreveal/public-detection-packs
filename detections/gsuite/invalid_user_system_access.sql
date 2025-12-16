@@ -14,7 +14,7 @@ WITH invalidUsers AS
                     workspaceID,
                     JSONExtractString(arrayFirst(x -> (JSONExtractString(x, 'name') = 'USER_EMAIL'), JSONExtractArrayRaw(arrayFirst(x -> (JSONExtractString(x, 'type') = 'USER_SETTINGS'), JSONExtractArrayRaw(rawLog, 'events')), 'parameters')), 'value') AS userEmail
                 FROM runreveal_logs
-                WHERE (sourceType = 'gsuite') AND (eventName IN ('DELETE_USER', 'SUSPEND_USER')) AND ((eventTime >= ({from:DateTime} - toIntervalDay(90))) AND (eventTime <= {to:DateTime}))
+                WHERE (sourceType = 'gsuite') AND (eventName IN ('DELETE_USER', 'SUSPEND_USER')) AND ((receivedAt >= ({from:DateTime} - toIntervalDay(90))) AND (receivedAt <= {to:DateTime}))
             ) AS delete
             LEFT JOIN
             (
@@ -24,7 +24,7 @@ WITH invalidUsers AS
                     workspaceID,
                     JSONExtractString(arrayFirst(x -> (JSONExtractString(x, 'name') = 'USER_EMAIL'), JSONExtractArrayRaw(arrayFirst(x -> (JSONExtractString(x, 'type') = 'USER_SETTINGS'), JSONExtractArrayRaw(rawLog, 'events')), 'parameters')), 'value') AS userEmail
                 FROM runreveal_logs
-                WHERE (sourceType = 'gsuite') AND (eventName IN ('CREATE_USER', 'UNSUSPEND_USER')) AND ((eventTime >= ({from:DateTime} - toIntervalDay(90))) AND (eventTime <= {to:DateTime}))
+                WHERE (sourceType = 'gsuite') AND (eventName IN ('CREATE_USER', 'UNSUSPEND_USER')) AND ((receivedAt >= ({from:DateTime} - toIntervalDay(90))) AND (receivedAt <= {to:DateTime}))
             ) AS create ON (delete.userEmail = create.userEmail) AND (delete.eventType = create.eventType) AND (delete.workspaceID = create.workspaceID)
             WHERE (create.userEmail IS NULL) OR (create.userEmail = '') OR (create.eventTime < delete.eventTime)
         )

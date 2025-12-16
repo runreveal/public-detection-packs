@@ -25,7 +25,7 @@ FROM
         FROM detections
         LEFT ARRAY JOIN detections.mitreAttacks
         INNER JOIN actor_and_ips ON (actor['email']) = actorEmail
-        WHERE eventTime > (now() - toIntervalSecond(({window:UInt64} * 2) + 60))
+        WHERE receivedAt > (now() - toIntervalSecond(({window:UInt64} * 2) + 60))
     )
     GROUP BY actor
     HAVING limit >= {signalCount:UInt64}

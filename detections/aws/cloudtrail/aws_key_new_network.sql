@@ -4,7 +4,7 @@ WITH arns_and_events AS
             `userIdentity.accessKeyId` AS accessKeyId,
             groupUniqArray(srcASNumber) AS srcASNumbers
         FROM aws_cloudtrail_logs
-        WHERE ((eventTime >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (eventTime <= {from:DateTime})) AND (accessKeyId LIKE 'AKIA%')
+        WHERE ((receivedAt >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (receivedAt <= {from:DateTime})) AND (accessKeyId LIKE 'AKIA%')
         GROUP BY accessKeyId
     )
 SELECT

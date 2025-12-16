@@ -4,7 +4,7 @@ WITH networkVisit AS
             `actor.alternateID` AS user,
             groupUniqArray(srcASOrganization) AS asorgs
         FROM okta_logs
-        WHERE (eventTime >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (eventTime <= {from:DateTime})
+        WHERE (receivedAt >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (receivedAt <= {from:DateTime})
         GROUP BY user
     )
 SELECT
