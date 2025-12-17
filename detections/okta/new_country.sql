@@ -4,7 +4,7 @@ WITH countryVisit AS
             `actor.alternateID` AS user,
             groupUniqArray(srcASCountryCode) AS countrys
         FROM okta_logs
-        WHERE (eventTime >= ({from:DateTime} - toIntervalDay(30))) AND (eventTime <= {from:DateTime})
+        WHERE (receivedAt >= ({from:DateTime} - toIntervalDay(30))) AND (receivedAt <= {from:DateTime})
         GROUP BY user
     )
 SELECT

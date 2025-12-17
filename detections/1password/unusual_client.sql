@@ -4,7 +4,7 @@ WITH previousClients AS
             `actor.email` AS user,
             groupUniqArray((`client.appName`, `client.platformName`)) AS clients
         FROM one_password_logs
-        WHERE ((eventTime >= ({from:DateTime} - toIntervalDay(30))) AND (eventTime <= {from:DateTime})) AND (NOT (`client.appName` IS NULL)) AND (`client.appName` != '') AND (`client.platformName` != '') AND (user NOT LIKE '%1passwordserviceaccounts.com')
+        WHERE ((receivedAt >= ({from:DateTime} - toIntervalDay(30))) AND (receivedAt <= {from:DateTime})) AND (NOT (`client.appName` IS NULL)) AND (`client.appName` != '') AND (`client.platformName` != '') AND (user NOT LIKE '%1passwordserviceaccounts.com')
         GROUP BY user
     )
 SELECT

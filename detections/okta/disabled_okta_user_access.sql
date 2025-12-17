@@ -25,7 +25,7 @@ WITH disabledUsers AS
                     row_number() OVER (PARTITION BY targetUser ORDER BY eventTime DESC) AS recentEvent,
                     row_number() OVER (PARTITION BY targetUser, groupEvent ORDER BY eventTime ASC) AS earliestGroupEvent
                 FROM okta_logs
-                WHERE ((eventTime >= ({from:DateTime} - toIntervalDay(90))) AND (eventTime <= {to:DateTime})) AND (eventType IN ('user.lifecycle.delete.initiated', 'user.lifecycle.activate', 'user.lifecycle.create', 'user.lifecycle.deactivate', 'user.lifecycle.suspend'))
+                WHERE ((receivedAt >= ({from:DateTime} - toIntervalDay(90))) AND (receivedAt <= {to:DateTime})) AND (eventType IN ('user.lifecycle.delete.initiated', 'user.lifecycle.activate', 'user.lifecycle.create', 'user.lifecycle.deactivate', 'user.lifecycle.suspend'))
             )
         )
         WHERE (groupEvent = 0) AND (earliestGroupEvent = 1) AND has(recentGroup, 1)

@@ -9,7 +9,7 @@ FROM
                 `userIdentity.accessKeyId` AS accessKeyId,
                 groupUniqArray(eventName) AS eventNames
             FROM aws_cloudtrail_logs
-            WHERE ((eventTime >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (eventTime <= {from:DateTime})) AND (accessKeyId LIKE 'AKIA%')
+            WHERE ((receivedAt >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (receivedAt <= {from:DateTime})) AND (accessKeyId LIKE 'AKIA%')
             GROUP BY accessKeyId
         )
     SELECT

@@ -8,7 +8,7 @@ SELECT
 FROM github_logs
 WHERE
     action = 'repo.destroy'
-    AND eventTime >= ({from:DateTime} - toIntervalMinute({window:UInt32}))
+    AND receivedAt >= ({from:DateTime} - toIntervalMinute({window:UInt32}))
     AND receivedAt >= {from:DateTime}
     AND receivedAt <= {to:DateTime}
 GROUP BY actor_id

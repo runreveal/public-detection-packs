@@ -9,7 +9,8 @@ WITH mda AS
     )
 SELECT
     mda.srcIP,
-    mda.c AS evtCount, lower(actor['email'])
+    mda.c AS evtCount,
+    lower(actor['email']) AS actorEmail,
     eventTime,
     logs.srcIP,
     srcASCountryCode,

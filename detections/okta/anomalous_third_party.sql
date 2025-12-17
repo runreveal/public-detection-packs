@@ -4,7 +4,7 @@ WITH eventTypesCalled AS
             `actor.displayName` AS user,
             groupUniqArray(eventType) AS eventTypes
         FROM okta_logs
-        WHERE ((eventTime >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (eventTime <= {from:DateTime})) AND (actor.type = 'PublicClientApp')
+        WHERE ((receivedAt >= ({from:DateTime} - toIntervalDay({window:UInt32}))) AND (receivedAt <= {from:DateTime})) AND (actor.type = 'PublicClientApp')
         GROUP BY user
     )
 SELECT

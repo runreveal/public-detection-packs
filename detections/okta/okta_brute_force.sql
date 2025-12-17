@@ -9,7 +9,7 @@ FROM
         *,
         SUM(1) OVER w AS count
     FROM okta_logs
-    WHERE (eventType = 'user.session.start') AND (outcome = 'FAILURE') AND (eventTime >= ({from:DateTime} - toIntervalMinute(40)))
+    WHERE (eventType = 'user.session.start') AND (outcome = 'FAILURE') AND (receivedAt >= ({from:DateTime} - toIntervalMinute(40)))
     WINDOW w AS (PARTITION BY actor ORDER BY eventTime ASC RANGE BETWEEN 20 * 60 PRECEDING AND CURRENT ROW)
 )
 WHERE count >= 3
