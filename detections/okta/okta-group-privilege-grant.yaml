@@ -20,8 +20,8 @@ categories:
   - group-management
   - admin-access
 mitreAttacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitreTechniques:
   - T1098.003
 severity: High

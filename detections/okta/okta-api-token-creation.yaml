@@ -17,9 +17,9 @@ schedule: "*/15 * * * *"
 notes: ""
 notificationNames: []
 mitreAttacks:
-  - persistence
-  - privilege-escalation
-  - credential-access
+  - TA0003
+  - TA0004
+  - TA0006
 mitreTechniques:
   - T1098.001
 severity: medium

@@ -17,8 +17,8 @@ sourcetypes:
   - wiz-threats
   - wiz-issue
 mitreattacks:
-  - privilege-escalation
-  - persistence
+  - TA0004
+  - TA0003
 mitretechniques:
   - T1078
 detection:

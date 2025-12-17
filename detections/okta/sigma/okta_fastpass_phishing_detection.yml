@@ -22,8 +22,8 @@ tags:
 sourcetypes:
   - okta
 mitreattacks:
-  - initial-access
-  - credential-access
+  - TA0001
+  - TA0006
 mitretechniques:
   - T1566
 detection:

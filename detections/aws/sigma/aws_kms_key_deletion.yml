@@ -34,6 +34,6 @@ falsepositives:
 level: medium
 riskscore: 70
 mitreattacks:
-  - impact
+  - TA0040
 mitretechniques:
   - T1485

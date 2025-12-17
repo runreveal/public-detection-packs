@@ -21,8 +21,8 @@ categories:
   - team-management
   - organization-management
 mitreAttacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitreTechniques:
   - T1098.003
   - T1136.003

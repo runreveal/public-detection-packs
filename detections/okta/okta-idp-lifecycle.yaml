@@ -21,8 +21,8 @@ categories:
   - authentication
   - federation
 mitreAttacks:
-  - privilege-escalation
-  - defense-evasion
+  - TA0004
+  - TA0005
 mitreTechniques:
   - T1484.002
 severity: Medium

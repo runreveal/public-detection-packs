@@ -21,8 +21,8 @@ severity: Medium
 sourceTypes:
   - cf-http
 mitreAttacks:
-  - discovery
-  - impact
+  - TA0007
+  - TA0040
 mitreTechniques:
   - T1046
   - T1499

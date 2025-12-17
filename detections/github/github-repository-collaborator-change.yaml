@@ -20,8 +20,8 @@ categories:
   - collaborator-management
   - user-management
 mitreAttacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitreTechniques:
   - T1098
   - T1098.003

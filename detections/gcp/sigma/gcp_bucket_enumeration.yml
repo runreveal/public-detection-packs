@@ -33,7 +33,7 @@ falsepositives:
 level: low
 riskscore: 50
 mitreattacks:
-  - discovery
+  - TA0007
 mitretechniques:
   - T1083
   - T1526

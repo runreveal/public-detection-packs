@@ -21,8 +21,8 @@ fields:
   - result
 riskscore: 80
 mitreattacks:
-  - defense-evasion
-  - command-and-control
+  - TA0005
+  - TA0011
 mitretechniques:
   - T1090
 tags:

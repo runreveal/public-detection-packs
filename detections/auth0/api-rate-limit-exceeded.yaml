@@ -9,8 +9,8 @@ categories:
   - rate-limiting
   - api-abuse
 mitreAttacks:
-  - credential-access
-  - impact
+  - TA0006
+  - TA0040
 mitreTechniques:
   - T1110
   - T1498

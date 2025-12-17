@@ -22,8 +22,8 @@ categories:
   - automation-detection
   - resource-exhaustion
 mitreAttacks:
-  - credential-access
-  - impact
+  - TA0006
+  - TA0040
 mitreTechniques:
   - T1499
   - T1110

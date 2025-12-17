@@ -14,7 +14,7 @@ categories:
   - storage-bucket
   - gcplogs
 mitreAttacks:
-  - defense-evasion
+  - TA0005
 mitreTechniques:
   - T1578.004
 severity: Medium

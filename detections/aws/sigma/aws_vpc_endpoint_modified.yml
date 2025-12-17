@@ -40,8 +40,8 @@ falsepositives:
 level: medium
 riskscore: 55
 mitreattacks:
-  - defense-evasion
-  - persistence
-  - command-and-control
+  - TA0005
+  - TA0003
+  - TA0011
 mitretechniques:
   - T1205

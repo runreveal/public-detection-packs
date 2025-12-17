@@ -16,8 +16,8 @@ tags:
 sourcetypes:
   - slack
 mitreattacks:
-  - defense-evasion
-  - persistence
+  - TA0005
+  - TA0003
 mitretechniques:
   - T1556
 detection:

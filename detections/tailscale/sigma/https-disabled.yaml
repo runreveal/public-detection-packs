@@ -17,8 +17,8 @@ sourcetypes:
   - tailscale
   - tailscale-audit
 mitreattacks:
-  - credential-access
-  - collection
+  - TA0006
+  - TA0009
 mitretechniques:
   - T1040
 detection:

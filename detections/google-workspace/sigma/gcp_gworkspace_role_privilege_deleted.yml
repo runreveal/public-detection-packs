@@ -38,6 +38,6 @@ riskscore: 50
 mitretechniques:
   - T1098.003
 mitreattacks:
-  - persistence
-  - privilege-escalation
-  - impact
+  - TA0003
+  - TA0004
+  - TA0040

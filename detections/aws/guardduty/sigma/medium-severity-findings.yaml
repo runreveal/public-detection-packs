@@ -17,9 +17,9 @@ logsource:
   product: aws
   service: guardduty
 mitreattacks:
-  - discovery
-  - collection
-  - lateral-movement
+  - TA0007
+  - TA0009
+  - TA0008
 mitretechniques:
   - T1526
   - T1078

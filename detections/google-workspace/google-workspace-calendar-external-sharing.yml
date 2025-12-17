@@ -20,7 +20,7 @@ categories:
   - external-sharing
   - gsuite
 mitreAttacks:
-  - collection
+  - TA0009
 mitreTechniques:
   - T1114
   - T1213

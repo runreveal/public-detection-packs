@@ -16,7 +16,7 @@ sourcetypes:
   - crowdstrike-fdr
   - crowdstrike-data
 mitreattacks:
-  - command-and-control
+  - TA0011
 mitretechniques:
   - T1219
 detection:

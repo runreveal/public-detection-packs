@@ -21,11 +21,11 @@ categories:
   - behavioral-analysis
   - iam
 mitreAttacks:
-  - initial-access
-  - persistence
-  - privilege-escalation
-  - defense-evasion
-  - discovery
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0007
 mitreTechniques:
   - T1078.004
   - T1087.004

@@ -19,8 +19,8 @@ tags:
 sourcetypes:
   - 1password
 mitreattacks:
-  - collection
-  - exfiltration
+  - TA0009
+  - TA0010
 mitretechniques:
   - T1041
 detection:

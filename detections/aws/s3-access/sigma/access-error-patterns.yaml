@@ -16,7 +16,7 @@ tags:
 sourcetypes:
   - s3-access
 mitreattacks:
-  - discovery
+  - TA0007
 mitretechniques:
   - T1526
 detection:

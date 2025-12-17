@@ -15,7 +15,7 @@ categories:
   - workspace-export
   - data-export
 mitreAttacks:
-  - collection
+  - TA0009
 mitreTechniques:
   - T1005
   - T1213

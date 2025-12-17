@@ -20,7 +20,7 @@ categories:
   - data-exposure
   - gsuite
 mitreAttacks:
-  - exfiltration
+  - TA0010
 mitreTechniques:
   - T1537
 severity: High

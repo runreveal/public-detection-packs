@@ -17,7 +17,7 @@ categories:
   - security-incident
   - gsuite
 mitreAttacks:
-  - impact
+  - TA0040
 mitreTechniques:
   - T1531
 severity: High

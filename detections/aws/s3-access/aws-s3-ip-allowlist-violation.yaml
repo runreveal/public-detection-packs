@@ -11,7 +11,7 @@ categories:
   - signal
   - access-control
 mitreAttacks:
-  - initial-access
+  - TA0001
 mitreTechniques:
   - T1078
 severity: Medium

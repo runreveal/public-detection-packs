@@ -13,7 +13,7 @@ categories:
   - signal
   - brute-force
 mitreAttacks:
-  - credential-access
+  - TA0006
 mitreTechniques:
   - T1110
 severity: Medium

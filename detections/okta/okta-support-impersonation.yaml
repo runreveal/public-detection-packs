@@ -26,11 +26,11 @@ categories:
   - privileged-access
   - session-management
 mitreAttacks:
-  - initial-access
-  - persistence
-  - privilege-escalation
-  - defense-evasion
-  - lateral-movement
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0008
 mitreTechniques:
   - T1078.004
   - T1550.001

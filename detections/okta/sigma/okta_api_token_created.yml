@@ -22,7 +22,7 @@ tags:
 sourcetypes:
   - okta
 mitreattacks:
-  - credential-access
+  - TA0006
 mitretechniques:
   - T1606.002
   - T1552.001

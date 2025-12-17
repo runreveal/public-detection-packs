@@ -17,7 +17,7 @@ sourcetypes:
   - wiz-threats
   - wiz-issue
 mitreattacks:
-  - defense-evasion
+  - TA0005
 mitretechniques:
   - T1554
 detection:

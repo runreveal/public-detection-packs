@@ -21,10 +21,10 @@ categories:
   - user-management
   - ssh-keys
 mitreAttacks:
-  - persistence
-  - privilege-escalation
-  - credential-access
-  - lateral-movement
+  - TA0003
+  - TA0004
+  - TA0006
+  - TA0008
 mitreTechniques:
   - T1098.001
 severity: Medium

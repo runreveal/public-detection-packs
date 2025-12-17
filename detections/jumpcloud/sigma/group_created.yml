@@ -16,7 +16,7 @@ tags:
 sourcetypes:
   - jumpcloud
 mitreattacks:
-  - persistence
+  - TA0003
 mitretechniques:
   - T1136
 detection:

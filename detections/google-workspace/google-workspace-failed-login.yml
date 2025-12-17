@@ -13,8 +13,8 @@ categories:
   - failed-login
   - gsuite
 mitreAttacks:
-  - initial-access
-  - credential-access
+  - TA0001
+  - TA0006
 mitreTechniques:
   - T1110
 severity: Low

@@ -15,7 +15,7 @@ categories:
   - scim-token
   - credential-access
 mitreAttacks:
-  - credential-access
+  - TA0006
 mitreTechniques:
   - T1552.001
   - T1606.002

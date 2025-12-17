@@ -14,7 +14,7 @@ categories:
   - audit-log
   - export
 mitreAttacks:
-  - collection
+  - TA0009
 mitreTechniques:
   - T1005
   - T1039

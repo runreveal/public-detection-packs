@@ -17,8 +17,8 @@ sourcetypes:
   - wiz-threats
   - wiz-issue
 mitreattacks:
-  - persistence
-  - lateral-movement
+  - TA0003
+  - TA0008
 mitretechniques:
   - T1199
 detection:

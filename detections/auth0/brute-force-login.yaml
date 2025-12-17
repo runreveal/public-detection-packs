@@ -9,7 +9,7 @@ categories:
   - brute-force
   - failed-authentication
 mitreAttacks:
-  - credential-access
+  - TA0006
 mitreTechniques:
   - T1110
 severity: High

@@ -24,8 +24,8 @@ categories:
   - access-control
   - ip-restriction
 mitreAttacks:
-  - privilege-escalation
-  - defense-evasion
+  - TA0004
+  - TA0005
 mitreTechniques:
   - T1562.007
   - T1484.002

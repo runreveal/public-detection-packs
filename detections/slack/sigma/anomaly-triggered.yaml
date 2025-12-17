@@ -26,11 +26,11 @@ tags:
 sourcetypes:
   - slack
 mitreattacks:
-  - initial-access
-  - persistence
-  - privilege-escalation
-  - defense-evasion
-  - exfiltration
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0010
 mitretechniques:
   - T1078
   - T1537

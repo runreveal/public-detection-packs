@@ -40,6 +40,6 @@ falsepositives:
 level: medium
 riskscore: 55
 mitreattacks:
-  - exfiltration
+  - TA0010
 mitretechniques:
   - T1048

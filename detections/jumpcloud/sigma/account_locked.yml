@@ -17,8 +17,8 @@ tags:
 sourcetypes:
   - jumpcloud
 mitreattacks:
-  - credential-access
-  - impact
+  - TA0006
+  - TA0040
 mitretechniques:
   - T1110
 detection:

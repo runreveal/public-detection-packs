@@ -35,7 +35,7 @@ falsepositives:
 level: medium
 riskscore: 70
 mitreattacks:
-  - collection
-  - exfiltration
+  - TA0009
+  - TA0010
 mitretechniques:
   - T1114.003

@@ -18,8 +18,8 @@ categories:
   - mobile-security
   - gsuite
 mitreAttacks:
-  - privilege-escalation
-  - defense-evasion
+  - TA0004
+  - TA0005
 mitreTechniques:
   - T1562.001
   - T1484.002

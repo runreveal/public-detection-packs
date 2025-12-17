@@ -9,8 +9,8 @@ categories:
   - geographical-anomaly
   - new-country
 mitreAttacks:
-  - initial-access
-  - persistence
+  - TA0001
+  - TA0003
 mitreTechniques:
   - T1078
 severity: Medium

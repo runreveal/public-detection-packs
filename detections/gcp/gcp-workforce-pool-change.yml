@@ -16,8 +16,8 @@ categories:
   - workforce-pool
   - gcplogs
 mitreAttacks:
-  - privilege-escalation
-  - defense-evasion
+  - TA0004
+  - TA0005
 mitreTechniques:
   - T1578.004
   - T1484.002

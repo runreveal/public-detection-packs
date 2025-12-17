@@ -31,7 +31,7 @@ falsepositives:
 level: medium
 riskscore: 75
 mitreattacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitretechniques:
   - T1098.001

@@ -18,8 +18,8 @@ schedule: "*/15 * * * *"
 severity: Medium
 riskScore: 50
 mitreAttacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitreTechniques:
   - T1098.001
 sourceTypes:

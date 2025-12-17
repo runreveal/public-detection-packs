@@ -34,6 +34,6 @@ riskscore: 20
 mitretechniques:
   - T1484.002
 mitreattacks:
-  - privilege-escalation
-  - defense-evasion
-  - impact
+  - TA0004
+  - TA0005
+  - TA0040

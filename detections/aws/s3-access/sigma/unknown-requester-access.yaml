@@ -17,8 +17,8 @@ tags:
 sourcetypes:
   - s3-access
 mitreattacks:
-  - collection
-  - exfiltration
+  - TA0009
+  - TA0010
 mitretechniques:
   - T1530
 detection:

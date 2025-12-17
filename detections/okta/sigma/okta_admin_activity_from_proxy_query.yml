@@ -26,11 +26,11 @@ tags:
 sourcetypes:
   - okta
 mitreattacks:
-  - initial-access
-  - persistence
-  - privilege-escalation
-  - defense-evasion
-  - command-and-control
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0011
 mitretechniques:
   - T1078.004
   - T1090.003

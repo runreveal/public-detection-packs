@@ -22,6 +22,6 @@ severity: High
 sourceTypes:
   - awsdns
 mitreAttacks:
-  - command-and-control
+  - TA0011
 mitreTechniques:
   - T1071.004

@@ -18,9 +18,9 @@ categories:
 severity: medium
 riskScore: 60
 mitreAttacks:
-  - privilege-escalation
-  - defense-evasion
-  - impact
+  - TA0004
+  - TA0005
+  - TA0040
 mitreTechniques:
   - T1562
   - T1531

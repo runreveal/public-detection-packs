@@ -19,7 +19,7 @@ tags:
 sourcetypes:
   - okta
 mitreattacks:
-  - persistence
+  - TA0003
 mitretechniques:
   - T1136.003
 detection:

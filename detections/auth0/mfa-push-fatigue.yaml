@@ -9,8 +9,8 @@ categories:
   - mfa-abuse
   - push-fatigue
 mitreAttacks:
-  - credential-access
-  - defense-evasion
+  - TA0006
+  - TA0005
 mitreTechniques:
   - T1621
 severity: High

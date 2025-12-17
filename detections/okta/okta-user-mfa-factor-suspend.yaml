@@ -25,10 +25,10 @@ categories:
   - administrative-action
   - authentication-weakening
 mitreAttacks:
-  - defense-evasion
-  - persistence
-  - credential-access
-  - privilege-escalation
+  - TA0005
+  - TA0003
+  - TA0006
+  - TA0004
 mitreTechniques:
   - T1556.006
   - T1098

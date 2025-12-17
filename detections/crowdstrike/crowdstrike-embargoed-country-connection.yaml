@@ -10,7 +10,7 @@ categories:
   - signal
   - compliance
 mitreAttacks:
-  - command-and-control
+  - TA0011
 mitreTechniques:
   - T1071
 severity: High
