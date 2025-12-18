@@ -8,7 +8,7 @@ categories:
   - exfiltration
   - signal
 mitreAttacks:
-  - exfiltration
+  - TA0010
 mitreTechniques:
   - T1087.004
 schedule: "*/15 * * * *"

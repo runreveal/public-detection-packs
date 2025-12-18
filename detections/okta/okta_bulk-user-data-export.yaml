@@ -8,7 +8,7 @@ categories:
   - collection
   - signal
 mitreAttacks:
-  - collection
+  - TA0009
 mitreTechniques:
   - T1530
 schedule: "*/15 * * * *"
