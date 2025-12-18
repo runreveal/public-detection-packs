@@ -8,7 +8,7 @@ categories:
   - command-and-control
   - signal
 mitreAttacks:
-  - command-and-control
+  - TA0011
 mitreTechniques:
   - T1102.002
 schedule: "*/15 * * * *"

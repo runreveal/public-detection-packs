@@ -30,6 +30,6 @@ falsepositives:
 level: medium
 riskscore: 55
 mitreattacks:
-  - credential-access
+  - TA0006
 mitretechniques:
   - T1528

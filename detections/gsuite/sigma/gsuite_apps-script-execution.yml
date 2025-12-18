@@ -26,6 +26,6 @@ falsepositives:
 level: low
 riskscore: 35
 mitreattacks:
-  - execution
+  - TA0002
 mitretechniques:
   - T1059.009

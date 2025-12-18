@@ -8,7 +8,7 @@ categories:
   - reconnaissance
   - signal
 mitreAttacks:
-  - reconnaissance
+  - TA0043
 mitreTechniques:
   - T1083
 schedule: "*/15 * * * *"

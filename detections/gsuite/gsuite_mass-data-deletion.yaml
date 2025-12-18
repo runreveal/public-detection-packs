@@ -8,7 +8,7 @@ categories:
   - impact
   - signal
 mitreAttacks:
-  - impact
+  - TA0040
 mitreTechniques:
   - T1485
 schedule: "*/15 * * * *"

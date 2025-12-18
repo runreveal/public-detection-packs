@@ -8,7 +8,7 @@ categories:
   - lateral-movement
   - signal
 mitreAttacks:
-  - lateral-movement
+  - TA0008
 mitreTechniques:
   - T1550.001
 schedule: "*/15 * * * *"
