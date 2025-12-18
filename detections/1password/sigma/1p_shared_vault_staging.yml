@@ -30,6 +30,6 @@ falsepositives:
 level: low
 riskscore: 40
 mitreattacks:
-  - resource-development
+  - TA0042
 mitretechniques:
   - T1586.003

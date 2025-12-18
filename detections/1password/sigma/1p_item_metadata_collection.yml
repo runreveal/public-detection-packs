@@ -28,6 +28,6 @@ falsepositives:
 level: low
 riskscore: 30
 mitreattacks:
-  - reconnaissance
+  - TA0043
 mitretechniques:
   - T1592
