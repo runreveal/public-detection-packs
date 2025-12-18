@@ -9,7 +9,7 @@ categories:
   - resource-development
   - signal
 mitreAttacks:
-  - resource-development
+  - TA0042
 mitreTechniques:
   - T1586.003
 schedule: "*/15 * * * *"
