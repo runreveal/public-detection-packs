@@ -13,7 +13,7 @@ categories:
   - signal
   - cf-http
 mitreAttacks:
-  - lateral-movement
+  - TA0008
 mitreTechniques:
   - T1090
 riskScore: 75

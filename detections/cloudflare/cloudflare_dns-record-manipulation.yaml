@@ -13,7 +13,7 @@ categories:
   - signal
   - cf-audit
 mitreAttacks:
-  - resource-development
+  - TA0042
 mitreTechniques:
   - T1583.002
 riskScore: 60

@@ -13,7 +13,7 @@ categories:
   - cf-http
   - cf-waf
 mitreAttacks:
-  - reconnaissance
+  - TA0043
 mitreTechniques:
   - T1595.002
 riskScore: 55

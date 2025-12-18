@@ -12,7 +12,7 @@ categories:
   - signal
   - cf-audit
 mitreAttacks:
-  - execution
+  - TA0002
 mitreTechniques:
   - T1059.007
 riskScore: 70

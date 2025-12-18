@@ -12,7 +12,7 @@ categories:
   - signal
   - cf-http
 mitreAttacks:
-  - reconnaissance
+  - TA0043
 mitreTechniques:
   - T1595
 riskScore: 45

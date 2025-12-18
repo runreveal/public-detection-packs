@@ -13,7 +13,7 @@ categories:
   - signal
   - cf-audit
 mitreAttacks:
-  - lateral-movement
+  - TA0008
 mitreTechniques:
   - T1021
 riskScore: 70
