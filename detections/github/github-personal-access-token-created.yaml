@@ -23,9 +23,9 @@ categories:
   - access-control
   - api-security
 mitreAttacks:
-  - credential-access
-  - persistence
-  - lateral-movement
+  - TA0006
+  - TA0003
+  - TA0008
 mitreTechniques:
   - T1528
   - T1550.001

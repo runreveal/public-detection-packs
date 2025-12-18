@@ -23,9 +23,9 @@ categories:
   - reconnaissance
   - enumeration
 mitreAttacks:
-  - discovery
-  - reconnaissance
-  - collection
+  - TA0007
+  - TA0043
+  - TA0009
 mitreTechniques:
   - T1580
   - T1087.004

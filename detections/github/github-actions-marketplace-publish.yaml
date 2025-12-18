@@ -25,9 +25,9 @@ categories:
   - ci-cd-security
   - marketplace
 mitreAttacks:
-  - resource-development
-  - execution
-  - persistence
+  - TA0042
+  - TA0002
+  - TA0003
 mitreTechniques:
   - T1587.001
   - T1195.002

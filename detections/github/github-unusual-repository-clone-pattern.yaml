@@ -23,9 +23,9 @@ categories:
   - repository-security
   - data-exfiltration
 mitreAttacks:
-  - discovery
-  - collection
-  - exfiltration
+  - TA0007
+  - TA0009
+  - TA0010
 mitreTechniques:
   - T1213.003
   - T1530

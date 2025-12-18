@@ -23,8 +23,8 @@ categories:
   - package-management
   - software-distribution
 mitreAttacks:
-  - resource-development
-  - execution
+  - TA0042
+  - TA0002
 mitreTechniques:
   - T1587.001
   - T1195.002

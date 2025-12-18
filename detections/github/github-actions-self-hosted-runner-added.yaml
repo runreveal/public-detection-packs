@@ -23,9 +23,9 @@ categories:
   - runner-management
   - infrastructure
 mitreAttacks:
-  - execution
-  - command-and-control
-  - persistence
+  - TA0002
+  - TA0011
+  - TA0003
 mitreTechniques:
   - T1651
   - T1059
