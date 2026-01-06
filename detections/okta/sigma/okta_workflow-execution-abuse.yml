@@ -1,0 +1,33 @@
+title: Okta Workflow Execution Abuse
+description: |
+  Detects suspicious Okta Workflow executions that could be running malicious logic
+  including unauthorized API calls or data manipulation.
+references:
+  - https://developer.okta.com/docs/reference/api/system-log/
+  - https://help.okta.com/en-us/content/topics/workflows/workflows-main.htm
+author: RunReveal
+date: 2025-12-09
+tags:
+  - okta
+  - application-activity
+  - execution
+  - signal
+sourcetypes:
+  - okta
+detection:
+  selection:
+    eventName:
+      - workflow.execute
+      - workflow.trigger
+      - workflow.action.run
+  condition: selection
+falsepositives:
+  - Legitimate workflow automations
+  - IT-approved integration workflows
+  - Scheduled workflow executions
+level: medium
+riskscore: 50
+mitreattacks:
+  - TA0002
+mitretechniques:
+  - T1648

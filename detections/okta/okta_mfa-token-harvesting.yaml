@@ -1,0 +1,24 @@
+name: okta_mfa-token-harvesting
+displayName: Okta MFA Token Harvesting
+description: Detects patterns of MFA token collection attempts that could indicate adversary-in-the-middle attacks or token stealing
+file: okta_mfa-token-harvesting.sql
+categories:
+  - okta
+  - identity-access-management
+  - collection
+  - signal
+mitreAttacks:
+  - TA0009
+mitreTechniques:
+  - T1111
+schedule: "*/15 * * * *"
+riskScore: 75
+severity: High
+parameters:
+  threshold: "10"
+falsepositives:
+  - Users experiencing MFA issues and retrying authentication
+  - Mobile device synchronization problems
+  - Network connectivity issues causing MFA delays
+sourceTypes:
+  - okta

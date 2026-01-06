@@ -1,0 +1,24 @@
+name: okta_user-directory-exfiltration
+displayName: Okta User Directory Exfiltration
+description: Detects large-scale user directory data access suggesting potential data exfiltration activities
+file: okta_user-directory-exfiltration.sql
+categories:
+  - okta
+  - identity-access-management
+  - exfiltration
+  - signal
+mitreAttacks:
+  - TA0010
+mitreTechniques:
+  - T1567
+schedule: "*/15 * * * *"
+riskScore: 80
+severity: High
+parameters:
+  threshold: "100"
+falsepositives:
+  - Authorized data exports for compliance or migration
+  - HR system synchronization
+  - Identity governance auditing tools
+sourceTypes:
+  - okta

@@ -1,0 +1,24 @@
+name: okta_api-script-abuse
+displayName: Okta API Script Abuse
+description: Detects suspicious API automation with high-frequency programmatic patterns that could indicate malicious scripting
+file: okta_api-script-abuse.sql
+categories:
+  - okta
+  - application-activity
+  - execution
+  - signal
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1059
+schedule: "*/15 * * * *"
+riskScore: 55
+severity: Medium
+parameters:
+  threshold: "100"
+falsepositives:
+  - Legitimate API automation tools
+  - CI/CD pipelines interacting with Okta
+  - Monitoring and alerting systems
+sourceTypes:
+  - okta
