@@ -1,0 +1,40 @@
+name: github-api-high-volume-repository-enumeration
+displayName: GitHub API High Volume Repository Enumeration
+description:
+  Detects unusual patterns of repository enumeration via GitHub API calls,
+  indicating potential reconnaissance activities. High volumes of repository listing,
+  search, or access operations from a single user or IP address may indicate automated
+  scanning, reconnaissance before targeted attacks, or data gathering for competitive
+  intelligence. This detection helps identify early-stage attack reconnaissance and
+  unauthorized automation that could precede more serious security incidents.
+file: github-api-high-volume-repository-enumeration.sql
+categories:
+  - attack.discovery
+  - attack.reconnaissance
+  - attack.collection
+  - attack.t1580
+  - attack.t1087.004
+  - attack.t1213.003
+  - github
+  - organization
+  - discovery
+  - signal
+  - api-security
+  - reconnaissance
+  - enumeration
+mitreAttacks:
+  - TA0007
+  - TA0043
+  - TA0009
+mitreTechniques:
+  - T1580
+  - T1087.004
+  - T1213.003
+severity: Medium
+riskScore: 60
+schedule: "*/30 * * * *"
+parameters:
+  window: "30"
+  threshold: "50"
+sourceTypes:
+  - github

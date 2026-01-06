@@ -1,0 +1,39 @@
+name: github-unusual-repository-clone-pattern
+displayName: GitHub Unusual Repository Clone Pattern
+description:
+  Detects mass cloning of repositories or cloning patterns that may indicate
+  data exfiltration attempts. Large-scale repository cloning, especially of private
+  or sensitive repositories, can indicate insider threats, compromised accounts,
+  or data theft operations. This detection monitors for bulk cloning activities,
+  clones from unusual geographic locations, or cloning of multiple private repositories
+  in a short time period. Such patterns often precede data exfiltration or intellectual
+  property theft.
+file: github-unusual-repository-clone-pattern.sql
+categories:
+  - attack.discovery
+  - attack.collection
+  - attack.exfiltration
+  - attack.t1213.003
+  - attack.t1530
+  - github
+  - repository
+  - discovery
+  - signal
+  - data-protection
+  - repository-security
+  - data-exfiltration
+mitreAttacks:
+  - TA0007
+  - TA0009
+  - TA0010
+mitreTechniques:
+  - T1213.003
+  - T1530
+severity: High
+riskScore: 70
+schedule: "*/30 * * * *"
+parameters:
+  window: "30"
+  threshold: "10"
+sourceTypes:
+  - github
