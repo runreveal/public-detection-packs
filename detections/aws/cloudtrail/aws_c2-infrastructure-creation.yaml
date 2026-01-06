@@ -1,0 +1,22 @@
+name: aws-c2-infrastructure-creation
+displayName: AWS Infrastructure for Command and Control
+description: Detects rapid creation of network infrastructure resources (VPCs, subnets, NAT gateways, internet gateways) that could indicate setup of command and control infrastructure
+file: aws_c2-infrastructure-creation.sql
+categories:
+  - aws
+  - vpc
+  - cloudtrail
+  - network-activity
+  - resource-development
+  - signal
+mitreAttacks:
+  - TA0042
+mitreTechniques:
+  - T1583.006
+schedule: "*/15 * * * *"
+riskScore: 65
+severity: Medium
+parameters:
+  threshold: "10"
+sourceTypes:
+  - cloudtrail

@@ -1,0 +1,21 @@
+name: aws-compromised-account-resource-creation
+displayName: AWS Compromised Account Resource Creation
+description: Detects unusual volume of resource creation events that may indicate a compromised account being used to create malicious infrastructure
+file: aws_compromised-account-resource-creation.sql
+categories:
+  - aws
+  - cloudtrail
+  - system-activity
+  - resource-development
+  - signal
+mitreAttacks:
+  - TA0042
+mitreTechniques:
+  - T1586.003
+schedule: "*/15 * * * *"
+riskScore: 75
+severity: High
+parameters:
+  threshold: "20"
+sourceTypes:
+  - cloudtrail

@@ -1,0 +1,20 @@
+name: aws-crypto-mining-resource-creation
+displayName: AWS Crypto Mining Resource Creation
+description: Detects creation of EC2 instances with GPU or compute-optimized instance types commonly used for cryptocurrency mining operations
+file: aws_crypto-mining-resource-creation.sql
+categories:
+  - aws
+  - ec2
+  - cloudtrail
+  - system-activity
+  - resource-development
+  - signal
+mitreAttacks:
+  - TA0042
+mitreTechniques:
+  - T1583.007
+schedule: "*/15 * * * *"
+riskScore: 70
+severity: High
+sourceTypes:
+  - cloudtrail
