@@ -1,0 +1,33 @@
+title: 1Password Item Metadata Collection
+id: 1a2b3c4d-5e6f-7890-abcd-ef1234567890
+description: |
+  Detects bulk collection of item metadata through high-volume itemusage events without
+  corresponding credential reveals, potentially indicating reconnaissance or enumeration activity.
+references:
+  - https://developer.1password.com/docs/events-api/audit-events/
+  - https://attack.mitre.org/techniques/T1592/
+author: RunReveal
+date: 2025-12-09
+tags:
+  - 1password
+  - identity-access-management
+  - reconnaissance
+  - signal
+  - enumeration
+sourcetypes:
+  - 1password
+detection:
+  selection:
+    eventName: itemusage
+    logType: itemusages
+  condition: selection
+falsepositives:
+  - Legitimate browsing of password manager items
+  - Normal user behavior when searching for credentials
+  - Automated tools or extensions that list items
+level: low
+riskscore: 30
+mitreattacks:
+  - TA0043
+mitretechniques:
+  - T1592

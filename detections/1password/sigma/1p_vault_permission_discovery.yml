@@ -1,0 +1,36 @@
+title: 1Password Vault Permission Discovery
+id: 3c4d5e6f-7a8b-9012-cdef-123456789012
+description: |
+  Detects systematic enumeration of vault permissions and access rights through
+  repeated grant/revoke event viewing, potentially indicating reconnaissance of
+  organizational access structure.
+references:
+  - https://developer.1password.com/docs/events-api/audit-events/
+  - https://attack.mitre.org/techniques/T1069/
+author: RunReveal
+date: 2025-12-09
+tags:
+  - 1password
+  - identity-access-management
+  - discovery
+  - signal
+  - permission-enumeration
+sourcetypes:
+  - 1password
+detection:
+  selection:
+    eventName:
+      - grant
+      - trevoke
+    logType: auditevents
+  condition: selection
+falsepositives:
+  - Legitimate permission management activities
+  - Administrators reviewing access rights
+  - Security audits and compliance reviews
+level: low
+riskscore: 35
+mitreattacks:
+  - TA0007
+mitretechniques:
+  - T1069

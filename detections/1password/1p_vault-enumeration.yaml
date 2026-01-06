@@ -1,0 +1,24 @@
+name: 1p-vault-enumeration
+displayName: 1Password Vault Enumeration
+description: Detects systematic enumeration of vaults through high volume of view events across multiple vaults, potentially indicating reconnaissance activity
+file: 1p_vault-enumeration.sql
+categories:
+  - 1password
+  - identity-access-management
+  - reconnaissance
+  - signal
+mitreAttacks:
+  - TA0043
+mitreTechniques:
+  - T1087
+schedule: "*/15 * * * *"
+riskScore: 50
+severity: Medium
+parameters:
+  threshold: "10"
+falsepositives:
+  - Security audits reviewing vault access patterns
+  - Administrators managing multiple vaults
+  - Users organizing or consolidating credentials across vaults
+sourceTypes:
+  - 1password

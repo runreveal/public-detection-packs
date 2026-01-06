@@ -1,0 +1,25 @@
+name: 1p-cli-automation-abuse
+displayName: 1Password CLI Automation Abuse
+description: Detects suspicious CLI-based automation with high-frequency credential access, potentially indicating automated credential harvesting
+file: 1p_cli-automation-abuse.sql
+categories:
+  - 1password
+  - identity-access-management
+  - execution
+  - signal
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1059
+schedule: "*/15 * * * *"
+riskScore: 60
+severity: Medium
+parameters:
+  threshold: "20"
+falsepositives:
+  - Legitimate automation tools and scripts using 1Password CLI
+  - CI/CD pipelines accessing secrets for deployments
+  - Infrastructure-as-code tools retrieving credentials
+  - Development environments with frequent credential access needs
+sourceTypes:
+  - 1password
