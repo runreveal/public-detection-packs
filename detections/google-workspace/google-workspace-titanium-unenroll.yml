@@ -21,7 +21,7 @@ categories:
   - authentication
   - gsuite
 mitreAttacks:
-  - defense-evasion
+  - TA0005
 mitreTechniques:
   - T1562.001
 severity: High

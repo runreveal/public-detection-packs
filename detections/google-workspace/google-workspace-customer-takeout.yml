@@ -21,8 +21,8 @@ categories:
   - takeout
   - gsuite
 mitreAttacks:
-  - collection
-  - exfiltration
+  - TA0009
+  - TA0010
 mitreTechniques:
   - T1020
   - T1114

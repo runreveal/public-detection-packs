@@ -21,9 +21,9 @@ tags:
 sourcetypes:
   - 1password
 mitreattacks:
-  - persistence
-  - privilege-escalation
-  - impact
+  - TA0003
+  - TA0004
+  - TA0040
 mitretechniques:
   - T1531
   - T1098

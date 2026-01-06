@@ -15,8 +15,8 @@ categories:
   - public-access
   - gsuite
 mitreAttacks:
-  - collection
-  - exfiltration
+  - TA0009
+  - TA0010
 mitreTechniques:
   - T1537
 severity: Medium

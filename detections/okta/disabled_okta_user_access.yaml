@@ -26,11 +26,11 @@ schedule: "*/15 * * * *"
 sourceTypes:
   - okta
 mitreAttacks:
-  - initial-access
-  - persistence
-  - privilege-escalation
-  - defense-evasion
-  - discovery
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0007
 mitreTechniques:
   - T1078
   - T1087

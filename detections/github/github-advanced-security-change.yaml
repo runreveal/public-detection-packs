@@ -20,8 +20,8 @@ categories:
   - vulnerability-management
   - policy-management
 mitreAttacks:
-  - defense-evasion
-  - impact
+  - TA0005
+  - TA0040
 mitreTechniques:
   - T1562.001
 severity: Critical

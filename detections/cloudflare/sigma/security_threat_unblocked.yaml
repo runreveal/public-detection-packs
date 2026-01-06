@@ -25,7 +25,7 @@ falsepositives:
 level: medium
 risk_score: 75
 mitreattacks:
-  - command-and-control
+  - TA0011
 mitretechniques:
   - T1071.001
   - T1568

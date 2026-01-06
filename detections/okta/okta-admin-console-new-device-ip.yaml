@@ -25,11 +25,11 @@ categories:
   - new-ip
   - risk-behavior
 mitreAttacks:
-  - initial-access
-  - persistence
-  - privilege-escalation
-  - defense-evasion
-  - credential-access
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0006
 mitreTechniques:
   - T1078.004
 severity: High

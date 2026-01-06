@@ -9,8 +9,8 @@ categories:
   - token-theft
   - session-hijacking
 mitreAttacks:
-  - credential-access
-  - lateral-movement
+  - TA0006
+  - TA0008
 mitreTechniques:
   - T1528
   - T1550

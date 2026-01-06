@@ -19,8 +19,8 @@ schedule: "*/15 * * * *"
 riskScore: 60
 severity: Medium
 mitreAttacks:
-  - collection
-  - impact
+  - TA0009
+  - TA0040
 mitreTechniques:
   - T1530
   - T1485

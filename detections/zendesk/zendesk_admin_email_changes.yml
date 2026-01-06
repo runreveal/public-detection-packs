@@ -16,8 +16,8 @@ categories:
 severity: high
 riskScore: 80
 mitreAttacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitreTechniques:
   - T1098
 sourceTypes:

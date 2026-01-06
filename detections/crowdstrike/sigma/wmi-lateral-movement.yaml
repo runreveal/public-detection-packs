@@ -18,8 +18,8 @@ sourcetypes:
   - crowdstrike-fdr
   - crowdstrike-data
 mitreattacks:
-  - execution
-  - lateral-movement
+  - TA0002
+  - TA0008
 mitretechniques:
   - T1047
 detection:

@@ -16,7 +16,7 @@ logsource:
   product: aws
   service: guardduty
 mitreattacks:
-  - discovery
+  - TA0007
 mitretechniques:
   - T1526
 detection:

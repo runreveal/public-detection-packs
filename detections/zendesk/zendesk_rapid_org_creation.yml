@@ -15,7 +15,7 @@ categories:
 severity: medium
 riskScore: 65
 mitreAttacks:
-  - persistence
+  - TA0003
 mitreTechniques:
   - T1136
 sourceTypes:

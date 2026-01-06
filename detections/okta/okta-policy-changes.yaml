@@ -22,9 +22,9 @@ notes: ""
 disabled: true
 notificationNames: []
 mitreAttacks:
-  - privilege-escalation
-  - persistence
-  - defense-evasion
+  - TA0004
+  - TA0003
+  - TA0005
 mitreTechniques:
   - T1484.002
   - T1098.003

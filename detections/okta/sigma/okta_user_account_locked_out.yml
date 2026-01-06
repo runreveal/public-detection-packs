@@ -22,8 +22,8 @@ tags:
 sourcetypes:
   - okta
 mitreattacks:
-  - credential-access
-  - impact
+  - TA0006
+  - TA0040
 mitretechniques:
   - T1531
   - T1110

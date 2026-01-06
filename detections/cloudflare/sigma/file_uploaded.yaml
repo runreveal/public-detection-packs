@@ -23,8 +23,8 @@ sourcetypes:
   - cf-gateway-http
 riskscore: 30
 mitreattacks:
-  - collection
-  - exfiltration
+  - TA0009
+  - TA0010
 mitretechniques:
   - T1005
   - T1567

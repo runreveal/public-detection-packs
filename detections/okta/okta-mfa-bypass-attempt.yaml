@@ -21,10 +21,10 @@ categories:
   - mfa-bypass
   - bypass-attempt
 mitreAttacks:
-  - initial-access
-  - persistence
-  - defense-evasion
-  - credential-access
+  - TA0001
+  - TA0003
+  - TA0005
+  - TA0006
 mitreTechniques:
   - T1556.006
 severity: Critical

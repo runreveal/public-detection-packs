@@ -15,7 +15,7 @@ tags:
 sourcetypes:
   - slack
 mitreattacks:
-  - credential-access
+  - TA0006
 mitretechniques:
   - T1550
 detection:

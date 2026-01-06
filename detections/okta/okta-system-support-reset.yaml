@@ -26,10 +26,10 @@ categories:
   - password-reset
   - mfa-management
 mitreAttacks:
-  - persistence
-  - credential-access
-  - defense-evasion
-  - privilege-escalation
+  - TA0003
+  - TA0006
+  - TA0005
+  - TA0004
 mitreTechniques:
   - T1098
   - T1556.006

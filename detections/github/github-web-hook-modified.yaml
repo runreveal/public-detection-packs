@@ -20,8 +20,8 @@ categories:
   - webhook-management
   - integration-security
 mitreAttacks:
-  - exfiltration
-  - command-and-control
+  - TA0010
+  - TA0011
 mitreTechniques:
   - T1071.001
   - T1567.002

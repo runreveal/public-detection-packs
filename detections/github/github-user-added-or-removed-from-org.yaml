@@ -18,8 +18,8 @@ categories:
   - signal
   - user-management
 mitreAttacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitreTechniques:
   - T1098
 severity: Medium

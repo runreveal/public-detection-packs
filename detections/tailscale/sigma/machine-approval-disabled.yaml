@@ -17,8 +17,8 @@ sourcetypes:
   - tailscale
   - tailscale-audit
 mitreattacks:
-  - initial-access
-  - persistence
+  - TA0001
+  - TA0003
 mitretechniques:
   - T1078
 detection:

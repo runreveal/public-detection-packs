@@ -25,9 +25,9 @@ categories:
   - replay-attack
   - token-compromise
 mitreAttacks:
-  - defense-evasion
-  - credential-access
-  - lateral-movement
+  - TA0005
+  - TA0006
+  - TA0008
 mitreTechniques:
   - T1528
   - T1550.001

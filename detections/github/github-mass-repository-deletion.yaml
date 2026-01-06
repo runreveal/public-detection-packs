@@ -10,7 +10,7 @@ categories:
   - signal
   - data-destruction
 mitreAttacks:
-  - impact
+  - TA0040
 mitreTechniques:
   - T1485
 severity: Critical

@@ -20,9 +20,9 @@ categories:
   - signal
   - resource-creation
 mitreAttacks:
-  - defense-evasion
-  - lateral-movement
-  - collection
+  - TA0005
+  - TA0008
+  - TA0009
 mitreTechniques:
   - T1074.001
   - T1550.001

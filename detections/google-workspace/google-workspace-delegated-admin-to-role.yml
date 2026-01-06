@@ -15,8 +15,8 @@ categories:
   - role-assignment
   - gsuite
 mitreAttacks:
-  - privilege-escalation
-  - persistence
+  - TA0004
+  - TA0003
 mitreTechniques:
   - T1098.003
 severity: High

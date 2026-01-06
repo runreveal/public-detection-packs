@@ -15,7 +15,7 @@ tags:
 sourcetypes:
   - slack
 mitreattacks:
-  - impact
+  - TA0040
 mitretechniques:
   - T1485
 detection:

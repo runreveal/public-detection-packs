@@ -9,8 +9,8 @@ categories:
   - user-enumeration
   - reconnaissance
 mitreAttacks:
-  - reconnaissance
-  - discovery
+  - TA0043
+  - TA0007
 mitreTechniques:
   - T1589
   - T1087

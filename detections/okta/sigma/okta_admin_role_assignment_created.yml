@@ -22,8 +22,8 @@ tags:
 sourcetypes:
   - okta
 mitreattacks:
-  - persistence
-  - privilege-escalation
+  - TA0003
+  - TA0004
 mitretechniques:
   - T1098.003
 detection:

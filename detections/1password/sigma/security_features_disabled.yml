@@ -17,8 +17,8 @@ tags:
 sourcetypes:
   - 1password
 mitreattacks:
-  - defense-evasion
-  - impact
+  - TA0005
+  - TA0040
 mitretechniques:
   - T1562
 detection:

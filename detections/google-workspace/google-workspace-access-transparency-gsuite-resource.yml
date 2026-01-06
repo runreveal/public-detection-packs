@@ -15,7 +15,7 @@ categories:
   - signal
   - access-transparency
 mitreAttacks:
-  - discovery
+  - TA0007
 mitreTechniques:
   - T1083
 severity: Medium

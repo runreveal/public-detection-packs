@@ -15,7 +15,7 @@ categories:
 severity: medium
 riskScore: 70
 mitreAttacks:
-  - impact
+  - TA0040
 mitreTechniques:
   - T1485
 sourceTypes:

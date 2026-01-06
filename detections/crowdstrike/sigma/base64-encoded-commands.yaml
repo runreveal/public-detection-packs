@@ -19,8 +19,8 @@ sourcetypes:
   - crowdstrike-fdr
   - crowdstrike-data
 mitreattacks:
-  - defense-evasion
-  - execution
+  - TA0005
+  - TA0002
 mitretechniques:
   - T1027
   - T1059.001

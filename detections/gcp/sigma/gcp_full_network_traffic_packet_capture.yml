@@ -39,9 +39,9 @@ falsepositives:
 level: medium
 risk_score: 50
 mitreattacks:
-  - credential-access
-  - discovery
-  - collection
+  - TA0006
+  - TA0007
+  - TA0009
 mitretechniques:
   - T1074.001
   - T1040

@@ -25,8 +25,8 @@ sourcetypes:
   - cf-http
 riskscore: 85
 mitreattacks:
-  - initial-access
-  - discovery
+  - TA0001
+  - TA0007
 mitretechniques:
   - T1190
   - T1592

@@ -17,7 +17,7 @@ sourcetypes:
   - crowdstrike-fdr
   - crowdstrike-data
 mitreattacks:
-  - impact
+  - TA0040
 mitretechniques:
   - T1496
 detection:

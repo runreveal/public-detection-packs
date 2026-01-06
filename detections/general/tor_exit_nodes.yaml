@@ -18,8 +18,8 @@ riskScore: 90
 severity: High
 schedule: "*/15 * * * *"
 mitreAttacks:
-  - command-and-control
-  - defense-evasion
+  - TA0011
+  - TA0005
 mitreTechniques:
   - T1090.003
   - T1562.006

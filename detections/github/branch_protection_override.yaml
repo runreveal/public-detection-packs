@@ -23,7 +23,7 @@ schedule: "*/15 * * * *"
 sourceTypes:
   - github-webhook
 mitreAttacks:
-  - defense-evasion
-  - command-and-control
+  - TA0005
+  - TA0011
 mitreTechniques:
   - T1562.001

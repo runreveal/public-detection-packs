@@ -23,7 +23,7 @@ sourcetypes:
   - cf-firewall
 riskscore: 75
 mitreattacks:
-  - impact
+  - TA0040
 mitretechniques:
   - T1499
 detection:

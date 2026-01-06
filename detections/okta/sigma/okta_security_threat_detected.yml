@@ -21,7 +21,7 @@ tags:
 sourcetypes:
   - okta
 mitreattacks:
-  - command-and-control
+  - TA0011
 mitretechniques:
   - T1071.001
   - T1104

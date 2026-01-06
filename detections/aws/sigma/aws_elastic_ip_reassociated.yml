@@ -37,6 +37,6 @@ falsepositives:
 level: low
 riskscore: 45
 mitreattacks:
-  - defense-evasion
+  - TA0005
 mitretechniques:
   - T1578

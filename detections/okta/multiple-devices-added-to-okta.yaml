@@ -30,11 +30,11 @@ parameters:
 disabled: false
 notificationNames: []
 mitreAttacks:
-  - initial-access
-  - persistence
-  - privilege-escalation
-  - defense-evasion
-  - credential-access
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0006
 mitreTechniques:
   - T1078
   - T1110

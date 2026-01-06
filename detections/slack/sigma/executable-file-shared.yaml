@@ -16,7 +16,7 @@ tags:
 sourcetypes:
   - slack
 mitreattacks:
-  - initial-access
+  - TA0001
 mitretechniques:
   - T1566
   - T1566.001

@@ -28,8 +28,8 @@ falsepositives:
 level: medium
 riskscore: 50
 mitreattacks:
-  - collection
-  - impact
+  - TA0009
+  - TA0040
 mitretechniques:
   - T1565.001
   - T1005
