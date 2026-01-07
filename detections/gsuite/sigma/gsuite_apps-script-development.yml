@@ -1,0 +1,33 @@
+title: GSuite Apps Script Malicious Development
+description: |
+  Detects creation of Apps Scripts that could be used for malicious purposes including
+  data exfiltration, unauthorized access, or persistence mechanisms.
+references:
+  - https://developers.google.com/apps-script
+  - https://attack.mitre.org/techniques/T1583/006/
+author: RunReveal
+date: 2025-12-09
+tags:
+  - gsuite
+  - application-activity
+  - resource-development
+  - signal
+sourcetypes:
+  - gsuite
+detection:
+  selection:
+    id.applicationName: admin
+    eventName:
+      - CREATE_APPLICATION_SETTING
+      - AUTHORIZE_API_CLIENT_ACCESS
+  condition: selection
+falsepositives:
+  - Legitimate Apps Script development by authorized users
+  - IT automation and workflow tools
+  - Sanctioned third-party integrations
+level: low
+riskscore: 40
+mitreattacks:
+  - TA0042
+mitretechniques:
+  - T1583.006

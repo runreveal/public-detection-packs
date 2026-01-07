@@ -1,0 +1,24 @@
+name: gsuite_calendar-drive-reconnaissance
+displayName: GSuite Calendar and Drive Reconnaissance
+description: Detects rapid resource enumeration across Drive and Calendar potentially indicating reconnaissance of shared resources
+file: gsuite_calendar-drive-reconnaissance.sql
+categories:
+  - gsuite
+  - system-activity
+  - reconnaissance
+  - signal
+mitreAttacks:
+  - TA0043
+mitreTechniques:
+  - T1083
+schedule: "*/15 * * * *"
+riskScore: 40
+severity: Medium
+parameters:
+  threshold: "150"
+falsepositives:
+  - Users searching for files or calendar events
+  - Automated backup or sync tools
+  - Mobile apps synchronizing data
+sourceTypes:
+  - gsuite
