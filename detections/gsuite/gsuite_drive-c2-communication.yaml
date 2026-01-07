@@ -15,7 +15,7 @@ schedule: "*/15 * * * *"
 riskScore: 65
 severity: High
 parameters:
-  threshold: "50"
+  threshold: "500"
 falsepositives:
   - Collaborative editing sessions with rapid updates
   - Automated sync tools updating files frequently
