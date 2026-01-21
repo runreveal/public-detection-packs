@@ -1,0 +1,51 @@
+disabled: true
+name: "no-logs-received"
+displayName: "No Logs Received"
+description:
+  Alerts when a source receives fewer logs than the configured threshold.
+notes: 
+  This health check monitors source activity and alerts when log volume falls below the threshold within the configured time window. 
+  Set threshold to 1 to alert on no logs, or higher to alert on low volume.
+file: health-check-no-logs.sql
+riskScore: 50
+severity: Medium
+categories:
+  - runreveal-detection
+  - health-check
+schedule: "@15m"
+parameters:
+  duration: "24"
+  threshold: "1"
+type: "health"
+settings:
+  fields:
+    - name: duration
+      displayName: "Duration (Hours)"
+      dataType: "number"
+      description: "Time window in hours to check for log activity"
+    - name: threshold
+      displayName: "Minimum Event Count"
+      dataType: "number"
+      description: "Alert if event count falls below this threshold (1 = no logs, higher for low volume alerts)"
+  evaluation:
+    valueColumn: "eventCount"
+    operator: "lt"
+    thresholdParam: "threshold"
+inlineTemplate:
+  title: "RunReveal Health Check Alert: {{health.sourceDisplayName}}"
+  body: |
+    # Health Check Failed - No Logs Received
+    
+    Your RunReveal source has not received any events in your selected duration.
+    
+    **Source Name:** {{health.sourceDisplayName}}
+    **Source Type:** {{health.sourceType}}
+    **Source ID:** {{health.sourceID}}
+
+    **Duration:** {{health.parameters.duration}} hour(s)
+    **Event Count / Failure Threshold:** {{health.metricValue}} / {{health.threshold}}
+    **Last Received Event:** {{health.result.lastReceived}}
+    
+    **Alerting Since:** {{health.alertingSince}}
+    **Consecutive Failures:** {{health.consecutiveFailures}}
+    [Source Overview]({{health.resultLink}})
