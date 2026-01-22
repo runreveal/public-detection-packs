@@ -20,9 +20,9 @@ type: "health"
 settings:
   fields:
     - name: duration
-      displayName: "Duration (Hours)"
-      dataType: "number"
-      description: "Time window in hours to check for log activity"
+      displayName: "Duration"
+      dataType: "duration"
+      description: "Time window to check for log activity"
     - name: threshold
       displayName: "Minimum Event Count"
       dataType: "number"
