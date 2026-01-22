@@ -34,7 +34,7 @@ settings:
 inlineTemplate:
   title: "RunReveal Health Check Alert: {{health.sourceDisplayName}}"
   body: |
-    # Health Check Failed - No Logs Received
+    # Health Check Failed - {{health.displayName}}
     
     Your RunReveal source has not received any events in your selected duration.
     
