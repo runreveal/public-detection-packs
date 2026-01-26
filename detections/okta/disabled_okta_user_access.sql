@@ -33,6 +33,7 @@ WITH disabledUsers AS
 SELECT
     disabledUsers.disabledTime,
     disabledUsers.performedBy AS disabledBy,
+    disabledUsers.targetUser,
     eventTime,
     eventName,
     sourceType,

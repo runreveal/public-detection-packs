@@ -34,3 +34,5 @@ mitreAttacks:
 mitreTechniques:
   - T1078
   - T1087
+fields:
+  - disableUser.targetUser
