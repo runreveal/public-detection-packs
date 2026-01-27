@@ -1,0 +1,38 @@
+title: AWS Compromised Key Quarantine Policy Attached
+id: f8e7d6c5-b4a3-2190-fedc-ba9876543210
+description: |
+  Detects when the AWSCompromisedKeyQuarantine policy is attached to an IAM user.
+  AWS automatically attaches this policy when they detect that an IAM access key
+  has been compromised or exposed publicly (e.g., on GitHub). This is a critical
+  security event requiring immediate investigation and remediation. Do NOT remove
+  this policy without following AWS support case instructions.
+references:
+  - https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSCompromisedKeyQuarantineV2.html
+  - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
+author: RunReveal
+date: 2025-01-27
+tags:
+  - attack.credential-access
+  - attack.t1552.001
+  - aws
+  - cloudtrail
+  - identity-access-management
+  - signal
+  - compromised-credentials
+  - iam
+sourcetypes:
+  - cloudtrail
+detection:
+  selection:
+    eventSource: iam.amazonaws.com
+    eventName: AttachUserPolicy
+    requestParameters.policyArn|contains: 'AWSCompromisedKeyQuarantine'
+  condition: selection
+falsepositives:
+  - None expected - AWS only attaches this policy when credentials are confirmed compromised
+level: critical
+riskscore: 90
+mitreattacks:
+  - TA0006
+mitretechniques:
+  - T1552.001
