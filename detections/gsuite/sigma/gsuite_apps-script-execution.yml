@@ -25,7 +25,7 @@ falsepositives:
   - Authorized integrations
 level: low
 riskscore: 35
-mitreattacks:
+mitreAttacks:
   - TA0002
-mitretechniques:
+mitreTechniques:
   - T1059.009

@@ -16,10 +16,10 @@ tags:
   - data-access
 sourcetypes:
   - s3-access
-mitreattacks:
+mitreAttacks:
   - TA0009
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1530
 detection:
   selection:

@@ -52,8 +52,8 @@ falsepositives:
   - HCP Terraform service activities
 level: high
 riskscore: 75
-mitreattacks:
+mitreAttacks:
   - TA0004
   - TA0003
-mitretechniques:
+mitreTechniques:
   - T1098

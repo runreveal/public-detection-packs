@@ -22,10 +22,10 @@ tags:
 sourcetypes:
   - cf-gateway-http
 riskscore: 30
-mitreattacks:
+mitreAttacks:
   - TA0009
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1005
   - T1567
 detection:

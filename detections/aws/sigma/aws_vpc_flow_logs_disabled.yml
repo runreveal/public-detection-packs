@@ -33,8 +33,8 @@ falsepositives:
   - Legitimate administrative actions when reconfiguring network monitoring
 level: high
 riskscore: 75
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562.001

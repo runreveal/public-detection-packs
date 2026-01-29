@@ -35,8 +35,8 @@ falsepositives:
   - Legitimate administrative activities when decommissioning a GuardDuty deployment
 level: high
 riskscore: 85
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562.001

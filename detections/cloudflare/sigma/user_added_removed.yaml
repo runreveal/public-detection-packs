@@ -20,10 +20,10 @@ tags:
 sourcetypes:
   - cf-audit
 riskscore: 50
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0004
-mitretechniques:
+mitreTechniques:
   - T1098
 detection:
   selection:

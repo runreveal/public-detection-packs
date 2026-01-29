@@ -36,9 +36,9 @@ falsepositives:
   - Exceptions can be added to this rule to filter expected behavior.
 level: medium
 risk_score: 50
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562.001
   - T1562.004

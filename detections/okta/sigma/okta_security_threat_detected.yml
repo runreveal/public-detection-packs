@@ -20,9 +20,9 @@ tags:
   - security-threat
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0011
-mitretechniques:
+mitreTechniques:
   - T1071.001
   - T1104
 detection:

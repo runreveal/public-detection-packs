@@ -14,9 +14,9 @@ tags:
   - encryption
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0006
-mitretechniques:
+mitreTechniques:
   - T1552
 detection:
   selection:

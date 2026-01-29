@@ -36,8 +36,8 @@ falsepositives:
   - Legitimate administrative actions when reconfiguring compliance monitoring
 level: high
 riskscore: 80
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562.001

@@ -15,9 +15,9 @@ tags:
 sourcetypes:
   - wiz-threats
   - wiz-issue
-mitreattacks:
+mitreAttacks:
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1531
 detection:
   selection:

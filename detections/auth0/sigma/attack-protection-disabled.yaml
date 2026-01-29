@@ -33,7 +33,7 @@ falsepositives:
   - Testing or development environment configuration changes
 level: high
 riskscore: 85
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1562

@@ -15,10 +15,10 @@ tags:
   - idp
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1556
 detection:
   selection:

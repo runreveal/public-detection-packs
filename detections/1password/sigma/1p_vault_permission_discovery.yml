@@ -30,7 +30,7 @@ falsepositives:
   - Security audits and compliance reviews
 level: low
 riskscore: 35
-mitreattacks:
+mitreAttacks:
   - TA0007
-mitretechniques:
+mitreTechniques:
   - T1069

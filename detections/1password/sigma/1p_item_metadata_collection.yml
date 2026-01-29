@@ -27,7 +27,7 @@ falsepositives:
   - Automated tools or extensions that list items
 level: low
 riskscore: 30
-mitreattacks:
+mitreAttacks:
   - TA0043
-mitretechniques:
+mitreTechniques:
   - T1592

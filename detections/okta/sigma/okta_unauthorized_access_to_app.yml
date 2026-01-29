@@ -23,12 +23,12 @@ tags:
   - app-access
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0003
   - TA0004
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1078
   - T1190
 detection:

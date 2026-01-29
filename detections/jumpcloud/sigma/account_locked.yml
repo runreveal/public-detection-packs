@@ -16,10 +16,10 @@ tags:
   - account-lockout
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0006
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1110
 detection:
   selection1:

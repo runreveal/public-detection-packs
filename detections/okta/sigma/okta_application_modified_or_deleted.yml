@@ -21,11 +21,11 @@ tags:
   - application-modification
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0004
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1484.002
 detection:
   selection:

@@ -17,10 +17,10 @@ tags:
   - network-zone
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562.001
 detection:
   selection:

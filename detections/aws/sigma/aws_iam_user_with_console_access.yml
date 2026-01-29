@@ -33,7 +33,7 @@ falsepositives:
   - Legitimate user creation during onboarding or automation setup
 level: medium
 riskscore: 60
-mitreattacks:
+mitreAttacks:
   - TA0003
-mitretechniques:
+mitreTechniques:
   - T1136.003

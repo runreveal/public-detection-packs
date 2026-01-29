@@ -15,10 +15,10 @@ tags:
   - mfa
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0003
-mitretechniques:
+mitreTechniques:
   - T1556
 detection:
   selection:

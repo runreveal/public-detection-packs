@@ -26,7 +26,7 @@ falsepositives:
   - IT approved templates with macros
 level: low
 riskscore: 30
-mitreattacks:
+mitreAttacks:
   - TA0002
-mitretechniques:
+mitreTechniques:
   - T1204.002

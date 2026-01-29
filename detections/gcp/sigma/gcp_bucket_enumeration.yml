@@ -32,8 +32,8 @@ falsepositives:
     behavior is causing false positives, it can be exempted from the rule.
 level: low
 riskscore: 50
-mitreattacks:
+mitreAttacks:
   - TA0007
-mitretechniques:
+mitreTechniques:
   - T1083
   - T1526

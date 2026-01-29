@@ -34,8 +34,8 @@ falsepositives:
   - Automated forwarding rules for shared mailboxes or distribution
 level: medium
 riskscore: 70
-mitreattacks:
+mitreAttacks:
   - TA0009
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1114.003

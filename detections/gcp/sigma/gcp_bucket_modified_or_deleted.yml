@@ -34,8 +34,8 @@ falsepositives:
     If known behavior is causing false positives, it can be exempted from the rule.
 level: medium
 risk_score: 50
-mitreattacks:
+mitreAttacks:
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1485
   - T1565.001

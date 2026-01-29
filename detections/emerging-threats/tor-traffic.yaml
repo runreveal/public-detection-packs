@@ -20,10 +20,10 @@ fields:
   - elbStatusCode
   - result
 riskscore: 80
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0011
-mitretechniques:
+mitreTechniques:
   - T1090
 tags:
   - attack.defense-evasion

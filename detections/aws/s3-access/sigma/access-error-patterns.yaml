@@ -15,9 +15,9 @@ tags:
   - reconnaissance
 sourcetypes:
   - s3-access
-mitreattacks:
+mitreAttacks:
   - TA0007
-mitretechniques:
+mitreTechniques:
   - T1526
 detection:
   selection:

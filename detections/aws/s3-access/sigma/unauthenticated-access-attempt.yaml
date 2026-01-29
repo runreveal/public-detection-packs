@@ -15,9 +15,9 @@ tags:
   - data-exfiltration
 sourcetypes:
   - s3-access
-mitreattacks:
+mitreAttacks:
   - TA0009
-mitretechniques:
+mitreTechniques:
   - T1530
 detection:
   selection:

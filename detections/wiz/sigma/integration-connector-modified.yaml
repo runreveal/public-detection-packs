@@ -16,10 +16,10 @@ tags:
 sourcetypes:
   - wiz-threats
   - wiz-issue
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0008
-mitretechniques:
+mitreTechniques:
   - T1199
 detection:
   selection:

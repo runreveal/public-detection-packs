@@ -34,8 +34,8 @@ falsepositives:
   - Legitimate sharing of non-sensitive database snapshots for migration or recovery
 level: high
 riskscore: 85
-mitreattacks:
+mitreAttacks:
   - TA0009
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1530

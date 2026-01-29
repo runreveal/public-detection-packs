@@ -20,10 +20,10 @@ tags:
   - zone-deactivation
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562.001
 detection:
   selection:

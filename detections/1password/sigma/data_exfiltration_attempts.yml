@@ -18,10 +18,10 @@ tags:
   - data-exfiltration
 sourcetypes:
   - 1password
-mitreattacks:
+mitreAttacks:
   - TA0009
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1041
 detection:
   selection:

@@ -18,12 +18,12 @@ tags:
   - privilege-escalation
 sourcetypes:
   - 1password
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0003
   - TA0004
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1078
 detection:
   privilege_selection:

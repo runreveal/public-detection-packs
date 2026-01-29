@@ -14,9 +14,9 @@ tags:
   - data-destruction
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1485
 detection:
   selection:

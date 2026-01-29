@@ -15,9 +15,9 @@ tags:
   - group-management
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0003
-mitretechniques:
+mitreTechniques:
   - T1136
 detection:
   selection:

@@ -24,10 +24,10 @@ tags:
 sourcetypes:
   - cf-http
 riskscore: 85
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0007
-mitretechniques:
+mitreTechniques:
   - T1190
   - T1592
 detection:

@@ -14,9 +14,9 @@ tags:
   - oauth
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0006
-mitretechniques:
+mitreTechniques:
   - T1550
 detection:
   selection:

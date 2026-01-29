@@ -15,9 +15,9 @@ tags:
   - encryption
 sourcetypes:
   - s3-access
-mitreattacks:
+mitreAttacks:
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1048
 detection:
   selection_no_tls:

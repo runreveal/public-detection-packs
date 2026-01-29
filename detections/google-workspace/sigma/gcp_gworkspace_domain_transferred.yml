@@ -29,8 +29,8 @@ falsepositives:
   - Domain migration activities
 level: high
 riskscore: 85
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1098

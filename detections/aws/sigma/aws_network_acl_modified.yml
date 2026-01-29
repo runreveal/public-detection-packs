@@ -39,8 +39,8 @@ falsepositives:
   - Security hardening efforts
 level: medium
 riskscore: 55
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0011
-mitretechniques:
+mitreTechniques:
   - T1562.007
