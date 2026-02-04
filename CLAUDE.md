@@ -44,7 +44,7 @@ When you write a ClickHouse query you should always.
 Sigma detections are the standard sigma format, however we've
 added a few extra fields that we support that are not in the
 original sigma format. Here's an example containing riskscore
-mitreattacks that we've added to the format.
+mitreAttacks that we've added to the format.
 
 ```yaml
 title: Google Workspace Application Removed
@@ -72,7 +72,7 @@ falsepositives:
   - Application being removed may be performed by a System Administrator.
 level: medium
 riskscore: 50
-mitreattacks:
+mitreAttacks:
   - impact
 ```
 
@@ -173,3 +173,8 @@ For Sigma detections, use the `title` field instead of `displayName`, following 
 ```yaml
 title: Google Workspace Application Removed
 ```
+
+### MITRE
+
+Our detection schema supports MITRE Tactics and Techniques. Their key names are `mitreAttacks` and `mitreTechniques`. 
+The values for these fields should be the IDs only, not text slugs.
