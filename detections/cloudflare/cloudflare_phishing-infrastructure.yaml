@@ -1,0 +1,28 @@
+name: cloudflare_phishing-infrastructure
+displayName: Cloudflare Phishing Infrastructure Creation
+description: |
+  Detects creation of Cloudflare Pages or Workers deployments that could be used for
+  phishing campaigns. Identifies new deployments with suspicious domain patterns or
+  content that mimics legitimate services.
+file: cloudflare_phishing-infrastructure.sql
+categories:
+  - cloudflare
+  - audit-activity
+  - resource-development
+  - signal
+  - cf-audit
+mitreAttacks:
+  - TA0042
+mitreTechniques:
+  - T1586.002
+riskScore: 70
+severity: High
+schedule: "*/15 * * * *"
+parameters:
+  window: "30"
+sourceTypes:
+  - cf-audit
+falsepositives:
+  - Legitimate Pages deployments
+  - Development and staging environments
+  - Content delivery projects

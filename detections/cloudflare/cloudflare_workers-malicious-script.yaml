@@ -1,0 +1,28 @@
+name: cloudflare_workers-malicious-script
+displayName: Cloudflare Workers Malicious Script Execution
+description: |
+  Detects Workers scripts performing suspicious operations such as cryptocurrency
+  mining, proxying traffic, data exfiltration, or other malicious behaviors. Monitors
+  for unusual script uploads and modifications that could indicate compromise.
+file: cloudflare_workers-malicious-script.sql
+categories:
+  - cloudflare
+  - audit-activity
+  - execution
+  - signal
+  - cf-audit
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1059.007
+riskScore: 70
+severity: High
+schedule: "*/15 * * * *"
+parameters:
+  window: "30"
+sourceTypes:
+  - cf-audit
+falsepositives:
+  - Legitimate Workers script deployments
+  - CI/CD automated deployments
+  - Development activities

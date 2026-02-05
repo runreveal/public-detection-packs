@@ -1,0 +1,30 @@
+name: cloudflare_transform-rules-abuse
+displayName: Cloudflare Transform Rules Abuse
+description: |
+  Detects creation or modification of transform rules that could be used for malicious
+  redirects, header manipulation, or content injection. Transform rules can be abused
+  to redirect users to phishing sites, inject malicious content, or manipulate security
+  headers.
+file: cloudflare_transform-rules-abuse.sql
+categories:
+  - cloudflare
+  - audit-activity
+  - execution
+  - signal
+  - cf-audit
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1203
+riskScore: 65
+severity: Medium
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "5"
+  window: "30"
+sourceTypes:
+  - cf-audit
+falsepositives:
+  - Legitimate transform rule configuration
+  - Security header implementations
+  - Content optimization activities

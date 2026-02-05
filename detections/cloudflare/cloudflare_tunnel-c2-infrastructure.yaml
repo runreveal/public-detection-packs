@@ -1,0 +1,28 @@
+name: cloudflare_tunnel-c2-infrastructure
+displayName: Cloudflare Tunnel C2 Infrastructure
+description: |
+  Detects creation of Cloudflare Tunnels that could be used for Command and Control
+  infrastructure. Tunnels can provide persistent, encrypted communication channels
+  that bypass traditional network security controls.
+file: cloudflare_tunnel-c2-infrastructure.sql
+categories:
+  - cloudflare
+  - audit-activity
+  - resource-development
+  - signal
+  - cf-audit
+mitreAttacks:
+  - TA0042
+mitreTechniques:
+  - T1583.006
+riskScore: 75
+severity: High
+schedule: "*/15 * * * *"
+parameters:
+  window: "30"
+sourceTypes:
+  - cf-audit
+falsepositives:
+  - Legitimate tunnel creation for remote access
+  - Development infrastructure setup
+  - Zero Trust Access deployments
