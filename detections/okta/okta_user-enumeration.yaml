@@ -1,4 +1,4 @@
-name: okta_user-enumeration
+name: okta-user-enumeration
 displayName: Okta User Enumeration Activity
 description: Detects repeated user lookup or directory browsing activities that could indicate reconnaissance of organizational structure
 file: okta_user-enumeration.sql

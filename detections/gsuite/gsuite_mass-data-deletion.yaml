@@ -1,4 +1,4 @@
-name: gsuite_mass-data-deletion
+name: gsuite-mass-data-deletion
 displayName: GSuite Mass Data Deletion
 description: Detects bulk deletion of Drive files or emails that could indicate destructive activity or data destruction
 file: gsuite_mass-data-deletion.sql

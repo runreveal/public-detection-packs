@@ -1,5 +1,5 @@
-name: gsuite_calendar-drive-reconnaissance
-displayName: GSuite Calendar and Drive Reconnaissance
+name: gsuite-calendar-drive-reconnaissance
+displayName: GSuite Calendar Drive Reconnaissance
 description: Detects rapid resource enumeration across Drive and Calendar potentially indicating reconnaissance of shared resources
 file: gsuite_calendar-drive-reconnaissance.sql
 categories:

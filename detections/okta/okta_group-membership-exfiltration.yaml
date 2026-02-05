@@ -1,4 +1,4 @@
-name: okta_group-membership-exfiltration
+name: okta-group-membership-exfiltration
 displayName: Okta Group Membership Data Exfiltration
 description: Detects bulk export of group membership and organizational structure data suggesting potential exfiltration
 file: okta_group-membership-exfiltration.sql

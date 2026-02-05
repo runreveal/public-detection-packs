@@ -1,4 +1,4 @@
-name: okta_mfa-token-harvesting
+name: okta-mfa-token-harvesting
 displayName: Okta MFA Token Harvesting
 description: Detects patterns of MFA token collection attempts that could indicate adversary-in-the-middle attacks or token stealing
 file: okta_mfa-token-harvesting.sql

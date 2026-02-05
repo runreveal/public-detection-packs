@@ -1,4 +1,4 @@
-name: gsuite_cross-service-lateral-movement
+name: gsuite-cross-service-lateral-movement
 displayName: GSuite Cross-Service Lateral Movement
 description: Detects rapid access patterns across multiple GSuite services that could indicate lateral movement using compromised credentials
 file: gsuite_cross-service-lateral-movement.sql

@@ -1,4 +1,4 @@
-name: okta_application-discovery
+name: okta-application-discovery
 displayName: Okta Application Discovery Activity
 description: Detects systematic enumeration of available applications that could indicate reconnaissance of accessible resources
 file: okta_application-discovery.sql
