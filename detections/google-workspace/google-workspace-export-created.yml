@@ -23,7 +23,7 @@ mitreTechniques:
   - T1537
 severity: High
 riskScore: 80
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 parameters:
   window: "30"
 sourceTypes:

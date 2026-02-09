@@ -13,7 +13,7 @@ categories:
   - entity-management
   - privileges-granted
   - privilege-escalation
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 notes: ""
 disabled: true
 notificationNames: []

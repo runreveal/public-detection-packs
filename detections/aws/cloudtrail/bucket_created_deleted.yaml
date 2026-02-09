@@ -15,7 +15,7 @@ categories:
   - signal
   - s3
   - storage-management
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 riskScore: 60
 severity: Medium
 mitreAttacks:
