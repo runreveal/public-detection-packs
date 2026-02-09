@@ -28,7 +28,7 @@ mitreTechniques:
   - T1078.004
 severity: High
 riskScore: 85
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 parameters:
   window: "30"
 sourceTypes:

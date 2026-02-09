@@ -14,7 +14,7 @@ categories:
   - signal
   - credential-access
   - iam-key-management
-schedule: "*/15 * * * *"
+schedule: "*/30 * * * *"
 severity: Medium
 riskScore: 50
 mitreAttacks:
