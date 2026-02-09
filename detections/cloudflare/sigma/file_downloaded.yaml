@@ -1,3 +1,4 @@
+disabled: true
 title: File Downloaded
 status: stable
 description: A file was downloaded through Cloudflare gateway.

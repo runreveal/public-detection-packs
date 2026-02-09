@@ -1,3 +1,4 @@
+disabled: true
 name: github-ip-allow-list-changes
 displayName: GitHub IP Allow List Changes
 description:

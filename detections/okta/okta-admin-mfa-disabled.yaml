@@ -1,3 +1,4 @@
+disabled: true
 name: okta-admin-mfa-disabled
 displayName: Okta Admin MFA Disabled
 description:

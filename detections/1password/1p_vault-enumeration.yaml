@@ -1,3 +1,4 @@
+disabled: true
 name: 1p-vault-enumeration
 displayName: 1Password Vault Enumeration
 description: Detects systematic enumeration of vaults through high volume of view events across multiple vaults, potentially indicating reconnaissance activity

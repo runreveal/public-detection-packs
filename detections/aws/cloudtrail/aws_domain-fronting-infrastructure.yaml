@@ -1,3 +1,4 @@
+disabled: true
 name: aws-domain-fronting-infrastructure
 displayName: AWS Domain Fronting Infrastructure Setup
 description: Detects creation of CloudFront distributions with custom origin configurations that could be used for domain fronting or command and control infrastructure

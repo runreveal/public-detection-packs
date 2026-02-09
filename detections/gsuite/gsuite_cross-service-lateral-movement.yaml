@@ -1,3 +1,4 @@
+disabled: true
 name: gsuite-cross-service-lateral-movement
 displayName: GSuite Cross-Service Lateral Movement
 description: Detects rapid access patterns across multiple GSuite services that could indicate lateral movement using compromised credentials

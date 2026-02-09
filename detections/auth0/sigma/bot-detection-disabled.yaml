@@ -1,3 +1,4 @@
+disabled: true
 title: Auth0 Bot Detection Disabled
 id: 7f8e9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b
 description: Detects when Auth0's bot detection policy is disabled, removing automated protections against bot-driven attacks.

@@ -1,3 +1,4 @@
+disabled: true
 title: CrowdStrike macOS Trusted Certificate Added
 id: crowdstrike-macos-trusted-cert-added
 description: Detects certificate installation on macOS systems that may be used to establish trust for malicious applications or intercept encrypted traffic

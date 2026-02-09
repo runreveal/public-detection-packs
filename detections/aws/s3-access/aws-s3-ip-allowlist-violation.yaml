@@ -1,3 +1,4 @@
+disabled: true
 name: aws-s3-ip-allowlist-violation
 displayName: S3 IP Allowlist Violation
 description: Identifies S3 access attempts from non-approved IPs that may indicate unauthorized access or compromised credentials. Configure allowedIPs parameter to specify authorized IP addresses.

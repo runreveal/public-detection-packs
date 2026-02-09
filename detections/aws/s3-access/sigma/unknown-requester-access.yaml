@@ -1,3 +1,4 @@
+disabled: true
 title: S3 Unknown Requester Access
 id: aws-s3-unknown-requester-access
 description: Detects GetObject operations from unrecognized entities that may indicate data exfiltration

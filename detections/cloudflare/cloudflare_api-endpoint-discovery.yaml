@@ -1,3 +1,4 @@
+disabled: true
 name: cloudflare_api-endpoint-discovery
 displayName: Cloudflare API Endpoint Discovery
 description: |

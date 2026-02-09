@@ -1,3 +1,4 @@
+disabled: true
 title: CrowdStrike Unauthorized Remote Access Tool
 id: crowdstrike-remote-access-tool
 description: Detects execution of unauthorized remote access utilities including TeamViewer, AnyDesk, LogMeIn, and other RATs that may indicate unauthorized system access

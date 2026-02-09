@@ -1,3 +1,4 @@
+disabled: true
 name: cloudflare_dns-record-manipulation
 displayName: Cloudflare DNS Record Manipulation
 description: |

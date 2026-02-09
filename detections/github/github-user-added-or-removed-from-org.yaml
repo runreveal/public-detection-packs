@@ -1,3 +1,4 @@
+disabled: true
 name: github-user-added-or-removed-from-org
 displayName: GitHub User Added or Removed from Org
 description:

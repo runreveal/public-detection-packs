@@ -1,3 +1,4 @@
+disabled: true
 name: okta-admin-console-new-device-ip
 displayName: Okta Admin Console Access from New Device and IP
 description:

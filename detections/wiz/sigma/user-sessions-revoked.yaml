@@ -1,3 +1,4 @@
+disabled: true
 title: Wiz User Sessions Revoked
 id: wiz-user-sessions-revoked
 description: Detects bulk user session terminations which may indicate security incident response or account compromise

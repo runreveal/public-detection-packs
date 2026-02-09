@@ -1,3 +1,4 @@
+disabled: true
 title: Slack SSO Configuration Changed
 id: slack-sso-configuration-changed
 description: Monitors single sign-on setting alterations that could enable unauthorized access

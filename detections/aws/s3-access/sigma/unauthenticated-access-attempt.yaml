@@ -1,3 +1,4 @@
+disabled: true
 title: S3 Unauthenticated Access Attempt
 id: aws-s3-unauthenticated-access-attempt
 description: Detects unauthorized S3 bucket access attempts that may indicate misconfiguration or reconnaissance

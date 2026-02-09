@@ -1,3 +1,4 @@
+disabled: true
 title: Slack MFA Disabled
 id: slack-mfa-disabled
 description: Detects multi-factor authentication modifications that may weaken account security

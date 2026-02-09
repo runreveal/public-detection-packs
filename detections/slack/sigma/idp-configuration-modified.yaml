@@ -1,3 +1,4 @@
+disabled: true
 title: Slack Identity Provider Configuration Modified
 id: slack-idp-configuration-modified
 description: Detects identity provider setting changes that could enable authentication bypass

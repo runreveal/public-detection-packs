@@ -1,3 +1,4 @@
+disabled: true
 name: okta-user-account-lock
 displayName: Okta User Account Lock Events
 description:

@@ -1,3 +1,4 @@
+disabled: true
 title: AWS GuardDuty High Severity Findings
 id: aws-guardduty-high-severity-findings
 description: Identifies high severity security findings from AWS GuardDuty that warrant prompt investigation

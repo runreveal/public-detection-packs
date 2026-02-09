@@ -1,3 +1,4 @@
+disabled: true
 name: okta-api-key-created
 displayName: Okta API Key Created
 description: Alert on the creation of a new okta API key.

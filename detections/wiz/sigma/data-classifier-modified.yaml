@@ -1,3 +1,4 @@
+disabled: true
 title: Wiz Data Classification Rule Modified
 id: wiz-data-classifier-modified
 description: Detects data classification rule tampering that could hide sensitive data or bypass DLP controls

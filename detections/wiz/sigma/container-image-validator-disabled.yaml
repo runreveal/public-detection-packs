@@ -1,3 +1,4 @@
+disabled: true
 title: Wiz Container Image Validation Disabled
 id: wiz-container-image-validator-disabled
 description: Identifies when container image validation is disabled, potentially allowing malicious or vulnerable images

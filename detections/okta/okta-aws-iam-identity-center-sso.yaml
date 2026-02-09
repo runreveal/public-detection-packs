@@ -1,3 +1,4 @@
+disabled: true
 name: okta-aws-iam-identity-center-sso
 displayName: Okta AWS IAM Identity Center SSO Authentication
 description:

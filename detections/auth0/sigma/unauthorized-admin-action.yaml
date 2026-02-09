@@ -1,3 +1,4 @@
+disabled: true
 title: Auth0 Unauthorized Admin Action Attempt
 id: 2c3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f
 description: Detects when a user attempts administrative actions they are not authorized to perform, indicating potential privilege escalation or unauthorized access attempts.

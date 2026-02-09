@@ -1,3 +1,4 @@
+disabled: true
 title: Wiz Security Rule Disabled or Modified
 id: wiz-security-rule-disabled
 description: Detects security rule modifications or deletions that could weaken security posture

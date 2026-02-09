@@ -1,3 +1,4 @@
+disabled: true
 title: CrowdStrike Detection Passthrough
 id: crowdstrike-detection-passthrough
 description: Routes all CrowdStrike detections for analysis and correlation with other security events

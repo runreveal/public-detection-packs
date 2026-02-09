@@ -1,3 +1,4 @@
+disabled: true
 title: AWS GuardDuty Low Severity Findings
 id: aws-guardduty-low-severity-findings
 description: Tracks low-priority security observations from AWS GuardDuty for monitoring and baseline establishment

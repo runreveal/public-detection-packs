@@ -1,3 +1,4 @@
+disabled: true
 name: github-actions-self-hosted-runner-added
 displayName: GitHub Actions Self-Hosted Runner Added
 description:
