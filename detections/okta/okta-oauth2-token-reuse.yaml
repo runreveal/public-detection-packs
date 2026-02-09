@@ -1,3 +1,4 @@
+disabled: true
 name: okta-oauth2-token-reuse
 displayName: Okta OAuth2 Token Reuse Detection
 description:

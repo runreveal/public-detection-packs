@@ -1,3 +1,4 @@
+disabled: true
 title: Slack Privilege Escalation
 id: slack-privilege-escalation
 description: Detects unauthorized user permission elevation that may indicate account compromise or insider threat

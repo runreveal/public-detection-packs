@@ -1,3 +1,4 @@
+disabled: true
 name: okta-fastpass-phishing-decline
 displayName: Okta FastPass Declined Phishing Attempt
 description:

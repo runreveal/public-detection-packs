@@ -1,3 +1,4 @@
+disabled: true
 title: Wiz Integration Connector Modified
 id: wiz-integration-connector-modified
 description: Monitors third-party integration alterations that could be used for data exfiltration or lateral movement

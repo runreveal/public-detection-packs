@@ -1,3 +1,4 @@
+disabled: true
 name: okta-api-script-abuse
 displayName: Okta API Script Abuse
 description: Detects suspicious API automation with high-frequency programmatic patterns that could indicate malicious scripting

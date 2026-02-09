@@ -1,3 +1,4 @@
+disabled: true
 title: AWS GuardDuty Medium Severity Findings
 id: aws-guardduty-medium-severity-findings
 description: Captures medium-level security findings from AWS GuardDuty that require investigation

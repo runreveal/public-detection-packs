@@ -1,3 +1,4 @@
+disabled: true
 name: github-api-high-volume-repository-enumeration
 displayName: GitHub API High Volume Repository Enumeration
 description:

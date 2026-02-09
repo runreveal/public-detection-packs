@@ -1,3 +1,4 @@
+disabled: true
 title: CrowdStrike macOS AppleScript Execution with Elevated Privileges
 id: crowdstrike-macos-osascript-admin
 description: Flags AppleScript execution with elevated privileges that may be used for persistence, privilege escalation, or malicious automation

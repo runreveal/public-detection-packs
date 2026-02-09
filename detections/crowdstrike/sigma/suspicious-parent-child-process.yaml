@@ -1,3 +1,4 @@
+disabled: true
 title: CrowdStrike Suspicious Parent-Child Process Relationship
 id: crowdstrike-suspicious-parent-child-process
 description: Identifies unusual process execution hierarchies that may indicate process injection, privilege escalation, or malware execution

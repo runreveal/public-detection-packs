@@ -1,3 +1,4 @@
+disabled: true
 name: okta-application-discovery
 displayName: Okta Application Discovery Activity
 description: Detects systematic enumeration of available applications that could indicate reconnaissance of accessible resources

@@ -1,3 +1,4 @@
+disabled: true
 name: github-branch-protection-policy-override
 displayName: GitHub Branch Protection Policy Override
 description:

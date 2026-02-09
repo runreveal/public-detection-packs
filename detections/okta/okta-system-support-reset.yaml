@@ -1,3 +1,4 @@
+disabled: true
 name: okta-system-support-reset
 displayName: Okta System Support Reset Events
 description:

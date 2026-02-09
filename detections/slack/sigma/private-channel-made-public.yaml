@@ -1,3 +1,4 @@
+disabled: true
 title: Slack Private Channel Made Public
 id: slack-private-channel-made-public
 description: Detects when a private channel is converted to public, potentially exposing sensitive information

@@ -1,3 +1,4 @@
+disabled: true
 name: okta-idp-lifecycle
 displayName: Okta Identity Provider Lifecycle Events
 description:

@@ -1,3 +1,4 @@
+disabled: true
 title: Tailscale HTTPS Disabled
 id: tailscale-https-disabled
 description: Detects when HTTPS is disabled in Tailscale configurations, identifying potential unencrypted communication risks

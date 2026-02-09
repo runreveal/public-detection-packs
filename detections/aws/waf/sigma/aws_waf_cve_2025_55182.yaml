@@ -1,3 +1,4 @@
+disabled: true
 title: AWS WAF CVE-2025-55182 React Server RCE Detection
 id: aws-waf-cve-2025-55182
 description: Detects exploitation attempts of CVE-2025-55182, a critical pre-authentication remote code execution vulnerability in React Server Components (versions 19.0.0, 19.1.0, 19.1.1, and 19.2.0). The vulnerability stems from unsafe deserialization of payloads to Server Function endpoints allowing unauthenticated remote code execution. This detection identifies traffic blocked or logged by AWS WAF's Known Bad Inputs rule set targeting the ReactJSRCE_BODY rule.

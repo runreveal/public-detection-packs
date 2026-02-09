@@ -1,3 +1,4 @@
+disabled: true
 name: okta-auth-via-idp
 displayName: Okta Authentication via Identity Provider
 description:

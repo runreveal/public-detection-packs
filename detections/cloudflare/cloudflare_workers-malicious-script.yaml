@@ -1,3 +1,4 @@
+disabled: true
 name: cloudflare_workers-malicious-script
 displayName: Cloudflare Workers Malicious Script Execution
 description: |

@@ -1,3 +1,4 @@
+disabled: true
 title: Cloudflare Firewall CVE-2025-55184 React Function DoS Detection
 id: cf-firewall-cve-2025-55184
 description: Detects exploitation attempts of CVE-2025-55184, a denial-of-service vulnerability affecting React-based applications. This vulnerability enables resource-exhaustion attacks that impact application availability through malicious React function invocations.

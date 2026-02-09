@@ -1,3 +1,4 @@
+disabled: true
 name: okta-user-report-suspicious-activity
 displayName: Okta User Report Suspicious Activity by End User
 description:

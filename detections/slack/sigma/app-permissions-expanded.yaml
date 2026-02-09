@@ -1,3 +1,4 @@
+disabled: true
 title: Slack Application Permissions Expanded
 id: slack-app-permissions-expanded
 description: Identifies application access scope expansion that could lead to data exposure or unauthorized operations

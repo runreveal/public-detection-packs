@@ -1,3 +1,4 @@
+disabled: true
 name: github-repository-collaborator-change
 displayName: GitHub Repository Collaborator Change
 description:

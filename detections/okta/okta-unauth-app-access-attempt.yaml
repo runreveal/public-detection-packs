@@ -1,3 +1,4 @@
+disabled: true
 name: okta-unauth-app-access-attempt
 displayName: Okta Unauthorized App Access Attempt
 description:

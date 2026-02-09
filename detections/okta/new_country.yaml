@@ -1,3 +1,4 @@
+disabled: true
 name: user-access-new-country
 displayName: Okta User Access from New Country
 description:

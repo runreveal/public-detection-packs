@@ -1,3 +1,4 @@
+disabled: true
 name: aws-c2-infrastructure-creation
 displayName: AWS Infrastructure for Command and Control
 description: Detects rapid creation of network infrastructure resources (VPCs, subnets, NAT gateways, internet gateways) that could indicate setup of command and control infrastructure

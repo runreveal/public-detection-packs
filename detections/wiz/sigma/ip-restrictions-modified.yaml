@@ -1,3 +1,4 @@
+disabled: true
 title: Wiz IP Restrictions Modified
 id: wiz-ip-restrictions-modified
 description: Monitors IP allowlist/blocklist changes that could expand attack surface or bypass security controls

@@ -1,3 +1,4 @@
+disabled: true
 name: 1p-cli-automation-abuse
 displayName: 1Password CLI Automation Abuse
 description: Detects suspicious CLI-based automation with high-frequency credential access, potentially indicating automated credential harvesting

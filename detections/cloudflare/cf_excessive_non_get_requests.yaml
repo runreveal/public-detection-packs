@@ -1,3 +1,4 @@
+disabled: true
 name: excessive-non-get-requests
 displayName: Cloudflare API Abuse (Non-GET requests from single IP)
 description: Detects when a single IP address makes an excessive number of non-GET HTTP requests, which may indicate API abuse, automated attacks, or scanning activity.

@@ -1,3 +1,4 @@
+disabled: true
 title: CrowdStrike Living off the Land Binaries Abuse
 id: crowdstrike-lolbas-execution
 description: Detects abuse of legitimate Windows binaries (LOLBAS) for malicious purposes such as code execution, lateral movement, or defense evasion

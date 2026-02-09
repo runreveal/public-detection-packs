@@ -1,3 +1,4 @@
+disabled: true
 name: github-web-hook-modified
 displayName: GitHub Web Hook Modified
 description:

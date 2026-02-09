@@ -1,3 +1,4 @@
+disabled: true
 name: cloudflare_origin-server-pivoting
 displayName: Cloudflare Origin Server Pivoting
 description: |

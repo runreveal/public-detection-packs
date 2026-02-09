@@ -1,3 +1,4 @@
+disabled: true
 name: github-repository-visibility-change
 displayName: GitHub Repository Visibility Change
 description:

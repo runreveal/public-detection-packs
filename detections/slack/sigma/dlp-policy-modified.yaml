@@ -1,3 +1,4 @@
+disabled: true
 title: Slack DLP Policy Modified
 id: slack-dlp-policy-modified
 description: Detects data loss prevention policy tampering that could enable data exfiltration

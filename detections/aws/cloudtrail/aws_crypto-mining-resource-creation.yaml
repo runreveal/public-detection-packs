@@ -1,3 +1,4 @@
+disabled: true
 name: aws-crypto-mining-resource-creation
 displayName: AWS Crypto Mining Resource Creation
 description: Detects creation of EC2 instances with GPU or compute-optimized instance types commonly used for cryptocurrency mining operations

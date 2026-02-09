@@ -1,3 +1,4 @@
+disabled: true
 name: okta-session-token-collection
 displayName: Okta Session Token Collection
 description: Detects suspicious session token generation or validation patterns that could indicate session hijacking attempts

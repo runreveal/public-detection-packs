@@ -1,3 +1,4 @@
+disabled: true
 name: okta-rate-limit-violation
 displayName: Okta Rate Limit Violation
 file: rate_limit_violation.sql
