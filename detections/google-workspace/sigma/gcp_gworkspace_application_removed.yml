@@ -33,8 +33,8 @@ falsepositives:
   - Application being removed may be performed by a System Administrator.
 level: medium
 riskscore: 50
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562.001

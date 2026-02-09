@@ -16,10 +16,10 @@ tags:
 sourcetypes:
   - tailscale
   - tailscale-audit
-mitreattacks:
+mitreAttacks:
   - TA0006
   - TA0009
-mitretechniques:
+mitreTechniques:
   - T1040
 detection:
   selection:

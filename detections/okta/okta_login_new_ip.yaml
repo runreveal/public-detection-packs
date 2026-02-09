@@ -1,4 +1,4 @@
-name: okta_login_new_ip
+name: okta-login-new-ip
 displayName: Okta Login from New IP
 description:
   Detection for when an Okta Login has successfully occured from an IP

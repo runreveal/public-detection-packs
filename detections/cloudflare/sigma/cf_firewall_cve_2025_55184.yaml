@@ -22,9 +22,9 @@ tags:
 sourcetypes:
   - cf-firewall
 riskscore: 75
-mitreattacks:
+mitreAttacks:
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1499
 detection:
   selection:

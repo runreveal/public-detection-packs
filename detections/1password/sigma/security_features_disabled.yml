@@ -16,10 +16,10 @@ tags:
   - security-controls
 sourcetypes:
   - 1password
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1562
 detection:
   selection:

@@ -18,9 +18,9 @@ tags:
   - user-lifecycle
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0003
-mitretechniques:
+mitreTechniques:
   - T1136.003
 detection:
   selection:

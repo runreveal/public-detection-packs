@@ -36,7 +36,7 @@ falsepositives:
   - Infrastructure as code deployments
 level: low
 riskscore: 45
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1578

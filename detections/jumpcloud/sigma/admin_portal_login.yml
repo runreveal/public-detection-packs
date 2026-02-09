@@ -19,12 +19,12 @@ tags:
   - admin-access
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0003
   - TA0004
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1078.004
 detection:
   selection:

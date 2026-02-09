@@ -21,10 +21,10 @@ tags:
   - threat-detection
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0006
-mitretechniques:
+mitreTechniques:
   - T1566
 detection:
   selection:

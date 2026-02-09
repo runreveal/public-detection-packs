@@ -27,7 +27,7 @@ falsepositives:
   - Sanctioned third-party integrations
 level: low
 riskscore: 40
-mitreattacks:
+mitreAttacks:
   - TA0042
-mitretechniques:
+mitreTechniques:
   - T1583.006

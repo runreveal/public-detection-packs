@@ -21,10 +21,10 @@ tags:
   - authentication-failure
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0006
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1531
   - T1110
 detection:

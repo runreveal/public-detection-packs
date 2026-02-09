@@ -1,4 +1,4 @@
-name: okta_group-enumeration
+name: okta-group-enumeration
 displayName: Okta Group Membership Enumeration
 description: Detects enumeration of group memberships and organizational structure that could reveal privilege escalation paths
 file: okta_group-enumeration.sql

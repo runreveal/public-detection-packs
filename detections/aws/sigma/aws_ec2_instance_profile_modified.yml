@@ -34,8 +34,8 @@ falsepositives:
   - Security remediation activities
 level: medium
 riskscore: 65
-mitreattacks:
+mitreAttacks:
   - TA0004
   - TA0003
-mitretechniques:
+mitreTechniques:
   - T1098

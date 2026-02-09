@@ -25,13 +25,13 @@ tags:
   - identity-access-management
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0003
   - TA0004
   - TA0005
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1078
   - T1537
 detection:

@@ -33,7 +33,7 @@ falsepositives:
   - Decommissioning of services that used KMS keys
 level: medium
 riskscore: 70
-mitreattacks:
+mitreAttacks:
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1485

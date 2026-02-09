@@ -18,13 +18,13 @@ tags:
 logsource:
   product: aws
   service: guardduty
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0003
   - TA0004
   - TA0005
   - TA0006
-mitretechniques:
+mitreTechniques:
   - T1078
   - T1110
   - T1562

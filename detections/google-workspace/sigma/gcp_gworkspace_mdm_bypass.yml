@@ -39,7 +39,7 @@ falsepositives:
   - Organizational policy updates
 level: high
 riskscore: 75
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1562.001

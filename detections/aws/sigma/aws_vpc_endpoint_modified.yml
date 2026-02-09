@@ -39,9 +39,9 @@ falsepositives:
   - Application architecture changes
 level: medium
 riskscore: 55
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0003
   - TA0011
-mitretechniques:
+mitreTechniques:
   - T1205

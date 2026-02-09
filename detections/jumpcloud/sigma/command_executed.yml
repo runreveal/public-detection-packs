@@ -15,9 +15,9 @@ tags:
   - command-execution
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0002
-mitretechniques:
+mitreTechniques:
   - T1059
 detection:
   selection:

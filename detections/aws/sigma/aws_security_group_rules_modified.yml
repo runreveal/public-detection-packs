@@ -40,7 +40,7 @@ falsepositives:
   - Legitimate security group changes for public-facing services
 level: medium
 riskscore: 60
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1562.007

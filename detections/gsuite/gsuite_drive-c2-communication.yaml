@@ -1,4 +1,4 @@
-name: gsuite_drive-c2-communication
+name: gsuite-drive-c2-communication
 displayName: GSuite Drive for C2 Communication
 description: Detects unusual Drive file access patterns suggesting use for command and control communications through rapid small file updates
 file: gsuite_drive-c2-communication.sql

@@ -19,10 +19,10 @@ sourcetypes:
   - crowdstrike
   - crowdstrike-fdr
   - crowdstrike-data
-mitreattacks:
+mitreAttacks:
   - TA0002
   - TA0004
-mitretechniques:
+mitreTechniques:
   - T1059
   - T1059.002
 detection:

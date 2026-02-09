@@ -14,9 +14,9 @@ tags:
   - data-exposure
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0009
-mitretechniques:
+mitreTechniques:
   - T1074
 detection:
   selection:

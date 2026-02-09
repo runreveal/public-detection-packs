@@ -39,7 +39,7 @@ falsepositives:
   - Network automation
 level: medium
 riskscore: 55
-mitreattacks:
+mitreAttacks:
   - TA0010
-mitretechniques:
+mitreTechniques:
   - T1048

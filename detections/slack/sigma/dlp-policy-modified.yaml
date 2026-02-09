@@ -14,9 +14,9 @@ tags:
   - dlp
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1562
 detection:
   selection:

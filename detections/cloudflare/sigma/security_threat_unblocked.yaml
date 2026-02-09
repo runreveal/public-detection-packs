@@ -24,9 +24,9 @@ falsepositives:
     not blocked.
 level: medium
 risk_score: 75
-mitreattacks:
+mitreAttacks:
   - TA0011
-mitretechniques:
+mitreTechniques:
   - T1071.001
   - T1568
 tags:

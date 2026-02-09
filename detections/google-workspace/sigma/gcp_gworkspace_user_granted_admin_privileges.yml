@@ -32,8 +32,8 @@ falsepositives:
   - Google Workspace admin role privileges, may be modified by system administrators.
 level: medium
 riskscore: 50
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0004
-mitretechniques:
+mitreTechniques:
   - T1098.003

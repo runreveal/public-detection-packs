@@ -1,4 +1,4 @@
-name: okta_user-directory-exfiltration
+name: okta-user-directory-exfiltration
 displayName: Okta User Directory Exfiltration
 description: Detects large-scale user directory data access suggesting potential data exfiltration activities
 file: okta_user-directory-exfiltration.sql

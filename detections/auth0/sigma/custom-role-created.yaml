@@ -38,9 +38,9 @@ falsepositives:
   - Automated role provisioning systems
 level: medium
 riskscore: 65
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0004
-mitretechniques:
+mitreTechniques:
   - T1098
   - T1078

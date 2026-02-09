@@ -15,9 +15,9 @@ tags:
   - user-management
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1531
 detection:
   selection:

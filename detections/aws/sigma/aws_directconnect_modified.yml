@@ -41,9 +41,9 @@ falsepositives:
   - Migration activities
 level: medium
 riskscore: 60
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0005
   - TA0011
-mitretechniques:
+mitreTechniques:
   - T1205

@@ -31,7 +31,7 @@ falsepositives:
   - Cost optimization efforts
 level: medium
 riskscore: 65
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1070

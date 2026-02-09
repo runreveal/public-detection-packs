@@ -27,9 +27,9 @@ falsepositives:
   - Unknown
 level: medium
 riskscore: 50
-mitreattacks:
+mitreAttacks:
   - TA0009
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1565.001
   - T1005

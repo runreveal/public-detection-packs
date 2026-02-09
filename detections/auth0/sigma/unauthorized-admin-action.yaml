@@ -29,9 +29,9 @@ falsepositives:
   - Application misconfigurations
 level: high
 riskscore: 75
-mitreattacks:
+mitreAttacks:
   - TA0004
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1078
   - T1548

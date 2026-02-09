@@ -17,10 +17,10 @@ tags:
   - admin-privilege
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0004
-mitretechniques:
+mitreTechniques:
   - T1098.003
 detection:
   selection:

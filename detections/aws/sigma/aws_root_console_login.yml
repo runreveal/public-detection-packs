@@ -35,10 +35,10 @@ falsepositives:
   - Legitimate emergency use of root account by authorized administrators
 level: high
 riskscore: 80
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0003
   - TA0004
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1078

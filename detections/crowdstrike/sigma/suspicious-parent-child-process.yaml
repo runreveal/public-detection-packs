@@ -17,10 +17,10 @@ sourcetypes:
   - crowdstrike
   - crowdstrike-fdr
   - crowdstrike-data
-mitreattacks:
+mitreAttacks:
   - TA0005
   - TA0004
-mitretechniques:
+mitreTechniques:
   - T1055
 detection:
   selection_office_parent:

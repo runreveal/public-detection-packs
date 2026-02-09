@@ -17,9 +17,9 @@ tags:
   - policy-configuration
 sourcetypes:
   - 1password
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1562
 detection:
   selection:

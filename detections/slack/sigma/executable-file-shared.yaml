@@ -15,9 +15,9 @@ tags:
   - malware
 sourcetypes:
   - slack
-mitreattacks:
+mitreAttacks:
   - TA0001
-mitretechniques:
+mitreTechniques:
   - T1566
   - T1566.001
 detection:

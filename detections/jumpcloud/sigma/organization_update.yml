@@ -18,10 +18,10 @@ tags:
   - organization-config
 sourcetypes:
   - jumpcloud
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0004
-mitretechniques:
+mitreTechniques:
   - T1098
 detection:
   selection:

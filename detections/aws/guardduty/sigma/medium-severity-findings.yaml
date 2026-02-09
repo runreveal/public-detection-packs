@@ -16,11 +16,11 @@ tags:
 logsource:
   product: aws
   service: guardduty
-mitreattacks:
+mitreAttacks:
   - TA0007
   - TA0009
   - TA0008
-mitretechniques:
+mitreTechniques:
   - T1526
   - T1078
 detection:

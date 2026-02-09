@@ -31,7 +31,7 @@ falsepositives:
   - Development/testing in different regions
 level: medium
 riskscore: 55
-mitreattacks:
+mitreAttacks:
   - TA0040
-mitretechniques:
+mitreTechniques:
   - T1496

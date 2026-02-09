@@ -17,10 +17,10 @@ sourcetypes:
   - crowdstrike
   - crowdstrike-fdr
   - crowdstrike-data
-mitreattacks:
+mitreAttacks:
   - TA0002
   - TA0008
-mitretechniques:
+mitreTechniques:
   - T1047
 detection:
   selection_process:

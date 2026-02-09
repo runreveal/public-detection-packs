@@ -34,7 +34,7 @@ falsepositives:
   - Trail consolidation or migration activities
 level: critical
 riskscore: 95
-mitreattacks:
+mitreAttacks:
   - TA0005
-mitretechniques:
+mitreTechniques:
   - T1562.008

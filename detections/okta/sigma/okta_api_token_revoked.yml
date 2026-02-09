@@ -22,11 +22,11 @@ tags:
   - token-revocation
 sourcetypes:
   - okta
-mitreattacks:
+mitreAttacks:
   - TA0003
   - TA0004
   - TA0006
-mitretechniques:
+mitreTechniques:
   - T1098.001
 detection:
   selection:

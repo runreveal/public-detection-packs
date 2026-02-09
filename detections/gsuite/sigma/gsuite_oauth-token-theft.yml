@@ -29,7 +29,7 @@ falsepositives:
   - IT-sanctioned integrations
 level: medium
 riskscore: 55
-mitreattacks:
+mitreAttacks:
   - TA0006
-mitretechniques:
+mitreTechniques:
   - T1528

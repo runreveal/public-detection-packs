@@ -24,10 +24,10 @@ tags:
 sourcetypes:
   - aws-waf
 riskscore: 80
-mitreattacks:
+mitreAttacks:
   - TA0001
   - TA0002
-mitretechniques:
+mitreTechniques:
   - T1190
   - T1059
 detection:
