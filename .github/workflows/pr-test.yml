@@ -25,13 +25,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: lint-runreveal-detections
-        uses: runreveal/detection-lint-action@gs/fail-on-error
+        uses: runreveal/detection-lint-action@v1.1.0
         with:
           token: ${{ secrets.RUNREVEAL_TOKEN }}
           workspace: ${{ secrets.RUNREVEAL_WORKSPACE }}
 
       - name: sync-runreveal-detections
-        uses: runreveal/detection-sync-action@gs/fail-on-error
+        uses: runreveal/detection-sync-action@v2.1.0
         with:
           directory: ./detections
           token: ${{ secrets.RUNREVEAL_TOKEN }}
