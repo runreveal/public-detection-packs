@@ -11,7 +11,7 @@ FROM
     FROM
     (
         SELECT
-            * EXCEPT rawLog,
+            * EXCEPT(rawLog),
             JSONExtractInt(rawLog, 'pull_request', 'id') AS pr_id,
             JSONExtractString(rawLog, 'pull_request', 'html_url') AS pr_link,
             actor['username'] as username
