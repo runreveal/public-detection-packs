@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_api-endpoint-discovery
+name: cf-api-endpoint-discovery
 displayName: Cloudflare API Endpoint Discovery
 description: |
   Detects reconnaissance of API endpoints through sequential path probing in WAF logs.

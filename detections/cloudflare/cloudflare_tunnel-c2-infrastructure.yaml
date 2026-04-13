@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_tunnel-c2-infrastructure
+name: cf-tunnel-c2-infrastructure
 displayName: Cloudflare Tunnel C2 Infrastructure
 description: |
   Detects creation of Cloudflare Tunnels that could be used for Command and Control

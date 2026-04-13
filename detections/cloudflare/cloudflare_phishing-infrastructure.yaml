@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_phishing-infrastructure
+name: cf-phishing-infrastructure
 displayName: Cloudflare Phishing Infrastructure Creation
 description: |
   Detects creation of Cloudflare Pages or Workers deployments that could be used for

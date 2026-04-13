@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_dns-zone-enumeration
+name: cf-dns-zone-enumeration
 displayName: Cloudflare DNS Zone Enumeration
 description: |
   Detects DNS zone walking or enumeration attempts through systematic DNS queries

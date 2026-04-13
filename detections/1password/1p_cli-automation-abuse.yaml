@@ -9,7 +9,7 @@ categories:
   - execution
   - signal
 mitreAttacks:
-  - initial-access
+  - TA0001
 mitreTechniques:
   - T1059
 schedule: "*/15 * * * *"

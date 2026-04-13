@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_access-policy-lateral-movement
+name: cf-access-policy-lateral-movement
 displayName: Cloudflare Access Policy Lateral Movement
 description: |
   Detects Access policy modifications that expand permissions and could enable
