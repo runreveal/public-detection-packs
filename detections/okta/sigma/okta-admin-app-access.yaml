@@ -1,0 +1,31 @@
+disabled: true
+title: Okta Admin App Access
+status: test
+description: |
+  Detects when a user successfully accesses the Okta admin application. This may
+  indicate legitimate administrative activity or unauthorized access to privileged
+  management interfaces.
+author: RunReveal
+logsource:
+    product: okta
+sourcetypes:
+    - okta
+categories:
+    - authentication
+    - privileged-access
+mitreattacks:
+    - privilege-escalation
+detection:
+    selection:
+        eventType: 'user.session.access_admin_app'
+        outcome.result: 'SUCCESS'
+    condition: selection
+fields:
+    - eventType
+    - outcome.result
+    - actor.alternateId
+    - actor.displayName
+    - srcIP
+    - client.userAgent
+level: medium
+riskscore: 50
