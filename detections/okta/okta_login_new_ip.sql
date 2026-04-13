@@ -6,5 +6,5 @@ SELECT *
     and srcIP like '%.%.%.%'
     AND client.device = 'Computer'
 and srcIP not in (
-  SELECT DISTINCT srcIP from crowdstrike_aidmaster_logs where eventTime > now() - INTERVAL 3 DAY
+  SELECT DISTINCT srcIP from crowdstrike_aidmaster_logs where eventTime > now() - toIntervalDay(3)
 )

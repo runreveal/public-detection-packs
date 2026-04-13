@@ -1,3 +1,4 @@
+disabled: true
 name: okta-policy-changes
 displayName: Okta Policy Changes
 type: sql
@@ -6,20 +7,14 @@ description:
   rule and application sign on policies.
 file: okta-policy-changes.sql
 categories:
-  - attack.privilege-escalation
-  - attack.persistence
-  - attack.defense-evasion
-  - attack.t1484.002
-  - attack.t1098.003
   - okta
-  - admin
   - identity-access-management
+  - admin
   - entity-management
   - policy-changes
   - configuration-change
 schedule: "*/30 * * * *"
 notes: ""
-disabled: true
 notificationNames: []
 mitreAttacks:
   - TA0004
@@ -28,7 +23,7 @@ mitreAttacks:
 mitreTechniques:
   - T1484.002
   - T1098.003
-severity: medium
+severity: Medium
 riskScore: 0
 sourceTypes:
   - okta
