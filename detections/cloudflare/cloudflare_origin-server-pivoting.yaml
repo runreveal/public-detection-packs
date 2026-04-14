@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_origin-server-pivoting
+name: cf-origin-server-pivoting
 displayName: Cloudflare Origin Server Pivoting
 description: |
   Detects traffic patterns suggesting use of Cloudflare infrastructure to pivot to

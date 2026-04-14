@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_workers-reconnaissance
+name: cf-workers-reconnaissance
 displayName: Cloudflare Workers Reconnaissance
 description: |
   Detects enumeration of Cloudflare Workers endpoints through systematic path discovery

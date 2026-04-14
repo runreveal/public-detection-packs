@@ -1,5 +1,5 @@
 SELECT
-    * EXCEPT rawLog,
+    *,
     JSONExtractArrayRaw(rawLog, 'target') tgt
 FROM runreveal.logs
 WHERE (sourceType = 'okta') AND (

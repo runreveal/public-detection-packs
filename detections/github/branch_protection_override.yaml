@@ -8,17 +8,14 @@ file: branch_protection_override.sql
 riskScore: 10
 severity: Low
 categories:
-  - attack.defense-evasion
-  - attack.command-and-control
-  - attack.t1562.001
   - github
-  - repository
+  - github-webhook
   - system-activity
-  - resource-activity
   - signal
+  - repository
+  - resource-activity
   - branch-protection
   - security-bypass
-  - github-webhook
 schedule: "*/15 * * * *"
 sourceTypes:
   - github-webhook

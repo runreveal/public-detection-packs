@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_workers-malicious-script
+name: cf-workers-malicious-script
 displayName: Cloudflare Workers Malicious Script Execution
 description: |
   Detects Workers scripts performing suspicious operations such as cryptocurrency

@@ -2,22 +2,17 @@ disabled: true
 name: okta-login-new-ip
 displayName: Okta Login from New IP
 description:
-  Detection for when an Okta Login has successfully occured from an IP
+  Detection for when an Okta Login has successfully occurred from an IP
   that has not been recently seen from CrowdStrike
 file: okta_login_new_ip.sql
 categories:
-  - attack.initial-access
-  - attack.persistence
-  - attack.privilege-escalation
-  - attack.defense-evasion
-  - attack.t1078
   - okta
-  - auth
-  - identity-access-management
-  - authentication
-  - signal
-  - new-ip
   - crowdstrike
+  - identity-access-management
+  - signal
+  - auth
+  - authentication
+  - new-ip
 schedule: "*/15 * * * *"
 notificationNames: []
 mitreAttacks:
@@ -29,3 +24,6 @@ mitreTechniques:
   - T1078
 severity: Medium
 riskScore: 50
+sourceTypes:
+  - okta
+  - crowdstrike

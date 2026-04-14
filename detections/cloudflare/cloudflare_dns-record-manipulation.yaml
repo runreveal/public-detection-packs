@@ -1,5 +1,5 @@
 disabled: true
-name: cloudflare_dns-record-manipulation
+name: cf-dns-record-manipulation
 displayName: Cloudflare DNS Record Manipulation
 description: |
   Detects suspicious DNS record creation or modification that could indicate
