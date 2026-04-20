@@ -1,0 +1,40 @@
+disabled: true
+title: Okta Threat Intelligence
+status: test
+description: |
+  Detects events flagged by Okta's built-in threat intelligence, including detected
+  threats, attack start and end signals. These events indicate that Okta has identified
+  potentially malicious activity targeting the organization.
+author: RunReveal
+logsource:
+    product: okta
+sourcetypes:
+    - okta
+tags:
+    - attack.initial-access
+    - attack.credential-access
+    - okta
+    - findings
+    - signal
+    - threat-intelligence
+    - security
+mitreAttacks:
+    - TA0001
+    - TA0006
+detection:
+    selection:
+        eventType:
+            - 'security.threat.detected'
+            - 'security.attack.start'
+            - 'security.attack.end'
+            - 'debugContext.debugData.threatSuspected'
+    condition: selection
+fields:
+    - eventType
+    - actor.alternateId
+    - actor.displayName
+    - srcIP
+    - outcome.result
+    - displayMessage
+level: critical
+riskscore: 90

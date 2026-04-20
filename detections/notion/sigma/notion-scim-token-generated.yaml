@@ -1,0 +1,30 @@
+disabled: true
+title: Notion SCIM Token Generated
+status: test
+description: |
+  Detects when a SCIM token is generated in a Notion workspace, which could
+  indicate an attacker establishing persistent access via identity provisioning.
+author: RunReveal
+sourcetypes:
+    - notion
+detection:
+    selection:
+        eventName: 'workspace.scim_token_generated'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 80
+tags:
+    - attack.credential-access
+    - attack.persistence
+    - notion
+    - identity-access-management
+    - signal
+    - credential-management
+    - scim
+mitreAttacks:
+    - TA0006
+    - TA0003

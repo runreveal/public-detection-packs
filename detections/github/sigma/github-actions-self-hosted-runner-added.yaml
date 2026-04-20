@@ -1,0 +1,43 @@
+disabled: true
+title: GitHub Actions Self-Hosted Runner Added
+status: test
+description: |
+  Detects addition or modification of self-hosted runners in GitHub Actions,
+  including runner group creation and updates.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection_runner_prefix:
+        action|startswith:
+            - 'self_hosted_runner'
+            - 'runner'
+    selection_org_runner:
+        action:
+            - 'org.runner_group_created'
+            - 'org.runner_group_updated'
+            - 'org.runner_group_runner_added'
+    selection_repo_runner:
+        action:
+            - 'repo.register_self_hosted_runner'
+            - 'repo.remove_self_hosted_runner'
+    condition: selection_runner_prefix or selection_org_runner or selection_repo_runner
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: high
+riskscore: 70
+tags:
+    - attack.execution
+    - attack.persistence
+    - github
+    - application-activity
+    - signal
+    - ci-cd
+    - infrastructure
+mitreAttacks:
+    - TA0002
+    - TA0003

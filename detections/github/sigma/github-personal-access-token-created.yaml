@@ -1,0 +1,36 @@
+disabled: true
+title: GitHub Personal Access Token Created
+status: test
+description: |
+  Detects creation of personal access tokens and OAuth access/authorization
+  tokens in GitHub.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action:
+            - 'personal_access_token.create'
+            - 'oauth_access.create'
+            - 'oauth_authorization.create'
+            - 'personal_access_token.access'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 60
+tags:
+    - attack.credential-access
+    - attack.persistence
+    - github
+    - identity-access-management
+    - signal
+    - credential-management
+    - authentication
+mitreAttacks:
+    - TA0006
+    - TA0003

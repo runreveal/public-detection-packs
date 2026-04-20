@@ -1,0 +1,35 @@
+disabled: true
+title: GitHub Package Published
+status: test
+description: |
+  Detects publishing, updating, or deletion of packages through GitHub Packages.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action:
+            - 'packages.package_version_published'
+            - 'packages.package_published'
+            - 'packages.package_version_updated'
+            - 'packages.package_deleted'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 50
+tags:
+    - attack.initial-access
+    - attack.persistence
+    - github
+    - application-activity
+    - signal
+    - supply-chain
+    - package-management
+mitreAttacks:
+    - TA0001
+    - TA0003

@@ -1,0 +1,30 @@
+disabled: true
+title: GitHub Repository Ruleset Modified
+status: test
+description: |
+  Detects modifications to repository rulesets in GitHub, which control
+  branch and tag protection policies.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action|startswith: 'repository_ruleset.'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: high
+riskscore: 70
+tags:
+    - attack.defense-evasion
+    - github
+    - application-activity
+    - signal
+    - branch-protection
+    - policy
+mitreAttacks:
+    - TA0005

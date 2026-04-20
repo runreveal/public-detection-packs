@@ -1,0 +1,29 @@
+disabled: true
+title: Notion Export of Workspace
+status: test
+description: |
+  Detects when Notion workspace content is exported, which could indicate
+  data exfiltration of organizational knowledge base content.
+author: RunReveal
+sourcetypes:
+    - notion
+detection:
+    selection:
+        eventName: 'workspace.content_exported'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 70
+tags:
+    - attack.exfiltration
+    - attack.collection
+    - notion
+    - application-activity
+    - signal
+    - data-exfiltration
+mitreAttacks:
+    - TA0010
+    - TA0009

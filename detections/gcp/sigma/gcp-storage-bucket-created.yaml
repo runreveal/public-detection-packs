@@ -1,0 +1,32 @@
+disabled: true
+title: GCP Storage Bucket Created
+status: test
+description: |
+  Detects the creation of a new GCP Cloud Storage bucket. Bucket creation
+  may indicate resource provisioning for data exfiltration, staging, or
+  other unauthorized activity.
+author: RunReveal
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.collection
+    - gcp
+    - application-activity
+    - signal
+    - storage
+    - resource-creation
+mitreAttacks:
+    - TA0009
+detection:
+    selection:
+        eventName: 'storage.buckets.create'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: medium
+riskscore: 50

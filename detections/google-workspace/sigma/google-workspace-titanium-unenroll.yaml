@@ -1,0 +1,33 @@
+disabled: true
+title: Google Workspace Titanium Unenroll
+status: test
+description: |
+  Detects when a user unenrolls from Google Advanced Protection Program
+  (Titanium). This weakens the account's security posture and may indicate
+  an attacker disabling strong authentication protections.
+author: RunReveal
+sourcetypes:
+    - google-workspace
+    - gsuite
+tags:
+    - attack.defense-evasion
+    - attack.credential-access
+    - google-workspace
+    - gsuite
+    - identity-access-management
+    - signal
+    - security-configuration
+    - mfa
+mitreAttacks:
+    - TA0005
+    - TA0006
+detection:
+    selection:
+        eventName: 'titanium_unenroll'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 70

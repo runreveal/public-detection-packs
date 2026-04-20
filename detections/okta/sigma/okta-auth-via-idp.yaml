@@ -1,0 +1,33 @@
+disabled: true
+title: Okta Auth Via Idp
+status: test
+description: |
+  Detects when a user authenticates to Okta through an external identity provider.
+  This may indicate federated authentication activity or potential abuse of trust
+  relationships between identity providers.
+author: RunReveal
+logsource:
+    product: okta
+sourcetypes:
+    - okta
+tags:
+    - attack.initial-access
+    - okta
+    - identity-access-management
+    - signal
+    - authentication
+    - identity-federation
+mitreAttacks:
+    - TA0001
+detection:
+    selection:
+        eventName: 'user.authentication.auth_via_IDP'
+    condition: selection
+fields:
+    - eventName
+    - actor.alternateId
+    - actor.displayName
+    - srcIP
+    - client.userAgent
+level: medium
+riskscore: 50

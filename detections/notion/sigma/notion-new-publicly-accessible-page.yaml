@@ -1,0 +1,32 @@
+disabled: true
+title: Notion New Publicly Accessible Page
+status: test
+description: |
+  Detects when a Notion page is shared publicly or has its public sharing
+  permissions updated, which could expose sensitive organizational content.
+author: RunReveal
+sourcetypes:
+    - notion
+detection:
+    selection:
+        eventName:
+            - 'page.permissions.shared_to_public_role_added'
+            - 'page.permissions.shared_to_public_role_updated'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 70
+tags:
+    - attack.exfiltration
+    - attack.collection
+    - notion
+    - application-activity
+    - signal
+    - data-exposure
+    - public-access
+mitreAttacks:
+    - TA0010
+    - TA0009

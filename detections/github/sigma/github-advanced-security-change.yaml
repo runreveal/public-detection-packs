@@ -1,0 +1,61 @@
+disabled: true
+title: GitHub Advanced Security Change
+status: test
+description: |
+  Detects changes to GitHub Advanced Security settings including disabling of
+  Dependabot alerts, secret scanning, push protection, OIDC, SAML, two-factor
+  requirements, and other security features at the org, repo, or business level.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action:
+            - 'dependabot_alerts.disable'
+            - 'dependabot_alerts_new_repos.disable'
+            - 'dependabot_security_updates.disable'
+            - 'dependabot_security_updates_new_repos.disable'
+            - 'repository_secret_scanning_push_protection.disable'
+            - 'secret_scanning.disable'
+            - 'secret_scanning_new_repos.disable'
+            - 'bypass'
+            - 'business.disable_oidc'
+            - 'business.disable_saml'
+            - 'business.disable_two_factor_requirement'
+            - 'business.members_can_update_protected_branches.disable'
+            - 'business.referrer_override_disable'
+            - 'business_advanced_security.disabled'
+            - 'business_advanced_security.disabled_for_new_repos'
+            - 'business_secret_scanning.disable'
+            - 'business_secret_scanning.disabled_for_new_repos'
+            - 'business_secret_scanning_custom_pattern_push_protection.disabled'
+            - 'business_secret_scanning_push_protection.disable'
+            - 'business_secret_scanning_push_protection.disabled_for_new_repos'
+            - 'business_secret_scanning_push_protection_custom_message.disable'
+            - 'org.advanced_security_disabled_for_new_repos'
+            - 'org.advanced_security_disabled_on_all_repos'
+            - 'org.advanced_security_policy_selected_member_disabled'
+            - 'repo.advanced_security_disabled'
+            - 'repo.advanced_security_policy_selected_member_disabled'
+            - 'repository_vulnerability_alerts.disable'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: critical
+riskscore: 90
+tags:
+    - attack.defense-evasion
+    - attack.t1562
+    - github
+    - audit-activity
+    - signal
+    - security-configuration
+    - compliance
+mitreAttacks:
+    - TA0005
+mitreTechniques:
+    - T1562

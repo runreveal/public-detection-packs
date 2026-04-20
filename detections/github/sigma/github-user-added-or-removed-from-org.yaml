@@ -1,0 +1,31 @@
+disabled: true
+title: GitHub User Added or Removed from Org
+status: test
+description: |
+  Detects when a user is added to or removed from a GitHub organization.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action:
+            - 'org.add_member'
+            - 'org.remove_member'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 50
+tags:
+    - attack.persistence
+    - github
+    - identity-access-management
+    - signal
+    - access-control
+    - organization-management
+mitreAttacks:
+    - TA0003

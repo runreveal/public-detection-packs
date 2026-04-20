@@ -1,0 +1,41 @@
+disabled: true
+title: GitHub Container Image Published
+status: test
+description: |
+  Detects publishing of container images through GitHub Packages, including
+  Docker and container-type packages published via ghcr.io or docker.pkg.github.com.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection_packages:
+        action|startswith: 'packages.package'
+        package_type:
+            - 'container'
+            - 'docker'
+    selection_registry:
+        action|startswith: 'registry.package'
+    selection_published:
+        action: 'packages.package_version_published'
+    condition: selection_packages or selection_registry or selection_published
+fields:
+    - action
+    - actor.email
+    - actor.username
+    - package_type
+    - package_namespace
+level: high
+riskscore: 70
+tags:
+    - attack.initial-access
+    - attack.persistence
+    - github
+    - application-activity
+    - signal
+    - supply-chain
+    - container
+mitreAttacks:
+    - TA0001
+    - TA0003

@@ -1,0 +1,30 @@
+disabled: true
+title: Notion Single Sign-On Setings Updated
+status: test
+description: |
+  Detects when SAML SSO configuration is updated in a Notion workspace,
+  which could indicate an attacker weakening authentication controls.
+author: RunReveal
+sourcetypes:
+    - notion
+detection:
+    selection:
+        eventName: 'workspace.settings.enforce_saml_sso_config_updated'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 80
+tags:
+    - attack.defense-evasion
+    - attack.persistence
+    - notion
+    - identity-access-management
+    - signal
+    - authentication
+    - security-configuration
+mitreAttacks:
+    - TA0005
+    - TA0003

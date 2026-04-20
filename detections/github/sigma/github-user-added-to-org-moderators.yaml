@@ -1,0 +1,29 @@
+disabled: true
+title: GitHub User Added to Org Moderators
+status: test
+description: |
+  Detects when a user is added to the organization moderators group in GitHub.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action: 'organization_moderators.add_user'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 60
+tags:
+    - attack.privilege-escalation
+    - github
+    - identity-access-management
+    - signal
+    - access-control
+    - moderators
+mitreAttacks:
+    - TA0004

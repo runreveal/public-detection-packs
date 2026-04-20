@@ -1,0 +1,40 @@
+disabled: true
+title: AWS Key Modified
+status: test
+description: |
+  Detects when an IAM access key is created, updated, or deleted. Changes to access
+  keys may indicate credential management activity or an attacker establishing
+  persistence through new credentials.
+author: RunReveal
+logsource:
+    product: aws
+    service: cloudtrail
+sourcetypes:
+    - cloudtrail
+tags:
+    - attack.persistence
+    - attack.credential-access
+    - aws
+    - cloudtrail
+    - identity-access-management
+    - signal
+    - iam
+    - credential-management
+mitreAttacks:
+    - TA0003
+    - TA0006
+detection:
+    selection:
+        eventName:
+            - 'UpdateAccessKey'
+            - 'CreateAccessKey'
+            - 'DeleteAccessKey'
+    condition: selection
+fields:
+    - eventName
+    - eventSource
+    - userIdentity.arn
+    - userIdentity.userName
+    - actor.email
+level: medium
+riskscore: 50

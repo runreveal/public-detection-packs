@@ -1,0 +1,33 @@
+disabled: true
+title: Okta Unauth App Access Attempt
+status: test
+description: |
+  Detects unauthorized application access attempts in Okta. These events occur when
+  a user tries to access an application they are not authorized to use, which may
+  indicate reconnaissance or lateral movement attempts.
+author: RunReveal
+logsource:
+    product: okta
+sourcetypes:
+    - okta
+tags:
+    - attack.initial-access
+    - okta
+    - identity-access-management
+    - signal
+    - authentication
+    - unauthorized-access
+mitreAttacks:
+    - TA0001
+detection:
+    selection:
+        eventType: 'app.generic.unauth_app_access_attempt'
+    condition: selection
+fields:
+    - eventType
+    - actor.alternateId
+    - actor.displayName
+    - srcIP
+    - client.userAgent
+level: medium
+riskscore: 60

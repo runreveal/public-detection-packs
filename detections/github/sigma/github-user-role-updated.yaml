@@ -1,0 +1,31 @@
+disabled: true
+title: GitHub User Role Updated
+status: test
+description: |
+  Detects when a user's role is updated within a GitHub organization.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action: 'org.update_member'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 60
+tags:
+    - attack.privilege-escalation
+    - attack.persistence
+    - github
+    - identity-access-management
+    - signal
+    - access-control
+    - role-management
+mitreAttacks:
+    - TA0004
+    - TA0003

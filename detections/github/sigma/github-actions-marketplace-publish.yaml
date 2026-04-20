@@ -1,0 +1,40 @@
+disabled: true
+title: GitHub Actions Marketplace Publish
+status: test
+description: |
+  Detects GitHub Actions marketplace publishing activity including action creation,
+  publishing, and changes to Actions access settings.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection_marketplace:
+        action|startswith: 'marketplace'
+    selection_publish:
+        action|contains: 'action.publish'
+    selection_create:
+        action|contains: 'action.create'
+    selection_enabled:
+        action:
+            - 'repo.actions_enabled'
+            - 'repo.update_actions_access_settings'
+    condition: selection_marketplace or selection_publish or selection_create or selection_enabled
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: high
+riskscore: 70
+tags:
+    - attack.initial-access
+    - attack.persistence
+    - github
+    - application-activity
+    - signal
+    - supply-chain
+    - marketplace
+mitreAttacks:
+    - TA0001
+    - TA0003

@@ -1,0 +1,35 @@
+disabled: true
+title: Okta User Suspicious Report
+status: test
+description: |
+  Detects when an end user reports suspicious activity on their Okta account. This
+  is a strong signal that an account may be compromised, as the legitimate user is
+  flagging unauthorized access or changes.
+author: RunReveal
+logsource:
+    product: okta
+sourcetypes:
+    - okta
+tags:
+    - attack.initial-access
+    - attack.credential-access
+    - okta
+    - findings
+    - signal
+    - suspicious-activity
+    - user-reported
+mitreAttacks:
+    - TA0001
+    - TA0006
+detection:
+    selection:
+        eventType: 'user.account.report_suspicious_activity_by_enduser'
+    condition: selection
+fields:
+    - eventType
+    - actor.alternateId
+    - actor.displayName
+    - srcIP
+    - displayMessage
+level: high
+riskscore: 80

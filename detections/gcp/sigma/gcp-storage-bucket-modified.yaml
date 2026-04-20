@@ -1,0 +1,42 @@
+disabled: true
+title: GCP Storage Bucket Modified
+status: test
+description: |
+  GCS bucket modified or deleted. Detects modifications to a GCP Cloud
+  Storage bucket, excluding bucket creation. Changes to bucket configuration
+  such as ACLs, lifecycle policies, or logging settings may indicate an
+  attacker attempting to weaken security controls, facilitate data
+  exfiltration, or destroy data.
+author: RunReveal
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.impact
+    - attack.t1485
+    - attack.t1565.001
+    - gcp
+    - system-activity
+    - file-activity
+    - signal
+    - storage-bucket
+    - gcplogs
+mitreAttacks:
+    - TA0040
+mitreTechniques:
+    - T1485
+    - T1565.001
+detection:
+    selection:
+        eventName|startswith: 'storage.buckets.'
+    filter_create:
+        eventName: 'storage.buckets.create'
+    condition: selection and not filter_create
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: medium
+riskscore: 40
