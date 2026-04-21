@@ -1,0 +1,40 @@
+disabled: true
+title: GitHub Actions Workflow Modified
+status: test
+description: |
+  Detects modifications to GitHub Actions workflows including approval,
+  cancellation, creation, deletion, and preparation of workflow runs and jobs.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection_prefix:
+        action|startswith: 'workflow'
+    selection_workflows:
+        action:
+            - 'workflows.approve_workflow_job'
+            - 'workflows.cancel_workflow_run'
+            - 'workflows.completed_workflow_run'
+            - 'workflows.created_workflow_run'
+            - 'workflows.delete_workflow_run'
+            - 'workflows.prepared_workflow_job'
+    condition: selection_prefix or selection_workflows
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 50
+tags:
+    - attack.execution
+    - attack.persistence
+    - github
+    - application-activity
+    - signal
+    - ci-cd
+    - workflow
+mitreAttacks:
+    - TA0002
+    - TA0003

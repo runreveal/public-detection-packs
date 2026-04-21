@@ -1,0 +1,37 @@
+disabled: true
+title: GitHub Team Modified
+status: test
+description: |
+  Detects modifications to GitHub teams including member additions and removals,
+  repository access changes, team creation, destruction, and parent team changes.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action:
+            - 'team.add_member'
+            - 'team.add_repository'
+            - 'team.change_parent_team'
+            - 'team.create'
+            - 'team.destroy'
+            - 'team.remove_member'
+            - 'team.remove_repository'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 50
+tags:
+    - attack.persistence
+    - github
+    - identity-access-management
+    - signal
+    - access-control
+    - team-management
+mitreAttacks:
+    - TA0003

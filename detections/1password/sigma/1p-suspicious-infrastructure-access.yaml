@@ -1,0 +1,42 @@
+disabled: true
+title: 1p Suspicious Infrastructure Access
+status: test
+description: |
+  Detects 1Password access originating from suspicious infrastructure such as
+  VPNs, proxies, hosting providers, or cloud services. This may indicate an
+  attacker using anonymizing infrastructure to access organizational credentials.
+author: RunReveal
+sourcetypes:
+    - 1password
+tags:
+    - attack.initial-access
+    - 1password
+    - identity-access-management
+    - signal
+    - suspicious-access
+    - infrastructure
+mitreAttacks:
+    - TA0001
+detection:
+    selection_connection_type:
+        srcConnectionType:
+            - 'vpn'
+            - 'proxy'
+            - 'hosting'
+    selection_isp:
+        srcISP|contains:
+            - 'VPN'
+            - 'Proxy'
+            - 'Cloud'
+            - 'Hosting'
+            - 'Virtual'
+    condition: selection_connection_type or selection_isp
+fields:
+    - srcIP
+    - srcISP
+    - srcConnectionType
+    - srcASOrganization
+    - srcASCountryCode
+    - actor.email
+level: medium
+riskscore: 50

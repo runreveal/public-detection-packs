@@ -1,0 +1,35 @@
+disabled: true
+title: Okta MFA Bypass Attempt
+status: test
+description: |
+  Detects attempts to bypass multi-factor authentication in Okta. MFA bypass attempts
+  may indicate an attacker trying to circumvent security controls to gain unauthorized
+  access to accounts.
+author: RunReveal
+logsource:
+    product: okta
+sourcetypes:
+    - okta
+tags:
+    - attack.credential-access
+    - attack.defense-evasion
+    - okta
+    - identity-access-management
+    - signal
+    - authentication
+    - mfa-bypass
+mitreAttacks:
+    - TA0006
+    - TA0005
+detection:
+    selection:
+        eventName: 'user.mfa.attempt_bypass'
+    condition: selection
+fields:
+    - eventName
+    - actor.alternateId
+    - actor.displayName
+    - srcIP
+    - outcome.result
+level: high
+riskscore: 80

@@ -1,0 +1,48 @@
+disabled: true
+title: AWS Crypto Mining Resource Creation
+status: test
+description: |
+  Detects the successful creation of EC2 instances using GPU or compute-optimized
+  instance types (p, g, c families) which are commonly associated with crypto mining
+  activity. Attackers may leverage compromised AWS credentials to spin up expensive
+  instances for cryptocurrency mining.
+author: RunReveal
+logsource:
+    product: aws
+    service: cloudtrail
+sourcetypes:
+    - cloudtrail
+tags:
+    - attack.impact
+    - attack.t1496
+    - aws
+    - cloudtrail
+    - application-activity
+    - signal
+    - crypto-mining
+    - resource-abuse
+mitreAttacks:
+    - TA0040
+mitreTechniques:
+    - T1496
+detection:
+    selection:
+        eventName: 'RunInstances'
+    selection_instance_type_p:
+        requestParameters|contains: '"instanceType":"p'
+    selection_instance_type_g:
+        requestParameters|contains: '"instanceType":"g'
+    selection_instance_type_c:
+        requestParameters|contains: '"instanceType":"c'
+    filter_error:
+        errorCode|re: '.+'
+    condition: selection and (selection_instance_type_p or selection_instance_type_g or selection_instance_type_c) and not filter_error
+fields:
+    - eventName
+    - eventSource
+    - userIdentity.arn
+    - requestParameters
+    - awsRegion
+    - actor.email
+level: high
+riskscore: 80

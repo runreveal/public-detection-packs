@@ -1,0 +1,38 @@
+disabled: true
+title: Zendesk Admin Email Changes
+status: test
+description: |
+  Detects email address changes associated with admin accounts in Zendesk,
+  which could indicate account takeover or unauthorized privilege escalation.
+author: RunReveal
+sourcetypes:
+    - zendesk
+detection:
+    selection:
+        eventName: 'update'
+        change_description|contains|all:
+            - 'email changed'
+    selection_admin_desc:
+        change_description|contains: 'admin'
+    selection_admin_actor:
+        actor_name|contains: 'admin'
+    condition: selection and (selection_admin_desc or selection_admin_actor)
+fields:
+    - eventName
+    - change_description
+    - actor_name
+    - actor.email
+    - srcIP
+level: high
+riskscore: 80
+tags:
+    - attack.persistence
+    - attack.credential-access
+    - zendesk
+    - identity-access-management
+    - signal
+    - account-security
+    - credential-management
+mitreAttacks:
+    - TA0003
+    - TA0006

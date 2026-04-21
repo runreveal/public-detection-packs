@@ -1,0 +1,30 @@
+disabled: true
+title: Notion Audit Log Exported
+status: test
+description: |
+  Detects when a Notion workspace audit log is exported, which could indicate
+  an attempt to exfiltrate audit trail data or cover tracks.
+author: RunReveal
+sourcetypes:
+    - notion
+detection:
+    selection:
+        eventName: 'workspace.audit_log_exported'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 70
+tags:
+    - attack.defense-evasion
+    - attack.collection
+    - notion
+    - audit-activity
+    - signal
+    - data-exfiltration
+    - audit
+mitreAttacks:
+    - TA0005
+    - TA0009

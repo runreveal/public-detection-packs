@@ -1,0 +1,45 @@
+disabled: true
+title: AWS Domain Fronting Infrastructure
+status: test
+description: |
+  Detects the successful creation of CloudFront distributions with custom origin
+  configurations. This technique can be used for domain fronting, a method of
+  disguising command-and-control traffic by routing it through legitimate CDN services.
+author: RunReveal
+logsource:
+    product: aws
+    service: cloudtrail
+sourcetypes:
+    - cloudtrail
+tags:
+    - attack.command-and-control
+    - attack.t1090
+    - aws
+    - cloudtrail
+    - network-activity
+    - signal
+    - cloudfront
+    - infrastructure
+mitreAttacks:
+    - TA0011
+mitreTechniques:
+    - T1090
+detection:
+    selection:
+        eventSource: 'cloudfront.amazonaws.com'
+        eventName:
+            - 'CreateDistribution'
+            - 'CreateDistributionWithTags'
+        requestParameters|contains: 'customOriginConfig'
+    filter_error:
+        errorCode|re: '.+'
+    condition: selection and not filter_error
+fields:
+    - eventName
+    - eventSource
+    - userIdentity.arn
+    - requestParameters
+    - awsRegion
+    - actor.email
+level: high
+riskscore: 80

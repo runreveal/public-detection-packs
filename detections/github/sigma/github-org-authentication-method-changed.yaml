@@ -1,0 +1,38 @@
+disabled: true
+title: GitHub Org Authentication Method Changed
+status: test
+description: |
+  Detects changes to organization authentication methods including SAML,
+  two-factor authentication requirements, and OAuth app restrictions.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action:
+            - 'org.saml_disabled'
+            - 'org.saml_enabled'
+            - 'org.disable_two_factor_requirement'
+            - 'org.enable_two_factor_requirement'
+            - 'org.update_saml_provider_settings'
+            - 'org.enable_oauth_app_restrictions'
+            - 'org.disable_oauth_app_restrictions'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: high
+riskscore: 80
+tags:
+    - attack.credential-access
+    - attack.defense-evasion
+    - github
+    - identity-access-management
+    - signal
+    - authentication
+mitreAttacks:
+    - TA0006
+    - TA0005

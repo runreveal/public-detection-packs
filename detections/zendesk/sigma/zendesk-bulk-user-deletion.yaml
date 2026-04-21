@@ -1,0 +1,35 @@
+disabled: true
+title: Zendesk Bulk User Deletion
+status: test
+description: |
+  Detects bulk user deletion events in Zendesk, which could indicate a
+  destructive action by a compromised or malicious administrator.
+author: RunReveal
+sourcetypes:
+    - zendesk
+detection:
+    selection:
+        eventName: 'destroy'
+        source_type: 'account'
+    selection_pattern:
+        change_description|contains|all:
+            - 'deletion for'
+            - 'users'
+    condition: selection and selection_pattern
+fields:
+    - eventName
+    - change_description
+    - source_type
+    - actor.email
+    - srcIP
+level: critical
+riskscore: 90
+tags:
+    - attack.impact
+    - zendesk
+    - identity-access-management
+    - signal
+    - destructive-action
+    - account-security
+mitreAttacks:
+    - TA0040

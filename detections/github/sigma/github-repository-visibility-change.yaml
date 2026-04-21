@@ -1,0 +1,38 @@
+disabled: true
+title: GitHub Repository Visibility Change
+status: test
+description: |
+  Detects changes to GitHub repository visibility, excluding repositories
+  that are already public.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action: 'repo.access'
+    filter_public:
+        visibility: 'public'
+    filter_private:
+        public_repo: 'false'
+    condition: selection and not filter_public and not filter_private
+fields:
+    - action
+    - actor.email
+    - actor.username
+    - visibility
+    - public_repo
+level: high
+riskscore: 80
+tags:
+    - attack.collection
+    - attack.exfiltration
+    - github
+    - application-activity
+    - signal
+    - repository-management
+    - data-exposure
+mitreAttacks:
+    - TA0009
+    - TA0010

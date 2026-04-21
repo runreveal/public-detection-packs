@@ -1,0 +1,44 @@
+disabled: true
+title: Critical Policy Changes
+status: test
+description: |
+  Detects critical IAM and resource policy changes including security group ingress
+  rules, KMS key policies, S3 bucket policies, IAM role trust policies, and user/group
+  policy attachments. These changes may indicate privilege escalation or defense evasion.
+author: RunReveal
+logsource:
+    product: aws
+    service: cloudtrail
+sourcetypes:
+    - cloudtrail
+tags:
+    - attack.privilege-escalation
+    - attack.defense-evasion
+    - aws
+    - cloudtrail
+    - identity-access-management
+    - signal
+    - iam
+    - policy-change
+mitreAttacks:
+    - TA0004
+    - TA0005
+detection:
+    selection:
+        eventName:
+            - 'AuthorizeSecurityGroupIngress'
+            - 'PutKeyPolicy'
+            - 'PutBucketPolicy'
+            - 'UpdateAssumeRolePolicy'
+            - 'AttachUserPolicy'
+            - 'PutRolePolicy'
+            - 'PutGroupPolicy'
+    condition: selection
+fields:
+    - eventName
+    - eventSource
+    - userIdentity.arn
+    - requestParameters
+    - actor.email
+level: high
+riskscore: 70

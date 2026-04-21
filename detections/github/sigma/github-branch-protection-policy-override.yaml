@@ -1,0 +1,29 @@
+disabled: true
+title: GitHub Branch Protection Policy Override
+status: test
+description: |
+  Detects when a branch protection policy is overridden in a GitHub repository.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action: 'protected_branch.policy_override'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: high
+riskscore: 70
+tags:
+    - attack.defense-evasion
+    - github
+    - application-activity
+    - signal
+    - branch-protection
+    - policy
+mitreAttacks:
+    - TA0005

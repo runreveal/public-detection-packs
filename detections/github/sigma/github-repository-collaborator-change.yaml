@@ -1,0 +1,35 @@
+disabled: true
+title: GitHub Repository Collaborator Change
+status: test
+description: |
+  Detects when collaborators are added to or removed from a non-public
+  GitHub repository.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action:
+            - 'repo.add_member'
+            - 'repo.remove_member'
+    filter_public:
+        visibility: 'public'
+    condition: selection and not filter_public
+fields:
+    - action
+    - actor.email
+    - actor.username
+    - visibility
+level: medium
+riskscore: 50
+tags:
+    - attack.persistence
+    - github
+    - identity-access-management
+    - signal
+    - access-control
+    - collaboration
+mitreAttacks:
+    - TA0003

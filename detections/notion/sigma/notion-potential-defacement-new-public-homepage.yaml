@@ -1,0 +1,28 @@
+disabled: true
+title: Notion Potential Defacement New Public Homepage
+status: test
+description: |
+  Detects when a new public homepage is added to a Notion workspace,
+  which could indicate a defacement attempt or unauthorized public exposure.
+author: RunReveal
+sourcetypes:
+    - notion
+detection:
+    selection:
+        eventName: 'workspace.settings.publc_homepage_added'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 80
+tags:
+    - attack.impact
+    - notion
+    - application-activity
+    - signal
+    - defacement
+    - public-access
+mitreAttacks:
+    - TA0040

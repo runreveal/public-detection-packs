@@ -1,0 +1,35 @@
+disabled: true
+title: Google Workspace Failed Login
+status: test
+description: |
+  Detects failed login attempts to Google Workspace. Repeated failures
+  may indicate brute-force or credential stuffing attacks targeting
+  organization accounts.
+author: RunReveal
+sourcetypes:
+    - google-workspace
+    - gsuite
+tags:
+    - attack.credential-access
+    - attack.t1110
+    - google-workspace
+    - gsuite
+    - identity-access-management
+    - signal
+    - authentication
+    - brute-force
+mitreAttacks:
+    - TA0006
+mitreTechniques:
+    - T1110
+detection:
+    selection:
+        eventName: 'login_failure'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+    - srcASCountryCode
+level: medium
+riskscore: 40

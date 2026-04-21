@@ -1,0 +1,31 @@
+disabled: true
+title: GitHub User Access Key Created
+status: test
+description: |
+  Detects when a new SSH public key is added to a GitHub user account.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action: 'public_key.create'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: medium
+riskscore: 60
+tags:
+    - attack.credential-access
+    - attack.persistence
+    - github
+    - identity-access-management
+    - signal
+    - credential-management
+    - authentication
+mitreAttacks:
+    - TA0006
+    - TA0003

@@ -1,0 +1,40 @@
+disabled: true
+title: Root Account Usage
+status: test
+description: |
+  Detects usage of the AWS root account, excluding internal AWS service calls.
+  Root account usage is a security concern as it bypasses IAM controls and has
+  unrestricted access to all resources. AWS best practices recommend avoiding
+  root account usage for day-to-day operations.
+author: RunReveal
+logsource:
+    product: aws
+    service: cloudtrail
+sourcetypes:
+    - cloudtrail
+tags:
+    - attack.privilege-escalation
+    - aws
+    - cloudtrail
+    - identity-access-management
+    - signal
+    - iam
+    - privileged-access
+mitreAttacks:
+    - TA0004
+detection:
+    selection:
+        userIdentity.type: 'Root'
+    filter_internal:
+        userAgent: 'AWS Internal'
+    condition: selection and not filter_internal
+fields:
+    - eventName
+    - eventSource
+    - userIdentity.type
+    - userIdentity.arn
+    - userAgent
+    - srcIP
+    - actor.email
+level: critical
+riskscore: 90

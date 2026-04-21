@@ -1,0 +1,40 @@
+disabled: true
+title: Bucket Created Deleted
+status: test
+description: |
+  Detects the creation or deletion of S3 buckets. Bucket creation may indicate
+  data staging for exfiltration, while bucket deletion could represent destructive
+  activity or evidence tampering.
+author: RunReveal
+logsource:
+    product: aws
+    service: cloudtrail
+sourcetypes:
+    - cloudtrail
+tags:
+    - attack.impact
+    - attack.collection
+    - aws
+    - cloudtrail
+    - s3
+    - application-activity
+    - signal
+    - storage
+    - data-management
+mitreAttacks:
+    - TA0040
+    - TA0009
+detection:
+    selection:
+        eventName:
+            - 'CreateBucket'
+            - 'DeleteBucket'
+    condition: selection
+fields:
+    - eventName
+    - eventSource
+    - userIdentity.arn
+    - requestParameters
+    - actor.email
+level: medium
+riskscore: 50

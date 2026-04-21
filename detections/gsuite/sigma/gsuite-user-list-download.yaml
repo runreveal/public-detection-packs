@@ -1,0 +1,35 @@
+disabled: true
+title: GSuite User List Download
+status: test
+description: |
+  Detects when a user downloads the user list from Google Workspace.
+  This may indicate reconnaissance activity or data collection by an
+  attacker enumerating organization accounts.
+author: RunReveal
+sourcetypes:
+    - gsuite
+tags:
+    - attack.collection
+    - attack.reconnaissance
+    - gsuite
+    - discovery
+    - signal
+    - data-exfiltration
+    - reconnaissance
+mitreAttacks:
+    - TA0009
+    - TA0043
+detection:
+    selection:
+        eventName|startswith: 'DOWNLOAD_USERLIST'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+    - srcASOrganization
+    - srcISP
+    - srcCity
+    - srcASCountryCode
+level: high
+riskscore: 70

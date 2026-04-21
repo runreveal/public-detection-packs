@@ -1,0 +1,37 @@
+disabled: true
+title: GCP Workforce Pool Change
+status: test
+description: |
+  Detects creation or modification of a GCP Workforce Identity Pool.
+  Workforce pools allow external identities to access GCP resources,
+  and unauthorized changes could enable an attacker to establish
+  persistent access or escalate privileges.
+author: RunReveal
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.privilege-escalation
+    - attack.persistence
+    - gcp
+    - identity-access-management
+    - signal
+    - iam
+    - identity-federation
+mitreAttacks:
+    - TA0004
+    - TA0003
+detection:
+    selection:
+        eventName:
+            - 'google.iam.admin.v1.WorkforcePools.CreateWorkforcePool'
+            - 'google.iam.admin.v1.WorkforcePools.UpdateWorkforcePool'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 70

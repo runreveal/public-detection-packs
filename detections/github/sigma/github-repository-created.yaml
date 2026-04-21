@@ -1,0 +1,28 @@
+disabled: true
+title: GitHub Repository Created
+status: test
+description: |
+  Detects creation of a new GitHub repository.
+author: RunReveal
+logsource:
+    product: github
+sourcetypes:
+    - github-webhook
+detection:
+    selection:
+        action: 'repo.create'
+    condition: selection
+fields:
+    - action
+    - actor.email
+    - actor.username
+level: low
+riskscore: 30
+tags:
+    - attack.resource-development
+    - github
+    - application-activity
+    - signal
+    - repository-management
+mitreAttacks:
+    - TA0042

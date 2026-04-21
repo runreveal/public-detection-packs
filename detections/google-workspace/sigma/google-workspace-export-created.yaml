@@ -1,0 +1,33 @@
+disabled: true
+title: Google Wrkspace Export Created
+status: test
+description: |
+  Detects when a Google Workspace customer takeout export is created.
+  This may indicate data exfiltration or unauthorized bulk data export
+  from the organization's workspace.
+author: RunReveal
+sourcetypes:
+    - google-workspace
+    - gsuite
+tags:
+    - attack.exfiltration
+    - attack.collection
+    - google-workspace
+    - gsuite
+    - application-activity
+    - signal
+    - data-exfiltration
+    - compliance
+mitreAttacks:
+    - TA0010
+    - TA0009
+detection:
+    selection:
+        eventName: 'CUSTOMER_TAKEOUT_CREATED'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 70
