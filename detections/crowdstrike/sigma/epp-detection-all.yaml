@@ -1,0 +1,38 @@
+disabled: true
+title: CrowdStrike Falcon EPP Detection All Findings
+id: crowdstrike-epp-detection-all
+description: Surfaces every CrowdStrike Falcon endpoint protection finding (EppDetectionSummaryEvent) regardless of severity. Pair with or replace the per-severity rules depending on alerting strategy.
+author: RunReveal
+date: 2026-04-23
+references:
+  - https://falcon.crowdstrike.com/documentation/page/b74a0197/streaming-api-event-dictionary
+tags:
+  - crowdstrike
+  - findings
+  - signal
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreAttacks:
+  - TA0001
+  - TA0002
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0006
+  - TA0007
+  - TA0008
+  - TA0009
+  - TA0011
+  - TA0010
+  - TA0040
+detection:
+  selection:
+    eventName: EppDetectionSummaryEvent
+  condition: selection
+falsepositives:
+  - Developer or red-team tooling flagged by on-sensor ML
+  - Authorized security testing
+level: low
+riskscore: 50
