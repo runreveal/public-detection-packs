@@ -11,8 +11,8 @@ SELECT
   MIN(receivedAt) as first_seen,
   MAX(receivedAt) as last_seen,
   'MEDIUM' as severity,
-  any(actor) as actor,
-  any(org) as org
+  any(actor) as actor_details,
+  any(org) as org_details
 FROM
   github_logs
 WHERE
