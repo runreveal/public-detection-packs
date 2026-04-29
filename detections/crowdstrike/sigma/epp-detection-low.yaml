@@ -1,0 +1,32 @@
+disabled: true
+title: CrowdStrike Falcon EPP Detection Low Severity
+id: crowdstrike-epp-detection-low
+description: Tracks low severity endpoint protection findings from CrowdStrike Falcon (EppDetectionSummaryEvent) for monitoring and baseline establishment.
+author: RunReveal
+date: 2026-04-23
+references:
+  - https://falcon.crowdstrike.com/documentation/page/b74a0197/streaming-api-event-dictionary
+tags:
+  - crowdstrike
+  - findings
+  - signal
+sourcetypes:
+  - crowdstrike
+  - crowdstrike-fdr
+  - crowdstrike-data
+mitreAttacks:
+  - TA0007
+  - TA0043
+mitreTechniques:
+  - T1082
+  - T1592
+detection:
+  selection:
+    eventName: EppDetectionSummaryEvent
+    rawLog.SeverityName: Low
+  condition: selection
+falsepositives:
+  - Legitimate administrative tooling
+  - Normal operations may trigger low-severity findings
+level: low
+riskscore: 30
