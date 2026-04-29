@@ -4,7 +4,7 @@ SELECT
     groupArray(repo) AS repositories,
     MIN(eventTime) AS first_deletion,
     MAX(eventTime) AS last_deletion,
-    MAX(receivedAt) AS receivedAt
+    MAX(receivedAt) AS last_received_at
 FROM github_logs
 WHERE
     action = 'repo.destroy'
