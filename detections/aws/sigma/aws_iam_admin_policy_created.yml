@@ -1,3 +1,4 @@
+autoTriage: true
 title: AWS IAM Policy Created with Admin Privileges
 id: 5f4c71d2-8025-48c9-a98e-f5f9d7b24701
 description:
@@ -9,6 +10,7 @@ references:
 author: RunReveal
 date: 2024-06-20
 tags:
+  - tier-one
   - attack.privilege-escalation
   - attack.persistence
   - attack.t1098

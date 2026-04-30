@@ -1,3 +1,4 @@
+autoTriage: true
 title: Google Workspace Role Modified or Deleted
 id: 6aef64e3-60c6-4782-8db3-8448759c714e
 description: Detects when an a role is modified or deleted in Google Workspace.
@@ -8,6 +9,7 @@ author: Austin Songer
 date: 2021-08-24
 modified: 2023-10-11
 tags:
+  - tier-one
   - attack.persistence
   - attack.privilege-escalation
   - attack.impact

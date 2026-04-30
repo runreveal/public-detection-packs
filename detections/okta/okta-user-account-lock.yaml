@@ -1,4 +1,5 @@
 disabled: true
+autoTriage: true
 name: okta-user-account-lock
 displayName: Okta User Account Lock Events
 description:
@@ -9,6 +10,7 @@ description:
   who may need assistance with account access.
 file: okta-user-account-lock.sql
 categories:
+  - tier-one
   - attack.initial-access
   - attack.credential-access
   - attack.impact

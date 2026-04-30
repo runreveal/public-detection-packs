@@ -1,3 +1,4 @@
+autoTriage: true
 title: AWS IAM User Access Key Created
 id: y3z4a5b6-c7d8-e9f0-g1h2-i3j4k5l6m7n8
 description:
@@ -9,6 +10,7 @@ references:
 author: RunReveal
 date: 2024-06-20
 tags:
+  - tier-one
   - attack.persistence
   - attack.privilege-escalation
   - attack.credential-access

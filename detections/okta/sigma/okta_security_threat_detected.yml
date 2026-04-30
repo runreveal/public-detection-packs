@@ -1,3 +1,4 @@
+autoTriage: true
 title: Okta Security Threat Detected
 id: 5c82f0b9-3c6d-477f-a318-0e14a1df73e0
 description: Detects when an security threat is detected in Okta.
@@ -9,6 +10,7 @@ author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
+  - tier-one
   - attack.command-and-control
   - attack.t1071.001
   - attack.t1104

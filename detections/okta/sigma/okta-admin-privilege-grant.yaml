@@ -7,30 +7,31 @@ description: |
   privileges within the identity provider.
 author: RunReveal
 logsource:
-    product: okta
+  product: okta
 sourcetypes:
-    - okta
+  - okta
 tags:
-    - attack.privilege-escalation
-    - okta
-    - identity-access-management
-    - signal
-    - iam
-    - admin
+  - tier-one
+  - attack.privilege-escalation
+  - okta
+  - identity-access-management
+  - signal
+  - iam
+  - admin
 mitreAttacks:
-    - TA0004
+  - TA0004
 detection:
-    selection:
-        eventType: 'user.account.privilege.grant'
-        outcome.result: 'SUCCESS'
-        debugContext|contains: 'administrator'
-    condition: selection
+  selection:
+    eventType: "user.account.privilege.grant"
+    outcome.result: "SUCCESS"
+    debugContext|contains: "administrator"
+  condition: selection
 fields:
-    - eventType
-    - outcome.result
-    - actor.alternateId
-    - actor.displayName
-    - debugContext
-    - srcIP
+  - eventType
+  - outcome.result
+  - actor.alternateId
+  - actor.displayName
+  - debugContext
+  - srcIP
 level: high
 riskscore: 80

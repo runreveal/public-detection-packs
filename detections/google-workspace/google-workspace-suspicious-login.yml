@@ -1,3 +1,4 @@
+autoTriage: true
 name: google-workspace-suspicious-login
 displayName: Google Workspace Suspicious Login Activity
 description:
@@ -6,6 +7,7 @@ description:
   parameters for detailed analysis.
 file: google-workspace-suspicious-login.sql
 categories:
+  - tier-one
   - attack.initial-access
   - attack.persistence
   - attack.privilege-escalation

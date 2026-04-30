@@ -1,3 +1,4 @@
+autoTriage: true
 name: google-workspace-domain-wide-application-added
 displayName: Google Workspace Domain Wide Application Added
 description:
@@ -5,6 +6,7 @@ description:
   account
 file: google-workspace-domain-wide-application-added.sql
 categories:
+  - tier-one
   - attack.initial-access
   - attack.persistence
   - attack.privilege-escalation

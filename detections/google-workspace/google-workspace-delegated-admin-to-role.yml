@@ -1,8 +1,10 @@
+autoTriage: true
 name: google-workspace-delegated-admin-to-role
 displayName: Google Workspace Delegated Admin to Role
 description: Detects when a delegated admin is assigned to a role in Google Workspace
 file: google-workspace-delegated-admin-to-role.sql
 categories:
+  - tier-one
   - attack.privilege-escalation
   - attack.persistence
   - attack.t1098.003

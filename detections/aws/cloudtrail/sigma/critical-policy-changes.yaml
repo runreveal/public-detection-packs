@@ -1,4 +1,5 @@
 disabled: true
+autoTriage: true
 title: Critical Policy Changes
 status: test
 description: |
@@ -12,6 +13,7 @@ logsource:
 sourcetypes:
     - cloudtrail
 tags:
+    - tier-one
     - attack.privilege-escalation
     - attack.defense-evasion
     - aws

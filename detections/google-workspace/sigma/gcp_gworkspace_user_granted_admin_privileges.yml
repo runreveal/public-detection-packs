@@ -1,3 +1,4 @@
+autoTriage: true
 title: Google Workspace User Granted Admin Privileges
 id: 2d1b83e4-17c6-4896-a37b-29140b40a788
 description: Detects when an Google Workspace user is granted admin privileges.
@@ -8,6 +9,7 @@ author: Austin Songer
 date: 2021-08-23
 modified: 2023-10-11
 tags:
+  - tier-one
   - attack.persistence
   - attack.privilege-escalation
   - attack.t1098.003
