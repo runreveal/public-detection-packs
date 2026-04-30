@@ -1,4 +1,5 @@
 disabled: true
+autoTriage: true
 title: Bucket Created Deleted
 status: test
 description: |
@@ -12,6 +13,7 @@ logsource:
 sourcetypes:
     - cloudtrail
 tags:
+    - tier-one
     - attack.impact
     - attack.collection
     - aws

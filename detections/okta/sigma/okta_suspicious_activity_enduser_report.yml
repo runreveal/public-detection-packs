@@ -1,3 +1,4 @@
+autoTriage: true
 title: Okta Suspicious Activity Reported by End-user
 id: 07e97cc6-aed1-43ae-9081-b3470d2367f1
 description:
@@ -9,6 +10,7 @@ references:
 author: kelnage
 date: 2023-09-07
 tags:
+  - tier-one
   - attack.initial-access
   - attack.persistence
   - attack.privilege-escalation

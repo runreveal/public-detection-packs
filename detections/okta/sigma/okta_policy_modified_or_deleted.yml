@@ -1,3 +1,4 @@
+autoTriage: true
 title: Okta Policy Modified or Deleted
 id: 1667a172-ed4c-463c-9969-efd92195319a
 description: Detects when an Okta policy is modified or deleted.
@@ -8,6 +9,7 @@ author: Austin Songer @austinsonger
 date: 2021-09-12
 modified: 2022-10-09
 tags:
+  - tier-one
   - attack.privilege-escalation
   - attack.defense-evasion
   - attack.impact

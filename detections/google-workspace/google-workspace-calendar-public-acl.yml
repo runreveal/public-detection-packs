@@ -1,3 +1,4 @@
+autoTriage: true
 name: google-workspace-calendar-public-acl
 displayName: Google Workspace Calendar Made Public
 description:
@@ -8,6 +9,7 @@ description:
   exposure of sensitive calendar information or potential data exfiltration.
 file: google-workspace-calendar-public-acl.sql
 categories:
+  - tier-one
   - attack.exfiltration
   - attack.t1537
   - google-workspace

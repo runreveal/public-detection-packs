@@ -1,10 +1,12 @@
 disabled: true
+autoTriage: true
 title: Critical Policy Changes
 status: test
 description: |
-  Detects critical IAM and resource policy changes including security group ingress
-  rules, KMS key policies, S3 bucket policies, IAM role trust policies, and user/group
-  policy attachments. These changes may indicate privilege escalation or defense evasion.
+  Detects critical IAM and resource policy changes including policy creation, security
+  group ingress rules, KMS key policies, S3 bucket policies, IAM role trust policies,
+  and user/group/role policy attachments. These changes may indicate privilege escalation
+  or defense evasion.
 author: RunReveal
 logsource:
     product: aws
@@ -12,8 +14,11 @@ logsource:
 sourcetypes:
     - cloudtrail
 tags:
+    - tier-one
     - attack.privilege-escalation
     - attack.defense-evasion
+    - attack.persistence
+    - attack.t1098
     - aws
     - cloudtrail
     - identity-access-management
@@ -21,18 +26,26 @@ tags:
     - iam
     - policy-change
 mitreAttacks:
+    - TA0003
     - TA0004
     - TA0005
+mitreTechniques:
+    - T1098
 detection:
     selection:
         eventName:
+            - 'CreatePolicy'
+            - 'CreatePolicyVersion'
+            - 'PutUserPolicy'
+            - 'PutRolePolicy'
+            - 'PutGroupPolicy'
+            - 'AttachUserPolicy'
+            - 'AttachRolePolicy'
+            - 'AttachGroupPolicy'
             - 'AuthorizeSecurityGroupIngress'
             - 'PutKeyPolicy'
             - 'PutBucketPolicy'
             - 'UpdateAssumeRolePolicy'
-            - 'AttachUserPolicy'
-            - 'PutRolePolicy'
-            - 'PutGroupPolicy'
     condition: selection
 fields:
     - eventName

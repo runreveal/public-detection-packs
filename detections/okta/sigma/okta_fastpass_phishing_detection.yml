@@ -1,3 +1,4 @@
+autoTriage: true
 title: Okta FastPass Phishing Detection
 id: ee39a9f7-5a79-4b0a-9815-d36b3cf28d3e
 description: Detects when Okta FastPass prevents a known phishing site.
@@ -8,6 +9,7 @@ references:
 author: Austin Songer @austinsonger
 date: 2023-05-07
 tags:
+  - tier-one
   - attack.initial-access
   - attack.credential-access
   - attack.t1566

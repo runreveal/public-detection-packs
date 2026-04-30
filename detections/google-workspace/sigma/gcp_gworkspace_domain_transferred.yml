@@ -1,3 +1,4 @@
+autoTriage: true
 title: Google Workspace Domain Transferred
 id: a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d
 description: Detects when a domain is transferred in Google Workspace, which could indicate unauthorized domain ownership changes or administrative takeover attempts.
@@ -7,6 +8,7 @@ references:
 author: RunReveal
 date: 2025-10-21
 tags:
+  - tier-one
   - attack.persistence
   - attack.impact
   - attack.t1098

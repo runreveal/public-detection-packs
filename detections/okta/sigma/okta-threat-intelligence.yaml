@@ -1,4 +1,5 @@
 disabled: true
+autoTriage: true
 title: Okta Threat Intelligence
 status: test
 description: |
@@ -11,6 +12,7 @@ logsource:
 sourcetypes:
     - okta
 tags:
+    - tier-one
     - attack.initial-access
     - attack.credential-access
     - okta

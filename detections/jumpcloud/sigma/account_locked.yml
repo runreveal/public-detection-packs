@@ -1,3 +1,4 @@
+autoTriage: true
 title: JumpCloud User/Admin Account Locked Out
 id: 4c5d6e7f-8a9b-0c1d-2e3f-4a5b6c7d8e9f
 description: Detects when a user or admin account is locked out in JumpCloud
@@ -6,6 +7,7 @@ date: 2025-05-26
 references:
   - https://docs.jumpcloud.com/api/insights/directory/1.0/index.html
 tags:
+  - tier-one
   - attack.credential-access
   - attack.impact
   - attack.t1110

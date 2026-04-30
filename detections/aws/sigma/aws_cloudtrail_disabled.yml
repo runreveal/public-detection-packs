@@ -1,3 +1,4 @@
+autoTriage: true
 title: AWS CloudTrail Disabled
 id: 9c8e1a2b-3d4e-5f6a-7b8c-9d0e1f2a3b4c
 description:
@@ -11,6 +12,7 @@ references:
 author: RunReveal
 date: 2025-10-21
 tags:
+  - tier-one
   - aws
   - cloudtrail
   - system-activity

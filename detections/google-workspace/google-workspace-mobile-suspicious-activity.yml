@@ -1,3 +1,4 @@
+autoTriage: true
 name: google-workspace-mobile-suspicious-activity
 displayName: Mobile Suspicious Activity Event
 description:
@@ -5,6 +6,7 @@ description:
   Workspace.
 file: google-workspace-mobile-suspicious-activity.sql
 categories:
+  - tier-one
   - attack.initial-access
   - attack.persistence
   - attack.privilege-escalation

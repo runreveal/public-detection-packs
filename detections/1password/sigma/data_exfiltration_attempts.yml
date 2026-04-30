@@ -1,3 +1,4 @@
+autoTriage: true
 title: 1Password Data Exfiltration Attempts
 id: 4d5e6f7g-8h9i-0123-4567-890123defghi
 description:
@@ -8,6 +9,7 @@ date: 2025-01-06
 references:
   - https://developer.1password.com/docs/events-api/audit-events/
 tags:
+  - tier-one
   - attack.collection
   - attack.exfiltration
   - attack.t1041

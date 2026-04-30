@@ -1,8 +1,10 @@
+autoTriage: true
 name: google-workspace-calendar-made-public
 displayName: Google Workspace Calendar Made Public
 description: Detects when a Google Workspace calendar is made public
 file: google-workspace-calendar-made-public.sql
 categories:
+  - tier-one
   - attack.collection
   - attack.exfiltration
   - attack.t1537

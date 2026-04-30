@@ -1,4 +1,5 @@
 disabled: true
+autoTriage: true
 title: Root Account Usage
 status: test
 description: |
@@ -13,6 +14,7 @@ logsource:
 sourcetypes:
     - cloudtrail
 tags:
+    - tier-one
     - attack.privilege-escalation
     - aws
     - cloudtrail

@@ -1,10 +1,12 @@
 disabled: true
+autoTriage: true
 title: CrowdStrike Detection Passthrough
 id: crowdstrike-detection-passthrough
 description: Routes all CrowdStrike detections for analysis and correlation with other security events
 author: RunReveal
 date: 2025/01/22
 tags:
+  - tier-one
   - crowdstrike
   - findings
   - signal

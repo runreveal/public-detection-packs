@@ -7,28 +7,29 @@ description: |
   or exfiltrate data.
 author: RunReveal
 logsource:
-    product: okta
+  product: okta
 sourcetypes:
-    - okta
+  - okta
 tags:
-    - attack.credential-access
-    - attack.persistence
-    - okta
-    - identity-access-management
-    - signal
-    - credential-management
-    - api-security
+  - tier-one
+  - attack.credential-access
+  - attack.persistence
+  - okta
+  - identity-access-management
+  - signal
+  - credential-management
+  - api-security
 mitreAttacks:
-    - TA0006
-    - TA0003
+  - TA0006
+  - TA0003
 detection:
-    selection:
-        eventName: 'system.api_token.create'
-    condition: selection
+  selection:
+    eventName: "system.api_token.create"
+  condition: selection
 fields:
-    - eventName
-    - actor.alternateId
-    - actor.displayName
-    - srcIP
+  - eventName
+  - actor.alternateId
+  - actor.displayName
+  - srcIP
 level: high
 riskscore: 80

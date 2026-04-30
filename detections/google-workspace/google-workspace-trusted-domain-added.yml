@@ -1,8 +1,10 @@
+autoTriage: true
 name: google-workspace-trusted-domain-added
 displayName: Google Workspace Trusted Domain Added
 description: Detects when a trusted domain is added to Google Workspace
 file: google-workspace-trusted-domain-added.sql
 categories:
+  - tier-one
   - attack.initial-access
   - attack.persistence
   - attack.privilege-escalation

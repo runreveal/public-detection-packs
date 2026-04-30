@@ -1,3 +1,4 @@
+autoTriage: true
 name: google-workspace-mobile-device-compromised
 displayName: Google Workspace Mobile Device Compromised
 description:
@@ -8,6 +9,7 @@ description:
   lateral movement within the organization.
 file: google-workspace-mobile-device-compromised.sql
 categories:
+  - tier-one
   - attack.initial-access
   - attack.persistence
   - attack.privilege-escalation

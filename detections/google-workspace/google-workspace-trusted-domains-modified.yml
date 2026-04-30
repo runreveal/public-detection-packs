@@ -1,3 +1,4 @@
+autoTriage: true
 name: google-workspace-trusted-domains-modified
 displayName: Google Workspace Trusted Domains Modified
 description:
@@ -8,6 +9,7 @@ description:
   boundaries.
 file: google-workspace-trusted-domains-modified.sql
 categories:
+  - tier-one
   - attack.privilege-escalation
   - attack.defense-evasion
   - attack.t1484.002

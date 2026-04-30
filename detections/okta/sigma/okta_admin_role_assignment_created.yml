@@ -1,3 +1,4 @@
+autoTriage: true
 title: Okta Admin Role Assignment Created
 id: 139bdd4b-9cd7-49ba-a2f4-744d0a8f5d8c
 description:
@@ -9,6 +10,7 @@ references:
 author: Nikita Khalimonenkov
 date: 2023-01-19
 tags:
+  - tier-one
   - attack.persistence
   - attack.privilege-escalation
   - attack.t1098.003

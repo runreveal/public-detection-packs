@@ -8,6 +8,7 @@ date: 2025/01/22
 references:
   - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
 tags:
+  - tier-one
   - attack.initial-access
   - attack.execution
   - attack.persistence
