@@ -15,7 +15,9 @@ sourcetypes:
 tags:
     - tier-one
     - attack.persistence
+    - attack.privilege-escalation
     - attack.credential-access
+    - attack.t1098.001
     - aws
     - cloudtrail
     - identity-access-management
@@ -24,7 +26,10 @@ tags:
     - credential-management
 mitreAttacks:
     - TA0003
+    - TA0004
     - TA0006
+mitreTechniques:
+    - T1098.001
 detection:
     selection:
         eventName:
