@@ -1,4 +1,5 @@
 disabled: true
+autoTriage: true
 title: Okta API Key Created
 status: test
 description: |
