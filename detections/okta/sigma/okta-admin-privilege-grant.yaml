@@ -1,6 +1,7 @@
 disabled: true
 title: Okta Admin Privilege Grant
 status: test
+autoTriage: true
 description: |
   Detects when administrator privileges are successfully granted to a user account
   in Okta. This could indicate legitimate role assignment or an attacker escalating
