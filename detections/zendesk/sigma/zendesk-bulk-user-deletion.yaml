@@ -4,32 +4,35 @@ status: test
 description: |
   Detects bulk user deletion events in Zendesk, which could indicate a
   destructive action by a compromised or malicious administrator.
+notes: |
+  Monitor for bulk user deletions that could indicate account compromise or unauthorized cleanup activities.
+  Review the actor performing the deletion and validate it was authorized.
 author: RunReveal
 sourcetypes:
-    - zendesk
+  - zendesk
 detection:
-    selection:
-        eventName: 'destroy'
-        source_type: 'account'
-    selection_pattern:
-        change_description|contains|all:
-            - 'deletion for'
-            - 'users'
-    condition: selection and selection_pattern
+  selection:
+    eventName: "destroy"
+    source_type: "account"
+  selection_pattern:
+    change_description|contains|all:
+      - "deletion for"
+      - "users"
+  condition: selection and selection_pattern
 fields:
-    - eventName
-    - change_description
-    - source_type
-    - actor.email
-    - srcIP
+  - eventName
+  - change_description
+  - source_type
+  - actor.email
+  - srcIP
 level: critical
 riskscore: 90
 tags:
-    - attack.impact
-    - zendesk
-    - identity-access-management
-    - signal
-    - destructive-action
-    - account-security
+  - attack.impact
+  - zendesk
+  - identity-access-management
+  - signal
+  - destructive-action
+  - account-security
 mitreAttacks:
-    - TA0040
+  - TA0040

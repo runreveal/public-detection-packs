@@ -5,39 +5,42 @@ description: |
   Detects security-related changes to Zendesk accounts including user
   suspensions, permission changes, role modifications, and permanent user
   deletions.
+notes: |
+  Monitor for account suspensions and permission changes that could indicate security incidents.
+  Validate that all account security changes are authorized and documented.
 author: RunReveal
 sourcetypes:
-    - zendesk
+  - zendesk
 detection:
-    selection:
-        eventName:
-            - 'create'
-            - 'update'
-    selection_description:
-        change_description|contains:
-            - 'suspended'
-            - 'permission'
-            - 'role'
-            - 'Permanently deleted user'
-    selection_label:
-        action_label|contains: 'Suspended'
-    condition: selection and (selection_description or selection_label)
+  selection:
+    eventName:
+      - "create"
+      - "update"
+  selection_description:
+    change_description|contains:
+      - "suspended"
+      - "permission"
+      - "role"
+      - "Permanently deleted user"
+  selection_label:
+    action_label|contains: "Suspended"
+  condition: selection and (selection_description or selection_label)
 fields:
-    - eventName
-    - change_description
-    - action_label
-    - actor.email
-    - srcIP
+  - eventName
+  - change_description
+  - action_label
+  - actor.email
+  - srcIP
 level: high
 riskscore: 70
 tags:
-    - attack.persistence
-    - attack.privilege-escalation
-    - zendesk
-    - identity-access-management
-    - signal
-    - account-security
-    - access-control
+  - attack.persistence
+  - attack.privilege-escalation
+  - zendesk
+  - identity-access-management
+  - signal
+  - account-security
+  - access-control
 mitreAttacks:
-    - TA0003
-    - TA0004
+  - TA0003
+  - TA0004
