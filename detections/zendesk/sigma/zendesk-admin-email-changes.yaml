@@ -4,35 +4,38 @@ status: test
 description: |
   Detects email address changes associated with admin accounts in Zendesk,
   which could indicate account takeover or unauthorized privilege escalation.
+notes: |
+  Monitor for changes to administrative email addresses which could indicate account takeover.
+  All admin email changes should be verified through secondary channels.
 author: RunReveal
 sourcetypes:
-    - zendesk
+  - zendesk
 detection:
-    selection:
-        eventName: 'update'
-        change_description|contains|all:
-            - 'email changed'
-    selection_admin_desc:
-        change_description|contains: 'admin'
-    selection_admin_actor:
-        actor_name|contains: 'admin'
-    condition: selection and (selection_admin_desc or selection_admin_actor)
+  selection:
+    eventName: "update"
+    change_description|contains|all:
+      - "email changed"
+  selection_admin_desc:
+    change_description|contains: "admin"
+  selection_admin_actor:
+    actor_name|contains: "admin"
+  condition: selection and (selection_admin_desc or selection_admin_actor)
 fields:
-    - eventName
-    - change_description
-    - actor_name
-    - actor.email
-    - srcIP
+  - eventName
+  - change_description
+  - actor_name
+  - actor.email
+  - srcIP
 level: high
 riskscore: 80
 tags:
-    - attack.persistence
-    - attack.credential-access
-    - zendesk
-    - identity-access-management
-    - signal
-    - account-security
-    - credential-management
+  - attack.persistence
+  - attack.credential-access
+  - zendesk
+  - identity-access-management
+  - signal
+  - account-security
+  - credential-management
 mitreAttacks:
-    - TA0003
-    - TA0006
+  - TA0003
+  - TA0006

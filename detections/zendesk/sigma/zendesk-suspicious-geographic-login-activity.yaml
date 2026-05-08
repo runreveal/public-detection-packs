@@ -5,36 +5,39 @@ description: |
   Detects Zendesk login events from geographic locations outside of expected
   countries (US, CA, GB, AU), which may indicate unauthorized access from
   a compromised account.
+notes: |
+  Adjust the NOT IN clause to include countries where your organization typically operates.
+  Review logins from unexpected geographic locations for potential account compromise.
 author: RunReveal
 sourcetypes:
-    - zendesk
+  - zendesk
 detection:
-    selection:
-        eventName: 'login'
-        action_label: 'Signed in'
-    filter_expected_countries:
-        srcASCountryCode:
-            - 'US'
-            - 'CA'
-            - 'GB'
-            - 'AU'
-    condition: selection and not filter_expected_countries
+  selection:
+    eventName: "login"
+    action_label: "Signed in"
+  filter_expected_countries:
+    srcASCountryCode:
+      - "US"
+      - "CA"
+      - "GB"
+      - "AU"
+  condition: selection and not filter_expected_countries
 fields:
-    - eventName
-    - action_label
-    - actor.email
-    - srcIP
-    - srcASCountryCode
-    - srcCity
-    - srcASOrganization
+  - eventName
+  - action_label
+  - actor.email
+  - srcIP
+  - srcASCountryCode
+  - srcCity
+  - srcASOrganization
 level: medium
 riskscore: 60
 tags:
-    - attack.initial-access
-    - zendesk
-    - identity-access-management
-    - signal
-    - authentication
-    - geographic-anomaly
+  - attack.initial-access
+  - zendesk
+  - identity-access-management
+  - signal
+  - authentication
+  - geographic-anomaly
 mitreAttacks:
-    - TA0001
+  - TA0001

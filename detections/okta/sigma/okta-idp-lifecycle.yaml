@@ -5,30 +5,33 @@ description: |
   Detects identity provider lifecycle events in Okta such as creation, modification,
   or deletion. Changes to identity provider configuration could indicate an attacker
   establishing persistence or evading defenses by manipulating federation trust.
+notes: |
+  This detection monitors all identity provider lifecycle events including creation, updates, activation, deactivation, and deletion. 
+  These events should be reviewed to ensure authorized changes to authentication infrastructure.
 author: RunReveal
 logsource:
-    product: okta
+  product: okta
 sourcetypes:
-    - okta
+  - okta
 tags:
-    - attack.persistence
-    - attack.defense-evasion
-    - okta
-    - identity-access-management
-    - signal
-    - identity-federation
-    - security-configuration
+  - attack.persistence
+  - attack.defense-evasion
+  - okta
+  - identity-access-management
+  - signal
+  - identity-federation
+  - security-configuration
 mitreAttacks:
-    - TA0003
-    - TA0005
+  - TA0003
+  - TA0005
 detection:
-    selection:
-        eventType|startswith: 'system.idp.lifecycle.'
-    condition: selection
+  selection:
+    eventType|startswith: "system.idp.lifecycle."
+  condition: selection
 fields:
-    - eventType
-    - actor.alternateId
-    - actor.displayName
-    - srcIP
+  - eventType
+  - actor.alternateId
+  - actor.displayName
+  - srcIP
 level: high
 riskscore: 70
