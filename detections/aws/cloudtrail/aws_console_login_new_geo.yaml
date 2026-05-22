@@ -1,5 +1,5 @@
 disabled: true
-name: aws-console-login-new-geo
+name: aws-console-login-from-new-geographic-location
 displayName: AWS Console Login from New Geographic Location
 description: >
   Detects successful AWS console logins from a country not previously seen for
