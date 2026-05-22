@@ -1,0 +1,32 @@
+disabled: true
+name: aws-console-login-from-new-geographic-location
+displayName: AWS Console Login from New Geographic Location
+description: >
+  Detects successful AWS console logins from a country not previously seen for
+  that user in the past {window} days. Uses RunReveal's srcASCountryCode
+  enrichment field derived from the source IP. Only fires for users with prior
+  login history to avoid noise on first-ever logins.
+file: aws_console_login_new_geo.sql
+categories:
+  - aws
+  - cloudtrail
+  - identity-access-management
+  - signal
+  - authentication
+  - geolocation-anomaly
+  - anomaly-detection
+mitreAttacks:
+  - TA0001
+  - TA0003
+  - TA0004
+  - TA0005
+  - TA0006
+mitreTechniques:
+  - T1078
+severity: High
+riskScore: 75
+schedule: "*/15 * * * *"
+parameters:
+  window: "30"
+sourceTypes:
+  - cloudtrail
