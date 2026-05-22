@@ -12,22 +12,22 @@ WITH baseline_countries AS (
     GROUP BY userName
 )
 SELECT
-    current."userIdentity.userName",
-    current."userIdentity.arn",
-    current."userIdentity.type",
-    current.srcIP,
-    current.srcASCountryCode,
-    current.srcASOrganization,
-    current.srcASNumber,
-    current.eventTime,
-    current.awsRegion,
-    current.userAgent
-FROM aws_cloudtrail_logs current
-INNER JOIN baseline_countries ON baseline_countries.userName = current."userIdentity.userName"
-WHERE current.receivedAt >= {from:DateTime}
-  AND current.receivedAt < {to:DateTime}
-  AND current.eventName = 'ConsoleLogin'
-  AND JSONExtractString(current.responseElements, 'ConsoleLogin') = 'Success'
-  AND current.srcASCountryCode != ''
-  AND current."userIdentity.userName" != ''
-  AND NOT has(baseline_countries.seenCountries, current.srcASCountryCode)
+    recent."userIdentity.userName",
+    recent."userIdentity.arn",
+    recent."userIdentity.type",
+    recent.srcIP,
+    recent.srcASCountryCode,
+    recent.srcASOrganization,
+    recent.srcASNumber,
+    recent.eventTime,
+    recent.awsRegion,
+    recent.userAgent
+FROM aws_cloudtrail_logs AS recent
+INNER JOIN baseline_countries ON baseline_countries.userName = recent."userIdentity.userName"
+WHERE recent.receivedAt >= {from:DateTime}
+  AND recent.receivedAt < {to:DateTime}
+  AND recent.eventName = 'ConsoleLogin'
+  AND JSONExtractString(recent.responseElements, 'ConsoleLogin') = 'Success'
+  AND recent.srcASCountryCode != ''
+  AND recent."userIdentity.userName" != ''
+  AND NOT has(baseline_countries.seenCountries, recent.srcASCountryCode)
