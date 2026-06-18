@@ -10,12 +10,9 @@ Detection queries have two files, a yaml and a sql file. Sigma detections only h
 The yaml file contains metadata about the detection such as
 description, severity, and schedule.
 
-**Important:** All new detections must include `disabled: true` at the top of the yaml file. This ensures detections are reviewed and explicitly enabled before going live.
-
 Here's an example detection yaml for a ClickHouse query:
 
 ```yaml
-disabled: true
 name: google-workspace-access-transparency-resource
 displayName: Access Transparency GSuite Resource Events
 description: Detects Google Workspace events where the application is not access_transparency and the event type is GSUITE_RESOURCE.
@@ -50,7 +47,6 @@ original sigma format. Here's an example containing riskscore
 mitreAttacks that we've added to the format.
 
 ```yaml
-disabled: true
 title: Google Workspace Application Removed
 id: ee2803f0-71c8-4831-b48b-a1fc57601ee4
 description: Detects when an an application is removed from Google Workspace.

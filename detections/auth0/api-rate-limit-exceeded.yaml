@@ -1,4 +1,3 @@
-disabled: true
 name: auth0-api-rate-limit-exceeded
 displayName: Auth0 API Rate Limit Exceeded
 description: Detects when API rate limits are exceeded, which could indicate automated attacks, credential stuffing, or abuse of the Auth0 service.

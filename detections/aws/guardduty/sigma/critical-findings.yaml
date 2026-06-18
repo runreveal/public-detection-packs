@@ -1,4 +1,3 @@
-disabled: true
 autoTriage: true
 title: AWS GuardDuty Critical Severity Findings
 id: aws-guardduty-critical-findings

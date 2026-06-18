@@ -1,4 +1,3 @@
-disabled: true
 title: User Added Removed Cloudflare
 status: stable
 description: A user was either added to or removed from your Cloudflare account.

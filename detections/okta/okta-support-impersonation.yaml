@@ -1,4 +1,3 @@
-disabled: true
 name: okta-support-impersonation
 displayName: Okta Support User Session Impersonation
 description:

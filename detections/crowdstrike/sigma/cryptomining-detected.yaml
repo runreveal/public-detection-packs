@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Cryptocurrency Mining Detected
 id: crowdstrike-cryptomining-detected
 description: Identifies cryptocurrency mining software installation or execution including XMRig, NiceHash, and other mining tools that may indicate resource hijacking

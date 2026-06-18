@@ -1,4 +1,3 @@
-disabled: true
 title: S3 Insecure Connection Detected
 id: aws-s3-insecure-connection-detected
 description: Flags unencrypted or non-TLS S3 connections that could expose data in transit

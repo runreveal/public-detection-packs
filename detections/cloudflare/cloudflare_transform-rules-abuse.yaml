@@ -1,4 +1,3 @@
-disabled: true
 name: cf-transform-rules-abuse
 displayName: Cloudflare Transform Rules Abuse
 description: |

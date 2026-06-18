@@ -1,4 +1,3 @@
-disabled: true
 title: Slack Legal Hold Policy Tampered
 id: slack-legal-hold-tampered
 description: Detects legal hold policy modifications that may indicate evidence destruction

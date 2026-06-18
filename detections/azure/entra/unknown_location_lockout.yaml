@@ -1,4 +1,3 @@
-disabled: true
 name: entra-unknown-location-lockout
 displayName: Azure Entra Unknown Location Lockout
 description:

@@ -1,4 +1,3 @@
-disabled: true
 name: aws-key-new-network
 displayName: AWS Key Used from New Network
 description:

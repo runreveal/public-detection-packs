@@ -1,4 +1,3 @@
-disabled: true
 name: okta-mfasigned-nonce-unexpected-geo
 displayName: Okta MFA Signed Nonce from Unexpected Geography
 description:

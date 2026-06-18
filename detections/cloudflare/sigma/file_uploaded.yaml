@@ -1,4 +1,3 @@
-disabled: true
 title: File Uploaded
 status: stable
 description: A file was uploaded through Cloudflare gateway.

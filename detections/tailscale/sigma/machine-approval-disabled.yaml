@@ -1,4 +1,3 @@
-disabled: true
 title: Tailscale Machine Approval Requirements Disabled
 id: tailscale-machine-approval-disabled
 description: Identifies when machine approval requirements are disabled, flagging gaps in device authentication controls

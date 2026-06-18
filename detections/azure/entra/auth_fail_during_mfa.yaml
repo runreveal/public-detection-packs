@@ -1,4 +1,3 @@
-disabled: true
 name: entra-sign-in-fail-during-mfa
 displayName: Entra Sign-In Fail During MFA
 description:

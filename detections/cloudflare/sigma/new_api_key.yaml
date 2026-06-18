@@ -1,4 +1,3 @@
-disabled: true
 title: New Cloudflare API Key
 status: stable
 description: A Cloudflare API key was created or rotated.

@@ -1,4 +1,3 @@
-disabled: true
 name: branch-protection-override
 displayName: GitHub Branch Protection Override
 description:

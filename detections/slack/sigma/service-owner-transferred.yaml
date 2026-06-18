@@ -1,4 +1,3 @@
-disabled: true
 title: Slack Service Owner Transferred
 id: slack-service-owner-transferred
 description: Monitors ownership transfer events that could indicate account takeover or unauthorized administrative changes

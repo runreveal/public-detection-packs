@@ -1,4 +1,3 @@
-disabled: true
 name: crowdstrike-embargoed-country-connection
 displayName: CrowdStrike Network Connection to Restricted Country
 description: Identifies network connections to geographically restricted or embargoed regions that may violate compliance requirements. Configure embargoedCountries parameter to specify restricted country codes (e.g., KP, IR, SY, CU, SD).

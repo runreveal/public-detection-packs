@@ -1,4 +1,3 @@
-disabled: true
 name: auth0-brute-force-login
 displayName: Auth0 Brute Force Login Attempts
 description: Detects multiple failed login attempts from a single IP address or user within a short time window, indicating potential brute force attack.

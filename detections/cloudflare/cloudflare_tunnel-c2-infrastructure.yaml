@@ -1,4 +1,3 @@
-disabled: true
 name: cf-tunnel-c2-infrastructure
 displayName: Cloudflare Tunnel C2 Infrastructure
 description: |

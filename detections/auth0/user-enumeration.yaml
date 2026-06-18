@@ -1,4 +1,3 @@
-disabled: true
 name: auth0-user-enumeration
 displayName: Auth0 User Enumeration Attempt
 description: Detects attempts to enumerate valid user accounts by analyzing patterns of failed login attempts across multiple different usernames from the same source.

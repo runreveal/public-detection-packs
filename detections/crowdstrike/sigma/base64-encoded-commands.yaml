@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Base64 Encoded Command Execution
 id: crowdstrike-base64-encoded-commands
 description: Detects obfuscated command-line arguments using base64 encoding, commonly used to evade detection

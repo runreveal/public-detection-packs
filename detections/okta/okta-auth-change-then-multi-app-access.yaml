@@ -25,7 +25,6 @@ categories:
   - multi-app-access
 schedule: "*/15 * * * *"
 notes: ""
-disabled: true
 notificationNames: []
 mitreAttacks:
   - TA0001

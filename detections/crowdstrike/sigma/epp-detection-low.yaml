@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Falcon EPP Detection Low Severity
 id: crowdstrike-epp-detection-low
 description: Tracks low severity endpoint protection findings from CrowdStrike Falcon (EppDetectionSummaryEvent) for monitoring and baseline establishment.

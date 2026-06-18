@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Falcon EPP Detection High Severity
 id: crowdstrike-epp-detection-high
 description: Identifies high severity endpoint protection findings from CrowdStrike Falcon (EppDetectionSummaryEvent) that warrant prompt investigation.

@@ -1,4 +1,3 @@
-disabled: true
 name: new-tailscale-user
 displayName: New Tailscale User
 description:

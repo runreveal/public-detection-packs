@@ -26,7 +26,6 @@ parameters:
   deviceThreshold: "3"
   interval: "7"
   officeCIDR: 127.0.0.1/32
-disabled: true
 notificationNames: []
 mitreAttacks:
   - TA0001

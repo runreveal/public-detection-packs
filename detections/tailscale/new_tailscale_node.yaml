@@ -1,4 +1,3 @@
-disabled: true
 name: new-tailscale-node
 displayName: New Tailscale Node
 description:

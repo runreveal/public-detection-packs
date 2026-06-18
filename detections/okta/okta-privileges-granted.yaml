@@ -1,4 +1,3 @@
-disabled: true
 name: okta-privileges-granted
 displayName: Okta Privileges Granted
 type: sql

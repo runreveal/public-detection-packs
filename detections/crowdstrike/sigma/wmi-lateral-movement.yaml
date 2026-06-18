@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike WMI Lateral Movement Detected
 id: crowdstrike-wmi-lateral-movement
 description: Detects Windows Management Instrumentation queries and commands commonly used for lateral movement and remote code execution
