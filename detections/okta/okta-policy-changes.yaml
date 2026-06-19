@@ -1,4 +1,3 @@
-disabled: true
 name: okta-policy-changes
 displayName: Okta Policy Changes
 type: sql

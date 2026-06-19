@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Falcon EPP Detection All Findings
 id: crowdstrike-epp-detection-all
 description: Surfaces every CrowdStrike Falcon endpoint protection finding (EppDetectionSummaryEvent) regardless of severity. Pair with or replace the per-severity rules depending on alerting strategy.

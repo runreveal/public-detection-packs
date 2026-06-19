@@ -1,4 +1,3 @@
-disabled: true
 name: anomalous-api-key-usage
 displayName: Anomalous Cloudflare API Key Usage
 description: A Cloudflare API key was first seen, or used from a new network.

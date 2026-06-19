@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Reverse Shell Execution Detected
 id: crowdstrike-reverse-shell-execution
 description: Identifies reverse shell payload execution using common techniques including netcat, bash, PowerShell, or Python reverse shells

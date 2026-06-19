@@ -1,4 +1,3 @@
-disabled: true
 name: cf-workers-reconnaissance
 displayName: Cloudflare Workers Reconnaissance
 description: |

@@ -1,4 +1,3 @@
-disabled: true
 title: Tor Network Traffic
 description:
   Detect threats from Tor network traffic using RunReveal managed enrichment

@@ -27,7 +27,6 @@ parameters:
   deviceThreshold: "3"
   interval: "7"
   table: logs
-disabled: false
 notificationNames: []
 mitreAttacks:
   - TA0001

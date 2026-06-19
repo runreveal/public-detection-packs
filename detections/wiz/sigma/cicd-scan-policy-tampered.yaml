@@ -1,4 +1,3 @@
-disabled: true
 title: Wiz CI/CD Scan Policy Tampered
 id: wiz-cicd-scan-policy-tampered
 description: Detects CI/CD scanning policy changes that could enable vulnerable code deployment

@@ -1,4 +1,3 @@
-disabled: true
 name: cf-api-endpoint-discovery
 displayName: Cloudflare API Endpoint Discovery
 description: |

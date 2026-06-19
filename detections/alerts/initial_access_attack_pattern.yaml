@@ -1,4 +1,3 @@
-disabled: true
 name: initial-access-attack-pattern
 displayName: Potential initial access attack pattern
 description: Suspicious initial access was followed by another attack technique

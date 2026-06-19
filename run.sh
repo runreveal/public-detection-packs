@@ -13,9 +13,6 @@ slug=$(echo "${SOURCE}-${NAME}" | tr '[:upper:]' '[:lower:]' | tr -s ' ' '-' | t
 
 # Define the YAML template with placeholders for SOURCE, NAME, and SLUG
 read -r -d '' ymltemplate <<EOF
-# Remove disabled property to start using the detection
-disabled: true
-
 name: ${slug}
 displayName: ${NAME}
 description: Enter a description here.

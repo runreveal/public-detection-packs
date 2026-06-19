@@ -20,7 +20,6 @@ categories:
   - mfa-bypass
 schedule: "*/30 * * * *"
 notes: ""
-disabled: false
 notificationNames: []
 mitreAttacks:
   - TA0003

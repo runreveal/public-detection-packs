@@ -1,4 +1,3 @@
-disabled: true
 title: Slack Anomaly Detection Triggered
 id: slack-anomaly-detected
 status: experimental

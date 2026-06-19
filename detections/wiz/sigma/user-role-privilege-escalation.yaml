@@ -1,4 +1,3 @@
-disabled: true
 title: Wiz User Role Privilege Escalation
 id: wiz-user-role-privilege-escalation
 description: Tracks access control privilege changes that may indicate unauthorized privilege escalation

@@ -1,4 +1,3 @@
-disabled: true
 name: okta-anomalous-third-party
 displayName: Anomalous Third Party Activity
 description: Third party in Okta has changed its pattern of activity

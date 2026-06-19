@@ -1,4 +1,3 @@
-disabled: true
 name: okta-group-membership-exfiltration
 displayName: Okta Group Membership Data Exfiltration
 description: Detects bulk export of group membership and organizational structure data suggesting potential exfiltration

@@ -1,4 +1,3 @@
-disabled: true
 title: Slack Workspace Deletion
 id: slack-workspace-deleted
 description: Detects workspace deletion events that may indicate data destruction or sabotage

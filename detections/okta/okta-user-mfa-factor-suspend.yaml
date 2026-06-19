@@ -1,4 +1,3 @@
-disabled: true
 name: okta-user-mfa-factor-suspend
 displayName: Okta User MFA Factor Suspend
 description:

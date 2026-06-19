@@ -1,4 +1,3 @@
-disabled: true
 name: okta-user-directory-exfiltration
 displayName: Okta User Directory Exfiltration
 description: Detects large-scale user directory data access suggesting potential data exfiltration activities

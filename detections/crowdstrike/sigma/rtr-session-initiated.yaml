@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Real Time Response Session Initiated
 id: crowdstrike-rtr-session-initiated
 description: Tracks CrowdStrike Real Time Response session initiation for incident response and forensic activities

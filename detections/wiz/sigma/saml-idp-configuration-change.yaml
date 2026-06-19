@@ -1,4 +1,3 @@
-disabled: true
 title: Wiz SAML Identity Provider Configuration Change
 id: wiz-saml-idp-configuration-change
 description: Detects SAML identity provider modifications that could enable unauthorized access or authentication bypass

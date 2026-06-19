@@ -1,4 +1,3 @@
-disabled: true
 name: cf-dns-record-manipulation
 displayName: Cloudflare DNS Record Manipulation
 description: |

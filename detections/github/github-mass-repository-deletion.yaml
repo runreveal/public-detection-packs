@@ -1,4 +1,3 @@
-disabled: true
 name: github-mass-repository-deletion
 displayName: GitHub Mass Repository Deletion
 description: Detects bulk repository deletion patterns that may indicate sabotage or data destruction

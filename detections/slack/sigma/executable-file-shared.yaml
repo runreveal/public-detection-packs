@@ -1,4 +1,3 @@
-disabled: true
 title: Slack Suspicious File Shared
 id: slack-suspicious-file-shared
 description: Identifies suspicious file distribution that may contain executables (malware or phishing content)

@@ -1,4 +1,3 @@
-disabled: true
 title: S3 Access Error Patterns
 id: aws-s3-access-error-patterns
 description: Detects error patterns indicating reconnaissance, permission testing, or brute force attempts

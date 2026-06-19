@@ -1,4 +1,3 @@
-disabled: true
 title: Slack Enterprise Key Management Unenrolled
 id: slack-ekm-unenrolled
 description: Detects Enterprise Key Management removal that may expose encrypted data

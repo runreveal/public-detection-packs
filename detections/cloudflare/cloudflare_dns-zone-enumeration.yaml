@@ -1,4 +1,3 @@
-disabled: true
 name: cf-dns-zone-enumeration
 displayName: Cloudflare DNS Zone Enumeration
 description: |

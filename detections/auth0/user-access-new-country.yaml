@@ -1,4 +1,3 @@
-disabled: true
 name: auth0-user-access-new-country
 displayName: Auth0 User Access from New Country
 description: Monitors for user activity from a country that the user has not previously accessed Auth0 from, indicating potential account takeover or credential compromise.

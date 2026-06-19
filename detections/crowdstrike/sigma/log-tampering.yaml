@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike System Log Tampering Detected
 id: crowdstrike-log-tampering
 description: Flags system log deletion or modification attempts that may indicate defense evasion activities

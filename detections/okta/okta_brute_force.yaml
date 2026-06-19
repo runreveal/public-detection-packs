@@ -1,4 +1,3 @@
-disabled: true
 name: okta-brute-force
 displayName: Okta Brute Force Attack
 file: okta_brute_force.sql

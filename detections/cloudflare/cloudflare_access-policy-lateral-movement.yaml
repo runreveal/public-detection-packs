@@ -1,4 +1,3 @@
-disabled: true
 name: cf-access-policy-lateral-movement
 displayName: Cloudflare Access Policy Lateral Movement
 description: |

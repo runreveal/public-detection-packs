@@ -1,4 +1,3 @@
-disabled: true
 name: okta-user-mfa-factor-reset-all
 displayName: Okta User MFA Factor Reset All
 description:

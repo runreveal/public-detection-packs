@@ -1,4 +1,3 @@
-disabled: true
 name: cf-phishing-infrastructure
 displayName: Cloudflare Phishing Infrastructure Creation
 description: |

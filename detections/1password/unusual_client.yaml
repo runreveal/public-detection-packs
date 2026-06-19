@@ -1,4 +1,3 @@
-disabled: true
 name: 1password-unusual-client
 displayName: 1Password Unusual Client
 file: unusual_client.sql

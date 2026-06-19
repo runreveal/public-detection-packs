@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike macOS Property List Manipulation
 id: crowdstrike-macos-plutil-usage
 description: Monitors property list (plist) manipulation on macOS which may indicate persistence mechanism installation or configuration tampering

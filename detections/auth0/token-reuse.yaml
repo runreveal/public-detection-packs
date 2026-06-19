@@ -1,4 +1,3 @@
-disabled: true
 name: auth0-token-reuse
 displayName: Auth0 Suspicious Token Reuse
 description: Detects when an authentication token is reused from multiple different IP addresses or locations, indicating potential token theft or compromise.

@@ -1,4 +1,3 @@
-disabled: true
 title: CrowdStrike Suspicious DNS Query Patterns
 id: crowdstrike-suspicious-dns-patterns
 description: Monitors suspicious DNS query patterns including DGA domains, DNS tunneling, and queries to suspicious TLDs

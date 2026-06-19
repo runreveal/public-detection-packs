@@ -1,4 +1,3 @@
-disabled: true
 name: aws-compromised-account-resource-creation
 displayName: AWS Compromised Account Resource Creation
 description: Detects unusual volume of resource creation events that may indicate a compromised account being used to create malicious infrastructure
