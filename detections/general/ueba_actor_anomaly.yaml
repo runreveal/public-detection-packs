@@ -1,7 +1,7 @@
 disabled: true
 name: ueba-actor-anomaly
 displayName: UEBA Actor Behavior Anomaly
-description:
+description: >-
   Per-actor cross-source behavioral baseline anomaly. Scores the most-recently
   settled hour of each actor's activity (keyed on actor email) against their own
   trailing 30-day baseline held in the ueba_actor_hourly materialized view.
