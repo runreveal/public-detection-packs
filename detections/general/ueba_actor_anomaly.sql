@@ -2,20 +2,35 @@
 -- view (not raw logs): scores the most-recently-settled hour against each
 -- actor's own trailing 30-day baseline. {from}/{to} are the scheduler window;
 -- the settled hour lags ~1h so late-arriving data is not missed.
+--
+-- ueba_actor_hourly is an AggregatingMergeTree, so a key can hold several
+-- un-merged partial rows. The baseline MUST collapse to true per-hour totals
+-- (inner GROUP BY hourBucket, sum(events)) before taking median/IQR/sample
+-- counts; reading the raw rows would compute statistics over partial counts.
 WITH
   base AS (
     SELECT principal, sourceType,
-      median(events) AS medHourly,
-      quantileExact(0.75)(events) - quantileExact(0.25)(events) AS iqrHourly,
-      groupUniqArrayArray(countries)  AS baseCountries,
-      groupUniqArrayArray(asns)       AS baseASNs,
-      groupUniqArrayArray(eventNames) AS baseEventNames,
-      groupUniqArrayArray(resources)  AS baseResources,
-      groupUniqArray(toUInt16((toDayOfWeek(hourBucket) - 1) * 24 + toHour(hourBucket))) AS baseHours,
-      count() AS baseHourSamples
-    FROM ueba_actor_hourly
-    WHERE hourBucket >= toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR - INTERVAL 30 DAY
-      AND hourBucket <  toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR
+      median(he) AS medHourly,
+      quantileExact(0.75)(he) - quantileExact(0.25)(he) AS iqrHourly,
+      groupUniqArrayArray(cs) AS baseCountries,
+      groupUniqArrayArray(az) AS baseASNs,
+      groupUniqArrayArray(en) AS baseEventNames,
+      groupUniqArrayArray(rs) AS baseResources,
+      groupUniqArray(how)     AS baseHours,
+      count()                 AS baseHourSamples
+    FROM (
+      SELECT principal, sourceType, hourBucket,
+        sum(events)                     AS he,
+        groupUniqArrayArray(countries)  AS cs,
+        groupUniqArrayArray(asns)       AS az,
+        groupUniqArrayArray(eventNames) AS en,
+        groupUniqArrayArrayIf(resources, sourceType != 'cloudtrail') AS rs,
+        toUInt16((toDayOfWeek(hourBucket) - 1) * 24 + toHour(hourBucket)) AS how
+      FROM ueba_actor_hourly
+      WHERE hourBucket >= toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR - INTERVAL 30 DAY
+        AND hourBucket <  toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR
+      GROUP BY principal, sourceType, hourBucket
+    )
     GROUP BY principal, sourceType
   ),
   cur AS (
@@ -24,7 +39,7 @@ WITH
       groupUniqArrayArray(countries)  AS curCountries,
       groupUniqArrayArray(asns)       AS curASNs,
       groupUniqArrayArray(eventNames) AS curEventNames,
-      groupUniqArrayArray(resources)  AS curResources,
+      groupUniqArrayArrayIf(resources, sourceType != 'cloudtrail') AS curResources,
       groupUniqArray(toUInt16((toDayOfWeek(hourBucket) - 1) * 24 + toHour(hourBucket))) AS curHours
     FROM ueba_actor_hourly
     WHERE hourBucket >= toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR
