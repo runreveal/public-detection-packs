@@ -1,0 +1,28 @@
+disabled: true
+name: ueba-actor-anomaly
+displayName: UEBA Actor Behavior Anomaly
+description:
+  Per-actor cross-source behavioral baseline anomaly. Scores the most-recently
+  settled hour of each actor's activity (keyed on actor email) against their own
+  trailing 30-day baseline held in the ueba_actor_hourly materialized view.
+  Signals: volume spike (robust median+IQR z-score, only on the onset of a spike),
+  new country, new network/ASN (surfaced only alongside another signal), first-seen
+  action, first-seen resource, and activity in a never-before-seen hour-of-week.
+  Values that are new to many actors at once (org/VPN/infra changes) are
+  suppressed, runreveal-audit is excluded, and only human principals are scored.
+  The reasons array explains what changed, for agent triage. Requires the
+  ueba_actor_hourly MV (RUN-2773).
+file: ueba_actor_anomaly.sql
+schedule: "0 * * * *"
+categories:
+  - general
+  - ueba
+  - behavioral-analytics
+  - anomaly-detection
+  - signal
+mitreAttacks:
+  - TA0001
+  - TA0004
+  - TA0005
+severity: Low
+riskScore: 30
