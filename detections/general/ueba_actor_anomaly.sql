@@ -13,7 +13,7 @@ WITH
       groupUniqArrayArray(resources)  AS baseResources,
       groupUniqArray(toUInt16((toDayOfWeek(hourBucket) - 1) * 24 + toHour(hourBucket))) AS baseHours,
       count() AS baseHourSamples
-    FROM runreveal.ueba_actor_hourly
+    FROM ueba_actor_hourly
     WHERE hourBucket >= toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR - INTERVAL 30 DAY
       AND hourBucket <  toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR
     GROUP BY principal, sourceType
@@ -26,7 +26,7 @@ WITH
       groupUniqArrayArray(eventNames) AS curEventNames,
       groupUniqArrayArray(resources)  AS curResources,
       groupUniqArray(toUInt16((toDayOfWeek(hourBucket) - 1) * 24 + toHour(hourBucket))) AS curHours
-    FROM runreveal.ueba_actor_hourly
+    FROM ueba_actor_hourly
     WHERE hourBucket >= toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR
       AND hourBucket <  toStartOfHour({to:DateTime}) - INTERVAL 1 HOUR
       AND principal LIKE '%@%' AND principal NOT LIKE '%.internal'
@@ -35,7 +35,7 @@ WITH
   ),
   prev AS (
     SELECT principal, sourceType, sum(events) AS prevEvents
-    FROM runreveal.ueba_actor_hourly
+    FROM ueba_actor_hourly
     WHERE hourBucket >= toStartOfHour({from:DateTime}) - INTERVAL 2 HOUR
       AND hourBucket <  toStartOfHour({from:DateTime}) - INTERVAL 1 HOUR
       AND sourceType != 'runreveal-audit'
