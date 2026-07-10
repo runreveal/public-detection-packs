@@ -33,8 +33,10 @@ mitreTechniques:
 detection:
   selection:
     severity:
-      - 'CRITICAL'
-    title: '*'
+      - '9'
+      - '10'
+      - '9.*'
+      - '10.*'
   condition: selection
 falsepositives:
   - None - these are AWS GuardDuty validated findings

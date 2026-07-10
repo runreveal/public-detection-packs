@@ -23,7 +23,13 @@ mitreTechniques:
   - T1526
 detection:
   selection:
-    severity: 'Low'
+    severity:
+      - '1'
+      - '2'
+      - '3'
+      - '1.*'
+      - '2.*'
+      - '3.*'
   condition: selection
 falsepositives:
   - Legitimate activities
