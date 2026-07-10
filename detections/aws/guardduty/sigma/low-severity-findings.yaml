@@ -21,9 +21,11 @@ mitreAttacks:
   - TA0007
 mitreTechniques:
   - T1526
+sourcetypes:
+  - guardduty
 detection:
   selection:
-    severity: 'Low'
+    severity|re: '^[123](\.\d+)?$'
   condition: selection
 falsepositives:
   - Legitimate activities

@@ -30,9 +30,11 @@ mitreTechniques:
   - T1078
   - T1110
   - T1562
+sourcetypes:
+  - guardduty
 detection:
   selection:
-    severity: 'High'
+    severity|re: '^[78](\.\d+)?$'
   condition: selection
 falsepositives:
   - None - these are AWS GuardDuty validated findings

@@ -25,9 +25,11 @@ mitreAttacks:
 mitreTechniques:
   - T1526
   - T1078
+sourcetypes:
+  - guardduty
 detection:
   selection:
-    severity: 'Medium'
+    severity|re: '^[456](\.\d+)?$'
   condition: selection
 falsepositives:
   - Some benign activities may trigger medium findings
