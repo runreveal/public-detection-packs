@@ -29,9 +29,13 @@ mitreTechniques:
   - T1078
   - T1110
   - T1562
+sourcetypes:
+  - guardduty
 detection:
   selection:
-    severity: 'High'
+    severity:
+      - 7
+      - 8
   condition: selection
 falsepositives:
   - None - these are AWS GuardDuty validated findings

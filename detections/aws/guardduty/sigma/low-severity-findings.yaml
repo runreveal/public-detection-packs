@@ -20,9 +20,14 @@ mitreAttacks:
   - TA0007
 mitreTechniques:
   - T1526
+sourcetypes:
+  - guardduty
 detection:
   selection:
-    severity: 'Low'
+    severity:
+      - 1
+      - 2
+      - 3
   condition: selection
 falsepositives:
   - Legitimate activities
