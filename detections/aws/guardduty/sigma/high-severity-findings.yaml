@@ -33,9 +33,7 @@ sourcetypes:
   - guardduty
 detection:
   selection:
-    severity:
-      - 7
-      - 8
+    severity|re: '^[78](\.\d+)?$'
   condition: selection
 falsepositives:
   - None - these are AWS GuardDuty validated findings

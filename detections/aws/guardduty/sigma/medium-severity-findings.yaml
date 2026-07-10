@@ -28,10 +28,7 @@ sourcetypes:
   - guardduty
 detection:
   selection:
-    severity:
-      - 4
-      - 5
-      - 6
+    severity|re: '^[456](\.\d+)?$'
   condition: selection
 falsepositives:
   - Some benign activities may trigger medium findings
