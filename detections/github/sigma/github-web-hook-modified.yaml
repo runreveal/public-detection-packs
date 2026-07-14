@@ -5,29 +5,28 @@ description: |
   known bot accounts.
 author: RunReveal
 logsource:
-    product: github
+  product: github
 sourcetypes:
-    - github-webhook
+  - github-webhook
 detection:
-    selection:
-        action|startswith: 'hook.'
-    filter_bot:
-        actor.email: 'sync-by-unito[bot]'
-    condition: selection and not filter_bot
+  selection:
+    action|startswith: "hook."
+  filter_bot:
+    actor.email: "sync-by-unito[bot]"
+  condition: selection and not filter_bot
 fields:
-    - action
-    - actor.email
-    - actor.username
+  - action
+  - actor.email
+  - actor.username
 level: medium
 riskscore: 60
 tags:
-    - attack.persistence
-    - attack.exfiltration
-    - github
-    - application-activity
-    - signal
-    - webhook
-    - integration
+  - attack.persistence
+  - attack.exfiltration
+  - github
+  - application-activity
+  - signal
+  - integration
 mitreAttacks:
-    - TA0003
-    - TA0010
+  - TA0003
+  - TA0010
