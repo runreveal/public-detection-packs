@@ -5,7 +5,7 @@ description: |
   Illicit consent grant attacks trick users into granting permissions to
   attacker-controlled applications, enabling persistent access to data.
 references:
-  - https://learn.microsoft.com/en-us/purview/audit-log-activities#application-administration-activities
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#directory-administration-activities
   - https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/protect-against-consent-phishing
 author: RunReveal
 date: 2025-07-24
@@ -19,6 +19,7 @@ detection:
   selection:
     eventName:
       - Consent to application.
+      - Consent to application
   condition: selection
 falsepositives:
   - Users consenting to legitimate business applications
