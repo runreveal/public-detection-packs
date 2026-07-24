@@ -5,8 +5,8 @@ description: >
   Unauthorized privilege escalation could allow an attacker to modify security
   policies, disable protections, or exfiltrate security data.
 references:
-  - https://www.sentinelone.com/platform/singularity-endpoint/
-  - https://community.sentinelone.com/s/article/000006555
+  - https://usea1-partners.sentinelone.net/api-doc/overview
+  - https://docs.sentinelone.com/docs/rbac
 author: RunReveal
 date: 2025-07-24
 tags:

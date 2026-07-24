@@ -5,8 +5,8 @@ description: >
   unnotarized application. Gatekeeper overrides can be used to execute
   malicious applications that would otherwise be blocked by macOS security.
 references:
+  - https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Threat_Events_Stream_Event_Types.html
   - https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df
-  - https://attack.mitre.org/techniques/T1553/001/
 author: RunReveal
 date: 2025-07-24
 tags:
@@ -17,10 +17,7 @@ sourcetypes:
   - jamf-protect
 detection:
   selection:
-    eventName:
-      - GPGatekeeperOverride
-      - gatekeeper_override
-      - com.apple.syspolicy.exec
+    eventName: GPGatekeeperEvent
   condition: selection
 falsepositives:
   - Developers running locally built unsigned applications

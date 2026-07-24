@@ -5,8 +5,8 @@ description: >
   can be abused by attackers to whitelist malicious files or paths, effectively
   disabling protection for specific threat vectors.
 references:
-  - https://www.sentinelone.com/platform/singularity-endpoint/
-  - https://community.sentinelone.com/s/article/000007478
+  - https://usea1-partners.sentinelone.net/api-doc/overview
+  - https://docs.sentinelone.com/docs/exclusions
 author: RunReveal
 date: 2025-07-24
 tags:

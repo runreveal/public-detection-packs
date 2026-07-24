@@ -6,7 +6,7 @@ description: >
   unauthorized user or compromised admin account.
 references:
   - https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Plans.html
-  - https://attack.mitre.org/techniques/T1562/
+  - https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Audit_Logs.html
 author: RunReveal
 date: 2025-07-24
 tags:
@@ -17,11 +17,11 @@ sourcetypes:
   - jamf-protect
 detection:
   selection:
+    # Audit event_type_name values; verify against live JAMF Protect audit logs.
     eventName:
       - PlanUpdated
       - PlanDeleted
       - PlanCreated
-      - protection_plan_modified
   condition: selection
 falsepositives:
   - Planned protection plan updates by security administrators

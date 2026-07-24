@@ -5,8 +5,8 @@ description: >
   mitigated. Unmitigated threats may indicate a failure in automated response
   or a threat that requires manual intervention, leaving the endpoint exposed.
 references:
-  - https://www.sentinelone.com/platform/singularity-endpoint/
-  - https://www.sentinelone.com/resources/data-sheet-threat-detection-response/
+  - https://usea1-partners.sentinelone.net/api-doc/overview
+  - https://docs.sentinelone.com/docs/threats
 author: RunReveal
 date: 2025-07-24
 tags:

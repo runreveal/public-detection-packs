@@ -6,7 +6,7 @@ description: >
   used by attackers to disable endpoint protection before executing malicious
   payloads.
 references:
-  - https://www.sentinelone.com/platform/singularity-endpoint/
+  - https://usea1-partners.sentinelone.net/api-doc/overview
   - https://www.sentinelone.com/resources/data-sheet-tamper-protection/
 author: RunReveal
 date: 2025-07-24
