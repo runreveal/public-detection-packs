@@ -1,0 +1,30 @@
+title: HashiCorp Vault Token Accessors Listed
+id: hashicorp-vault-token-accessors-listed
+description: >
+  Detects listing of token accessors in HashiCorp Vault. Enumerating token accessors
+  can be a reconnaissance step to identify active sessions and tokens, potentially
+  leading to token theft or session hijacking.
+references:
+  - https://developer.hashicorp.com/vault/api-docs/auth/token#list-accessors
+author: RunReveal
+date: 2025-07-24
+tags:
+  - hashicorp-vault
+  - identity-access-management
+  - signal
+sourcetypes:
+  - hashicorp-vault
+detection:
+  selection:
+    eventServicePath: auth/token/accessors
+    eventName: list
+  condition: selection
+falsepositives:
+  - Automated token management or cleanup scripts
+  - Security auditing tools enumerating active tokens
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0007
+mitreTechniques:
+  - T1087

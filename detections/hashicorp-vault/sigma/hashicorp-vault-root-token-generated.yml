@@ -1,0 +1,33 @@
+title: HashiCorp Vault Root Token Generated
+id: hashicorp-vault-root-token-generated
+description: >
+  Detects generation of a root token in HashiCorp Vault. Root tokens have unrestricted access
+  to all operations and should rarely be created. This may indicate privilege escalation
+  or an attempt to gain persistent superuser access.
+references:
+  - https://developer.hashicorp.com/vault/docs/commands/token/create
+  - https://developer.hashicorp.com/vault/tutorials/operations/generate-root
+author: RunReveal
+date: 2025-07-24
+tags:
+  - hashicorp-vault
+  - identity-access-management
+  - signal
+sourcetypes:
+  - hashicorp-vault
+detection:
+  selection:
+    eventName: create
+    eventServicePath|startswith: auth/token/create
+  filter_root:
+    rawLog|contains: '"no_parent":true'
+  condition: selection and filter_root
+falsepositives:
+  - Emergency break-glass procedures requiring root token generation
+  - Initial Vault cluster setup
+level: critical
+riskscore: 95
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1078

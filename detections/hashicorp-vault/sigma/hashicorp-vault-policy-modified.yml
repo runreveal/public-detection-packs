@@ -1,0 +1,34 @@
+title: HashiCorp Vault Policy Created or Updated
+id: hashicorp-vault-policy-created-or-updated
+description: >
+  Detects creation or modification of policies in HashiCorp Vault. Policies control access
+  to secrets and operations. Unauthorized policy changes can grant elevated privileges
+  or weaken security controls.
+references:
+  - https://developer.hashicorp.com/vault/docs/concepts/policies
+  - https://developer.hashicorp.com/vault/api-docs/system/policy
+author: RunReveal
+date: 2025-07-24
+tags:
+  - hashicorp-vault
+  - audit-activity
+  - signal
+sourcetypes:
+  - hashicorp-vault
+detection:
+  selection:
+    eventServicePath|startswith: sys/policy/
+    eventName:
+      - create
+      - update
+      - delete
+  condition: selection
+falsepositives:
+  - Routine policy updates by platform administrators
+  - Infrastructure as code deployments managing Vault policies
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1098
