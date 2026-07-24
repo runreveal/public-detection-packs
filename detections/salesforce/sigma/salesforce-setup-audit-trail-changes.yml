@@ -5,8 +5,8 @@ description: >
   providers, SSO settings, and IP restrictions. Unauthorized modifications could
   weaken the organization's security posture or enable unauthorized access.
 references:
-  - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_setupaudittrail.htm
-  - https://help.salesforce.com/s/articleView?id=sf.security_overview.htm
+  - https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm
+  - https://docs.kratapps.com/setup-audit-trail/reference/
 author: RunReveal
 date: 2025-07-24
 tags:
@@ -14,16 +14,16 @@ tags:
   - audit-activity
   - signal
 sourcetypes:
-  - salesforce
+  - salesforce-audittrail
 detection:
   selection:
     eventName:
-      - ChangedAuthProvider
-      - ChangedSSOConfig
-      - ChangedIPRestriction
-      - ChangedLoginPolicy
-      - ChangedPasswordPolicy
-      - ChangedSessionSettings
+      - insertAuthProvider
+      - deleteAuthProvider
+      - enableIdp
+      - disableIdp
+      - loginIpRange
+      - deleteIpWhiteList
   condition: selection
 falsepositives:
   - Planned security configuration updates by IT administrators

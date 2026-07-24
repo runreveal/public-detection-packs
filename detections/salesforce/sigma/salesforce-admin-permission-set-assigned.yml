@@ -4,8 +4,8 @@ description: >
   Detects assignment of admin-level permission sets to users, which could
   indicate privilege escalation or unauthorized access grants.
 references:
-  - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_permissionsetassignment.htm
   - https://help.salesforce.com/s/articleView?id=sf.perm_sets_overview.htm
+  - https://docs.kratapps.com/setup-audit-trail/reference/
 author: RunReveal
 date: 2025-07-24
 tags:
@@ -13,12 +13,10 @@ tags:
   - identity-access-management
   - signal
 sourcetypes:
-  - salesforce
+  - salesforce-audittrail
 detection:
   selection:
-    eventName:
-      - PermissionSetAssignment
-      - AssignPermissionSet
+    eventName: PermSetAssign
   condition: selection
 falsepositives:
   - Routine onboarding of new administrators by IT

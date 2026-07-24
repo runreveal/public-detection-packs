@@ -17,9 +17,7 @@ sourcetypes:
   - salesforce
 detection:
   selection:
-    eventName:
-      - ReportExport
-      - ExportReport
+    eventName: ReportExport
   condition: selection
 falsepositives:
   - Scheduled report exports for business intelligence workflows

@@ -17,9 +17,7 @@ sourcetypes:
   - salesforce
 detection:
   selection:
-    eventName:
-      - LoginAs
-      - LoginAsAnotherUser
+    eventName: LoginAs
   condition: selection
 falsepositives:
   - Support administrators troubleshooting user-reported issues

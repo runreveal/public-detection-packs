@@ -5,8 +5,8 @@ description: >
   which grants full access to all Salesforce data and configuration. This could
   indicate privilege escalation by a compromised account or insider threat.
 references:
-  - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_userrole.htm
   - https://help.salesforce.com/s/articleView?id=sf.admin_userprofiles.htm
+  - https://docs.kratapps.com/setup-audit-trail/reference/
 author: RunReveal
 date: 2025-07-24
 tags:
@@ -14,14 +14,13 @@ tags:
   - identity-access-management
   - signal
 sourcetypes:
-  - salesforce
+  - salesforce-audittrail
 detection:
   selection:
     eventName:
-      - changedUserProfile
+      - changedProfileForUser
+      - changedProfileForUserCustom
       - changedUserRole
-      - UserProfileChanged
-      - UserRoleChanged
   condition: selection
 falsepositives:
   - Planned role changes during organizational restructuring
