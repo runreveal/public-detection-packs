@@ -1,0 +1,34 @@
+title: Salesforce User Role Escalated to Admin
+id: salesforce-user-role-escalated-to-admin
+description: >
+  Detects when a user's role or profile is changed to System Administrator,
+  which grants full access to all Salesforce data and configuration. This could
+  indicate privilege escalation by a compromised account or insider threat.
+references:
+  - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_userrole.htm
+  - https://help.salesforce.com/s/articleView?id=sf.admin_userprofiles.htm
+author: RunReveal
+date: 2025-07-24
+tags:
+  - salesforce
+  - identity-access-management
+  - signal
+sourcetypes:
+  - salesforce
+detection:
+  selection:
+    eventName:
+      - changedUserProfile
+      - changedUserRole
+      - UserProfileChanged
+      - UserRoleChanged
+  condition: selection
+falsepositives:
+  - Planned role changes during organizational restructuring
+  - IT promoting users to admin roles as part of onboarding
+level: high
+riskscore: 80
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1098

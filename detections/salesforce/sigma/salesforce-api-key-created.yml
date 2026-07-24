@@ -1,0 +1,33 @@
+title: Salesforce Connected App or API Token Created
+id: salesforce-connected-app-or-api-token-created
+description: >
+  Detects creation of connected apps or API tokens which provide programmatic
+  access to Salesforce data. Unauthorized creation could enable persistent
+  backdoor access to the organization.
+references:
+  - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_connectedapplication.htm
+  - https://help.salesforce.com/s/articleView?id=sf.connected_app_overview.htm
+author: RunReveal
+date: 2025-07-24
+tags:
+  - salesforce
+  - audit-activity
+  - signal
+sourcetypes:
+  - salesforce
+detection:
+  selection:
+    eventName:
+      - ConnectedAppCreated
+      - CreateConnectedApp
+      - ApiTokenCreated
+  condition: selection
+falsepositives:
+  - Development teams creating integrations with approved third-party services
+  - IT provisioning new connected apps during planned deployments
+level: high
+riskscore: 70
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1098.001
