@@ -18,9 +18,8 @@ sourcetypes:
 detection:
   selection:
     eventName:
-      - Add member to role.
       - Add member to role
-      - Add eligible member to role.
+      - Add eligible member to role
   condition: selection
 falsepositives:
   - Routine admin role assignments by IT administrators
