@@ -14,10 +14,10 @@ tags:
   - system-activity
   - signal
 sourcetypes:
-  - kubernetes
+  - kubernetes-audit
 detection:
   selection:
-    eventName: delete
+    verb: delete
     objectRef.resource: namespaces
   condition: selection
 falsepositives:

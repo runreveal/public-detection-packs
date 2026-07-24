@@ -15,7 +15,7 @@ tags:
   - identity-access-management
   - signal
 sourcetypes:
-  - kubernetes
+  - kubernetes-audit
 detection:
   selection:
     user.username: system:anonymous

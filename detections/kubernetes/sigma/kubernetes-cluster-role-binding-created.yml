@@ -6,7 +6,7 @@ description: >
   powerful roles like cluster-admin to compromised accounts.
 references:
   - https://kubernetes.io/docs/reference/access-authn-authz/rbac/#clusterrolebinding-example
-  - https://kubernetes.io/docs/reference/access-authn-authz/audit-policy/
+  - https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/
 author: RunReveal
 date: 2025-07-24
 tags:
@@ -14,10 +14,10 @@ tags:
   - identity-access-management
   - signal
 sourcetypes:
-  - kubernetes
+  - kubernetes-audit
 detection:
   selection:
-    eventName: create
+    verb: create
     objectRef.resource: clusterrolebindings
   condition: selection
 falsepositives:

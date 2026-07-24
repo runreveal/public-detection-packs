@@ -14,10 +14,10 @@ tags:
   - network-activity
   - signal
 sourcetypes:
-  - kubernetes
+  - kubernetes-audit
 detection:
   selection:
-    eventName: create
+    verb: create
     objectRef.resource: nodes
     objectRef.subresource: proxy
   condition: selection

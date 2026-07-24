@@ -14,10 +14,10 @@ tags:
   - system-activity
   - signal
 sourcetypes:
-  - kubernetes
+  - kubernetes-audit
 detection:
   selection:
-    eventName: create
+    verb: create
     objectRef.resource: pods
     objectRef.subresource: exec
   condition: selection
