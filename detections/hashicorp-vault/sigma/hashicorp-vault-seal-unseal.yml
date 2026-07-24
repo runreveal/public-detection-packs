@@ -17,10 +17,10 @@ sourcetypes:
   - hashicorp-vault
 detection:
   selection:
-    eventServicePath:
+    request.path:
       - sys/seal
       - sys/unseal
-    eventName: update
+    request.operation: update
   condition: selection
 falsepositives:
   - Planned maintenance windows requiring Vault seal and unseal

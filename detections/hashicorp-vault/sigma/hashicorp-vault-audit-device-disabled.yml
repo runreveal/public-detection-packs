@@ -17,8 +17,8 @@ sourcetypes:
   - hashicorp-vault
 detection:
   selection:
-    eventServicePath|startswith: sys/audit/
-    eventName: delete
+    request.path|startswith: sys/audit/
+    request.operation: delete
   condition: selection
 falsepositives:
   - Planned audit device rotation or migration to a new audit backend

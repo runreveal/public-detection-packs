@@ -16,8 +16,8 @@ sourcetypes:
   - hashicorp-vault
 detection:
   selection:
-    eventServicePath: auth/token/accessors
-    eventName: list
+    request.path: auth/token/accessors
+    request.operation: list
   condition: selection
 falsepositives:
   - Automated token management or cleanup scripts

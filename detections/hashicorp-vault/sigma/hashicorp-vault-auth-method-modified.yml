@@ -16,8 +16,8 @@ sourcetypes:
   - hashicorp-vault
 detection:
   selection:
-    eventServicePath|startswith: sys/auth/
-    eventName:
+    request.path|startswith: sys/auth/
+    request.operation:
       - create
       - update
       - delete

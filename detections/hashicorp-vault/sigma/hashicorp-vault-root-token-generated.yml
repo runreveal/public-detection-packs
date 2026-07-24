@@ -17,8 +17,8 @@ sourcetypes:
   - hashicorp-vault
 detection:
   selection:
-    eventName: create
-    eventServicePath|startswith: auth/token/create
+    request.operation: create
+    request.path|startswith: auth/token/create
   filter_root:
     rawLog|contains: '"no_parent":true'
   condition: selection and filter_root

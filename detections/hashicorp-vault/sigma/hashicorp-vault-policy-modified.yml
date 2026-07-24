@@ -17,8 +17,8 @@ sourcetypes:
   - hashicorp-vault
 detection:
   selection:
-    eventServicePath|startswith: sys/policy/
-    eventName:
+    request.path|startswith: sys/policy/
+    request.operation:
       - create
       - update
       - delete
