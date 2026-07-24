@@ -1,0 +1,33 @@
+title: Duo Security User Enrollment Deleted
+id: duo-security-user-enrollment-deleted
+description: >
+  Detects removal of a user's MFA enrollment from Duo. Deleting an enrollment
+  could allow an attacker to re-enroll with a device they control, effectively
+  bypassing multi-factor authentication.
+references:
+  - https://duo.com/docs/adminapi#administrator-logs
+  - https://duo.com/docs/administration-users#managing-users
+author: RunReveal
+date: 2025-07-24
+tags:
+  - duo
+  - identity-access-management
+  - signal
+sourcetypes:
+  - duo
+detection:
+  selection:
+    eventName:
+      - enrollment_delete
+      - phone_delete
+      - token_delete
+  condition: selection
+falsepositives:
+  - Users replacing a lost or broken device through a legitimate re-enrollment process
+  - IT helpdesk removing old devices during hardware refresh
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0006
+mitreTechniques:
+  - T1556

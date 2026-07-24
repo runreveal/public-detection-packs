@@ -1,0 +1,29 @@
+title: Duo Security Admin Panel Login
+id: duo-security-admin-panel-login
+description: >
+  Detects login events to the Duo Admin Panel. Monitoring admin console access
+  helps identify unauthorized or suspicious administrative sessions.
+references:
+  - https://duo.com/docs/adminapi#administrator-logs
+  - https://duo.com/docs/administration-admins
+author: RunReveal
+date: 2025-07-24
+tags:
+  - duo
+  - identity-access-management
+  - signal
+sourcetypes:
+  - duo
+detection:
+  selection:
+    eventName: admin_login
+  condition: selection
+falsepositives:
+  - Routine admin console access by authorized administrators
+  - Automated admin sessions from provisioning systems
+level: medium
+riskscore: 50
+mitreAttacks:
+  - TA0001
+mitreTechniques:
+  - T1078.004
