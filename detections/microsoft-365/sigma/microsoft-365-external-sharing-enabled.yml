@@ -1,0 +1,32 @@
+title: Microsoft 365 External Sharing Enabled
+id: microsoft-365-external-sharing-enabled
+description: |
+  Detects changes to SharePoint external sharing policies or creation of
+  anonymous access links. Enabling external sharing can expose sensitive
+  documents to unauthorized parties outside the organization.
+references:
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#sharepoint-sharing-events
+  - https://learn.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - audit-activity
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - SharingPolicyChanged
+      - AnonymousLinkCreated
+  condition: selection
+falsepositives:
+  - Legitimate external collaboration with partners or vendors
+  - IT administrators adjusting sharing policies for business needs
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0010
+mitreTechniques:
+  - T1567

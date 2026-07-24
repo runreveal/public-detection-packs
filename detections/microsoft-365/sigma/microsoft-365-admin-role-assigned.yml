@@ -1,0 +1,31 @@
+title: Microsoft 365 Admin Role Assigned
+id: microsoft-365-admin-role-assigned
+description: |
+  Detects when an admin role is assigned to a user in Microsoft 365.
+  Privilege escalation through admin role assignment is a common attack
+  technique to gain persistent elevated access to the tenant.
+references:
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#azure-ad-group-administration-activities
+  - https://learn.microsoft.com/en-us/entra/identity/role-based-access-control/permissions-reference
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - identity-access-management
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - Add member to role.
+  condition: selection
+falsepositives:
+  - Routine admin role assignments by IT administrators
+  - Onboarding of new administrators
+level: high
+riskscore: 80
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1098
