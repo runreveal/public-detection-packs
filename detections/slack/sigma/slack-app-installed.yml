@@ -1,0 +1,32 @@
+title: Slack Workspace App Installed
+id: slack-workspace-app-installed
+description: >
+  Detects when a new application is installed in the Slack workspace.
+  Unauthorized app installations can introduce malicious integrations
+  or data exfiltration channels.
+references:
+  - https://api.slack.com/admins/audit-logs-call
+  - https://api.slack.com/events
+author: RunReveal
+date: 2025-07-24
+tags:
+  - slack
+  - application-activity
+  - signal
+sourcetypes:
+  - slack
+detection:
+  selection:
+    eventName:
+      - app_installed
+      - app_approved
+      - app_resources_granted
+  condition: selection
+falsepositives:
+  - IT-approved application installations as part of normal workspace management
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0001
+mitreTechniques:
+  - T1195.002

@@ -1,0 +1,35 @@
+title: GitLab User Added as Admin or Owner
+id: gitlab-user-added-as-admin-or-owner
+description: >
+  Detects when a user is granted admin or owner role in GitLab.
+  Unauthorized privilege escalation to admin can provide full control
+  over the GitLab instance, repositories, and CI/CD pipelines.
+references:
+  - https://docs.gitlab.com/ee/administration/audit_event_reports.html
+  - https://docs.gitlab.com/ee/user/permissions.html
+author: RunReveal
+date: 2025-07-24
+tags:
+  - gitlab
+  - identity-access-management
+  - signal
+sourcetypes:
+  - gitlab
+detection:
+  selection:
+    eventName:
+      - user_admin_status_changed
+      - member_role_updated
+    eventDetails:
+      - admin
+      - owner
+      - Owner
+  condition: selection
+falsepositives:
+  - Planned role changes during organizational restructuring
+level: high
+riskscore: 80
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1098

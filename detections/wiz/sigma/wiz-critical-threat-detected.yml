@@ -1,0 +1,31 @@
+title: Wiz Critical Threat Detected
+id: wiz-critical-threat-detected
+description: >
+  Detects critical severity threats reported by Wiz. Critical threats
+  represent the highest risk findings that require immediate investigation
+  and response.
+references:
+  - https://docs.wiz.io/wiz-docs/docs/threat-center
+  - https://docs.wiz.io/wiz-docs/docs/wiz-api
+author: RunReveal
+date: 2025-07-24
+tags:
+  - wiz
+  - findings
+  - signal
+sourcetypes:
+  - wiz-threats
+detection:
+  selection:
+    severity:
+      - CRITICAL
+      - critical
+  condition: selection
+falsepositives:
+  - Known critical findings in non-production environments awaiting remediation
+level: critical
+riskscore: 90
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1204

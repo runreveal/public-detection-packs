@@ -1,0 +1,32 @@
+title: Slack External User Invited
+id: slack-external-user-invited
+description: >
+  Detects when a guest or external user is invited to a Slack channel
+  or workspace. External users may pose a risk for data leakage or
+  social engineering attacks.
+references:
+  - https://api.slack.com/admins/audit-logs-call
+  - https://slack.com/help/articles/202518103-Understand-guest-roles-in-Slack
+author: RunReveal
+date: 2025-07-24
+tags:
+  - slack
+  - identity-access-management
+  - signal
+sourcetypes:
+  - slack
+detection:
+  selection:
+    eventName:
+      - guest_invited
+      - guest_created
+      - external_shared_channel_invite_sent
+  condition: selection
+falsepositives:
+  - Legitimate guest invitations for cross-organization collaboration
+level: medium
+riskscore: 50
+mitreAttacks:
+  - TA0001
+mitreTechniques:
+  - T1566

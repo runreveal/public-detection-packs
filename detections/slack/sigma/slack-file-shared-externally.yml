@@ -1,0 +1,32 @@
+title: Slack File Shared Externally
+id: slack-file-shared-externally
+description: >
+  Detects when files are shared to external parties via Slack.
+  External file sharing may indicate data exfiltration or accidental
+  exposure of sensitive information.
+references:
+  - https://api.slack.com/admins/audit-logs-call
+  - https://slack.com/help/articles/115004155306-Manage-file-sharing-in-your-workspace
+author: RunReveal
+date: 2025-07-24
+tags:
+  - slack
+  - application-activity
+  - signal
+sourcetypes:
+  - slack
+detection:
+  selection:
+    eventName:
+      - file_shared
+      - file_downloaded
+      - external_shared_channel_connected
+  condition: selection
+falsepositives:
+  - Normal file sharing with approved external partners or vendors
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0010
+mitreTechniques:
+  - T1567

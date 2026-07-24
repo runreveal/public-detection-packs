@@ -1,0 +1,32 @@
+title: GitLab Deploy Token Created
+id: gitlab-deploy-token-created
+description: >
+  Detects creation of deploy tokens in GitLab. Deploy tokens provide
+  automated access to repositories and registries. Unauthorized token
+  creation may indicate persistence or lateral movement attempts.
+references:
+  - https://docs.gitlab.com/ee/administration/audit_event_reports.html
+  - https://docs.gitlab.com/ee/user/project/deploy_tokens/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - gitlab
+  - audit-activity
+  - signal
+sourcetypes:
+  - gitlab
+detection:
+  selection:
+    eventName:
+      - deploy_token_created
+      - project_access_token_created
+      - group_access_token_created
+  condition: selection
+falsepositives:
+  - CI/CD pipeline setup requiring deploy tokens for automated deployments
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1098.001

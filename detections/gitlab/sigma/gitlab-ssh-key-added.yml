@@ -1,0 +1,31 @@
+title: GitLab SSH Key Added
+id: gitlab-ssh-key-added
+description: >
+  Detects when a new SSH key is added to a GitLab account.
+  Attackers may add SSH keys to maintain persistent access to
+  repositories and infrastructure.
+references:
+  - https://docs.gitlab.com/ee/administration/audit_event_reports.html
+  - https://docs.gitlab.com/ee/api/audit_events.html
+author: RunReveal
+date: 2025-07-24
+tags:
+  - gitlab
+  - identity-access-management
+  - signal
+sourcetypes:
+  - gitlab
+detection:
+  selection:
+    eventName:
+      - key_created
+      - deploy_key_added
+  condition: selection
+falsepositives:
+  - Developers adding SSH keys during normal onboarding or key rotation
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1098.004
