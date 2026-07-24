@@ -1,0 +1,35 @@
+title: SentinelOne Agent Tampered or Uninstalled
+id: sentinelone-agent-tampered-or-uninstalled
+description: >
+  Detects when a SentinelOne agent is tampered with or uninstalled from an
+  endpoint. Agent tampering or removal is a common defense evasion technique
+  used by attackers to disable endpoint protection before executing malicious
+  payloads.
+references:
+  - https://www.sentinelone.com/platform/singularity-endpoint/
+  - https://www.sentinelone.com/resources/data-sheet-tamper-protection/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - sentinelone
+  - system-activity
+  - signal
+sourcetypes:
+  - sentinelone
+detection:
+  selection:
+    eventName:
+      - Agent Tampered
+      - Agent Uninstalled
+      - Anti Tamper Modified
+      - Tamper Protection Disabled
+  condition: selection
+falsepositives:
+  - Planned agent upgrades or migrations managed by IT
+  - Authorized agent removal during endpoint decommissioning
+level: critical
+riskscore: 90
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562.001

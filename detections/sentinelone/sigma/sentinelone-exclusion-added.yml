@@ -1,0 +1,34 @@
+title: SentinelOne Exclusion Added
+id: sentinelone-exclusion-added
+description: >
+  Detects when a new exclusion is added to a SentinelOne policy. Exclusions
+  can be abused by attackers to whitelist malicious files or paths, effectively
+  disabling protection for specific threat vectors.
+references:
+  - https://www.sentinelone.com/platform/singularity-endpoint/
+  - https://community.sentinelone.com/s/article/000007478
+author: RunReveal
+date: 2025-07-24
+tags:
+  - sentinelone
+  - audit-activity
+  - signal
+sourcetypes:
+  - sentinelone
+detection:
+  selection:
+    eventName:
+      - Exclusion Created
+      - Exclusion Added
+      - Path Exclusion Created
+      - Hash Exclusion Created
+  condition: selection
+falsepositives:
+  - Legitimate exclusions added by security team for known false positives
+  - Vendor-recommended exclusions for compatible software
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562.001

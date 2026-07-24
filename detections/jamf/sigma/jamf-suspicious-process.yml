@@ -1,0 +1,33 @@
+title: JAMF Protect Suspicious Process Execution
+id: jamf-protect-suspicious-process-execution
+description: >
+  Detects processes flagged as suspicious by JAMF Protect on managed macOS
+  endpoints. Suspicious process execution may indicate command-and-control
+  activity, post-exploitation tooling, or lateral movement attempts.
+references:
+  - https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Analytic_Detections.html
+  - https://attack.mitre.org/techniques/T1059/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - jamf
+  - system-activity
+  - signal
+sourcetypes:
+  - jamf-protect
+detection:
+  selection:
+    eventName:
+      - GPSuspiciousProcess
+      - suspicious_process
+      - process_blocked
+  condition: selection
+falsepositives:
+  - Legitimate administrative scripts or automation tools
+  - Developer tooling that mimics suspicious behavior patterns
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1059
