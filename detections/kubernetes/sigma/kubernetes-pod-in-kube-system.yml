@@ -1,0 +1,33 @@
+title: Kubernetes Pod Created in kube-system Namespace
+id: kubernetes-pod-created-in-kube-system-namespace
+description: >
+  Detects pod creation in the kube-system namespace. This namespace hosts
+  critical cluster components and unauthorized pod creation here may indicate
+  an attacker deploying malicious workloads with elevated access.
+references:
+  - https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+  - https://kubernetes.io/docs/reference/access-authn-authz/audit-policy/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - kubernetes
+  - system-activity
+  - signal
+sourcetypes:
+  - kubernetes
+detection:
+  selection:
+    eventName: create
+    objectRef.resource: pods
+    objectRef.namespace: kube-system
+  condition: selection
+falsepositives:
+  - Cluster upgrades deploying updated system components
+  - Legitimate add-on installations such as CNI plugins or monitoring agents
+  - Managed Kubernetes providers deploying control-plane components
+level: high
+riskscore: 70
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1610

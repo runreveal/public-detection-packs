@@ -1,0 +1,31 @@
+title: Kubernetes Anonymous or Unauthenticated Request
+id: kubernetes-anonymous-or-unauthenticated-request
+description: >
+  Detects requests made by the system:anonymous user to the Kubernetes API.
+  Anonymous access should be disabled in production clusters. Its presence
+  may indicate misconfigured authentication or an attacker probing the API
+  without credentials.
+references:
+  - https://kubernetes.io/docs/reference/access-authn-authz/authentication/#anonymous-requests
+  - https://kubernetes.io/docs/reference/access-authn-authz/audit-policy/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - kubernetes
+  - identity-access-management
+  - signal
+sourcetypes:
+  - kubernetes
+detection:
+  selection:
+    user.username: system:anonymous
+  condition: selection
+falsepositives:
+  - Health check endpoints configured to allow anonymous access
+  - Load balancer readiness probes hitting unauthenticated endpoints
+level: critical
+riskscore: 90
+mitreAttacks:
+  - TA0001
+mitreTechniques:
+  - T1078

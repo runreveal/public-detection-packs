@@ -1,0 +1,31 @@
+title: Kubernetes Namespace Deleted
+id: kubernetes-namespace-deleted
+description: >
+  Detects deletion of Kubernetes namespaces. Namespace deletion removes
+  all resources within the namespace and may indicate destructive activity
+  or an attempt to cover tracks by removing workloads and logs.
+references:
+  - https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+  - https://kubernetes.io/docs/reference/access-authn-authz/audit-policy/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - kubernetes
+  - system-activity
+  - signal
+sourcetypes:
+  - kubernetes
+detection:
+  selection:
+    eventName: delete
+    objectRef.resource: namespaces
+  condition: selection
+falsepositives:
+  - Cluster administrators removing unused namespaces during cleanup
+  - CI/CD pipelines tearing down ephemeral test environments
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0040
+mitreTechniques:
+  - T1485

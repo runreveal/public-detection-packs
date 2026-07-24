@@ -1,0 +1,32 @@
+title: Kubernetes Node Proxy Access
+id: kubernetes-node-proxy-access
+description: >
+  Detects proxy access to Kubernetes nodes. Node proxy requests allow
+  bypassing network boundaries to reach services on nodes directly,
+  which can be abused for lateral movement or accessing node-level services.
+references:
+  - https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#proxy
+  - https://kubernetes.io/docs/concepts/architecture/nodes/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - kubernetes
+  - network-activity
+  - signal
+sourcetypes:
+  - kubernetes
+detection:
+  selection:
+    eventName: create
+    objectRef.resource: nodes
+    objectRef.subresource: proxy
+  condition: selection
+falsepositives:
+  - Monitoring systems accessing node metrics via proxy
+  - Cluster administrators performing node-level diagnostics
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0008
+mitreTechniques:
+  - T1599
