@@ -24,7 +24,18 @@ detection:
   selection:
     eventSource: ec2.amazonaws.com
     eventName: RunInstances
-  condition: selection
+  # Update allowed_regions to match the AWS regions your organization uses.
+  # Any RunInstances event outside these regions will trigger the detection.
+  allowed_regions:
+    awsRegion:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - eu-west-1
+      - eu-west-2
+      - eu-central-1
+  condition: selection and not allowed_regions
 falsepositives:
   - Legitimate expansion of infrastructure to new regions
   - Disaster recovery testing
