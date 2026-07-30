@@ -1,0 +1,32 @@
+title: Duo Security Auth Policy Modified or Deleted
+id: duo-security-auth-policy-modified-or-deleted
+description: >
+  Detects modification or deletion of authentication policies in Duo. Changes
+  to MFA policies could weaken security controls and allow unauthorized access
+  without proper multi-factor authentication.
+references:
+  - https://duo.com/docs/adminapi#administrator-logs
+  - https://duo.com/docs/administration-policies
+author: RunReveal
+date: 2025-07-24
+tags:
+  - duo
+  - audit-activity
+  - signal
+sourcetypes:
+  - duo
+detection:
+  selection:
+    eventName:
+      - policy_update
+      - policy_delete
+  condition: selection
+falsepositives:
+  - Planned security policy updates by authorized administrators
+  - Policy cleanup during organizational changes
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562
