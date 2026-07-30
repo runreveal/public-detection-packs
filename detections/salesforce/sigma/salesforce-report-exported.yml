@@ -1,0 +1,30 @@
+title: Salesforce Report Exported
+id: salesforce-report-exported
+description: >
+  Detects report export events which may indicate data exfiltration attempts.
+  Exported reports can contain sensitive business data including customer
+  information, financial records, and internal metrics.
+references:
+  - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_eventlogfile_report_export.htm
+  - https://help.salesforce.com/s/articleView?id=sf.reports_export.htm
+author: RunReveal
+date: 2025-07-24
+tags:
+  - salesforce
+  - audit-activity
+  - signal
+sourcetypes:
+  - salesforce
+detection:
+  selection:
+    eventName: ReportExport
+  condition: selection
+falsepositives:
+  - Scheduled report exports for business intelligence workflows
+  - Finance or compliance teams exporting periodic reports
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0009
+mitreTechniques:
+  - T1530

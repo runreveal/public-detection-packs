@@ -1,0 +1,30 @@
+title: Salesforce Login As Another User
+id: salesforce-login-as-another-user
+description: >
+  Detects when an administrator uses the "Login As" feature to impersonate
+  another user. While this is a legitimate admin capability, it can be abused
+  to access sensitive data or perform actions under another user's identity.
+references:
+  - https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_eventlogfile_login_as.htm
+  - https://help.salesforce.com/s/articleView?id=sf.users_login_as.htm
+author: RunReveal
+date: 2025-07-24
+tags:
+  - salesforce
+  - identity-access-management
+  - signal
+sourcetypes:
+  - salesforce
+detection:
+  selection:
+    eventName: LoginAs
+  condition: selection
+falsepositives:
+  - Support administrators troubleshooting user-reported issues
+  - IT verifying user permissions during access reviews
+level: high
+riskscore: 70
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1078

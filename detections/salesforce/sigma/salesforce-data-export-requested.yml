@@ -1,0 +1,30 @@
+title: Salesforce Data Export Requested
+id: salesforce-data-export-requested
+description: >
+  Detects when a full organization data export is requested. Data exports
+  include all Salesforce objects and attachments, making this a high-risk
+  event for data exfiltration if performed by an unauthorized user.
+references:
+  - https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile.htm
+  - https://help.salesforce.com/s/articleView?id=sf.admin_exportdata.htm
+author: RunReveal
+date: 2025-07-24
+tags:
+  - salesforce
+  - audit-activity
+  - signal
+sourcetypes:
+  - salesforce
+detection:
+  selection:
+    eventName: DataExport
+  condition: selection
+falsepositives:
+  - Scheduled data backups managed by IT
+  - Compliance-required periodic data exports
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0010
+mitreTechniques:
+  - T1567

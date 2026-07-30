@@ -1,0 +1,29 @@
+title: Salesforce Admin Permission Set Assigned
+id: salesforce-admin-permission-set-assigned
+description: >
+  Detects assignment of admin-level permission sets to users, which could
+  indicate privilege escalation or unauthorized access grants.
+references:
+  - https://help.salesforce.com/s/articleView?id=sf.perm_sets_overview.htm
+  - https://docs.kratapps.com/setup-audit-trail/reference/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - salesforce
+  - identity-access-management
+  - signal
+sourcetypes:
+  - salesforce-audittrail
+detection:
+  selection:
+    eventName: PermSetAssign
+  condition: selection
+falsepositives:
+  - Routine onboarding of new administrators by IT
+  - Temporary permission escalation for support cases
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1098

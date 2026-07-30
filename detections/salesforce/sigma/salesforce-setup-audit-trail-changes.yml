@@ -1,0 +1,36 @@
+title: Salesforce Critical Setup Changes
+id: salesforce-critical-setup-changes
+description: >
+  Detects changes to critical security configurations such as authentication
+  providers, SSO settings, and IP restrictions. Unauthorized modifications could
+  weaken the organization's security posture or enable unauthorized access.
+references:
+  - https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm
+  - https://docs.kratapps.com/setup-audit-trail/reference/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - salesforce
+  - audit-activity
+  - signal
+sourcetypes:
+  - salesforce-audittrail
+detection:
+  selection:
+    eventName:
+      - insertAuthProvider
+      - deleteAuthProvider
+      - enableIdp
+      - disableIdp
+      - loginIpRange
+      - deleteIpWhiteList
+  condition: selection
+falsepositives:
+  - Planned security configuration updates by IT administrators
+  - Identity provider migrations or SSO rollout changes
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562
