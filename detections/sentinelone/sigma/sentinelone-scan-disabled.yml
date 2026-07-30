@@ -1,0 +1,33 @@
+title: SentinelOne Full Disk Scan Disabled
+id: sentinelone-full-disk-scan-disabled
+description: >
+  Detects when full disk scan is disabled in a SentinelOne policy. Disabling
+  scans reduces visibility into threats on endpoints and may indicate an
+  attacker attempting to prevent detection of persisted malware.
+references:
+  - https://usea1-partners.sentinelone.net/api-doc/overview
+  - https://docs.sentinelone.com/docs/endpoint-security-policy
+author: RunReveal
+date: 2025-07-24
+tags:
+  - sentinelone
+  - audit-activity
+  - signal
+sourcetypes:
+  - sentinelone
+detection:
+  selection:
+    eventName:
+      - Scan Disabled
+      - Full Disk Scan Disabled
+      - Policy Updated Scan Disabled
+  condition: selection
+falsepositives:
+  - Temporary scan disablement during maintenance windows
+  - Policy changes during agent performance tuning
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562.001

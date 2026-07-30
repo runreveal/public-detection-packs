@@ -1,0 +1,33 @@
+title: SentinelOne Threat Detected Not Mitigated
+id: sentinelone-threat-detected-not-mitigated
+description: >
+  Detects threats identified by SentinelOne that were not automatically
+  mitigated. Unmitigated threats may indicate a failure in automated response
+  or a threat that requires manual intervention, leaving the endpoint exposed.
+references:
+  - https://usea1-partners.sentinelone.net/api-doc/overview
+  - https://docs.sentinelone.com/docs/threats
+author: RunReveal
+date: 2025-07-24
+tags:
+  - sentinelone
+  - findings
+  - signal
+sourcetypes:
+  - sentinelone
+detection:
+  selection:
+    eventName:
+      - Threat Not Mitigated
+      - Threat Mitigation Failed
+      - Malicious Threat Not Mitigated
+  condition: selection
+falsepositives:
+  - Threats pending manual review by security team
+  - Known benign files flagged as threats awaiting exclusion
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1204

@@ -1,0 +1,30 @@
+title: JAMF Protect Gatekeeper Override
+id: jamf-protect-gatekeeper-override
+description: >
+  Detects when a user bypasses macOS Gatekeeper to run an unsigned or
+  unnotarized application. Gatekeeper overrides can be used to execute
+  malicious applications that would otherwise be blocked by macOS security.
+references:
+  - https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Threat_Events_Stream_Event_Types.html
+  - https://support.apple.com/guide/security/gatekeeper-and-runtime-protection-sec5599b66df
+author: RunReveal
+date: 2025-07-24
+tags:
+  - jamf
+  - system-activity
+  - signal
+sourcetypes:
+  - jamf-protect
+detection:
+  selection:
+    eventName: GPGatekeeperEvent
+  condition: selection
+falsepositives:
+  - Developers running locally built unsigned applications
+  - IT-approved applications pending notarization
+level: high
+riskscore: 70
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1553.001

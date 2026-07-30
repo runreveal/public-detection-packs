@@ -1,0 +1,33 @@
+title: SentinelOne User Promoted to Admin
+id: sentinelone-user-promoted-to-admin
+description: >
+  Detects when a user is promoted to an admin role in the SentinelOne console.
+  Unauthorized privilege escalation could allow an attacker to modify security
+  policies, disable protections, or exfiltrate security data.
+references:
+  - https://usea1-partners.sentinelone.net/api-doc/overview
+  - https://docs.sentinelone.com/docs/rbac
+author: RunReveal
+date: 2025-07-24
+tags:
+  - sentinelone
+  - identity-access-management
+  - signal
+sourcetypes:
+  - sentinelone
+detection:
+  selection:
+    eventName:
+      - User Promoted
+      - User Role Changed
+      - Admin Role Assigned
+  condition: selection
+falsepositives:
+  - Legitimate admin role assignments during employee onboarding
+  - Temporary admin access granted for troubleshooting
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1098

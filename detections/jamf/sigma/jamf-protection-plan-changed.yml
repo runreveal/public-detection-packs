@@ -1,0 +1,34 @@
+title: JAMF Protect Endpoint Protection Plan Changed
+id: jamf-protect-endpoint-protection-plan-changed
+description: >
+  Detects modifications to JAMF Protect endpoint protection plans. Changes to
+  protection plans could weaken endpoint security posture if made by an
+  unauthorized user or compromised admin account.
+references:
+  - https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Plans.html
+  - https://learn.jamf.com/en-US/bundle/jamf-protect-documentation/page/Audit_Logs.html
+author: RunReveal
+date: 2025-07-24
+tags:
+  - jamf
+  - audit-activity
+  - signal
+sourcetypes:
+  - jamf-protect
+detection:
+  selection:
+    # Audit event_type_name values; verify against live JAMF Protect audit logs.
+    eventName:
+      - PlanUpdated
+      - PlanDeleted
+      - PlanCreated
+  condition: selection
+falsepositives:
+  - Planned protection plan updates by security administrators
+  - Rollout of new protection configurations during policy reviews
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562
