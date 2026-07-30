@@ -1,0 +1,30 @@
+title: HashiCorp Vault Audit Device Disabled
+id: hashicorp-vault-audit-device-disabled
+description: >
+  Detects when an audit device is disabled in HashiCorp Vault. Disabling audit logging
+  is a critical defense evasion technique that allows an attacker to operate without
+  leaving an audit trail.
+references:
+  - https://developer.hashicorp.com/vault/docs/audit
+  - https://developer.hashicorp.com/vault/api-docs/system/audit
+author: RunReveal
+date: 2025-07-24
+tags:
+  - hashicorp-vault
+  - audit-activity
+  - signal
+sourcetypes:
+  - hashicorp-vault
+detection:
+  selection:
+    request.path|startswith: sys/audit/
+    request.operation: delete
+  condition: selection
+falsepositives:
+  - Planned audit device rotation or migration to a new audit backend
+level: critical
+riskscore: 95
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562.008

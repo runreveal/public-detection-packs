@@ -1,0 +1,33 @@
+title: HashiCorp Vault Seal or Unseal Operation
+id: hashicorp-vault-seal-or-unseal-operation
+description: >
+  Detects seal or unseal operations on a HashiCorp Vault cluster. Sealing a Vault
+  renders all secrets inaccessible and can cause service disruption. Unsealing may
+  indicate recovery from an incident or unauthorized access to unseal keys.
+references:
+  - https://developer.hashicorp.com/vault/docs/concepts/seal
+  - https://developer.hashicorp.com/vault/api-docs/system/seal
+author: RunReveal
+date: 2025-07-24
+tags:
+  - hashicorp-vault
+  - system-activity
+  - signal
+sourcetypes:
+  - hashicorp-vault
+detection:
+  selection:
+    request.path:
+      - sys/seal
+      - sys/unseal
+    request.operation: update
+  condition: selection
+falsepositives:
+  - Planned maintenance windows requiring Vault seal and unseal
+  - Vault cluster restarts or failover events
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0040
+mitreTechniques:
+  - T1490

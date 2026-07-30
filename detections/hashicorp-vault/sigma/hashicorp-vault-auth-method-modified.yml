@@ -1,0 +1,33 @@
+title: HashiCorp Vault Auth Method Enabled or Modified
+id: hashicorp-vault-auth-method-enabled-or-modified
+description: >
+  Detects when an authentication method is enabled, disabled, or modified in HashiCorp Vault.
+  Changes to auth methods can allow unauthorized access or weaken authentication controls.
+references:
+  - https://developer.hashicorp.com/vault/docs/commands/auth/enable
+  - https://developer.hashicorp.com/vault/api-docs/system/auth
+author: RunReveal
+date: 2025-07-24
+tags:
+  - hashicorp-vault
+  - identity-access-management
+  - signal
+sourcetypes:
+  - hashicorp-vault
+detection:
+  selection:
+    request.path|startswith: sys/auth/
+    request.operation:
+      - create
+      - update
+      - delete
+  condition: selection
+falsepositives:
+  - Routine onboarding of new authentication backends by platform administrators
+  - Scheduled auth method rotation or upgrades
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0006
+mitreTechniques:
+  - T1556
