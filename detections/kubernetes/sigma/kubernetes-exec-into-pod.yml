@@ -1,0 +1,32 @@
+title: Kubernetes Exec Into Pod
+id: kubernetes-exec-into-pod
+description: >
+  Detects kubectl exec or equivalent API calls into a running pod.
+  Exec access to pods allows arbitrary command execution inside containers
+  and is commonly used during lateral movement or post-exploitation.
+references:
+  - https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#exec
+  - https://kubernetes.io/docs/reference/access-authn-authz/audit-policy/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - kubernetes
+  - system-activity
+  - signal
+sourcetypes:
+  - kubernetes-audit
+detection:
+  selection:
+    verb: create
+    objectRef.resource: pods
+    objectRef.subresource: exec
+  condition: selection
+falsepositives:
+  - Developers debugging applications in non-production clusters
+  - Automated CI/CD pipelines that exec into pods for health checks
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1609

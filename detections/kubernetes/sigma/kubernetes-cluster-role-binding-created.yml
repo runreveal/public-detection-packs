@@ -1,0 +1,32 @@
+title: Kubernetes ClusterRoleBinding Created
+id: kubernetes-clusterrolebinding-created
+description: >
+  Detects creation of ClusterRoleBindings which grant cluster-wide permissions.
+  Attackers may create ClusterRoleBindings to escalate privileges by binding
+  powerful roles like cluster-admin to compromised accounts.
+references:
+  - https://kubernetes.io/docs/reference/access-authn-authz/rbac/#clusterrolebinding-example
+  - https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/
+author: RunReveal
+date: 2025-07-24
+tags:
+  - kubernetes
+  - identity-access-management
+  - signal
+sourcetypes:
+  - kubernetes-audit
+detection:
+  selection:
+    verb: create
+    objectRef.resource: clusterrolebindings
+  condition: selection
+falsepositives:
+  - Cluster administrators configuring RBAC during initial setup
+  - Helm chart installations that create ClusterRoleBindings
+  - Cluster management tools like Rancher or ArgoCD
+level: high
+riskscore: 80
+mitreAttacks:
+  - TA0004
+mitreTechniques:
+  - T1078
