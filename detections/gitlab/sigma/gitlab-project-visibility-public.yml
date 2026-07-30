@@ -1,0 +1,30 @@
+title: GitLab Project Visibility Changed to Public
+id: gitlab-project-visibility-changed-to-public
+description: >
+  Detects when a GitLab project visibility is changed to public.
+  Making a project public can expose source code, secrets, and
+  proprietary information to unauthorized parties.
+references:
+  - https://docs.gitlab.com/ee/administration/audit_event_reports.html
+  - https://docs.gitlab.com/ee/api/audit_events.html
+author: RunReveal
+date: 2025-07-24
+tags:
+  - gitlab
+  - audit-activity
+  - signal
+sourcetypes:
+  - gitlab
+detection:
+  selection:
+    eventName: project_visibility_changed
+    eventDetails: public
+  condition: selection
+falsepositives:
+  - Open source projects intentionally made public
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0009
+mitreTechniques:
+  - T1213

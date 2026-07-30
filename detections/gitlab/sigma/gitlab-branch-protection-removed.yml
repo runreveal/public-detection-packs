@@ -1,0 +1,31 @@
+title: GitLab Branch Protection Removed
+id: gitlab-branch-protection-removed
+description: >
+  Detects removal of branch protection rules in GitLab. Removing
+  branch protections can allow unauthorized code changes to be pushed
+  directly to protected branches, bypassing review requirements.
+references:
+  - https://docs.gitlab.com/ee/administration/audit_event_reports.html
+  - https://docs.gitlab.com/ee/user/project/protected_branches.html
+author: RunReveal
+date: 2025-07-24
+tags:
+  - gitlab
+  - audit-activity
+  - signal
+sourcetypes:
+  - gitlab
+detection:
+  selection:
+    eventName:
+      - protected_branch_removed
+      - protected_branch_updated
+  condition: selection
+falsepositives:
+  - Branch protection changes during repository restructuring or migration
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562

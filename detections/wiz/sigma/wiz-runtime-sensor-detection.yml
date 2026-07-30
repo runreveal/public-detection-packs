@@ -1,0 +1,33 @@
+title: Wiz Runtime Sensor Detection
+id: wiz-runtime-sensor-detection
+description: >
+  Detects runtime sensor findings from Wiz. Runtime detections indicate
+  active threats or suspicious behavior observed on monitored workloads
+  in real time.
+references:
+  - https://docs.wiz.io/wiz-docs/docs/wiz-runtime-sensor
+  - https://docs.wiz.io/wiz-docs/docs/wiz-api
+author: RunReveal
+date: 2025-07-24
+tags:
+  - wiz
+  - findings
+  - signal
+sourcetypes:
+  - wiz-runtime
+detection:
+  selection:
+    severity:
+      - HIGH
+      - CRITICAL
+      - high
+      - critical
+  condition: selection
+falsepositives:
+  - Legitimate administrative activity triggering runtime sensor alerts
+level: high
+riskscore: 70
+mitreAttacks:
+  - TA0002
+mitreTechniques:
+  - T1204

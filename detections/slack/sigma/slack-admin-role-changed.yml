@@ -1,0 +1,32 @@
+title: Slack Workspace Admin Role Changed
+id: slack-workspace-admin-role-changed
+description: >
+  Detects when an owner or admin role is assigned in the Slack workspace.
+  Unauthorized privilege escalation can grant full control over workspace
+  settings, integrations, and data.
+references:
+  - https://api.slack.com/admins/audit-logs-call
+  - https://slack.com/help/articles/360018112273-Manage-admin-roles-in-Slack
+author: RunReveal
+date: 2025-07-24
+tags:
+  - slack
+  - identity-access-management
+  - signal
+sourcetypes:
+  - slack
+detection:
+  selection:
+    eventName:
+      - role_change_to_admin
+      - role_change_to_owner
+      - owner_transferred
+  condition: selection
+falsepositives:
+  - Planned administrative role changes during team restructuring
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1098
