@@ -4,7 +4,7 @@ description:
   Impossible travel events are measured by looking for source IP addresses
   on logs, determining the latitude and longitude of those logs, and doing point arithmatic
   to determine their speed
-schedule: "*/15 * * * *"
+schedule: "0 * * * *"
 file: impossible_travel.sql
 categories:
   - attack.initial-access
