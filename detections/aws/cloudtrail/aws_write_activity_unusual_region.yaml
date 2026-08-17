@@ -1,0 +1,33 @@
+name: aws-write-activity-unusual-region
+displayName: AWS Write Activity in Unusual Region
+description: >
+  Detects successful state-changing CloudTrail events whose region and API
+  pair has not been seen in the previous {window} days. Attackers launch
+  compute for cryptomining or C2 in regions an organization does not
+  normally use, where nobody is watching cost or capacity dashboards.
+  Baselines on the region and API pair rather than on the region alone,
+  because a single one-off setup event in a region would otherwise mark it
+  permanently normal. The baseline deliberately includes failed attempts and
+  service-initiated writes so that it stays broad; alerting requires a
+  successful write that no AWS service initiated.
+file: aws_write_activity_unusual_region.sql
+categories:
+  - aws
+  - cloudtrail
+  - system-activity
+  - signal
+  - unusual-region
+  - resource-development
+  - anomaly-detection
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1535
+  - T1496
+severity: High
+riskScore: 75
+schedule: "0 * * * *"
+parameters:
+  window: "30"
+sourceTypes:
+  - cloudtrail

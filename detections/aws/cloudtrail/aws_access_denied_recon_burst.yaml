@@ -1,0 +1,30 @@
+name: aws-access-denied-recon-burst
+displayName: AWS Permission Enumeration via Access Denied Errors
+description: >
+  Detects a single principal generating AccessDenied errors across
+  {threshold} or more distinct API operations within the schedule window,
+  which indicates credentials being probed for their permission boundary.
+  Thresholds on the number of distinct denied APIs rather than raw error
+  volume: broken automation retries the same one or two calls forever,
+  while reconnaissance sweeps many different calls. This keeps the
+  detection useful without an allow list of noisy service roles.
+file: aws_access_denied_recon_burst.sql
+categories:
+  - aws
+  - cloudtrail
+  - discovery
+  - signal
+  - permission-enumeration
+  - anomaly-detection
+mitreAttacks:
+  - TA0007
+mitreTechniques:
+  - T1580
+  - T1087.004
+severity: Medium
+riskScore: 60
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "5"
+sourceTypes:
+  - cloudtrail

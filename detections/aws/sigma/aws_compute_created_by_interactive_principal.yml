@@ -1,0 +1,61 @@
+title: AWS Compute Resource Created by Interactive Principal
+id: 6f08e979-cf4f-40c5-9668-954c101e4c74
+description: >
+  Detects EC2 instances, Lambda functions, containers, and clusters being
+  created by a long-lived IAM user, the root account, a federated session,
+  or an AWS Identity Center session. In an environment where compute is
+  provisioned by IaC or an autoscaler, creation by a principal a human can
+  drive is worth a look every time — it is how compromised credentials get
+  turned into cryptomining or C2 infrastructure. Automation running under a
+  plain assumed role is not matched, so tune the identity selections to the
+  roles your pipelines actually use.
+references:
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html
+  - https://docs.aws.amazon.com/lambda/latest/api/API_CreateFunction.html
+  - https://attack.mitre.org/techniques/T1078/
+author: RunReveal
+date: 2026-08-17
+tags:
+  - aws
+  - cloudtrail
+  - system-activity
+  - signal
+  - resource-development
+  - compute
+sourcetypes:
+  - cloudtrail
+detection:
+  compute_creation:
+    eventName:
+      - RunInstances
+      - StartInstances
+      - CreateFleet
+      - RequestSpotInstances
+      - CreateFunction20150331
+      - CreateFunction
+      - CreateCluster
+      - CreateNodegroup
+      - RegisterTaskDefinition
+      - RunTask
+      - CreateService
+  filter_error:
+    errorCode|re: '.+'
+  human_identity:
+    userIdentity.type:
+      - IAMUser
+      - Root
+      - FederatedUser
+  sso_identity:
+    userIdentity.arn|contains: AWSReservedSSO_
+  condition: compute_creation and (human_identity or sso_identity) and not filter_error
+falsepositives:
+  - Engineers legitimately provisioning development or test compute by hand
+  - Break-glass or incident response capacity changes
+  - Environments where CI/CD authenticates as an IAM user rather than an OIDC role
+level: medium
+riskscore: 65
+mitreAttacks:
+  - TA0042
+mitreTechniques:
+  - T1078
+  - T1496
