@@ -1,0 +1,50 @@
+title: AWS Snapshot Shared With External AWS Account
+id: 6cfae47e-cdb8-4849-a8f7-98bbb7a338b8
+description: >
+  Detects EBS, RDS instance, and RDS cluster snapshots being shared with a
+  specific AWS account ID. Sharing a snapshot is a quiet way to move an
+  entire database or volume into an account the victim does not control, and
+  it leaves no data transfer trail in VPC flow logs. Complements the
+  snapshot-made-public rules, which only match shares to the "all" group.
+references:
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifySnapshotAttribute.html
+  - https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html
+  - https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html
+  - https://attack.mitre.org/techniques/T1537/
+author: RunReveal
+date: 2026-08-17
+tags:
+  - aws
+  - cloudtrail
+  - system-activity
+  - signal
+  - snapshot
+  - exfiltration
+  - data-exposure
+sourcetypes:
+  - cloudtrail
+detection:
+  ebs_share:
+    eventSource: ec2.amazonaws.com
+    eventName: ModifySnapshotAttribute
+    requestParameters|re: '"userId"\s*:\s*"[0-9]{12}"'
+  rds_share:
+    eventSource: rds.amazonaws.com
+    eventName:
+      - ModifyDBSnapshotAttribute
+      - ModifyDBClusterSnapshotAttribute
+    requestParameters|re: '"valuesToAdd"\s*:\s*\[[^]]*"[0-9]{12}"'
+  ami_share:
+    eventSource: ec2.amazonaws.com
+    eventName: ModifyImageAttribute
+    requestParameters|re: '"userId"\s*:\s*"[0-9]{12}"'
+  condition: ebs_share or rds_share or ami_share
+falsepositives:
+  - Snapshot sharing between accounts in the same AWS Organization for backup, DR, or migration. Tune by adding the known account IDs to an exclusion.
+  - Vendor-driven sharing for database migration or support cases
+level: critical
+riskscore: 90
+mitreAttacks:
+  - TA0010
+mitreTechniques:
+  - T1537

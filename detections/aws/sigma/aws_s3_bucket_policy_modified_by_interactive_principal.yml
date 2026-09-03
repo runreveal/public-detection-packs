@@ -1,0 +1,59 @@
+title: AWS S3 Bucket Access Controls Modified by Interactive Principal
+id: db6c98d0-8f63-400d-b146-2f499d0637b1
+description: >
+  Detects changes to S3 bucket policies, ACLs, public access blocks, or
+  encryption made by a long-lived IAM user, the root account, a federated
+  session, or an AWS Identity Center session. Bucket access controls are
+  normally owned by IaC, so a hand-made change is either an undocumented
+  exception or an attacker widening access to data. Fires regardless of
+  whether the resulting policy is public, which is what separates this from
+  the S3 public access rule.
+references:
+  - https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html
+  - https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html
+  - https://attack.mitre.org/techniques/T1098/
+author: RunReveal
+date: 2026-08-17
+tags:
+  - aws
+  - cloudtrail
+  - system-activity
+  - signal
+  - s3
+  - data-exposure
+sourcetypes:
+  - cloudtrail
+detection:
+  policy_change:
+    eventSource: s3.amazonaws.com
+    eventName:
+      - PutBucketPolicy
+      - DeleteBucketPolicy
+      - PutBucketAcl
+      - PutBucketPublicAccessBlock
+      - DeleteBucketPublicAccessBlock
+      - PutAccountPublicAccessBlock
+      - DeleteAccountPublicAccessBlock
+      - PutBucketEncryption
+      - DeleteBucketEncryption
+      - PutBucketVersioning
+      - PutBucketReplication
+  human_identity:
+    userIdentity.type:
+      - IAMUser
+      - Root
+      - FederatedUser
+  sso_identity:
+    userIdentity.arn|contains: AWSReservedSSO_
+  filter_error:
+    errorCode|re: '.+'
+  condition: policy_change and (human_identity or sso_identity) and not filter_error
+falsepositives:
+  - Administrators applying a documented bucket exception by hand
+  - Environments where IaC authenticates as an IAM user rather than an OIDC role
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1098
