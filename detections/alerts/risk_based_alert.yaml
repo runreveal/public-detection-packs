@@ -1,0 +1,17 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: risk-based-alert
+displayName: Risk Based Alert
+description: This is an alert that will trigger if any actor (email) produces signals that have a risk score over the threshold. Use window to search for events in a specific time frame.
+file: risk_based_alert.sql
+categories:
+  - runreveal-detection
+  - alert
+notificationNames:
+  - email
+severity: Critical
+riskScore: 0
+schedule: '*/15 * * * *'
+parameters:
+  risk_threshold: 30
