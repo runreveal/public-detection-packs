@@ -1,0 +1,33 @@
+title: Microsoft 365 Mailbox Forwarding Rule Created
+id: microsoft-365-mailbox-forwarding-rule-created
+description: |
+  Detects creation or modification of inbox rules that forward or redirect email.
+  Attackers commonly use mail forwarding rules as a persistence mechanism to
+  maintain access to sensitive communications after initial compromise.
+references:
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#exchange-mailbox-activities
+  - https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/outbound-spam-policies-external-email-forwarding
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - audit-activity
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - New-InboxRule
+      - Set-InboxRule
+      - UpdateInboxRules
+  condition: selection
+falsepositives:
+  - Legitimate inbox rules created by users for workflow automation
+  - IT administrators configuring mail flow rules
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1114.003
