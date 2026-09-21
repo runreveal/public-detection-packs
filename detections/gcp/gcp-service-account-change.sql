@@ -27,5 +27,8 @@ WHERE (receivedAt > {from:DateTime }) AND (receivedAt < {to:DateTime })
     OR (principalEmail LIKE '%@cloudservices.gserviceaccount.com')
     OR (principalEmail LIKE '%@system.gserviceaccount.com')
     OR (principalEmail LIKE '%@gcp-sa-%.iam.gserviceaccount.com')
+    -- Subscriber-configurable allowlist. Entries are LIKE patterns, so an
+    -- exact address works as-is and a family can be excluded with '%'.
+    OR arrayExists(p -> principalEmail LIKE p, {allowedPrincipals:Array(String)})
   )
 ;
