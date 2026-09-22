@@ -21,7 +21,7 @@ INNER JOIN
         `target.id` AS inviteID
     FROM tailscale_audit_logs
     WHERE eventName = 'CREATE_INVITE'
-) AS create ON accept.inviteID = create.inviteID
+) AS created ON accept.inviteID = created.inviteID
 UNION ALL
 SELECT
     acceptTime,
@@ -46,6 +46,6 @@ INNER JOIN
         `target.name` AS inviteName
     FROM tailscale_audit_logs
     WHERE eventName = 'INVITE_USER'
-) AS create ON accept.inviteName = create.inviteName
+) AS created ON accept.inviteName = created.inviteName
 ;
 
