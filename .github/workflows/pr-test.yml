@@ -38,4 +38,12 @@ jobs:
           workspace: ${{ secrets.RUNREVEAL_WORKSPACE }}
           dry-run: true
 
-          
+  # Aggregate gate: the single check to mark as required in branch protection.
+  ci-ok:
+    needs: [build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if any dependency failed
+        if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+        run: exit 1         
