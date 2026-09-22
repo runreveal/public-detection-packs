@@ -4,8 +4,8 @@ WITH invalidUsers AS
         FROM
         (
             SELECT
-                delete.*,
-                row_number() OVER (PARTITION BY delete.userEmail ORDER BY delete.eventTime DESC) AS rnum
+                deleted.*,
+                row_number() OVER (PARTITION BY deleted.userEmail ORDER BY deleted.eventTime DESC) AS rnum
             FROM
             (
                 SELECT
@@ -15,7 +15,7 @@ WITH invalidUsers AS
                     JSONExtractString(arrayFirst(x -> (JSONExtractString(x, 'name') = 'USER_EMAIL'), JSONExtractArrayRaw(arrayFirst(x -> (JSONExtractString(x, 'type') = 'USER_SETTINGS'), JSONExtractArrayRaw(rawLog, 'events')), 'parameters')), 'value') AS userEmail
                 FROM runreveal_logs
                 WHERE (sourceType = 'gsuite') AND (eventName IN ('DELETE_USER', 'SUSPEND_USER')) AND ((receivedAt >= ({from:DateTime} - toIntervalDay(90))) AND (receivedAt <= {to:DateTime}))
-            ) AS delete
+            ) AS deleted
             LEFT JOIN
             (
                 SELECT
@@ -25,8 +25,8 @@ WITH invalidUsers AS
                     JSONExtractString(arrayFirst(x -> (JSONExtractString(x, 'name') = 'USER_EMAIL'), JSONExtractArrayRaw(arrayFirst(x -> (JSONExtractString(x, 'type') = 'USER_SETTINGS'), JSONExtractArrayRaw(rawLog, 'events')), 'parameters')), 'value') AS userEmail
                 FROM runreveal_logs
                 WHERE (sourceType = 'gsuite') AND (eventName IN ('CREATE_USER', 'UNSUSPEND_USER')) AND ((receivedAt >= ({from:DateTime} - toIntervalDay(90))) AND (receivedAt <= {to:DateTime}))
-            ) AS create ON (delete.userEmail = create.userEmail) AND (delete.eventType = create.eventType) AND (delete.workspaceID = create.workspaceID)
-            WHERE (create.userEmail IS NULL) OR (create.userEmail = '') OR (create.eventTime < delete.eventTime)
+            ) AS created ON (deleted.userEmail = created.userEmail) AND (deleted.eventType = created.eventType) AND (deleted.workspaceID = created.workspaceID)
+            WHERE (created.userEmail IS NULL) OR (created.userEmail = '') OR (created.eventTime < deleted.eventTime)
         )
         WHERE rnum = 1
     )
