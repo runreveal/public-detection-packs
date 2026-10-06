@@ -1,0 +1,49 @@
+name: "delayed-logs"
+displayName: "Delayed Logs"
+description: Alerts when a source receives logs that are delayed by more than the configured threshold.
+notes: This health check monitors source activity and alerts when logs are delayed by more than the configured threshold (threshold is in hours).
+file: health-check-delayed-logs.sql
+riskScore: 50
+severity: Medium
+categories:
+  - runreveal-detection
+  - health-check
+schedule: "@15m"
+parameters:
+  duration: "2"
+  threshold: "12"
+type: "health"
+settings:
+  fields:
+    - name: duration
+      displayName: "Duration"
+      dataType: "duration"
+      description: "Time window to check for delayed logs, will calculate the average latency of the logs received during this time window.
+    - name: threshold
+      displayName: "Threshold"
+      dataType: "number"
+      description: "Alert if logs are delayed by more than this threshold (in hours)"
+  evaluation:
+    valueColumn: "avgLatencyHours"
+    operator: "gt"
+    thresholdParam: "threshold" # in hours
+inlineTemplate:
+  title: "RunReveal Health Check Alert: {{health.sourceDisplayName}}"
+  body: |
+    # Health Check Failed - {{health.displayName}}
+
+    Your RunReveal source has a delay in receiving logs. 
+    The average latency is greater than the configured threshold. Source ingestion may be behind, or there may be an issue with the source.
+
+    **Source Name:** {{health.sourceDisplayName}}
+    **Source Type:** {{health.sourceType}}
+    **Source ID:** {{health.sourceID}}
+
+    **Duration:** {{health.parameters.duration}} hour(s)
+    **Average Latency:** {{health.metricValue}} hours
+    **Threshold:** {{health.threshold}} hours
+    **Last 10 Minute Latency:** {{health.result.lastEventLatencyHours}} hours
+
+    **Alerting Since:** {{health.alertingSince}}
+    **Consecutive Failures:** {{health.consecutiveFailures}}
+    [Source Overview]({{health.resultLink}})
