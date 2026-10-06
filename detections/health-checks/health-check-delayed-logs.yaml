@@ -18,7 +18,7 @@ settings:
     - name: duration
       displayName: "Duration"
       dataType: "duration"
-      description: "Time window to check for delayed logs, will calculate the average latency of the logs received during this time window.
+      description: Time window to check for delayed logs, will calculate the average latency of the logs received during this time window.
     - name: threshold
       displayName: "Threshold"
       dataType: "number"
