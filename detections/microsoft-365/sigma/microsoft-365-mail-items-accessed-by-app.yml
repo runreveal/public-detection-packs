@@ -1,0 +1,31 @@
+title: Microsoft 365 Mail Items Accessed by Application
+id: microsoft-365-mail-items-accessed-by-application
+description: |
+  Detects application-level access to mailbox items in Microsoft 365.
+  This can indicate token theft or compromised OAuth applications being
+  used to read email programmatically without user interaction.
+references:
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#exchange-mailbox-activities
+  - https://learn.microsoft.com/en-us/purview/audit-mailitemsaccessed
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - application-activity
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - MailItemsAccessed
+  condition: selection
+falsepositives:
+  - Legitimate mail integrations and backup services
+  - Authorized applications accessing mailboxes for business workflows
+level: medium
+riskscore: 60
+mitreAttacks:
+  - TA0009
+mitreTechniques:
+  - T1114.002
