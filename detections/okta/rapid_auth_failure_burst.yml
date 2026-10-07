@@ -1,0 +1,19 @@
+# Remove disabled property to start using the detection
+disabled: true
+
+name: rapid_auth_failure_burst
+displayName: rapid_auth_failure_burst
+description: Detects a rapid burst of authentication failures for a specific user, regardless of the IP address.
+file: rapid_auth_failure_burst.sql
+categories:
+- runreveal-detection
+- okta
+- signal
+schedule: "*/15 * * * *"
+notificationNames: []
+mitreAttacks:
+- initial-access
+severity: Medium
+riskScore: 50
+sourceTypes:
+- okta
