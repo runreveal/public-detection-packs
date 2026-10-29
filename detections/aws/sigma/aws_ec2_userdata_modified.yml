@@ -1,0 +1,39 @@
+title: AWS EC2 Instance UserData Modified
+id: d4e5f6a7-b8c9-4d0e-9f1a-2b3c4d5e6f7a
+description: >
+  Detects modification of an EC2 instance's UserData, the startup script
+  that runs on next boot. Attackers with ModifyInstanceAttribute access
+  can replace UserData to achieve persistence or remote code execution
+  without redeploying the instance.
+references:
+  - https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html
+author: RunReveal
+date: 2025-01-22
+tags:
+  - attack.persistence
+  - attack.execution
+  - attack.t1578.001
+  - aws
+  - ec2
+  - system-activity
+  - signal
+  - startup-script
+sourcetypes:
+  - cloudtrail
+detection:
+  selection:
+    eventSource: ec2.amazonaws.com
+    eventName: ModifyInstanceAttribute
+    requestParameters|contains: '"userData"'
+  filter_error:
+    errorCode|re: '.+'
+  condition: selection and not filter_error
+falsepositives:
+  - Automation or configuration management tools updating instance bootstrap scripts
+level: high
+riskscore: 70
+mitreAttacks:
+  - TA0003
+  - TA0002
+mitreTechniques:
+  - T1578.001

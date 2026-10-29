@@ -23,14 +23,18 @@ tags:
 sourcetypes:
   - cloudtrail
 detection:
-  selection:
+  selection_removed:
     eventSource: guardduty.amazonaws.com
     eventName:
       - DeleteDetector
       - StopMonitoringMembers
       - DisassociateMembers
       - DeleteMembers
-  condition: selection
+  selection_disabled:
+    eventSource: guardduty.amazonaws.com
+    eventName: UpdateDetector
+    requestParameters.enable: 'false'
+  condition: selection_removed or selection_disabled
 falsepositives:
   - Legitimate administrative activities when decommissioning a GuardDuty deployment
 level: high

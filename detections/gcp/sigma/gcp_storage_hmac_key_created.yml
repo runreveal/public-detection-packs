@@ -1,0 +1,41 @@
+title: GCP Storage HMAC Key Created
+status: test
+description: |
+  Detects creation of an HMAC key for a GCS service account. HMAC keys
+  are long-lived, interoperable S3-style credentials distinct from
+  service account keys, and are rarely rotated or monitored, making them
+  an attractive persistence mechanism for an attacker with IAM access.
+author: RunReveal
+date: 2025-01-22
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.persistence
+    - attack.credential-access
+    - attack.t1098.001
+    - gcp
+    - storage
+    - identity-access-management
+    - signal
+    - persistence
+    - credential-access
+mitreAttacks:
+    - TA0003
+    - TA0006
+mitreTechniques:
+    - T1098.001
+detection:
+    selection:
+        eventName: 'storage.hmacKeys.create'
+        rawLog.message.data.protoPayload.authorizationInfo.#(permission=="storage.hmacKeys.create")#.granted: 'true'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+    - rawLog.message.data.protoPayload.request.serviceAccountEmail
+level: medium
+riskscore: 55

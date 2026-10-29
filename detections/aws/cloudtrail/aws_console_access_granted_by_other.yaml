@@ -1,0 +1,24 @@
+name: aws-console-access-granted-by-other
+displayName: AWS Console Login Profile Created by Another Principal
+description: >
+  Detects when an IAM console login profile is created for a user by a
+  different principal, which could indicate persistence or backdoor
+  creation. Excludes self-service password resets, where the acting
+  principal's ARN ends with the target user's own name.
+file: aws_console_access_granted_by_other.sql
+categories:
+  - aws
+  - cloudtrail
+  - identity-access-management
+  - signal
+  - persistence
+  - console-access
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1136.003
+severity: Medium
+riskScore: 60
+schedule: "*/15 * * * *"
+sourceTypes:
+  - cloudtrail

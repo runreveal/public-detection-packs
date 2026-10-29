@@ -1,0 +1,24 @@
+name: aws-s3-cross-account-copy
+displayName: AWS S3 Object Copied to External Account Bucket
+description: >
+  Detects a CopyObject call where the source and destination buckets
+  belong to different AWS accounts. An attacker with S3 read access
+  exfiltrates data by copying it into a bucket in an account they
+  control, bypassing data loss prevention tooling scoped to a single
+  account.
+file: aws_s3_cross_account_copy.sql
+categories:
+  - aws
+  - s3
+  - application-activity
+  - signal
+  - exfiltration
+mitreAttacks:
+  - TA0010
+mitreTechniques:
+  - T1537
+severity: High
+riskScore: 75
+schedule: "*/15 * * * *"
+sourceTypes:
+  - cloudtrail
