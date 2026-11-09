@@ -1,8 +1,8 @@
 SELECT
-    actor['alternateId'] AS user_email,
-    client['ipAddress'] AS source_ip,
+    actor['email'] AS user_email,
+    srcIP AS source_ip,
     count(*) AS group_access_count,
-    count(DISTINCT target) AS unique_groups_accessed,
+    uniqExactArray(arrayMap(t -> JSONExtractString(t, 'id'), JSONExtractArrayRaw(rawLog, 'target'))) AS unique_groups_accessed,
     min(receivedAt) AS first_seen,
     max(receivedAt) AS last_seen
 FROM

@@ -1,8 +1,8 @@
 SELECT
-    actor['alternateId'] AS user_email,
-    client['ipAddress'] AS source_ip,
+    actor['email'] AS user_email,
+    srcIP AS source_ip,
     count(*) AS session_event_count,
-    count(DISTINCT sessionId) AS unique_sessions
+    count(DISTINCT JSONExtractString(rawLog, 'authenticationContext', 'externalSessionId')) AS unique_sessions
 FROM
     runreveal.logs
 WHERE

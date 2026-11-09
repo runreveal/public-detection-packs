@@ -1,8 +1,8 @@
 SELECT
-    actor['alternateId'] AS user_email,
-    client['ipAddress'] AS source_ip,
+    actor['email'] AS user_email,
+    srcIP AS source_ip,
     count(*) AS app_access_count,
-    count(DISTINCT target) AS unique_apps
+    uniqExactArray(arrayMap(t -> JSONExtractString(t, 'id'), JSONExtractArrayRaw(rawLog, 'target'))) AS unique_apps
 FROM
     runreveal.logs
 WHERE
