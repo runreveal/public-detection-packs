@@ -1,6 +1,6 @@
 SELECT
-    actor['alternateId'] AS user_email,
-    client['ipAddress'] AS source_ip,
+    actor['email'] AS user_email,
+    srcIP AS source_ip,
     count(*) AS mfa_challenge_count,
     countIf(simpleJSONExtractString(simpleJSONExtractRaw(rawLog, 'outcome'), 'result') = 'FAILURE') AS failed_attempts,
     countIf(simpleJSONExtractString(simpleJSONExtractRaw(rawLog, 'outcome'), 'result') = 'SUCCESS') AS successful_attempts

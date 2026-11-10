@@ -1,7 +1,7 @@
 SELECT
-    actor['alternateId'] AS user_email,
+    actor['email'] AS user_email,
     count(*) AS lookup_count,
-    count(DISTINCT target) AS unique_targets
+    uniqExactArray(arrayMap(t -> JSONExtractString(t, 'id'), JSONExtractArrayRaw(rawLog, 'target'))) AS unique_targets
 FROM
     runreveal.logs
 WHERE

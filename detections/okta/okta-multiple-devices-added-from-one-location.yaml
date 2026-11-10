@@ -5,6 +5,7 @@ description:
   This detection shows multiple users added a new device from the same
   IP address with a whitelist to exclude an office IP address space, indicating likelyhood
   that multiple users could have been compromised by one threat actor.
+  The officeCIDR parameter accepts a comma-separated list of CIDR ranges.
 file: okta-multiple-devices-added-from-one-location.sql
 categories:
   - attack.initial-access

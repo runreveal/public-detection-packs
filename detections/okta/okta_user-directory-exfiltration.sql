@@ -1,9 +1,9 @@
 SELECT
-    actor['alternateId'] AS user_email,
-    client['ipAddress'] AS source_ip,
-    client['userAgent']['rawUserAgent'] AS user_agent,
+    actor['email'] AS user_email,
+    srcIP AS source_ip,
+    JSONExtractString(rawLog, 'client', 'userAgent', 'rawUserAgent') AS user_agent,
     count(*) AS directory_access_count,
-    count(DISTINCT target) AS unique_users_accessed,
+    uniqExactArray(arrayMap(t -> JSONExtractString(t, 'id'), JSONExtractArrayRaw(rawLog, 'target'))) AS unique_users_accessed,
     min(receivedAt) AS first_seen,
     max(receivedAt) AS last_seen,
     dateDiff('second', min(receivedAt), max(receivedAt)) AS duration_seconds
