@@ -1,0 +1,49 @@
+title: Azure Entra High-Risk Sign-In
+status: test
+description: >
+  Detects sign-ins flagged high risk by Entra ID Protection's risk
+  engine, excluding risks already dismissed or remediated by an
+  administrator. A high risk score reflects patterns such as credential
+  theft, impossible travel, or an unfamiliar sign-in source.
+author: RunReveal
+logsource:
+  product: azure
+  service: aad
+sourcetypes:
+  - aad
+tags:
+  - azure
+  - identity-access-management
+  - signal
+  - entra
+  - authentication
+  - aad
+mitreAttacks:
+  - TA0001
+mitreTechniques:
+  - T1078
+detection:
+  selection_signin:
+    eventName: Sign-in activity
+    tags.category: SignInLogs
+  selection_risk_during_signin:
+    rawLog.properties.riskLevelDuringSignIn: high
+  selection_risk_aggregated:
+    rawLog.properties.riskLevelAggregated: high
+  filter_resolved:
+    rawLog.properties.riskState:
+      - dismissed
+      - remediated
+  condition: selection_signin and (selection_risk_during_signin or selection_risk_aggregated) and not filter_resolved
+fields:
+  - eventTime
+  - eventID
+  - actor.email
+  - srcIP
+  - srcASOrganization
+  - srcASCountryCode
+  - rawLog.properties.riskLevelDuringSignIn
+  - rawLog.properties.riskLevelAggregated
+  - rawLog.properties.riskState
+level: high
+riskscore: 75
