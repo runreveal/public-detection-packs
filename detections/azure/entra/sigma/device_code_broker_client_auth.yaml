@@ -1,0 +1,57 @@
+title: Azure Entra Device Code Authentication with Broker Client
+status: test
+description: >
+  Detects successful interactive device code sign-ins where the client
+  application is the Microsoft Authentication Broker
+  (29d9ed98-a469-4536-ade2-f981bc1d605e). Device code phishing tricks a
+  user into entering an attacker-generated code on the legitimate
+  Microsoft sign-in page. When the attacker uses the broker client ID,
+  the resulting refresh token can register an attacker-controlled device
+  and obtain a Primary Refresh Token, giving persistent access that
+  satisfies MFA and device-based conditional access. Add other client
+  application IDs to the rawLog.properties.appId selection list to cover clients that
+  should never use device code flow in your tenant.
+author: RunReveal
+logsource:
+  product: azure
+  service: aad
+sourcetypes:
+  - aad
+tags:
+  - azure
+  - identity-access-management
+  - signal
+  - entra
+  - initial-access
+  - aad
+mitreAttacks:
+  - TA0001
+  - TA0005
+  - TA0008
+mitreTechniques:
+  - T1566.002
+  - T1550.001
+  - T1078.004
+detection:
+  selection:
+    eventName: Sign-in activity
+    tags.category: SignInLogs
+    rawLog.properties.authenticationProtocol: devicecode
+    rawLog.properties.status.errorCode: 0
+    rawLog.properties.appId:
+      - 29d9ed98-a469-4536-ade2-f981bc1d605e
+  condition: selection
+fields:
+  - eventTime
+  - eventID
+  - actor.email
+  - srcIP
+  - srcASCountryCode
+  - rawLog.properties.authenticationProtocol
+  - rawLog.properties.status.errorCode
+  - rawLog.properties.appId
+  - rawLog.properties.appDisplayName
+  - rawLog.properties.resourceId
+  - rawLog.properties.resourceDisplayName
+level: low
+riskscore: 15

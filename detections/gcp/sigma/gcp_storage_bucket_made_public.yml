@@ -1,0 +1,42 @@
+title: GCP Storage Bucket Made Public
+status: test
+description: |
+  Detects a GCS bucket IAM policy change that adds a binding for allUsers
+  or allAuthenticatedUsers, which exposes the bucket to the public
+  internet or to any authenticated Google account. Any role is matched,
+  since public write access is as dangerous as public read access.
+author: RunReveal
+date: 2025-01-22
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.collection
+    - attack.exfiltration
+    - attack.t1530
+    - gcp
+    - storage
+    - identity-access-management
+    - signal
+    - data-exposure
+mitreAttacks:
+    - TA0009
+    - TA0010
+mitreTechniques:
+    - T1530
+detection:
+    selection:
+        eventName: 'storage.setIamPermissions'
+        rawLog.message.data.protoPayload.serviceData.policyDelta.bindingDeltas.#(action=="ADD")#.member:
+            - 'allUsers'
+            - 'allAuthenticatedUsers'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+    - rawLog.message.data.protoPayload.resourceName
+level: high
+riskscore: 80

@@ -1,11 +1,12 @@
 title: GCP Workload Identity Change
 status: test
 description: |
-  Detects creation, modification, or deletion of a GCP Workforce Identity Pool.
-  Changes to workforce identity pools can allow external identities to access
-  GCP resources, and unauthorized modifications could enable persistent access
-  or privilege escalation.
+  Detects creation or modification of a GCP Workload Identity Pool provider.
+  Workload identity federation lets external identities impersonate a
+  service account without a key, so unauthorized provider changes can
+  enable persistent, credential-less access or privilege escalation.
 author: RunReveal
+date: 2025-01-22
 logsource:
     product: gcp
 sourcetypes:
@@ -14,20 +15,24 @@ sourcetypes:
 tags:
     - attack.privilege-escalation
     - attack.persistence
+    - attack.t1098.001
+    - attack.t1078.004
     - gcp
     - identity-access-management
     - signal
     - iam
     - identity-federation
 mitreAttacks:
-    - TA0004
     - TA0003
+    - TA0004
+mitreTechniques:
+    - T1098.001
+    - T1078.004
 detection:
     selection:
         eventName:
-            - 'google.iam.admin.v1.WorkforcePools.CreateWorkforcePool'
-            - 'google.iam.admin.v1.WorkforcePools.DeleteWorkforcePool'
-            - 'google.iam.admin.v1.WorkforcePools.UpdateWorkforcePool'
+            - 'google.iam.v1.WorkloadIdentityPools.CreateWorkloadIdentityPoolProvider'
+            - 'google.iam.v1.WorkloadIdentityPools.UpdateWorkloadIdentityPoolProvider'
     condition: selection
 fields:
     - eventName

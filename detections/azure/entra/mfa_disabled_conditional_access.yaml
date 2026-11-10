@@ -1,0 +1,28 @@
+name: entra-mfa-disabled-conditional-access
+displayName: Azure Entra MFA Disabled on Conditional Access Policy
+description: >
+  Detects a conditional access policy update where the MFA grant control
+  was present before the change and absent after it. Removing MFA from a
+  policy weakens authentication requirements, which an attacker with
+  administrative access can use to simplify follow-on account takeover.
+  Compares the policy's grantControls.builtInControls list before and
+  after the change.
+file: mfa_disabled_conditional_access.sql
+categories:
+  - azure
+  - entra
+  - identity-access-management
+  - signal
+  - defense-evasion
+  - aad
+mitreAttacks:
+  - TA0005
+  - TA0001
+mitreTechniques:
+  - T1556
+  - T1078
+severity: High
+riskScore: 80
+schedule: "*/15 * * * *"
+sourceTypes:
+  - aad

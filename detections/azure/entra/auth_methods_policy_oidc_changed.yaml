@@ -1,0 +1,24 @@
+name: entra-auth-methods-policy-oidc-changed
+displayName: Azure Entra Authentication Methods Policy OIDC URL Changed
+description: >
+  Detects a change to the OIDC discovery URL inside Entra ID's
+  Authentication Methods Policy. This lets an attacker federate the
+  tenant with an attacker-controlled identity provider, bypassing MFA
+  and enabling unauthorized access through a bring-your-own IdP method.
+file: auth_methods_policy_oidc_changed.sql
+categories:
+  - azure
+  - entra
+  - identity-access-management
+  - signal
+  - persistence
+  - aad
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1556.009
+severity: High
+riskScore: 80
+schedule: "*/15 * * * *"
+sourceTypes:
+  - aad

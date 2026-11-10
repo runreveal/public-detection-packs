@@ -1,0 +1,32 @@
+name: aws-ssm-distributed-command
+displayName: AWS SSM Distributed Command Execution
+description: >
+  Detects a single principal targeting {threshold} or more distinct EC2
+  instances with SSM SendCommand within the schedule window, or using
+  tag or resource-group targets that resolve to an unbounded set of
+  instances. Attackers with compromised credentials use SSM to run
+  commands across a fleet without needing SSH access to any individual
+  host. Known automation
+  such as scheduled health checks can legitimately fan a single run out
+  across many instances; add its role or session name fragment to
+  excludeArnPatterns (matched with SQL LIKE) to quiet it.
+file: aws_ssm_distributed_command.sql
+categories:
+  - aws
+  - ssm
+  - system-activity
+  - signal
+  - remote-execution
+mitreAttacks:
+  - TA0002
+  - TA0008
+mitreTechniques:
+  - T1021
+severity: High
+riskScore: 70
+schedule: "*/15 * * * *"
+parameters:
+  threshold: "3"
+  excludeArnPatterns: "[]"
+sourceTypes:
+  - cloudtrail

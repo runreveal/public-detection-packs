@@ -1,0 +1,37 @@
+title: Azure Entra Domain Federation Settings Modified
+status: test
+description: >
+  Detects changes to a domain's federation trust settings in Entra ID.
+  An attacker who compromises an administrative account can federate a
+  domain with an attacker-controlled identity provider, redirecting
+  authentication to malicious infrastructure and bypassing MFA.
+author: RunReveal
+logsource:
+  product: azure
+  service: aad
+sourcetypes:
+  - aad
+tags:
+  - azure
+  - identity-access-management
+  - signal
+  - entra
+  - persistence
+  - aad
+mitreAttacks:
+  - TA0003
+mitreTechniques:
+  - T1556.006
+detection:
+  selection:
+    eventName: Set federation settings on domain
+    rawLog.properties.result: success
+  condition: selection
+fields:
+  - eventTime
+  - eventID
+  - actor.email
+  - srcIP
+  - rawLog.properties.targetResources
+level: high
+riskscore: 80

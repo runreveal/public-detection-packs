@@ -1,0 +1,36 @@
+title: GCP KMS Key Version Destroyed
+status: test
+description: |
+  Detects destruction of a Cloud KMS crypto key version via
+  DestroyCryptoKeyVersion. Data encrypted under a destroyed key version
+  becomes permanently unrecoverable, a technique used to cause
+  irreversible data loss or cover up ransomware-style impact.
+author: RunReveal
+date: 2025-01-22
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.impact
+    - attack.t1485
+    - gcp
+    - kms
+    - system-activity
+    - signal
+    - data-destruction
+mitreAttacks:
+    - TA0040
+mitreTechniques:
+    - T1485
+detection:
+    selection:
+        eventName: '*.KeyManagementService.DestroyCryptoKeyVersion'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: critical
+riskscore: 90

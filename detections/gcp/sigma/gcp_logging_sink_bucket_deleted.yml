@@ -1,0 +1,36 @@
+title: GCP Logging Sink or Bucket Deleted
+status: test
+description: |
+  Detects deletion of a Cloud Logging sink or log bucket. Removing a sink
+  or bucket stops logs from being exported or retained, which attackers
+  use to destroy evidence of their activity before or after an intrusion.
+author: RunReveal
+date: 2025-01-22
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.defense-evasion
+    - attack.t1562.008
+    - gcp
+    - audit-activity
+    - signal
+    - log-tampering
+mitreAttacks:
+    - TA0005
+mitreTechniques:
+    - T1562.008
+detection:
+    selection:
+        eventName:
+            - '*ConfigServiceV*.DeleteSink'
+            - '*ConfigServiceV*.DeleteBucket'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: high
+riskscore: 80

@@ -1,0 +1,35 @@
+title: GCP Logging Sink Modified
+status: test
+description: |
+  Detects modification of a Cloud Logging sink's filter or destination.
+  Attackers narrow a sink's filter or redirect its destination to
+  suppress specific log entries from reaching SIEM or long-term storage
+  without deleting the sink outright.
+author: RunReveal
+date: 2025-01-22
+logsource:
+    product: gcp
+sourcetypes:
+    - gcp
+    - gcplogs
+tags:
+    - attack.defense-evasion
+    - attack.t1562.008
+    - gcp
+    - audit-activity
+    - signal
+    - log-tampering
+mitreAttacks:
+    - TA0005
+mitreTechniques:
+    - T1562.008
+detection:
+    selection:
+        eventName: '*ConfigServiceV*.UpdateSink'
+    condition: selection
+fields:
+    - eventName
+    - actor.email
+    - srcIP
+level: medium
+riskscore: 60
