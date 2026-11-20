@@ -2,7 +2,7 @@ SELECT *
   FROM okta_logs
   WHERE receivedAt between {from:DateTime} and {to:DateTime}
     AND eventName = 'user.session.start'
-    AND outcome = 'SUCCESS'
+    AND outcome.result = 'SUCCESS'
     and srcIP like '%.%.%.%'
     AND client.device = 'Computer'
 and srcIP not in (

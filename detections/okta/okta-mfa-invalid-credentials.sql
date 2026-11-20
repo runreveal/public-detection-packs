@@ -1,8 +1,8 @@
 SELECT
   `actor.alternateID` as actor_email,
   `actor.displayName` as actor_name,
-  outcome as result,
-  JSONExtractString(rawLog, 'outcome', 'reason') as failure_reason,
+  outcome.result as result,
+  outcome.reason as failure_reason,
   JSONExtractString(rawLog, 'debugContext', 'debugData', 'factor') as mfa_factor,
   JSONExtractString(rawLog, 'securityContext', 'asNumber') as as_number,
   JSONExtractString(rawLog, 'securityContext', 'asOrg') as as_org,
@@ -16,7 +16,7 @@ FROM
   okta_logs
 WHERE
   eventName = 'user.authentication.auth_via_mfa'
-  AND outcome = 'FAILURE'
-  AND JSONExtractString(rawLog, 'outcome', 'reason') = 'INVALID_CREDENTIALS'
+  AND outcome.result = 'FAILURE'
+  AND outcome.reason = 'INVALID_CREDENTIALS'
   AND receivedAt >= {from:DateTime}
   AND receivedAt < {to:DateTime} 
