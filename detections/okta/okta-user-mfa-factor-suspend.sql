@@ -6,7 +6,7 @@ SELECT
   JSONExtractString(arrayFirst(x -> 1, target), 'alternateId') as target_user_email,
   JSONExtractString(arrayFirst(x -> 1, target), 'displayName') as target_user_name,
   JSONExtractString(arrayFirst(x -> 1, target), 'id') as target_user_id,
-  outcome as result,
+  outcome.result as result,
   srcIP as source_ip,
   JSONExtractString(rawLog, 'client', 'geographicalContext', 'country') as country,
   JSONExtractString(rawLog, 'client', 'geographicalContext', 'city') as city,
@@ -19,6 +19,6 @@ FROM
   okta_logs
 WHERE
   eventName = 'user.mfa.factor.suspend'
-  AND outcome = 'SUCCESS'
+  AND outcome.result = 'SUCCESS'
   AND receivedAt >= {from:DateTime}
   AND receivedAt < {to:DateTime} 
