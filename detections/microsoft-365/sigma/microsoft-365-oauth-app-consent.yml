@@ -1,0 +1,31 @@
+title: Microsoft 365 OAuth App Consent Granted
+id: microsoft-365-oauth-app-consent-granted
+description: |
+  Detects when consent is granted to an OAuth application in Microsoft 365.
+  Illicit consent grant attacks trick users into granting permissions to
+  attacker-controlled applications, enabling persistent access to data.
+references:
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#directory-administration-activities
+  - https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/protect-against-consent-phishing
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - identity-access-management
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - Consent to application.
+  condition: selection
+falsepositives:
+  - Users consenting to legitimate business applications
+  - IT-approved application integrations
+level: high
+riskscore: 80
+mitreAttacks:
+  - TA0001
+mitreTechniques:
+  - T1550.001

@@ -1,0 +1,32 @@
+title: Microsoft 365 Teams External Access Policy Changed
+id: microsoft-365-teams-external-access-policy-changed
+description: |
+  Detects changes to Teams external access or federation policies.
+  Modifying these policies can allow unauthorized external communication
+  channels or weaken tenant isolation controls.
+references:
+  - https://learn.microsoft.com/en-us/microsoftteams/manage-external-access
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#microsoft-teams-activities
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - audit-activity
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - Set-CsExternalAccessPolicy
+      - Set-CsTenantFederationConfiguration
+  condition: selection
+falsepositives:
+  - IT administrators adjusting Teams federation settings for business partnerships
+  - Planned changes to external collaboration policies
+level: medium
+riskscore: 55
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562

@@ -1,0 +1,32 @@
+title: Microsoft 365 eDiscovery Search Started
+id: microsoft-365-ediscovery-search-started
+description: |
+  Detects creation of compliance searches or eDiscovery search activities.
+  Attackers with sufficient privileges may abuse legal compliance tools
+  to search and exfiltrate sensitive data across mailboxes and SharePoint.
+references:
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#ediscovery-activities
+  - https://learn.microsoft.com/en-us/purview/ediscovery-search-for-content
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - audit-activity
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - New-ComplianceSearch
+      - SearchStarted
+  condition: selection
+falsepositives:
+  - Legitimate compliance or legal investigations
+  - IT security teams performing authorized searches
+level: high
+riskscore: 70
+mitreAttacks:
+  - TA0009
+mitreTechniques:
+  - T1114

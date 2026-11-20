@@ -1,0 +1,32 @@
+title: Microsoft 365 DLP Policy Disabled or Removed
+id: microsoft-365-dlp-policy-disabled-or-removed
+description: |
+  Detects removal or modification of Data Loss Prevention policies.
+  Attackers may disable DLP policies as a defense evasion technique
+  to prevent detection of data exfiltration activities.
+references:
+  - https://learn.microsoft.com/en-us/purview/audit-log-activities#data-loss-prevention-activities
+  - https://learn.microsoft.com/en-us/purview/dlp-learn-about-dlp
+author: RunReveal
+date: 2025-07-24
+tags:
+  - microsoft-365
+  - audit-activity
+  - signal
+sourcetypes:
+  - microsoft-365
+detection:
+  selection:
+    eventName:
+      - Remove-DlpPolicy
+      - Set-DlpPolicy
+  condition: selection
+falsepositives:
+  - IT administrators updating DLP policies as part of policy lifecycle management
+  - Policy migration or consolidation activities
+level: high
+riskscore: 75
+mitreAttacks:
+  - TA0005
+mitreTechniques:
+  - T1562.001
